@@ -6,6 +6,9 @@ Roller:
   NEWS_SOURCES       .team_news(client, day, fixtures) -> {team_key: TeamNews}
   PREDICTION_SOURCES .predictions(client, day, fixtures) -> list[Prediction]
   RESULT_SOURCES     .results(client, day) -> {(date, hkey, akey): {"ft":[h,a], "ht":[h,a]}}
+                     .archive_feed(client, day) -> list[Fixture]  (opsiyonel; birikimli sonuç arşivini besler)
+  ELO_SOURCES        .elo(client, day) -> clubelo.EloTable
+  extra_history      football-data.co.uk'ta olmayan ligler (1. Lig): soccerstats, birikimli arşiv, API-Football
 """
 from __future__ import annotations
 
@@ -15,7 +18,7 @@ from typing import Callable
 
 from .. import config
 from ..teams import similar, team_key
-from . import api_football, flashscore, forebet, freesupertips, iddaa, nesine, news_rss, soccerstats, sportytrader, transfermarkt, understat
+from . import api_football, archive, clubelo, flashscore, forebet, freesupertips, iddaa, nesine, news_rss, soccerstats, sportytrader, transfermarkt, understat
 
 
 @dataclass
@@ -27,6 +30,8 @@ class Src:
     team_news: Callable | None = None
     predictions: Callable | None = None
     results: Callable | None = None
+    archive_feed: Callable | None = None
+    elo: Callable | None = None
 
 
 FIXTURE_SOURCES = [
@@ -48,16 +53,46 @@ PREDICTION_SOURCES = [
 ]
 RESULT_SOURCES = [
     Src("nesine_results", "Nesine (sonuçlar)", results=nesine.results),
-    Src("flashscore_results", "Flashscore (sonuçlar)", results=flashscore.results),
+    Src("flashscore_results", "Flashscore (sonuçlar)", results=flashscore.results,
+        archive_feed=flashscore.finished),
 ]
+ELO_SOURCES = [Src("clubelo", "ClubElo (kulüp Elo puanları, lig-arası düzeltme)", elo=clubelo.ratings)]
+# football-data.co.uk'ta geçmişi olmayan ve soccerstats sonuç sayfasından okunan ligler
+SOCCERSTATS_HISTORY = {"TR2": "turkey2"}
 
 
-def extra_history(client, board, today) -> dict:
-    """football-data.co.uk'ta olmayan ligler için (ör. 1. Lig) API yedeği."""
+def extra_history(client, board, today, data_dir=None) -> dict:
+    """football-data.co.uk'ta olmayan ligler (ör. 1. Lig) için geçmiş satırları.
+
+    Aday kaynaklar (her biri StatusBoard ile sarılı): soccerstats sonuç sayfası, birikimli flashscore arşivi
+    (data/archive, en az ARCHIVE_MIN_MATCHES maç), API-Football (anahtar varsa). Takım adları kaynaklar arasında
+    farklı yazılabildiğinden kaynaklar KARIŞTIRILMAZ: lig başına en çok satırı olan tek kaynak seçilir.
+    """
+    data_dir = data_dir or config.DATA_DIR
+    cands: dict[str, list[tuple[str, list[dict]]]] = {}
+    for lid, code in SOCCERSTATS_HISTORY.items():
+        rows = board.run(f"soccerstats_{lid.lower()}", f"SoccerStats sonuçlar ({config.LEAGUE_BY_ID[lid].name} geçmişi)",
+                         lambda c=code: soccerstats.results_history(client, c, today))
+        if rows:
+            cands.setdefault(lid, []).append(("soccerstats", rows))
+    arch = board.run("archive_history", "Birikimli sonuç arşivi (modele giren ligler)",
+                     lambda: {lid: archive.history_rows(data_dir, lid) for lid in archive.leagues(data_dir)},
+                     empty_is_partial=False,
+                     count=lambda d: sum(len(v) for v in d.values() if len(v) >= config.ARCHIVE_MIN_MATCHES))
+    for lid, rows in (arch or {}).items():
+        if len(rows) >= config.ARCHIVE_MIN_MATCHES:
+            cands.setdefault(lid, []).append(("arşiv", rows))
+    if arch:
+        small = {lid: len(v) for lid, v in arch.items() if len(v) < config.ARCHIVE_MIN_MATCHES}
+        if small:
+            board.note("archive_history", "Henüz eşik altında: " + ", ".join(
+                f"{k} {v}/{config.ARCHIVE_MIN_MATCHES}" for k, v in sorted(small.items())))
     got = board.run("api_football_history", "API-Football geçmiş (1. Lig vb., anahtar gerekir)",
                     lambda: api_football.history(client, today),
                     count=lambda d: sum(len(v) for v in d.values()))
-    return got or {}
+    for lid, rows in (got or {}).items():
+        cands.setdefault(lid, []).append(("api-football", rows))
+    return {lid: max(lst, key=lambda x: len(x[1]))[1] for lid, lst in cands.items()}
 
 
 def rss_news(client, board, fixtures) -> dict:

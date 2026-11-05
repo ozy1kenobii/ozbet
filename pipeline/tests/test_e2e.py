@@ -115,6 +115,7 @@ def test_full_run(tmp_path, monkeypatch):
          "published": "2026-11-05T10:00:00+03:00", "tags": ["sakat"]}], "coach_change": False},
         "fenerbahce": {"items": [], "coach_change": True}}, "fetched_at": "t", "feeds_ok": 1, "feeds_failed": []}
     monkeypatch.setattr(news_rss, "collect", lambda c, f, now=None: fake_news)
+    monkeypatch.setattr(registry, "ELO_SOURCES", [])
     fake_pred = [Prediction("forebet", "Galatasaray", "Fenerbahce", "2026-11-05", "t",
                             {"1X2": "1", "OU25": "O2.5", "BTTS": "BTTS_Y"}),
                  Prediction("sportytrader", "Galatasaray", "Fenerbahçe SK", "2026-11-05", "t",

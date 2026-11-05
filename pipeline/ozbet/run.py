@@ -18,7 +18,7 @@ from . import config
 from .agents import bulletin, commentator, consensus, market, scorecard, simulation, squad, stats, value
 from .http import PoliteClient
 from .sources import football_data as fd
-from .sources import news_rss, registry
+from .sources import archive, news_rss, registry
 from .sources.base import Fixture, StatusBoard, now_iso
 from .teams import TeamMatcher, team_key
 
@@ -26,6 +26,8 @@ log = logging.getLogger("ozbet.run")
 MAX_OTHER = 150   # öncelikli liglerin dışındaki maçlar için üst sınır
 STALE = "Önceki çalıştırmadan (kaynak güncellenemedi)"
 STARTED = "Maç başladı/bitti – son bülten verisi"
+CUP_FLAG = "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez"
+CUP_FLAG_ELO = "Kupa: Elo tabanlı lig-arası düzeltme"
 
 
 # ---------------- yardımcılar ----------------
@@ -46,7 +48,7 @@ def _write(p: Path, obj):
 DEBUG_HOSTS = {"flashscore": "flashscore", "flashscore_results": "flashscore", "forebet": "forebet",
                "sportytrader": "sportytrader", "freesupertips": "freesupertips", "soccerstats": "soccerstats",
                "understat": "understat", "transfermarkt": "transfermarkt", "nesine": "nesine", "iddaa": "iddaa",
-               "football_data_fixtures": "football-data"}
+               "football_data_fixtures": "football-data", "clubelo": "clubelo", "soccerstats_tr2": "soccerstats"}
 
 
 def dump_debug(client, board):
@@ -230,8 +232,20 @@ def main(argv=None):
         attach_xg(hist, xg_rows)
     except Exception as e:  # noqa: BLE001
         log.warning("xG iliştirme hatası: %s", e)
+    # Dünün (ve kaçırılan son 7 günün) sonuçlarını birikimli arşive ekle — extra_history bunu okur
+    for src in registry.RESULT_SOURCES:
+        if src.archive_feed:
+            board.run(f"{src.id}_archive", f"Birikimli sonuç arşivi ({src.name} → data/archive)",
+                      lambda s=src: archive.update(data, today, lambda d: s.archive_feed(client, d)),
+                      empty_is_partial=False, count=lambda d: sum(d.values()))
     for lid, rows in registry.extra_history(client, board, today).items():
         hist.setdefault(lid, rows)
+    # ClubElo: günde 1 istek; yoksa simülasyon lig gücü katsayısına düşer
+    elo_table = None
+    for src in registry.ELO_SOURCES:
+        elo_table = board.run(src.id, src.name, lambda s=src: s.elo(client, today))
+        if elo_table:
+            break
 
     # 3) Modeller
     models = {}
@@ -322,8 +336,10 @@ def main(argv=None):
                     m["stats"] = {"home": stats.team_stats(rows_l, th, today, "home"),
                                   "away": stats.team_stats(rows_l, ta, today, "away"),
                                   "h2h": stats.h2h(rows_l, th, ta, today)}
-                    m["provenance"]["stats"] = {"source": "football-data.co.uk" + (" + xG" if M.xg else ""),
-                                                "t": board.items["football_data_history"].fetched_at}
+                    src_name = (rows_l[-1].get("src") or "football-data.co.uk") if rows_l else "football-data.co.uk"
+                    st_item = board.items.get("football_data_history")
+                    m["provenance"]["stats"] = {"source": src_name + (" + xG" if M.xg else ""),
+                                                "t": st_item.fetched_at if st_item else now_iso()}
             m.setdefault("stats", None)
             # haberler (RSS) — yorumdan önce
             attach_news(m, f, rss)
@@ -331,9 +347,18 @@ def main(argv=None):
             m["squad"] = squad.build(f.home, f.away, f.kickoff, f.league_id, news, all_fx)
             if m["squad"]:
                 m["provenance"]["squad"] = {"source": m["squad"]["source"] or "takvim", "t": m["squad"]["fetched_at"]}
+            # Elo (ClubElo) — veri varsa her maça
+            elo = None
+            if elo_table:
+                try:
+                    elo = elo_table.pair(f.home, f.away, None if (not lg or lg.cup) else f.league_id)
+                except Exception as e:  # noqa: BLE001
+                    log.info("Elo eşleme %s: %s", mid, e)
+            if elo:
+                m["elo"] = {k: elo[k] for k in ("home", "away", "source", "date")}
             # model
             try:
-                m["model"] = simulation.predict(f.home, f.away, f.league_id, models, m["squad"], mid)
+                m["model"] = simulation.predict(f.home, f.away, f.league_id, models, m["squad"], mid, elo=elo)
             except Exception as e:  # noqa: BLE001
                 log.warning("Simülasyon %s: %s", mid, e); m["model"] = None
             if m["model"]:
@@ -355,7 +380,7 @@ def main(argv=None):
                 m["flags"].append("Model-piyasa farkı çok büyük (veri hatası olabilir)")
             cup = bool(lg and lg.cup) or not lg
             if cup and m["model"]:
-                m["flags"].append("Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez")
+                m["flags"].append(CUP_FLAG_ELO if m["model"].get("method") == "elo" else CUP_FLAG)
             m["value"] = [] if cup else value.find_value((m["model"] or {}).get("probs"), m["odds"], (mk or {}).get("implied"), trust)
             commentator.annotate(m, trust, use_llm=not args.no_llm and lg is not None)
             if f.result:

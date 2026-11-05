@@ -181,3 +181,12 @@ def team_news(client: PoliteClient, day: date, fixtures_today: list[Fixture]) ->
                 log.info("flashscore eksik oyuncu %s: %s", url, e)
         br.close()
     return out
+
+
+def finished(client: PoliteClient, day: date) -> list[Fixture]:
+    """Birikimli sonuç arşivi için: o günün biten maçları (lig kimliği league_for ile). Feed en fazla 7 gün geri gider."""
+    offset = (day - datetime.now(config.TZ).date()).days
+    if offset < -7 or offset >= 0:
+        return []
+    fx = parse_feed(_feed(client, offset, ttl=6 * 3600), now_iso())
+    return [f for f in fx if f.result and f.kickoff.date() == day]
