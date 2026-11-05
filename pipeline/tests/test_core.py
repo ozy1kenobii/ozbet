@@ -223,3 +223,10 @@ def test_value_blend_weight(monkeypatch):
     assert value.find_value({"1": imp["1"] + 0.10, "X": 0.2, "2": 0.2}, odds, imp) == []
     v = value.find_value({"1": imp["1"] + 0.15, "X": 0.2, "2": 0.2}, odds, imp)
     assert v and abs(v[0]["edge"] - 0.06) < 1e-3
+
+
+def test_merge_carries_source_ids():
+    a = _fx("Fenerbahçe", "Beşiktaş", lid="TR1")
+    b = _fx("Fenerbahce", "Besiktas", src="flashscore")
+    b.extra["flashscore_id"] = "abc"
+    assert merge([a], [b])[0].extra["flashscore_id"] == "abc"

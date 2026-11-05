@@ -74,6 +74,9 @@ def merge(primary: list[Fixture], *others: list[Fixture]) -> list[Fixture]:
             if f.result and not hit.result:
                 hit.result, hit.status = f.result, f.status
             hit.extra.setdefault("also_in", []).append(f.source)
+            for k, v in f.extra.items():          # ör. flashscore_id → eksik oyuncu sayfası için gerekli
+                if k.endswith("_id") and v is not None:
+                    hit.extra.setdefault(k, v)
     return out
 
 

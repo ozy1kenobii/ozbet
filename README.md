@@ -82,16 +82,16 @@ etiketlerinde geçmişte kâr üretmedi (ROI −%4 … −%14). Bu yüzden:
 
 | Kaynak | Rol | Durum / not |
 |---|---|---|
-| **Nesine** bülten JSON | iddaa maç kodu, MBS, oranlar | Herkese açık JSON; günde 3 istek. Sonuç uç noktası yok. |
-| **iddaa.com** sportsbookv2 (eklendi) | Resmi bülten, oran, MBS | Anahtarsız resmi API. Nesine düşerse yerine geçer. |
-| **football-data.co.uk** (eklendi) | Geçmiş sonuçlar, şut/korner/kart, açılış ve kapanış oranları; fixtures.csv oran yedeği | Model eğitimi ve backtest'in omurgası. Site verinin kişisel kullanım için olduğunu belirtir; günde en fazla birkaç dosya iner, önbelleklenir, ham veri yeniden yayınlanmaz. |
-| **Flashscore** | Fikstür, dünün sonuçları, eksik oyuncular (Playwright) | `x-fsign` başlığı değişebilir → `FLASHSCORE_FSIGN` ortam değişkeniyle güncellenir. Eksik oyuncu sayfa yapısı belgelenmemiş. |
-| **SoccerStats** | Ü2,5 % ve KG % eğilimleri (konsensüse "istatistik oyu") | Tablo başlığına göre okunur. |
-| **Forebet** | Matematiksel tahmin | **Engelli:** Cloudflare bot koruması GitHub Actions isteklerini reddediyor (HTTP 403). Koruma aşılmaya çalışılmaz; kaynak "eksik" görünür. |
-| **SportyTrader** | Uzman tahmini (metinden market çıkarımı) | Günde en fazla 20 maç sayfası. |
-| **FreeSuperTips** | İpucu | Süper Lig kapsamı zayıf, çoğunlukla büyük ligler/UEFA. |
-| **Understat** (eklendi) | xG (5 büyük lig) | Süper Lig yok. 5 Kasım 2026'da site bakımdaydı. |
-| **Transfermarkt** (eklendi) | Sakatlık listesi | DataDome GitHub Actions IP'lerini sık engelliyor → çoğunlukla "eksik" görünecek. |
+| **Nesine** bülten JSON | iddaa maç kodu, MBS, oranlar | ✅ Canlıda çalışıyor (5 Kasım: ~1.100 maç). Sonuç uç noktası yok. |
+| **iddaa.com** sportsbookv2 (eklendi) | Resmi bülten, oran, MBS | ✅ Canlıda çalışıyor. Nesine düşerse yerine geçer. |
+| **football-data.co.uk** (eklendi) | Geçmiş sonuçlar, şut/korner/kart, açılış ve kapanış oranları; fixtures.csv oran yedeği | ✅ Çalışıyor (12.475 geçmiş maç). Model eğitimi ve backtest'in omurgası. Site verinin kişisel kullanım için olduğunu belirtir; günde en fazla birkaç dosya iner, önbelleklenir, ham veri yeniden yayınlanmaz. |
+| **Flashscore** | Fikstür, dünün sonuçları, eksik oyuncular (Playwright) | ✅ Fikstür ve sonuçlar çalışıyor (feed sunucusu `global.flashscore.ninja/10`, anahtar engellenirse Playwright ile otomatik keşfedilir). ⚠️ Eksik oyuncu bölümü henüz canlıda doğrulanmadı. |
+| **SoccerStats** | Ü2,5 % ve KG % eğilimleri (konsensüse "istatistik oyu") | ⏳ Yalnızca kapsadığı liglerde maç olan günlerde çalışır; ilk Süper Lig gününde doğrulanacak. |
+| **Forebet** | Matematiksel tahmin | ❌ **Engelli:** Cloudflare bot koruması GitHub Actions isteklerini reddediyor (HTTP 403). Koruma aşılmaya çalışılmaz; kaynak "eksik" görünür. |
+| **SportyTrader** | Uzman tahmini (metinden market çıkarımı) | ✅ Çalışıyor (günde en fazla 20 maç sayfası). |
+| **FreeSuperTips** | İpucu | ✅ Çalışıyor. Süper Lig kapsamı zayıf, çoğunlukla büyük ligler/UEFA. |
+| **Understat** (eklendi) | xG (5 büyük lig) | ❌ Site bakımda (5 Kasım 2026); açılınca kendiliğinden devreye girer. Süper Lig'i kapsamaz. |
+| **Transfermarkt** (eklendi) | Sakatlık listesi | ⏳ İlk büyük lig gününde denenecek; DataDome GitHub Actions IP'lerini sık engelliyor. |
 | **API-Football** (eklendi) | Yedek | Ücretsiz katman **güncel sezonu vermiyor** (yalnız 2022-2024) → pratikte yalnızca anahtar + ücretli plan ile işe yarar. |
 | football-data.org | — | Ücretsiz katmanda Süper Lig yok; eklenmedi. |
 
