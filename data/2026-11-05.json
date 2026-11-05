@@ -1,14 +1,14 @@
 {
  "schema_version": 1,
  "date": "2026-11-05",
- "generated_at": "2026-11-05T15:35:31+03:00",
+ "generated_at": "2026-11-05T15:43:25+03:00",
  "run_label": "13:30",
  "sources": [
   {
    "id": "nesine",
    "name": "Nesine iddaa bülteni (kod, MBS, oran)",
    "status": "ok",
-   "fetched_at": "2026-11-05T15:34:56+03:00",
+   "fetched_at": "2026-11-05T15:43:06+03:00",
    "note": null,
    "items": 1104
   },
@@ -16,23 +16,23 @@
    "id": "iddaa",
    "name": "iddaa.com resmi bülten (oran, MBS)",
    "status": "ok",
-   "fetched_at": "2026-11-05T15:34:59+03:00",
+   "fetched_at": "2026-11-05T15:43:07+03:00",
    "note": null,
    "items": 1108
   },
   {
    "id": "flashscore",
    "name": "Flashscore (fikstür)",
-   "status": "missing",
-   "fetched_at": "2026-11-05T15:35:14+03:00",
-   "note": "RuntimeError: flashscore feed boş ('0') – x-fsign geçersiz olabilir",
-   "items": 0
+   "status": "ok",
+   "fetched_at": "2026-11-05T15:43:08+03:00",
+   "note": null,
+   "items": 175
   },
   {
    "id": "api_football",
    "name": "API-Football (yedek, anahtar gerekir)",
    "status": "partial",
-   "fetched_at": "2026-11-05T15:35:14+03:00",
+   "fetched_at": "2026-11-05T15:43:08+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -40,7 +40,7 @@
    "id": "football_data_fixtures",
    "name": "football-data.co.uk fixtures.csv (oran yedeği)",
    "status": "partial",
-   "fetched_at": "2026-11-05T15:35:15+03:00",
+   "fetched_at": "2026-11-05T15:43:08+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -48,7 +48,7 @@
    "id": "football_data_history",
    "name": "football-data.co.uk (geçmiş sonuçlar + oranlar)",
    "status": "ok",
-   "fetched_at": "2026-11-05T15:35:26+03:00",
+   "fetched_at": "2026-11-05T15:43:20+03:00",
    "note": null,
    "items": 12475
   },
@@ -56,7 +56,7 @@
    "id": "understat",
    "name": "Understat (xG, 5 büyük lig)",
    "status": "missing",
-   "fetched_at": "2026-11-05T15:35:26+03:00",
+   "fetched_at": "2026-11-05T15:43:20+03:00",
    "note": "RuntimeError: understat bakımda",
    "items": 0
   },
@@ -64,7 +64,7 @@
    "id": "api_football_history",
    "name": "API-Football geçmiş (1. Lig vb., anahtar gerekir)",
    "status": "partial",
-   "fetched_at": "2026-11-05T15:35:26+03:00",
+   "fetched_at": "2026-11-05T15:43:20+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -72,7 +72,7 @@
    "id": "flashscore_news",
    "name": "Flashscore (sakat/cezalı)",
    "status": "partial",
-   "fetched_at": "2026-11-05T15:35:26+03:00",
+   "fetched_at": "2026-11-05T15:43:21+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -80,7 +80,7 @@
    "id": "transfermarkt",
    "name": "Transfermarkt (sakatlık listesi)",
    "status": "partial",
-   "fetched_at": "2026-11-05T15:35:26+03:00",
+   "fetched_at": "2026-11-05T15:43:21+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -88,7 +88,7 @@
    "id": "forebet",
    "name": "Forebet (matematiksel tahmin)",
    "status": "missing",
-   "fetched_at": "2026-11-05T15:35:27+03:00",
+   "fetched_at": "2026-11-05T15:43:21+03:00",
    "note": "Blocked: Forebet bot koruması (Cloudflare) erişimi engelliyor: HTTP 403: https://www.forebet.com/en/football-tips-and-predictions-for-today",
    "items": 0
   },
@@ -96,7 +96,7 @@
    "id": "sportytrader",
    "name": "SportyTrader (uzman tahmini)",
    "status": "ok",
-   "fetched_at": "2026-11-05T15:35:29+03:00",
+   "fetched_at": "2026-11-05T15:43:23+03:00",
    "note": null,
    "items": 13
   },
@@ -104,7 +104,7 @@
    "id": "freesupertips",
    "name": "FreeSuperTips (ipucu)",
    "status": "ok",
-   "fetched_at": "2026-11-05T15:35:29+03:00",
+   "fetched_at": "2026-11-05T15:43:23+03:00",
    "note": null,
    "items": 15
   },
@@ -112,7 +112,7 @@
    "id": "soccerstats",
    "name": "SoccerStats (lig istatistik eğilimi)",
    "status": "partial",
-   "fetched_at": "2026-11-05T15:35:29+03:00",
+   "fetched_at": "2026-11-05T15:43:23+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -120,7 +120,7 @@
    "id": "nesine_results",
    "name": "Nesine (sonuçlar)",
    "status": "partial",
-   "fetched_at": "2026-11-05T15:35:30+03:00",
+   "fetched_at": "2026-11-05T15:43:24+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -128,7 +128,7 @@
    "id": "flashscore_results",
    "name": "Flashscore (sonuçlar)",
    "status": "ok",
-   "fetched_at": "2026-11-05T15:35:30+03:00",
+   "fetched_at": "2026-11-05T15:43:24+03:00",
    "note": null,
    "items": 268
   },
@@ -136,7 +136,7 @@
    "id": "pipeline",
    "name": "OZBET işleme",
    "status": "ok",
-   "fetched_at": "2026-11-05T15:35:31+03:00",
+   "fetched_at": "2026-11-05T15:43:25+03:00",
    "note": "Eşlenemeyen lig adları (ilk 15): Arjantin Primera A Kapanış, Kadınlar, Arjantin Primera LPF, Kapanış, Botsvana Premier Ligi, Fransa Ulusal Lig, Hindistan Süper Ligi, Irak Ligi, Katar 2. Lig, Mısır Kupası, Romanya 2. Lig, Ruanda Ulusal Lig, SAFF Şampiyonası, A Grubu, Senegal Premier Lig, UEFA Avrupa Ligi Günlük Bahisler, UEFA Konf. Ligi Günlük Bahisler, Uganda Premier Ligi",
    "items": 82
   }
@@ -184,11 +184,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -308,15 +308,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-05T15:35:27+03:00"
+     "t": "2026-11-05T15:43:21+03:00"
     }
    },
    "odds": {
@@ -399,7 +399,7 @@
        "OU25": "O2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T15:35:27+03:00",
+      "fetched_at": "2026-11-05T15:43:21+03:00",
       "note": "Over 2.5 goals"
      },
      {
@@ -454,19 +454,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T15:35:30+03:00"
+     "t": "2026-11-05T15:43:25+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T15:35:29+03:00"
+     "t": "2026-11-05T15:43:23+03:00"
     }
    },
    "odds": {
@@ -669,7 +669,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T15:35:29+03:00",
+      "fetched_at": "2026-11-05T15:43:23+03:00",
       "note": "Crystal Palace to Win; Crystal Palace 3-1"
      },
      {
@@ -759,11 +759,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -874,15 +874,15 @@
    "provenance": {
     "fixture": {
      "source": "iddaa.com",
-     "t": "2026-11-05T15:34:56+03:00"
+     "t": "2026-11-05T15:43:06+03:00"
     },
     "odds": {
      "source": "iddaa.com",
-     "t": "2026-11-05T15:34:56+03:00"
+     "t": "2026-11-05T15:43:06+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-05T15:35:27+03:00"
+     "t": "2026-11-05T15:43:21+03:00"
     }
    },
    "odds": {
@@ -965,7 +965,7 @@
        "OU25": "U2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T15:35:27+03:00",
+      "fetched_at": "2026-11-05T15:43:21+03:00",
       "note": "Under 2.5 goals"
      },
      {
@@ -1020,15 +1020,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-05T15:35:27+03:00"
+     "t": "2026-11-05T15:43:21+03:00"
     }
    },
    "odds": {
@@ -1111,7 +1111,7 @@
        "OU25": "O2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T15:35:27+03:00",
+      "fetched_at": "2026-11-05T15:43:21+03:00",
       "note": "Over 2.5 goals"
      },
      {
@@ -1166,11 +1166,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -1287,19 +1287,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T15:35:30+03:00"
+     "t": "2026-11-05T15:43:25+03:00"
     },
     "predictions": {
      "source": "sportytrader, freesupertips",
-     "t": "2026-11-05T15:35:27+03:00"
+     "t": "2026-11-05T15:43:21+03:00"
     }
    },
    "odds": {
@@ -1496,7 +1496,7 @@
        "OU25": "O2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T15:35:27+03:00",
+      "fetched_at": "2026-11-05T15:43:21+03:00",
       "note": "Over 2.5 goals"
      },
      {
@@ -1506,7 +1506,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T15:35:29+03:00",
+      "fetched_at": "2026-11-05T15:43:23+03:00",
       "note": "Over 2.5 Match Goals; Real Sociedad 2-1"
      },
      {
@@ -1596,15 +1596,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T15:35:29+03:00"
+     "t": "2026-11-05T15:43:23+03:00"
     }
    },
    "odds": {
@@ -1687,7 +1687,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T15:35:29+03:00",
+      "fetched_at": "2026-11-05T15:43:23+03:00",
       "note": "AFC Bournemouth To Win To Nil; AFC Bournemouth 2-0"
      },
      {
@@ -1742,19 +1742,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T15:35:30+03:00"
+     "t": "2026-11-05T15:43:25+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T15:35:29+03:00"
+     "t": "2026-11-05T15:43:23+03:00"
     }
    },
    "odds": {
@@ -1961,7 +1961,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T15:35:29+03:00",
+      "fetched_at": "2026-11-05T15:43:23+03:00",
       "note": "Juventus to Win; Juventus 2-0"
      },
      {
@@ -2052,19 +2052,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T15:35:30+03:00"
+     "t": "2026-11-05T15:43:25+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T15:35:29+03:00"
+     "t": "2026-11-05T15:43:23+03:00"
     }
    },
    "odds": {
@@ -2270,7 +2270,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T15:35:29+03:00",
+      "fetched_at": "2026-11-05T15:43:23+03:00",
       "note": "Bayer Leverkusen to Win and Over 2.5 Match Goals; Bayer Leverkusen 3-1"
      },
      {
@@ -2360,11 +2360,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -2461,15 +2461,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T15:35:30+03:00"
+     "t": "2026-11-05T15:43:25+03:00"
     }
    },
    "odds": {
@@ -2744,11 +2744,11 @@
    "provenance": {
     "fixture": {
      "source": "iddaa.com",
-     "t": "2026-11-05T15:34:56+03:00"
+     "t": "2026-11-05T15:43:06+03:00"
     },
     "odds": {
      "source": "iddaa.com",
-     "t": "2026-11-05T15:34:56+03:00"
+     "t": "2026-11-05T15:43:06+03:00"
     }
    },
    "odds": {
@@ -2870,19 +2870,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T15:35:30+03:00"
+     "t": "2026-11-05T15:43:25+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T15:35:29+03:00"
+     "t": "2026-11-05T15:43:23+03:00"
     }
    },
    "odds": {
@@ -3079,7 +3079,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T15:35:29+03:00",
+      "fetched_at": "2026-11-05T15:43:23+03:00",
       "note": "Besiktas to Win; Besiktas 3-1"
      },
      {
@@ -3169,11 +3169,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -3273,11 +3273,11 @@
    "provenance": {
     "fixture": {
      "source": "iddaa.com",
-     "t": "2026-11-05T15:34:56+03:00"
+     "t": "2026-11-05T15:43:06+03:00"
     },
     "odds": {
      "source": "iddaa.com",
-     "t": "2026-11-05T15:34:56+03:00"
+     "t": "2026-11-05T15:43:06+03:00"
     }
    },
    "odds": {
@@ -3379,11 +3379,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -3487,15 +3487,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T15:35:29+03:00"
+     "t": "2026-11-05T15:43:23+03:00"
     }
    },
    "odds": {
@@ -3573,7 +3573,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T15:35:29+03:00",
+      "fetched_at": "2026-11-05T15:43:23+03:00",
       "note": "Both Teams To Score; Sunderland 2-1"
      },
      {
@@ -3635,11 +3635,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -3760,11 +3760,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -3881,11 +3881,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -3989,11 +3989,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -4107,11 +4107,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -4203,15 +4203,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-05T15:35:27+03:00"
+     "t": "2026-11-05T15:43:21+03:00"
     }
    },
    "odds": {
@@ -4290,7 +4290,7 @@
        "OU25": "O2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T15:35:27+03:00",
+      "fetched_at": "2026-11-05T15:43:21+03:00",
       "note": "Over 2.5 goals & BTTS"
      },
      {
@@ -4352,11 +4352,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -4473,15 +4473,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-05T15:35:27+03:00"
+     "t": "2026-11-05T15:43:21+03:00"
     }
    },
    "odds": {
@@ -4559,7 +4559,7 @@
        "OU25": "U2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T15:35:27+03:00",
+      "fetched_at": "2026-11-05T15:43:21+03:00",
       "note": "Under 2.5 goals"
      },
      {
@@ -4614,15 +4614,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T15:35:29+03:00"
+     "t": "2026-11-05T15:43:23+03:00"
     }
    },
    "odds": {
@@ -4707,7 +4707,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T15:35:29+03:00",
+      "fetched_at": "2026-11-05T15:43:23+03:00",
       "note": "Hearts to Win and Over 3.5 Match Goals; Hearts 3-1"
      },
      {
@@ -4769,15 +4769,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T15:35:30+03:00"
+     "t": "2026-11-05T15:43:25+03:00"
     }
    },
    "odds": {
@@ -5059,19 +5059,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T15:35:30+03:00"
+     "t": "2026-11-05T15:43:25+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T15:35:29+03:00"
+     "t": "2026-11-05T15:43:23+03:00"
     }
    },
    "odds": {
@@ -5271,7 +5271,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T15:35:29+03:00",
+      "fetched_at": "2026-11-05T15:43:23+03:00",
       "note": "Brighton to Win and Over 2.5 Match Goals; Brighton 3-0"
      },
      {
@@ -5361,11 +5361,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -5463,11 +5463,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -5571,11 +5571,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -5685,11 +5685,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -5806,11 +5806,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -5915,11 +5915,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -6034,11 +6034,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -6156,11 +6156,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -7158,11 +7158,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -7273,11 +7273,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -7386,11 +7386,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -7486,11 +7486,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -7583,11 +7583,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -7680,11 +7680,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -7796,11 +7796,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -7914,11 +7914,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -8011,11 +8011,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -8120,11 +8120,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -8230,11 +8230,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -8356,11 +8356,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -8467,11 +8467,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -8573,11 +8573,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -8684,11 +8684,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -8796,11 +8796,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -8908,11 +8908,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -9038,11 +9038,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -9136,11 +9136,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -9236,11 +9236,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -9352,11 +9352,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -9465,11 +9465,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -9575,11 +9575,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -9689,11 +9689,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -9801,11 +9801,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -9925,11 +9925,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -10025,11 +10025,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -10132,11 +10132,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -10228,11 +10228,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -10328,11 +10328,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -10413,7 +10413,7 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": null,
@@ -10456,7 +10456,7 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": null,
@@ -10498,11 +10498,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -10607,11 +10607,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -10705,11 +10705,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
@@ -10827,11 +10827,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T15:34:55+03:00"
+     "t": "2026-11-05T15:43:05+03:00"
     }
    },
    "odds": {
