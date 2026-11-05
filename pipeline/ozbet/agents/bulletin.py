@@ -12,7 +12,16 @@ from rapidfuzz import fuzz
 
 from .. import config
 from ..sources.base import Fixture
-from ..teams import _VARIANT_RX, _ascii, normalize, similar, team_key
+from ..teams import _NOISE, _VARIANT_RX, _ascii, normalize, similar, team_key
+
+
+def _lnorm(raw: str) -> str:
+    """Lig adı normalleştirme: takım normalleştirmesinden farkı, sondaki 'B'/'C'/'II' harfini SİLMEMESİ
+    ("Serie B" ≠ "Serie C"). Kadın/altyapı ligleri league_for'da en başta elenir."""
+    s = _ascii(raw).replace("&", " ").replace("'", "").replace(".", ". ")
+    s = _NOISE.sub(" ", s)
+    s = re.sub(r"[^a-z0-9 ]+", " ", s)
+    return re.sub(r"\s+", " ", s).strip()
 
 
 def league_for(raw: str) -> str | None:
@@ -21,24 +30,27 @@ def league_for(raw: str) -> str | None:
     # Altyapı / kadın / rezerv ligleri asla A takım ligine eşlenmez ("Süper Lig Kadınlar", "U19 Ligi")
     if any(rx.search(a) for rx, _ in _VARIANT_RX[:3]):
         return None
-    n = normalize(raw)
+    n = _lnorm(raw)
     if not n:
         return None
     for lg in config.LEAGUES:
         for a in lg.aliases:
-            if normalize(a) == n:
+            if _lnorm(a) == n:
                 return lg.id
     # Yalnızca çok yakın yazımlar; sayı/etiket farkı (ör. "Premier League 2", U21, kadın) asla eşleşmez
     raw_l = raw.lower()
     if re.search(r"(kad[ıi]n|women|u\d\d|gen[çc]|rezerv|reserve|youth|amat[öo]r|2\b|ii\b)", raw_l) and \
-            not any(normalize(a) == n for lg in config.LEAGUES for a in lg.aliases):
+            not any(_lnorm(a) == n for lg in config.LEAGUES for a in lg.aliases):
         return None
     digits = re.findall(r"\d+", n)
     best, score = None, 0
     for lg in config.LEAGUES:
         for a in lg.aliases:
-            na = normalize(a)
+            na = _lnorm(a)
             if re.findall(r"\d+", na) != digits:
+                continue
+            # Tek/iki harflik ayırıcı farkı ("Serie B" ↔ "Serie C", "Lig A" ↔ "Lig B") asla bulanık eşleşmez
+            if any(len(t) <= 2 for t in set(na.split()) ^ set(n.split())):
                 continue
             s = fuzz.ratio(na, n)
             if s > score:

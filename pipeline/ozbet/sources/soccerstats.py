@@ -83,3 +83,94 @@ def predictions(client: PoliteClient, day: date, fixtures=()) -> list[Prediction
     if errors == len(by_league):
         raise RuntimeError("soccerstats: hiçbir lig tablosu okunamadı")
     return out
+
+
+# ---------------- Sonuç geçmişi (football-data.co.uk'ta olmayan ligler, ör. 1. Lig) ----------------
+# Sayfa: results.asp?league=turkey2&pmtype=bydate (içinde bulunulan sezon), results.asp?league=turkey2_{YYYY}
+# (YYYY = sezonun BİTİŞ yılı: turkey2_2026 = 2025/26). robots.txt yalnızca /*/info/ yolunu yasaklıyor (Kasım 2026).
+# Kasım 2026 yapısı (WebFetch ile görüldü): satır başına tarih hücresi "Fri 7 Aug" (yıl yok), maç hücresi
+# "Boluspor vs Manisa FK", skor "1:2", İY "(1:2)"; eski sezon sayfalarında ev | skor | deplasman ayrı hücreler ve İY yok.
+# Ayrıştırıcı hücre metinlerine göre çalışır, sınıf adlarına bağımlı değildir.
+import re as _re
+from datetime import date as _date
+
+_MONTHS = {m: i for i, m in enumerate(("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct",
+                                      "nov", "dec"), 1)}
+_DATE_RX = _re.compile(r"^(?:mon|tue|wed|thu|fri|sat|sun)\w*\.?\s+(\d{1,2})\s+([a-z]{3})\w*$", _re.I)
+_SCORE_RX = _re.compile(r"^(\d{1,2})\s*[:\-]\s*(\d{1,2})$")
+_HT_RX = _re.compile(r"^\(\s*(\d{1,2})\s*[:\-]\s*(\d{1,2})\s*\)$")
+
+
+def _season_start(today: _date) -> int:
+    return today.year if today.month >= 7 else today.year - 1
+
+
+def parse_results(html: str, season_start: int, season: str | None = None) -> list[dict]:
+    """soccerstats sonuç sayfasını football_data.history() satır biçimine çevirir."""
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(html, "lxml")
+    rows, seen = [], set()
+    season = season or f"{season_start % 100:02d}{(season_start + 1) % 100:02d}"
+    for tr in soup.find_all("tr"):
+        if tr.find("tr"):          # iç içe tablo kabı → yalnız en içteki satırlar
+            continue
+        cells = [_re.sub(r"\s+", " ", td.get_text(" ", strip=True)).strip() for td in tr.find_all(["td", "th"])]
+        di = next((i for i, c in enumerate(cells) if _DATE_RX.match(c)), None)
+        si = next((i for i, c in enumerate(cells) if _SCORE_RX.match(c) and (di is None or i > di)), None)
+        if di is None or si is None:
+            continue
+        dm = _DATE_RX.match(cells[di])
+        mon = _MONTHS.get(dm.group(2).lower()[:3])
+        if not mon:
+            continue
+        year = season_start if mon >= 7 else season_start + 1
+        try:
+            d = _date(year, mon, int(dm.group(1)))
+        except ValueError:
+            continue
+        between = [c for c in cells[di + 1:si] if c]
+        vs = next((c for c in between if _re.search(r"\s+vs\.?\s+", c)), None)
+        if vs:
+            home, away = (x.strip() for x in _re.split(r"\s+vs\.?\s+", vs, maxsplit=1))
+        else:
+            after = [c for c in cells[si + 1:] if c]
+            if not between or not after:
+                continue
+            home, away = between[-1], after[0]
+        if not home or not away or _SCORE_RX.match(away):
+            continue
+        sm = _SCORE_RX.match(cells[si])
+        hg, ag = int(sm.group(1)), int(sm.group(2))
+        b = cells[si].split(":")[-1].strip()
+        if hg > 12 or ag > 12 or (len(b) == 2 and b.startswith("0")):   # "19:00"/"12:05" başlama saati, skor değil
+            continue
+        ht = next((_HT_RX.match(c) for c in cells[si + 1:] if _HT_RX.match(c)), None)
+        key = (d, home, away)
+        if key in seen:
+            continue
+        seen.add(key)
+        rows.append({"date": d, "season": season, "home": home, "away": away, "hg": hg, "ag": ag,
+                     "hthg": int(ht.group(1)) if ht else None, "htag": int(ht.group(2)) if ht else None,
+                     "odds_open": {}, "odds_close": {}, "src": "soccerstats"})
+    return rows
+
+
+def results_history(client: PoliteClient, code: str, today: _date, seasons: int = 3) -> list[dict]:
+    """İçinde bulunulan + önceki (seasons-1) sezonun oynanmış maçları. Eski sezonlar 30 gün önbellekte."""
+    start = _season_start(today)
+    out: list[dict] = []
+    errors = []
+    for k in range(seasons):
+        s0 = start - k
+        league = code if k == 0 else f"{code}_{s0 + 1}"
+        try:
+            html = client.get(f"{BASE}/results.asp", params={"league": league, "pmtype": "bydate"},
+                              ttl=12 * 3600 if k == 0 else 30 * 86400)
+        except Exception as e:  # noqa: BLE001 — eski sezon sayfası yoksa diğerleriyle devam
+            errors.append(f"{league}: {type(e).__name__}")
+            continue
+        got = [r for r in parse_results(html, s0) if r["date"] < today]
+        out += got
+    if not out and errors:
+        raise RuntimeError("soccerstats sonuç sayfaları okunamadı: " + "; ".join(errors))
+    return out

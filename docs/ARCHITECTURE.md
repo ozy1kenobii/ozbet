@@ -23,7 +23,8 @@ ozbet/
 │  ├─ scorecard.json         Karne
 │  ├─ status.json            Kaynak durumları
 │  ├─ backtest.json          Backtest raporu
-│  └─ history/               Puanlanmış geçmiş tahminler (YYYY-MM-DD.json)
+│  ├─ history/               Puanlanmış geçmiş tahminler (YYYY-MM-DD.json)
+│  └─ archive/               Birikimli sonuç arşivi (results-{LIG}.json) — model girdisi, frontend okumaz
 └─ .github/workflows/        pipeline.yml (08:30/13:30/18:30 TR) + deploy
 ```
 
@@ -83,7 +84,8 @@ HT/FT anahtarları: `1/1, 1/X, 1/2, X/1, X/X, X/2, 2/1, 2/X, 2/2`
     "top_scores": [ {"score":"1-0","p":0.11} ],
     "score_matrix": [[0.07,0.06,"..."]],   // 6x6, [ev][dep], 0..5
     "total_goals": [0.07,0.19,0.26,0.22,0.14,0.07,0.05],   // 0..5, son eleman 6+
-    "data_quality": "high|medium|low",
+    "data_quality": "high|medium|low",   // Elo'lu çapraz lig/kupa maçı: "medium"
+    "method": "league|elo|league_strength", // lig modeli | Elo tabanlı lig-arası | yedek lig gücü katsayısı
     "notes": ["xG harmanı kullanıldı"]
   },                                     // veri yoksa null
   "stats": {
@@ -108,10 +110,37 @@ HT/FT anahtarları: `1/1, 1/X, 1/2, X/1, X/X, X/2, 2/1, 2/X, 2/2`
   "pick": {"market":"O2.5","label":"2.5 Üst","p":0.58,"odds":1.80,"stars":3,"is_value":true},   // veya null
   "comment": "Türkçe 4-6 cümle",
   "comment_source": "kural|llm",
+  "elo": {"home":1850, "away":1720, "source":"clubelo", "date":"2026-11-05"},   // ClubElo'da iki takım da bulunursa; yoksa anahtar yok
   "flags": ["Düşük veri", "Oran yok"],
   "provenance": { "odds": {"source":"nesine","t":"..."}, "stats": {"source":"football-data.co.uk","t":"..."} }
 }
 ```
+
+### Kupa / çapraz lig maçları (Elo tabanlı düzeltme)
+`agents/simulation.py`: kupa maçında takımlar farklı lig modellerindeyse (ya da biri hiç modelde yoksa) ve
+ClubElo puanı varsa:
+1. `We = 1/(1+10^(-(Elo_ev + HFA - Elo_dep)/400))`, `HFA = config.ELO_HFA = 63` (tarafsız sahada 0).
+2. Toplam gol `T`: iki takımın kendi lig modellerinden, ortalama rakibe karşı `e^(μ+a) + e^(μ+d)` ortalaması
+   (ikisi de modelde yoksa `ELO_DEFAULT_TOTAL = 2,6`).
+3. `λ_ev + λ_dep = T` kısıtıyla Dixon-Coles skor matrisinde `P(1) + ½P(X) = We` olacak gol farkı ikiye bölmeyle çözülür.
+
+Bayrak: `"Kupa: Elo tabanlı lig-arası düzeltme"` (Elo yoksa eski `"Kupa/çapraz lig: model düşük güvenli, değer etiketi
+verilmez"`). Her iki durumda da kupada değer etiketi verilmez, yıldız ≤ 2. Elo yoksa eski `LEAGUE_STRENGTH` yolu çalışır.
+
+## data/archive/results-{LIG}.json (birikimli sonuç arşivi)
+Her çalıştırmada flashscore sonuç feed'inden dünün (ve işlenmemiş son 7 günün) biten maçları, `league_for` ile
+belirlenen lige eklenir. Kupa, eşlenemeyen, kadın/altyapı ligleri girmez. Tekrar yok (tarih + takım anahtarı + flashscore id).
+```jsonc
+{
+  "league": "TR2", "updated_at": "2026-11-06T08:31:00+03:00",
+  "days": ["2026-11-05"],                    // işlenmiş feed günleri
+  "rows": [ {"date":"2026-11-05","home":"Boluspor","away":"Manisa FK","ft":[1,2],"ht":[1,0],
+             "src":"flashscore","fs_id":"abc123"} ]   // ht yoksa null
+}
+```
+`registry.extra_history`, football-data.co.uk'ta olmayan ligler için kaynak adaylarını toplar
+(soccerstats sonuç sayfası, ≥ `ARCHIVE_MIN_MATCHES = 60` maçlı arşiv, API-Football) ve takım adı yazımları karışmasın
+diye lig başına **en çok satırı olan tek kaynağı** seçer. Ana ligler (football-data.co.uk) her zaman önceliklidir.
 
 ## data/scorecard.json
 ```jsonc

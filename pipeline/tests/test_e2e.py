@@ -109,6 +109,7 @@ def test_full_run(tmp_path, monkeypatch):
     monkeypatch.setattr(registry, "NEWS_SOURCES", [])
     monkeypatch.setattr(registry, "RESULT_SOURCES", [])
     monkeypatch.setattr(registry, "extra_history", lambda c, b, t: {})
+    monkeypatch.setattr(registry, "ELO_SOURCES", [])
     fake_pred = [Prediction("forebet", "Galatasaray", "Fenerbahce", "2026-11-05", "t",
                             {"1X2": "1", "OU25": "O2.5", "BTTS": "BTTS_Y"}),
                  Prediction("sportytrader", "Galatasaray", "Fenerbahçe SK", "2026-11-05", "t",

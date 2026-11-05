@@ -57,7 +57,9 @@ data/          pipeline çıktısı (Actions commit eder)
 - **Zaman ağırlıklı Dixon-Coles** (ξ = 0,0019/gün ≈ 1 yıl yarı ömür), lig başına, son 3 sezon football-data.co.uk sonuçlarıyla.
 - **xG harmanı** (5 büyük lig, understat erişilebilirse): λ = 0,65·λ_gol + 0,35·λ_xG.
 - **İç saha avantajı** lig bazında tahmin edilir; **kadro düzeltmesi**: kilit eksik başına kendi λ × 0,94, rotasyon riski × 0,97.
-- **Avrupa kupaları**: takımlar kendi liglerinden bulunur, yaklaşık lig gücü katsayısıyla düzeltilir (güven "orta/düşük").
+- **Avrupa kupaları**: takımlar kendi liglerinden bulunur; ClubElo puanı varsa kazanma beklentisi Elo farkından
+  (iç saha +63), toplam gol iki takımın lig modellerinden alınır ve λ'lar bu iki değerden çözülür (güven "orta").
+  Elo yoksa yaklaşık lig gücü katsayısı kullanılır. Kupada değer etiketi verilmez.
 - **10.000 Monte Carlo** simülasyonu (iki yarı ayrı, Dixon-Coles τ önem ağırlığı): 1/X/2, Ü/A 1,5-2,5-3,5, KG, İY/MS, en olası 5 skor, toplam gol dağılımı.
 - **Değer**: model olasılığı − marjı temizlenmiş ima olasılığı ≥ %5 → "Değerli". Fark %20'yi aşarsa bu muhtemelen veri/eşleme hatasıdır: değer etiketi verilmez, uyarı konur, yıldız ≤ 2.
 - **Karne geri beslemesi**: son 90 günde bir markette isabet, modelin beklediğinin altında kalırsa (≥ 20 tahmin) o marketin model olasılığı piyasaya doğru büzülür ve yıldızı düşer.
@@ -94,6 +96,9 @@ etiketlerinde geçmişte kâr üretmedi (ROI −%4 … −%14). Bu yüzden:
 | **Transfermarkt** (eklendi) | Sakatlık listesi | ⏳ İlk büyük lig gününde denenecek; DataDome GitHub Actions IP'lerini sık engelliyor. |
 | **API-Football** (eklendi) | Yedek | Ücretsiz katman **güncel sezonu vermiyor** (yalnız 2022-2024) → pratikte yalnızca anahtar + ücretli plan ile işe yarar. |
 | football-data.org | — | Ücretsiz katmanda Süper Lig yok; eklenmedi. |
+| **ClubElo** (`api.clubelo.com/{tarih}`, eklendi) | Kulüp Elo puanları → Avrupa kupası / çapraz lig maçlarında λ düzeltmesi; maç kartında `elo` | ⏳ **Canlıda doğrulanmadı.** CSV biçimi açık kaynak kütüphanelerin (soccerdata, penaltyblog) belgelerinden alındı; bu ortamdan siteye erişilemedi. Günde 1 istek, 24 saat önbellek. robots.txt izin vermezse kaynak "eksik" görünür ve model eski lig gücü katsayısına döner. |
+| **SoccerStats sonuçlar** (`results.asp?league=turkey2`, eklendi) | 1. Lig geçmişi (bu sezon + 2 önceki sezon) | ⏳ **Canlıda doğrulanmadı.** robots.txt yalnızca `/*/info/` yasaklıyor; sayfa yapısı WebFetch ile görüldü (bu sezon İY skorlu, eski sezonlar İY'siz). Yapı değişirse "partial" görünür. |
+| **Birikimli sonuç arşivi** (eklendi) | Flashscore'un günlük sonuçlarını `data/archive/results-{LIG}.json`'a ekler; ≥ 60 maç olan lig modele girer | ⏳ İlk günlerde boş; 1. Lig için ~6 hafta içinde eşik dolar. Kendi verimiz, dış bağımlılığı yalnızca flashscore. |
 
 **Her çalıştırmada her kaynağın gerçek durumu** sitedeki *Kaynaklar* sayfasında ve `data/status.json`'da görünür
 (`ok` / `partial` / `missing` + hata notu). Bir kaynak çökerse akış durmaz; maç kartlarında hangi verinin hangi kaynaktan,
@@ -103,9 +108,9 @@ hangi saatte geldiği yazar.
 - Bu ortamdan sitelere erişim yoktu; adapter'lar açık kaynak projelerden doğrulanmış uç noktalara ve seçicilere göre yazıldı
   ve **sahte verilerle** test edildi. **İlk Actions çalıştırmasında** bazı kaynakların `missing/partial` çıkması beklenir;
   Kaynaklar sayfası hangisinin düzeltilmesi gerektiğini gösterir.
-- **1. Lig** geçmiş verisi football-data.co.uk'ta yok; ücretsiz yedek de güncel sezonu vermediği için 1. Lig maçları çoğunlukla
-  "Veri yetersiz" görünecek (oranlar ve bülten yine gösterilir).
-- Avrupa kupası olasılıkları yaklaşık lig gücü katsayılarına dayanır.
+- **1. Lig** geçmiş verisi football-data.co.uk'ta yok; SoccerStats sonuç sayfası (canlıda doğrulanmadı) ve birikimli
+  flashscore arşivi (60 maç eşiği) ile kapatılmaya çalışılıyor. İkisi de yoksa 1. Lig maçları "Veri yetersiz" görünür.
+- Avrupa kupası olasılıkları ClubElo'ya dayanır; Elo'su bulunamayan (adı eşleşmeyen) takımlarda kaba lig gücü katsayısına düşülür.
 
 ---
 

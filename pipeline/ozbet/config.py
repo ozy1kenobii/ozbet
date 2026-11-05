@@ -71,21 +71,46 @@ LEAGUE_BY_ID = {lg.id: lg for lg in LEAGUES}
 
 # Ek (opsiyonel) ligler: bültende varsa ve football-data.co.uk'ta geçmiş verisi varsa modellenir.
 EXTRA_FD_LEAGUES = {
-    "E1": ("ENG2", "Championship", "İngiltere", ("ingiltere championship", "championship")),
-    "D2": ("GER2", "2. Bundesliga", "Almanya", ("almanya 2. bundesliga", "2. bundesliga")),
-    "I2": ("ITA2", "Serie B", "İtalya", ("italya serie b", "serie b")),
-    "SP2": ("ESP2", "La Liga 2", "İspanya", ("ispanya la liga 2", "segunda división", "laliga2")),
-    "F2": ("FRA2", "Ligue 2", "Fransa", ("fransa ligue 2", "ligue 2")),
-    "N1": ("NED1", "Eredivisie", "Hollanda", ("hollanda eredivisie", "eredivisie")),
-    "P1": ("POR1", "Liga Portugal", "Portekiz", ("portekiz liga portugal", "liga portugal", "primeira liga")),
-    "B1": ("BEL1", "Pro League", "Belçika", ("belçika pro league", "jupiler pro league", "pro league")),
-    "SC0": ("SCO1", "Premiership", "İskoçya", ("iskoçya premiership", "scottish premiership")),
-    "G1": ("GRE1", "Super League", "Yunanistan", ("yunanistan süper lig", "greece super league")),
+    # Takma adlar: Nesine "Ülke Lig" (ör. "Romanya 2. Lig", "Fransa Ulusal Lig"), iddaa.com "ülke + yarışma adı".
+    # Rakamlı yazımlar yalnızca aynı rakamla eşleşir (league_for); "Portekiz 2. Lig" POR1'e asla düşmez.
+    # Belirsiz yazımlar (ör. "Hollanda 1. Lig" = Eerste Divisie olabilir, "İngiltere 1. Lig" = League One olabilir) bilerek yok.
+    "E1": ("ENG2", "Championship", "İngiltere", (
+        "ingiltere championship", "championship", "ingiltere şampiyonluk ligi", "ingiltere championship ligi",
+        "efl championship", "ingiltere efl championship", "england championship")),
+    "D2": ("GER2", "2. Bundesliga", "Almanya", (
+        "almanya 2. bundesliga", "2. bundesliga", "almanya bundesliga 2", "germany 2. bundesliga")),
+    "I2": ("ITA2", "Serie B", "İtalya", ("italya serie b", "serie b", "italy serie b")),
+    "SP2": ("ESP2", "La Liga 2", "İspanya", (
+        "ispanya la liga 2", "segunda división", "laliga2", "ispanya laliga 2", "ispanya 2. lig",
+        "ispanya segunda", "ispanya segunda división", "ispanya laliga hypermotion", "spain segunda división")),
+    "F2": ("FRA2", "Ligue 2", "Fransa", ("fransa ligue 2", "ligue 2", "fransa 2. lig", "france ligue 2")),
+    "N1": ("NED1", "Eredivisie", "Hollanda", (
+        "hollanda eredivisie", "eredivisie", "netherlands eredivisie", "hollanda eredivisie ligi")),
+    "P1": ("POR1", "Liga Portugal", "Portekiz", (
+        "portekiz liga portugal", "liga portugal", "primeira liga", "portekiz süper lig", "portekiz 1. lig",
+        "portekiz premier lig", "portekiz primeira liga", "portekiz liga portugal betclic", "liga portugal betclic",
+        "portugal liga portugal")),
+    "B1": ("BEL1", "Pro League", "Belçika", (
+        "belçika pro league", "jupiler pro league", "pro league", "belçika pro lig", "belçika 1. lig",
+        "belçika birinci lig a", "belçika jupiler pro lig", "belçika jupiler lig", "belçika jupiler pro league", "belgium pro league",
+        "belçika first division a")),
+    "SC0": ("SCO1", "Premiership", "İskoçya", (
+        "iskoçya premiership", "scottish premiership", "iskoçya premier lig", "iskoçya premier ligi",
+        "scotland premiership")),
+    "G1": ("GRE1", "Super League", "Yunanistan", (
+        "yunanistan süper lig", "greece super league", "yunanistan süper ligi", "yunanistan super league",
+        "yunanistan super league 1", "greece super league 1")),
 }
 for i, (code, (lid, name, country, al)) in enumerate(EXTRA_FD_LEAGUES.items()):
     lg = League(lid, name, country, 20 + i, fd_code=code, aliases=al)
     LEAGUES.append(lg)
     LEAGUE_BY_ID[lid] = lg
+
+# ClubElo (lig-arası Elo düzeltmesi)
+ELO_HFA = 63.0             # iç saha avantajı (Elo puanı); clubelo.com ülkeye göre ~50-80 arası kullanır
+ELO_DEFAULT_TOTAL = 2.6    # lig modeli olmayan iki takım için varsayılan toplam gol beklentisi
+# Birikimli sonuç arşivi (data/archive/results-{LIG}.json): tek başına modele girmesi için gereken en az maç
+ARCHIVE_MIN_MATCHES = 60
 
 LLM_API_KEY = os.environ.get("LLM_API_KEY") or os.environ.get("ANTHROPIC_API_KEY")
 LLM_MODEL = os.environ.get("LLM_MODEL", "claude-haiku-4-5")

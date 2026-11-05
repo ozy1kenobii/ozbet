@@ -73,7 +73,7 @@ def stars(m: dict, pick: dict, trust: dict[str, float]) -> int:
     s = int(max(1, min(5, round(1 + score))))
     flags = m.get("flags", [])
     if q == "low" or "Lig dışı/düşük kapsam" in flags or any(
-            f.startswith(("Model-piyasa farkı", "Kupa/çapraz lig")) for f in flags):
+            f.startswith(("Model-piyasa farkı", "Kupa/çapraz lig", "Kupa:")) for f in flags):
         s = min(s, 2)
     return s
 
@@ -180,7 +180,7 @@ def annotate(m: dict, trust: dict[str, float], use_llm: bool = True) -> None:
         pick["stars"] = stars(m, pick, trust)
     m["pick"] = pick
     if not m.get("value"):
-        if any(f.startswith("Kupa/çapraz lig") for f in m.get("flags", [])):
+        if any(f.startswith(("Kupa/çapraz lig", "Kupa:")) for f in m.get("flags", [])):
             m["value_note"] = "Kupa maçı – değer etiketi verilmez"
         else:
             m["value_note"] = "Değer yok" if m.get("odds") and m.get("model") else "Oran/model yok – değer hesaplanamadı"
