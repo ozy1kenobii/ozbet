@@ -1,0 +1,112 @@
+{
+ "generated_at": "2026-11-05T12:59:08+03:00",
+ "seasons": [
+  "2425",
+  "2526"
+ ],
+ "train_extra": "2324",
+ "leagues": [
+  "TR1",
+  "ENG1",
+  "ESP1",
+  "ITA1",
+  "GER1",
+  "FRA1"
+ ],
+ "by_league": [
+  {
+   "league": "TR1",
+   "name": "Süper Lig",
+   "n": 620,
+   "model_brier": 0.5785,
+   "market_brier": 0.5566,
+   "model_logloss": 0.9721,
+   "market_logloss": 0.9409,
+   "ou25_model_brier": 0.2417,
+   "ou25_market_brier": 0.2333,
+   "n_value_bets": 650,
+   "roi_value_bets": -0.0984,
+   "avg_clv": -0.0087
+  },
+  {
+   "league": "ENG1",
+   "name": "Premier Lig",
+   "n": 731,
+   "model_brier": 0.5995,
+   "market_brier": 0.592,
+   "model_logloss": 1.0013,
+   "market_logloss": 0.9902,
+   "ou25_model_brier": 0.2495,
+   "ou25_market_brier": 0.2435,
+   "n_value_bets": 681,
+   "roi_value_bets": -0.0653,
+   "avg_clv": -0.0008
+  },
+  {
+   "league": "ESP1",
+   "name": "La Liga",
+   "n": 724,
+   "model_brier": 0.5848,
+   "market_brier": 0.567,
+   "model_logloss": 0.9841,
+   "market_logloss": 0.9585,
+   "ou25_model_brier": 0.2465,
+   "ou25_market_brier": 0.2385,
+   "n_value_bets": 664,
+   "roi_value_bets": -0.1009,
+   "avg_clv": -0.0052
+  },
+  {
+   "league": "ITA1",
+   "name": "Serie A",
+   "n": 728,
+   "model_brier": 0.588,
+   "market_brier": 0.5738,
+   "model_logloss": 0.9836,
+   "market_logloss": 0.9633,
+   "ou25_model_brier": 0.2564,
+   "ou25_market_brier": 0.2483,
+   "n_value_bets": 745,
+   "roi_value_bets": -0.0798,
+   "avg_clv": -0.003
+  },
+  {
+   "league": "GER1",
+   "name": "Bundesliga",
+   "n": 594,
+   "model_brier": 0.5943,
+   "market_brier": 0.5732,
+   "model_logloss": 0.9991,
+   "market_logloss": 0.9655,
+   "ou25_model_brier": 0.2326,
+   "ou25_market_brier": 0.2241,
+   "n_value_bets": 583,
+   "roi_value_bets": -0.1566,
+   "avg_clv": -0.0084
+  },
+  {
+   "league": "FRA1",
+   "name": "Ligue 1",
+   "n": 588,
+   "model_brier": 0.5912,
+   "market_brier": 0.5745,
+   "model_logloss": 0.9909,
+   "market_logloss": 0.9671,
+   "ou25_model_brier": 0.2456,
+   "ou25_market_brier": 0.2367,
+   "n_value_bets": 548,
+   "roi_value_bets": -0.0252,
+   "avg_clv": -0.0063
+  }
+ ],
+ "method": "Haftalık yeniden kurulan zaman ağırlıklı Dixon-Coles; kıyas: marjı temizlenmiş kapanış oranı. Değer bahisleri kapanış öncesi ortalama orandan (Avg) tek birim; CLV = Avg/kapanış − 1.",
+ "summary": {
+  "n": 3985,
+  "model_brier": 0.5895,
+  "market_brier": 0.5732,
+  "model_logloss": 0.9885,
+  "market_logloss": 0.9648,
+  "n_value_bets": 3871,
+  "roi_value_bets": -0.0878
+ }
+}

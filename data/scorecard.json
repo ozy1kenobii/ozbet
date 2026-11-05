@@ -1,0 +1,31 @@
+{
+ "generated_at": "2026-11-05T12:59:07+03:00",
+ "overall": {
+  "n": 0,
+  "hit_rate": null,
+  "avg_p": null,
+  "brier_1x2": null,
+  "staked": 0,
+  "profit": 0,
+  "roi": null,
+  "value_n": 0,
+  "value_roi": null
+ },
+ "last30": {
+  "n": 0,
+  "hit_rate": null,
+  "avg_p": null,
+  "brier_1x2": null,
+  "staked": 0,
+  "profit": 0,
+  "roi": null,
+  "value_n": 0,
+  "value_roi": null
+ },
+ "by_league": [],
+ "by_market": [],
+ "trust": {},
+ "calibration": [],
+ "bankroll": [],
+ "recent": []
+}
