@@ -1,0 +1,56 @@
+{
+  "generated_at": "2026-11-01T03:10:00+03:00",
+  "seasons": [
+    "2024-25",
+    "2025-26"
+  ],
+  "leagues": [
+    "TR1",
+    "ENG1",
+    "ESP1"
+  ],
+  "summary": {
+    "n": 2140,
+    "model_brier": 0.201,
+    "market_brier": 0.197,
+    "model_logloss": 0.992,
+    "market_logloss": 0.981,
+    "roi_value_bets": 0.018,
+    "n_value_bets": 412
+  },
+  "by_league": [
+    {
+      "league": "TR1",
+      "name": "Süper Lig",
+      "n": 612,
+      "model_brier": 0.205,
+      "market_brier": 0.207,
+      "model_logloss": 1.004,
+      "market_logloss": 1.009,
+      "roi_value_bets": 0.041,
+      "n_value_bets": 151
+    },
+    {
+      "league": "ENG1",
+      "name": "Premier Lig",
+      "n": 760,
+      "model_brier": 0.198,
+      "market_brier": 0.192,
+      "model_logloss": 0.981,
+      "market_logloss": 0.968,
+      "roi_value_bets": -0.012,
+      "n_value_bets": 128
+    },
+    {
+      "league": "ESP1",
+      "name": "La Liga",
+      "n": 768,
+      "model_brier": 0.2,
+      "market_brier": 0.195,
+      "model_logloss": 0.99,
+      "market_logloss": 0.974,
+      "roi_value_bets": 0.022,
+      "n_value_bets": 133
+    }
+  ]
+}

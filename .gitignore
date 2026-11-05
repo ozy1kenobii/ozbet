@@ -1,0 +1,9 @@
+node_modules/
+web/dist/
+web/screenshots/
+.cache/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.tmp
+.env

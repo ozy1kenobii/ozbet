@@ -1,0 +1,4197 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "generated_at": "2026-11-05T18:33:05+03:00",
+  "run_label": "18:30",
+  "sources": [
+    {
+      "id": "nesine",
+      "name": "Nesine bülten",
+      "status": "ok",
+      "fetched_at": "2026-11-05T18:31:00+03:00",
+      "note": null
+    },
+    {
+      "id": "iddaa",
+      "name": "iddaa.com",
+      "status": "partial",
+      "fetched_at": "2026-11-05T18:31:20+03:00",
+      "note": "Bazı maçlarda KG oranı yok"
+    },
+    {
+      "id": "football-data",
+      "name": "football-data.co.uk",
+      "status": "ok",
+      "fetched_at": "2026-11-05T08:31:00+03:00",
+      "note": null
+    },
+    {
+      "id": "flashscore",
+      "name": "Flashscore kadro",
+      "status": "ok",
+      "fetched_at": "2026-11-05T18:32:00+03:00",
+      "note": null
+    },
+    {
+      "id": "forebet",
+      "name": "Forebet",
+      "status": "ok",
+      "fetched_at": "2026-11-05T18:32:30+03:00",
+      "note": null
+    },
+    {
+      "id": "sportytrader",
+      "name": "SportyTrader",
+      "status": "ok",
+      "fetched_at": "2026-11-05T18:32:40+03:00",
+      "note": null
+    },
+    {
+      "id": "freesupertips",
+      "name": "FreeSuperTips",
+      "status": "missing",
+      "fetched_at": null,
+      "note": "Zaman aşımı (örnek)"
+    },
+    {
+      "id": "understat",
+      "name": "Understat xG",
+      "status": "ok",
+      "fetched_at": "2026-11-05T08:33:00+03:00",
+      "note": null
+    }
+  ],
+  "leagues": [
+    {
+      "id": "TR1",
+      "name": "Süper Lig",
+      "country": "Türkiye",
+      "priority": 1
+    },
+    {
+      "id": "TR2",
+      "name": "1. Lig",
+      "country": "Türkiye",
+      "priority": 2
+    },
+    {
+      "id": "UCL",
+      "name": "Şampiyonlar Ligi",
+      "country": "Avrupa",
+      "priority": 3
+    },
+    {
+      "id": "ENG1",
+      "name": "Premier Lig",
+      "country": "İngiltere",
+      "priority": 4
+    },
+    {
+      "id": "ESP1",
+      "name": "La Liga",
+      "country": "İspanya",
+      "priority": 5
+    }
+  ],
+  "matches": [
+    {
+      "id": "TR1-20261105-galatasaray-fenerbahce",
+      "code": "1234",
+      "mbs": 1,
+      "league": "TR1",
+      "league_name": "Süper Lig",
+      "league_priority": 1,
+      "kickoff": "2026-11-05T20:00:00+03:00",
+      "home": {
+        "name": "Galatasaray"
+      },
+      "away": {
+        "name": "Fenerbahçe"
+      },
+      "status": "scheduled",
+      "result": null,
+      "odds": {
+        "1": 1.99,
+        "2": 3.82,
+        "X": 3.76,
+        "O2.5": 1.94,
+        "U2.5": 1.94,
+        "BTTS_Y": 2.24,
+        "BTTS_N": 2.06,
+        "O1.5": 1.31,
+        "U1.5": 3.75,
+        "O3.5": 3.08,
+        "U3.5": 1.26
+      },
+      "odds_history": [
+        {
+          "1": 2.17,
+          "2": 3.63,
+          "t": "2026-11-05T08:31:00+03:00",
+          "X": 3.72
+        },
+        {
+          "1": 2.08,
+          "2": 3.72,
+          "t": "2026-11-05T13:31:00+03:00",
+          "X": 3.74
+        },
+        {
+          "1": 1.99,
+          "2": 3.82,
+          "t": "2026-11-05T18:31:00+03:00",
+          "X": 3.76
+        }
+      ],
+      "market": {
+        "implied": {
+          "1": 0.488,
+          "2": 0.254,
+          "X": 0.258,
+          "O2.5": 0.5,
+          "U2.5": 0.5,
+          "BTTS_Y": 0.479,
+          "BTTS_N": 0.521,
+          "O1.5": 0.741,
+          "U1.5": 0.259,
+          "O3.5": 0.29,
+          "U3.5": 0.71
+        },
+        "margin": {
+          "1x2": 0.03,
+          "ou25": 0.031
+        },
+        "movement": {
+          "1": -0.083,
+          "2": 0.052,
+          "X": 0.011
+        },
+        "drop_alarms": [
+          "1"
+        ]
+      },
+      "model": {
+        "lambda_home": 1.62,
+        "lambda_away": 1.08,
+        "sims": 10000,
+        "rho": -0.08,
+        "probs": {
+          "1": 0.49,
+          "2": 0.244,
+          "12": 0.734,
+          "X": 0.266,
+          "1X": 0.756,
+          "X2": 0.51,
+          "O1.5": 0.761,
+          "U1.5": 0.239,
+          "O2.5": 0.506,
+          "U2.5": 0.494,
+          "O3.5": 0.286,
+          "U3.5": 0.714,
+          "BTTS_Y": 0.539,
+          "BTTS_N": 0.461
+        },
+        "htft": {
+          "1/1": 0.289,
+          "1/X": 0.056,
+          "1/2": 0.026,
+          "X/1": 0.192,
+          "X/X": 0.125,
+          "X/2": 0.095,
+          "2/1": 0.022,
+          "2/X": 0.039,
+          "2/2": 0.157
+        },
+        "top_scores": [
+          {
+            "score": "1-1",
+            "p": 0.127
+          },
+          {
+            "score": "1-0",
+            "p": 0.099
+          },
+          {
+            "score": "2-1",
+            "p": 0.095
+          },
+          {
+            "score": "2-0",
+            "p": 0.088
+          },
+          {
+            "score": "0-0",
+            "p": 0.077
+          }
+        ],
+        "score_matrix": [
+          [
+            0.0766,
+            0.0632,
+            0.0392,
+            0.0141,
+            0.0038,
+            0.0008
+          ],
+          [
+            0.0995,
+            0.127,
+            0.0635,
+            0.0229,
+            0.0062,
+            0.0013
+          ],
+          [
+            0.0882,
+            0.0952,
+            0.0514,
+            0.0185,
+            0.005,
+            0.0011
+          ],
+          [
+            0.0476,
+            0.0514,
+            0.0278,
+            0.01,
+            0.0027,
+            0.0006
+          ],
+          [
+            0.0193,
+            0.0208,
+            0.0112,
+            0.004,
+            0.0011,
+            0.0002
+          ],
+          [
+            0.0062,
+            0.0067,
+            0.0036,
+            0.0013,
+            0.0004,
+            0.0001
+          ]
+        ],
+        "total_goals": [
+          0.077,
+          0.163,
+          0.254,
+          0.22,
+          0.149,
+          0.08,
+          0.057
+        ],
+        "data_quality": "high",
+        "notes": [
+          "xG harmanı kullanıldı",
+          "Zaman ağırlıklı Dixon-Coles"
+        ]
+      },
+      "stats": {
+        "home": {
+          "form": [
+            "D",
+            "W",
+            "W",
+            "L",
+            "L"
+          ],
+          "venue_form": [
+            "L",
+            "D",
+            "W",
+            "D",
+            "W"
+          ],
+          "gf_avg": 1.97,
+          "ga_avg": 1.44,
+          "venue_gf_avg": 1.52,
+          "venue_ga_avg": 1.35,
+          "xg_avg": 1.52,
+          "xga_avg": 0.84,
+          "btts_pct": 0.36,
+          "o25_pct": 0.56,
+          "clean_sheets_venue": 4,
+          "venue_n": 6,
+          "corners_avg": 6.5,
+          "cards_avg": 2.5,
+          "n": 10
+        },
+        "away": {
+          "form": [
+            "D",
+            "D",
+            "L",
+            "L",
+            "L"
+          ],
+          "venue_form": [
+            "L",
+            "D",
+            "W",
+            "W",
+            "D"
+          ],
+          "gf_avg": 1.18,
+          "ga_avg": 1.39,
+          "venue_gf_avg": 1.57,
+          "venue_ga_avg": 1.32,
+          "xg_avg": 1.2,
+          "xga_avg": 0.95,
+          "btts_pct": 0.43,
+          "o25_pct": 0.41,
+          "clean_sheets_venue": 1,
+          "venue_n": 6,
+          "corners_avg": 5,
+          "cards_avg": 2.8,
+          "n": 10
+        },
+        "h2h": [
+          {
+            "date": "2026-03-01",
+            "home": "Fenerbahçe",
+            "away": "Galatasaray",
+            "score": "1-1"
+          },
+          {
+            "date": "2025-10-19",
+            "home": "Galatasaray",
+            "away": "Fenerbahçe",
+            "score": "2-0"
+          },
+          {
+            "date": "2025-02-23",
+            "home": "Fenerbahçe",
+            "away": "Galatasaray",
+            "score": "3-2"
+          }
+        ]
+      },
+      "squad": {
+        "home": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu A",
+              "reason": "sakat",
+              "key": true
+            },
+            {
+              "name": "Örnek Oyuncu B",
+              "reason": "şüpheli",
+              "key": false
+            }
+          ],
+          "rotation_risk": false,
+          "coach_change": false,
+          "adjustment": -0.04
+        },
+        "away": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu C",
+              "reason": "cezalı",
+              "key": false
+            }
+          ],
+          "rotation_risk": false,
+          "coach_change": false,
+          "adjustment": 0
+        },
+        "source": "flashscore",
+        "fetched_at": "2026-11-05T18:31:00+03:00"
+      },
+      "consensus": {
+        "sources": [
+          {
+            "source": "forebet",
+            "picks": {
+              "1X2": "1",
+              "OU25": "O2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": {
+              "1": 0.52,
+              "2": 0.23,
+              "X": 0.25
+            },
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "sportytrader",
+            "picks": {
+              "1X2": "1",
+              "OU25": "O2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "freesupertips",
+            "picks": {
+              "1X2": "1",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          }
+        ],
+        "summary": [
+          {
+            "market": "BTTS_Y",
+            "agree": 3,
+            "total": 5,
+            "text": "5 kaynaktan 3'ü KG Var diyor"
+          }
+        ]
+      },
+      "value": [
+        {
+          "market": "BTTS_Y",
+          "model_p": 0.539,
+          "implied_p": 0.479,
+          "odds": 2.24,
+          "edge": 0.06,
+          "ev": 0.207
+        }
+      ],
+      "pick": {
+        "market": "BTTS_Y",
+        "label": "KG Var",
+        "p": 0.539,
+        "odds": 2.24,
+        "stars": 3,
+        "is_value": true
+      },
+      "comment": "ÖRNEK VERİ. Galatasaray iç sahada son maçlarında üretken; model ev sahibi için 1.62, Fenerbahçe için 1.08 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark BTTS_Y marketinde. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
+      "comment_source": "kural",
+      "flags": [],
+      "provenance": {
+        "odds": {
+          "source": "nesine",
+          "t": "2026-11-05T18:31:00+03:00"
+        },
+        "stats": {
+          "source": "football-data.co.uk",
+          "t": "2026-11-05T08:31:00+03:00"
+        },
+        "squad": {
+          "source": "flashscore",
+          "t": "2026-11-05T18:31:00+03:00"
+        }
+      }
+    },
+    {
+      "id": "TR1-20261105-trabzonspor-basaksehir",
+      "code": "1235",
+      "mbs": 1,
+      "league": "TR1",
+      "league_name": "Süper Lig",
+      "league_priority": 1,
+      "kickoff": "2026-11-05T17:00:00+03:00",
+      "home": {
+        "name": "Trabzonspor"
+      },
+      "away": {
+        "name": "Başakşehir"
+      },
+      "status": "scheduled",
+      "result": null,
+      "odds": {
+        "1": 1.96,
+        "2": 3.4,
+        "X": 3.48,
+        "O2.5": 2.05,
+        "U2.5": 1.77,
+        "BTTS_Y": 1.91,
+        "BTTS_N": 2.02,
+        "O1.5": 1.22,
+        "U1.5": 3.61,
+        "O3.5": 3.68,
+        "U3.5": 1.19
+      },
+      "odds_history": [
+        {
+          "1": 2,
+          "2": 3.37,
+          "t": "2026-11-05T08:31:00+03:00",
+          "X": 3.45
+        },
+        {
+          "1": 1.98,
+          "2": 3.39,
+          "t": "2026-11-05T13:31:00+03:00",
+          "X": 3.47
+        },
+        {
+          "1": 1.96,
+          "2": 3.4,
+          "t": "2026-11-05T18:31:00+03:00",
+          "X": 3.48
+        }
+      ],
+      "market": {
+        "implied": {
+          "1": 0.467,
+          "2": 0.269,
+          "X": 0.263,
+          "O2.5": 0.463,
+          "U2.5": 0.537,
+          "BTTS_Y": 0.514,
+          "BTTS_N": 0.486,
+          "O1.5": 0.747,
+          "U1.5": 0.253,
+          "O3.5": 0.244,
+          "U3.5": 0.756
+        },
+        "margin": {
+          "1x2": 0.092,
+          "ou25": 0.053
+        },
+        "movement": {
+          "1": -0.02,
+          "2": 0.009,
+          "X": 0.009
+        },
+        "drop_alarms": []
+      },
+      "model": {
+        "lambda_home": 1.45,
+        "lambda_away": 1.05,
+        "sims": 10000,
+        "rho": -0.08,
+        "probs": {
+          "1": 0.453,
+          "2": 0.264,
+          "12": 0.717,
+          "X": 0.283,
+          "1X": 0.736,
+          "X2": 0.547,
+          "O1.5": 0.723,
+          "U1.5": 0.277,
+          "O2.5": 0.456,
+          "U2.5": 0.544,
+          "O3.5": 0.242,
+          "U3.5": 0.758,
+          "BTTS_Y": 0.508,
+          "BTTS_N": 0.492
+        },
+        "htft": {
+          "1/1": 0.267,
+          "1/X": 0.051,
+          "1/2": 0.024,
+          "X/1": 0.186,
+          "X/X": 0.138,
+          "X/2": 0.109,
+          "2/1": 0.023,
+          "2/X": 0.041,
+          "2/2": 0.162
+        },
+        "top_scores": [
+          {
+            "score": "1-1",
+            "p": 0.135
+          },
+          {
+            "score": "1-0",
+            "p": 0.109
+          },
+          {
+            "score": "0-0",
+            "p": 0.092
+          },
+          {
+            "score": "2-1",
+            "p": 0.091
+          },
+          {
+            "score": "2-0",
+            "p": 0.086
+          }
+        ],
+        "score_matrix": [
+          [
+            0.0921,
+            0.0762,
+            0.0452,
+            0.0158,
+            0.0042,
+            0.0009
+          ],
+          [
+            0.109,
+            0.135,
+            0.0656,
+            0.023,
+            0.006,
+            0.0013
+          ],
+          [
+            0.0863,
+            0.0906,
+            0.0476,
+            0.0166,
+            0.0044,
+            0.0009
+          ],
+          [
+            0.0417,
+            0.0438,
+            0.023,
+            0.008,
+            0.0021,
+            0.0004
+          ],
+          [
+            0.0151,
+            0.0159,
+            0.0083,
+            0.0029,
+            0.0008,
+            0.0002
+          ],
+          [
+            0.0044,
+            0.0046,
+            0.0024,
+            0.0008,
+            0.0002,
+            0
+          ]
+        ],
+        "total_goals": [
+          0.092,
+          0.185,
+          0.267,
+          0.214,
+          0.134,
+          0.067,
+          0.042
+        ],
+        "data_quality": "high",
+        "notes": [
+          "xG harmanı kullanıldı",
+          "Zaman ağırlıklı Dixon-Coles"
+        ]
+      },
+      "stats": {
+        "home": {
+          "form": [
+            "W",
+            "D",
+            "W",
+            "W",
+            "D"
+          ],
+          "venue_form": [
+            "L",
+            "D",
+            "W",
+            "W",
+            "L"
+          ],
+          "gf_avg": 1.93,
+          "ga_avg": 1.44,
+          "venue_gf_avg": 1.96,
+          "venue_ga_avg": 1.36,
+          "xg_avg": 1.49,
+          "xga_avg": 0.91,
+          "btts_pct": 0.39,
+          "o25_pct": 0.56,
+          "clean_sheets_venue": 3,
+          "venue_n": 6,
+          "corners_avg": 7,
+          "cards_avg": 2.1,
+          "n": 10
+        },
+        "away": {
+          "form": [
+            "L",
+            "D",
+            "W",
+            "W",
+            "L"
+          ],
+          "venue_form": [
+            "L",
+            "L",
+            "W",
+            "D",
+            "W"
+          ],
+          "gf_avg": 1.39,
+          "ga_avg": 1.46,
+          "venue_gf_avg": 1.83,
+          "venue_ga_avg": 0.78,
+          "xg_avg": 1.17,
+          "xga_avg": 1.17,
+          "btts_pct": 0.43,
+          "o25_pct": 0.52,
+          "clean_sheets_venue": 0,
+          "venue_n": 6,
+          "corners_avg": 5.9,
+          "cards_avg": 2.1,
+          "n": 10
+        },
+        "h2h": [
+          {
+            "date": "2026-03-01",
+            "home": "Başakşehir",
+            "away": "Trabzonspor",
+            "score": "1-1"
+          },
+          {
+            "date": "2025-10-19",
+            "home": "Trabzonspor",
+            "away": "Başakşehir",
+            "score": "2-0"
+          },
+          {
+            "date": "2025-02-23",
+            "home": "Başakşehir",
+            "away": "Trabzonspor",
+            "score": "3-2"
+          }
+        ]
+      },
+      "squad": {
+        "home": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu A",
+              "reason": "sakat",
+              "key": true
+            },
+            {
+              "name": "Örnek Oyuncu B",
+              "reason": "şüpheli",
+              "key": false
+            }
+          ],
+          "rotation_risk": false,
+          "coach_change": false,
+          "adjustment": -0.04
+        },
+        "away": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu C",
+              "reason": "cezalı",
+              "key": false
+            }
+          ],
+          "rotation_risk": false,
+          "coach_change": false,
+          "adjustment": 0
+        },
+        "source": "flashscore",
+        "fetched_at": "2026-11-05T18:31:00+03:00"
+      },
+      "consensus": {
+        "sources": [
+          {
+            "source": "forebet",
+            "picks": {
+              "1X2": "1",
+              "OU25": "U2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": {
+              "1": 0.48,
+              "2": 0.25,
+              "X": 0.26
+            },
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "sportytrader",
+            "picks": {
+              "1X2": "1",
+              "OU25": "O2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "freesupertips",
+            "picks": {
+              "1X2": "1",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          }
+        ],
+        "summary": [
+          {
+            "market": "BTTS_Y",
+            "agree": 3,
+            "total": 5,
+            "text": "5 kaynaktan 3'ü KG Var diyor"
+          }
+        ]
+      },
+      "value": [],
+      "value_note": "Değer yok",
+      "pick": {
+        "market": "1X",
+        "label": "ÇŞ 1X",
+        "p": 0.736,
+        "odds": 1.29,
+        "stars": 3,
+        "is_value": false
+      },
+      "comment": "ÖRNEK VERİ. Trabzonspor iç sahada son maçlarında üretken; model ev sahibi için 1.45, Başakşehir için 1.05 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
+      "comment_source": "kural",
+      "flags": [],
+      "provenance": {
+        "odds": {
+          "source": "nesine",
+          "t": "2026-11-05T18:31:00+03:00"
+        },
+        "stats": {
+          "source": "football-data.co.uk",
+          "t": "2026-11-05T08:31:00+03:00"
+        },
+        "squad": {
+          "source": "flashscore",
+          "t": "2026-11-05T18:31:00+03:00"
+        }
+      }
+    },
+    {
+      "id": "TR1-20261105-samsunspor-kasimpasa",
+      "code": "1236",
+      "mbs": 2,
+      "league": "TR1",
+      "league_name": "Süper Lig",
+      "league_priority": 1,
+      "kickoff": "2026-11-05T14:30:00+03:00",
+      "home": {
+        "name": "Samsunspor"
+      },
+      "away": {
+        "name": "Kasımpaşa"
+      },
+      "status": "finished",
+      "result": {
+        "ft": [
+          2,
+          1
+        ],
+        "ht": [
+          1,
+          0
+        ]
+      },
+      "odds": {
+        "1": 2.5,
+        "2": 2.81,
+        "X": 3.37,
+        "O2.5": 2.01,
+        "U2.5": 1.72,
+        "BTTS_Y": 1.79,
+        "BTTS_N": 2.04,
+        "O1.5": 1.33,
+        "U1.5": 3.45,
+        "O3.5": 3.67,
+        "U3.5": 1.29
+      },
+      "odds_history": [
+        {
+          "1": 2.55,
+          "2": 2.78,
+          "t": "2026-11-05T08:31:00+03:00",
+          "X": 3.34
+        },
+        {
+          "1": 2.53,
+          "2": 2.8,
+          "t": "2026-11-05T13:31:00+03:00",
+          "X": 3.36
+        },
+        {
+          "1": 2.5,
+          "2": 2.81,
+          "t": "2026-11-05T18:31:00+03:00",
+          "X": 3.37
+        }
+      ],
+      "market": {
+        "implied": {
+          "1": 0.38,
+          "2": 0.338,
+          "X": 0.282,
+          "O2.5": 0.461,
+          "U2.5": 0.539,
+          "BTTS_Y": 0.533,
+          "BTTS_N": 0.467,
+          "O1.5": 0.722,
+          "U1.5": 0.278,
+          "O3.5": 0.26,
+          "U3.5": 0.74
+        },
+        "margin": {
+          "1x2": 0.053,
+          "ou25": 0.079
+        },
+        "movement": {
+          "1": -0.02,
+          "2": 0.011,
+          "X": 0.009
+        },
+        "drop_alarms": []
+      },
+      "model": {
+        "lambda_home": 1.3,
+        "lambda_away": 1.2,
+        "sims": 10000,
+        "rho": -0.08,
+        "probs": {
+          "1": 0.379,
+          "2": 0.331,
+          "12": 0.71,
+          "X": 0.29,
+          "1X": 0.669,
+          "X2": 0.621,
+          "O1.5": 0.723,
+          "U1.5": 0.277,
+          "O2.5": 0.456,
+          "U2.5": 0.544,
+          "O3.5": 0.242,
+          "U3.5": 0.758,
+          "BTTS_Y": 0.519,
+          "BTTS_N": 0.481
+        },
+        "htft": {
+          "1/1": 0.231,
+          "1/X": 0.045,
+          "1/2": 0.021,
+          "X/1": 0.157,
+          "X/X": 0.142,
+          "X/2": 0.137,
+          "2/1": 0.027,
+          "2/X": 0.048,
+          "2/2": 0.193
+        },
+        "top_scores": [
+          {
+            "score": "1-1",
+            "p": 0.138
+          },
+          {
+            "score": "1-0",
+            "p": 0.096
+          },
+          {
+            "score": "0-0",
+            "p": 0.092
+          },
+          {
+            "score": "0-1",
+            "p": 0.088
+          },
+          {
+            "score": "2-1",
+            "p": 0.083
+          }
+        ],
+        "score_matrix": [
+          [
+            0.0923,
+            0.0883,
+            0.0591,
+            0.0236,
+            0.0071,
+            0.0017
+          ],
+          [
+            0.0965,
+            0.1383,
+            0.0768,
+            0.0307,
+            0.0092,
+            0.0022
+          ],
+          [
+            0.0694,
+            0.0832,
+            0.0499,
+            0.02,
+            0.006,
+            0.0014
+          ],
+          [
+            0.0301,
+            0.0361,
+            0.0216,
+            0.0087,
+            0.0026,
+            0.0006
+          ],
+          [
+            0.0098,
+            0.0117,
+            0.007,
+            0.0028,
+            0.0008,
+            0.0002
+          ],
+          [
+            0.0025,
+            0.003,
+            0.0018,
+            0.0007,
+            0.0002,
+            0.0001
+          ]
+        ],
+        "total_goals": [
+          0.092,
+          0.185,
+          0.267,
+          0.214,
+          0.134,
+          0.067,
+          0.042
+        ],
+        "data_quality": "high",
+        "notes": [
+          "xG harmanı kullanıldı",
+          "Zaman ağırlıklı Dixon-Coles"
+        ]
+      },
+      "stats": {
+        "home": {
+          "form": [
+            "L",
+            "W",
+            "W",
+            "D",
+            "D"
+          ],
+          "venue_form": [
+            "L",
+            "L",
+            "L",
+            "L",
+            "W"
+          ],
+          "gf_avg": 1.74,
+          "ga_avg": 1.32,
+          "venue_gf_avg": 1.44,
+          "venue_ga_avg": 0.91,
+          "xg_avg": 1.51,
+          "xga_avg": 1.34,
+          "btts_pct": 0.64,
+          "o25_pct": 0.41,
+          "clean_sheets_venue": 2,
+          "venue_n": 6,
+          "corners_avg": 4.9,
+          "cards_avg": 2.5,
+          "n": 10
+        },
+        "away": {
+          "form": [
+            "L",
+            "D",
+            "W",
+            "L",
+            "D"
+          ],
+          "venue_form": [
+            "W",
+            "L",
+            "L",
+            "L",
+            "L"
+          ],
+          "gf_avg": 1.42,
+          "ga_avg": 1.6,
+          "venue_gf_avg": 1.89,
+          "venue_ga_avg": 1.16,
+          "xg_avg": 1.36,
+          "xga_avg": 0.84,
+          "btts_pct": 0.51,
+          "o25_pct": 0.58,
+          "clean_sheets_venue": 1,
+          "venue_n": 6,
+          "corners_avg": 6.2,
+          "cards_avg": 1.5,
+          "n": 10
+        },
+        "h2h": [
+          {
+            "date": "2026-03-01",
+            "home": "Kasımpaşa",
+            "away": "Samsunspor",
+            "score": "1-1"
+          },
+          {
+            "date": "2025-10-19",
+            "home": "Samsunspor",
+            "away": "Kasımpaşa",
+            "score": "2-0"
+          },
+          {
+            "date": "2025-02-23",
+            "home": "Kasımpaşa",
+            "away": "Samsunspor",
+            "score": "3-2"
+          }
+        ]
+      },
+      "squad": {
+        "home": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu A",
+              "reason": "sakat",
+              "key": true
+            },
+            {
+              "name": "Örnek Oyuncu B",
+              "reason": "şüpheli",
+              "key": false
+            }
+          ],
+          "rotation_risk": false,
+          "coach_change": false,
+          "adjustment": -0.04
+        },
+        "away": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu C",
+              "reason": "cezalı",
+              "key": false
+            }
+          ],
+          "rotation_risk": false,
+          "coach_change": false,
+          "adjustment": 0
+        },
+        "source": "flashscore",
+        "fetched_at": "2026-11-05T18:31:00+03:00"
+      },
+      "consensus": {
+        "sources": [
+          {
+            "source": "forebet",
+            "picks": {
+              "1X2": "1",
+              "OU25": "U2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": {
+              "1": 0.41,
+              "2": 0.32,
+              "X": 0.27
+            },
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "sportytrader",
+            "picks": {
+              "1X2": "1",
+              "OU25": "O2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "freesupertips",
+            "picks": {
+              "1X2": "1",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          }
+        ],
+        "summary": [
+          {
+            "market": "BTTS_Y",
+            "agree": 3,
+            "total": 5,
+            "text": "5 kaynaktan 3'ü KG Var diyor"
+          }
+        ]
+      },
+      "value": [],
+      "value_note": "Değer yok",
+      "pick": {
+        "market": "O1.5",
+        "label": "1.5 Üst",
+        "p": 0.723,
+        "odds": 1.33,
+        "stars": 3,
+        "is_value": false
+      },
+      "comment": "ÖRNEK VERİ. Samsunspor iç sahada son maçlarında üretken; model ev sahibi için 1.30, Kasımpaşa için 1.20 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
+      "comment_source": "kural",
+      "flags": [],
+      "provenance": {
+        "odds": {
+          "source": "nesine",
+          "t": "2026-11-05T18:31:00+03:00"
+        },
+        "stats": {
+          "source": "football-data.co.uk",
+          "t": "2026-11-05T08:31:00+03:00"
+        },
+        "squad": {
+          "source": "flashscore",
+          "t": "2026-11-05T18:31:00+03:00"
+        }
+      }
+    },
+    {
+      "id": "TR2-20261105-erzurumspor-bandirmaspor",
+      "code": "1240",
+      "mbs": 3,
+      "league": "TR2",
+      "league_name": "1. Lig",
+      "league_priority": 2,
+      "kickoff": "2026-11-05T13:30:00+03:00",
+      "home": {
+        "name": "Erzurumspor"
+      },
+      "away": {
+        "name": "Bandırmaspor"
+      },
+      "status": "scheduled",
+      "result": null,
+      "odds": null,
+      "odds_history": null,
+      "market": null,
+      "model": {
+        "lambda_home": 1.25,
+        "lambda_away": 0.95,
+        "sims": 10000,
+        "rho": -0.08,
+        "probs": {
+          "1": 0.421,
+          "2": 0.271,
+          "12": 0.692,
+          "X": 0.308,
+          "1X": 0.729,
+          "X2": 0.579,
+          "O1.5": 0.656,
+          "U1.5": 0.344,
+          "O2.5": 0.377,
+          "U2.5": 0.623,
+          "O3.5": 0.181,
+          "U3.5": 0.819,
+          "BTTS_Y": 0.448,
+          "BTTS_N": 0.552
+        },
+        "htft": {
+          "1/1": 0.244,
+          "1/X": 0.047,
+          "1/2": 0.022,
+          "X/1": 0.187,
+          "X/X": 0.16,
+          "X/2": 0.12,
+          "2/1": 0.022,
+          "2/X": 0.04,
+          "2/2": 0.159
+        },
+        "top_scores": [
+          {
+            "score": "1-1",
+            "p": 0.142
+          },
+          {
+            "score": "1-0",
+            "p": 0.128
+          },
+          {
+            "score": "0-0",
+            "p": 0.121
+          },
+          {
+            "score": "0-1",
+            "p": 0.095
+          },
+          {
+            "score": "2-0",
+            "p": 0.087
+          }
+        ],
+        "score_matrix": [
+          [
+            0.1213,
+            0.0947,
+            0.05,
+            0.0158,
+            0.0038,
+            0.0007
+          ],
+          [
+            0.128,
+            0.1421,
+            0.0625,
+            0.0198,
+            0.0047,
+            0.0009
+          ],
+          [
+            0.0866,
+            0.0822,
+            0.0391,
+            0.0124,
+            0.0029,
+            0.0006
+          ],
+          [
+            0.0361,
+            0.0343,
+            0.0163,
+            0.0052,
+            0.0012,
+            0.0002
+          ],
+          [
+            0.0113,
+            0.0107,
+            0.0051,
+            0.0016,
+            0.0004,
+            0.0001
+          ],
+          [
+            0.0028,
+            0.0027,
+            0.0013,
+            0.0004,
+            0.0001,
+            0
+          ]
+        ],
+        "total_goals": [
+          0.121,
+          0.223,
+          0.279,
+          0.197,
+          0.108,
+          0.048,
+          0.025
+        ],
+        "data_quality": "low",
+        "notes": [
+          "Az maç örneklemi",
+          "xG verisi yok"
+        ]
+      },
+      "stats": {
+        "home": {
+          "form": [
+            "L",
+            "D",
+            "D",
+            "D",
+            "D"
+          ],
+          "venue_form": [
+            "W",
+            "D",
+            "D",
+            "W",
+            "W"
+          ],
+          "gf_avg": 1.16,
+          "ga_avg": 0.93,
+          "venue_gf_avg": 1.33,
+          "venue_ga_avg": 1.1,
+          "xg_avg": null,
+          "xga_avg": null,
+          "btts_pct": 0.55,
+          "o25_pct": 0.58,
+          "clean_sheets_venue": 1,
+          "venue_n": 6,
+          "corners_avg": 6.1,
+          "cards_avg": 1.9,
+          "n": 4
+        },
+        "away": {
+          "form": [
+            "L",
+            "L",
+            "D",
+            "D",
+            "L"
+          ],
+          "venue_form": [
+            "D",
+            "W",
+            "W",
+            "W",
+            "W"
+          ],
+          "gf_avg": 1.21,
+          "ga_avg": 1.1,
+          "venue_gf_avg": 1.62,
+          "venue_ga_avg": 1.18,
+          "xg_avg": null,
+          "xga_avg": null,
+          "btts_pct": 0.56,
+          "o25_pct": 0.53,
+          "clean_sheets_venue": 1,
+          "venue_n": 6,
+          "corners_avg": 6.2,
+          "cards_avg": 2.3,
+          "n": 4
+        },
+        "h2h": []
+      },
+      "squad": null,
+      "consensus": {
+        "sources": [
+          {
+            "source": "forebet",
+            "picks": {
+              "1X2": "1",
+              "OU25": "U2.5",
+              "BTTS": "BTTS_N"
+            },
+            "probs": {
+              "1": 0.45,
+              "2": 0.26,
+              "X": 0.29
+            },
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "sportytrader",
+            "picks": {
+              "1X2": "1",
+              "OU25": "O2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "freesupertips",
+            "picks": {
+              "1X2": "1",
+              "BTTS": "BTTS_N"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          }
+        ],
+        "summary": [
+          {
+            "market": "BTTS_Y",
+            "agree": 3,
+            "total": 5,
+            "text": "5 kaynaktan 3'ü KG Var diyor"
+          }
+        ]
+      },
+      "value": [],
+      "value_note": "Değer yok",
+      "pick": {
+        "market": "1X",
+        "label": "ÇŞ 1X",
+        "p": 0.729,
+        "odds": null,
+        "stars": 1,
+        "is_value": false
+      },
+      "comment": "ÖRNEK VERİ. Erzurumspor iç sahada son maçlarında üretken; model ev sahibi için 1.25, Bandırmaspor için 0.95 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
+      "comment_source": "kural",
+      "flags": [
+        "Oran yok",
+        "Düşük veri"
+      ],
+      "provenance": {
+        "stats": {
+          "source": "football-data.co.uk",
+          "t": "2026-11-05T08:31:00+03:00"
+        }
+      }
+    },
+    {
+      "id": "TR2-20261105-igdir-fk-ankara-keciorengucu",
+      "code": null,
+      "mbs": null,
+      "league": "TR2",
+      "league_name": "1. Lig",
+      "league_priority": 2,
+      "kickoff": "2026-11-05T16:00:00+03:00",
+      "home": {
+        "name": "Iğdır FK"
+      },
+      "away": {
+        "name": "Ankara Keçiörengücü"
+      },
+      "status": "scheduled",
+      "result": null,
+      "odds": null,
+      "odds_history": null,
+      "market": null,
+      "model": null,
+      "stats": {
+        "home": {
+          "form": [
+            "L",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "venue_form": [
+            "L",
+            "L",
+            "W",
+            "D",
+            "D"
+          ],
+          "gf_avg": 1.52,
+          "ga_avg": 0.71,
+          "venue_gf_avg": 1.45,
+          "venue_ga_avg": 0.65,
+          "xg_avg": null,
+          "xga_avg": null,
+          "btts_pct": 0.47,
+          "o25_pct": 0.69,
+          "clean_sheets_venue": 3,
+          "venue_n": 6,
+          "corners_avg": 5.8,
+          "cards_avg": 1.7,
+          "n": 4
+        },
+        "away": {
+          "form": [
+            "D",
+            "D",
+            "L",
+            "W",
+            "W"
+          ],
+          "venue_form": [
+            "L",
+            "L",
+            "L",
+            "W",
+            "W"
+          ],
+          "gf_avg": 1.47,
+          "ga_avg": 1.48,
+          "venue_gf_avg": 1.7,
+          "venue_ga_avg": 1.37,
+          "xg_avg": null,
+          "xga_avg": null,
+          "btts_pct": 0.63,
+          "o25_pct": 0.59,
+          "clean_sheets_venue": 2,
+          "venue_n": 6,
+          "corners_avg": 6.7,
+          "cards_avg": 2.6,
+          "n": 4
+        },
+        "h2h": []
+      },
+      "squad": null,
+      "consensus": null,
+      "value": [],
+      "value_note": "Değer yok",
+      "pick": null,
+      "comment": null,
+      "comment_source": null,
+      "flags": [
+        "Düşük veri",
+        "Oran yok"
+      ],
+      "provenance": {
+        "stats": {
+          "source": "football-data.co.uk",
+          "t": "2026-11-05T08:31:00+03:00"
+        }
+      }
+    },
+    {
+      "id": "UCL-20261105-real-madrid-liverpool",
+      "code": "1301",
+      "mbs": 1,
+      "league": "UCL",
+      "league_name": "Şampiyonlar Ligi",
+      "league_priority": 3,
+      "kickoff": "2026-11-05T23:00:00+03:00",
+      "home": {
+        "name": "Real Madrid"
+      },
+      "away": {
+        "name": "Liverpool"
+      },
+      "status": "scheduled",
+      "result": null,
+      "odds": {
+        "1": 2.32,
+        "2": 2.61,
+        "X": 3.64,
+        "O2.5": 2.04,
+        "U2.5": 2.23,
+        "BTTS_Y": 1.82,
+        "BTTS_N": 2.52,
+        "O1.5": 1.22,
+        "U1.5": 5.02,
+        "O3.5": 2.81,
+        "U3.5": 1.4
+      },
+      "odds_history": [
+        {
+          "1": 2.37,
+          "2": 2.58,
+          "t": "2026-11-05T08:31:00+03:00",
+          "X": 3.6
+        },
+        {
+          "1": 2.34,
+          "2": 2.6,
+          "t": "2026-11-05T13:31:00+03:00",
+          "X": 3.62
+        },
+        {
+          "1": 2.32,
+          "2": 2.61,
+          "t": "2026-11-05T18:31:00+03:00",
+          "X": 3.64
+        }
+      ],
+      "market": {
+        "implied": {
+          "1": 0.396,
+          "2": 0.352,
+          "X": 0.252,
+          "O2.5": 0.522,
+          "U2.5": 0.478,
+          "BTTS_Y": 0.581,
+          "BTTS_N": 0.419,
+          "O1.5": 0.804,
+          "U1.5": 0.196,
+          "O3.5": 0.333,
+          "U3.5": 0.667
+        },
+        "margin": {
+          "1x2": 0.089,
+          "ou25": -0.061
+        },
+        "movement": {
+          "1": -0.021,
+          "2": 0.012,
+          "X": 0.011
+        },
+        "drop_alarms": []
+      },
+      "model": {
+        "lambda_home": 1.55,
+        "lambda_away": 1.45,
+        "sims": 10000,
+        "rho": -0.08,
+        "probs": {
+          "1": 0.392,
+          "2": 0.348,
+          "12": 0.739,
+          "X": 0.261,
+          "1X": 0.652,
+          "X2": 0.608,
+          "O1.5": 0.81,
+          "U1.5": 0.19,
+          "O2.5": 0.577,
+          "U2.5": 0.423,
+          "O3.5": 0.353,
+          "U3.5": 0.647,
+          "BTTS_Y": 0.612,
+          "BTTS_N": 0.388
+        },
+        "htft": {
+          "1/1": 0.248,
+          "1/X": 0.048,
+          "1/2": 0.022,
+          "X/1": 0.146,
+          "X/X": 0.116,
+          "X/2": 0.129,
+          "2/1": 0.029,
+          "2/X": 0.052,
+          "2/2": 0.209
+        },
+        "top_scores": [
+          {
+            "score": "1-1",
+            "p": 0.121
+          },
+          {
+            "score": "2-1",
+            "p": 0.087
+          },
+          {
+            "score": "1-2",
+            "p": 0.081
+          },
+          {
+            "score": "1-0",
+            "p": 0.068
+          },
+          {
+            "score": "0-1",
+            "p": 0.063
+          }
+        ],
+        "score_matrix": [
+          [
+            0.0587,
+            0.0632,
+            0.0523,
+            0.0253,
+            0.0092,
+            0.0027
+          ],
+          [
+            0.0682,
+            0.1208,
+            0.0811,
+            0.0392,
+            0.0142,
+            0.0041
+          ],
+          [
+            0.0598,
+            0.0867,
+            0.0629,
+            0.0304,
+            0.011,
+            0.0032
+          ],
+          [
+            0.0309,
+            0.0448,
+            0.0325,
+            0.0157,
+            0.0057,
+            0.0017
+          ],
+          [
+            0.012,
+            0.0174,
+            0.0126,
+            0.0061,
+            0.0022,
+            0.0006
+          ],
+          [
+            0.0037,
+            0.0054,
+            0.0039,
+            0.0019,
+            0.0007,
+            0.0002
+          ]
+        ],
+        "total_goals": [
+          0.059,
+          0.131,
+          0.233,
+          0.224,
+          0.168,
+          0.101,
+          0.084
+        ],
+        "data_quality": "high",
+        "notes": [
+          "xG harmanı kullanıldı",
+          "Zaman ağırlıklı Dixon-Coles"
+        ]
+      },
+      "stats": {
+        "home": {
+          "form": [
+            "W",
+            "L",
+            "L",
+            "D",
+            "D"
+          ],
+          "venue_form": [
+            "W",
+            "W",
+            "L",
+            "W",
+            "D"
+          ],
+          "gf_avg": 1.76,
+          "ga_avg": 1.03,
+          "venue_gf_avg": 1.98,
+          "venue_ga_avg": 0.87,
+          "xg_avg": 1.42,
+          "xga_avg": 1.47,
+          "btts_pct": 0.58,
+          "o25_pct": 0.41,
+          "clean_sheets_venue": 4,
+          "venue_n": 6,
+          "corners_avg": 4.6,
+          "cards_avg": 2,
+          "n": 10
+        },
+        "away": {
+          "form": [
+            "W",
+            "L",
+            "L",
+            "D",
+            "W"
+          ],
+          "venue_form": [
+            "L",
+            "D",
+            "L",
+            "W",
+            "L"
+          ],
+          "gf_avg": 1.15,
+          "ga_avg": 1.36,
+          "venue_gf_avg": 1.32,
+          "venue_ga_avg": 0.83,
+          "xg_avg": 1.39,
+          "xga_avg": 1.29,
+          "btts_pct": 0.37,
+          "o25_pct": 0.65,
+          "clean_sheets_venue": 0,
+          "venue_n": 6,
+          "corners_avg": 4.7,
+          "cards_avg": 2.6,
+          "n": 10
+        },
+        "h2h": [
+          {
+            "date": "2026-03-01",
+            "home": "Liverpool",
+            "away": "Real Madrid",
+            "score": "1-1"
+          },
+          {
+            "date": "2025-10-19",
+            "home": "Real Madrid",
+            "away": "Liverpool",
+            "score": "2-0"
+          },
+          {
+            "date": "2025-02-23",
+            "home": "Liverpool",
+            "away": "Real Madrid",
+            "score": "3-2"
+          }
+        ]
+      },
+      "squad": {
+        "home": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu A",
+              "reason": "sakat",
+              "key": true
+            },
+            {
+              "name": "Örnek Oyuncu B",
+              "reason": "şüpheli",
+              "key": false
+            }
+          ],
+          "rotation_risk": true,
+          "coach_change": false,
+          "adjustment": -0.04
+        },
+        "away": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu C",
+              "reason": "cezalı",
+              "key": false
+            }
+          ],
+          "rotation_risk": false,
+          "coach_change": false,
+          "adjustment": 0
+        },
+        "source": "flashscore",
+        "fetched_at": "2026-11-05T18:31:00+03:00"
+      },
+      "consensus": {
+        "sources": [
+          {
+            "source": "forebet",
+            "picks": {
+              "1X2": "1",
+              "OU25": "O2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": {
+              "1": 0.42,
+              "2": 0.34,
+              "X": 0.24
+            },
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "sportytrader",
+            "picks": {
+              "1X2": "1",
+              "OU25": "O2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "freesupertips",
+            "picks": {
+              "1X2": "1",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          }
+        ],
+        "summary": [
+          {
+            "market": "BTTS_Y",
+            "agree": 4,
+            "total": 5,
+            "text": "5 kaynaktan 4'ü KG Var diyor"
+          }
+        ]
+      },
+      "value": [
+        {
+          "market": "O2.5",
+          "model_p": 0.577,
+          "implied_p": 0.522,
+          "odds": 2.04,
+          "edge": 0.055,
+          "ev": 0.177
+        }
+      ],
+      "pick": {
+        "market": "O2.5",
+        "label": "2.5 Üst",
+        "p": 0.577,
+        "odds": 2.04,
+        "stars": 3,
+        "is_value": true
+      },
+      "comment": "ÖRNEK VERİ. Real Madrid iç sahada son maçlarında üretken; model ev sahibi için 1.55, Liverpool için 1.45 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark O2.5 marketinde. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
+      "comment_source": "kural",
+      "flags": [],
+      "provenance": {
+        "odds": {
+          "source": "nesine",
+          "t": "2026-11-05T18:31:00+03:00"
+        },
+        "stats": {
+          "source": "football-data.co.uk",
+          "t": "2026-11-05T08:31:00+03:00"
+        },
+        "squad": {
+          "source": "flashscore",
+          "t": "2026-11-05T18:31:00+03:00"
+        }
+      }
+    },
+    {
+      "id": "UCL-20261105-bayern-munchen-paris-saint-germain",
+      "code": "1302",
+      "mbs": 1,
+      "league": "UCL",
+      "league_name": "Şampiyonlar Ligi",
+      "league_priority": 3,
+      "kickoff": "2026-11-05T23:00:00+03:00",
+      "home": {
+        "name": "Bayern München"
+      },
+      "away": {
+        "name": "Paris Saint-Germain"
+      },
+      "status": "scheduled",
+      "result": null,
+      "odds": {
+        "1": 2.14,
+        "2": 3.06,
+        "X": 3.82,
+        "O2.5": 1.52,
+        "U2.5": 2.37,
+        "BTTS_Y": 1.52,
+        "BTTS_N": 2.42,
+        "O1.5": 1.2,
+        "U1.5": 5.71,
+        "O3.5": 2.51,
+        "U3.5": 1.48
+      },
+      "odds_history": [
+        {
+          "1": 2.18,
+          "2": 3.03,
+          "t": "2026-11-05T08:31:00+03:00",
+          "X": 3.78
+        },
+        {
+          "1": 2.16,
+          "2": 3.05,
+          "t": "2026-11-05T13:31:00+03:00",
+          "X": 3.8
+        },
+        {
+          "1": 2.14,
+          "2": 3.06,
+          "t": "2026-11-05T18:31:00+03:00",
+          "X": 3.82
+        }
+      ],
+      "market": {
+        "implied": {
+          "1": 0.443,
+          "2": 0.31,
+          "X": 0.248,
+          "O2.5": 0.609,
+          "U2.5": 0.391,
+          "BTTS_Y": 0.614,
+          "BTTS_N": 0.386,
+          "O1.5": 0.826,
+          "U1.5": 0.174,
+          "O3.5": 0.371,
+          "U3.5": 0.629
+        },
+        "margin": {
+          "1x2": 0.056,
+          "ou25": 0.08
+        },
+        "movement": {
+          "1": -0.018,
+          "2": 0.01,
+          "X": 0.011
+        },
+        "drop_alarms": []
+      },
+      "model": {
+        "lambda_home": 1.75,
+        "lambda_away": 1.35,
+        "sims": 10000,
+        "rho": -0.08,
+        "probs": {
+          "1": 0.461,
+          "2": 0.289,
+          "12": 0.749,
+          "X": 0.251,
+          "1X": 0.711,
+          "X2": 0.539,
+          "O1.5": 0.824,
+          "U1.5": 0.176,
+          "O2.5": 0.599,
+          "U2.5": 0.401,
+          "O3.5": 0.375,
+          "U3.5": 0.625,
+          "BTTS_Y": 0.621,
+          "BTTS_N": 0.379
+        },
+        "htft": {
+          "1/1": 0.283,
+          "1/X": 0.055,
+          "1/2": 0.025,
+          "X/1": 0.167,
+          "X/X": 0.11,
+          "X/2": 0.105,
+          "2/1": 0.026,
+          "2/X": 0.046,
+          "2/2": 0.184
+        },
+        "top_scores": [
+          {
+            "score": "1-1",
+            "p": 0.115
+          },
+          {
+            "score": "2-1",
+            "p": 0.093
+          },
+          {
+            "score": "1-2",
+            "p": 0.072
+          },
+          {
+            "score": "1-0",
+            "p": 0.07
+          },
+          {
+            "score": "2-0",
+            "p": 0.069
+          }
+        ],
+        "score_matrix": [
+          [
+            0.0536,
+            0.0523,
+            0.0411,
+            0.0185,
+            0.0062,
+            0.0017
+          ],
+          [
+            0.0703,
+            0.1149,
+            0.0718,
+            0.0323,
+            0.0109,
+            0.0029
+          ],
+          [
+            0.069,
+            0.0931,
+            0.0629,
+            0.0283,
+            0.0095,
+            0.0026
+          ],
+          [
+            0.0402,
+            0.0543,
+            0.0367,
+            0.0165,
+            0.0056,
+            0.0015
+          ],
+          [
+            0.0176,
+            0.0238,
+            0.016,
+            0.0072,
+            0.0024,
+            0.0007
+          ],
+          [
+            0.0062,
+            0.0083,
+            0.0056,
+            0.0025,
+            0.0009,
+            0.0002
+          ]
+        ],
+        "total_goals": [
+          0.054,
+          0.123,
+          0.225,
+          0.224,
+          0.173,
+          0.107,
+          0.094
+        ],
+        "data_quality": "high",
+        "notes": [
+          "xG harmanı kullanıldı",
+          "Zaman ağırlıklı Dixon-Coles"
+        ]
+      },
+      "stats": {
+        "home": {
+          "form": [
+            "L",
+            "D",
+            "W",
+            "L",
+            "L"
+          ],
+          "venue_form": [
+            "D",
+            "D",
+            "L",
+            "D",
+            "W"
+          ],
+          "gf_avg": 1.86,
+          "ga_avg": 1.19,
+          "venue_gf_avg": 1.47,
+          "venue_ga_avg": 0.67,
+          "xg_avg": 1.61,
+          "xga_avg": 1.41,
+          "btts_pct": 0.54,
+          "o25_pct": 0.63,
+          "clean_sheets_venue": 2,
+          "venue_n": 6,
+          "corners_avg": 6.3,
+          "cards_avg": 1.7,
+          "n": 10
+        },
+        "away": {
+          "form": [
+            "W",
+            "D",
+            "D",
+            "W",
+            "W"
+          ],
+          "venue_form": [
+            "W",
+            "W",
+            "L",
+            "D",
+            "D"
+          ],
+          "gf_avg": 1.37,
+          "ga_avg": 1.45,
+          "venue_gf_avg": 1.41,
+          "venue_ga_avg": 1.09,
+          "xg_avg": 1.39,
+          "xga_avg": 0.98,
+          "btts_pct": 0.53,
+          "o25_pct": 0.45,
+          "clean_sheets_venue": 2,
+          "venue_n": 6,
+          "corners_avg": 4.6,
+          "cards_avg": 2.2,
+          "n": 10
+        },
+        "h2h": [
+          {
+            "date": "2026-03-01",
+            "home": "Paris Saint-Germain",
+            "away": "Bayern München",
+            "score": "1-1"
+          },
+          {
+            "date": "2025-10-19",
+            "home": "Bayern München",
+            "away": "Paris Saint-Germain",
+            "score": "2-0"
+          },
+          {
+            "date": "2025-02-23",
+            "home": "Paris Saint-Germain",
+            "away": "Bayern München",
+            "score": "3-2"
+          }
+        ]
+      },
+      "squad": {
+        "home": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu A",
+              "reason": "sakat",
+              "key": true
+            },
+            {
+              "name": "Örnek Oyuncu B",
+              "reason": "şüpheli",
+              "key": false
+            }
+          ],
+          "rotation_risk": true,
+          "coach_change": false,
+          "adjustment": -0.04
+        },
+        "away": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu C",
+              "reason": "cezalı",
+              "key": false
+            }
+          ],
+          "rotation_risk": false,
+          "coach_change": false,
+          "adjustment": 0
+        },
+        "source": "flashscore",
+        "fetched_at": "2026-11-05T18:31:00+03:00"
+      },
+      "consensus": {
+        "sources": [
+          {
+            "source": "forebet",
+            "picks": {
+              "1X2": "1",
+              "OU25": "O2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": {
+              "1": 0.49,
+              "2": 0.28,
+              "X": 0.23
+            },
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "sportytrader",
+            "picks": {
+              "1X2": "1",
+              "OU25": "O2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "freesupertips",
+            "picks": {
+              "1X2": "1",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          }
+        ],
+        "summary": [
+          {
+            "market": "BTTS_Y",
+            "agree": 4,
+            "total": 5,
+            "text": "5 kaynaktan 4'ü KG Var diyor"
+          }
+        ]
+      },
+      "value": [],
+      "value_note": "Değer yok",
+      "pick": {
+        "market": "O1.5",
+        "label": "1.5 Üst",
+        "p": 0.824,
+        "odds": 1.2,
+        "stars": 4,
+        "is_value": false
+      },
+      "comment": "ÖRNEK VERİ. Bayern München iç sahada son maçlarında üretken; model ev sahibi için 1.75, Paris Saint-Germain için 1.35 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
+      "comment_source": "kural",
+      "flags": [],
+      "provenance": {
+        "odds": {
+          "source": "nesine",
+          "t": "2026-11-05T18:31:00+03:00"
+        },
+        "stats": {
+          "source": "football-data.co.uk",
+          "t": "2026-11-05T08:31:00+03:00"
+        },
+        "squad": {
+          "source": "flashscore",
+          "t": "2026-11-05T18:31:00+03:00"
+        }
+      }
+    },
+    {
+      "id": "UCL-20261105-inter-benfica",
+      "code": "1303",
+      "mbs": 1,
+      "league": "UCL",
+      "league_name": "Şampiyonlar Ligi",
+      "league_priority": 3,
+      "kickoff": "2026-11-05T23:00:00+03:00",
+      "home": {
+        "name": "Inter"
+      },
+      "away": {
+        "name": "Benfica"
+      },
+      "status": "scheduled",
+      "result": null,
+      "odds": {
+        "1": 1.89,
+        "2": 4.44,
+        "X": 3.28,
+        "O2.5": 1.94,
+        "U2.5": 1.66,
+        "BTTS_Y": 1.87,
+        "BTTS_N": 1.8,
+        "O1.5": 1.33,
+        "U1.5": 3.57,
+        "O3.5": 3.53,
+        "U3.5": 1.25
+      },
+      "odds_history": [
+        {
+          "1": 1.93,
+          "2": 4.4,
+          "t": "2026-11-05T08:31:00+03:00",
+          "X": 3.25
+        },
+        {
+          "1": 1.91,
+          "2": 4.42,
+          "t": "2026-11-05T13:31:00+03:00",
+          "X": 3.26
+        },
+        {
+          "1": 1.89,
+          "2": 4.44,
+          "t": "2026-11-05T18:31:00+03:00",
+          "X": 3.28
+        }
+      ],
+      "market": {
+        "implied": {
+          "1": 0.5,
+          "2": 0.213,
+          "X": 0.288,
+          "O2.5": 0.461,
+          "U2.5": 0.539,
+          "BTTS_Y": 0.49,
+          "BTTS_N": 0.51,
+          "O1.5": 0.729,
+          "U1.5": 0.271,
+          "O3.5": 0.262,
+          "U3.5": 0.738
+        },
+        "margin": {
+          "1x2": 0.059,
+          "ou25": 0.118
+        },
+        "movement": {
+          "1": -0.021,
+          "2": 0.009,
+          "X": 0.009
+        },
+        "drop_alarms": []
+      },
+      "model": {
+        "lambda_home": 1.6,
+        "lambda_away": 0.95,
+        "sims": 10000,
+        "rho": -0.08,
+        "probs": {
+          "1": 0.516,
+          "2": 0.215,
+          "12": 0.731,
+          "X": 0.269,
+          "1X": 0.785,
+          "X2": 0.484,
+          "O1.5": 0.732,
+          "U1.5": 0.268,
+          "O2.5": 0.469,
+          "U2.5": 0.531,
+          "O3.5": 0.253,
+          "U3.5": 0.747,
+          "BTTS_Y": 0.499,
+          "BTTS_N": 0.501
+        },
+        "htft": {
+          "1/1": 0.298,
+          "1/X": 0.057,
+          "1/2": 0.027,
+          "X/1": 0.207,
+          "X/X": 0.129,
+          "X/2": 0.086,
+          "2/1": 0.019,
+          "2/X": 0.035,
+          "2/2": 0.14
+        },
+        "top_scores": [
+          {
+            "score": "1-1",
+            "p": 0.128
+          },
+          {
+            "score": "1-0",
+            "p": 0.115
+          },
+          {
+            "score": "2-0",
+            "p": 0.1
+          },
+          {
+            "score": "2-1",
+            "p": 0.095
+          },
+          {
+            "score": "0-0",
+            "p": 0.088
+          }
+        ],
+        "score_matrix": [
+          [
+            0.0876,
+            0.0647,
+            0.0352,
+            0.0112,
+            0.0026,
+            0.0005
+          ],
+          [
+            0.1154,
+            0.1282,
+            0.0564,
+            0.0179,
+            0.0042,
+            0.0008
+          ],
+          [
+            0.0999,
+            0.0949,
+            0.0451,
+            0.0143,
+            0.0034,
+            0.0006
+          ],
+          [
+            0.0533,
+            0.0506,
+            0.0241,
+            0.0076,
+            0.0018,
+            0.0003
+          ],
+          [
+            0.0213,
+            0.0203,
+            0.0096,
+            0.003,
+            0.0007,
+            0.0001
+          ],
+          [
+            0.0068,
+            0.0065,
+            0.0031,
+            0.001,
+            0.0002,
+            0
+          ]
+        ],
+        "total_goals": [
+          0.088,
+          0.18,
+          0.263,
+          0.216,
+          0.138,
+          0.07,
+          0.045
+        ],
+        "data_quality": "high",
+        "notes": [
+          "xG harmanı kullanıldı",
+          "Zaman ağırlıklı Dixon-Coles"
+        ]
+      },
+      "stats": {
+        "home": {
+          "form": [
+            "L",
+            "D",
+            "W",
+            "L",
+            "L"
+          ],
+          "venue_form": [
+            "L",
+            "D",
+            "D",
+            "W",
+            "L"
+          ],
+          "gf_avg": 1.64,
+          "ga_avg": 1.02,
+          "venue_gf_avg": 2.11,
+          "venue_ga_avg": 1.36,
+          "xg_avg": 1.6,
+          "xga_avg": 1.01,
+          "btts_pct": 0.53,
+          "o25_pct": 0.45,
+          "clean_sheets_venue": 0,
+          "venue_n": 6,
+          "corners_avg": 4.2,
+          "cards_avg": 2.6,
+          "n": 10
+        },
+        "away": {
+          "form": [
+            "W",
+            "L",
+            "D",
+            "D",
+            "L"
+          ],
+          "venue_form": [
+            "W",
+            "W",
+            "D",
+            "L",
+            "L"
+          ],
+          "gf_avg": 1.3,
+          "ga_avg": 1.04,
+          "venue_gf_avg": 1.89,
+          "venue_ga_avg": 0.86,
+          "xg_avg": 1.36,
+          "xga_avg": 0.95,
+          "btts_pct": 0.63,
+          "o25_pct": 0.49,
+          "clean_sheets_venue": 1,
+          "venue_n": 6,
+          "corners_avg": 4.9,
+          "cards_avg": 2.8,
+          "n": 10
+        },
+        "h2h": [
+          {
+            "date": "2026-03-01",
+            "home": "Benfica",
+            "away": "Inter",
+            "score": "1-1"
+          },
+          {
+            "date": "2025-10-19",
+            "home": "Inter",
+            "away": "Benfica",
+            "score": "2-0"
+          },
+          {
+            "date": "2025-02-23",
+            "home": "Benfica",
+            "away": "Inter",
+            "score": "3-2"
+          }
+        ]
+      },
+      "squad": null,
+      "consensus": {
+        "sources": [
+          {
+            "source": "forebet",
+            "picks": {
+              "1X2": "1",
+              "OU25": "U2.5",
+              "BTTS": "BTTS_N"
+            },
+            "probs": {
+              "1": 0.55,
+              "2": 0.21,
+              "X": 0.25
+            },
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "sportytrader",
+            "picks": {
+              "1X2": "1",
+              "OU25": "O2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "freesupertips",
+            "picks": {
+              "1X2": "1",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          }
+        ],
+        "summary": [
+          {
+            "market": "BTTS_Y",
+            "agree": 3,
+            "total": 5,
+            "text": "5 kaynaktan 3'ü KG Var diyor"
+          }
+        ]
+      },
+      "value": [],
+      "value_note": "Değer yok",
+      "pick": {
+        "market": "1X",
+        "label": "ÇŞ 1X",
+        "p": 0.785,
+        "odds": 1.25,
+        "stars": 3,
+        "is_value": false
+      },
+      "comment": "ÖRNEK VERİ. Inter iç sahada son maçlarında üretken; model ev sahibi için 1.60, Benfica için 0.95 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
+      "comment_source": "kural",
+      "flags": [],
+      "provenance": {
+        "odds": {
+          "source": "nesine",
+          "t": "2026-11-05T18:31:00+03:00"
+        },
+        "stats": {
+          "source": "football-data.co.uk",
+          "t": "2026-11-05T08:31:00+03:00"
+        }
+      }
+    },
+    {
+      "id": "UCL-20261105-club-brugge-galatasaray",
+      "code": "1300",
+      "mbs": 1,
+      "league": "UCL",
+      "league_name": "Şampiyonlar Ligi",
+      "league_priority": 3,
+      "kickoff": "2026-11-05T20:45:00+03:00",
+      "home": {
+        "name": "Club Brugge"
+      },
+      "away": {
+        "name": "Galatasaray"
+      },
+      "status": "scheduled",
+      "result": null,
+      "odds": {
+        "1": 2.37,
+        "2": 2.75,
+        "X": 3.42,
+        "O2.5": 1.99,
+        "U2.5": 1.94,
+        "BTTS_Y": 1.87,
+        "BTTS_N": 1.94,
+        "O1.5": 1.27,
+        "U1.5": 3.69,
+        "O3.5": 3.38,
+        "U3.5": 1.3
+      },
+      "odds_history": [
+        {
+          "1": 2.42,
+          "2": 2.72,
+          "t": "2026-11-05T08:31:00+03:00",
+          "X": 3.39
+        },
+        {
+          "1": 2.4,
+          "2": 2.74,
+          "t": "2026-11-05T13:31:00+03:00",
+          "X": 3.41
+        },
+        {
+          "1": 2.37,
+          "2": 2.75,
+          "t": "2026-11-05T18:31:00+03:00",
+          "X": 3.42
+        }
+      ],
+      "market": {
+        "implied": {
+          "1": 0.391,
+          "2": 0.337,
+          "X": 0.271,
+          "O2.5": 0.494,
+          "U2.5": 0.506,
+          "BTTS_Y": 0.509,
+          "BTTS_N": 0.491,
+          "O1.5": 0.744,
+          "U1.5": 0.256,
+          "O3.5": 0.278,
+          "U3.5": 0.722
+        },
+        "margin": {
+          "1x2": 0.078,
+          "ou25": 0.018
+        },
+        "movement": {
+          "1": -0.021,
+          "2": 0.011,
+          "X": 0.009
+        },
+        "drop_alarms": []
+      },
+      "model": {
+        "lambda_home": 1.35,
+        "lambda_away": 1.25,
+        "sims": 10000,
+        "rho": -0.08,
+        "probs": {
+          "1": 0.382,
+          "2": 0.335,
+          "12": 0.716,
+          "X": 0.284,
+          "1X": 0.665,
+          "X2": 0.618,
+          "O1.5": 0.743,
+          "U1.5": 0.257,
+          "O2.5": 0.482,
+          "U2.5": 0.518,
+          "O3.5": 0.264,
+          "U3.5": 0.736,
+          "BTTS_Y": 0.539,
+          "BTTS_N": 0.461
+        },
+        "htft": {
+          "1/1": 0.235,
+          "1/X": 0.045,
+          "1/2": 0.021,
+          "X/1": 0.155,
+          "X/X": 0.136,
+          "X/2": 0.136,
+          "2/1": 0.027,
+          "2/X": 0.049,
+          "2/2": 0.196
+        },
+        "top_scores": [
+          {
+            "score": "1-1",
+            "p": 0.135
+          },
+          {
+            "score": "1-0",
+            "p": 0.09
+          },
+          {
+            "score": "2-1",
+            "p": 0.085
+          },
+          {
+            "score": "0-0",
+            "p": 0.084
+          },
+          {
+            "score": "0-1",
+            "p": 0.083
+          }
+        ],
+        "score_matrix": [
+          [
+            0.0843,
+            0.0828,
+            0.058,
+            0.0242,
+            0.0076,
+            0.0019
+          ],
+          [
+            0.0902,
+            0.1354,
+            0.0783,
+            0.0326,
+            0.0102,
+            0.0025
+          ],
+          [
+            0.0677,
+            0.0846,
+            0.0529,
+            0.022,
+            0.0069,
+            0.0017
+          ],
+          [
+            0.0305,
+            0.0381,
+            0.0238,
+            0.0099,
+            0.0031,
+            0.0008
+          ],
+          [
+            0.0103,
+            0.0128,
+            0.008,
+            0.0033,
+            0.001,
+            0.0003
+          ],
+          [
+            0.0028,
+            0.0035,
+            0.0022,
+            0.0009,
+            0.0003,
+            0.0001
+          ]
+        ],
+        "total_goals": [
+          0.084,
+          0.173,
+          0.261,
+          0.218,
+          0.141,
+          0.074,
+          0.049
+        ],
+        "data_quality": "high",
+        "notes": [
+          "xG harmanı kullanıldı",
+          "Zaman ağırlıklı Dixon-Coles"
+        ]
+      },
+      "stats": {
+        "home": {
+          "form": [
+            "D",
+            "W",
+            "L",
+            "W",
+            "L"
+          ],
+          "venue_form": [
+            "D",
+            "D",
+            "W",
+            "W",
+            "L"
+          ],
+          "gf_avg": 1.48,
+          "ga_avg": 1.5,
+          "venue_gf_avg": 1.98,
+          "venue_ga_avg": 1.18,
+          "xg_avg": 1.49,
+          "xga_avg": 0.97,
+          "btts_pct": 0.37,
+          "o25_pct": 0.5,
+          "clean_sheets_venue": 3,
+          "venue_n": 6,
+          "corners_avg": 5.3,
+          "cards_avg": 1.8,
+          "n": 10
+        },
+        "away": {
+          "form": [
+            "W",
+            "D",
+            "D",
+            "D",
+            "W"
+          ],
+          "venue_form": [
+            "L",
+            "W",
+            "L",
+            "L",
+            "L"
+          ],
+          "gf_avg": 1.56,
+          "ga_avg": 0.93,
+          "venue_gf_avg": 1.56,
+          "venue_ga_avg": 0.72,
+          "xg_avg": 1.27,
+          "xga_avg": 1.24,
+          "btts_pct": 0.56,
+          "o25_pct": 0.54,
+          "clean_sheets_venue": 1,
+          "venue_n": 6,
+          "corners_avg": 5.8,
+          "cards_avg": 2.4,
+          "n": 10
+        },
+        "h2h": [
+          {
+            "date": "2026-03-01",
+            "home": "Galatasaray",
+            "away": "Club Brugge",
+            "score": "1-1"
+          },
+          {
+            "date": "2025-10-19",
+            "home": "Club Brugge",
+            "away": "Galatasaray",
+            "score": "2-0"
+          },
+          {
+            "date": "2025-02-23",
+            "home": "Galatasaray",
+            "away": "Club Brugge",
+            "score": "3-2"
+          }
+        ]
+      },
+      "squad": {
+        "home": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu A",
+              "reason": "sakat",
+              "key": true
+            },
+            {
+              "name": "Örnek Oyuncu B",
+              "reason": "şüpheli",
+              "key": false
+            }
+          ],
+          "rotation_risk": true,
+          "coach_change": false,
+          "adjustment": -0.04
+        },
+        "away": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu C",
+              "reason": "cezalı",
+              "key": false
+            }
+          ],
+          "rotation_risk": false,
+          "coach_change": false,
+          "adjustment": 0
+        },
+        "source": "flashscore",
+        "fetched_at": "2026-11-05T18:31:00+03:00"
+      },
+      "consensus": {
+        "sources": [
+          {
+            "source": "forebet",
+            "picks": {
+              "1X2": "1",
+              "OU25": "U2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": {
+              "1": 0.41,
+              "2": 0.33,
+              "X": 0.26
+            },
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "sportytrader",
+            "picks": {
+              "1X2": "1",
+              "OU25": "O2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "freesupertips",
+            "picks": {
+              "1X2": "1",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          }
+        ],
+        "summary": [
+          {
+            "market": "BTTS_Y",
+            "agree": 3,
+            "total": 5,
+            "text": "5 kaynaktan 3'ü KG Var diyor"
+          }
+        ]
+      },
+      "value": [],
+      "value_note": "Değer yok",
+      "pick": {
+        "market": "O1.5",
+        "label": "1.5 Üst",
+        "p": 0.743,
+        "odds": 1.27,
+        "stars": 3,
+        "is_value": false
+      },
+      "comment": "ÖRNEK VERİ. Club Brugge iç sahada son maçlarında üretken; model ev sahibi için 1.35, Galatasaray için 1.25 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
+      "comment_source": "kural",
+      "flags": [],
+      "provenance": {
+        "odds": {
+          "source": "nesine",
+          "t": "2026-11-05T18:31:00+03:00"
+        },
+        "stats": {
+          "source": "football-data.co.uk",
+          "t": "2026-11-05T08:31:00+03:00"
+        },
+        "squad": {
+          "source": "flashscore",
+          "t": "2026-11-05T18:31:00+03:00"
+        }
+      }
+    },
+    {
+      "id": "ENG1-20261105-arsenal-chelsea",
+      "code": "1401",
+      "mbs": 1,
+      "league": "ENG1",
+      "league_name": "Premier Lig",
+      "league_priority": 4,
+      "kickoff": "2026-11-05T22:00:00+03:00",
+      "home": {
+        "name": "Arsenal"
+      },
+      "away": {
+        "name": "Chelsea"
+      },
+      "status": "scheduled",
+      "result": null,
+      "odds": {
+        "1": 2.12,
+        "2": 4.09,
+        "X": 3.45,
+        "O2.5": 1.89,
+        "U2.5": 2.02,
+        "BTTS_Y": 1.62,
+        "BTTS_N": 2.01,
+        "O1.5": 1.19,
+        "U1.5": 4.19,
+        "O3.5": 3.14,
+        "U3.5": 1.31
+      },
+      "odds_history": [
+        {
+          "1": 2.16,
+          "2": 4.05,
+          "t": "2026-11-05T08:31:00+03:00",
+          "X": 3.42
+        },
+        {
+          "1": 2.14,
+          "2": 4.07,
+          "t": "2026-11-05T13:31:00+03:00",
+          "X": 3.44
+        },
+        {
+          "1": 2.12,
+          "2": 4.09,
+          "t": "2026-11-05T18:31:00+03:00",
+          "X": 3.45
+        }
+      ],
+      "market": {
+        "implied": {
+          "1": 0.469,
+          "2": 0.243,
+          "X": 0.288,
+          "O2.5": 0.517,
+          "U2.5": 0.483,
+          "BTTS_Y": 0.554,
+          "BTTS_N": 0.446,
+          "O1.5": 0.779,
+          "U1.5": 0.221,
+          "O3.5": 0.294,
+          "U3.5": 0.706
+        },
+        "margin": {
+          "1x2": 0.006,
+          "ou25": 0.024
+        },
+        "movement": {
+          "1": -0.019,
+          "2": 0.01,
+          "X": 0.009
+        },
+        "drop_alarms": []
+      },
+      "model": {
+        "lambda_home": 1.7,
+        "lambda_away": 1.1,
+        "sims": 10000,
+        "rho": -0.08,
+        "probs": {
+          "1": 0.505,
+          "2": 0.237,
+          "12": 0.742,
+          "X": 0.258,
+          "1X": 0.763,
+          "X2": 0.495,
+          "O1.5": 0.778,
+          "U1.5": 0.222,
+          "O2.5": 0.531,
+          "U2.5": 0.469,
+          "O3.5": 0.308,
+          "U3.5": 0.692,
+          "BTTS_Y": 0.554,
+          "BTTS_N": 0.446
+        },
+        "htft": {
+          "1/1": 0.299,
+          "1/X": 0.057,
+          "1/2": 0.027,
+          "X/1": 0.193,
+          "X/X": 0.119,
+          "X/2": 0.09,
+          "2/1": 0.022,
+          "2/X": 0.039,
+          "2/2": 0.155
+        },
+        "top_scores": [
+          {
+            "score": "1-1",
+            "p": 0.123
+          },
+          {
+            "score": "2-1",
+            "p": 0.097
+          },
+          {
+            "score": "1-0",
+            "p": 0.094
+          },
+          {
+            "score": "2-0",
+            "p": 0.088
+          },
+          {
+            "score": "0-0",
+            "p": 0.07
+          }
+        ],
+        "score_matrix": [
+          [
+            0.0699,
+            0.0578,
+            0.0368,
+            0.0135,
+            0.0037,
+            0.0008
+          ],
+          [
+            0.0943,
+            0.1228,
+            0.0625,
+            0.0229,
+            0.0063,
+            0.0014
+          ],
+          [
+            0.0879,
+            0.0967,
+            0.0532,
+            0.0195,
+            0.0054,
+            0.0012
+          ],
+          [
+            0.0498,
+            0.0548,
+            0.0301,
+            0.011,
+            0.003,
+            0.0007
+          ],
+          [
+            0.0212,
+            0.0233,
+            0.0128,
+            0.0047,
+            0.0013,
+            0.0003
+          ],
+          [
+            0.0072,
+            0.0079,
+            0.0044,
+            0.0016,
+            0.0004,
+            0.0001
+          ]
+        ],
+        "total_goals": [
+          0.07,
+          0.152,
+          0.247,
+          0.222,
+          0.156,
+          0.087,
+          0.065
+        ],
+        "data_quality": "high",
+        "notes": [
+          "xG harmanı kullanıldı",
+          "Zaman ağırlıklı Dixon-Coles"
+        ]
+      },
+      "stats": {
+        "home": {
+          "form": [
+            "D",
+            "D",
+            "L",
+            "D",
+            "D"
+          ],
+          "venue_form": [
+            "W",
+            "L",
+            "D",
+            "D",
+            "D"
+          ],
+          "gf_avg": 1.61,
+          "ga_avg": 1.2,
+          "venue_gf_avg": 2.17,
+          "venue_ga_avg": 0.93,
+          "xg_avg": 1.54,
+          "xga_avg": 1.01,
+          "btts_pct": 0.54,
+          "o25_pct": 0.52,
+          "clean_sheets_venue": 2,
+          "venue_n": 6,
+          "corners_avg": 4.4,
+          "cards_avg": 1.8,
+          "n": 10
+        },
+        "away": {
+          "form": [
+            "D",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "venue_form": [
+            "D",
+            "D",
+            "D",
+            "D",
+            "L"
+          ],
+          "gf_avg": 1.42,
+          "ga_avg": 0.92,
+          "venue_gf_avg": 1.57,
+          "venue_ga_avg": 1.42,
+          "xg_avg": 1.05,
+          "xga_avg": 1.25,
+          "btts_pct": 0.38,
+          "o25_pct": 0.62,
+          "clean_sheets_venue": 0,
+          "venue_n": 6,
+          "corners_avg": 6.1,
+          "cards_avg": 2.9,
+          "n": 10
+        },
+        "h2h": [
+          {
+            "date": "2026-03-01",
+            "home": "Chelsea",
+            "away": "Arsenal",
+            "score": "1-1"
+          },
+          {
+            "date": "2025-10-19",
+            "home": "Arsenal",
+            "away": "Chelsea",
+            "score": "2-0"
+          },
+          {
+            "date": "2025-02-23",
+            "home": "Chelsea",
+            "away": "Arsenal",
+            "score": "3-2"
+          }
+        ]
+      },
+      "squad": {
+        "home": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu A",
+              "reason": "sakat",
+              "key": true
+            },
+            {
+              "name": "Örnek Oyuncu B",
+              "reason": "şüpheli",
+              "key": false
+            }
+          ],
+          "rotation_risk": false,
+          "coach_change": false,
+          "adjustment": -0.04
+        },
+        "away": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu C",
+              "reason": "cezalı",
+              "key": false
+            }
+          ],
+          "rotation_risk": false,
+          "coach_change": false,
+          "adjustment": 0
+        },
+        "source": "flashscore",
+        "fetched_at": "2026-11-05T18:31:00+03:00"
+      },
+      "consensus": {
+        "sources": [
+          {
+            "source": "forebet",
+            "picks": {
+              "1X2": "1",
+              "OU25": "O2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": {
+              "1": 0.54,
+              "2": 0.23,
+              "X": 0.24
+            },
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "sportytrader",
+            "picks": {
+              "1X2": "1",
+              "OU25": "O2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "freesupertips",
+            "picks": {
+              "1X2": "1",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          }
+        ],
+        "summary": [
+          {
+            "market": "BTTS_Y",
+            "agree": 3,
+            "total": 5,
+            "text": "5 kaynaktan 3'ü KG Var diyor"
+          }
+        ]
+      },
+      "value": [],
+      "value_note": "Değer yok",
+      "pick": {
+        "market": "O1.5",
+        "label": "1.5 Üst",
+        "p": 0.778,
+        "odds": 1.19,
+        "stars": 3,
+        "is_value": false
+      },
+      "comment": "ÖRNEK VERİ. Arsenal iç sahada son maçlarında üretken; model ev sahibi için 1.70, Chelsea için 1.10 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
+      "comment_source": "kural",
+      "flags": [],
+      "provenance": {
+        "odds": {
+          "source": "nesine",
+          "t": "2026-11-05T18:31:00+03:00"
+        },
+        "stats": {
+          "source": "football-data.co.uk",
+          "t": "2026-11-05T08:31:00+03:00"
+        },
+        "squad": {
+          "source": "flashscore",
+          "t": "2026-11-05T18:31:00+03:00"
+        }
+      }
+    },
+    {
+      "id": "ENG1-20261105-brentford-everton",
+      "code": "1402",
+      "mbs": 2,
+      "league": "ENG1",
+      "league_name": "Premier Lig",
+      "league_priority": 4,
+      "kickoff": "2026-11-05T22:00:00+03:00",
+      "home": {
+        "name": "Brentford"
+      },
+      "away": {
+        "name": "Everton"
+      },
+      "status": "scheduled",
+      "result": null,
+      "odds": null,
+      "odds_history": null,
+      "market": null,
+      "model": {
+        "lambda_home": 1.4,
+        "lambda_away": 1.15,
+        "sims": 10000,
+        "rho": -0.08,
+        "probs": {
+          "1": 0.417,
+          "2": 0.299,
+          "12": 0.715,
+          "X": 0.285,
+          "1X": 0.701,
+          "X2": 0.583,
+          "O1.5": 0.733,
+          "U1.5": 0.267,
+          "O2.5": 0.469,
+          "U2.5": 0.531,
+          "O3.5": 0.253,
+          "U3.5": 0.747,
+          "BTTS_Y": 0.525,
+          "BTTS_N": 0.475
+        },
+        "htft": {
+          "1/1": 0.251,
+          "1/X": 0.048,
+          "1/2": 0.022,
+          "X/1": 0.17,
+          "X/X": 0.137,
+          "X/2": 0.122,
+          "2/1": 0.025,
+          "2/X": 0.045,
+          "2/2": 0.179
+        },
+        "top_scores": [
+          {
+            "score": "1-1",
+            "p": 0.136
+          },
+          {
+            "score": "1-0",
+            "p": 0.099
+          },
+          {
+            "score": "0-0",
+            "p": 0.088
+          },
+          {
+            "score": "2-1",
+            "p": 0.088
+          },
+          {
+            "score": "0-1",
+            "p": 0.08
+          }
+        ],
+        "score_matrix": [
+          [
+            0.0881,
+            0.0797,
+            0.0516,
+            0.0198,
+            0.0057,
+            0.0013
+          ],
+          [
+            0.0993,
+            0.1358,
+            0.0723,
+            0.0277,
+            0.008,
+            0.0018
+          ],
+          [
+            0.0765,
+            0.088,
+            0.0506,
+            0.0194,
+            0.0056,
+            0.0013
+          ],
+          [
+            0.0357,
+            0.0411,
+            0.0236,
+            0.0091,
+            0.0026,
+            0.0006
+          ],
+          [
+            0.0125,
+            0.0144,
+            0.0083,
+            0.0032,
+            0.0009,
+            0.0002
+          ],
+          [
+            0.0035,
+            0.004,
+            0.0023,
+            0.0009,
+            0.0003,
+            0.0001
+          ]
+        ],
+        "total_goals": [
+          0.088,
+          0.179,
+          0.264,
+          0.216,
+          0.138,
+          0.07,
+          0.045
+        ],
+        "data_quality": "high",
+        "notes": [
+          "xG harmanı kullanıldı",
+          "Zaman ağırlıklı Dixon-Coles"
+        ]
+      },
+      "stats": {
+        "home": {
+          "form": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "W"
+          ],
+          "venue_form": [
+            "W",
+            "L",
+            "D",
+            "D",
+            "W"
+          ],
+          "gf_avg": 1.98,
+          "ga_avg": 0.81,
+          "venue_gf_avg": 1.66,
+          "venue_ga_avg": 1.27,
+          "xg_avg": 1.69,
+          "xga_avg": 1.5,
+          "btts_pct": 0.45,
+          "o25_pct": 0.66,
+          "clean_sheets_venue": 2,
+          "venue_n": 6,
+          "corners_avg": 5.8,
+          "cards_avg": 2.8,
+          "n": 10
+        },
+        "away": {
+          "form": [
+            "L",
+            "D",
+            "D",
+            "W",
+            "D"
+          ],
+          "venue_form": [
+            "W",
+            "L",
+            "W",
+            "L",
+            "L"
+          ],
+          "gf_avg": 1.16,
+          "ga_avg": 1.28,
+          "venue_gf_avg": 1.77,
+          "venue_ga_avg": 1.03,
+          "xg_avg": 1.37,
+          "xga_avg": 1.12,
+          "btts_pct": 0.51,
+          "o25_pct": 0.56,
+          "clean_sheets_venue": 1,
+          "venue_n": 6,
+          "corners_avg": 6.8,
+          "cards_avg": 2.7,
+          "n": 10
+        },
+        "h2h": [
+          {
+            "date": "2026-03-01",
+            "home": "Everton",
+            "away": "Brentford",
+            "score": "1-1"
+          },
+          {
+            "date": "2025-10-19",
+            "home": "Brentford",
+            "away": "Everton",
+            "score": "2-0"
+          },
+          {
+            "date": "2025-02-23",
+            "home": "Everton",
+            "away": "Brentford",
+            "score": "3-2"
+          }
+        ]
+      },
+      "squad": {
+        "home": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu A",
+              "reason": "sakat",
+              "key": true
+            },
+            {
+              "name": "Örnek Oyuncu B",
+              "reason": "şüpheli",
+              "key": false
+            }
+          ],
+          "rotation_risk": false,
+          "coach_change": false,
+          "adjustment": -0.04
+        },
+        "away": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu C",
+              "reason": "cezalı",
+              "key": false
+            }
+          ],
+          "rotation_risk": false,
+          "coach_change": false,
+          "adjustment": 0
+        },
+        "source": "flashscore",
+        "fetched_at": "2026-11-05T18:31:00+03:00"
+      },
+      "consensus": {
+        "sources": [
+          {
+            "source": "forebet",
+            "picks": {
+              "1X2": "1",
+              "OU25": "U2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": {
+              "1": 0.45,
+              "2": 0.29,
+              "X": 0.26
+            },
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "sportytrader",
+            "picks": {
+              "1X2": "1",
+              "OU25": "O2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "freesupertips",
+            "picks": {
+              "1X2": "1",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          }
+        ],
+        "summary": [
+          {
+            "market": "BTTS_Y",
+            "agree": 3,
+            "total": 5,
+            "text": "5 kaynaktan 3'ü KG Var diyor"
+          }
+        ]
+      },
+      "value": [],
+      "value_note": "Değer yok",
+      "pick": {
+        "market": "O1.5",
+        "label": "1.5 Üst",
+        "p": 0.733,
+        "odds": null,
+        "stars": 3,
+        "is_value": false
+      },
+      "comment": "ÖRNEK VERİ. Brentford iç sahada son maçlarında üretken; model ev sahibi için 1.40, Everton için 1.15 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
+      "comment_source": "kural",
+      "flags": [
+        "Oran yok"
+      ],
+      "provenance": {
+        "stats": {
+          "source": "football-data.co.uk",
+          "t": "2026-11-05T08:31:00+03:00"
+        },
+        "squad": {
+          "source": "flashscore",
+          "t": "2026-11-05T18:31:00+03:00"
+        }
+      }
+    },
+    {
+      "id": "ESP1-20261105-real-betis-sevilla",
+      "code": "1501",
+      "mbs": 1,
+      "league": "ESP1",
+      "league_name": "La Liga",
+      "league_priority": 5,
+      "kickoff": "2026-11-05T22:00:00+03:00",
+      "home": {
+        "name": "Real Betis"
+      },
+      "away": {
+        "name": "Sevilla"
+      },
+      "status": "scheduled",
+      "result": null,
+      "odds": {
+        "1": 2.26,
+        "2": 3.2,
+        "X": 3.13,
+        "O2.5": 2,
+        "U2.5": 2.08,
+        "BTTS_Y": 1.84,
+        "BTTS_N": 1.98,
+        "O1.5": 1.26,
+        "U1.5": 3.52,
+        "O3.5": 4.09,
+        "U3.5": 1.16
+      },
+      "odds_history": [
+        {
+          "1": 2.31,
+          "2": 3.17,
+          "t": "2026-11-05T08:31:00+03:00",
+          "X": 3.1
+        },
+        {
+          "1": 2.29,
+          "2": 3.19,
+          "t": "2026-11-05T13:31:00+03:00",
+          "X": 3.12
+        },
+        {
+          "1": 2.26,
+          "2": 3.2,
+          "t": "2026-11-05T18:31:00+03:00",
+          "X": 3.13
+        }
+      ],
+      "market": {
+        "implied": {
+          "1": 0.412,
+          "2": 0.291,
+          "X": 0.297,
+          "O2.5": 0.51,
+          "U2.5": 0.49,
+          "BTTS_Y": 0.518,
+          "BTTS_N": 0.482,
+          "O1.5": 0.736,
+          "U1.5": 0.264,
+          "O3.5": 0.221,
+          "U3.5": 0.779
+        },
+        "margin": {
+          "1x2": 0.074,
+          "ou25": -0.019
+        },
+        "movement": {
+          "1": -0.022,
+          "2": 0.009,
+          "X": 0.01
+        },
+        "drop_alarms": []
+      },
+      "model": {
+        "lambda_home": 1.4,
+        "lambda_away": 1.1,
+        "sims": 10000,
+        "rho": -0.08,
+        "probs": {
+          "1": 0.428,
+          "2": 0.285,
+          "12": 0.713,
+          "X": 0.287,
+          "1X": 0.715,
+          "X2": 0.572,
+          "O1.5": 0.723,
+          "U1.5": 0.277,
+          "O2.5": 0.456,
+          "U2.5": 0.544,
+          "O3.5": 0.242,
+          "U3.5": 0.758,
+          "BTTS_Y": 0.513,
+          "BTTS_N": 0.487
+        },
+        "htft": {
+          "1/1": 0.255,
+          "1/X": 0.049,
+          "1/2": 0.023,
+          "X/1": 0.177,
+          "X/X": 0.14,
+          "X/2": 0.118,
+          "2/1": 0.024,
+          "2/X": 0.043,
+          "2/2": 0.172
+        },
+        "top_scores": [
+          {
+            "score": "1-1",
+            "p": 0.137
+          },
+          {
+            "score": "1-0",
+            "p": 0.105
+          },
+          {
+            "score": "0-0",
+            "p": 0.092
+          },
+          {
+            "score": "2-1",
+            "p": 0.088
+          },
+          {
+            "score": "0-1",
+            "p": 0.08
+          }
+        ],
+        "score_matrix": [
+          [
+            0.0922,
+            0.0802,
+            0.0497,
+            0.0182,
+            0.005,
+            0.0011
+          ],
+          [
+            0.1048,
+            0.1365,
+            0.0695,
+            0.0255,
+            0.007,
+            0.0015
+          ],
+          [
+            0.0804,
+            0.0885,
+            0.0487,
+            0.0178,
+            0.0049,
+            0.0011
+          ],
+          [
+            0.0375,
+            0.0413,
+            0.0227,
+            0.0083,
+            0.0023,
+            0.0005
+          ],
+          [
+            0.0131,
+            0.0145,
+            0.0079,
+            0.0029,
+            0.0008,
+            0.0002
+          ],
+          [
+            0.0037,
+            0.004,
+            0.0022,
+            0.0008,
+            0.0002,
+            0
+          ]
+        ],
+        "total_goals": [
+          0.092,
+          0.185,
+          0.267,
+          0.214,
+          0.134,
+          0.067,
+          0.042
+        ],
+        "data_quality": "high",
+        "notes": [
+          "xG harmanı kullanıldı",
+          "Zaman ağırlıklı Dixon-Coles"
+        ]
+      },
+      "stats": {
+        "home": {
+          "form": [
+            "D",
+            "D",
+            "L",
+            "W",
+            "D"
+          ],
+          "venue_form": [
+            "W",
+            "D",
+            "D",
+            "D",
+            "L"
+          ],
+          "gf_avg": 1.69,
+          "ga_avg": 1.18,
+          "venue_gf_avg": 1.76,
+          "venue_ga_avg": 0.95,
+          "xg_avg": 1.63,
+          "xga_avg": 1.04,
+          "btts_pct": 0.57,
+          "o25_pct": 0.53,
+          "clean_sheets_venue": 1,
+          "venue_n": 6,
+          "corners_avg": 5.8,
+          "cards_avg": 2.1,
+          "n": 10
+        },
+        "away": {
+          "form": [
+            "L",
+            "L",
+            "D",
+            "D",
+            "W"
+          ],
+          "venue_form": [
+            "W",
+            "L",
+            "W",
+            "W",
+            "W"
+          ],
+          "gf_avg": 1.29,
+          "ga_avg": 0.75,
+          "venue_gf_avg": 1.43,
+          "venue_ga_avg": 0.9,
+          "xg_avg": 1.12,
+          "xga_avg": 1.42,
+          "btts_pct": 0.5,
+          "o25_pct": 0.49,
+          "clean_sheets_venue": 3,
+          "venue_n": 6,
+          "corners_avg": 6.8,
+          "cards_avg": 2.4,
+          "n": 10
+        },
+        "h2h": [
+          {
+            "date": "2026-03-01",
+            "home": "Sevilla",
+            "away": "Real Betis",
+            "score": "1-1"
+          },
+          {
+            "date": "2025-10-19",
+            "home": "Real Betis",
+            "away": "Sevilla",
+            "score": "2-0"
+          },
+          {
+            "date": "2025-02-23",
+            "home": "Sevilla",
+            "away": "Real Betis",
+            "score": "3-2"
+          }
+        ]
+      },
+      "squad": {
+        "home": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu A",
+              "reason": "sakat",
+              "key": true
+            },
+            {
+              "name": "Örnek Oyuncu B",
+              "reason": "şüpheli",
+              "key": false
+            }
+          ],
+          "rotation_risk": false,
+          "coach_change": false,
+          "adjustment": -0.04
+        },
+        "away": {
+          "missing": [
+            {
+              "name": "Örnek Oyuncu C",
+              "reason": "cezalı",
+              "key": false
+            }
+          ],
+          "rotation_risk": false,
+          "coach_change": false,
+          "adjustment": 0
+        },
+        "source": "flashscore",
+        "fetched_at": "2026-11-05T18:31:00+03:00"
+      },
+      "consensus": {
+        "sources": [
+          {
+            "source": "forebet",
+            "picks": {
+              "1X2": "1",
+              "OU25": "U2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": {
+              "1": 0.46,
+              "2": 0.27,
+              "X": 0.27
+            },
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "sportytrader",
+            "picks": {
+              "1X2": "1",
+              "OU25": "O2.5",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          },
+          {
+            "source": "freesupertips",
+            "picks": {
+              "1X2": "1",
+              "BTTS": "BTTS_Y"
+            },
+            "probs": null,
+            "fetched_at": "2026-11-05T18:31:00+03:00"
+          }
+        ],
+        "summary": [
+          {
+            "market": "BTTS_Y",
+            "agree": 3,
+            "total": 5,
+            "text": "5 kaynaktan 3'ü KG Var diyor"
+          }
+        ]
+      },
+      "value": [
+        {
+          "market": "U2.5",
+          "model_p": 0.544,
+          "implied_p": 0.49,
+          "odds": 2.08,
+          "edge": 0.054,
+          "ev": 0.132
+        }
+      ],
+      "pick": {
+        "market": "U2.5",
+        "label": "2.5 Alt",
+        "p": 0.544,
+        "odds": 2.08,
+        "stars": 3,
+        "is_value": true
+      },
+      "comment": "ÖRNEK VERİ. Real Betis iç sahada son maçlarında üretken; model ev sahibi için 1.40, Sevilla için 1.10 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark U2.5 marketinde. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
+      "comment_source": "kural",
+      "flags": [],
+      "provenance": {
+        "odds": {
+          "source": "nesine",
+          "t": "2026-11-05T18:31:00+03:00"
+        },
+        "stats": {
+          "source": "football-data.co.uk",
+          "t": "2026-11-05T08:31:00+03:00"
+        },
+        "squad": {
+          "source": "flashscore",
+          "t": "2026-11-05T18:31:00+03:00"
+        }
+      }
+    }
+  ]
+}

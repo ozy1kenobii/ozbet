@@ -1,0 +1,61 @@
+{
+  "generated_at": "2026-11-05T18:33:05+03:00",
+  "sources": [
+    {
+      "id": "nesine",
+      "name": "Nesine bülten",
+      "status": "ok",
+      "fetched_at": "2026-11-05T18:31:00+03:00",
+      "note": null
+    },
+    {
+      "id": "iddaa",
+      "name": "iddaa.com",
+      "status": "partial",
+      "fetched_at": "2026-11-05T18:31:20+03:00",
+      "note": "Bazı maçlarda KG oranı yok"
+    },
+    {
+      "id": "football-data",
+      "name": "football-data.co.uk",
+      "status": "ok",
+      "fetched_at": "2026-11-05T08:31:00+03:00",
+      "note": null
+    },
+    {
+      "id": "flashscore",
+      "name": "Flashscore kadro",
+      "status": "ok",
+      "fetched_at": "2026-11-05T18:32:00+03:00",
+      "note": null
+    },
+    {
+      "id": "forebet",
+      "name": "Forebet",
+      "status": "ok",
+      "fetched_at": "2026-11-05T18:32:30+03:00",
+      "note": null
+    },
+    {
+      "id": "sportytrader",
+      "name": "SportyTrader",
+      "status": "ok",
+      "fetched_at": "2026-11-05T18:32:40+03:00",
+      "note": null
+    },
+    {
+      "id": "freesupertips",
+      "name": "FreeSuperTips",
+      "status": "missing",
+      "fetched_at": null,
+      "note": "Zaman aşımı (örnek)"
+    },
+    {
+      "id": "understat",
+      "name": "Understat xG",
+      "status": "ok",
+      "fetched_at": "2026-11-05T08:33:00+03:00",
+      "note": null
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#2340C8"/>
+  <rect x="111.28" y="128.56" width="99.36000000000001" height="151.20000000000002" rx="49.68000000000001" fill="none" stroke="#FFFFFF" stroke-width="56.160000000000004"/>
+  <path d="M273.28000000000003 128.56 H411.52000000000004 L273.28000000000003 279.76000000000005 H411.52000000000004" fill="none" stroke="#C9D3FF" stroke-width="56.160000000000004" stroke-linejoin="bevel" stroke-linecap="butt"/>
+  <rect x="83.2" y="346.72" width="345.6" height="17.28" fill="#C9D3FF"/><text x="256" y="437.44000000000005" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-weight="700" font-size="64.80000000000001" letter-spacing="25.92" fill="#FFFFFF">BET</text>
+</svg>

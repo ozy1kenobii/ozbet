@@ -1,0 +1,294 @@
+{
+  "generated_at": "2026-11-05T18:33:05+03:00",
+  "overall": {
+    "n": 120,
+    "hit_rate": 0.54,
+    "brier_1x2": 0.198,
+    "roi": 0.031,
+    "staked": 120,
+    "profit": 3.7
+  },
+  "last30": {
+    "n": 41,
+    "hit_rate": 0.56,
+    "brier_1x2": 0.193,
+    "roi": 0.124,
+    "staked": 41,
+    "profit": 5.1
+  },
+  "by_league": [
+    {
+      "league": "TR1",
+      "name": "Süper Lig",
+      "n": 40,
+      "hit_rate": 0.55,
+      "roi": 0.02
+    },
+    {
+      "league": "TR2",
+      "name": "1. Lig",
+      "n": 18,
+      "hit_rate": 0.47,
+      "roi": -0.06
+    },
+    {
+      "league": "UCL",
+      "name": "Şampiyonlar Ligi",
+      "n": 16,
+      "hit_rate": 0.56,
+      "roi": 0.05
+    },
+    {
+      "league": "ENG1",
+      "name": "Premier Lig",
+      "n": 26,
+      "hit_rate": 0.58,
+      "roi": 0.07
+    },
+    {
+      "league": "ESP1",
+      "name": "La Liga",
+      "n": 20,
+      "hit_rate": 0.5,
+      "roi": -0.01
+    }
+  ],
+  "by_market": [
+    {
+      "market": "O2.5",
+      "label": "2.5 Üst",
+      "n": 30,
+      "hit_rate": 0.6,
+      "roi": 0.08,
+      "trust": 1
+    },
+    {
+      "market": "BTTS_Y",
+      "label": "KG Var",
+      "n": 24,
+      "hit_rate": 0.54,
+      "roi": 0.01,
+      "trust": 1
+    },
+    {
+      "market": "1X",
+      "label": "ÇŞ 1X",
+      "n": 28,
+      "hit_rate": 0.71,
+      "roi": -0.02,
+      "trust": 0.9
+    },
+    {
+      "market": "1",
+      "label": "MS 1",
+      "n": 22,
+      "hit_rate": 0.45,
+      "roi": -0.09,
+      "trust": 0.75
+    },
+    {
+      "market": "U2.5",
+      "label": "2.5 Alt",
+      "n": 16,
+      "hit_rate": 0.56,
+      "roi": 0.04,
+      "trust": 1
+    }
+  ],
+  "calibration": [
+    {
+      "bin": "0.3-0.4",
+      "predicted": 0.36,
+      "observed": 0.31,
+      "n": 12
+    },
+    {
+      "bin": "0.4-0.5",
+      "predicted": 0.46,
+      "observed": 0.44,
+      "n": 28
+    },
+    {
+      "bin": "0.5-0.6",
+      "predicted": 0.55,
+      "observed": 0.53,
+      "n": 44
+    },
+    {
+      "bin": "0.6-0.7",
+      "predicted": 0.65,
+      "observed": 0.68,
+      "n": 26
+    },
+    {
+      "bin": "0.7-0.8",
+      "predicted": 0.74,
+      "observed": 0.7,
+      "n": 10
+    }
+  ],
+  "bankroll": [
+    {
+      "date": "2026-10-07",
+      "balance": 98.8
+    },
+    {
+      "date": "2026-10-08",
+      "balance": 99.7
+    },
+    {
+      "date": "2026-10-09",
+      "balance": 100.2
+    },
+    {
+      "date": "2026-10-10",
+      "balance": 101.8
+    },
+    {
+      "date": "2026-10-11",
+      "balance": 100.6
+    },
+    {
+      "date": "2026-10-12",
+      "balance": 99.3
+    },
+    {
+      "date": "2026-10-13",
+      "balance": 100.2
+    },
+    {
+      "date": "2026-10-14",
+      "balance": 99.7
+    },
+    {
+      "date": "2026-10-15",
+      "balance": 100.6
+    },
+    {
+      "date": "2026-10-16",
+      "balance": 99.9
+    },
+    {
+      "date": "2026-10-17",
+      "balance": 98.9
+    },
+    {
+      "date": "2026-10-18",
+      "balance": 98.7
+    },
+    {
+      "date": "2026-10-19",
+      "balance": 97.9
+    },
+    {
+      "date": "2026-10-20",
+      "balance": 99
+    },
+    {
+      "date": "2026-10-21",
+      "balance": 99.3
+    },
+    {
+      "date": "2026-10-22",
+      "balance": 98.5
+    },
+    {
+      "date": "2026-10-23",
+      "balance": 98.7
+    },
+    {
+      "date": "2026-10-24",
+      "balance": 99.6
+    },
+    {
+      "date": "2026-10-25",
+      "balance": 98.4
+    },
+    {
+      "date": "2026-10-26",
+      "balance": 98.5
+    },
+    {
+      "date": "2026-10-27",
+      "balance": 99.6
+    },
+    {
+      "date": "2026-10-28",
+      "balance": 98.6
+    },
+    {
+      "date": "2026-10-29",
+      "balance": 100.3
+    },
+    {
+      "date": "2026-10-30",
+      "balance": 101.8
+    },
+    {
+      "date": "2026-10-31",
+      "balance": 103.2
+    },
+    {
+      "date": "2026-11-01",
+      "balance": 104.5
+    },
+    {
+      "date": "2026-11-02",
+      "balance": 104.8
+    },
+    {
+      "date": "2026-11-03",
+      "balance": 105.1
+    },
+    {
+      "date": "2026-11-04",
+      "balance": 105
+    },
+    {
+      "date": "2026-11-05",
+      "balance": 105.1
+    }
+  ],
+  "recent": [
+    {
+      "date": "2026-11-04",
+      "match": "Beşiktaş - Göztepe",
+      "pick": "2.5 Üst",
+      "odds": 1.72,
+      "won": true,
+      "score": "3-1"
+    },
+    {
+      "date": "2026-11-04",
+      "match": "Manchester City - Tottenham",
+      "pick": "MS 1",
+      "odds": 1.55,
+      "won": false,
+      "score": "1-1"
+    },
+    {
+      "date": "2026-11-04",
+      "match": "Barcelona - Villarreal",
+      "pick": "ÇŞ 1X",
+      "odds": 1.18,
+      "won": true,
+      "score": "2-0"
+    },
+    {
+      "date": "2026-11-03",
+      "match": "Konyaspor - Alanyaspor",
+      "pick": "KG Var",
+      "odds": 1.8,
+      "won": true,
+      "score": "1-2"
+    },
+    {
+      "date": "2026-11-03",
+      "match": "Getafe - Valencia",
+      "pick": "2.5 Alt",
+      "odds": 1.62,
+      "won": false,
+      "score": "2-2"
+    }
+  ]
+}

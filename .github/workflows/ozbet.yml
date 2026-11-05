@@ -1,0 +1,121 @@
+name: OZBET – veri hattı ve yayın
+
+on:
+  schedule:
+    # GitHub cron UTC'dir. Türkiye = UTC+3 (yaz saati yok).
+    - cron: "30 5 * * *"    # 08:30 TR – günlük bülten + dünün karnesi
+    - cron: "30 10 * * *"   # 13:30 TR – kadro/oran güncellemesi
+    - cron: "30 15 * * *"   # 18:30 TR – kadro/oran güncellemesi
+    - cron: "0 3 * * 1"     # Pazartesi 06:00 TR – haftalık backtest raporu
+  workflow_dispatch:
+    inputs:
+      date:
+        description: "Tarih (YYYY-MM-DD, boş = bugün)"
+        required: false
+      backtest:
+        description: "Backtest de çalıştırılsın mı?"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths: ["web/**", ".github/workflows/**"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ozbet
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Python
+        if: github.event_name != 'push'
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: HTTP önbelleği
+        if: github.event_name != 'push'
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: ozbet-cache-${{ github.run_id }}
+          restore-keys: ozbet-cache-
+
+      - name: Bağımlılıklar
+        if: github.event_name != 'push'
+        run: |
+          pip install -r pipeline/requirements.txt
+          # Playwright opsiyonel: kurulamazsa flashscore adapter'ı HTTP yoluna düşer
+          python -m playwright install --with-deps chromium || echo "Playwright kurulamadı, devam"
+
+      - name: Veri hattı
+        if: github.event_name == 'schedule' && github.event.schedule != '0 3 * * 1' || github.event_name == 'workflow_dispatch'
+        working-directory: pipeline
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
+          FOOTBALL_DATA_ORG_KEY: ${{ secrets.FOOTBALL_DATA_ORG_KEY }}
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            python -m ozbet.run --date "${{ github.event.inputs.date }}"
+          else
+            python -m ozbet.run
+          fi
+
+      - name: Backtest
+        if: github.event.schedule == '0 3 * * 1' || github.event.inputs.backtest == 'true'
+        working-directory: pipeline
+        run: python -m ozbet.backtest
+
+      - name: Veriyi depoya kaydet
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "ozbet-bot"
+          git config user.email "ozbet-bot@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then echo "Değişiklik yok"; else
+            git commit -m "veri: $(TZ=Europe/Istanbul date '+%Y-%m-%d %H:%M')"
+            git pull --rebase --autostash || true
+            git push
+          fi
+
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Siteyi derle
+        working-directory: web
+        run: |
+          npm ci
+          npm run build
+          mkdir -p dist/data
+          cp -r ../data/. dist/data/ 2>/dev/null || true
+          touch dist/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.d.outputs.page_url }}
+    steps:
+      - id: d
+        uses: actions/deploy-pages@v4

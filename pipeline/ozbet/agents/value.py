@@ -1,0 +1,26 @@
+"""Değer Ajanı: model olasılığı, marjı temizlenmiş ima olasılığı eşik kadar aşıyorsa 'Değerli'."""
+from __future__ import annotations
+
+from .. import config
+
+VALUE_MARKETS = ["1", "X", "2", "O2.5", "U2.5", "BTTS_Y", "BTTS_N", "O1.5", "U1.5", "O3.5", "U3.5"]
+
+
+def find_value(model_probs: dict | None, odds: dict | None, implied: dict | None,
+               trust: dict[str, float] | None = None) -> list[dict]:
+    if not model_probs or not odds or not implied:
+        return []
+    out = []
+    for k in VALUE_MARKETS:
+        o, ip, mp = odds.get(k), implied.get(k), model_probs.get(k)
+        if not (o and ip and mp):
+            continue
+        t = (trust or {}).get(k, 1.0)
+        # Karnede kötü giden markette model olasılığı ima olasılığa doğru büzülür
+        mp_adj = ip + (mp - ip) * min(t, 1.0)
+        edge = mp_adj - ip
+        if edge >= config.VALUE_EDGE and mp_adj >= 0.25:
+            out.append({"market": k, "model_p": round(mp_adj, 4), "implied_p": round(ip, 4),
+                        "odds": o, "edge": round(edge, 4), "ev": round(mp_adj * o - 1, 4)})
+    out.sort(key=lambda v: -v["ev"])
+    return out

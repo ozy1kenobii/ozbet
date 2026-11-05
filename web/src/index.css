@@ -1,0 +1,88 @@
+@import '@fontsource/barlow/latin-ext-400.css';
+@import '@fontsource/barlow/latin-ext-500.css';
+@import '@fontsource/barlow/latin-ext-600.css';
+@import '@fontsource/barlow-condensed/latin-ext-500.css';
+@import '@fontsource/barlow-condensed/latin-ext-600.css';
+@import '@fontsource/barlow-condensed/latin-ext-700.css';
+@import '@fontsource/barlow/latin-400.css';
+@import '@fontsource/barlow/latin-500.css';
+@import '@fontsource/barlow/latin-600.css';
+@import '@fontsource/barlow-condensed/latin-500.css';
+@import '@fontsource/barlow-condensed/latin-600.css';
+@import '@fontsource/barlow-condensed/latin-700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Renk jetonları (RGB üçlüleri). Tek vurgu rengi: kobalt. */
+:root {
+  --bg: 239 242 241;        /* #EFF2F1 */
+  --surface: 255 255 255;
+  --sunken: 229 233 232;
+  --ink: 20 26 36;          /* #141A24 */
+  --muted: 84 94 108;
+  --line: 208 214 214;
+  --accent: 35 64 200;      /* #2340C8 */
+  --accent-ink: 255 255 255;
+  --win: 22 128 76;
+  --draw: 120 128 140;
+  --loss: 196 52 52;
+  --warn: 168 98 0;
+  color-scheme: light;
+}
+:root.dark {
+  --bg: 14 20 33;           /* #0E1421 */
+  --surface: 22 29 45;
+  --sunken: 11 16 27;
+  --ink: 230 235 242;
+  --muted: 152 162 180;
+  --line: 44 54 74;
+  --accent: 132 154 255;    /* #849AFF */
+  --accent-ink: 10 16 40;
+  --win: 74 196 132;
+  --draw: 140 150 168;
+  --loss: 240 110 110;
+  --warn: 236 170 70;
+  color-scheme: dark;
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    @apply bg-bg text-ink antialiased;
+    font-family: 'Barlow', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    font-size: 15px;
+    line-height: 1.45;
+    font-variant-numeric: tabular-nums;
+  }
+  :focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 2px; border-radius: 4px; }
+  button { -webkit-tap-highlight-color: transparent; }
+}
+
+@layer components {
+  .display { font-family: 'Barlow Condensed', 'Barlow', system-ui, sans-serif; letter-spacing: 0.005em; }
+  .num { font-variant-numeric: tabular-nums lining-nums; }
+  .panel { @apply bg-surface border border-line rounded-lg; }
+  .tap { min-height: 44px; min-width: 44px; }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line px-3.5 text-sm font-medium text-ink bg-surface;
+    min-height: 44px;
+  }
+  .chip[aria-pressed='true'] { @apply border-accent bg-accent text-accent-ink; }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-4 text-sm font-semibold;
+    min-height: 44px;
+  }
+  .btn-primary { @apply bg-accent text-accent-ink; }
+  .btn-ghost { @apply border border-line bg-surface text-ink; }
+  .h-section { @apply display text-xl font-semibold text-ink; }
+  .tbl { @apply w-full text-sm num; border-collapse: collapse; }
+  .tbl th { @apply text-left font-medium text-muted px-2 py-2 border-b border-line; }
+  .tbl td { @apply px-2 py-2 border-b border-line; }
+  .tbl tr:last-child td { border-bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
