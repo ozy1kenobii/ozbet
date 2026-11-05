@@ -1,28 +1,28 @@
 {
- "generated_at": "2026-11-05T14:27:13+03:00",
+ "generated_at": "2026-11-05T15:35:31+03:00",
  "run_label": "13:30",
  "sources": [
   {
    "id": "nesine",
    "name": "Nesine iddaa bülteni (kod, MBS, oran)",
    "status": "ok",
-   "fetched_at": "2026-11-05T14:26:34+03:00",
+   "fetched_at": "2026-11-05T15:34:56+03:00",
    "note": null,
-   "items": 1036
+   "items": 1104
   },
   {
    "id": "iddaa",
    "name": "iddaa.com resmi bülten (oran, MBS)",
    "status": "ok",
-   "fetched_at": "2026-11-05T14:26:37+03:00",
+   "fetched_at": "2026-11-05T15:34:59+03:00",
    "note": null,
-   "items": 1081
+   "items": 1108
   },
   {
    "id": "flashscore",
    "name": "Flashscore (fikstür)",
    "status": "missing",
-   "fetched_at": "2026-11-05T14:26:51+03:00",
+   "fetched_at": "2026-11-05T15:35:14+03:00",
    "note": "RuntimeError: flashscore feed boş ('0') – x-fsign geçersiz olabilir",
    "items": 0
   },
@@ -30,7 +30,7 @@
    "id": "api_football",
    "name": "API-Football (yedek, anahtar gerekir)",
    "status": "partial",
-   "fetched_at": "2026-11-05T14:26:51+03:00",
+   "fetched_at": "2026-11-05T15:35:14+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -38,7 +38,7 @@
    "id": "football_data_fixtures",
    "name": "football-data.co.uk fixtures.csv (oran yedeği)",
    "status": "partial",
-   "fetched_at": "2026-11-05T14:26:51+03:00",
+   "fetched_at": "2026-11-05T15:35:15+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -46,7 +46,7 @@
    "id": "football_data_history",
    "name": "football-data.co.uk (geçmiş sonuçlar + oranlar)",
    "status": "ok",
-   "fetched_at": "2026-11-05T14:26:58+03:00",
+   "fetched_at": "2026-11-05T15:35:26+03:00",
    "note": null,
    "items": 12475
   },
@@ -54,7 +54,7 @@
    "id": "understat",
    "name": "Understat (xG, 5 büyük lig)",
    "status": "missing",
-   "fetched_at": "2026-11-05T14:26:58+03:00",
+   "fetched_at": "2026-11-05T15:35:26+03:00",
    "note": "RuntimeError: understat bakımda",
    "items": 0
   },
@@ -62,7 +62,7 @@
    "id": "api_football_history",
    "name": "API-Football geçmiş (1. Lig vb., anahtar gerekir)",
    "status": "partial",
-   "fetched_at": "2026-11-05T14:26:58+03:00",
+   "fetched_at": "2026-11-05T15:35:26+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -70,7 +70,7 @@
    "id": "flashscore_news",
    "name": "Flashscore (sakat/cezalı)",
    "status": "partial",
-   "fetched_at": "2026-11-05T14:26:59+03:00",
+   "fetched_at": "2026-11-05T15:35:26+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -78,7 +78,7 @@
    "id": "transfermarkt",
    "name": "Transfermarkt (sakatlık listesi)",
    "status": "partial",
-   "fetched_at": "2026-11-05T14:26:59+03:00",
+   "fetched_at": "2026-11-05T15:35:26+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -86,23 +86,23 @@
    "id": "forebet",
    "name": "Forebet (matematiksel tahmin)",
    "status": "missing",
-   "fetched_at": "2026-11-05T14:26:59+03:00",
+   "fetched_at": "2026-11-05T15:35:27+03:00",
    "note": "Blocked: Forebet bot koruması (Cloudflare) erişimi engelliyor: HTTP 403: https://www.forebet.com/en/football-tips-and-predictions-for-today",
    "items": 0
   },
   {
    "id": "sportytrader",
    "name": "SportyTrader (uzman tahmini)",
-   "status": "partial",
-   "fetched_at": "2026-11-05T14:27:00+03:00",
-   "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
-   "items": 0
+   "status": "ok",
+   "fetched_at": "2026-11-05T15:35:29+03:00",
+   "note": null,
+   "items": 13
   },
   {
    "id": "freesupertips",
    "name": "FreeSuperTips (ipucu)",
    "status": "ok",
-   "fetched_at": "2026-11-05T14:27:01+03:00",
+   "fetched_at": "2026-11-05T15:35:29+03:00",
    "note": null,
    "items": 15
   },
@@ -110,7 +110,7 @@
    "id": "soccerstats",
    "name": "SoccerStats (lig istatistik eğilimi)",
    "status": "partial",
-   "fetched_at": "2026-11-05T14:27:01+03:00",
+   "fetched_at": "2026-11-05T15:35:29+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -118,24 +118,24 @@
    "id": "nesine_results",
    "name": "Nesine (sonuçlar)",
    "status": "partial",
-   "fetched_at": "2026-11-05T14:27:01+03:00",
+   "fetched_at": "2026-11-05T15:35:30+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
   {
    "id": "flashscore_results",
    "name": "Flashscore (sonuçlar)",
-   "status": "missing",
-   "fetched_at": "2026-11-05T14:27:12+03:00",
-   "note": "RuntimeError: flashscore feed boş ('0') – x-fsign geçersiz olabilir",
-   "items": 0
+   "status": "ok",
+   "fetched_at": "2026-11-05T15:35:30+03:00",
+   "note": null,
+   "items": 268
   },
   {
    "id": "pipeline",
    "name": "OZBET işleme",
    "status": "ok",
-   "fetched_at": "2026-11-05T14:27:12+03:00",
-   "note": "Eşlenemeyen lig adları (ilk 15): AFC Kupası, Arjantin Primera A Kapanış, Kadınlar, Arjantin Primera LPF, Kapanış, Botsvana Premier Ligi, Fransa Ulusal Lig, Hindistan Süper Ligi, Irak Ligi, Katar 2. Lig, Mısır Kupası, Romanya 2. Lig, Ruanda Ulusal Lig, SAFF Şampiyonası, B Grubu, Senegal Premier Lig, UEFA Avrupa Ligi Günlük Bahisler, UEFA Konf. Ligi Günlük Bahisler",
+   "fetched_at": "2026-11-05T15:35:31+03:00",
+   "note": "Eşlenemeyen lig adları (ilk 15): Arjantin Primera A Kapanış, Kadınlar, Arjantin Primera LPF, Kapanış, Botsvana Premier Ligi, Fransa Ulusal Lig, Hindistan Süper Ligi, Irak Ligi, Katar 2. Lig, Mısır Kupası, Romanya 2. Lig, Ruanda Ulusal Lig, SAFF Şampiyonası, A Grubu, Senegal Premier Lig, UEFA Avrupa Ligi Günlük Bahisler, UEFA Konf. Ligi Günlük Bahisler, Uganda Premier Ligi",
    "items": 82
   }
  ]
