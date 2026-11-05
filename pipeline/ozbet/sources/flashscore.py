@@ -56,15 +56,52 @@ def parse_feed(text: str, t: str) -> list[Fixture]:
     return out
 
 
+_fsign: str | None = None
+
+
+def discover_fsign() -> str | None:
+    """Ana sayfayı Playwright ile açıp tarayıcının /x/feed/ isteklerindeki x-fsign başlığını okur."""
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        return None
+    found: list[str] = []
+    try:
+        with sync_playwright() as p:
+            br = p.chromium.launch()
+            pg = br.new_page(locale="tr-TR")
+            pg.on("request", lambda r: found.append(r.headers.get("x-fsign", "")) if "/x/feed/" in r.url else None)
+            pg.goto("https://www.flashscore.com.tr/", timeout=45000)
+            pg.wait_for_timeout(6000)
+            br.close()
+    except Exception as e:  # noqa: BLE001
+        log.info("fsign keşfi başarısız: %s", e)
+    vals = [v for v in found if v]
+    return vals[0] if vals else None
+
+
 def _feed(client: PoliteClient, offset: int, ttl: float) -> str:
+    global _fsign
     err = None
-    for host in HOSTS:
-        lang = "tr" if host.endswith(".tr") else "en"
-        try:
-            return client.get(f"{host}/x/feed/f_1_{offset}_3_{lang}_1", ttl=ttl,
-                              headers={"x-fsign": FSIGN, "Referer": host.replace("d.", "www.") + "/"})
-        except Exception as e:  # noqa: BLE001
-            err = e
+    for attempt in range(2):
+        sign = _fsign or FSIGN
+        for host in HOSTS:
+            lang = "tr" if host.endswith(".tr") else "en"
+            url = f"{host}/x/feed/f_1_{offset}_3_{lang}_1"
+            try:
+                text = client.get(url, ttl=ttl if attempt == 0 else 0,
+                                  headers={"x-fsign": sign, "Referer": host.replace("d.", "www.") + "/"})
+                if len(text) > 50:
+                    return text
+                err = RuntimeError(f"flashscore feed boş ('{text[:10]}') – x-fsign geçersiz olabilir")
+            except Exception as e:  # noqa: BLE001
+                err = e
+        if attempt == 0:
+            new = discover_fsign()
+            if not new or new == sign:
+                break
+            log.info("flashscore x-fsign güncellendi")
+            _fsign = new
     raise err  # type: ignore[misc]
 
 

@@ -37,6 +37,8 @@ def season_matches(client: PoliteClient, league: str, season_start: int, ttl: fl
         text = client.get(f"{BASE}/getLeagueData/{league}/{season_start}", ttl=ttl,
                           headers={"X-Requested-With": "XMLHttpRequest",
                                    "Referer": f"{BASE}/league/{league}/{season_start}"})
+        if "come back soon" in text.lower() or text.lstrip()[:1] not in "{[":
+            raise RuntimeError("understat bakımda / JSON dönmedi")
         data = json.loads(text)
         dates = data.get("dates") or data.get("datesData")
         if dates:
@@ -44,6 +46,8 @@ def season_matches(client: PoliteClient, league: str, season_start: int, ttl: fl
     except Exception:  # noqa: BLE001 — eski biçime düş
         pass
     html = client.get(f"{BASE}/league/{league}/{season_start}", ttl=ttl)
+    if "come back soon" in html.lower():
+        raise RuntimeError("understat bakımda")
     m = _RX.search(html)
     if not m:
         raise RuntimeError("understat: datesData bulunamadı (sayfa yapısı değişmiş)")
@@ -63,6 +67,8 @@ def league_xg(client: PoliteClient, today: date) -> dict[str, list[dict]]:
             try:
                 rows += season_matches(client, lg.understat, s, ttl=6 * 3600 if s == start else 30 * 86400)
             except Exception as e:  # noqa: BLE001
+                if "bakımda" in str(e):
+                    raise   # site kapalı: kalan istekleri boşuna yapma
                 errors.append(f"{lg.id}/{s}: {type(e).__name__}")
         if rows:
             out[lg.id] = rows

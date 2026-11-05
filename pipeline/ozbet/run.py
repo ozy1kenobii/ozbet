@@ -93,6 +93,10 @@ def _skeleton(url: str, code: int, body: str) -> str:
     feed_keys = Counter(_re.findall(r"(?:^|¬|~)([A-Z]{2,3})÷", body))
     if feed_keys:
         lines.append("Feed anahtarları: " + ", ".join(f"{k}({n})" for k, n in feed_keys.most_common(60)))
+    for kw in ("Prediction", "prediction", "<h1", "Tip", "forepr", "ld+json", "Bet of the day"):
+        pos = [m.start() for m in _re.finditer(_re.escape(kw), body)][:3]
+        for p in pos:
+            lines.append(f"--- '{kw}' @{p}: " + body[max(0, p - 150):p + 350].replace("\n", " "))
     lines += ["", "Baş (2500 karakter):", body[:2500]]
     return "\n".join(lines)
 

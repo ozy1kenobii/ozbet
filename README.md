@@ -87,7 +87,7 @@ etiketlerinde geçmişte kâr üretmedi (ROI −%4 … −%14). Bu yüzden:
 | **football-data.co.uk** (eklendi) | Geçmiş sonuçlar, şut/korner/kart, açılış ve kapanış oranları; fixtures.csv oran yedeği | Model eğitimi ve backtest'in omurgası. Site verinin kişisel kullanım için olduğunu belirtir; günde en fazla birkaç dosya iner, önbelleklenir, ham veri yeniden yayınlanmaz. |
 | **Flashscore** | Fikstür, dünün sonuçları, eksik oyuncular (Playwright) | `x-fsign` başlığı değişebilir → `FLASHSCORE_FSIGN` ortam değişkeniyle güncellenir. Eksik oyuncu sayfa yapısı belgelenmemiş. |
 | **SoccerStats** | Ü2,5 % ve KG % eğilimleri (konsensüse "istatistik oyu") | Tablo başlığına göre okunur. |
-| **Forebet** | Matematiksel tahmin | Bot koruması olabilir; 403'te Playwright ile denenir. Olasılık seçicileri doğrulanamadı → yalnızca tahmin okunabilir. |
+| **Forebet** | Matematiksel tahmin | **Engelli:** Cloudflare bot koruması GitHub Actions isteklerini reddediyor (HTTP 403). Koruma aşılmaya çalışılmaz; kaynak "eksik" görünür. |
 | **SportyTrader** | Uzman tahmini (metinden market çıkarımı) | Günde en fazla 20 maç sayfası. |
 | **FreeSuperTips** | İpucu | Süper Lig kapsamı zayıf, çoğunlukla büyük ligler/UEFA. |
 | **Understat** (eklendi) | xG (5 büyük lig) | Süper Lig yok. 5 Kasım 2026'da site bakımdaydı. |
