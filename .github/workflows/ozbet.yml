@@ -21,9 +21,7 @@ on:
     paths: ["web/**", ".github/workflows/**"]
 
 permissions:
-  contents: write
-  pages: write
-  id-token: write
+  contents: read
 
 concurrency:
   group: ozbet
@@ -33,6 +31,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    permissions:
+      contents: write   # yalnızca data/ commit'i için
     steps:
       - uses: actions/checkout@v4
 
@@ -44,13 +44,20 @@ jobs:
           cache: pip
           cache-dependency-path: pipeline/requirements.txt
 
+      - name: Önbellek anahtarı (haftalık)
+        if: github.event_name != 'push'
+        id: wk
+        run: echo "week=$(date -u +%G-%V)" >> "$GITHUB_OUTPUT"
+
       - name: HTTP önbelleği
         if: github.event_name != 'push'
         uses: actions/cache@v4
         with:
           path: .cache
-          key: ozbet-cache-${{ github.run_id }}
-          restore-keys: ozbet-cache-
+          key: ozbet-cache-${{ steps.wk.outputs.week }}-${{ github.run_id }}
+          restore-keys: |
+            ozbet-cache-${{ steps.wk.outputs.week }}-
+            ozbet-cache-
 
       - name: Bağımlılıklar
         if: github.event_name != 'push'
@@ -58,6 +65,11 @@ jobs:
           pip install -r pipeline/requirements.txt
           # Playwright opsiyonel: kurulamazsa flashscore adapter'ı HTTP yoluna düşer
           python -m playwright install --with-deps chromium || echo "Playwright kurulamadı, devam"
+
+      - name: Testler
+        if: github.event_name != 'push'
+        working-directory: pipeline
+        run: python -m pytest -q tests
 
       - name: Veri hattı
         if: github.event_name == 'schedule' && github.event.schedule != '0 3 * * 1' || github.event_name == 'workflow_dispatch'
@@ -67,9 +79,11 @@ jobs:
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
           FOOTBALL_DATA_ORG_KEY: ${{ secrets.FOOTBALL_DATA_ORG_KEY }}
           FLASHSCORE_FSIGN: ${{ vars.FLASHSCORE_FSIGN }}
+          RUN_DATE: ${{ github.event.inputs.date }}
         run: |
-          if [ -n "${{ github.event.inputs.date }}" ]; then
-            python -m ozbet.run --date "${{ github.event.inputs.date }}"
+          if [ -n "$RUN_DATE" ]; then
+            [[ "$RUN_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "Geçersiz tarih"; exit 1; }
+            python -m ozbet.run --date "$RUN_DATE"
           else
             python -m ozbet.run
           fi
@@ -87,8 +101,10 @@ jobs:
           git add data
           if git diff --cached --quiet; then echo "Değişiklik yok"; else
             git commit -m "veri: $(TZ=Europe/Istanbul date '+%Y-%m-%d %H:%M')"
-            git pull --rebase --autostash || true
-            git push
+            for i in 1 2 3; do
+              git pull --rebase --autostash && git push && break
+              echo "Push denemesi $i başarısız, tekrar deneniyor"; sleep 5
+            done
           fi
 
       - name: Node
@@ -114,6 +130,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.d.outputs.page_url }}

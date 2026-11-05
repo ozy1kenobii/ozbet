@@ -39,5 +39,10 @@ def build(home: str, away: str, kickoff, league_id, news: dict[str, object], all
             src, t = n.source, n.fetched_at
     if not out.get("home") and not out.get("away"):
         return None
+    from .simulation import _squad_mult
+    for side in ("home", "away"):
+        if out.get(side):
+            own, _, _ = _squad_mult(out[side])
+            out[side]["adjustment"] = round(own - 1, 4)   # kendi λ'sına uygulanan oransal değişim
     out["source"], out["fetched_at"] = src, t
     return out

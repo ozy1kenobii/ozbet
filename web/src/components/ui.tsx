@@ -89,6 +89,6 @@ export function Section({ title, children, aside }: { title: string; children: R
 }
 
 export function Dot({ s }: { s: string }) {
-  const cls = s === 'ok' ? 'bg-win' : s === 'partial' ? 'bg-warn' : 'bg-loss';
+  const cls = s === 'ok' ? 'bg-win' : s === 'partial' || s === 'skipped' ? 'bg-warn' : 'bg-loss';
   return <span className={`inline-block h-2.5 w-2.5 shrink-0 rounded-full ${cls}`} aria-hidden="true" />;
 }

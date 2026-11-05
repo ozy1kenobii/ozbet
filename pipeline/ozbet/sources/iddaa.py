@@ -36,7 +36,10 @@ def parse_markets(markets: list[dict]) -> dict[str, float]:
                 if opts.get(src):
                     odds[dst] = opts[src]
         elif st == 101:
-            line = str(m.get("sov", "")).replace(",", ".")
+            try:
+                line = f'{float(str(m.get("sov", "")).replace(",", ".")):.1f}'   # "2.50" → "2.5"
+            except ValueError:
+                continue
             if line in ("1.5", "2.5", "3.5"):
                 if opts.get("Üst"):
                     odds[f"O{line}"] = opts["Üst"]

@@ -97,7 +97,7 @@ export default function Scorecard() {
   );
 }
 
-const roiCls = (r: number) => (r > 0 ? 'text-win font-semibold' : r < 0 ? 'text-loss' : '');
+const roiCls = (r: number | null | undefined) => (r == null ? '' : r > 0 ? 'text-win font-semibold' : r < 0 ? 'text-loss' : '');
 
 function Block({ title, b }: { title: string; b: ScoreBlock | undefined }) {
   if (!b) return null;

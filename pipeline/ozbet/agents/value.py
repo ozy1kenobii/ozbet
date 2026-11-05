@@ -16,12 +16,12 @@ def find_value(model_probs: dict | None, odds: dict | None, implied: dict | None
         o, ip, mp = odds.get(k), implied.get(k), model_probs.get(k)
         if not (o and ip and mp):
             continue
+        if mp - ip > MAX_EDGE:   # ham fark aşırı → büyük olasılıkla veri/eşleme hatası; büzülme bunu gizlemesin
+            continue
         t = (trust or {}).get(k, 1.0)
         # Karnede kötü giden markette model olasılığı ima olasılığa doğru büzülür
         mp_adj = ip + (mp - ip) * min(t, 1.0)
         edge = mp_adj - ip
-        if edge > MAX_EDGE:   # model ile piyasa arasında aşırı fark → büyük olasılıkla veri/eşleme hatası
-            continue
         if edge >= config.VALUE_EDGE and mp_adj >= 0.25:
             out.append({"market": k, "model_p": round(mp_adj, 4), "implied_p": round(ip, 4),
                         "odds": o, "edge": round(edge, 4), "ev": round(mp_adj * o - 1, 4)})

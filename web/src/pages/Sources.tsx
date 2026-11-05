@@ -2,7 +2,7 @@ import { statusSources, useStatus } from '../lib/data';
 import { fmtDateTime } from '../lib/format';
 import { Dot, Empty, Loading } from '../components/ui';
 
-const LABEL: Record<string, string> = { ok: 'Çalışıyor', partial: 'Kısmi', missing: 'Eksik' };
+const LABEL: Record<string, string> = { ok: 'Çalışıyor', partial: 'Kısmi', missing: 'Eksik', skipped: 'Atlandı' };
 
 export default function Sources() {
   const st = useStatus();

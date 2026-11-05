@@ -2,7 +2,7 @@
 
 Her hafta modeli yalnızca o tarihten ÖNCEKİ maçlarla yeniden kurar, o haftanın maçlarını tahmin eder.
 Karşılaştırma: piyasa KAPANIŞ oranlarından (marjı temizlenmiş) ima olasılık — en zor referans.
-Değer bahisleri: açılış ortalama oranından (Avg) tek birim, model_p - ima_p ≥ eşik.
+Değer bahisleri: kapanış öncesi ortalama oranından (Avg; football-data.co.uk'un toplama anı) tek birim, model_p - ima_p ≥ eşik.
 
     python -m ozbet.backtest              # data/backtest.json yazar
 """
@@ -18,7 +18,7 @@ from . import config
 from .agents.market import implied
 from .http import PoliteClient
 from .markets import outcome_won, probs_from_matrix
-from .model.dixon_coles import fit, score_matrix
+from .model.dixon_coles import clamp_rho, fit, score_matrix
 from .sources import football_data as fd
 from .sources.base import now_iso
 
@@ -56,7 +56,7 @@ def run_league(rows: list[dict], test_seasons: list[str], edge: float = config.V
             if not close or "1" not in close["implied"]:
                 continue
             lh, la = model.lambdas(r["home"], r["away"])
-            p = probs_from_matrix(score_matrix(lh, la, model.rho))
+            p = probs_from_matrix(score_matrix(lh, la, clamp_rho(model.rho, lh, la)))
             o = "1" if r["hg"] > r["ag"] else ("X" if r["hg"] == r["ag"] else "2")
             q = close["implied"]
             acc["n"] += 1
@@ -103,7 +103,7 @@ def main(argv=None):
     client = PoliteClient()
     out = {"generated_at": now_iso(), "seasons": [s2, s1], "train_extra": s3, "leagues": [], "by_league": [],
            "method": "Haftalık yeniden kurulan zaman ağırlıklı Dixon-Coles; kıyas: marjı temizlenmiş kapanış oranı. "
-                     "Değer bahisleri açılış ortalama oranından tek birim."}
+                     "Değer bahisleri kapanış öncesi ortalama orandan (Avg) tek birim; CLV = Avg/kapanış − 1."}
     tot = {"n": 0}
     for lid in args.leagues.split(","):
         lg = config.LEAGUE_BY_ID[lid]

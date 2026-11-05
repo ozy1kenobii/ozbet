@@ -172,3 +172,44 @@ def test_statusboard_never_raises():
     b = StatusBoard()
     assert b.run("x", "X", lambda: 1 / 0) is None
     assert b.items["x"].status == "missing"
+
+
+# ---------- denetçi bulguları (regresyon) ----------
+@pytest.mark.parametrize("q", ["Galatasaray U19", "Galatasaray Kadın", "Bayern Munich II", "Celta Vigo B",
+                               "Paris FC", "Inter Miami", "Real Madrid Castilla"])
+def test_no_youth_women_reserve_or_lookalike_match(q):
+    tm = TeamMatcher(["Galatasaray", "Bayern Munich", "Celta", "Paris SG", "Inter", "Real Madrid"])
+    assert tm.match(q) is None
+
+
+def test_same_match_rejects_youth_and_lookalikes():
+    assert not same_match(_fx("Galatasaray", "Fenerbahçe"), _fx("Galatasaray U19", "Fenerbahçe U19"))
+    assert not same_match(_fx("Inter", "Roma"), _fx("Inter Miami", "Roma"))
+    assert same_match(_fx("Fenerbahçe SK", "Beşiktaş JK"), _fx("Fenerbahce", "Besiktas"))
+
+
+@pytest.mark.parametrize("raw,exp", [("Premier League 2", None), ("UEFA Youth League", None),
+                                     ("Türkiye Süper Lig Kadınlar", None), ("Italya Serie B", "ITA2"),
+                                     ("TÜRKİYE: Süper Lig", "TR1"), ("Almanya 2. Bundesliga", "GER2")])
+def test_league_for_strict(raw, exp):
+    assert league_for(raw) == exp
+
+
+def test_banned_words_turkish_uppercase():
+    assert commentator.has_banned("Bu maç KESİN biter") and commentator.has_banned("GARANTİ")
+    assert not commentator.has_banned("Olasılık %55")
+
+
+def test_max_edge_checked_before_trust_shrink():
+    odds = {"1": 2.0, "X": 3.5, "2": 4.0}
+    imp = market.implied(odds)["implied"]
+    probs = {"1": imp["1"] + 0.30, "X": 0.1, "2": 0.1}
+    assert value.find_value(probs, odds, imp, trust={"1": 0.6}) == []
+
+
+def test_rho_bounds_keep_tau_positive():
+    from ozbet.model.dixon_coles import clamp_rho
+    r = clamp_rho(0.3, 2.5, 1.5)
+    assert tau(0, 0, 2.5, 1.5, r) > 0 and r <= 1 / (2.5 * 1.5)
+    s = simulate(2.5, 1.5, 0.3, 0.44, 5000, 1)
+    assert s["score_matrix"][0][0] >= 0 and abs(sum(s["total_goals"]) - 1) < 1e-6

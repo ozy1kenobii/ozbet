@@ -12,11 +12,15 @@ from rapidfuzz import fuzz
 
 from .. import config
 from ..sources.base import Fixture
-from ..teams import canonical, normalize, team_key
+from ..teams import _VARIANT_RX, _ascii, normalize, similar, team_key
 
 
 def league_for(raw: str) -> str | None:
     """Kaynaktaki lig adını OZBET lig kimliğine eşler."""
+    a = _ascii(raw)
+    # Altyapı / kadın / rezerv ligleri asla A takım ligine eşlenmez ("Süper Lig Kadınlar", "U19 Ligi")
+    if any(rx.search(a) for rx, _ in _VARIANT_RX[:3]):
+        return None
     n = normalize(raw)
     if not n:
         return None
@@ -24,26 +28,28 @@ def league_for(raw: str) -> str | None:
         for a in lg.aliases:
             if normalize(a) == n:
                 return lg.id
-    # "Türkiye Süper Lig" gibi ön/son eklere tolerans; kadın/genç/2. lig ayrımı
-    if re.search(r"\b(kadin|women|u\d\d|genc|rezerv|reserve|youth|amator)\b", n):
+    # Yalnızca çok yakın yazımlar; sayı/etiket farkı (ör. "Premier League 2", U21, kadın) asla eşleşmez
+    raw_l = raw.lower()
+    if re.search(r"(kad[ıi]n|women|u\d\d|gen[çc]|rezerv|reserve|youth|amat[öo]r|2\b|ii\b)", raw_l) and \
+            not any(normalize(a) == n for lg in config.LEAGUES for a in lg.aliases):
         return None
+    digits = re.findall(r"\d+", n)
     best, score = None, 0
     for lg in config.LEAGUES:
         for a in lg.aliases:
-            s = fuzz.token_sort_ratio(normalize(a), n)
+            na = normalize(a)
+            if re.findall(r"\d+", na) != digits:
+                continue
+            s = fuzz.ratio(na, n)
             if s > score:
                 best, score = lg.id, s
-    return best if score >= 90 else None
+    return best if score >= 93 else None
 
 
 def same_match(a: Fixture, b: Fixture) -> bool:
     if abs(a.kickoff - b.kickoff) > timedelta(hours=3):
         return False
-    if team_key(a.home) == team_key(b.home) and team_key(a.away) == team_key(b.away):
-        return True
-    sh = fuzz.token_set_ratio(normalize(canonical(a.home)), normalize(canonical(b.home)))
-    sa = fuzz.token_set_ratio(normalize(canonical(a.away)), normalize(canonical(b.away)))
-    return sh >= 85 and sa >= 85 and sh + sa >= 180
+    return similar(a.home, b.home) and similar(a.away, b.away)
 
 
 def merge(primary: list[Fixture], *others: list[Fixture]) -> list[Fixture]:
@@ -72,4 +78,5 @@ def merge(primary: list[Fixture], *others: list[Fixture]) -> list[Fixture]:
 
 
 def match_id(f: Fixture) -> str:
-    return f"{f.league_id or 'OTHER'}-{f.kickoff:%Y%m%d}-{team_key(f.home)}-{team_key(f.away)}"
+    # lig kimliği bilerek ID'de yok: bir çalıştırmada lig bulunamayıp sonrakinde bulunursa maç çiftlenmesin
+    return f"{f.kickoff:%Y%m%d}-{team_key(f.home)}-{team_key(f.away)}"

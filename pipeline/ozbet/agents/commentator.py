@@ -19,6 +19,13 @@ DOUBLE = ["1X", "X2"]
 BANNED = ("kesin", "banko", "garanti")
 
 
+def has_banned(text: str) -> bool:
+    """Türkçe büyük harf (KESİN) ve aksan farklarına dayanıklı yasaklı kelime kontrolü."""
+    from ..teams import _ascii
+    t = _ascii(text)
+    return any(b in t for b in BANNED)
+
+
 def pct(p):
     return f"%{round(p * 100)}"
 
@@ -151,7 +158,7 @@ def llm_comment(m: dict) -> str | None:
             json={"model": config.LLM_MODEL, "max_tokens": 400, "messages": [{"role": "user", "content": prompt}]})
         r.raise_for_status()
         text = "".join(b.get("text", "") for b in r.json().get("content", [])).strip()
-        if not text or any(b in text.lower() for b in BANNED):
+        if not text or has_banned(text):
             return None
         return text
     except Exception as e:  # noqa: BLE001

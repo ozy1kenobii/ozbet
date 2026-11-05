@@ -13,10 +13,8 @@ from dataclasses import dataclass
 from datetime import date, datetime, timedelta
 from typing import Callable
 
-from rapidfuzz import fuzz
-
 from .. import config
-from ..teams import canonical, normalize, team_key
+from ..teams import similar, team_key
 from . import api_football, flashscore, forebet, freesupertips, iddaa, nesine, soccerstats, sportytrader, transfermarkt, understat
 
 
@@ -82,11 +80,13 @@ def lookup_result(results: dict, kickoff_iso: str, home: str, away: str):
         r = results.get((ds, hk, ak))
         if r:
             return r
-    nh, na = normalize(canonical(home)), normalize(canonical(away))
     for (ds, h, a), r in results.items():
-        if ds in days:
-            sh = fuzz.token_set_ratio(nh, h.replace("-", " "))
-            sa = fuzz.token_set_ratio(na, a.replace("-", " "))
-            if sh >= 88 and sa >= 88:
-                return r
+        if ds in days and similar(home, _from_key(h)) and similar(away, _from_key(a)):
+            return r
     return None
+
+
+def _from_key(k: str) -> str:
+    base, _, tag = k.partition("--")
+    name = base.replace("-", " ")
+    return f"{name} {tag.replace('w', 'women').replace('res', 'reserves')}" if tag else name

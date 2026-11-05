@@ -25,6 +25,7 @@ from .teams import TeamMatcher, team_key
 log = logging.getLogger("ozbet.run")
 MAX_OTHER = 150   # öncelikli liglerin dışındaki maçlar için üst sınır
 STALE = "Önceki çalıştırmadan (kaynak güncellenemedi)"
+STARTED = "Maç başladı/bitti – son bülten verisi"
 
 
 # ---------------- yardımcılar ----------------
@@ -135,7 +136,11 @@ def main(argv=None):
         lambda: fd.fixtures(client, today)) or []
     order = [s.id for s in registry.FIXTURE_SOURCES] + ["football_data_fixtures"]
     nonempty = [fixture_lists[k] for k in order if fixture_lists.get(k)]
-    all_fx = bulletin.merge(nonempty[0], *nonempty[1:]) if nonempty else []
+    try:
+        all_fx = bulletin.merge(nonempty[0], *nonempty[1:]) if nonempty else []
+    except Exception as e:  # noqa: BLE001
+        log.warning("Bülten birleştirme hatası, yalnız birincil kaynak kullanılıyor: %s", e)
+        all_fx = list(nonempty[0]) if nonempty else []
     for f in all_fx:
         f.league_id = f.league_id or bulletin.league_for(f.league_name_raw)
     today_fx = [f for f in all_fx if f.kickoff.date() == today]
@@ -149,7 +154,10 @@ def main(argv=None):
                         count=lambda d: sum(len(v) for v in d.values()))
         for lid, rows in (got or {}).items():
             xg_rows.setdefault(lid, rows)
-    attach_xg(hist, xg_rows)
+    try:
+        attach_xg(hist, xg_rows)
+    except Exception as e:  # noqa: BLE001
+        log.warning("xG iliştirme hatası: %s", e)
     for lid, rows in registry.extra_history(client, board, today).items():
         hist.setdefault(lid, rows)
 
@@ -178,7 +186,10 @@ def main(argv=None):
     for src in registry.RESULT_SOURCES:
         got = board.run(src.id, src.name, lambda s=src: s.results(client, today - timedelta(days=1))) or {}
         hist_results.update(got)
-    _grade_past(data, today, hist_results)
+    try:
+        _grade_past(data, today, hist_results)
+    except Exception as e:  # noqa: BLE001
+        log.warning("Karne puanlama hatası: %s", e)
     rows = scorecard.load_history(data)
     card = scorecard.build_scorecard(rows, today)
     card["generated_at"] = now_iso()
@@ -191,92 +202,108 @@ def main(argv=None):
     # 7) Maçları kur
     prev_doc = _read(data / f"{today.isoformat()}.json", {}) or {}
     prev = {m["id"]: m for m in prev_doc.get("matches", [])}
-    matches = []
+    matches, bad_matches = [], []
     prio = [f for f in today_fx if f.league_id]
     other = sorted((f for f in today_fx if not f.league_id), key=lambda f: f.kickoff)[:MAX_OTHER]
     for f in prio + other:
-        mid = bulletin.match_id(f)
-        lg = config.LEAGUE_BY_ID.get(f.league_id or "")
-        rows_l = hist.get(f.league_id or "", [])
-        m = {
-            "id": mid, "code": f.code, "mbs": f.mbs,
-            "league": f.league_id or "OTHER", "league_name": lg.name if lg else f.league_name_raw,
-            "league_priority": lg.priority if lg else 99,
-            "kickoff": f.kickoff.isoformat(), "home": {"name": f.home}, "away": {"name": f.away},
-            "status": f.status, "result": f.result, "flags": [], "provenance": {},
-        }
-        m["provenance"]["fixture"] = {"source": f.source, "t": f.fetched_at}
-        # oranlar + oran geçmişi
-        if f.odds:
-            m["odds"] = {k: round(v, 2) for k, v in f.odds.items()}
-            srcs = sorted({f.source, *f.extra.get("odds_sources", {}).values()})
-            m["provenance"]["odds"] = {"source": ", ".join(srcs), "t": f.fetched_at}
-            h = snaps.setdefault(mid, [])
-            snap = {"t": now_iso(), **{k: m["odds"][k] for k in ("1", "X", "2", "O2.5", "U2.5") if k in m["odds"]}}
-            if not h or any(h[-1].get(k) != v for k, v in snap.items() if k != "t"):
-                h.append(snap)
-            m["odds_history"] = h
-        else:
-            m["odds"] = None; m["odds_history"] = snaps.get(mid, [])
-            m["flags"].append("Oran yok")
-        mk = market.implied(m["odds"])
-        if mk:
-            mv, alarms = market.movement(m["odds_history"])
-            mk["movement"], mk["drop_alarms"] = mv, alarms
-        m["market"] = mk
-        # istatistik
-        M = models.get(f.league_id or "")
-        if M and rows_l:
-            th, ta = M.team(f.home), M.team(f.away)
-            if th and ta:
-                m["stats"] = {"home": stats.team_stats(rows_l, th, today, "home"),
-                              "away": stats.team_stats(rows_l, ta, today, "away"),
-                              "h2h": stats.h2h(rows_l, th, ta, today)}
-                m["provenance"]["stats"] = {"source": "football-data.co.uk" + (" + xG" if M.xg else ""),
-                                            "t": board.items["football_data_history"].fetched_at}
-        m.setdefault("stats", None)
-        # kadro
-        m["squad"] = squad.build(f.home, f.away, f.kickoff, f.league_id, news, all_fx)
-        if m["squad"]:
-            m["provenance"]["squad"] = {"source": m["squad"]["source"] or "takvim", "t": m["squad"]["fetched_at"]}
-        # model
         try:
-            m["model"] = simulation.predict(f.home, f.away, f.league_id, models, m["squad"], mid)
-        except Exception as e:  # noqa: BLE001
-            log.warning("Simülasyon %s: %s", mid, e); m["model"] = None
-        if m["model"]:
-            m["provenance"]["model"] = {"source": "OZBET Dixon-Coles + 10.000 MC", "t": now_iso()}
-            if m["model"]["data_quality"] == "low":
-                m["flags"].append("Düşük veri")
-        else:
-            m["flags"].append("Veri yetersiz")
-        if not lg:
-            m["flags"].append("Lig dışı/düşük kapsam")
-        # konsensüs + değer + yorum
-        ext = find_prediction(preds, f)
-        m["consensus"] = consensus.build(ext, (m["model"] or {}).get("probs"), (mk or {}).get("implied"))
-        if ext:
-            m["provenance"]["predictions"] = {"source": ", ".join(e["source"] for e in ext),
-                                              "t": ext[0]["fetched_at"]}
-        if m["model"] and mk and "1" in mk["implied"] and max(
-                abs(m["model"]["probs"][k] - mk["implied"][k]) for k in ("1", "X", "2")) > value.MAX_EDGE:
-            m["flags"].append("Model-piyasa farkı çok büyük (veri hatası olabilir)")
-        m["value"] = value.find_value((m["model"] or {}).get("probs"), m["odds"], (mk or {}).get("implied"), trust)
-        commentator.annotate(m, trust, use_llm=not args.no_llm and lg is not None)
-        if f.result:
-            m["status"] = "finished"
-        matches.append(m)
+            mid = bulletin.match_id(f)
+            lg = config.LEAGUE_BY_ID.get(f.league_id or "")
+            rows_l = hist.get(f.league_id or "", [])
+            m = {
+                "id": mid, "code": f.code, "mbs": f.mbs,
+                "league": f.league_id or "OTHER", "league_name": lg.name if lg else f.league_name_raw,
+                "league_priority": lg.priority if lg else 99,
+                "kickoff": f.kickoff.isoformat(), "home": {"name": f.home}, "away": {"name": f.away},
+                "status": f.status, "result": f.result, "flags": [], "provenance": {},
+            }
+            m["provenance"]["fixture"] = {"source": f.source, "t": f.fetched_at}
+            # oranlar + oran geçmişi
+            if f.odds:
+                m["odds"] = {k: round(v, 2) for k, v in f.odds.items()}
+                srcs = sorted({f.source, *f.extra.get("odds_sources", {}).values()})
+                m["provenance"]["odds"] = {"source": ", ".join(srcs), "t": f.fetched_at}
+                h = snaps.setdefault(mid, [])
+                snap = {"t": now_iso(), **{k: m["odds"][k] for k in ("1", "X", "2", "O2.5", "U2.5") if k in m["odds"]}}
+                if not h or any(h[-1].get(k) != v for k, v in snap.items() if k != "t"):
+                    h.append(snap)
+                m["odds_history"] = h
+            else:
+                m["odds"] = None; m["odds_history"] = snaps.get(mid, [])
+                m["flags"].append("Oran yok")
+            mk = market.implied(m["odds"])
+            if mk:
+                mv, alarms = market.movement(m["odds_history"])
+                mk["movement"], mk["drop_alarms"] = mv, alarms
+            m["market"] = mk
+            # istatistik
+            M = models.get(f.league_id or "")
+            if M and rows_l:
+                th, ta = M.team(f.home), M.team(f.away)
+                if th and ta:
+                    m["stats"] = {"home": stats.team_stats(rows_l, th, today, "home"),
+                                  "away": stats.team_stats(rows_l, ta, today, "away"),
+                                  "h2h": stats.h2h(rows_l, th, ta, today)}
+                    m["provenance"]["stats"] = {"source": "football-data.co.uk" + (" + xG" if M.xg else ""),
+                                                "t": board.items["football_data_history"].fetched_at}
+            m.setdefault("stats", None)
+            # kadro
+            m["squad"] = squad.build(f.home, f.away, f.kickoff, f.league_id, news, all_fx)
+            if m["squad"]:
+                m["provenance"]["squad"] = {"source": m["squad"]["source"] or "takvim", "t": m["squad"]["fetched_at"]}
+            # model
+            try:
+                m["model"] = simulation.predict(f.home, f.away, f.league_id, models, m["squad"], mid)
+            except Exception as e:  # noqa: BLE001
+                log.warning("Simülasyon %s: %s", mid, e); m["model"] = None
+            if m["model"]:
+                m["provenance"]["model"] = {"source": "OZBET Dixon-Coles + 10.000 MC", "t": now_iso()}
+                if m["model"]["data_quality"] == "low":
+                    m["flags"].append("Düşük veri")
+            else:
+                m["flags"].append("Veri yetersiz")
+            if not lg:
+                m["flags"].append("Lig dışı/düşük kapsam")
+            # konsensüs + değer + yorum
+            ext = find_prediction(preds, f)
+            m["consensus"] = consensus.build(ext, (m["model"] or {}).get("probs"), (mk or {}).get("implied"))
+            if ext:
+                m["provenance"]["predictions"] = {"source": ", ".join(e["source"] for e in ext),
+                                                  "t": ext[0]["fetched_at"]}
+            if m["model"] and mk and "1" in mk["implied"] and max(
+                    abs(m["model"]["probs"][k] - mk["implied"][k]) for k in ("1", "X", "2")) > value.MAX_EDGE:
+                m["flags"].append("Model-piyasa farkı çok büyük (veri hatası olabilir)")
+            m["value"] = value.find_value((m["model"] or {}).get("probs"), m["odds"], (mk or {}).get("implied"), trust)
+            commentator.annotate(m, trust, use_llm=not args.no_llm and lg is not None)
+            if f.result:
+                m["status"] = "finished"
+            matches.append(m)
+        except Exception as e:  # noqa: BLE001 — tek maçtaki beklenmeyen veri tüm çalıştırmayı düşürmesin
+            log.warning("Maç %s - %s işlenemedi: %s", f.home, f.away, e)
+            bad_matches.append(f"{f.home} - {f.away}: {type(e).__name__}")
 
     # Önceki çalıştırmada olup bu sefer kaynaktan düşen maçları koru (kaynak geçici çöktüyse)
     ids = {m["id"] for m in matches}
     for mid, pm in prev.items():
         if mid not in ids:
             fl = pm.setdefault("flags", [])
-            if STALE not in fl:
-                fl.append(STALE)
+            started = datetime.fromisoformat(pm["kickoff"]) <= now
+            tag = STARTED if started else STALE
+            for old in (STALE, STARTED):
+                if old in fl and old != tag:
+                    fl.remove(old)
+            if tag not in fl:
+                fl.append(tag)
             matches.append(pm)
     matches.sort(key=lambda m: (m["league_priority"], m["kickoff"], m["home"]["name"]))
 
+    unknown = sorted({f.league_name_raw for f in today_fx if not f.league_id and f.league_name_raw})
+    from .sources.base import SourceStatus
+    board.items["pipeline"] = SourceStatus(
+        "pipeline", "OZBET işleme", "partial" if bad_matches else "ok", now_iso(),
+        "; ".join(([f"İşlenemeyen maçlar: {', '.join(bad_matches[:5])}"] if bad_matches else []) +
+                  ([f"Eşlenemeyen lig adları (ilk 15): {', '.join(unknown[:15])}"] if unknown else [])) or None,
+        len(matches))
     leagues_present = sorted({m["league"] for m in matches},
                              key=lambda l: config.LEAGUE_BY_ID[l].priority if l in config.LEAGUE_BY_ID else 99)
     doc = {

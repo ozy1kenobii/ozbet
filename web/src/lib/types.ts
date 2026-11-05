@@ -1,6 +1,6 @@
 // Veri şeması: docs/ARCHITECTURE.md ile birebir aynı alan adları.
 
-export type SourceStatus = 'ok' | 'partial' | 'missing';
+export type SourceStatus = 'ok' | 'partial' | 'missing' | 'skipped';
 
 export interface Source {
   id: string;
@@ -61,7 +61,7 @@ export interface SquadSide {
   missing: MissingPlayer[];
   rotation_risk: boolean;
   coach_change: boolean;
-  adjustment: number;
+  adjustment?: number | null;
 }
 
 export interface ConsensusSource {
@@ -138,7 +138,7 @@ export interface Match {
   } | null;
   model: Model | null;
   stats: { home: TeamStats; away: TeamStats; h2h: H2H[] } | null;
-  squad: { home: SquadSide; away: SquadSide; source: string; fetched_at: string } | null;
+  squad: { home: SquadSide | null; away: SquadSide | null; source: string | null; fetched_at: string | null } | null;
   consensus: { sources: ConsensusSource[]; summary: ConsensusSummary[] } | null;
   value: ValueItem[];
   value_note?: string | null;
@@ -166,9 +166,9 @@ export interface IndexFile {
 
 export interface ScoreBlock {
   n: number;
-  hit_rate: number;
+  hit_rate: number | null;
   brier_1x2: number | null;
-  roi: number;
+  roi: number | null;
   staked: number;
   profit: number;
 }
@@ -177,8 +177,8 @@ export interface Scorecard {
   generated_at: string;
   overall: ScoreBlock;
   last30: ScoreBlock;
-  by_league: { league: string; name: string; n: number; hit_rate: number; roi: number }[];
-  by_market: { market: string; label: string; n: number; hit_rate: number; roi: number; trust: number }[];
+  by_league: { league: string; name: string; n: number; hit_rate: number | null; roi: number | null }[];
+  by_market: { market: string; label: string; n: number; hit_rate: number | null; roi: number | null; trust: number }[];
   calibration: { bin: string; predicted: number; observed: number; n: number }[];
   bankroll: { date: string; balance: number }[];
   recent: { date: string; match: string; pick: string; odds: number | null; won: boolean; score: string }[];

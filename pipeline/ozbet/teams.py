@@ -92,10 +92,42 @@ ALIASES: dict[str, list[str]] = {
 }
 
 
-def normalize(name: str) -> str:
+def _ascii(name: str) -> str:
     s = name.translate(_TR)
     s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
-    s = s.lower().replace("&", " ").replace("'", "").replace(".", ". ")
+    return s.lower()
+
+
+# Altyapı / kadın / rezerv takım etiketleri: etiketi farklı iki ad ASLA eşleşmez.
+_VARIANT_RX = [
+    (re.compile(r"\bu\s?-?(1[5-9]|2[0-3])\b"), lambda m: f"u{m.group(1)}"),
+    (re.compile(r"\b(kadin|kadinlar|women|womens|ladies|feminino|femenino|feminine|frauen|femminile|w)\b|\(k\)|\(w\)"),
+     lambda m: "w"),
+    (re.compile(r"\b(reserves?|res|castilla|youth|akademi|altyapi|primavera|jong)\b"), lambda m: "res"),
+    (re.compile(r"\s(ii|b|c)\s*$"), lambda m: m.group(1)),
+]
+
+
+def variant(name: str) -> str:
+    """'' = A takımı; aksi halde 'u19', 'w', 'res', 'ii', 'b' gibi etiket."""
+    s = _ascii(name)
+    tags = []
+    for rx, fn in _VARIANT_RX:
+        m = rx.search(s)
+        if m:
+            tags.append(fn(m))
+    return "+".join(sorted(set(tags)))
+
+
+def _strip_variant(s: str) -> str:
+    for rx, _ in _VARIANT_RX:
+        s = rx.sub(" ", s)
+    return s
+
+
+def normalize(name: str) -> str:
+    s = _strip_variant(_ascii(name))
+    s = s.replace("&", " ").replace("'", "").replace(".", ". ")
     s = _NOISE.sub(" ", s)
     s = re.sub(r"[^a-z0-9 ]+", " ", s)
     return re.sub(r"\s+", " ", s).strip()
@@ -116,30 +148,45 @@ def canonical(name: str) -> str:
 
 
 def team_key(name: str) -> str:
-    """Kaynaklar arası birleştirme anahtarı."""
-    return normalize(canonical(name)).replace(" ", "-")
+    """Kaynaklar arası birleştirme anahtarı (altyapı/kadın etiketi dahil)."""
+    base = normalize(canonical(name)).replace(" ", "-")
+    v = variant(name)
+    return f"{base}--{v}" if v else base
+
+
+def similar(a: str, b: str) -> bool:
+    """İki takım adı aynı takım mı? Etiketler eşit olmalı; bulanık eşleşmede hem token_set hem ratio yüksek olmalı."""
+    if variant(a) != variant(b):
+        return False
+    if team_key(a) == team_key(b):
+        return True
+    na, nb = normalize(canonical(a)), normalize(canonical(b))
+    if not na or not nb:
+        return False
+    return fuzz.token_set_ratio(na, nb) >= 85 and fuzz.ratio(na, nb) >= 72
 
 
 class TeamMatcher:
-    """Belirli bir aday kümesine (ör. o ligin geçmiş verisindeki takımlar) eşleme."""
+    """Belirli bir aday kümesine (ör. o ligin geçmiş verisindeki takımlar) eşleme.
+    Adaylar A takımlarıdır; etiketli adlar (U19, kadın, B...) yalnızca aynı etiketli adaylarla eşleşir."""
 
-    def __init__(self, candidates: list[str], threshold: int = 84):
+    def __init__(self, candidates: list[str], threshold: int = 85):
         self.candidates = list(dict.fromkeys(candidates))
         self.threshold = threshold
         self._keys = {team_key(c): c for c in self.candidates}
-        self._norm = {normalize(canonical(c)): c for c in self.candidates}
+        self._norm: dict[str, dict[str, str]] = {}
+        for c in self.candidates:
+            self._norm.setdefault(variant(c), {})[normalize(canonical(c))] = c
 
     def match(self, name: str) -> str | None:
         k = team_key(name)
         if k in self._keys:
             return self._keys[k]
+        pool = self._norm.get(variant(name), {})
         n = normalize(canonical(name))
-        if not n:
+        if not n or not pool:
             return None
-        best = process.extractOne(n, list(self._norm), scorer=fuzz.token_set_ratio)
-        if best and best[1] >= self.threshold:
-            # token_set_ratio alt küme eşleşmesinde çok cömert: uzunluk farkını da kontrol et
-            alt = fuzz.ratio(n, best[0])
-            if alt >= 60 or best[1] == 100 and min(len(n), len(best[0])) >= 5:
-                return self._norm[best[0]]
+        best = process.extractOne(n, list(pool), scorer=fuzz.token_set_ratio)
+        if best and best[1] >= self.threshold and fuzz.ratio(n, best[0]) >= 72:
+            return pool[best[0]]
         return None

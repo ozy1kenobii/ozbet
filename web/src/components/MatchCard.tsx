@@ -17,7 +17,7 @@ export function provenanceText(m: Match): string | null {
   const parts = Object.entries(p).map(([k, v]) => `${PROV_LABEL[k] ?? k}: ${v.source} ${fmtTime(v.t)}`);
   return parts.length ? parts.join(' · ') : null;
 }
-export const PROV_LABEL: Record<string, string> = { odds: 'Oran', stats: 'İstatistik', squad: 'Kadro', consensus: 'Konsensüs', fixtures: 'Bülten', results: 'Sonuç' };
+export const PROV_LABEL: Record<string, string> = { fixture: 'Bülten', odds: 'Oran', stats: 'İstatistik', squad: 'Kadro', model: 'Model', predictions: 'Tahmin siteleri', consensus: 'Konsensüs', fixtures: 'Bülten', results: 'Sonuç' };
 
 export function MatchCard({ m, date }: { m: Match; date: string }) {
   const finished = m.status === 'finished' && m.result;

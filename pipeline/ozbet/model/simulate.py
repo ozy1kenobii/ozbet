@@ -10,7 +10,7 @@ import hashlib
 import numpy as np
 
 from ..markets import HTFT_KEYS, probs_from_matrix
-from .dixon_coles import tau
+from .dixon_coles import clamp_rho, tau
 
 
 def seed_for(key: str) -> int:
@@ -19,6 +19,7 @@ def seed_for(key: str) -> int:
 
 def simulate(lh: float, la: float, rho: float, ht_share: float = 0.44,
              n: int = 10_000, seed: int = 0) -> dict:
+    rho = clamp_rho(rho, lh, la)   # kupa çapraz λ'larında τ negatife düşmesin
     rng = np.random.default_rng(seed)
     h1 = rng.poisson(lh * ht_share, n); a1 = rng.poisson(la * ht_share, n)
     h2 = rng.poisson(lh * (1 - ht_share), n); a2 = rng.poisson(la * (1 - ht_share), n)

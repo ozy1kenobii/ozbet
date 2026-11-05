@@ -92,10 +92,22 @@ def fit_rho(lh, la, hg, ag, w):
     def nll(r):
         return -np.sum(ww * np.log(tau(x, y, lh, la, r)))
 
-    # τ'nun pozitif kalacağı sınırlar
-    lo = max(-1 / max(np.max(lh * la), 1e-6), -0.3)
-    res = minimize_scalar(nll, bounds=(max(lo, -0.3), 0.3), method="bounded")
+    lo, hi = rho_bounds(lh, la)
+    res = minimize_scalar(nll, bounds=(max(lo, -0.3), min(hi, 0.3)), method="bounded")
     return float(res.x)
+
+
+def rho_bounds(lh, la):
+    """Dixon-Coles (1997): max(-1/λ, -1/μ) ≤ ρ ≤ min(1/(λμ), 1), tüm maçlar için aynı anda."""
+    lh = np.atleast_1d(np.asarray(lh, float)); la = np.atleast_1d(np.asarray(la, float))
+    lo = float(np.max(np.maximum(-1 / lh, -1 / la)))
+    hi = float(min(np.min(1 / (lh * la)), 1.0))
+    return lo + 1e-6, hi - 1e-6
+
+
+def clamp_rho(rho: float, lh: float, la: float) -> float:
+    lo, hi = rho_bounds(lh, la)
+    return float(min(max(rho, lo), hi))
 
 
 def fit(matches, ref_date, xi: float, l2: float = 0.5, use_xg: bool = False) -> Ratings | None:
