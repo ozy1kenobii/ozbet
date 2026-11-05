@@ -1,0 +1,132 @@
+{
+"league": "ITA2",
+"updated_at": "2026-11-05T16:47:12+03:00",
+"days": [
+"2026-10-29",
+"2026-10-30",
+"2026-10-31",
+"2026-11-01"
+],
+"rows": [
+{
+"date": "2026-10-31",
+"home": "Catanzaro",
+"away": "Padova",
+"ft": [
+1,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "zVPILgfA"
+},
+{
+"date": "2026-10-31",
+"home": "Cremonese",
+"away": "Benevento",
+"ft": [
+2,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "nXVo7fuH"
+},
+{
+"date": "2026-10-31",
+"home": "Modena",
+"away": "Mantova",
+"ft": [
+1,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "hjUVAxth"
+},
+{
+"date": "2026-10-31",
+"home": "Sampdoria",
+"away": "Entella",
+"ft": [
+2,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "jTKPaCXj"
+},
+{
+"date": "2026-10-31",
+"home": "Sudtirol",
+"away": "Cesena",
+"ft": [
+1,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "EwKdEBnp"
+},
+{
+"date": "2026-11-01",
+"home": "Arezzo",
+"away": "Ascoli",
+"ft": [
+0,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "v7Sw9GA4"
+},
+{
+"date": "2026-11-01",
+"home": "Avellino",
+"away": "Pisa",
+"ft": [
+2,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "2HRANFPc"
+},
+{
+"date": "2026-11-01",
+"home": "Empoli",
+"away": "Juve Stabia",
+"ft": [
+2,
+2
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "0dspmZmo"
+},
+{
+"date": "2026-11-01",
+"home": "Palermo",
+"away": "L.R. Vicenza",
+"ft": [
+3,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "KpUg5Y9T"
+},
+{
+"date": "2026-11-01",
+"home": "Verona",
+"away": "Carrarese",
+"ft": [
+3,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "reTQJXOM"
+}
+]
+}

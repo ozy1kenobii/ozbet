@@ -1,0 +1,97 @@
+{
+"league": "GRE1",
+"updated_at": "2026-11-05T16:47:12+03:00",
+"days": [
+"2026-10-29",
+"2026-10-30",
+"2026-10-31",
+"2026-11-01",
+"2026-11-02"
+],
+"rows": [
+{
+"date": "2026-10-31",
+"home": "Kifisia",
+"away": "Olympiakos",
+"ft": [
+2,
+3
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "Eyse75Sr"
+},
+{
+"date": "2026-11-01",
+"home": "Levadiakos",
+"away": "Aris",
+"ft": [
+3,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "0hu35qce"
+},
+{
+"date": "2026-11-01",
+"home": "PAOK",
+"away": "Asteras T.",
+"ft": [
+2,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "6BcU8I3m"
+},
+{
+"date": "2026-11-01",
+"home": "Panathinaikos",
+"away": "AEK",
+"ft": [
+2,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "8IrB3NR7"
+},
+{
+"date": "2026-11-01",
+"home": "Panetolikos",
+"away": "OFI Crete",
+"ft": [
+0,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "0CVdRQJE"
+},
+{
+"date": "2026-11-02",
+"home": "Atromitos",
+"away": "Volos",
+"ft": [
+3,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "AuhHEmz9"
+},
+{
+"date": "2026-11-02",
+"home": "Kalamata",
+"away": "Iraklis 1908",
+"ft": [
+1,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "I5ePCR4L"
+}
+]
+}

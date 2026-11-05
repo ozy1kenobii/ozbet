@@ -1,0 +1,120 @@
+{
+"league": "GER1",
+"updated_at": "2026-11-05T16:47:12+03:00",
+"days": [
+"2026-10-29",
+"2026-10-30",
+"2026-10-31",
+"2026-11-01"
+],
+"rows": [
+{
+"date": "2026-10-30",
+"home": "Elversberg",
+"away": "Mainz",
+"ft": [
+4,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "j9drDZFO"
+},
+{
+"date": "2026-10-31",
+"home": "Augsburg",
+"away": "Freiburg",
+"ft": [
+1,
+2
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "0xJ20dWI"
+},
+{
+"date": "2026-10-31",
+"home": "Bayern",
+"away": "Dortmund",
+"ft": [
+2,
+2
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "E1Ev602s"
+},
+{
+"date": "2026-10-31",
+"home": "Bremen",
+"away": "Hoffenheim",
+"ft": [
+2,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "Wv0SGHGa"
+},
+{
+"date": "2026-10-31",
+"home": "Leverkusen",
+"away": "Stuttgart",
+"ft": [
+2,
+4
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "nFCn4vXg"
+},
+{
+"date": "2026-10-31",
+"home": "Mönchengladbach",
+"away": "Paderborn",
+"ft": [
+0,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "OEdKIwnm"
+},
+{
+"date": "2026-10-31",
+"home": "Schalke",
+"away": "RB Leipzig",
+"ft": [
+0,
+2
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "4hbzFeoC"
+},
+{
+"date": "2026-11-01",
+"home": "Frankfurt",
+"away": "Hamburger SV",
+"ft": [
+3,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "fuGf2I16"
+},
+{
+"date": "2026-11-01",
+"home": "Union Berlin",
+"away": "FC Köln",
+"ft": [
+1,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "hW5lOaOP"
+}
+]
+}

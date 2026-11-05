@@ -1,0 +1,121 @@
+{
+"league": "POR1",
+"updated_at": "2026-11-05T16:47:12+03:00",
+"days": [
+"2026-10-29",
+"2026-10-30",
+"2026-10-31",
+"2026-11-01",
+"2026-11-02"
+],
+"rows": [
+{
+"date": "2026-10-30",
+"home": "Casa Pia",
+"away": "Sporting",
+"ft": [
+0,
+2
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "vJ4EBULq"
+},
+{
+"date": "2026-10-31",
+"home": "FC Porto",
+"away": "Estoril",
+"ft": [
+4,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "vBGNTTsS"
+},
+{
+"date": "2026-10-31",
+"home": "Moreirense",
+"away": "Estrela",
+"ft": [
+2,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "n3bGVkDF"
+},
+{
+"date": "2026-11-01",
+"home": "Academico Viseu",
+"away": "Rio Ave",
+"ft": [
+2,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "l6HSKYbc"
+},
+{
+"date": "2026-11-01",
+"home": "Arouca",
+"away": "Nacional",
+"ft": [
+1,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "dWKzJCT9"
+},
+{
+"date": "2026-11-01",
+"home": "Braga",
+"away": "Famalicao",
+"ft": [
+3,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "UqJrHjbM"
+},
+{
+"date": "2026-11-01",
+"home": "Maritimo",
+"away": "Santa Clara",
+"ft": [
+0,
+2
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "vwe8XBr3"
+},
+{
+"date": "2026-11-02",
+"home": "Benfica",
+"away": "Alverca",
+"ft": [
+1,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "zs2gO75k"
+},
+{
+"date": "2026-11-02",
+"home": "Gil Vicente",
+"away": "Guimaraes",
+"ft": [
+0,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "nq8M98jd"
+}
+]
+}

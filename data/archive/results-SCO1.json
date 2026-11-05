@@ -1,0 +1,48 @@
+{
+"league": "SCO1",
+"updated_at": "2026-11-05T16:47:12+03:00",
+"days": [
+"2026-10-29",
+"2026-10-30",
+"2026-10-31",
+"2026-11-01"
+],
+"rows": [
+{
+"date": "2026-10-31",
+"home": "Kilmarnock",
+"away": "St. Johnstone",
+"ft": [
+2,
+2
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "Ob0QdEQa"
+},
+{
+"date": "2026-10-31",
+"home": "Motherwell",
+"away": "St. Mirren",
+"ft": [
+1,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "WO3YfheC"
+},
+{
+"date": "2026-11-01",
+"home": "Falkirk",
+"away": "Celtic",
+"ft": [
+2,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "MVBn4dYP"
+}
+]
+}

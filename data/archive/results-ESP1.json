@@ -1,0 +1,133 @@
+{
+"league": "ESP1",
+"updated_at": "2026-11-05T16:47:12+03:00",
+"days": [
+"2026-10-29",
+"2026-10-30",
+"2026-10-31",
+"2026-11-01",
+"2026-11-02"
+],
+"rows": [
+{
+"date": "2026-10-30",
+"home": "Villarreal",
+"away": "Espanyol",
+"ft": [
+0,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "xdLoJd4b"
+},
+{
+"date": "2026-10-31",
+"home": "Barcelona",
+"away": "Alaves",
+"ft": [
+6,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "6LI66JKh"
+},
+{
+"date": "2026-10-31",
+"home": "Betis",
+"away": "Malaga",
+"ft": [
+2,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "fafq6k9C"
+},
+{
+"date": "2026-10-31",
+"home": "Levante",
+"away": "Atl. Madrid",
+"ft": [
+0,
+2
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "6gvM2yKH"
+},
+{
+"date": "2026-10-31",
+"home": "Vallecano",
+"away": "Celta Vigo",
+"ft": [
+3,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "UVHwLIZo"
+},
+{
+"date": "2026-11-01",
+"home": "Ath. Bilbao",
+"away": "Real Sociedad",
+"ft": [
+2,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "Mody8Bv0"
+},
+{
+"date": "2026-11-01",
+"home": "Elche",
+"away": "Valencia",
+"ft": [
+0,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "Y7Kb8ujt"
+},
+{
+"date": "2026-11-01",
+"home": "Getafe",
+"away": "Sevilla",
+"ft": [
+3,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "EoME4ck5"
+},
+{
+"date": "2026-11-01",
+"home": "Racing Santander",
+"away": "Real Madrid",
+"ft": [
+0,
+3
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "v7xU0FlU"
+},
+{
+"date": "2026-11-02",
+"home": "A Coruna",
+"away": "Osasuna",
+"ft": [
+2,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "tGhi4TwP"
+}
+]
+}

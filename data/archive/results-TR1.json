@@ -1,0 +1,121 @@
+{
+"league": "TR1",
+"updated_at": "2026-11-05T16:47:12+03:00",
+"days": [
+"2026-10-29",
+"2026-10-30",
+"2026-10-31",
+"2026-11-01",
+"2026-11-02"
+],
+"rows": [
+{
+"date": "2026-10-30",
+"home": "Konyaspor",
+"away": "Galatasaray",
+"ft": [
+0,
+4
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "A9cINRae"
+},
+{
+"date": "2026-10-31",
+"home": "Erzurumspor",
+"away": "Çorum",
+"ft": [
+1,
+3
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "dpnKsmiR"
+},
+{
+"date": "2026-10-31",
+"home": "Fenerbahçe",
+"away": "Göztepe",
+"ft": [
+1,
+2
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "rNeQL5U7"
+},
+{
+"date": "2026-10-31",
+"home": "Kocaelispor",
+"away": "Rizespor",
+"ft": [
+0,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "lKrCq9ME"
+},
+{
+"date": "2026-11-01",
+"home": "Amedspor",
+"away": "Eyüpspor",
+"ft": [
+5,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "W03vV97L"
+},
+{
+"date": "2026-11-01",
+"home": "Başakşehir",
+"away": "Samsunspor",
+"ft": [
+5,
+2
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "bm5WWVx9"
+},
+{
+"date": "2026-11-01",
+"home": "Kasımpaşa",
+"away": "Beşiktaş",
+"ft": [
+2,
+2
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "nabo9Sp2"
+},
+{
+"date": "2026-11-01",
+"home": "Trabzonspor",
+"away": "Gaziantep FK",
+"ft": [
+2,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "vZfwBlGk"
+},
+{
+"date": "2026-11-02",
+"home": "Gençlerbirliği",
+"away": "Alanyaspor",
+"ft": [
+5,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "2qfAPmVr"
+}
+]
+}

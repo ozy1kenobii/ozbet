@@ -1,0 +1,157 @@
+{
+"league": "ITA1",
+"updated_at": "2026-11-05T16:47:12+03:00",
+"days": [
+"2026-10-29",
+"2026-10-30",
+"2026-10-31",
+"2026-11-01",
+"2026-11-02"
+],
+"rows": [
+{
+"date": "2026-10-29",
+"home": "Fiorentina",
+"away": "Atalanta",
+"ft": [
+2,
+2
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "xU8afKWh"
+},
+{
+"date": "2026-10-29",
+"home": "Frosinone",
+"away": "Lecce",
+"ft": [
+5,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "As77hb15"
+},
+{
+"date": "2026-10-31",
+"home": "AC Milan",
+"away": "Inter",
+"ft": [
+3,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "QihuCqbe"
+},
+{
+"date": "2026-10-31",
+"home": "Bologna",
+"away": "Monza",
+"ft": [
+2,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "65OT4SjS"
+},
+{
+"date": "2026-10-31",
+"home": "Udinese",
+"away": "AS Roma",
+"ft": [
+2,
+5
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "QBrZXQKE"
+},
+{
+"date": "2026-11-01",
+"home": "Como",
+"away": "Venezia",
+"ft": [
+1,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "zLEaa6Ek"
+},
+{
+"date": "2026-11-01",
+"home": "Frosinone",
+"away": "Torino",
+"ft": [
+2,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "8YC7cpq2"
+},
+{
+"date": "2026-11-01",
+"home": "Juventus",
+"away": "Napoli",
+"ft": [
+2,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "zu5gLmy9"
+},
+{
+"date": "2026-11-01",
+"home": "Lazio",
+"away": "Cagliari",
+"ft": [
+2,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "r581JR5L"
+},
+{
+"date": "2026-11-01",
+"home": "Lecce",
+"away": "Genoa",
+"ft": [
+1,
+2
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "vyfXD5Tr"
+},
+{
+"date": "2026-11-02",
+"home": "Atalanta",
+"away": "Parma",
+"ft": [
+0,
+3
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "buLL6lMF"
+},
+{
+"date": "2026-11-02",
+"home": "Sassuolo",
+"away": "Fiorentina",
+"ft": [
+2,
+4
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "YHemANS7"
+}
+]
+}

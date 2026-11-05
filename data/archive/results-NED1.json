@@ -1,0 +1,120 @@
+{
+"league": "NED1",
+"updated_at": "2026-11-05T16:47:12+03:00",
+"days": [
+"2026-10-29",
+"2026-10-30",
+"2026-10-31",
+"2026-11-01"
+],
+"rows": [
+{
+"date": "2026-10-31",
+"home": "Ajax",
+"away": "Alkmaar",
+"ft": [
+1,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "pnr7dyWg"
+},
+{
+"date": "2026-10-31",
+"home": "Cambuur",
+"away": "G.A. Eagles",
+"ft": [
+4,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "IatFfF06"
+},
+{
+"date": "2026-10-31",
+"home": "Feyenoord",
+"away": "Sittard",
+"ft": [
+1,
+1
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "GC1stGoD"
+},
+{
+"date": "2026-10-31",
+"home": "Heerenveen",
+"away": "Nijmegen",
+"ft": [
+1,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "vkuabc1s"
+},
+{
+"date": "2026-10-31",
+"home": "PSV",
+"away": "Willem II",
+"ft": [
+7,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "86lT3JwK"
+},
+{
+"date": "2026-11-01",
+"home": "Excelsior",
+"away": "Twente",
+"ft": [
+0,
+9
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "j50YaAxn"
+},
+{
+"date": "2026-11-01",
+"home": "Groningen",
+"away": "Sparta Rotterdam",
+"ft": [
+2,
+3
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "AZdldSyB"
+},
+{
+"date": "2026-11-01",
+"home": "Telstar",
+"away": "Utrecht",
+"ft": [
+4,
+2
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "OIbtbl7b"
+},
+{
+"date": "2026-11-01",
+"home": "Zwolle",
+"away": "Den Haag",
+"ft": [
+1,
+0
+],
+"ht": null,
+"src": "flashscore",
+"fs_id": "QPqNhgVI"
+}
+]
+}
