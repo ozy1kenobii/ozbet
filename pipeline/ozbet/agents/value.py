@@ -23,7 +23,8 @@ def find_value(model_probs: dict | None, odds: dict | None, implied: dict | None
         # Karnede kötü giden markette model olasılığı ima olasılığa doğru büzülür
         mp_adj = ip + (mp - ip) * min(t, 1.0)
         edge = mp_adj - ip
-        if edge >= config.VALUE_EDGE and mp_adj >= 0.25:
+        # iddaa marjı yüksek (~%20): marjsız ima olasılığı aşmak yetmez, gerçek orandan beklenen değer de pozitif olmalı
+        if edge >= config.VALUE_EDGE and mp_adj >= 0.25 and mp_adj * o - 1 > 0:
             out.append({"market": k, "model_p": round(mp_adj, 4), "implied_p": round(ip, 4),
                         "odds": o, "edge": round(edge, 4), "ev": round(mp_adj * o - 1, 4)})
     out.sort(key=lambda v: -v["ev"])

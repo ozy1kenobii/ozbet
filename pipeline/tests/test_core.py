@@ -230,3 +230,12 @@ def test_merge_carries_source_ids():
     b = _fx("Fenerbahce", "Besiktas", src="flashscore")
     b.extra["flashscore_id"] = "abc"
     assert merge([a], [b])[0].extra["flashscore_id"] == "abc"
+
+
+def test_value_requires_positive_ev():
+    # %20 marjlı oranlar: edge ≥ %5 ama p·oran < 1 → değer değil
+    odds = {"1": 1.70, "X": 3.0, "2": 3.6}
+    imp = market.implied(odds)["implied"]
+    p = {"1": imp["1"] + 0.06, "X": 0.2, "2": 0.2}
+    assert p["1"] * odds["1"] < 1
+    assert value.find_value(p, odds, imp) == []
