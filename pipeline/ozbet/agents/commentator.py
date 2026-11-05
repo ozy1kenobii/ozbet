@@ -34,8 +34,13 @@ def choose_pick(m: dict) -> dict | None:
     model = m.get("model")
     if not model:
         return None
-    p = model["probs"]
+    p = dict(model["probs"])
     odds = m.get("odds") or {}
+    imp = ((m.get("market") or {}).get("implied")) or {}
+    # Tercih, piyasa ile harmanlanmış olasılıktan seçilir (backtest'te daha iyi kalibre)
+    for k, q in imp.items():
+        if k in p:
+            p[k] = config.MODEL_WEIGHT * p[k] + (1 - config.MODEL_WEIGHT) * q
     if m.get("value"):
         v = m["value"][0]
         return {"market": v["market"], "label": LABELS[v["market"]], "p": v["model_p"],
@@ -47,7 +52,8 @@ def choose_pick(m: dict) -> dict | None:
         dk, dp = max(((k2, p[k2]) for k2 in DOUBLE), key=lambda t: t[1])
         if dp >= 0.70 and dp - pk > 0.15:
             k, pk = dk, dp
-    return {"market": k, "label": LABELS[k], "p": round(pk, 4), "odds": odds.get(k), "is_value": False}
+    return {"market": k, "label": LABELS[k], "p": round(pk, 4), "odds": odds.get(k), "is_value": False,
+            "blended": bool(imp)}
 
 
 def stars(m: dict, pick: dict, trust: dict[str, float]) -> int:

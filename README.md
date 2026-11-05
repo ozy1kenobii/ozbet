@@ -62,6 +62,20 @@ data/          pipeline çıktısı (Actions commit eder)
 - **Değer**: model olasılığı − marjı temizlenmiş ima olasılığı ≥ %5 → "Değerli". Fark %20'yi aşarsa bu muhtemelen veri/eşleme hatasıdır: değer etiketi verilmez, uyarı konur, yıldız ≤ 2.
 - **Karne geri beslemesi**: son 90 günde bir markette isabet, modelin beklediğinin altında kalırsa (≥ 20 tahmin) o marketin model olasılığı piyasaya doğru büzülür ve yıldızı düşer.
 
+### Backtest sonucu (5 Kasım 2026, son 2 tamamlanmış sezon, 6 lig, 3.985 maç)
+| | Brier (1X2, düşük = iyi) | Log-loss |
+|---|---|---|
+| OZBET modeli (saf) | 0,5895 | 0,9885 |
+| Model %25 + piyasa %75 harmanı | 0,5767 | – |
+| Kapanış oranları (marjsız) | **0,5732** | **0,9648** |
+
+**Dürüst sonuç:** Model, piyasa kapanış oranlarını yenemiyor; hiçbir model ağırlığı/eşik kombinasyonu "değerli bahis"
+etiketlerinde geçmişte kâr üretmedi (ROI −%4 … −%14). Bu yüzden:
+- "Değerli" etiketi en tutucu ayarla verilir (p = 0,25·model + 0,75·piyasa, eşik %5) ve nadiren çıkar.
+- OZBET Tercihi, oranı olan maçlarda bu harmanlanmış olasılıktan seçilir.
+- Avrupa kupası ve lig dışı maçlarda değer etiketi hiç verilmez.
+- Güncel rapor her pazartesi `data/backtest.json`'a ve sitedeki *Karne* sayfasına yazılır.
+
 ---
 
 ## Veri kaynakları

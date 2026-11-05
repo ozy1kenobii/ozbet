@@ -26,7 +26,9 @@ TIME_DECAY_XI = 0.0019     # Dixon-Coles zaman ağırlığı (gün başına) ~ y
 MIN_TEAM_MATCHES = 6       # bundan az maçı olan takım için "düşük veri"
 XG_BLEND = 0.35
 # Değer hesabında model ağırlığı: p = α·model + (1-α)·piyasa. Backtest ızgarasıyla seçilir (data/backtest.json "grid").
-MODEL_WEIGHT = float(os.environ.get("OZBET_MODEL_WEIGHT", "0.4"))            # xG varsa λ = (1-w)*λ_gol + w*λ_xG
+MODEL_WEIGHT = float(os.environ.get("OZBET_MODEL_WEIGHT", "0.25"))
+# 5 Kasım 2026 backtest'i (6 lig, 2 sezon, 3985 maç): Brier model 0.5895, α=0.25 harman 0.5767, kapanış piyasası 0.5732.
+# Hiçbir α/eşik kombinasyonu kârlı çıkmadı → en tutucu ayar seçildi.            # xG varsa λ = (1-w)*λ_gol + w*λ_xG
 
 
 @dataclass(frozen=True)

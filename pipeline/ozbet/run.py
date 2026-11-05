@@ -60,7 +60,41 @@ def dump_debug(client, board):
             continue
         hits = [r for r in client.recent if host in r[0]]
         for i, (url, code, body) in enumerate(hits[-4:]):
-            (d / f"{sid}-{i}.txt").write_text(f"URL: {url}\nHTTP: {code}\n\n{body}", encoding="utf-8")
+            (d / f"{sid}-{i}.txt").write_text(_skeleton(url, code, body), encoding="utf-8")
+
+
+def _skeleton(url: str, code: int, body: str) -> str:
+    """Sayfa içeriğini değil yapısını özetler: HTTP kodu, boyut, CSS sınıf/id sıklıkları, JSON anahtarları, kısa baş."""
+    import re as _re
+    from collections import Counter
+    lines = [f"URL: {url}", f"HTTP: {code}", f"Uzunluk: {len(body)}"]
+    s = body.lstrip()
+    if s[:1] in "{[":
+        try:
+            obj = json.loads(body)
+            def keys(o, depth=0):
+                if depth > 3:
+                    return []
+                if isinstance(o, dict):
+                    return [f"{'  '*depth}{k}: {type(v).__name__}" + ("" if not isinstance(v, (dict, list)) else "")
+                            for k, v in list(o.items())[:25]] + sum((keys(v, depth + 1) for v in list(o.values())[:3]), [])
+                if isinstance(o, list) and o:
+                    return [f"{'  '*depth}[{len(o)} öğe]"] + keys(o[0], depth + 1)
+                return []
+            lines += ["JSON yapısı:"] + keys(obj)[:120]
+        except ValueError:
+            pass
+    classes = Counter(c for grp in _re.findall(r'class="([^"]{1,200})"', body) for c in grp.split())
+    ids = Counter(_re.findall(r'id="([^"]{1,60})"', body))
+    if classes:
+        lines.append("En sık CSS sınıfları: " + ", ".join(f"{c}({n})" for c, n in classes.most_common(80)))
+    if ids:
+        lines.append("id'ler: " + ", ".join(list(ids)[:60]))
+    feed_keys = Counter(_re.findall(r"(?:^|¬|~)([A-Z]{2,3})÷", body))
+    if feed_keys:
+        lines.append("Feed anahtarları: " + ", ".join(f"{k}({n})" for k, n in feed_keys.most_common(60)))
+    lines += ["", "Baş (2500 karakter):", body[:2500]]
+    return "\n".join(lines)
 
 
 def run_label(now: datetime) -> str:

@@ -93,14 +93,14 @@ jobs:
         working-directory: pipeline
         run: python -m ozbet.backtest
 
-      - name: Teşhis dökümü (boş dönen kaynakların ham yanıtları)
+      - name: Teşhis dökümü → 'teshis' dalı (yalnızca sayfa yapı özetleri)
         if: always() && github.event_name != 'push'
-        uses: actions/upload-artifact@v4
-        with:
-          name: kaynak-teshis
-          path: .cache/debug
-          retention-days: 5
-          if-no-files-found: ignore
+        run: |
+          [ -d .cache/debug ] || exit 0
+          rm -rf /tmp/teshis && mkdir -p /tmp/teshis && cp .cache/debug/*.txt /tmp/teshis/ 2>/dev/null || exit 0
+          cd /tmp/teshis && git init -q -b teshis && git add -A
+          git -c user.name=ozbet-bot -c user.email=ozbet-bot@users.noreply.github.com commit -q -m "teşhis $(date -u +%FT%TZ)"
+          git push -f -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" teshis || true
 
       - name: Veriyi depoya kaydet
         if: github.event_name != 'push'
