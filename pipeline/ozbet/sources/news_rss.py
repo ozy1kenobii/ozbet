@@ -233,12 +233,22 @@ LEAGUE_CONTEXT = {
 }
 
 
+# Türk basınının takım lakapları (başlıkta tek başına kullanılır: "Kartal, Celtic ile ilk kez karşılaşıyor")
+NICKNAMES = {
+    "Beşiktaş": ["kartal", "kara kartal", "siyah beyazlilar", "siyah beyazli ekip"],
+    "Galatasaray": ["cimbom", "sari kirmizililar", "sari kirmizili ekip"],
+    "Fenerbahçe": ["kanarya", "sari lacivertliler", "sari lacivertli ekip"],
+    "Trabzonspor": ["firtina", "bordo mavililer", "bordo mavili ekip"],
+}
+
+
 def team_terms(name: str) -> set[str]:
     """Bir takımın metinde aranacak normalize terimleri (kanonik ad + sözlükteki tüm yazımlar)."""
     canon = canonical(name)
     names = {name, canon, *ALIASES.get(canon, [])}
     terms = {normalize(n) for n in names}
     terms = {t for t in terms if t and (len(t) >= 4 or t in SAFE_SHORT)}
+    terms |= set(NICKNAMES.get(canon, []))
     if canon not in ALIASES:   # sözlükte yoksa: ayırt edici son kelime yedeği ("Ankara Keçiörengücü" → keciorengucu)
         toks = normalize(canon).split()
         if len(toks) > 1 and len(toks[-1]) >= 7 and toks[-1] not in GENERIC | AMBIGUOUS:
@@ -357,12 +367,14 @@ def assign(items: list[Item], ix: TeamIndex, now: datetime) -> dict[str, dict]:
             continue
         if not is_football(it.title, it.summary):
             continue
-        teams = ix.match(it.title + " . " + it.summary)
+        # Takım yalnızca BAŞLIKTA geçiyorsa haber o takıma yazılır: özetlerde günün diğer maçları sık listelenir
+        # (canlı veride "Kartal, Celtic ile..." başlığı özet yüzünden Crystal Palace'a yapışmıştı).
+        teams = ix.match(it.title)
         if it.team_hint:
             teams.add(it.team_hint)
         if not teams:
             continue
-        tags = tag(it.title + " . " + it.summary)
+        tags = tag(it.title)   # etiket de yalnız başlıktan: özetteki başka oyuncu/takım haberleri karışmasın
         if "td" in tags:
             in_title = ix.match(it.title) | ({it.team_hint} if it.team_hint else set())
             coach |= in_title

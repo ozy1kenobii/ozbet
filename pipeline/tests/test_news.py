@@ -181,8 +181,8 @@ def test_coach_change_needs_team_in_title(ix):
     it = N.Item("Teknik direktör istifa etti", "https://example.com/z", "x", NOW - timedelta(days=1),
                 summary="Galatasaray maçı sonrası açıklama")
     out = N.assign([it], ix, NOW)
-    assert out["galatasaray"]["coach_change"] is False
-    assert out["galatasaray"]["items"][0]["tags"] == ["td"]
+    # takım yalnızca özette geçiyor → ne haber ne TD sinyali o takıma yazılır
+    assert "galatasaray" not in out
 
 
 def test_team_feed_hint_and_limit():
@@ -245,3 +245,15 @@ def test_comment_news_sentence_and_limit():
     text = commentator.rule_comment(full)
     assert "Son 3 günde Galatasaray" in text
     assert text.count(".") <= 6
+
+
+def test_title_only_matching_and_nicknames():
+    import datetime as _dt
+    from ozbet import config as _c
+    from ozbet.sources import news_rss as nr
+    from ozbet.sources.base import Fixture
+    ko = _dt.datetime(2026, 11, 5, 20, 45, tzinfo=_c.TZ)
+    fx = [Fixture("UEL", "", ko, "Celtic", "Beşiktaş", "x", "t"), Fixture("UEL", "", ko, "Crystal Palace", "Hoffenheim", "x", "t")]
+    ix = nr.TeamIndex.from_fixtures(fx)
+    assert ix.match("Kartal, Celtic ile ilk kez karşılaşıyor!") == {nr.team_key("Celtic"), nr.team_key("Beşiktaş")}
+    assert ix.match("Avrupa Ligi'nde bu akşam") == set()
