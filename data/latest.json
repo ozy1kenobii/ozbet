@@ -1,30 +1,30 @@
 {
  "schema_version": 1,
  "date": "2026-11-05",
- "generated_at": "2026-11-05T16:49:29+03:00",
+ "generated_at": "2026-11-05T17:04:34+03:00",
  "run_label": "18:30",
  "sources": [
   {
    "id": "nesine",
    "name": "Nesine iddaa bülteni (kod, MBS, oran)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:46:41+03:00",
+   "fetched_at": "2026-11-05T17:02:18+03:00",
    "note": null,
-   "items": 1099
+   "items": 1115
   },
   {
    "id": "iddaa",
    "name": "iddaa.com resmi bülten (oran, MBS)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:46:45+03:00",
+   "fetched_at": "2026-11-05T17:02:21+03:00",
    "note": null,
-   "items": 1097
+   "items": 1121
   },
   {
    "id": "flashscore",
    "name": "Flashscore (fikstür)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:46:46+03:00",
+   "fetched_at": "2026-11-05T17:02:22+03:00",
    "note": null,
    "items": 175
   },
@@ -32,7 +32,7 @@
    "id": "api_football",
    "name": "API-Football (yedek, anahtar gerekir)",
    "status": "partial",
-   "fetched_at": "2026-11-05T16:46:46+03:00",
+   "fetched_at": "2026-11-05T17:02:22+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -40,7 +40,7 @@
    "id": "football_data_fixtures",
    "name": "football-data.co.uk fixtures.csv (oran yedeği)",
    "status": "partial",
-   "fetched_at": "2026-11-05T16:46:46+03:00",
+   "fetched_at": "2026-11-05T17:02:22+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -48,7 +48,7 @@
    "id": "football_data_history",
    "name": "football-data.co.uk (geçmiş sonuçlar + oranlar)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:46:58+03:00",
+   "fetched_at": "2026-11-05T17:02:34+03:00",
    "note": null,
    "items": 12475
   },
@@ -56,7 +56,7 @@
    "id": "understat",
    "name": "Understat (xG, 5 büyük lig)",
    "status": "missing",
-   "fetched_at": "2026-11-05T16:46:58+03:00",
+   "fetched_at": "2026-11-05T17:02:34+03:00",
    "note": "RuntimeError: understat bakımda",
    "items": 0
   },
@@ -64,15 +64,15 @@
    "id": "flashscore_results_archive",
    "name": "Birikimli sonuç arşivi (Flashscore (sonuçlar) → data/archive)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:47:12+03:00",
-   "note": null,
-   "items": 97
+   "fetched_at": "2026-11-05T17:02:34+03:00",
+   "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
+   "items": 0
   },
   {
    "id": "soccerstats_tr2",
    "name": "SoccerStats sonuçlar (1. Lig geçmişi)",
    "status": "missing",
-   "fetched_at": "2026-11-05T16:47:17+03:00",
+   "fetched_at": "2026-11-05T17:02:40+03:00",
    "note": "RuntimeError: soccerstats sonuç sayfaları okunamadı: turkey2: Blocked; turkey2_2026: Blocked; turkey2_2025: Blocked",
    "items": 0
   },
@@ -80,7 +80,7 @@
    "id": "archive_history",
    "name": "Birikimli sonuç arşivi (modele giren ligler)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:47:17+03:00",
+   "fetched_at": "2026-11-05T17:02:40+03:00",
    "note": "Henüz eşik altında: BEL1 10/60, ESP1 10/60, GER1 9/60, GER2 9/60, GRE1 7/60, ITA1 12/60, ITA2 10/60, NED1 9/60, POR1 9/60, SCO1 3/60, TR1 9/60",
    "items": 0
   },
@@ -88,7 +88,7 @@
    "id": "api_football_history",
    "name": "API-Football geçmiş (1. Lig vb., anahtar gerekir)",
    "status": "partial",
-   "fetched_at": "2026-11-05T16:47:17+03:00",
+   "fetched_at": "2026-11-05T17:02:40+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -96,7 +96,7 @@
    "id": "clubelo",
    "name": "ClubElo (kulüp Elo puanları, lig-arası düzeltme)",
    "status": "missing",
-   "fetched_at": "2026-11-05T16:47:33+03:00",
+   "fetched_at": "2026-11-05T17:02:55+03:00",
    "note": "HTTPError: 502 Server Error: Bad Gateway for url: http://api.clubelo.com/2026-11-05",
    "items": 0
   },
@@ -104,7 +104,7 @@
    "id": "flashscore_news",
    "name": "Flashscore (sakat/cezalı)",
    "status": "partial",
-   "fetched_at": "2026-11-05T16:49:10+03:00",
+   "fetched_at": "2026-11-05T17:04:30+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -112,7 +112,7 @@
    "id": "transfermarkt",
    "name": "Transfermarkt (sakatlık listesi)",
    "status": "partial",
-   "fetched_at": "2026-11-05T16:49:10+03:00",
+   "fetched_at": "2026-11-05T17:04:30+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -120,15 +120,15 @@
    "id": "news_rss",
    "name": "Haber akışları (RSS/Atom: A Spor, NTV Spor, Fotomaç, TRT, AA, ESPN, Sky...)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:49:26+03:00",
+   "fetched_at": "2026-11-05T17:04:30+03:00",
    "note": "13 akış okundu; okunamayan: espn_soccer(boş)",
-   "items": 35
+   "items": 28
   },
   {
    "id": "forebet",
    "name": "Forebet (matematiksel tahmin)",
    "status": "missing",
-   "fetched_at": "2026-11-05T16:49:26+03:00",
+   "fetched_at": "2026-11-05T17:04:30+03:00",
    "note": "Blocked: Forebet bot koruması (Cloudflare) erişimi engelliyor: HTTP 403: https://www.forebet.com/en/football-tips-and-predictions-for-today",
    "items": 0
   },
@@ -136,7 +136,7 @@
    "id": "sportytrader",
    "name": "SportyTrader (uzman tahmini)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:49:28+03:00",
+   "fetched_at": "2026-11-05T17:04:33+03:00",
    "note": null,
    "items": 14
   },
@@ -144,7 +144,7 @@
    "id": "freesupertips",
    "name": "FreeSuperTips (ipucu)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:49:28+03:00",
+   "fetched_at": "2026-11-05T17:04:33+03:00",
    "note": null,
    "items": 20
   },
@@ -152,7 +152,7 @@
    "id": "soccerstats",
    "name": "SoccerStats (lig istatistik eğilimi)",
    "status": "partial",
-   "fetched_at": "2026-11-05T16:49:28+03:00",
+   "fetched_at": "2026-11-05T17:04:33+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -160,7 +160,7 @@
    "id": "nesine_results",
    "name": "Nesine (sonuçlar)",
    "status": "partial",
-   "fetched_at": "2026-11-05T16:49:29+03:00",
+   "fetched_at": "2026-11-05T17:04:34+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -168,7 +168,7 @@
    "id": "flashscore_results",
    "name": "Flashscore (sonuçlar)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:49:29+03:00",
+   "fetched_at": "2026-11-05T17:04:34+03:00",
    "note": null,
    "items": 268
   },
@@ -176,7 +176,7 @@
    "id": "pipeline",
    "name": "OZBET işleme",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:49:29+03:00",
+   "fetched_at": "2026-11-05T17:04:34+03:00",
    "note": "Eşlenemeyen lig adları (ilk 15): Arjantin Primera A Kapanış, Kadınlar, Arjantin Primera LPF, Kapanış, Botsvana Premier Ligi, Fransa Ulusal Lig, Hindistan Süper Ligi, Irak Ligi, Katar 2. Lig, Mısır Kupası, Romanya 2. Lig, SAFF Şampiyonası, A Grubu, Senegal Premier Lig, UEFA Avrupa Ligi Günlük Bahisler, UEFA Konf. Ligi Günlük Bahisler, Uganda Premier Ligi, Umman Ligi",
    "items": 82
   }
@@ -224,11 +224,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -357,15 +357,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-05T16:49:26+03:00"
+     "t": "2026-11-05T17:04:31+03:00"
     }
    },
    "odds": {
@@ -465,7 +465,7 @@
        "OU25": "O2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:49:26+03:00",
+      "fetched_at": "2026-11-05T17:04:31+03:00",
       "note": "Over 2.5 goals"
      },
      {
@@ -520,23 +520,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
-    },
-    "news": {
-     "source": "RSS/Atom haber akışları",
-     "t": "2026-11-05T16:49:26+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:49:29+03:00"
+     "t": "2026-11-05T17:04:34+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:49:28+03:00"
+     "t": "2026-11-05T17:04:33+03:00"
     }
    },
    "odds": {
@@ -613,27 +609,6 @@
     "drop_alarms": []
    },
    "stats": null,
-   "news": {
-    "home": [
-     {
-      "title": "Kartal, Celtic ile ilk kez karşılaşıyor!",
-      "url": "https://www.haberturk.com/spor/celtic-besiktas-maci-canli-anlatim-celtic-bjk-maci-ne-zaman-saat-kacta-ve-hangi-kanalda-iste-celtic-besiktas-muhtelem-11-ler-3925071",
-      "source": "Habertürk",
-      "published": "2026-11-05T10:30:54+03:00",
-      "tags": []
-     }
-    ],
-    "away": [
-     {
-      "title": "Kartal, Celtic ile ilk kez karşılaşıyor!",
-      "url": "https://www.haberturk.com/spor/celtic-besiktas-maci-canli-anlatim-celtic-bjk-maci-ne-zaman-saat-kacta-ve-hangi-kanalda-iste-celtic-besiktas-muhtelem-11-ler-3925071",
-      "source": "Habertürk",
-      "published": "2026-11-05T10:30:54+03:00",
-      "tags": []
-     }
-    ],
-    "fetched_at": "2026-11-05T16:49:26+03:00"
-   },
    "squad": null,
    "model": {
     "lambda_home": 1.575,
@@ -2075,7 +2050,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:49:28+03:00",
+      "fetched_at": "2026-11-05T17:04:33+03:00",
       "note": "Crystal Palace to Win; Crystal Palace 3-1"
      },
      {
@@ -2165,11 +2140,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -2300,15 +2275,15 @@
    "provenance": {
     "fixture": {
      "source": "iddaa.com",
-     "t": "2026-11-05T16:46:41+03:00"
+     "t": "2026-11-05T17:02:18+03:00"
     },
     "odds": {
      "source": "iddaa.com",
-     "t": "2026-11-05T16:46:41+03:00"
+     "t": "2026-11-05T17:02:18+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-05T16:49:26+03:00"
+     "t": "2026-11-05T17:04:31+03:00"
     }
    },
    "odds": {
@@ -2411,7 +2386,7 @@
        "OU25": "U2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:49:26+03:00",
+      "fetched_at": "2026-11-05T17:04:31+03:00",
       "note": "Under 2.5 goals"
      },
      {
@@ -2466,15 +2441,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-05T16:49:26+03:00"
+     "t": "2026-11-05T17:04:31+03:00"
     }
    },
    "odds": {
@@ -2557,7 +2532,7 @@
        "OU25": "O2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:49:26+03:00",
+      "fetched_at": "2026-11-05T17:04:31+03:00",
       "note": "Over 2.5 goals"
      },
      {
@@ -2612,11 +2587,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -2733,19 +2708,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:49:29+03:00"
+     "t": "2026-11-05T17:04:34+03:00"
     },
     "predictions": {
      "source": "sportytrader, freesupertips",
-     "t": "2026-11-05T16:49:26+03:00"
+     "t": "2026-11-05T17:04:31+03:00"
     }
    },
    "odds": {
@@ -4219,7 +4194,7 @@
        "OU25": "O2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:49:26+03:00",
+      "fetched_at": "2026-11-05T17:04:31+03:00",
       "note": "Over 2.5 goals"
      },
      {
@@ -4229,7 +4204,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:49:28+03:00",
+      "fetched_at": "2026-11-05T17:04:33+03:00",
       "note": "Over 2.5 Match Goals; Real Sociedad 2-1"
      },
      {
@@ -4319,34 +4294,30 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
-    },
-    "news": {
-     "source": "RSS/Atom haber akışları",
-     "t": "2026-11-05T16:49:26+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:49:28+03:00"
+     "t": "2026-11-05T17:04:33+03:00"
     }
    },
    "odds": {
-    "1": 6.58,
-    "X": 4.41,
-    "2": 1.24,
-    "BTTS_Y": 1.6,
-    "BTTS_N": 1.78,
-    "1X": 2.53,
-    "U1.5": 4.54,
+    "1": 6.53,
+    "X": 4.55,
+    "2": 1.22,
+    "BTTS_Y": 1.61,
+    "BTTS_N": 1.76,
+    "1X": 2.58,
+    "U1.5": 4.51,
     "U2.5": 2.15,
     "O2.5": 1.38,
     "O1.5": 1.07,
-    "O3.5": 2.19,
-    "U3.5": 1.44
+    "O3.5": 2.2,
+    "U3.5": 1.43
    },
    "odds_history": [
     {
@@ -4388,52 +4359,48 @@
      "2": 1.24,
      "O2.5": 1.38,
      "U2.5": 2.15
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 6.53,
+     "X": 4.55,
+     "2": 1.22,
+     "O2.5": 1.38,
+     "U2.5": 2.15
     }
    ],
    "market": {
     "implied": {
-     "1": 0.1282,
-     "X": 0.1913,
-     "2": 0.6804,
-     "O1.5": 0.8093,
-     "U1.5": 0.1907,
+     "1": 0.1284,
+     "X": 0.1843,
+     "2": 0.6873,
+     "O1.5": 0.8082,
+     "U1.5": 0.1918,
      "O2.5": 0.6091,
      "U2.5": 0.3909,
-     "O3.5": 0.3967,
-     "U3.5": 0.6033,
-     "BTTS_Y": 0.5266,
-     "BTTS_N": 0.4734,
-     "1X": 0.3195,
-     "X2": 0.8717,
-     "12": 0.8086
+     "O3.5": 0.3939,
+     "U3.5": 0.6061,
+     "BTTS_Y": 0.5223,
+     "BTTS_N": 0.4777,
+     "1X": 0.3127,
+     "X2": 0.8716,
+     "12": 0.8157
     },
     "margin": {
-     "1x2": 0.1852,
-     "ou15": 0.1548,
+     "1x2": 0.1926,
+     "ou15": 0.1563,
      "ou25": 0.1898,
-     "ou35": 0.1511,
-     "btts": 0.1868
+     "ou35": 0.1538,
+     "btts": 0.1893
     },
     "movement": {
-     "1": 0.0876,
-     "2": -0.0159
+     "1": 0.0793,
+     "X": 0.0248,
+     "2": -0.0317
     },
     "drop_alarms": []
    },
    "stats": null,
-   "news": {
-    "home": [],
-    "away": [
-     {
-      "title": "Bournemouth’s decision not to panic after their tough start is paying off",
-      "url": "https://www.theguardian.com/football/2026/nov/04/bournemouth-marco-rose-premier-league-games-opta",
-      "source": "The Guardian",
-      "published": "2026-11-04T20:01:47+03:00",
-      "tags": []
-     }
-    ],
-    "fetched_at": "2026-11-05T16:49:26+03:00"
-   },
    "squad": null,
    "model": null,
    "consensus": {
@@ -4444,7 +4411,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:49:28+03:00",
+      "fetched_at": "2026-11-05T17:04:33+03:00",
       "note": "AFC Bournemouth To Win To Nil; AFC Bournemouth 2-0"
      },
      {
@@ -4455,9 +4422,9 @@
        "BTTS": "BTTS_Y"
       },
       "probs": {
-       "1": 0.1282,
-       "X": 0.1913,
-       "2": 0.6804
+       "1": 0.1284,
+       "X": 0.1843,
+       "2": 0.6873
       }
      }
     ],
@@ -4499,19 +4466,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:49:29+03:00"
+     "t": "2026-11-05T17:04:34+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:49:28+03:00"
+     "t": "2026-11-05T17:04:33+03:00"
     }
    },
    "odds": {
@@ -5909,7 +5876,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:49:28+03:00",
+      "fetched_at": "2026-11-05T17:04:33+03:00",
       "note": "Juventus to Win; Juventus 2-0"
      },
      {
@@ -6000,37 +5967,33 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
-    },
-    "news": {
-     "source": "RSS/Atom haber akışları",
-     "t": "2026-11-05T16:49:26+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:49:29+03:00"
+     "t": "2026-11-05T17:04:34+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:49:28+03:00"
+     "t": "2026-11-05T17:04:33+03:00"
     }
    },
    "odds": {
     "1": 1.15,
-    "X": 5.45,
-    "2": 7.3,
-    "BTTS_Y": 1.46,
+    "X": 5.56,
+    "2": 7.44,
+    "BTTS_Y": 1.45,
     "BTTS_N": 2.0,
-    "U1.5": 6.38,
-    "X2": 2.97,
-    "U2.5": 2.85,
-    "O2.5": 1.2,
-    "O3.5": 1.74,
-    "U3.5": 1.75
+    "U1.5": 6.54,
+    "X2": 3.02,
+    "U2.5": 2.91,
+    "O2.5": 1.19,
+    "O3.5": 1.71,
+    "U3.5": 1.77
    },
    "odds_history": [
     {
@@ -6072,50 +6035,45 @@
      "2": 7.3,
      "O2.5": 1.2,
      "U2.5": 2.85
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 1.15,
+     "X": 5.56,
+     "2": 7.44,
+     "O2.5": 1.19,
+     "U2.5": 2.91
     }
    ],
    "market": {
     "implied": {
-     "1": 0.7307,
-     "X": 0.1542,
-     "2": 0.1151,
-     "O2.5": 0.7037,
-     "U2.5": 0.2963,
-     "O3.5": 0.5014,
-     "U3.5": 0.4986,
-     "BTTS_Y": 0.578,
-     "BTTS_N": 0.422,
-     "1X": 0.8849,
-     "X2": 0.2693,
-     "12": 0.8458
+     "1": 0.7345,
+     "X": 0.1519,
+     "2": 0.1135,
+     "O2.5": 0.7098,
+     "U2.5": 0.2902,
+     "O3.5": 0.5086,
+     "U3.5": 0.4914,
+     "BTTS_Y": 0.5797,
+     "BTTS_N": 0.4203,
+     "1X": 0.8864,
+     "X2": 0.2654,
+     "12": 0.848
     },
     "margin": {
-     "1x2": 0.19,
-     "ou25": 0.1842,
-     "ou35": 0.1461,
-     "btts": 0.1849
+     "1x2": 0.1838,
+     "ou25": 0.184,
+     "ou35": 0.1498,
+     "btts": 0.1897
     },
     "movement": {
-     "X": -0.0162,
-     "2": -0.0495,
-     "U2.5": 0.044
+     "2": -0.0312,
+     "O2.5": -0.0165,
+     "U2.5": 0.0659
     },
     "drop_alarms": []
    },
    "stats": null,
-   "news": {
-    "home": [],
-    "away": [
-     {
-      "title": "Kartal, Celtic ile ilk kez karşılaşıyor!",
-      "url": "https://www.haberturk.com/spor/celtic-besiktas-maci-canli-anlatim-celtic-bjk-maci-ne-zaman-saat-kacta-ve-hangi-kanalda-iste-celtic-besiktas-muhtelem-11-ler-3925071",
-      "source": "Habertürk",
-      "published": "2026-11-05T10:30:54+03:00",
-      "tags": []
-     }
-    ],
-    "fetched_at": "2026-11-05T16:49:26+03:00"
-   },
    "squad": null,
    "model": {
     "lambda_home": 2.161,
@@ -7689,7 +7647,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:49:28+03:00",
+      "fetched_at": "2026-11-05T17:04:33+03:00",
       "note": "Bayer Leverkusen to Win and Over 2.5 Match Goals; Bayer Leverkusen 3-1"
      },
      {
@@ -7713,9 +7671,9 @@
        "BTTS": "BTTS_Y"
       },
       "probs": {
-       "1": 0.7307,
-       "X": 0.1542,
-       "2": 0.1151
+       "1": 0.7345,
+       "X": 0.1519,
+       "2": 0.1135
       }
      }
     ],
@@ -7747,8 +7705,8 @@
    "pick": {
     "market": "O2.5",
     "label": "2.5 Üst",
-    "p": 0.7122,
-    "odds": 1.2,
+    "p": 0.7167,
+    "odds": 1.19,
     "is_value": false,
     "blended": true,
     "stars": 2
@@ -7779,20 +7737,20 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
-    "X": 8.61,
-    "2": 16.15,
-    "BTTS_Y": 1.72,
-    "BTTS_N": 1.66,
-    "X2": 5.01,
-    "U1.5": 7.96,
+    "X": 8.89,
+    "2": 16.85,
+    "BTTS_Y": 1.74,
+    "BTTS_N": 1.62,
+    "X2": 5.21,
+    "U1.5": 7.97,
     "U2.5": 3.44,
     "O2.5": 1.12,
     "O3.5": 1.54,
@@ -7819,6 +7777,13 @@
      "2": 16.15,
      "O2.5": 1.12,
      "U2.5": 3.44
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "X": 8.89,
+     "2": 16.85,
+     "O2.5": 1.12,
+     "U2.5": 3.44
     }
    ],
    "market": {
@@ -7827,17 +7792,17 @@
      "U2.5": 0.2456,
      "O3.5": 0.565,
      "U3.5": 0.435,
-     "BTTS_Y": 0.4911,
-     "BTTS_N": 0.5089
+     "BTTS_Y": 0.4821,
+     "BTTS_N": 0.5179
     },
     "margin": {
      "ou25": 0.1836,
      "ou35": 0.1494,
-     "btts": 0.1838
+     "btts": 0.192
     },
     "movement": {
-     "X": 0.0577,
-     "2": 0.0875,
+     "X": 0.0921,
+     "2": 0.1347,
      "O2.5": -0.0175,
      "U2.5": 0.0456
     },
@@ -7887,28 +7852,28 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:49:29+03:00"
+     "t": "2026-11-05T17:04:34+03:00"
     }
    },
    "odds": {
-    "1": 2.09,
-    "X": 3.05,
-    "2": 2.63,
-    "BTTS_Y": 1.58,
-    "BTTS_N": 1.8,
-    "U1.5": 3.1,
+    "1": 2.13,
+    "X": 2.98,
+    "2": 2.61,
+    "BTTS_Y": 1.57,
+    "BTTS_N": 1.82,
+    "U1.5": 3.11,
     "O1.5": 1.15,
     "1X": 1.24,
-    "12": 1.17,
-    "X2": 1.41,
+    "12": 1.18,
+    "X2": 1.38,
     "U2.5": 1.63,
     "O2.5": 1.74
    },
@@ -7936,30 +7901,40 @@
      "2": 2.63,
      "O2.5": 1.74,
      "U2.5": 1.63
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 2.13,
+     "X": 2.98,
+     "2": 2.61,
+     "O2.5": 1.74,
+     "U2.5": 1.63
     }
    ],
    "market": {
     "implied": {
-     "1": 0.4032,
-     "X": 0.2763,
-     "2": 0.3204,
-     "O1.5": 0.7294,
-     "U1.5": 0.2706,
+     "1": 0.3951,
+     "X": 0.2824,
+     "2": 0.3225,
+     "O1.5": 0.73,
+     "U1.5": 0.27,
      "O2.5": 0.4837,
      "U2.5": 0.5163,
-     "BTTS_Y": 0.5325,
-     "BTTS_N": 0.4675,
-     "1X": 0.6795,
-     "X2": 0.5967,
-     "12": 0.7236
+     "BTTS_Y": 0.5369,
+     "BTTS_N": 0.4631,
+     "1X": 0.6775,
+     "X2": 0.6049,
+     "12": 0.7176
     },
     "margin": {
-     "1x2": 0.1866,
-     "ou15": 0.1921,
+     "1x2": 0.1882,
+     "ou15": 0.1911,
      "ou25": 0.1882,
-     "btts": 0.1885
+     "btts": 0.1864
     },
     "movement": {
+     "1": 0.0191,
+     "X": -0.023,
      "O2.5": 0.0545,
      "U2.5": -0.0523
     },
@@ -9261,9 +9236,9 @@
        "BTTS": "BTTS_Y"
       },
       "probs": {
-       "1": 0.4032,
-       "X": 0.2763,
-       "2": 0.3204
+       "1": 0.3951,
+       "X": 0.2824,
+       "2": 0.3225
       }
      }
     ],
@@ -9327,11 +9302,11 @@
    "provenance": {
     "fixture": {
      "source": "iddaa.com",
-     "t": "2026-11-05T16:46:41+03:00"
+     "t": "2026-11-05T17:02:18+03:00"
     },
     "odds": {
      "source": "iddaa.com",
-     "t": "2026-11-05T16:46:41+03:00"
+     "t": "2026-11-05T17:02:18+03:00"
     }
    },
    "odds": {
@@ -9471,27 +9446,23 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "news": {
      "source": "RSS/Atom haber akışları",
-     "t": "2026-11-05T16:49:26+03:00"
-    },
-    "squad": {
-     "source": "haber_rss",
-     "t": "2026-11-05T16:49:26+03:00"
+     "t": "2026-11-05T17:04:30+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:49:29+03:00"
+     "t": "2026-11-05T17:04:34+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:49:28+03:00"
+     "t": "2026-11-05T17:04:33+03:00"
     }
    },
    "odds": {
@@ -9567,20 +9538,6 @@
       "tags": []
      },
      {
-      "title": "Beşiktaş'ın Avrupa'daki galibiyet, mağlubiyet ve gol sayısı belli oldu",
-      "url": "https://www.aspor.com.tr/besiktas/2026/11/05/besiktasin-avrupadaki-galibiyet-maglubiyet-ve-gol-sayisi-belli-oldu",
-      "source": "A Spor",
-      "published": "2026-11-05T14:03:18+03:00",
-      "tags": []
-     },
-     {
-      "title": "Beşiktaş Avrupa kupalarında 268. maçına çıkıyor! İşte galibiyet ve gol sayısı",
-      "url": "https://www.fotomac.com.tr/besiktas/2026/11/05/besiktas-avrupa-kupalarinda-268-macina-cikiyor-iste-galibiyet-ve-gol-sayisi",
-      "source": "Fotomaç",
-      "published": "2026-11-05T12:40:20+03:00",
-      "tags": []
-     },
-     {
       "title": "Podcast: Celtic under pressure & injury-hit Hearts head for Europe",
       "url": "https://www.bbc.co.uk/sounds/play/p0pld9qb?at_medium=RSS&at_campaign=rss",
       "source": "BBC Sport",
@@ -9597,10 +9554,24 @@
       "tags": []
      },
      {
-      "title": "Ferguson harbours Rangers ambition - gossip",
-      "url": "https://www.bbc.co.uk/sport/football/articles/c699zd2g5343o?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Sport",
-      "published": "2026-11-05T10:27:38+03:00",
+      "title": "Celtic-Beşiktaş maçı saat kaçta, hangi kanalda?",
+      "url": "https://www.aspor.com.tr/besiktas/2026/11/05/celtic-besiktas-maci-saat-kacta-hangi-kanalda",
+      "source": "A Spor",
+      "published": "2026-11-05T09:19:44+03:00",
+      "tags": []
+     },
+     {
+      "title": "Beşiktaş Avrupa Ligi'nde Celtic deplasmanında",
+      "url": "https://www.trthaber.com/haber/spor/besiktas-avrupa-liginde-celtic-deplasmaninda-962298.html",
+      "source": "TRT Haber",
+      "published": "2026-11-05T09:09:00+03:00",
+      "tags": []
+     },
+     {
+      "title": "Beşiktaş zorlu Celtic deplasmanında İşte Italiano'nun Celtic maçı muhtemel 11'i!",
+      "url": "https://www.aspor.com.tr/besiktas/2026/11/05/besiktas-zorlu-celtic-deplasmaninda-iste-italianonun-celtic-maci-muhtemel-11i",
+      "source": "A Spor",
+      "published": "2026-11-05T06:40:47+03:00",
       "tags": []
      }
     ],
@@ -9627,40 +9598,30 @@
       "tags": []
      },
      {
-      "title": "Nübel milli takıma davet edildi",
-      "url": "https://www.haberturk.com/spor/besiktas-ta-alexander-nubel-almanya-milli-futbol-takimi-nin-aday-kadrosuna-cagirildi-3925179",
-      "source": "Habertürk",
-      "published": "2026-11-05T15:12:34+03:00",
-      "tags": []
-     },
-     {
-      "title": "\"Elimizden gelenin en iyisini yapacağız\"",
-      "url": "https://www.haberturk.com/spor/genclerbirligi-teknik-direktoru-bernd-storck-besiktas-karsisinda-elimizden-gelenin-en-iyisini-yapip-puan-veya-puanlar-almaya-calisacagiz-3925172",
-      "source": "Habertürk",
-      "published": "2026-11-05T14:49:17+03:00",
-      "tags": []
-     },
-     {
       "title": "Beşiktaş'ın Avrupa'daki galibiyet, mağlubiyet ve gol sayısı belli oldu",
       "url": "https://www.aspor.com.tr/besiktas/2026/11/05/besiktasin-avrupadaki-galibiyet-maglubiyet-ve-gol-sayisi-belli-oldu",
       "source": "A Spor",
       "published": "2026-11-05T14:03:18+03:00",
       "tags": []
+     },
+     {
+      "title": "Beşiktaş Avrupa kupalarında 268. maçına çıkıyor! İşte galibiyet ve gol sayısı",
+      "url": "https://www.fotomac.com.tr/besiktas/2026/11/05/besiktas-avrupa-kupalarinda-268-macina-cikiyor-iste-galibiyet-ve-gol-sayisi",
+      "source": "Fotomaç",
+      "published": "2026-11-05T12:40:20+03:00",
+      "tags": []
+     },
+     {
+      "title": "Kartal, Celtic ile ilk kez karşılaşıyor!",
+      "url": "https://www.haberturk.com/spor/celtic-besiktas-maci-canli-anlatim-celtic-bjk-maci-ne-zaman-saat-kacta-ve-hangi-kanalda-iste-celtic-besiktas-muhtelem-11-ler-3925071",
+      "source": "Habertürk",
+      "published": "2026-11-05T10:30:54+03:00",
+      "tags": []
      }
     ],
-    "fetched_at": "2026-11-05T16:49:26+03:00"
+    "fetched_at": "2026-11-05T17:04:30+03:00"
    },
-   "squad": {
-    "home": null,
-    "away": {
-     "missing": [],
-     "rotation_risk": false,
-     "coach_change": true,
-     "adjustment": 0.0
-    },
-    "source": "haber_rss",
-    "fetched_at": "2026-11-05T16:49:26+03:00"
-   },
+   "squad": null,
    "model": {
     "lambda_home": 1.868,
     "lambda_away": 1.167,
@@ -11023,8 +10984,7 @@
     },
     "data_quality": "medium",
     "notes": [
-     "Farklı ligler: yaklaşık lig gücü katsayısı kullanıldı (Elo yok)",
-     "Deplasman: teknik direktör değişikliği"
+     "Farklı ligler: yaklaşık lig gücü katsayısı kullanıldı (Elo yok)"
     ],
     "n_matches": {
      "home": 88,
@@ -11040,7 +11000,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:49:28+03:00",
+      "fetched_at": "2026-11-05T17:04:33+03:00",
       "note": "Besiktas to Win; Besiktas 3-1"
      },
      {
@@ -11130,11 +11090,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -11245,11 +11205,11 @@
    "provenance": {
     "fixture": {
      "source": "iddaa.com",
-     "t": "2026-11-05T16:46:41+03:00"
+     "t": "2026-11-05T17:02:18+03:00"
     },
     "odds": {
      "source": "iddaa.com",
-     "t": "2026-11-05T16:46:41+03:00"
+     "t": "2026-11-05T17:02:18+03:00"
     }
    },
    "odds": {
@@ -11362,11 +11322,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -11470,19 +11430,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "news": {
      "source": "RSS/Atom haber akışları",
-     "t": "2026-11-05T16:49:26+03:00"
+     "t": "2026-11-05T17:04:30+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:49:28+03:00"
+     "t": "2026-11-05T17:04:33+03:00"
     }
    },
    "odds": {
@@ -11560,7 +11520,7 @@
      }
     ],
     "away": [],
-    "fetched_at": "2026-11-05T16:49:26+03:00"
+    "fetched_at": "2026-11-05T17:04:30+03:00"
    },
    "squad": null,
    "model": null,
@@ -11573,7 +11533,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:49:28+03:00",
+      "fetched_at": "2026-11-05T17:04:33+03:00",
       "note": "Both Teams To Score; Sunderland 2-1"
      },
      {
@@ -11635,11 +11595,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -11760,11 +11720,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -11891,24 +11851,24 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
-    "X": 9.5,
+    "X": 8.94,
     "2": 17.35,
-    "BTTS_Y": 1.93,
-    "BTTS_N": 1.49,
-    "X2": 5.69,
-    "U1.5": 7.39,
-    "U2.5": 3.24,
-    "O2.5": 1.14,
-    "O3.5": 1.59,
-    "U3.5": 1.91
+    "BTTS_Y": 1.87,
+    "BTTS_N": 1.54,
+    "X2": 5.3,
+    "U1.5": 7.23,
+    "U2.5": 3.17,
+    "O2.5": 1.15,
+    "O3.5": 1.61,
+    "U3.5": 1.88
    },
    "odds_history": [
     {
@@ -11945,27 +11905,34 @@
      "2": 17.35,
      "O2.5": 1.14,
      "U2.5": 3.24
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "X": 8.94,
+     "2": 17.35,
+     "O2.5": 1.15,
+     "U2.5": 3.17
     }
    ],
    "market": {
     "implied": {
-     "O2.5": 0.7397,
-     "U2.5": 0.2603,
-     "O3.5": 0.5457,
-     "U3.5": 0.4543,
-     "BTTS_Y": 0.4357,
-     "BTTS_N": 0.5643
+     "O2.5": 0.7338,
+     "U2.5": 0.2662,
+     "O3.5": 0.5387,
+     "U3.5": 0.4613,
+     "BTTS_Y": 0.4516,
+     "BTTS_N": 0.5484
     },
     "margin": {
-     "ou25": 0.1858,
-     "ou35": 0.1525,
-     "btts": 0.1893
+     "ou25": 0.185,
+     "ou35": 0.153,
+     "btts": 0.1841
     },
     "movement": {
-     "X": 0.1283,
+     "X": 0.0618,
      "2": 0.042,
-     "O2.5": -0.0256,
-     "U2.5": 0.0764
+     "O2.5": -0.0171,
+     "U2.5": 0.0532
     },
     "drop_alarms": []
    },
@@ -12013,11 +11980,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -12140,22 +12107,22 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
     "X": 12.0,
     "2": 17.35,
-    "BTTS_Y": 2.37,
-    "BTTS_N": 1.31,
-    "U1.5": 7.43,
+    "BTTS_Y": 2.33,
+    "BTTS_N": 1.32,
+    "U1.5": 7.61,
     "X2": 7.17,
-    "U2.5": 3.24,
-    "O2.5": 1.14,
+    "U2.5": 3.31,
+    "O2.5": 1.13,
     "O3.5": 1.58,
     "U3.5": 1.94
    },
@@ -12180,23 +12147,32 @@
      "2": 17.35,
      "O2.5": 1.14,
      "U2.5": 3.24
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "X": 12.0,
+     "2": 17.35,
+     "O2.5": 1.13,
+     "U2.5": 3.31
     }
    ],
    "market": {
     "implied": {
-     "O2.5": 0.7397,
-     "U2.5": 0.2603,
+     "O2.5": 0.7455,
+     "U2.5": 0.2545,
      "O3.5": 0.5511,
      "U3.5": 0.4489,
-     "BTTS_Y": 0.356,
-     "BTTS_N": 0.644
+     "BTTS_Y": 0.3616,
+     "BTTS_N": 0.6384
     },
     "margin": {
-     "ou25": 0.1858,
+     "ou25": 0.1871,
      "ou35": 0.1484,
-     "btts": 0.1853
+     "btts": 0.1868
     },
-    "movement": {},
+    "movement": {
+     "U2.5": 0.0185
+    },
     "drop_alarms": []
    },
    "stats": null,
@@ -12243,15 +12219,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-05T16:49:26+03:00"
+     "t": "2026-11-05T17:04:31+03:00"
     }
    },
    "odds": {
@@ -12339,7 +12315,7 @@
        "OU25": "O2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:49:26+03:00",
+      "fetched_at": "2026-11-05T17:04:31+03:00",
       "note": "Over 2.5 goals & BTTS"
      },
      {
@@ -12401,11 +12377,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -12522,15 +12498,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-05T16:49:26+03:00"
+     "t": "2026-11-05T17:04:31+03:00"
     }
    },
    "odds": {
@@ -12618,7 +12594,7 @@
        "OU25": "U2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:49:26+03:00",
+      "fetched_at": "2026-11-05T17:04:31+03:00",
       "note": "Under 2.5 goals"
      },
      {
@@ -12673,33 +12649,33 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "news": {
      "source": "RSS/Atom haber akışları",
-     "t": "2026-11-05T16:49:26+03:00"
+     "t": "2026-11-05T17:04:30+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:49:28+03:00"
+     "t": "2026-11-05T17:04:33+03:00"
     }
    },
    "odds": {
-    "1": 1.74,
-    "X": 3.42,
-    "2": 3.13,
-    "BTTS_Y": 1.32,
-    "BTTS_N": 2.33,
-    "U1.5": 4.92,
-    "1X": 1.15,
+    "1": 1.76,
+    "X": 3.43,
+    "2": 3.04,
+    "BTTS_Y": 1.33,
+    "BTTS_N": 2.31,
+    "U1.5": 4.8,
+    "1X": 1.16,
     "12": 1.13,
-    "X2": 1.61,
-    "U2.5": 2.26,
-    "O2.5": 1.34,
+    "X2": 1.59,
+    "U2.5": 2.23,
+    "O2.5": 1.35,
     "O1.5": 1.06,
     "O3.5": 2.1,
     "U3.5": 1.48
@@ -12744,37 +12720,44 @@
      "2": 3.13,
      "O2.5": 1.34,
      "U2.5": 2.26
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 1.76,
+     "X": 3.43,
+     "2": 3.04,
+     "O2.5": 1.35,
+     "U2.5": 2.23
     }
    ],
    "market": {
     "implied": {
-     "1": 0.4843,
-     "X": 0.2464,
-     "2": 0.2692,
-     "O1.5": 0.8227,
-     "U1.5": 0.1773,
-     "O2.5": 0.6278,
-     "U2.5": 0.3722,
+     "1": 0.478,
+     "X": 0.2453,
+     "2": 0.2767,
+     "O1.5": 0.8191,
+     "U1.5": 0.1809,
+     "O2.5": 0.6229,
+     "U2.5": 0.3771,
      "O3.5": 0.4134,
      "U3.5": 0.5866,
-     "BTTS_Y": 0.6384,
-     "BTTS_N": 0.3616,
-     "1X": 0.7307,
-     "X2": 0.5156,
-     "12": 0.7535
+     "BTTS_Y": 0.6346,
+     "BTTS_N": 0.3654,
+     "1X": 0.7233,
+     "X2": 0.522,
+     "12": 0.7547
     },
     "margin": {
-     "1x2": 0.1866,
-     "ou15": 0.1466,
-     "ou25": 0.1887,
+     "1x2": 0.1887,
+     "ou15": 0.1517,
+     "ou25": 0.1892,
      "ou35": 0.1519,
-     "btts": 0.1868
+     "btts": 0.1848
     },
     "movement": {
-     "1": -0.1256,
-     "X": 0.0301,
-     "2": 0.1947,
-     "U2.5": 0.018
+     "1": -0.1156,
+     "X": 0.0331,
+     "2": 0.1603
     },
     "drop_alarms": [
      "1"
@@ -12794,13 +12777,6 @@
       ]
      },
      {
-      "title": "Fırtına Avrupa'da 3'te 3 peşinde!",
-      "url": "https://www.haberturk.com/spor/trabzonspor-freiburg-maci-canli-anlatim-ts-freiburg-maci-ne-zaman-saat-kacta-ve-hangi-kanalda-iste-trabzonspor-freiburg-muhtelem-11-ler-3925044",
-      "source": "Habertürk",
-      "published": "2026-11-05T10:25:58+03:00",
-      "tags": []
-     },
-     {
       "title": "Hearts lose Miller for two months as injuries mount",
       "url": "https://www.bbc.co.uk/sport/football/articles/cj0406qvzqd3o?at_medium=RSS&at_campaign=rss",
       "source": "BBC Sport",
@@ -12810,7 +12786,7 @@
       ]
      }
     ],
-    "fetched_at": "2026-11-05T16:49:26+03:00"
+    "fetched_at": "2026-11-05T17:04:30+03:00"
    },
    "squad": null,
    "model": null,
@@ -12823,7 +12799,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:49:28+03:00",
+      "fetched_at": "2026-11-05T17:04:33+03:00",
       "note": "Hearts to Win and Over 3.5 Match Goals; Hearts 3-1"
      },
      {
@@ -12834,9 +12810,9 @@
        "BTTS": "BTTS_Y"
       },
       "probs": {
-       "1": 0.4843,
-       "X": 0.2464,
-       "2": 0.2692
+       "1": 0.478,
+       "X": 0.2453,
+       "2": 0.2767
       }
      }
     ],
@@ -12860,7 +12836,7 @@
    "value": [],
    "pick": null,
    "value_note": "Oran/model yok – değer hesaplanamadı",
-   "comment": "Bu maç için yeterli geçmiş veri bulunamadı; model olasılığı üretilmedi. Son 3 günde Hearts ile ilgili 2 sakatlık haberi var. 2 kaynağın tümü 2.5 Üst diyor. MS 1 oranı ilk görüldüğünden bu yana %13 düştü.",
+   "comment": "Bu maç için yeterli geçmiş veri bulunamadı; model olasılığı üretilmedi. Son 3 günde Hearts ile ilgili 2 sakatlık haberi var. 2 kaynağın tümü 2.5 Üst diyor. MS 1 oranı ilk görüldüğünden bu yana %12 düştü.",
    "comment_source": "kural"
   },
   {
@@ -12885,19 +12861,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "news": {
      "source": "RSS/Atom haber akışları",
-     "t": "2026-11-05T16:49:26+03:00"
+     "t": "2026-11-05T17:04:30+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:49:29+03:00"
+     "t": "2026-11-05T17:04:34+03:00"
     }
    },
    "odds": {
@@ -13031,13 +13007,6 @@
       "tags": []
      },
      {
-      "title": "Fırtına Avrupa'da 3'te 3 peşinde!",
-      "url": "https://www.haberturk.com/spor/trabzonspor-freiburg-maci-canli-anlatim-ts-freiburg-maci-ne-zaman-saat-kacta-ve-hangi-kanalda-iste-trabzonspor-freiburg-muhtelem-11-ler-3925044",
-      "source": "Habertürk",
-      "published": "2026-11-05T10:25:58+03:00",
-      "tags": []
-     },
-     {
       "title": "Trabzonspor-Freiburg maçı ne zaman? Saat kaçta, şifresiz mi?",
       "url": "https://www.aspor.com.tr/trabzonspor/2026/11/05/trabzonspor-freiburg-maci-ne-zaman-saat-kacta-sifresiz-mi",
       "source": "A Spor",
@@ -13066,9 +13035,16 @@
       "tags": [
        "sakat"
       ]
+     },
+     {
+      "title": "Freiburg teknik direktörü Julian Schuster: Çok dikkatli oynayacağız!",
+      "url": "https://www.fotomac.com.tr/trabzonspor/2026/11/04/freiburg-teknik-direktoru-julian-schuster-cok-dikkatli-oynayacagiz",
+      "source": "Fotomaç",
+      "published": "2026-11-05T01:20:57+03:00",
+      "tags": []
      }
     ],
-    "fetched_at": "2026-11-05T16:49:26+03:00"
+    "fetched_at": "2026-11-05T17:04:30+03:00"
    },
    "squad": null,
    "model": {
@@ -14557,34 +14533,34 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "news": {
      "source": "RSS/Atom haber akışları",
-     "t": "2026-11-05T16:49:26+03:00"
+     "t": "2026-11-05T17:04:30+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:49:29+03:00"
+     "t": "2026-11-05T17:04:34+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:49:28+03:00"
+     "t": "2026-11-05T17:04:33+03:00"
     }
    },
    "odds": {
-    "1": 5.56,
-    "X": 3.74,
-    "2": 1.35,
-    "BTTS_Y": 1.81,
-    "BTTS_N": 1.57,
+    "1": 5.42,
+    "X": 3.7,
+    "2": 1.36,
+    "BTTS_Y": 1.8,
+    "BTTS_N": 1.58,
     "U1.5": 3.2,
     "O1.5": 1.15,
-    "1X": 2.17,
+    "1X": 2.13,
     "12": 1.09,
     "U2.5": 1.67,
     "O2.5": 1.7,
@@ -14615,37 +14591,41 @@
      "2": 1.35,
      "O2.5": 1.7,
      "U2.5": 1.67
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 5.42,
+     "X": 3.7,
+     "2": 1.36,
+     "O2.5": 1.7,
+     "U2.5": 1.67
     }
    ],
    "market": {
     "implied": {
-     "1": 0.1514,
-     "X": 0.2251,
-     "2": 0.6235,
+     "1": 0.155,
+     "X": 0.2271,
+     "2": 0.6179,
      "O1.5": 0.7356,
      "U1.5": 0.2644,
      "O2.5": 0.4955,
      "U2.5": 0.5045,
      "O3.5": 0.2864,
      "U3.5": 0.7136,
-     "BTTS_Y": 0.4645,
-     "BTTS_N": 0.5355,
-     "1X": 0.3765,
-     "X2": 0.8486,
-     "12": 0.7749
+     "BTTS_Y": 0.4675,
+     "BTTS_N": 0.5325,
+     "1X": 0.3821,
+     "X2": 0.845,
+     "12": 0.7729
     },
     "margin": {
-     "1x2": 0.188,
+     "1x2": 0.1901,
      "ou15": 0.1821,
      "ou25": 0.187,
      "ou35": 0.1486,
-     "btts": 0.1894
+     "btts": 0.1885
     },
-    "movement": {
-     "1": 0.0277,
-     "X": 0.0136,
-     "2": -0.0146
-    },
+    "movement": {},
     "drop_alarms": []
    },
    "stats": null,
@@ -14658,27 +14638,9 @@
       "source": "Sky Sports",
       "published": "2026-11-05T14:00:00+03:00",
       "tags": []
-     },
-     {
-      "title": "Has a footballer ever run a marathon faster than James Milner? | The Knowledge",
-      "url": "https://www.theguardian.com/football/2026/nov/04/footballer-run-marathon-faster-than-james-milner-the-knowledge",
-      "source": "The Guardian",
-      "published": "2026-11-04T11:00:29+03:00",
-      "tags": [
-       "sakat",
-       "td",
-       "transfer"
-      ]
-     },
-     {
-      "title": "Arsenal have everything they need to repeat as Premier League champions | Jonathan Wilson",
-      "url": "https://www.theguardian.com/football/2026/nov/02/arsenal-liverpool-premier-league",
-      "source": "The Guardian",
-      "published": "2026-11-02T18:47:19+03:00",
-      "tags": []
      }
     ],
-    "fetched_at": "2026-11-05T16:49:26+03:00"
+    "fetched_at": "2026-11-05T17:04:30+03:00"
    },
    "squad": null,
    "model": {
@@ -15967,7 +15929,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:49:28+03:00",
+      "fetched_at": "2026-11-05T17:04:33+03:00",
       "note": "Brighton to Win and Over 2.5 Match Goals; Brighton 3-0"
      },
      {
@@ -15991,9 +15953,9 @@
        "BTTS": "BTTS_N"
       },
       "probs": {
-       "1": 0.1514,
-       "X": 0.2251,
-       "2": 0.6235
+       "1": 0.155,
+       "X": 0.2271,
+       "2": 0.6179
       }
      }
     ],
@@ -16025,14 +15987,14 @@
    "pick": {
     "market": "2",
     "label": "MS 2",
-    "p": 0.5819,
-    "odds": 1.35,
+    "p": 0.5776,
+    "odds": 1.36,
     "is_value": false,
     "blended": true,
     "stars": 2
    },
    "value_note": "Kupa maçı – değer etiketi verilmez",
-   "comment": "Model ev sahibine %24, beraberliğe %31, deplasmana %46 olasılık veriyor; beklenen gol 0.8 - 1.2. Son 3 günde Brighton ile ilgili 1 teknik direktör haberi var. 3 kaynağın tümü MS 2 diyor. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
+   "comment": "Model ev sahibine %24, beraberliğe %31, deplasmana %46 olasılık veriyor; beklenen gol 0.8 - 1.2. 3 kaynağın tümü MS 2 diyor. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
    "comment_source": "kural"
   },
   {
@@ -16057,11 +16019,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -16164,24 +16126,24 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
     "X": 7.57,
     "2": 14.4,
-    "BTTS_Y": 1.85,
-    "BTTS_N": 1.55,
+    "BTTS_Y": 1.87,
+    "BTTS_N": 1.54,
     "X2": 4.52,
-    "U1.5": 6.19,
-    "U2.5": 2.78,
+    "U1.5": 6.05,
+    "U2.5": 2.73,
     "O2.5": 1.21,
-    "O3.5": 1.76,
-    "U3.5": 1.71
+    "O3.5": 1.83,
+    "U3.5": 1.66
    },
    "odds_history": [
     {
@@ -16220,26 +16182,33 @@
      "2": 14.4,
      "O2.5": 1.21,
      "U2.5": 2.78
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "X": 7.57,
+     "2": 14.4,
+     "O2.5": 1.21,
+     "U2.5": 2.73
     }
    ],
    "market": {
     "implied": {
-     "O2.5": 0.6967,
-     "U2.5": 0.3033,
-     "O3.5": 0.4928,
-     "U3.5": 0.5072,
-     "BTTS_Y": 0.4559,
-     "BTTS_N": 0.5441
+     "O2.5": 0.6929,
+     "U2.5": 0.3071,
+     "O3.5": 0.4756,
+     "U3.5": 0.5244,
+     "BTTS_Y": 0.4516,
+     "BTTS_N": 0.5484
     },
     "margin": {
-     "ou25": 0.1862,
-     "ou35": 0.153,
-     "btts": 0.1857
+     "ou25": 0.1927,
+     "ou35": 0.1489,
+     "btts": 0.1841
     },
     "movement": {
      "X": 0.0632,
      "2": 0.1163,
-     "U2.5": -0.0211
+     "U2.5": -0.0387
     },
     "drop_alarms": []
    },
@@ -16287,11 +16256,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -16420,11 +16389,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -16549,11 +16518,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -16658,25 +16627,25 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
-    "1": 1.45,
-    "X": 3.83,
-    "2": 4.25,
-    "BTTS_Y": 1.33,
-    "BTTS_N": 2.31,
-    "U1.5": 5.6,
-    "1X": 1.06,
-    "12": 1.08,
-    "X2": 1.97,
-    "U2.5": 2.52,
-    "O2.5": 1.27,
+    "1": 1.42,
+    "X": 4.15,
+    "2": 4.08,
+    "BTTS_Y": 1.27,
+    "BTTS_N": 2.52,
+    "U1.5": 6.54,
+    "1X": 1.07,
+    "12": 1.07,
+    "X2": 2.0,
+    "U2.5": 2.87,
+    "O2.5": 1.19,
     "O3.5": 1.71,
     "U3.5": 1.77
    },
@@ -16696,37 +16665,47 @@
      "2": 4.25,
      "O2.5": 1.27,
      "U2.5": 2.52
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 1.42,
+     "X": 4.15,
+     "2": 4.08,
+     "O2.5": 1.19,
+     "U2.5": 2.87
     }
    ],
    "market": {
     "implied": {
-     "1": 0.5815,
-     "X": 0.2201,
-     "2": 0.1984,
-     "O2.5": 0.6649,
-     "U2.5": 0.3351,
+     "1": 0.5916,
+     "X": 0.2024,
+     "2": 0.2059,
+     "O2.5": 0.7069,
+     "U2.5": 0.2931,
      "O3.5": 0.5086,
      "U3.5": 0.4914,
-     "BTTS_Y": 0.6346,
-     "BTTS_N": 0.3654,
-     "1X": 0.8016,
-     "X2": 0.4185,
-     "12": 0.7799
+     "BTTS_Y": 0.6649,
+     "BTTS_N": 0.3351,
+     "1X": 0.794,
+     "X2": 0.4083,
+     "12": 0.7975
     },
     "margin": {
-     "1x2": 0.186,
-     "ou25": 0.1842,
+     "1x2": 0.1903,
+     "ou25": 0.1888,
      "ou35": 0.1498,
-     "btts": 0.1848
+     "btts": 0.1842
     },
     "movement": {
-     "1": -0.0397,
-     "X": 0.0296,
-     "2": 0.087,
-     "O2.5": -0.0379,
-     "U2.5": 0.0862
+     "1": -0.0596,
+     "X": 0.1156,
+     "2": 0.0435,
+     "O2.5": -0.0985,
+     "U2.5": 0.2371
     },
-    "drop_alarms": []
+    "drop_alarms": [
+     "O2.5"
+    ]
    },
    "stats": null,
    "squad": null,
@@ -16741,9 +16720,9 @@
        "BTTS": "BTTS_Y"
       },
       "probs": {
-       "1": 0.5815,
-       "X": 0.2201,
-       "2": 0.1984
+       "1": 0.5916,
+       "X": 0.2024,
+       "2": 0.2059
       }
      }
     ],
@@ -16752,7 +16731,7 @@
    "value": [],
    "pick": null,
    "value_note": "Oran/model yok – değer hesaplanamadı",
-   "comment": "Bu maç için yeterli geçmiş veri bulunamadı; model olasılığı üretilmedi.",
+   "comment": "Bu maç için yeterli geçmiş veri bulunamadı; model olasılığı üretilmedi. 2.5 Üst oranı ilk görüldüğünden bu yana %10 düştü.",
    "comment_source": "kural"
   },
   {
@@ -16777,25 +16756,25 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
-    "1": 1.11,
-    "X": 5.9,
-    "2": 8.48,
-    "BTTS_Y": 1.53,
-    "BTTS_N": 1.88,
-    "U1.5": 6.34,
-    "X2": 3.28,
-    "U2.5": 2.84,
-    "O2.5": 1.2,
-    "O3.5": 1.74,
-    "U3.5": 1.74
+    "1": 1.1,
+    "X": 6.14,
+    "2": 8.68,
+    "BTTS_Y": 1.45,
+    "BTTS_N": 2.0,
+    "U1.5": 7.34,
+    "X2": 3.38,
+    "U2.5": 3.2,
+    "O2.5": 1.15,
+    "O3.5": 1.55,
+    "U3.5": 1.98
    },
    "odds_history": [
     {
@@ -16837,34 +16816,43 @@
      "2": 8.48,
      "O2.5": 1.2,
      "U2.5": 2.84
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 1.1,
+     "X": 6.14,
+     "2": 8.68,
+     "O2.5": 1.15,
+     "U2.5": 3.2
     }
    ],
    "market": {
     "implied": {
-     "1": 0.7581,
-     "X": 0.1426,
-     "2": 0.0992,
-     "O2.5": 0.703,
-     "U2.5": 0.297,
-     "O3.5": 0.5,
-     "U3.5": 0.5,
-     "BTTS_Y": 0.5513,
-     "BTTS_N": 0.4487,
-     "1X": 0.9007,
-     "X2": 0.2418,
-     "12": 0.8573
+     "1": 0.7658,
+     "X": 0.1372,
+     "2": 0.097,
+     "O2.5": 0.7356,
+     "U2.5": 0.2644,
+     "O3.5": 0.5609,
+     "U3.5": 0.4391,
+     "BTTS_Y": 0.5797,
+     "BTTS_N": 0.4203,
+     "1X": 0.903,
+     "X2": 0.2342,
+     "12": 0.8628
     },
     "margin": {
-     "1x2": 0.1883,
-     "ou25": 0.1854,
-     "ou35": 0.1494,
-     "btts": 0.1855
+     "1x2": 0.1872,
+     "ou25": 0.1821,
+     "ou35": 0.1502,
+     "btts": 0.1897
     },
     "movement": {
-     "1": -0.0263,
-     "X": 0.0573,
-     "2": 0.0928,
-     "U2.5": -0.0139
+     "1": -0.0351,
+     "X": 0.1004,
+     "2": 0.1186,
+     "O2.5": -0.0336,
+     "U2.5": 0.1111
     },
     "drop_alarms": []
    },
@@ -16881,9 +16869,9 @@
        "BTTS": "BTTS_Y"
       },
       "probs": {
-       "1": 0.7581,
-       "X": 0.1426,
-       "2": 0.0992
+       "1": 0.7658,
+       "X": 0.1372,
+       "2": 0.097
       }
      }
     ],
@@ -16917,21 +16905,21 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
-    "1": 1.16,
-    "X": 4.87,
-    "2": 8.07,
-    "BTTS_Y": 1.82,
-    "BTTS_N": 1.57,
-    "X2": 2.89,
-    "U1.5": 4.07,
+    "1": 1.17,
+    "X": 4.82,
+    "2": 7.75,
+    "BTTS_Y": 1.8,
+    "BTTS_N": 1.59,
+    "X2": 2.84,
+    "U1.5": 4.06,
     "O1.5": 1.06,
     "U2.5": 2.0,
     "O2.5": 1.46,
@@ -16962,36 +16950,44 @@
      "2": 8.07,
      "O2.5": 1.46,
      "U2.5": 2.0
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 1.17,
+     "X": 4.82,
+     "2": 7.75,
+     "O2.5": 1.46,
+     "U2.5": 2.0
     }
    ],
    "market": {
     "implied": {
-     "1": 0.7236,
-     "X": 0.1724,
-     "2": 0.104,
-     "O1.5": 0.7934,
-     "U1.5": 0.2066,
+     "1": 0.7175,
+     "X": 0.1742,
+     "2": 0.1083,
+     "O1.5": 0.793,
+     "U1.5": 0.207,
      "O2.5": 0.578,
      "U2.5": 0.422,
      "O3.5": 0.3607,
      "U3.5": 0.6393,
-     "BTTS_Y": 0.4631,
-     "BTTS_N": 0.5369,
-     "1X": 0.896,
-     "X2": 0.2764,
-     "12": 0.8276
+     "BTTS_Y": 0.469,
+     "BTTS_N": 0.531,
+     "1X": 0.8917,
+     "X2": 0.2825,
+     "12": 0.8258
     },
     "margin": {
-     "1x2": 0.1913,
-     "ou15": 0.1891,
+     "1x2": 0.1912,
+     "ou15": 0.1897,
      "ou25": 0.1849,
      "ou35": 0.1502,
-     "btts": 0.1864
+     "btts": 0.1845
     },
     "movement": {
-     "1": -0.0569,
-     "X": 0.1144,
-     "2": 0.1991,
+     "1": -0.0488,
+     "X": 0.103,
+     "2": 0.1516,
      "O2.5": -0.0395,
      "U2.5": 0.0526
     },
@@ -17010,9 +17006,9 @@
        "BTTS": "BTTS_N"
       },
       "probs": {
-       "1": 0.7236,
-       "X": 0.1724,
-       "2": 0.104
+       "1": 0.7175,
+       "X": 0.1742,
+       "2": 0.1083
       }
      }
     ],
@@ -19353,7 +19349,8 @@
    "result": null,
    "flags": [
     "Veri yetersiz",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -19480,7 +19477,8 @@
    "result": null,
    "flags": [
     "Veri yetersiz",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -19606,22 +19604,22 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
-    "1": 7.04,
-    "X": 4.61,
-    "2": 1.15,
-    "1X": 2.52,
-    "BTTS_Y": 1.73,
-    "BTTS_N": 1.53,
-    "U2.5": 1.92,
-    "O2.5": 1.41
+    "1": 7.95,
+    "X": 4.81,
+    "2": 1.11,
+    "1X": 2.67,
+    "BTTS_Y": 1.76,
+    "BTTS_N": 1.5,
+    "U2.5": 1.97,
+    "O2.5": 1.38
    },
    "odds_history": [
     {
@@ -19647,32 +19645,40 @@
      "2": 1.15,
      "O2.5": 1.41,
      "U2.5": 1.92
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 7.95,
+     "X": 4.81,
+     "2": 1.11,
+     "O2.5": 1.38,
+     "U2.5": 1.97
     }
    ],
    "market": {
     "implied": {
-     "1": 0.1156,
-     "X": 0.1766,
-     "2": 0.7078,
-     "O2.5": 0.5766,
-     "U2.5": 0.4234,
-     "BTTS_Y": 0.4693,
-     "BTTS_N": 0.5307,
-     "1X": 0.2922,
-     "X2": 0.8844,
-     "12": 0.8234
+     "1": 0.1019,
+     "X": 0.1684,
+     "2": 0.7297,
+     "O2.5": 0.5881,
+     "U2.5": 0.4119,
+     "BTTS_Y": 0.4601,
+     "BTTS_N": 0.5399,
+     "1X": 0.2703,
+     "X2": 0.8981,
+     "12": 0.8316
     },
     "margin": {
-     "1x2": 0.2285,
-     "ou25": 0.2301,
-     "btts": 0.2316
+     "1x2": 0.2346,
+     "ou25": 0.2323,
+     "btts": 0.2348
     },
     "movement": {
-     "1": 0.287,
-     "X": 0.1641,
-     "2": -0.0873,
-     "O2.5": -0.0342,
-     "U2.5": 0.0549
+     "1": 0.4534,
+     "X": 0.2146,
+     "2": -0.119,
+     "O2.5": -0.0548,
+     "U2.5": 0.0824
     },
     "drop_alarms": [
      "2"
@@ -19691,9 +19697,9 @@
        "BTTS": "BTTS_N"
       },
       "probs": {
-       "1": 0.1156,
-       "X": 0.1766,
-       "2": 0.7078
+       "1": 0.1019,
+       "X": 0.1684,
+       "2": 0.7297
       }
      }
     ],
@@ -19702,7 +19708,7 @@
    "value": [],
    "pick": null,
    "value_note": "Oran/model yok – değer hesaplanamadı",
-   "comment": "Bu maç için yeterli geçmiş veri bulunamadı; model olasılığı üretilmedi. MS 2 oranı ilk görüldüğünden bu yana %9 düştü.",
+   "comment": "Bu maç için yeterli geçmiş veri bulunamadı; model olasılığı üretilmedi. MS 2 oranı ilk görüldüğünden bu yana %12 düştü.",
    "comment_source": "kural"
   },
   {
@@ -19728,25 +19734,23 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
-     "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "source": "nesine",
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
-    "1": 1.14,
-    "X": 4.68,
-    "2": 7.23,
-    "X2": 2.56,
-    "U2.5": 2.04,
-    "O2.5": 1.34,
-    "BTTS_Y": 1.67,
-    "BTTS_N": 1.59,
-    "U1.5": 4.01,
-    "O3.5": 2.11,
-    "U3.5": 1.39
+    "1": 1.22,
+    "X": 4.16,
+    "2": 5.78,
+    "X2": 2.23,
+    "U2.5": 2.0,
+    "O2.5": 1.36,
+    "BTTS_Y": 1.55,
+    "BTTS_N": 1.69,
+    "U1.5": 3.93
    },
    "odds_history": [
     {
@@ -19788,39 +19792,40 @@
      "2": 7.23,
      "O2.5": 1.34,
      "U2.5": 2.04
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 1.22,
+     "X": 4.16,
+     "2": 5.78,
+     "O2.5": 1.36,
+     "U2.5": 2.0
     }
    ],
    "market": {
     "implied": {
-     "1": 0.7136,
-     "X": 0.1738,
-     "2": 0.1125,
-     "O2.5": 0.6036,
-     "U2.5": 0.3964,
-     "O3.5": 0.3971,
-     "U3.5": 0.6029,
-     "BTTS_Y": 0.4877,
-     "BTTS_N": 0.5123,
-     "1X": 0.8874,
-     "X2": 0.2863,
-     "12": 0.8261
+     "1": 0.6647,
+     "X": 0.1949,
+     "2": 0.1403,
+     "O2.5": 0.5952,
+     "U2.5": 0.4048,
+     "BTTS_Y": 0.5216,
+     "BTTS_N": 0.4784,
+     "1X": 0.8596,
+     "X2": 0.3352,
+     "12": 0.805
     },
     "margin": {
-     "1x2": 0.2292,
-     "ou25": 0.2365,
-     "ou35": 0.1934,
-     "btts": 0.2277
+     "1x2": 0.2331,
+     "ou25": 0.2353,
+     "btts": 0.2369
     },
     "movement": {
-     "1": -0.0732,
-     "X": 0.1471,
-     "2": 0.2618,
-     "O2.5": -0.0496,
-     "U2.5": 0.0737
+     "X": 0.0196,
+     "O2.5": -0.0355,
+     "U2.5": 0.0526
     },
-    "drop_alarms": [
-     "1"
-    ]
+    "drop_alarms": []
    },
    "stats": null,
    "squad": null,
@@ -19832,12 +19837,12 @@
       "picks": {
        "1X2": "1",
        "OU25": "O2.5",
-       "BTTS": "BTTS_N"
+       "BTTS": "BTTS_Y"
       },
       "probs": {
-       "1": 0.7136,
-       "X": 0.1738,
-       "2": 0.1125
+       "1": 0.6647,
+       "X": 0.1949,
+       "2": 0.1403
       }
      }
     ],
@@ -19846,7 +19851,7 @@
    "value": [],
    "pick": null,
    "value_note": "Oran/model yok – değer hesaplanamadı",
-   "comment": "Bu maç için yeterli geçmiş veri bulunamadı; model olasılığı üretilmedi. MS 1 oranı ilk görüldüğünden bu yana %7 düştü.",
+   "comment": "Bu maç için yeterli geçmiş veri bulunamadı; model olasılığı üretilmedi.",
    "comment_source": "kural"
   },
   {
@@ -19872,22 +19877,22 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
-    "1": 1.28,
-    "X": 3.63,
-    "2": 5.55,
-    "BTTS_Y": 1.67,
-    "BTTS_N": 1.59,
-    "X2": 2.05,
-    "U2.5": 1.74,
-    "O2.5": 1.53
+    "1": 1.3,
+    "X": 3.7,
+    "2": 5.13,
+    "BTTS_Y": 1.69,
+    "BTTS_N": 1.55,
+    "X2": 2.01,
+    "U2.5": 1.68,
+    "O2.5": 1.57
    },
    "odds_history": [
     {
@@ -19905,34 +19910,45 @@
      "2": 5.55,
      "O2.5": 1.53,
      "U2.5": 1.74
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 1.3,
+     "X": 3.7,
+     "2": 5.13,
+     "O2.5": 1.57,
+     "U2.5": 1.68
     }
    ],
    "market": {
     "implied": {
-     "1": 0.6316,
-     "X": 0.2227,
-     "2": 0.1457,
-     "O2.5": 0.5321,
-     "U2.5": 0.4679,
-     "BTTS_Y": 0.4877,
-     "BTTS_N": 0.5123,
-     "1X": 0.8543,
-     "X2": 0.3684,
-     "12": 0.7773
+     "1": 0.6231,
+     "X": 0.2189,
+     "2": 0.1579,
+     "O2.5": 0.5169,
+     "U2.5": 0.4831,
+     "BTTS_Y": 0.4784,
+     "BTTS_N": 0.5216,
+     "1X": 0.842,
+     "X2": 0.3768,
+     "12": 0.781
     },
     "margin": {
-     "1x2": 0.2369,
-     "ou25": 0.2283,
-     "btts": 0.2277
+     "1x2": 0.2344,
+     "ou25": 0.2322,
+     "btts": 0.2369
     },
     "movement": {
-     "1": 0.0159,
-     "X": -0.0522,
-     "2": -0.0212,
-     "O2.5": 0.0479,
-     "U2.5": -0.0492
+     "1": 0.0317,
+     "X": -0.0339,
+     "2": -0.0952,
+     "O2.5": 0.0753,
+     "U2.5": -0.082
     },
-    "drop_alarms": []
+    "drop_alarms": [
+     "2",
+     "U2.5"
+    ]
    },
    "stats": null,
    "squad": null,
@@ -19947,9 +19963,9 @@
        "BTTS": "BTTS_N"
       },
       "probs": {
-       "1": 0.6316,
-       "X": 0.2227,
-       "2": 0.1457
+       "1": 0.6231,
+       "X": 0.2189,
+       "2": 0.1579
       }
      }
     ],
@@ -19958,7 +19974,7 @@
    "value": [],
    "pick": null,
    "value_note": "Oran/model yok – değer hesaplanamadı",
-   "comment": "Bu maç için yeterli geçmiş veri bulunamadı; model olasılığı üretilmedi.",
+   "comment": "Bu maç için yeterli geçmiş veri bulunamadı; model olasılığı üretilmedi. MS 2 oranı ilk görüldüğünden bu yana %10 düştü.",
    "comment_source": "kural"
   },
   {
@@ -19984,22 +20000,22 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
-    "1": 2.66,
-    "X": 3.01,
-    "2": 1.9,
-    "BTTS_Y": 1.32,
-    "BTTS_N": 2.11,
-    "1X": 1.39,
-    "12": 1.13,
-    "X2": 1.17,
+    "1": 2.87,
+    "X": 3.07,
+    "2": 1.79,
+    "BTTS_Y": 1.34,
+    "BTTS_N": 2.07,
+    "1X": 1.45,
+    "12": 1.12,
+    "X2": 1.14,
     "U2.5": 1.94,
     "O2.5": 1.39
    },
@@ -20011,27 +20027,39 @@
      "2": 1.9,
      "O2.5": 1.39,
      "U2.5": 1.94
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 2.87,
+     "X": 3.07,
+     "2": 1.79,
+     "O2.5": 1.39,
+     "U2.5": 1.94
     }
    ],
    "market": {
     "implied": {
-     "1": 0.3045,
-     "X": 0.2691,
-     "2": 0.4263,
+     "1": 0.2826,
+     "X": 0.2642,
+     "2": 0.4532,
      "O2.5": 0.5826,
      "U2.5": 0.4174,
-     "BTTS_Y": 0.6152,
-     "BTTS_N": 0.3848,
-     "1X": 0.5736,
-     "X2": 0.6954,
-     "12": 0.7308
+     "BTTS_Y": 0.607,
+     "BTTS_N": 0.393,
+     "1X": 0.5468,
+     "X2": 0.7174,
+     "12": 0.7358
     },
     "margin": {
-     "1x2": 0.2345,
+     "1x2": 0.2328,
      "ou25": 0.2349,
-     "btts": 0.2315
+     "btts": 0.2294
     },
-    "movement": {},
+    "movement": {
+     "1": 0.0789,
+     "X": 0.0199,
+     "2": -0.0579
+    },
     "drop_alarms": []
    },
    "stats": null,
@@ -20047,9 +20075,9 @@
        "BTTS": "BTTS_Y"
       },
       "probs": {
-       "1": 0.3045,
-       "X": 0.2691,
-       "2": 0.4263
+       "1": 0.2826,
+       "X": 0.2642,
+       "2": 0.4532
       }
      }
     ],
@@ -20084,23 +20112,24 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
-    "1": 1.44,
-    "X": 3.11,
-    "2": 4.6,
-    "12": 1.1,
-    "X2": 1.77,
-    "BTTS_Y": 1.71,
-    "BTTS_N": 1.54,
-    "U2.5": 1.53,
-    "O2.5": 1.73
+    "1": 1.59,
+    "X": 3.03,
+    "2": 3.65,
+    "1X": 1.06,
+    "12": 1.12,
+    "X2": 1.6,
+    "BTTS_Y": 1.68,
+    "BTTS_N": 1.56,
+    "U2.5": 1.48,
+    "O2.5": 1.79
    },
    "odds_history": [
     {
@@ -20126,32 +20155,40 @@
      "2": 4.6,
      "O2.5": 1.73,
      "U2.5": 1.53
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 1.59,
+     "X": 3.03,
+     "2": 3.65,
+     "O2.5": 1.79,
+     "U2.5": 1.48
     }
    ],
    "market": {
     "implied": {
-     "1": 0.563,
-     "X": 0.2607,
-     "2": 0.1763,
-     "O2.5": 0.4693,
-     "U2.5": 0.5307,
-     "BTTS_Y": 0.4738,
-     "BTTS_N": 0.5262,
-     "1X": 0.8237,
-     "X2": 0.437,
-     "12": 0.7393
+     "1": 0.5101,
+     "X": 0.2677,
+     "2": 0.2222,
+     "O2.5": 0.4526,
+     "U2.5": 0.5474,
+     "BTTS_Y": 0.4815,
+     "BTTS_N": 0.5185,
+     "1X": 0.7778,
+     "X2": 0.4899,
+     "12": 0.7323
     },
     "margin": {
-     "1x2": 0.2334,
-     "ou25": 0.2316,
-     "btts": 0.2341
+     "1x2": 0.2329,
+     "ou25": 0.2343,
+     "btts": 0.2363
     },
     "movement": {
-     "1": 0.0588,
-     "X": -0.0772,
-     "2": -0.08,
-     "O2.5": -0.017,
-     "U2.5": 0.02
+     "1": 0.1691,
+     "X": -0.1009,
+     "2": -0.27,
+     "O2.5": 0.017,
+     "U2.5": -0.0133
     },
     "drop_alarms": [
      "X",
@@ -20171,9 +20208,9 @@
        "BTTS": "BTTS_N"
       },
       "probs": {
-       "1": 0.563,
-       "X": 0.2607,
-       "2": 0.1763
+       "1": 0.5101,
+       "X": 0.2677,
+       "2": 0.2222
       }
      }
     ],
@@ -20182,7 +20219,7 @@
    "value": [],
    "pick": null,
    "value_note": "Oran/model yok – değer hesaplanamadı",
-   "comment": "Bu maç için yeterli geçmiş veri bulunamadı; model olasılığı üretilmedi. MS X oranı ilk görüldüğünden bu yana %8 düştü.",
+   "comment": "Bu maç için yeterli geçmiş veri bulunamadı; model olasılığı üretilmedi. MS X oranı ilk görüldüğünden bu yana %10 düştü.",
    "comment_source": "kural"
   },
   {
@@ -20208,11 +20245,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -20321,21 +20358,21 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
-    "1": 1.51,
-    "X": 2.99,
-    "2": 4.22,
-    "12": 1.12,
-    "X2": 1.68,
-    "BTTS_Y": 1.81,
-    "BTTS_N": 1.47,
+    "1": 1.56,
+    "X": 2.93,
+    "2": 3.96,
+    "12": 1.13,
+    "X2": 1.62,
+    "BTTS_Y": 1.78,
+    "BTTS_N": 1.49,
     "U2.5": 1.41,
     "O2.5": 1.89
    },
@@ -20363,29 +20400,38 @@
      "2": 4.22,
      "O2.5": 1.89,
      "U2.5": 1.41
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 1.56,
+     "X": 2.93,
+     "2": 3.96,
+     "O2.5": 1.89,
+     "U2.5": 1.41
     }
    ],
    "market": {
     "implied": {
-     "1": 0.5368,
-     "X": 0.2711,
-     "2": 0.1921,
+     "1": 0.5191,
+     "X": 0.2764,
+     "2": 0.2045,
      "O2.5": 0.4273,
      "U2.5": 0.5727,
-     "BTTS_Y": 0.4482,
-     "BTTS_N": 0.5518,
-     "1X": 0.8079,
-     "X2": 0.4632,
-     "12": 0.7289
+     "BTTS_Y": 0.4557,
+     "BTTS_N": 0.5443,
+     "1X": 0.7955,
+     "X2": 0.4809,
+     "12": 0.7236
     },
     "margin": {
-     "1x2": 0.2337,
+     "1x2": 0.2348,
      "ou25": 0.2383,
-     "btts": 0.2328
+     "btts": 0.2329
     },
     "movement": {
-     "1": 0.0203,
-     "X": -0.0355,
+     "1": 0.0541,
+     "X": -0.0548,
+     "2": -0.066,
      "O2.5": 0.0107,
      "U2.5": -0.014
     },
@@ -20404,9 +20450,9 @@
        "BTTS": "BTTS_N"
       },
       "probs": {
-       "1": 0.5368,
-       "X": 0.2711,
-       "2": 0.1921
+       "1": 0.5191,
+       "X": 0.2764,
+       "2": 0.2045
       }
      }
     ],
@@ -20441,11 +20487,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -20566,11 +20612,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -20687,11 +20733,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -20811,11 +20857,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -20825,10 +20871,10 @@
     "1X": 1.08,
     "12": 1.16,
     "X2": 1.47,
-    "BTTS_Y": 1.82,
-    "BTTS_N": 1.47,
-    "U2.5": 1.34,
-    "O2.5": 2.06
+    "BTTS_Y": 1.79,
+    "BTTS_N": 1.48,
+    "U2.5": 1.35,
+    "O2.5": 2.03
    },
    "odds_history": [
     {
@@ -20838,6 +20884,14 @@
      "2": 3.34,
      "O2.5": 2.06,
      "U2.5": 1.34
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 1.76,
+     "X": 2.72,
+     "2": 3.34,
+     "O2.5": 2.03,
+     "U2.5": 1.35
     }
    ],
    "market": {
@@ -20845,20 +20899,22 @@
      "1": 0.46,
      "X": 0.2976,
      "2": 0.2424,
-     "O2.5": 0.3941,
-     "U2.5": 0.6059,
-     "BTTS_Y": 0.4468,
-     "BTTS_N": 0.5532,
+     "O2.5": 0.3994,
+     "U2.5": 0.6006,
+     "BTTS_Y": 0.4526,
+     "BTTS_N": 0.5474,
      "1X": 0.7576,
      "X2": 0.54,
      "12": 0.7024
     },
     "margin": {
      "1x2": 0.2352,
-     "ou25": 0.2317,
-     "btts": 0.2297
+     "ou25": 0.2334,
+     "btts": 0.2343
     },
-    "movement": {},
+    "movement": {
+     "O2.5": -0.0146
+    },
     "drop_alarms": []
    },
    "stats": null,
@@ -20911,11 +20967,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -21018,11 +21074,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -21114,22 +21170,22 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
-    "1": 2.55,
-    "X": 2.6,
-    "2": 2.19,
-    "1X": 1.28,
-    "12": 1.19,
-    "X2": 1.19,
-    "BTTS_Y": 1.8,
-    "BTTS_N": 1.47,
+    "1": 2.53,
+    "X": 2.53,
+    "2": 2.26,
+    "1X": 1.26,
+    "12": 1.2,
+    "X2": 1.2,
+    "BTTS_Y": 1.78,
+    "BTTS_N": 1.49,
     "U2.5": 1.31,
     "O2.5": 2.13
    },
@@ -21141,27 +21197,38 @@
      "2": 2.19,
      "O2.5": 2.13,
      "U2.5": 1.31
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "1": 2.53,
+     "X": 2.53,
+     "2": 2.26,
+     "O2.5": 2.13,
+     "U2.5": 1.31
     }
    ],
    "market": {
     "implied": {
-     "1": 0.3179,
-     "X": 0.3118,
-     "2": 0.3702,
+     "1": 0.3206,
+     "X": 0.3206,
+     "2": 0.3589,
      "O2.5": 0.3808,
      "U2.5": 0.6192,
-     "BTTS_Y": 0.4495,
-     "BTTS_N": 0.5505,
-     "1X": 0.6297,
-     "X2": 0.682,
-     "12": 0.6881
+     "BTTS_Y": 0.4557,
+     "BTTS_N": 0.5443,
+     "1X": 0.6412,
+     "X2": 0.6795,
+     "12": 0.6795
     },
     "margin": {
-     "1x2": 0.2334,
+     "1x2": 0.233,
      "ou25": 0.2328,
-     "btts": 0.2358
+     "btts": 0.2329
     },
-    "movement": {},
+    "movement": {
+     "X": -0.0269,
+     "2": 0.032
+    },
     "drop_alarms": []
    },
    "stats": null,
@@ -21177,9 +21244,9 @@
        "BTTS": "BTTS_N"
       },
       "probs": {
-       "1": 0.3179,
-       "X": 0.3118,
-       "2": 0.3702
+       "1": 0.3206,
+       "X": 0.3206,
+       "2": 0.3589
       }
      }
     ],
@@ -21214,21 +21281,21 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
     "X": 5.69,
     "2": 14.6,
     "X2": 3.43,
-    "BTTS_Y": 2.46,
-    "BTTS_N": 1.21,
-    "U2.5": 1.8,
-    "O2.5": 1.47
+    "BTTS_Y": 2.51,
+    "BTTS_N": 1.2,
+    "U2.5": 1.77,
+    "O2.5": 1.49
    },
    "odds_history": [
     {
@@ -21237,20 +21304,30 @@
      "2": 14.6,
      "O2.5": 1.47,
      "U2.5": 1.8
+    },
+    {
+     "t": "2026-11-05T17:04:34+03:00",
+     "X": 5.69,
+     "2": 14.6,
+     "O2.5": 1.49,
+     "U2.5": 1.77
     }
    ],
    "market": {
     "implied": {
-     "O2.5": 0.5505,
-     "U2.5": 0.4495,
-     "BTTS_Y": 0.3297,
-     "BTTS_N": 0.6703
+     "O2.5": 0.5429,
+     "U2.5": 0.4571,
+     "BTTS_Y": 0.3235,
+     "BTTS_N": 0.6765
     },
     "margin": {
-     "ou25": 0.2358,
-     "btts": 0.233
+     "ou25": 0.2361,
+     "btts": 0.2317
     },
-    "movement": {},
+    "movement": {
+     "O2.5": 0.0136,
+     "U2.5": -0.0167
+    },
     "drop_alarms": []
    },
    "stats": null,
@@ -21299,7 +21376,7 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": null,
@@ -21342,7 +21419,7 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": null,
@@ -21384,11 +21461,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -21493,11 +21570,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -21591,11 +21668,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
@@ -21713,11 +21790,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:46:39+03:00"
+     "t": "2026-11-05T17:02:16+03:00"
     }
    },
    "odds": {
