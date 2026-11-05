@@ -14,6 +14,7 @@ Vite + React 18 + TypeScript + Tailwind CSS 3 ile yapılmış, mobil öncelikli 
 | `npm run icons` | `scripts/make-icons.mjs`: SVG'den PNG ikonlar + `public/favicon.svg` (@resvg/resvg-js) |
 | `npm run sample-data` | `sample-data/` klasörünü yeniden üretir |
 | `npm run screenshots` | Playwright ile ekran görüntüleri (önizleme sunucusu 4179'da açık olmalı; Chrome yolu argüman ya da `CHROME_PATH` ile verilebilir) |
+| `node scripts/screenshots-v2.mjs` | Gerçek veriyle `screenshots/v2-*.png` (önizleme 4182’de, `dist/data` kopyalanmış olmalı) |
 | `npm run typecheck` | Yalnızca tip kontrolü |
 
 ## Veri yolu sözleşmesi

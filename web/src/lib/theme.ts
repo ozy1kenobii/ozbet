@@ -12,7 +12,7 @@ function apply(pref: ThemePref) {
   const dark = pref === 'dark' || (pref === 'system' && systemDark());
   document.documentElement.classList.toggle('dark', dark);
   const meta = document.querySelector('meta[name="theme-color"]');
-  meta?.setAttribute('content', dark ? '#0E1421' : '#EFF2F1');
+  meta?.setAttribute('content', dark ? '#0D121E' : '#EFF2F1');
 }
 
 export function useTheme() {

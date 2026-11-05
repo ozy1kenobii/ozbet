@@ -196,10 +196,24 @@ export interface BacktestSummary {
   n_value_bets: number;
 }
 
+/** backtest.json içindeki eşik taraması satırı (alpha = model/piyasa karışım ağırlığı) */
+export interface BacktestGridRow {
+  alpha: number;
+  edge: number;
+  bets: number;
+  profit?: number | null;
+  roi: number | null;
+}
+
 export interface Backtest {
   generated_at: string;
   seasons: string[];
   leagues: string[];
+  method?: string;
   summary: BacktestSummary;
-  by_league: (BacktestSummary & { league: string; name?: string })[];
+  by_league: (BacktestSummary & { league: string; name?: string; blend_brier?: Record<string, number>; grid?: BacktestGridRow[] })[];
+  /** Opsiyonel: alpha × edge taraması (pipeline üretiyorsa) */
+  grid?: BacktestGridRow[];
+  /** Opsiyonel: alpha → karışım Brier skoru */
+  blend_brier?: Record<string, number>;
 }

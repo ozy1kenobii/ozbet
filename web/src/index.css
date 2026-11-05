@@ -25,25 +25,27 @@
   --line: 208 214 214;
   --accent: 35 64 200;      /* #2340C8 */
   --accent-ink: 255 255 255;
-  --win: 22 128 76;
-  --draw: 120 128 140;
-  --loss: 196 52 52;
-  --warn: 168 98 0;
+  --win: 18 112 66;         /* AA: 5.6:1 on bg */
+  --draw: 92 101 115;
+  --loss: 180 40 40;
+  --warn: 146 82 0;         /* AA: 5.3:1 on bg */
+  --on-status: 255 255 255; /* rozet/form kutusu içi metin */
   color-scheme: light;
 }
 :root.dark {
-  --bg: 14 20 33;           /* #0E1421 */
-  --surface: 22 29 45;
-  --sunken: 11 16 27;
-  --ink: 230 235 242;
-  --muted: 152 162 180;
-  --line: 44 54 74;
+  --bg: 13 18 30;           /* #0D121E */
+  --surface: 21 28 43;
+  --sunken: 10 14 24;
+  --ink: 232 236 243;
+  --muted: 160 170 188;     /* AA: 6.9:1 on surface */
+  --line: 48 59 81;
   --accent: 132 154 255;    /* #849AFF */
   --accent-ink: 10 16 40;
   --win: 74 196 132;
   --draw: 140 150 168;
   --loss: 240 110 110;
   --warn: 236 170 70;
+  --on-status: 10 14 24;
   color-scheme: dark;
 }
 
@@ -76,12 +78,22 @@
   }
   .btn-primary { @apply bg-accent text-accent-ink; }
   .btn-ghost { @apply border border-line bg-surface text-ink; }
-  .h-section { @apply display text-xl font-semibold text-ink; }
+  .h-section { @apply display text-[22px] leading-tight font-semibold text-ink; }
+  .t-meta { @apply text-[13px] leading-snug text-muted; }
+  .t-micro { @apply text-[12px] leading-tight text-muted; }
+  .skel { @apply rounded-md bg-sunken; animation: skel 1.4s ease-in-out infinite; }
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .seg { @apply inline-flex rounded-md border border-line bg-surface p-0.5; }
+  .seg > button { @apply rounded-[5px] px-3 text-sm font-medium text-muted; min-height: 40px; }
+  .seg > button[aria-pressed='true'] { @apply bg-ink text-bg; }
   .tbl { @apply w-full text-sm num; border-collapse: collapse; }
   :where(.tbl) :where(th) { @apply text-left font-medium text-muted px-2 py-2 border-b border-line; }
   :where(.tbl) :where(td) { @apply px-2 py-2 border-b border-line; }
   :where(.tbl) :where(tbody:last-child tr:last-child) > :where(td, th) { border-bottom: 0; }
 }
+
+@keyframes skel { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }

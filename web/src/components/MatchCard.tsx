@@ -2,124 +2,145 @@ import { Link } from 'react-router-dom';
 import type { MarketKey, Match } from '../lib/types';
 import { fmtTime, odd, pct } from '../lib/format';
 import { marketLabel, marketWins } from '../lib/markets';
-import { ProbBar } from './charts';
-import { Badge, Stars } from './ui';
+import { DropBadge, Icon, ResultBadge, Stars, ValueBadge } from './ui';
 import { AddToCoupon } from './AddToCoupon';
 
+/** Kartta gösterilen sakin oran satırı */
 const ODDS_COLS: { k: MarketKey; t: string }[] = [
-  { k: '1', t: '1' }, { k: 'X', t: 'X' }, { k: '2', t: '2' },
-  { k: 'O2.5', t: 'Ü2.5' }, { k: 'U2.5', t: 'A2.5' }, { k: 'BTTS_Y', t: 'KG V' }, { k: 'BTTS_N', t: 'KG Y' },
+  { k: '1', t: '1' }, { k: 'X', t: 'X' }, { k: '2', t: '2' }, { k: 'O2.5', t: 'Ü2,5' },
 ];
 
-export function provenanceText(m: Match): string | null {
-  const p = m.provenance;
-  if (!p) return null;
-  const parts = Object.entries(p).map(([k, v]) => `${PROV_LABEL[k] ?? k}: ${v.source} ${fmtTime(v.t)}`);
-  return parts.length ? parts.join(' · ') : null;
-}
 export const PROV_LABEL: Record<string, string> = { fixture: 'Bülten', odds: 'Oran', stats: 'İstatistik', squad: 'Kadro', model: 'Model', predictions: 'Tahmin siteleri', consensus: 'Konsensüs', fixtures: 'Bülten', results: 'Sonuç' };
 
-export function MatchCard({ m, date }: { m: Match; date: string }) {
+/** Provenance içindeki farklı kaynak adlarının sayısı (virgülle birleşik olanlar ayrılır). */
+export function sourceCount(m: Match): number {
+  const p = m.provenance;
+  if (!p) return 0;
+  const set = new Set<string>();
+  for (const v of Object.values(p)) for (const s of String(v?.source ?? '').split(',')) if (s.trim()) set.add(s.trim().toLowerCase());
+  return set.size;
+}
+
+export function pickResult(m: Match): boolean | null {
+  if (m.status !== 'finished' || !m.result || !m.pick) return null;
+  return marketWins(m.pick.market, m.result.ft[0], m.result.ft[1]);
+}
+
+export function matchHref(date: string, m: Match) {
+  return `/mac/${date}/${encodeURIComponent(m.id)}`;
+}
+
+export function KickoffCell({ m }: { m: Match }) {
+  if (m.status === 'live') return <span className="inline-flex items-center gap-1 text-loss font-bold"><Icon name="live" size={8} />Canlı</span>;
+  return <>{fmtTime(m.kickoff)}</>;
+}
+
+export function MatchCard({ m, date, showLeague = false }: { m: Match; date: string; showLeague?: boolean }) {
   const finished = m.status === 'finished' && m.result;
-  const live = m.status === 'live';
   const pick = m.pick;
-  const pickWon = finished && pick ? marketWins(pick.market, m.result!.ft[0], m.result!.ft[1]) : null;
-  const prov = provenanceText(m);
-  const href = `/mac/${date}/${encodeURIComponent(m.id)}`;
+  const won = pickResult(m);
+  const href = matchHref(date, m);
   const alarms = m.market?.drop_alarms ?? [];
+  const nSrc = sourceCount(m);
+  const isValue = (m.value?.length ?? 0) > 0;
 
   return (
-    <article className="panel overflow-visible">
-      <div className="flex items-start gap-3 px-3.5 pt-3">
-        <div className="w-12 shrink-0 pt-0.5">
-          <div className={`display text-lg font-semibold leading-none num ${live ? 'text-loss' : ''}`}>{live ? 'CANLI' : fmtTime(m.kickoff)}</div>
-          {m.code && <div className="mt-1 text-[12px] text-muted num">#{m.code}</div>}
-          {m.mbs != null && <div className="mt-1"><Badge title="Minimum bahis sayısı">MBS {m.mbs}</Badge></div>}
+    <article className="panel relative">
+      <div className="flex items-stretch gap-3 pl-3.5 pr-1.5 pt-2.5">
+        <div className="w-11 shrink-0 pt-[3px] num">
+          <div className="text-[15px] font-semibold leading-none"><KickoffCell m={m} /></div>
+          {m.code && <div className="mt-1.5 t-micro">{m.code}</div>}
         </div>
-        <Link to={href} className="min-w-0 flex-1 group" aria-label={`${m.home.name} – ${m.away.name} maç detayı`}>
-          <div className="flex items-center justify-between gap-2">
-            <span className="truncate text-[16px] font-semibold group-hover:text-accent">{m.home.name}</span>
-            {finished && <span className="display text-xl font-bold num">{m.result!.ft[0]}</span>}
-          </div>
-          <div className="flex items-center justify-between gap-2">
-            <span className="truncate text-[16px] font-semibold group-hover:text-accent">{m.away.name}</span>
-            {finished && <span className="display text-xl font-bold num">{m.result!.ft[1]}</span>}
-          </div>
-          {finished && m.result!.ht && <div className="text-[12px] text-muted num">İY {m.result!.ht[0]}-{m.result!.ht[1]} · MS</div>}
+        <Link to={href} className="min-w-0 flex-1 group pb-1" aria-label={`${m.home.name} – ${m.away.name} maç detayı`}>
+          {showLeague && <div className="t-micro truncate mb-0.5">{m.league_name}</div>}
+          {[m.home.name, m.away.name].map((name, i) => (
+            <div key={i} className="flex items-center justify-between gap-2">
+              <span className="truncate text-[16px] font-semibold leading-6 group-hover:text-accent">{name}</span>
+              {finished && <span className="display text-lg font-bold leading-6 num">{m.result!.ft[i]}</span>}
+            </div>
+          ))}
         </Link>
-        <AddToCoupon match={m} date={date} compact />
+        <div className="shrink-0"><AddToCoupon match={m} date={date} compact /></div>
       </div>
 
-      {/* Oranlar */}
-      <div className="mt-3 px-3.5">
+      {pick ? (
+        <Link to={href} tabIndex={-1} aria-hidden="true"
+          className="mx-3.5 mt-1.5 flex items-center gap-2.5 rounded-md bg-accent/[.07] px-2.5 py-1.5">
+          <span className="t-micro shrink-0">Tercih</span>
+          <span className="display text-[19px] font-bold leading-none truncate">{pick.label || marketLabel(pick.market)}</span>
+          <span className="text-[13px] num text-muted shrink-0">{pct(pick.p)}{pick.odds != null && <> · <span className="text-ink">{odd(pick.odds)}</span></>}</span>
+          <span className="ml-auto shrink-0">{won != null ? <ResultBadge won={won} /> : <Stars n={pick.stars} size={13} />}</span>
+        </Link>
+      ) : m.model ? null : (
+        <p className="mx-3.5 mt-1 t-micro">Model yok – yalnız oranlar</p>
+      )}
+      {/* Erişilebilir tercih özeti (görsel satır aria-hidden) */}
+      {pick && <span className="sr-only">OZBET Tercihi {pick.label || marketLabel(pick.market)}, model {pct(pick.p)}, güven {pick.stars} yıldız{won != null ? (won ? ', tuttu' : ', tutmadı') : ''}</span>}
+
+      {(isValue || alarms.length > 0) && (
+        <div className="mx-3.5 mt-2 flex flex-wrap gap-1.5">
+          {isValue && <ValueBadge />}
+          {alarms.length > 0 && <DropBadge>Düşen oran: {alarms.map(marketLabel).join(', ')}</DropBadge>}
+        </div>
+      )}
+
+      <div className="mx-3.5 mt-2 mb-2.5 flex items-center gap-3 text-[13px] num">
         {m.odds ? (
-          <div className="grid grid-cols-7 gap-1 text-center num">
+          <dl className="flex flex-wrap gap-x-3 text-muted" aria-label="Oranlar">
             {ODDS_COLS.map((c) => {
               const v = m.odds?.[c.k];
+              if (v == null) return null;
               const alarm = alarms.includes(c.k);
+              const picked = pick?.market === c.k;
               return (
-                <div key={c.k} className={`rounded-[5px] py-1 ${alarm ? 'ring-1 ring-warn' : ''} ${pick?.market === c.k ? 'bg-accent/10' : 'bg-sunken'}`}>
-                  <div className="text-[11px] text-muted leading-tight">{c.t}</div>
-                  <div className="text-[14px] font-semibold leading-tight">{v != null ? odd(v) : '–'}</div>
+                <div key={c.k} className="flex gap-1">
+                  <dt>{c.t}</dt>
+                  <dd className={`${alarm ? 'text-warn font-semibold' : picked ? 'text-ink font-semibold' : 'text-ink/80'}`}>
+                    {alarm && <span aria-label="düşen oran">↓</span>}{odd(v)}
+                  </dd>
                 </div>
               );
             })}
-          </div>
-        ) : <p className="text-sm text-muted">Oran yok</p>}
-      </div>
-
-      {/* Model */}
-      <div className="px-3.5 mt-3">
-        {m.model ? (
-          <>
-            <ProbBar probs={m.model.probs} home={m.home.name} away={m.away.name} />
-            <div className="mt-1.5 flex gap-4 text-[13px] text-muted num">
-              <span>2.5 Üst <b className="text-ink font-semibold">{pct(m.model.probs['O2.5'])}</b></span>
-              <span>KG Var <b className="text-ink font-semibold">{pct(m.model.probs['BTTS_Y'])}</b></span>
-            </div>
-          </>
-        ) : (
-          <p className="text-sm text-muted rounded-md bg-sunken px-3 py-2">Veri yetersiz – model çalıştırılmadı</p>
-        )}
-      </div>
-
-      {m.consensus?.summary?.[0] && (
-        <p className="px-3.5 mt-2 text-[13px] text-muted">{m.consensus.summary[0].text}</p>
-      )}
-
-      {/* Tercih */}
-      <div className="mt-3 mx-3.5 flex items-center gap-3 border-t border-line pt-3">
-        {pick ? (
-          <>
-            <div className="min-w-0">
-              <div className="text-[12px] text-muted">OZBET Tercihi</div>
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="display text-lg font-semibold leading-tight">{pick.label || marketLabel(pick.market)}</span>
-                <span className="text-sm num text-muted">{pct(pick.p)}{pick.odds != null && ` · ${odd(pick.odds)}`}</span>
-                {pickWon != null && <Badge tone={pickWon ? 'win' : 'loss'}>{pickWon ? 'Tuttu' : 'Tutmadı'}</Badge>}
-              </div>
-            </div>
-            <div className="ml-auto flex flex-col items-end gap-1">
-              <Stars n={pick.stars} />
-              {m.value?.length ? <Badge tone="accent">Değerli</Badge> : <span className="text-[12px] text-muted">{m.value_note || 'değer yok'}</span>}
-            </div>
-          </>
-        ) : (
-          <span className="text-sm text-muted">Tercih yok</span>
-        )}
-      </div>
-
-      {(alarms.length > 0 || m.flags?.length > 0) && (
-        <div className="px-3.5 mt-2 flex flex-wrap gap-1.5">
-          {alarms.length > 0 && <Badge tone="warn" title="Sabahtan bu yana belirgin oran düşüşü">Düşen oran: {alarms.map(marketLabel).join(', ')}</Badge>}
-          {m.flags?.map((f) => <Badge key={f}>{f}</Badge>)}
-        </div>
-      )}
-
-      <div className="px-3.5 pb-3 pt-2 flex items-end justify-between gap-3">
-        <p className="text-[11px] text-muted leading-snug">{prov ?? 'Kaynak bilgisi yok'}</p>
-        <Link to={href} className="tap shrink-0 inline-flex items-center text-sm font-semibold text-accent">Detay</Link>
+          </dl>
+        ) : <span className="text-muted">Oran yok</span>}
+        {m.mbs != null && <span className="text-muted" title="Minimum bahis sayısı">MBS {m.mbs}</span>}
+        <Link to={href} className="ml-auto shrink-0 text-muted hover:text-accent" aria-label={`${nSrc} kaynak – maç detayında`}>
+          {nSrc ? `${nSrc} kaynak` : 'Kaynak yok'}
+        </Link>
       </div>
     </article>
   );
 }
+
+/** Öne çıkanlar şeridindeki küçük kart */
+export function HighlightCard({ m, date, reason }: { m: Match; date: string; reason: 'pick' | 'drop' | 'value' }) {
+  const pick = m.pick;
+  const alarms = m.market?.drop_alarms ?? [];
+  return (
+    <Link to={matchHref(date, m)}
+      className="snap-start shrink-0 w-[72%] max-w-[260px] sm:w-auto sm:max-w-none panel px-3 py-2.5 flex flex-col gap-1 hover:border-accent">
+      <div className="flex items-center gap-2 t-micro num">
+        <span className="font-semibold text-ink"><KickoffCell m={m} /></span>
+        <span className="truncate">{m.league_name}</span>
+      </div>
+      <div className="text-[15px] font-semibold leading-tight">
+        <span className="block truncate">{m.home.name}</span>
+        <span className="block truncate">{m.away.name}</span>
+      </div>
+      <div className="mt-auto pt-1 flex items-center gap-2 min-h-[24px]">
+        {pick && reason !== 'drop' ? (
+          <>
+            <span className="display text-[18px] font-bold leading-none truncate">{pick.label || marketLabel(pick.market)}</span>
+            <span className="text-[13px] text-muted num">{pick.odds != null ? odd(pick.odds) : pct(pick.p)}</span>
+            <span className="ml-auto"><Stars n={pick.stars} size={12} /></span>
+          </>
+        ) : reason === 'drop' ? (
+          <DropBadge>{alarms.map((k) => `${marketLabel(k)} ${m.odds?.[k] != null ? odd(m.odds[k]) : ''}`.trim()).join(', ')}</DropBadge>
+        ) : null}
+      </div>
+      {reason === 'value' && <div><ValueBadge /></div>}
+      {reason === 'pick' && alarms.length > 0 && <div><DropBadge /></div>}
+    </Link>
+  );
+}
+

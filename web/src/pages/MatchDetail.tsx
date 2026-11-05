@@ -1,134 +1,287 @@
+import { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDay } from '../lib/data';
 import type { HtFtKey, MarketKey, Match, TeamStats } from '../lib/types';
 import { fmtDateTime, fmtShortDate, fmtTime, num, odd, pct, signedPct } from '../lib/format';
 import { HTFT_KEYS, MARKET_GROUPS, marketLabel } from '../lib/markets';
 import { Bars, Heatmap, LineChart, ProbBar } from '../components/charts';
-import { Badge, Empty, FormStrip, Loading, Section, Stars } from '../components/ui';
+import { Badge, DropBadge, Empty, FormStrip, Loading, ResultBadge, Section, Stars, ValueBadge } from '../components/ui';
 import { AddToCoupon } from '../components/AddToCoupon';
-import { PROV_LABEL } from '../components/MatchCard';
+import { PROV_LABEL, pickResult } from '../components/MatchCard';
 
 export default function MatchDetail() {
   const { date = '', id = '' } = useParams();
   const day = useDay(date);
-  if (day.state === 'loading') return <Loading />;
+  if (day.state === 'loading') return <Loading variant="detail" />;
   if (day.state === 'empty') return <Empty />;
   const m = day.data.matches?.find((x) => x.id === decodeURIComponent(id));
   if (!m) return <Empty title="Maç bulunamadı">Bu gün dosyasında böyle bir maç yok. <Link className="text-accent font-semibold" to="/">Bültene dön</Link></Empty>;
   return <Detail m={m} date={day.data.date} />;
 }
 
+/**
+ * Bölüm atlama sekmeleri. Her sekme, DOM'daki ilk mevcut çapaya gider;
+ * hiçbiri yoksa sekme gizlenir (ör. Simulation50 / NewsList henüz eklenmemişse).
+ */
+const TABS: { label: string; anchors: string[] }[] = [
+  { label: 'Özet', anchors: ['ozet'] },
+  { label: 'Olasılıklar', anchors: ['olasiliklar'] },
+  { label: 'Simülasyon', anchors: ['sim50'] },
+  { label: 'Form', anchors: ['form'] },
+  { label: 'Kadro/Haber', anchors: ['kadro', 'haberler'] },
+  { label: 'Kaynaklar', anchors: ['kaynaklar'] },
+];
+const STICKY_OFFSET = 128; // uygulama başlığı (56) + yapışkan maç başlığı
+
+function useSectionTabs(root: React.RefObject<HTMLElement>) {
+  const [avail, setAvail] = useState<{ label: string; id: string }[]>([]);
+  const [active, setActive] = useState<string>('ozet');
+  useEffect(() => {
+    const el = root.current;
+    if (!el) return;
+    const scan = () => {
+      const next = TABS.map((t) => ({ label: t.label, id: t.anchors.find((a) => el.querySelector(`#${a}`)) ?? '' })).filter((t) => t.id);
+      setAvail((prev) => (prev.map((p) => p.id).join() === next.map((p) => p.id).join() ? prev : next));
+    };
+    scan();
+    // Sonradan eklenen bölümler (lazy bileşenler) için DOM'u izle
+    const mo = new MutationObserver(scan);
+    mo.observe(el, { childList: true, subtree: true });
+    return () => mo.disconnect();
+  }, [root]);
+  useEffect(() => {
+    const onScroll = () => {
+      let cur = avail[0]?.id ?? '';
+      for (const t of avail) {
+        const n = document.getElementById(t.id);
+        if (n && n.getBoundingClientRect().top - STICKY_OFFSET - 8 <= 0) cur = t.id;
+      }
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4 && avail.length) cur = avail[avail.length - 1].id;
+      setActive(cur);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [avail]);
+  return { avail, active };
+}
+
 function Detail({ m, date }: { m: Match; date: string }) {
   const finished = m.status === 'finished' && m.result;
+  const rootRef = useRef<HTMLDivElement>(null);
+  const headRef = useRef<HTMLElement>(null);
+  const tabBarRef = useRef<HTMLDivElement>(null);
+  const { avail, active } = useSectionTabs(rootRef);
+  const [compact, setCompact] = useState(false);
+  const won = pickResult(m);
+
+  useEffect(() => {
+    const h = headRef.current;
+    if (!h || typeof IntersectionObserver === 'undefined') return;
+    const io = new IntersectionObserver(([e]) => setCompact(!e.isIntersecting), { rootMargin: '-56px 0px 0px 0px' });
+    io.observe(h);
+    return () => io.disconnect();
+  }, []);
+  // Etkin sekmeyi yatay şeritte görünür tut
+  useEffect(() => {
+    const b = tabBarRef.current?.querySelector<HTMLElement>(`[data-tab="${active}"]`);
+    const bar = tabBarRef.current;
+    if (b && bar) bar.scrollTo({ left: b.offsetLeft - bar.clientWidth / 2 + b.clientWidth / 2, behavior: 'auto' });
+  }, [active]);
+
+  const jump = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const reduce = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - STICKY_OFFSET + 4, behavior: reduce ? 'auto' : 'smooth' });
+  };
+
+  const hasStats = !!m.stats;
+  const hasSquad = !!m.squad && !!(m.squad.home || m.squad.away);
+  const hasConsensus = !!m.consensus && ((m.consensus.sources?.length ?? 0) > 0 || (m.consensus.summary?.length ?? 0) > 0);
+  const hasProv = !!m.provenance && Object.keys(m.provenance).length > 0;
+
   return (
-    <div>
-      <Link to={date ? `/gun/${date}` : '/'} className="tap inline-flex items-center gap-1 text-sm font-medium text-muted">
+    <div ref={rootRef}>
+      <Link to={date ? `/gun/${date}` : '/'} className="tap -ml-1 inline-flex items-center gap-1 text-sm font-medium text-muted hover:text-ink">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
         Bülten
       </Link>
 
-      {/* Başlık */}
-      <header className="mt-1">
-        <div className="flex flex-wrap items-center gap-2 text-sm text-muted">
+      {/* Büyük başlık */}
+      <header ref={headRef}>
+        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 t-meta">
           <span className="font-semibold text-ink">{m.league_name}</span>
           <span className="num">{fmtDateTime(m.kickoff)}</span>
           {m.code && <span className="num">Kod {m.code}</span>}
-          {m.mbs != null && <Badge>MBS {m.mbs}</Badge>}
-          {m.status === 'live' && <Badge tone="loss">Canlı</Badge>}
+          {m.mbs != null && <span className="num">MBS {m.mbs}</span>}
+          {m.status === 'live' && <Badge tone="loss" icon="live">Canlı</Badge>}
         </div>
-        <div className="mt-2 flex items-center gap-3">
-          <h1 className="display flex-1 min-w-0 text-[32px] md:text-[44px] leading-[1.02] font-bold">
+        <div className="mt-1.5 flex items-center gap-3">
+          <h1 className="display flex-1 min-w-0 text-[30px] md:text-[42px] leading-[1.05] font-bold">
             <span className="block truncate">{m.home.name}</span>
-            <span className="block truncate text-muted font-semibold">{m.away.name}</span>
+            <span className="block truncate">{m.away.name}</span>
           </h1>
           {finished ? (
             <div className="text-right">
-              <div className="display text-[44px] md:text-[56px] font-bold leading-none num">{m.result!.ft[0]}–{m.result!.ft[1]}</div>
-              {m.result!.ht && <div className="text-sm text-muted num">İY {m.result!.ht[0]}–{m.result!.ht[1]}</div>}
+              <div className="display text-[42px] md:text-[54px] font-bold leading-none num">{m.result!.ft[0]}–{m.result!.ft[1]}</div>
+              {m.result!.ht && <div className="t-meta num">İY {m.result!.ht[0]}–{m.result!.ht[1]}</div>}
             </div>
           ) : (
             <AddToCoupon match={m} date={date} />
           )}
         </div>
-        {finished && <div className="mt-2"><AddToCoupon match={m} date={date} /></div>}
       </header>
 
-      <PickBox m={m} />
+      {/* Yapışkan maç başlığı + bölüm sekmeleri */}
+      <div className="sticky top-14 z-20 -mx-4 mt-3 bg-bg/95 backdrop-blur border-b border-line">
+        <div className={`px-4 overflow-hidden transition-[max-height,opacity] duration-200 ${compact ? 'max-h-12 opacity-100' : 'max-h-0 opacity-0'}`} aria-hidden={!compact}>
+          <div className="flex items-center gap-2 h-10 text-[14px]">
+            <span className="num t-meta shrink-0">{m.status === 'live' ? 'Canlı' : fmtTime(m.kickoff)}</span>
+            <span className="min-w-0 truncate font-semibold">{m.home.name} – {m.away.name}</span>
+            {finished && <span className="display font-bold text-lg num shrink-0">{m.result!.ft[0]}–{m.result!.ft[1]}</span>}
+            {m.pick && (
+              <span className="ml-auto shrink-0 flex items-center gap-1.5">
+                <span className="display text-[16px] font-bold">{m.pick.label || marketLabel(m.pick.market)}</span>
+                {won != null ? <ResultBadge won={won} /> : <Stars n={m.pick.stars} size={11} />}
+              </span>
+            )}
+          </div>
+        </div>
+        {avail.length > 1 && (
+          <nav aria-label="Bölümler">
+            <div ref={tabBarRef} className="flex overflow-x-auto no-scrollbar px-2">
+              {avail.map((t) => (
+                <button key={t.id} data-tab={t.id} onClick={() => jump(t.id)} aria-current={active === t.id ? 'true' : undefined}
+                  className={`shrink-0 min-h-[44px] px-3 text-[14px] font-semibold border-b-2 -mb-px ${active === t.id ? 'border-accent text-ink' : 'border-transparent text-muted hover:text-ink'}`}>
+                  {t.label}
+                </button>
+              ))}
+            </div>
+          </nav>
+        )}
+      </div>
 
-      {m.model ? <ModelSections m={m} /> : (
-        <p className="mt-5 rounded-md bg-sunken px-4 py-3 text-sm text-muted">Veri yetersiz – model çalıştırılmadı</p>
+      {/* ÖZET */}
+      <section id="ozet" className="scroll-mt-32" aria-label="Özet">
+        <PickBox m={m} />
+        {finished && <div className="mt-3"><AddToCoupon match={m} date={date} /></div>}
+        {m.comment && (
+          <div className="mt-4">
+            <p className="text-[16px] leading-relaxed max-w-[68ch]">{m.comment}</p>
+            <p className="mt-1 t-micro">{m.comment_source === 'llm' ? 'Dil modeli yorumu' : 'Kural tabanlı yorum'}</p>
+          </div>
+        )}
+      </section>
+
+      {/* OLASILIKLAR */}
+      <section id="olasiliklar" className="scroll-mt-32" aria-label="Olasılıklar">
+        {m.model ? <ModelSections m={m} /> : (
+          <p className="mt-6 rounded-md bg-sunken px-4 py-3 text-sm text-muted">Veri yetersiz – model çalıştırılmadı. Aşağıda yalnızca piyasa oranları var.</p>
+        )}
+        <MarketTable m={m} />
+        <OddsMovement m={m} />
+      </section>
+
+      {/*
+        SİMÜLASYON — <Simulation50 /> buraya gelecek.
+        Bileşen kendi kökünü <section id="sim50"> olarak render eder; sekme bu çapayı
+        DOM'da bulunca otomatik görünür. Örnek:
+          {m.model && <Simulation50 m={m} />}
+      */}
+
+      {/* FORM */}
+      {hasStats && (
+        <section id="form" className="scroll-mt-32" aria-label="Form ve istatistik">
+          <StatsSection m={m} />
+        </section>
       )}
 
-      <MarketTable m={m} />
-      <OddsMovement m={m} />
-      <StatsSection m={m} />
-      <SquadSection m={m} />
-      <ConsensusSection m={m} />
-
-      {m.comment && (
-        <Section title="Yorum" aside={<span className="text-[12px] text-muted">{m.comment_source === 'llm' ? 'Dil modeli yorumu' : 'Kural tabanlı yorum'}</span>}>
-          <p className="panel p-4 text-[15px] leading-relaxed max-w-[68ch]">{m.comment}</p>
-        </Section>
+      {/* KADRO / HABER */}
+      {hasSquad && (
+        <section id="kadro" className="scroll-mt-32" aria-label="Kadro">
+          <SquadSection m={m} />
+        </section>
       )}
+      {/*
+        HABERLER — <NewsList /> buraya, kadro bölümünün hemen altına gelecek.
+        Bileşen kendi kökünü <section id="haberler"> olarak render eder; kadro verisi
+        yoksa "Kadro/Haber" sekmesi doğrudan #haberler çapasına gider. Örnek:
+          <NewsList m={m} />
+      */}
 
-      <Section title="Kaynaklar">
-        {m.provenance && Object.keys(m.provenance).length ? (
-          <ul className="panel divide-y divide-line text-sm">
-            {Object.entries(m.provenance).map(([k, v]) => (
-              <li key={k} className="flex items-center gap-3 px-4 py-2.5">
-                <span className="w-24 text-muted">{PROV_LABEL[k] ?? k}</span>
-                <span className="font-medium">{v.source}</span>
-                <span className="ml-auto text-muted num">{fmtDateTime(v.t)}</span>
-              </li>
-            ))}
-          </ul>
-        ) : <p className="text-sm text-muted">Kaynak bilgisi yok</p>}
-        {m.model?.notes?.length ? <p className="mt-2 text-[13px] text-muted">Model notları: {m.model.notes.join('; ')}</p> : null}
-      </Section>
+      {/* KAYNAKLAR */}
+      {(hasConsensus || hasProv || (m.model?.notes?.length ?? 0) > 0) && (
+        <section id="kaynaklar" className="scroll-mt-32" aria-label="Kaynaklar">
+          <ConsensusSection m={m} />
+          {(hasProv || (m.model?.notes?.length ?? 0) > 0) && (
+            <Section title="Veri kaynakları">
+              {hasProv && (
+                <ul className="panel divide-y divide-line text-sm">
+                  {Object.entries(m.provenance!).map(([k, v]) => (
+                    <li key={k} className="flex flex-wrap items-baseline gap-x-3 gap-y-0.5 px-4 py-2.5">
+                      <span className="w-28 shrink-0 text-muted">{PROV_LABEL[k] ?? k}</span>
+                      <span className="font-medium min-w-0 flex-1">{v.source}</span>
+                      <span className="t-micro num">{fmtDateTime(v.t)}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {m.model?.notes?.length ? <p className="mt-2 t-meta">Model notları: {m.model.notes.join('; ')}</p> : null}
+            </Section>
+          )}
+        </section>
+      )}
     </div>
   );
 }
 
 function PickBox({ m }: { m: Match }) {
   const p = m.pick;
+  const won = pickResult(m);
+  const alarms = m.market?.drop_alarms ?? [];
   return (
-    <section className="mt-5 rounded-lg border-2 border-accent bg-surface p-4" aria-label="OZBET Tercihi">
+    <div className="mt-4 rounded-lg border-2 border-accent bg-surface p-4" role="group" aria-label="OZBET Tercihi">
       {p ? (
         <div className="flex flex-wrap items-end gap-x-6 gap-y-3">
           <div>
-            <div className="text-[13px] text-muted">OZBET Tercihi</div>
+            <div className="t-meta">OZBET Tercihi</div>
             <div className="display text-[34px] font-bold leading-none mt-1">{p.label || marketLabel(p.market)}</div>
           </div>
           <dl className="flex gap-6 num">
-            <div><dt className="text-[12px] text-muted">Model</dt><dd className="text-xl font-semibold">{pct(p.p)}</dd></div>
-            <div><dt className="text-[12px] text-muted">Oran</dt><dd className="text-xl font-semibold">{p.odds != null ? odd(p.odds) : '–'}</dd></div>
-            <div><dt className="text-[12px] text-muted">Güven</dt><dd className="pt-1.5"><Stars n={p.stars} size={16} /></dd></div>
+            <div><dt className="t-micro">Model</dt><dd className="text-xl font-semibold">{pct(p.p)}</dd></div>
+            <div><dt className="t-micro">Oran</dt><dd className="text-xl font-semibold">{p.odds != null ? odd(p.odds) : '–'}</dd></div>
+            <div><dt className="t-micro">Güven</dt><dd className="pt-1.5"><Stars n={p.stars} size={16} /></dd></div>
           </dl>
-          <div className="ml-auto">{m.value?.length ? <Badge tone="accent">Değerli</Badge> : <span className="text-sm text-muted">{m.value_note || 'Değer yok'}</span>}</div>
+          <div className="ml-auto">
+            {won != null ? <ResultBadge won={won} /> : m.value?.length ? <ValueBadge /> : <span className="t-meta">{m.value_note || 'Değer yok'}</span>}
+          </div>
         </div>
       ) : <p className="text-muted">Bu maç için tercih üretilmedi.</p>}
       {m.value?.length > 0 && (
-        <table className="tbl mt-3">
-          <thead><tr><th>Değerli market</th><th className="text-right">Model</th><th className="text-right">Piyasa</th><th className="text-right">Fark</th><th className="text-right">Oran</th><th className="text-right">EV</th></tr></thead>
-          <tbody>
-            {m.value.map((v) => (
-              <tr key={v.market}>
-                <td className="font-medium">{marketLabel(v.market)}</td>
-                <td className="text-right">{pct(v.model_p, 1)}</td><td className="text-right">{pct(v.implied_p, 1)}</td>
-                <td className="text-right text-accent font-semibold">{signedPct(v.edge)}</td><td className="text-right">{odd(v.odds)}</td>
-                <td className="text-right">{signedPct(v.ev)}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div className="overflow-x-auto">
+          <table className="tbl mt-3">
+            <thead><tr><th>Değerli market</th><th className="text-right">Model</th><th className="text-right">Piyasa</th><th className="text-right">Fark</th><th className="text-right">Oran</th><th className="text-right">EV</th></tr></thead>
+            <tbody>
+              {m.value.map((v) => (
+                <tr key={v.market}>
+                  <td className="font-medium">{marketLabel(v.market)}</td>
+                  <td className="text-right">{pct(v.model_p, 1)}</td><td className="text-right">{pct(v.implied_p, 1)}</td>
+                  <td className="text-right text-accent font-semibold">{signedPct(v.edge)}</td><td className="text-right">{odd(v.odds)}</td>
+                  <td className="text-right">{signedPct(v.ev)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
-      {(m.flags?.length > 0 || (m.market?.drop_alarms?.length ?? 0) > 0) && (
+      {(m.flags?.length > 0 || alarms.length > 0) && (
         <div className="mt-3 flex flex-wrap gap-1.5">
-          {m.market?.drop_alarms?.map((k) => <Badge key={k} tone="warn">Düşen oran: {marketLabel(k)}</Badge>)}
+          {alarms.map((k) => <DropBadge key={k}>Düşen oran: {marketLabel(k)}</DropBadge>)}
           {m.flags?.map((f) => <Badge key={f}>{f}</Badge>)}
         </div>
       )}
-    </section>
+    </div>
   );
 }
 
@@ -219,7 +372,7 @@ function MarketTable({ m }: { m: Match }) {
                 const d = probs[k] != null && imp[k] != null ? probs[k]! - imp[k]! : null;
                 return (
                   <tr key={k}>
-                    <td className="font-medium">{marketLabel(k)} {valueSet.has(k) && <Badge tone="accent">Değerli</Badge>}</td>
+                    <td className="font-medium">{marketLabel(k)} {valueSet.has(k) && <ValueBadge />}</td>
                     <td className="text-right font-semibold">{pct(probs[k], 1)}</td>
                     <td className="text-right text-muted">{pct(imp[k], 1)}</td>
                     <td className={`text-right ${d != null && d >= 0.05 ? 'text-accent font-semibold' : 'text-muted'}`}>{d != null ? signedPct(d) : '–'}</td>
@@ -297,7 +450,7 @@ const STAT_ROWS: { label: string; k: keyof TeamStats; fmt: (v: number) => string
 
 function StatsSection({ m }: { m: Match }) {
   const s = m.stats;
-  if (!s) return <Section title="İstatistikler"><p className="text-sm text-muted">İstatistik verisi yok</p></Section>;
+  if (!s) return null;
   const val = (t: TeamStats, k: keyof TeamStats) => { const v = t?.[k]; return typeof v === 'number' ? v : null; };
   return (
     <>
@@ -362,9 +515,10 @@ function StatsSection({ m }: { m: Match }) {
 
 function SquadSection({ m }: { m: Match }) {
   const q = m.squad;
+  if (!q || (!q.home && !q.away)) return null;
   return (
     <Section title="Eksik oyuncular" aside={q ? <span className="text-[12px] text-muted">{q.source} · {fmtTime(q.fetched_at)}</span> : undefined}>
-      {!q ? <p className="text-sm text-muted">Kadro verisi yok</p> : (
+      {(
         <div className="grid gap-3 md:grid-cols-2">
           {([['home', m.home.name], ['away', m.away.name]] as const).map(([side, name]) => {
             const t = q[side];

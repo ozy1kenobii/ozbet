@@ -17,6 +17,7 @@ export default {
         draw: 'rgb(var(--draw) / <alpha-value>)',
         loss: 'rgb(var(--loss) / <alpha-value>)',
         warn: 'rgb(var(--warn) / <alpha-value>)',
+        'on-status': 'rgb(var(--on-status) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['"Inter Tight"', 'Inter', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],

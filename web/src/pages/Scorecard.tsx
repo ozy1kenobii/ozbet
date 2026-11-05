@@ -1,8 +1,9 @@
+import { useState } from 'react';
 import { useBacktest, useScorecard } from '../lib/data';
-import type { Backtest, BacktestSummary, ScoreBlock } from '../lib/types';
+import type { Backtest, BacktestGridRow, BacktestSummary, ScoreBlock } from '../lib/types';
 import { fmtDateTime, fmtShortDate, num, odd, pct, signedNum, signedPct } from '../lib/format';
 import { Calibration, LineChart } from '../components/charts';
-import { Badge, Empty, Loading, Section } from '../components/ui';
+import { Empty, Loading, ResultBadge, Section } from '../components/ui';
 import { marketLabel } from '../lib/markets';
 
 export default function Scorecard() {
@@ -11,11 +12,15 @@ export default function Scorecard() {
   return (
     <div>
       <h1 className="display text-[32px] font-bold leading-tight">Karne</h1>
-      <p className="text-sm text-muted">Biten maçlarda OZBET Tercihlerinin sonuçları. Sanal kasa: her tercihe 1 birim.</p>
-      {sc.state === 'loading' && <div className="mt-4"><Loading /></div>}
+      <p className="t-meta">Biten maçlarda OZBET Tercihlerinin sonuçları. Sanal kasa: her tercihe 1 birim.</p>
+      {bt.state === 'ready' && <HonestBox b={bt.data} />}
+      {(sc.state === 'loading' || bt.state === 'loading') && <div className="mt-4"><Loading variant="page" /></div>}
       {sc.state === 'empty' && <div className="mt-4"><Empty /></div>}
       {sc.state === 'ready' && (() => {
         const d = sc.data;
+        if (!d.overall?.n && !d.recent?.length) {
+          return <div className="mt-4"><Empty title="Henüz puanlanan tahmin yok">Maçlar bittikçe OZBET Tercihlerinin sonuçları burada birikecek. Aşağıdaki backtest, modelin geçmiş sezonlardaki durumunu gösteriyor.</Empty></div>;
+        }
         const bank = d.bankroll ?? [];
         return (
           <>
@@ -82,7 +87,7 @@ export default function Scorecard() {
                         <span className="block truncate font-medium">{r.match}</span>
                         <span className="text-muted num">{r.pick}{r.odds != null && ` · ${odd(r.odds)}`} · {r.score}</span>
                       </span>
-                      <Badge tone={r.won ? 'win' : 'loss'}>{r.won ? 'Tuttu' : 'Tutmadı'}</Badge>
+                      <ResultBadge won={r.won} />
                     </li>
                   ))}
                 </ul>
@@ -130,8 +135,102 @@ function BtRow({ name, s }: { name: string; s: BacktestSummary }) {
   );
 }
 
-function BacktestView({ b }: { b: Backtest }) {
+/** Dürüst özet: model piyasa kapanış oranlarını yenebildi mi? */
+function HonestBox({ b }: { b: Backtest }) {
+  const s = b.summary;
+  if (!s || s.model_brier == null || s.market_brier == null) return null;
+  const beat = s.model_brier < s.market_brier;
+  const roi = s.roi_value_bets;
   return (
+    <section className={`mt-4 rounded-lg border-2 p-4 ${beat ? 'border-win/60' : 'border-warn/70'} bg-surface`} aria-label="Model performansı özeti">
+      <p className="display text-[22px] md:text-[26px] font-bold leading-tight">
+        {beat ? 'Model piyasa kapanış oranlarını yendi' : 'Model piyasa kapanış oranlarını yenemedi'}
+      </p>
+      <p className="mt-1 text-[15px] num">
+        Brier model <b>{num(s.model_brier, 3)}</b> / piyasa <b>{num(s.market_brier, 3)}</b>
+        <span className="text-muted"> · düşük olan daha iyi · {s.n.toLocaleString('tr-TR')} maç</span>
+      </p>
+      <p className="mt-2 t-meta max-w-[68ch]">
+        {beat
+          ? 'Geçmiş sezonlarda model olasılıkları kapanış oranlarından daha isabetli çıktı. Yine de bu geleceği garanti etmez.'
+          : `Geçmiş ${b.seasons?.length ?? ''} sezonda modelin olasılıkları, bürolara göre daha az isabetliydi${roi != null ? ` ve “değerli” etiketli bahisler ${signedPct(roi)} getiri verdi (${s.n_value_bets.toLocaleString('tr-TR')} bahis)` : ''}. Tercihleri bir görüş olarak okuyun, oranları her zaman piyasayla karşılaştırın.`}
+      </p>
+    </section>
+  );
+}
+
+const fmtAlpha = (a: number | string) => {
+  const v = Number(a);
+  return v === 1 ? 'Yalnız model' : `%${Math.round(v * 100)} model`;
+};
+
+function BlendTable({ blend, market }: { blend: Record<string, number>; market: number | null }) {
+  const rows = Object.entries(blend).map(([a, v]) => ({ a: Number(a), v })).filter((r) => isFinite(r.a) && r.v != null).sort((x, y) => y.a - x.a);
+  if (!rows.length) return null;
+  const best = Math.min(...rows.map((r) => r.v));
+  return (
+    <div className="panel px-2 py-1 overflow-x-auto">
+      <table className="tbl">
+        <thead><tr><th>Karışım (α)</th><th className="text-right">Brier</th><th className="text-right">Piyasaya fark</th></tr></thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r.a}>
+              <td className="font-medium">{fmtAlpha(r.a)}<span className="text-muted font-normal"> · α {num(r.a, 2)}</span></td>
+              <td className={`text-right ${r.v === best ? 'font-bold' : ''}`}>{num(r.v, 4)}</td>
+              <td className={`text-right ${market != null && r.v < market ? 'text-win font-semibold' : 'text-muted'}`}>{market != null ? signedNum(r.v - market, 4) : '–'}</td>
+            </tr>
+          ))}
+          {market != null && <tr><td className="text-muted">Piyasa kapanış</td><td className="text-right text-muted">{num(market, 4)}</td><td /></tr>}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function GridTable({ grid }: { grid: BacktestGridRow[] }) {
+  const alphas = [...new Set(grid.map((g) => g.alpha))].sort((a, b) => b - a);
+  const edges = [...new Set(grid.map((g) => g.edge))].sort((a, b) => a - b);
+  const cell = (a: number, e: number) => grid.find((g) => g.alpha === a && g.edge === e);
+  return (
+    <div className="panel px-2 py-1 overflow-x-auto">
+      <table className="tbl min-w-[420px]">
+        <thead>
+          <tr><th>α / eşik</th>{edges.map((e) => <th key={e} className="text-right">≥ {pct(e, 0)}</th>)}</tr>
+        </thead>
+        <tbody>
+          {alphas.map((a) => (
+            <tr key={a}>
+              <th scope="row" className="font-medium text-ink whitespace-nowrap">{num(a, 2)}</th>
+              {edges.map((e) => {
+                const c = cell(a, e);
+                return (
+                  <td key={e} className="text-right whitespace-nowrap">
+                    {c && c.bets > 0 ? (
+                      <>
+                        <span className={`block font-semibold ${roiCls(c.roi)}`}>{signedPct(c.roi)}</span>
+                        <span className="block t-micro">{c.bets.toLocaleString('tr-TR')} bahis</span>
+                      </>
+                    ) : <span className="text-muted">–</span>}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function BacktestView({ b }: { b: Backtest }) {
+  const scopes = [
+    { id: '', name: 'Genel', blend: b.blend_brier, grid: b.grid, market: b.summary?.market_brier ?? null },
+    ...(b.by_league ?? []).map((l) => ({ id: l.league, name: l.name ?? l.league, blend: l.blend_brier, grid: l.grid, market: l.market_brier })),
+  ].filter((x) => (x.blend && Object.keys(x.blend).length) || x.grid?.length);
+  const [scopeId, setScopeId] = useState('');
+  const sc = scopes.find((x) => x.id === scopeId) ?? scopes[0];
+  return (
+    <>
     <Section title="Backtest (geçmiş 2 sezon)" aside={<span className="text-[12px] text-muted num">{fmtDateTime(b.generated_at)}</span>}>
       <p className="mb-2 text-[13px] text-muted">Sezonlar: {b.seasons?.join(', ') || '–'} · Ligler: {b.leagues?.join(', ') || '–'}. Düşük Brier ve log-loss daha iyidir; modelin piyasayı geçtiği hücreler yeşil.</p>
       <div className="panel px-2 py-1 overflow-x-auto">
@@ -143,6 +242,34 @@ function BacktestView({ b }: { b: Backtest }) {
           </tbody>
         </table>
       </div>
+      {b.method && <p className="mt-2 t-meta max-w-[68ch]">{b.method}</p>}
     </Section>
+
+    {sc && scopes.length > 1 && (
+      <div className="mt-8 flex items-center gap-2">
+        <label htmlFor="bt-kapsam" className="t-meta">Kapsam</label>
+        <select id="bt-kapsam" value={sc.id} onChange={(e) => setScopeId(e.target.value)}
+          className="min-h-[44px] rounded-md border border-line bg-surface px-3 text-[15px] font-medium">
+          {scopes.map((x) => <option key={x.id} value={x.id}>{x.name}</option>)}
+        </select>
+      </div>
+    )}
+    {sc && (
+      <div className="grid gap-x-6 lg:grid-cols-2">
+        {sc.blend && Object.keys(sc.blend).length > 0 && (
+          <Section title="Model–piyasa karışımı">
+            <p className="mb-2 t-meta">α, model olasılığının ağırlığı; kalanı piyasa kapanış olasılığı. Brier ne kadar düşükse o kadar isabetli.</p>
+            <BlendTable blend={sc.blend} market={sc.market ?? null} />
+          </Section>
+        )}
+        {sc.grid && sc.grid.length > 0 && (
+          <Section title="Değer eşiği taraması">
+            <p className="mb-2 t-meta">Her hücre: α karışımı ve en az bu fark (model − piyasa) ile seçilen bahislerin getirisi.</p>
+            <GridTable grid={sc.grid} />
+          </Section>
+        )}
+      </div>
+    )}
+    </>
   );
 }

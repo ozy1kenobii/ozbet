@@ -44,3 +44,7 @@ export function signedNum(n: number | null | undefined, digits = 2): string {
 export function odd(n: number | null | undefined): string {
   return num(n, 2);
 }
+
+const hourFmt = new Intl.DateTimeFormat('en-GB', { timeZone: TZ, hour: '2-digit', hourCycle: 'h23' });
+/** Europe/Istanbul saatine göre saat (0–23); geçersizse null */
+export const istHour = (iso: string | null | undefined) => { const d = safe(iso); return d ? Number(hourFmt.format(d)) : null; };
