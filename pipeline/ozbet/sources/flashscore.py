@@ -21,7 +21,8 @@ from ..teams import team_key
 from .base import Fixture, MissingPlayer, TeamNews, now_iso
 
 log = logging.getLogger("ozbet.flashscore")
-HOSTS = ["https://d.flashscore.com.tr", "https://d.flashscore.com"]
+# Kasım 2026: tarayıcı feed'i global.flashscore.ninja/10 üzerinden alıyor (keşifle doğrulandı)
+HOSTS = ["https://global.flashscore.ninja/10", "https://d.flashscore.com.tr", "https://d.flashscore.com"]
 FSIGN = os.environ.get("FLASHSCORE_FSIGN") or "SW9D1eZo"
 FEED_HOST: str | None = None   # keşifte tarayıcının kullandığı feed sunucusu
 
@@ -103,22 +104,24 @@ def _feed(client: PoliteClient, offset: int, ttl: float) -> str:
     for attempt in range(2):
         sign = _fsign or FSIGN
         for host in ([FEED_HOST] if FEED_HOST else []) + HOSTS:
-            lang = "tr" if host.endswith(".tr") else "en"
+            lang = "en" if host.endswith(".com") else "tr"
             url = f"{host}/x/feed/f_1_{offset}_3_{lang}_1"
             try:
                 text = client.get(url, ttl=ttl if attempt == 0 else 0,
-                                  headers={"x-fsign": sign, "Referer": host.replace("d.", "www.") + "/"})
+                                  headers={"x-fsign": sign, "Referer": "https://www.flashscore.com.tr/",
+                                           "Origin": "https://www.flashscore.com.tr"})
                 if len(text) > 50:
                     return text
                 err = RuntimeError(f"flashscore feed boş ('{text[:10]}') – x-fsign geçersiz olabilir")
             except Exception as e:  # noqa: BLE001
                 err = e
         if attempt == 0:
+            host_before = FEED_HOST
             new = discover_fsign()
-            if not new or new == sign:
+            if (not new or new == sign) and FEED_HOST == host_before:
                 break
-            log.info("flashscore x-fsign güncellendi")
-            _fsign = new
+            log.info("flashscore x-fsign/sunucu güncellendi")
+            _fsign = new or sign
     raise err  # type: ignore[misc]
 
 
