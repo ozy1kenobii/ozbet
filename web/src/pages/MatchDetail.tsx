@@ -176,13 +176,13 @@ function ModelSections({ m }: { m: Match }) {
 
       {md.htft && Object.keys(md.htft).length > 0 && (
         <Section title="İlk yarı / maç sonu">
-          <div className="panel p-3 overflow-x-auto">
+          <div className="panel p-3 overflow-x-auto md:max-w-md">
             <table className="tbl text-center">
               <thead><tr><th className="text-left">İY ↓ / MS →</th><th className="text-center">1</th><th className="text-center">X</th><th className="text-center">2</th></tr></thead>
               <tbody>
                 {(['1', 'X', '2'] as const).map((h) => (
                   <tr key={h}>
-                    <th scope="row" className="text-left font-semibold text-ink border-b border-line px-2">{h}</th>
+                    <th scope="row" className="font-semibold text-ink">{h}</th>
                     {(['1', 'X', '2'] as const).map((f) => {
                       const k = `${h}/${f}` as HtFtKey;
                       const v = md.htft[k];
@@ -209,7 +209,7 @@ function MarketTable({ m }: { m: Match }) {
   const valueSet = new Set((m.value ?? []).map((v) => v.market));
   return (
     <Section title="Tüm marketler" aside={<span className="text-[12px] text-muted">Piyasa = marjı temizlenmiş ima olasılığı</span>}>
-      <div className="panel px-2 py-1 overflow-x-auto">
+      <div className="panel px-2 py-1 overflow-x-auto md:max-w-2xl">
         <table className="tbl">
           <thead><tr><th>Market</th><th className="text-right">Model</th><th className="text-right">Piyasa</th><th className="text-right">Fark</th><th className="text-right">Oran</th></tr></thead>
           {groups.map((g) => (
@@ -251,9 +251,14 @@ function OddsMovement({ m }: { m: Match }) {
       <div className="panel p-4">
         {h.length >= 2 && present.length > 0 && (
           <>
-            <LineChart ariaLabel="Oran hareketi grafiği" height={130}
-              series={present.map((x) => ({ name: x.k, cls: x.cls, values: h.map((s) => s[x.k] ?? null) }))}
+            <LineChart ariaLabel="Oran hareketi grafiği: ilk görülen orana göre yüzde değişim" height={130} baseline={0}
+              yFormat={(v) => signedPct(v, 0)}
+              series={present.map((x) => {
+                const first = h.find((s) => s[x.k] != null)?.[x.k] ?? null;
+                return { name: x.k, cls: x.cls, values: h.map((s) => (s[x.k] != null && first ? s[x.k]! / first - 1 : null)) };
+              })}
               xLabels={[fmtTime(h[0].t), fmtTime(h[h.length - 1].t)]} />
+            <p className="text-[12px] text-muted">İlk görülen orana göre değişim. Düşen oran, piyasanın o sonuca daha çok inandığını gösterir.</p>
             <div className="mt-1 flex gap-4 text-[13px]">
               {present.map((x) => (
                 <span key={x.k} className="flex items-center gap-1.5">
@@ -311,7 +316,7 @@ function StatsSection({ m }: { m: Match }) {
       </Section>
 
       <Section title="İstatistik karşılaştırma">
-        <div className="panel px-2 py-1 overflow-x-auto">
+        <div className="panel px-2 py-1 overflow-x-auto md:max-w-2xl">
           <table className="tbl">
             <thead><tr><th className="text-right w-1/3">{m.home.name}</th><th className="text-center"></th><th className="w-1/3">{m.away.name}</th></tr></thead>
             <tbody>

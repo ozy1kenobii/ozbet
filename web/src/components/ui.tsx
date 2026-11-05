@@ -79,7 +79,7 @@ export function Badge({ children, tone = 'neutral', title }: { children: ReactNo
 export function Section({ title, children, aside }: { title: string; children: ReactNode; aside?: ReactNode }) {
   return (
     <section className="mt-7">
-      <div className="mb-2.5 flex items-baseline justify-between gap-3">
+      <div className="mb-2.5 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
         <h2 className="h-section">{title}</h2>
         {aside}
       </div>
@@ -87,13 +87,6 @@ export function Section({ title, children, aside }: { title: string; children: R
     </section>
   );
 }
-
-export const SampleNotice = ({ show }: { show: boolean }) =>
-  show ? (
-    <div className="mb-3 rounded-md border border-warn/50 px-3 py-2 text-sm text-warn">
-      Örnek veri gösteriliyor: takım adları gerçek, tüm sayılar uydurmadır.
-    </div>
-  ) : null;
 
 export function Dot({ s }: { s: string }) {
   const cls = s === 'ok' ? 'bg-win' : s === 'partial' ? 'bg-warn' : 'bg-loss';

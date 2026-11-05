@@ -4,7 +4,7 @@ Roller:
   FIXTURE_SOURCES    .fixtures(client, day) -> list[Fixture]          (sıra = öncelik)
   XG_SOURCES         .league_xg(client, day) -> {league_id: [{date, home, away, hxg, axg}]}
   NEWS_SOURCES       .team_news(client, day, fixtures) -> {team_key: TeamNews}
-  PREDICTION_SOURCES .predictions(client, day) -> list[Prediction]
+  PREDICTION_SOURCES .predictions(client, day, fixtures) -> list[Prediction]
   RESULT_SOURCES     .results(client, day) -> {(date, hkey, akey): {"ft":[h,a], "ht":[h,a]}}
 """
 from __future__ import annotations
@@ -17,7 +17,7 @@ from rapidfuzz import fuzz
 
 from .. import config
 from ..teams import canonical, normalize, team_key
-from . import api_football, flashscore, forebet, freesupertips, nesine, soccerstats, sportytrader, transfermarkt, understat
+from . import api_football, flashscore, forebet, freesupertips, iddaa, nesine, soccerstats, sportytrader, transfermarkt, understat
 
 
 @dataclass
@@ -33,6 +33,7 @@ class Src:
 
 FIXTURE_SOURCES = [
     Src("nesine", "Nesine iddaa bülteni (kod, MBS, oran)", fixtures=nesine.fixtures),
+    Src("iddaa", "iddaa.com resmi bülten (oran, MBS)", fixtures=iddaa.fixtures),
     Src("flashscore", "Flashscore (fikstür)", fixtures=flashscore.fixtures),
     Src("api_football", "API-Football (yedek, anahtar gerekir)", fixtures=api_football.fixtures),
 ]

@@ -58,7 +58,8 @@ def stars(m: dict, pick: dict, trust: dict[str, float]) -> int:
     if trust.get(pick["market"], 1.0) < 0.9:
         score -= 1
     s = int(max(1, min(5, round(1 + score))))
-    if q == "low" or "Lig dışı/düşük kapsam" in m.get("flags", []):
+    flags = m.get("flags", [])
+    if q == "low" or "Lig dışı/düşük kapsam" in flags or any(f.startswith("Model-piyasa farkı") for f in flags):
         s = min(s, 2)
     return s
 
@@ -74,7 +75,7 @@ def _form_sentence(team: str, st: dict, venue: str) -> str | None:
     fts = st.get("failed_to_score_venue", 0)
     s = f"{team} son {n} {yer} maçında {w} galibiyet, {d} beraberlik, {l} mağlubiyet aldı"
     if cs >= max(3, n // 2):
-        s += f"; bunların {cs} tanesinde gol yemedi"
+        s += f"; bu maçların {cs} tanesinde gol yemedi"
     elif fts >= max(3, n // 2):
         s += f"; {fts} maçta gol atamadı"
     return s + "."

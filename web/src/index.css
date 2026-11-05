@@ -78,9 +78,9 @@
   .btn-ghost { @apply border border-line bg-surface text-ink; }
   .h-section { @apply display text-xl font-semibold text-ink; }
   .tbl { @apply w-full text-sm num; border-collapse: collapse; }
-  .tbl th { @apply text-left font-medium text-muted px-2 py-2 border-b border-line; }
-  .tbl td { @apply px-2 py-2 border-b border-line; }
-  .tbl tr:last-child td { border-bottom: 0; }
+  :where(.tbl) :where(th) { @apply text-left font-medium text-muted px-2 py-2 border-b border-line; }
+  :where(.tbl) :where(td) { @apply px-2 py-2 border-b border-line; }
+  :where(.tbl) :where(tbody:last-child tr:last-child) > :where(td, th) { border-bottom: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {

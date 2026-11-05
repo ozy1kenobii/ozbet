@@ -54,7 +54,7 @@ export function Heatmap({ matrix, home, away }: { matrix: number[][]; home: stri
                   <td key={a} className="h-11 w-12 rounded-[4px] text-center text-[12px] font-medium"
                     style={{ background: `rgb(var(--accent) / ${0.06 + t * 0.94})`, color: t > 0.55 ? 'rgb(var(--accent-ink))' : 'rgb(var(--ink))' }}
                     title={`${h}-${a}: ${pct(v, 1)}`}>
-                    {v >= 0.005 ? (v * 100).toFixed(v >= 0.1 ? 0 : 1) : '·'}
+                    {v >= 0.005 ? (v * 100).toLocaleString('tr-TR', { maximumFractionDigits: v >= 0.1 ? 0 : 1, minimumFractionDigits: v >= 0.1 ? 0 : 1 }) : '·'}
                   </td>
                 );
               })}

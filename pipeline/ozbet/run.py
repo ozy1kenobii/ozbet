@@ -171,7 +171,7 @@ def main(argv=None):
             news.setdefault(k, v)
     preds = []
     for src in registry.PREDICTION_SOURCES:
-        preds += board.run(src.id, src.name, lambda s=src: s.predictions(client, today)) or []
+        preds += board.run(src.id, src.name, lambda s=src: s.predictions(client, today, today_fx)) or []
 
     # 5) Karne (geçmiş günler) → trust
     hist_results = registry.results_from_history(hist)
@@ -258,6 +258,9 @@ def main(argv=None):
         if ext:
             m["provenance"]["predictions"] = {"source": ", ".join(e["source"] for e in ext),
                                               "t": ext[0]["fetched_at"]}
+        if m["model"] and mk and "1" in mk["implied"] and max(
+                abs(m["model"]["probs"][k] - mk["implied"][k]) for k in ("1", "X", "2")) > value.MAX_EDGE:
+            m["flags"].append("Model-piyasa farkı çok büyük (veri hatası olabilir)")
         m["value"] = value.find_value((m["model"] or {}).get("probs"), m["odds"], (mk or {}).get("implied"), trust)
         commentator.annotate(m, trust, use_llm=not args.no_llm and lg is not None)
         if f.result:

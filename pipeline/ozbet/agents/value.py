@@ -3,6 +3,7 @@ from __future__ import annotations
 
 from .. import config
 
+MAX_EDGE = 0.20
 VALUE_MARKETS = ["1", "X", "2", "O2.5", "U2.5", "BTTS_Y", "BTTS_N", "O1.5", "U1.5", "O3.5", "U3.5"]
 
 
@@ -19,6 +20,8 @@ def find_value(model_probs: dict | None, odds: dict | None, implied: dict | None
         # Karnede kötü giden markette model olasılığı ima olasılığa doğru büzülür
         mp_adj = ip + (mp - ip) * min(t, 1.0)
         edge = mp_adj - ip
+        if edge > MAX_EDGE:   # model ile piyasa arasında aşırı fark → büyük olasılıkla veri/eşleme hatası
+            continue
         if edge >= config.VALUE_EDGE and mp_adj >= 0.25:
             out.append({"market": k, "model_p": round(mp_adj, 4), "implied_p": round(ip, 4),
                         "odds": o, "edge": round(edge, 4), "ev": round(mp_adj * o - 1, 4)})

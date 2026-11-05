@@ -66,6 +66,7 @@ jobs:
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
           API_FOOTBALL_KEY: ${{ secrets.API_FOOTBALL_KEY }}
           FOOTBALL_DATA_ORG_KEY: ${{ secrets.FOOTBALL_DATA_ORG_KEY }}
+          FLASHSCORE_FSIGN: ${{ vars.FLASHSCORE_FSIGN }}
         run: |
           if [ -n "${{ github.event.inputs.date }}" ]; then
             python -m ozbet.run --date "${{ github.event.inputs.date }}"
