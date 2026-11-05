@@ -17,7 +17,7 @@ export function provenanceText(m: Match): string | null {
   const parts = Object.entries(p).map(([k, v]) => `${PROV_LABEL[k] ?? k}: ${v.source} ${fmtTime(v.t)}`);
   return parts.length ? parts.join(' · ') : null;
 }
-export const PROV_LABEL: Record<string, string> = { fixture: 'Bülten', odds: 'Oran', stats: 'İstatistik', squad: 'Kadro', model: 'Model', predictions: 'Tahmin siteleri', consensus: 'Konsensüs', fixtures: 'Bülten', results: 'Sonuç' };
+export const PROV_LABEL: Record<string, string> = { news: 'Haber', fixture: 'Bülten', odds: 'Oran', stats: 'İstatistik', squad: 'Kadro', model: 'Model', predictions: 'Tahmin siteleri', consensus: 'Konsensüs', fixtures: 'Bülten', results: 'Sonuç' };
 
 export function MatchCard({ m, date }: { m: Match; date: string }) {
   const finished = m.status === 'finished' && m.result;
@@ -27,6 +27,7 @@ export function MatchCard({ m, date }: { m: Match; date: string }) {
   const prov = provenanceText(m);
   const href = `/mac/${date}/${encodeURIComponent(m.id)}`;
   const alarms = m.market?.drop_alarms ?? [];
+  const hasNews = [...(m.news?.home ?? []), ...(m.news?.away ?? [])].some((n) => n.tags?.some((t) => t === 'sakat' || t === 'ceza' || t === 'td'));
 
   return (
     <article className="panel overflow-visible">
@@ -109,8 +110,9 @@ export function MatchCard({ m, date }: { m: Match; date: string }) {
         )}
       </div>
 
-      {(alarms.length > 0 || m.flags?.length > 0) && (
+      {(alarms.length > 0 || m.flags?.length > 0 || hasNews) && (
         <div className="px-3.5 mt-2 flex flex-wrap gap-1.5">
+          {hasNews && <Badge tone="warn" title="Sakatlık, ceza veya teknik direktör haberi var">Haber</Badge>}
           {alarms.length > 0 && <Badge tone="warn" title="Sabahtan bu yana belirgin oran düşüşü">Düşen oran: {alarms.map(marketLabel).join(', ')}</Badge>}
           {m.flags?.map((f) => <Badge key={f}>{f}</Badge>)}
         </div>

@@ -116,6 +116,22 @@ export interface Model {
   notes: string[];
 }
 
+export type NewsTag = 'sakat' | 'ceza' | 'td' | 'kadro' | 'transfer';
+
+export interface NewsItem {
+  title: string;
+  url: string;
+  source: string;
+  published: string;
+  tags: (NewsTag | string)[];
+}
+
+export interface MatchNews {
+  home: NewsItem[];
+  away: NewsItem[];
+  fetched_at: string | null;
+}
+
 export interface Match {
   id: string;
   code: string | null;
@@ -138,6 +154,7 @@ export interface Match {
   } | null;
   model: Model | null;
   stats: { home: TeamStats; away: TeamStats; h2h: H2H[] } | null;
+  news?: MatchNews | null;
   squad: { home: SquadSide | null; away: SquadSide | null; source: string | null; fetched_at: string | null } | null;
   consensus: { sources: ConsensusSource[]; summary: ConsensusSummary[] } | null;
   value: ValueItem[];

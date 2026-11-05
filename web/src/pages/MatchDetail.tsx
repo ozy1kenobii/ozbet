@@ -7,6 +7,7 @@ import { Bars, Heatmap, LineChart, ProbBar } from '../components/charts';
 import { Badge, Empty, FormStrip, Loading, Section, Stars } from '../components/ui';
 import { AddToCoupon } from '../components/AddToCoupon';
 import { PROV_LABEL } from '../components/MatchCard';
+import { NewsList } from '../components/NewsList';
 
 export default function MatchDetail() {
   const { date = '', id = '' } = useParams();
@@ -63,6 +64,7 @@ function Detail({ m, date }: { m: Match; date: string }) {
       <OddsMovement m={m} />
       <StatsSection m={m} />
       <SquadSection m={m} />
+      <NewsList m={m} />
       <ConsensusSection m={m} />
 
       {m.comment && (

@@ -109,6 +109,12 @@ def test_full_run(tmp_path, monkeypatch):
     monkeypatch.setattr(registry, "NEWS_SOURCES", [])
     monkeypatch.setattr(registry, "RESULT_SOURCES", [])
     monkeypatch.setattr(registry, "extra_history", lambda c, b, t: {})
+    from ozbet.sources import news_rss
+    fake_news = {"teams": {"galatasaray": {"items": [
+        {"title": "ÖRNEK: Galatasaray'da sakatlık", "url": "https://example.com/n1", "source": "Örnek",
+         "published": "2026-11-05T10:00:00+03:00", "tags": ["sakat"]}], "coach_change": False},
+        "fenerbahce": {"items": [], "coach_change": True}}, "fetched_at": "t", "feeds_ok": 1, "feeds_failed": []}
+    monkeypatch.setattr(news_rss, "collect", lambda c, f, now=None: fake_news)
     fake_pred = [Prediction("forebet", "Galatasaray", "Fenerbahce", "2026-11-05", "t",
                             {"1X2": "1", "OU25": "O2.5", "BTTS": "BTTS_Y"}),
                  Prediction("sportytrader", "Galatasaray", "Fenerbahçe SK", "2026-11-05", "t",
@@ -128,6 +134,9 @@ def test_full_run(tmp_path, monkeypatch):
     assert any(s["source"] == "forebet" for s in g["consensus"]["sources"])
     assert g["pick"]["stars"] in range(1, 6) and g["comment"]
     assert g["provenance"]["odds"]["source"] == "nesine"
+    assert g["news"]["home"][0]["tags"] == ["sakat"] and g["news"]["away"] == []
+    assert g["squad"]["away"]["coach_change"] is True and st["news_rss"] == "ok"
+    assert "sakatlık haberi" in g["comment"] or len(g["comment"].split(". ")) >= 6
     other = ms["1300"]
     assert other["model"] is None and "Veri yetersiz" in other["flags"] and other["league"] == "OTHER"
     for f in ("latest.json", "index.json", "scorecard.json", "status.json"):

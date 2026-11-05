@@ -95,7 +95,7 @@ function teamStats(base) {
 }
 
 function match(date, spec) {
-  const { lg, h, a, time, lh, la, code = null, mbs = 1, noOdds, noModel, noSquad, finished, quality = 'high', alarm, flags = [], lowStats, boost } = spec;
+  const { lg, h, a, time, lh, la, code = null, mbs = 1, noOdds, noModel, noSquad, finished, quality = 'high', alarm, flags = [], lowStats, boost, news } = spec;
   const kickoff = `${date}T${time}:00+03:00`;
   const md = noModel ? null : model(lh, la, quality);
   const p = md?.probs ?? model(lh, la).probs;
@@ -152,6 +152,7 @@ function match(date, spec) {
       away: { missing: [{ name: 'Örnek Oyuncu C', reason: 'cezalı', key: false }], rotation_risk: false, coach_change: false, adjustment: 0.0 },
       source: 'flashscore', fetched_at: t,
     },
+    ...(news ? { news: sampleNews(date, news) } : {}),
     consensus: md ? { sources: cs, summary: [{ market: 'BTTS_Y', agree: agreeB, total: 5, text: `5 kaynaktan ${agreeB}${SUF[agreeB]} KG Var diyor` }] } : null,
     value, ...(value.length ? {} : { value_note: 'Değer yok' }),
     pick,
@@ -162,8 +163,19 @@ function match(date, spec) {
       ...(odds ? { odds: { source: 'nesine', t } } : {}),
       stats: { source: 'football-data.co.uk', t: `${date}T08:31:00+03:00` },
       ...(noSquad ? {} : { squad: { source: 'flashscore', t } }),
+      ...(news ? { news: { source: 'RSS/Atom haber akışları', t } } : {}),
     },
   };
+}
+
+// Örnek haberler: başlıklar "ÖRNEK:" ile başlar, URL'ler example.com. spec.news = { home: [[başlık, kaynak, saatÖnce, etiketler]], away: [...] }
+function sampleNews(date, spec) {
+  const base = new Date(`${date}T18:31:00+03:00`).getTime();
+  const mk = (side) => (spec[side] ?? []).map(([title, source, hAgo, tags], i) => ({
+    title: `ÖRNEK: ${title}`, url: `https://example.com/haber/${side}-${i + 1}-${slug(title).slice(0, 30)}`, source,
+    published: new Date(base - hAgo * 3600_000).toISOString().replace('.000Z', '+00:00'), tags,
+  }));
+  return { home: mk('home'), away: mk('away'), fetched_at: `${date}T18:31:00+03:00` };
 }
 
 const D = '2026-11-05', D0 = '2026-11-04';
@@ -179,16 +191,22 @@ const sources = (date) => [
 ];
 
 const today = [
-  { lg: 'TR1', h: 'Galatasaray', a: 'Fenerbahçe', time: '20:00', lh: 1.62, la: 1.08, code: '1234', mbs: 1, alarm: true, boost: 'BTTS_Y' },
+  { lg: 'TR1', h: 'Galatasaray', a: 'Fenerbahçe', time: '20:00', lh: 1.62, la: 1.08, code: '1234', mbs: 1, alarm: true, boost: 'BTTS_Y',
+    news: {
+      home: [['Ev sahibinde golcü antrenmanda sakatlandı', 'A Spor', 5, ['sakat']], ['Derbi öncesi son çalışma tamamlandı', 'NTV Spor', 9, []], ['Orta saha oyuncusu kırmızı kart cezası nedeniyle yok', 'Fotomaç', 30, ['ceza']]],
+      away: [['Teknik direktör görevine yeni isim getirildi', 'AA', 40, ['td']], ['Kadroya alınmayan iki oyuncu derbide yok', 'TRT Haber', 20, ['kadro']]],
+    } },
   { lg: 'TR1', h: 'Trabzonspor', a: 'Başakşehir', time: '17:00', lh: 1.45, la: 1.05, code: '1235', mbs: 1 },
   { lg: 'TR1', h: 'Samsunspor', a: 'Kasımpaşa', time: '14:30', lh: 1.3, la: 1.2, code: '1236', mbs: 2, finished: { ft: [2, 1], ht: [1, 0] } },
   { lg: 'TR2', h: 'Erzurumspor', a: 'Bandırmaspor', time: '13:30', lh: 1.25, la: 0.95, code: '1240', mbs: 3, noOdds: true, noSquad: true, quality: 'low', lowStats: true },
   { lg: 'TR2', h: 'Iğdır FK', a: 'Ankara Keçiörengücü', time: '16:00', lh: 1.1, la: 1.0, code: null, mbs: null, noModel: true, noOdds: true, noSquad: true, lowStats: true, flags: ['Düşük veri'] },
-  { lg: 'UCL', h: 'Real Madrid', a: 'Liverpool', time: '23:00', lh: 1.55, la: 1.45, code: '1301', mbs: 1, boost: ['O2.5', 'BTTS_Y'] },
+  { lg: 'UCL', h: 'Real Madrid', a: 'Liverpool', time: '23:00', lh: 1.55, la: 1.45, code: '1301', mbs: 1, boost: ['O2.5', 'BTTS_Y'],
+    news: { away: [['Defender ruled out with hamstring injury', 'Sky Sports', 12, ['sakat']], ['Rotation expected before weekend fixture', 'ESPN', 26, ['kadro']]] } },
   { lg: 'UCL', h: 'Bayern München', a: 'Paris Saint-Germain', time: '23:00', lh: 1.75, la: 1.35, code: '1302', mbs: 1 },
   { lg: 'UCL', h: 'Inter', a: 'Benfica', time: '23:00', lh: 1.6, la: 0.95, code: '1303', mbs: 1, noSquad: true },
   { lg: 'UCL', h: 'Club Brugge', a: 'Galatasaray', time: '20:45', lh: 1.35, la: 1.25, code: '1300', mbs: 1 },
-  { lg: 'ENG1', h: 'Arsenal', a: 'Chelsea', time: '22:00', lh: 1.7, la: 1.1, code: '1401', mbs: 1, boost: '1' },
+  { lg: 'ENG1', h: 'Arsenal', a: 'Chelsea', time: '22:00', lh: 1.7, la: 1.1, code: '1401', mbs: 1, boost: '1',
+    news: { home: [['Club confirms new loan signing', 'ESPN', 15, ['transfer']]] } },
   { lg: 'ENG1', h: 'Brentford', a: 'Everton', time: '22:00', lh: 1.4, la: 1.15, code: '1402', mbs: 2, noOdds: true },
   { lg: 'ESP1', h: 'Real Betis', a: 'Sevilla', time: '22:00', lh: 1.4, la: 1.1, code: '1501', mbs: 1, boost: 'U2.5' },
 ];
