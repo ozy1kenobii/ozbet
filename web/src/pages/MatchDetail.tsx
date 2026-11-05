@@ -8,6 +8,7 @@ import { Bars, Heatmap, LineChart, ProbBar } from '../components/charts';
 import { Badge, DropBadge, Empty, FormStrip, Loading, ResultBadge, Section, Stars, ValueBadge } from '../components/ui';
 import { AddToCoupon } from '../components/AddToCoupon';
 import { PROV_LABEL, pickResult } from '../components/MatchCard';
+import { Simulation50 } from '../components/Simulation50';
 
 export default function MatchDetail() {
   const { date = '', id = '' } = useParams();
@@ -183,12 +184,7 @@ function Detail({ m, date }: { m: Match; date: string }) {
         <OddsMovement m={m} />
       </section>
 
-      {/*
-        SİMÜLASYON — <Simulation50 /> buraya gelecek.
-        Bileşen kendi kökünü <section id="sim50"> olarak render eder; sekme bu çapayı
-        DOM'da bulunca otomatik görünür. Örnek:
-          {m.model && <Simulation50 m={m} />}
-      */}
+      {/* SİMÜLASYON: <section id="sim50"> Olasılıklar bölümündeki model bloğunun içinde render edilir. */}
 
       {/* FORM */}
       {hasStats && (
@@ -303,6 +299,13 @@ function ModelSections({ m }: { m: Match }) {
           <Section title="Skor olasılıkları">
             <div className="panel p-3"><Heatmap matrix={md.score_matrix} home={m.home.name} away={m.away.name} /></div>
           </Section>
+        ) : null}
+        {md.sample_runs?.runs?.length ? (
+          <section id="sim50" className="md:col-span-2 md:order-last">
+            <Section title="50 Maç Simülasyonu" aside={<span className="text-[12px] text-muted">Örnek koşular</span>}>
+              <Simulation50 data={md.sample_runs} home={m.home.name} away={m.away.name} />
+            </Section>
+          </section>
         ) : null}
         <div>
           {md.top_scores?.length ? (
