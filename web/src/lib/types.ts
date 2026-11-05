@@ -102,6 +102,26 @@ export interface OddsSnapshot extends Odds {
   t: string;
 }
 
+/** 50 örnek maç akışı — yalnızca gösterim; olasılıklar 10.000 simülasyondan gelir. */
+export interface SampleGoal {
+  min: number | string;          // 23 veya "45+2" / "90+3"
+  side: 'home' | 'away';
+}
+
+export interface SampleRun {
+  i: number;
+  ft: [number, number];
+  ht: [number, number];
+  goals: SampleGoal[];
+}
+
+export interface SampleRuns {
+  n: number;
+  runs: SampleRun[];
+  summary: { '1': number; X: number; '2': number; 'O2.5': number; BTTS_Y: number; top_scores: [string, number][] };
+  note: string;
+}
+
 export interface Model {
   lambda_home: number;
   lambda_away: number;
@@ -114,6 +134,7 @@ export interface Model {
   total_goals: number[];
   data_quality: 'high' | 'medium' | 'low';
   notes: string[];
+  sample_runs?: SampleRuns;
 }
 
 export interface Match {

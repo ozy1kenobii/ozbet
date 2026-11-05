@@ -17,6 +17,56 @@ def seed_for(key: str) -> int:
     return int(hashlib.sha1(key.encode()).hexdigest()[:8], 16)
 
 
+SAMPLE_N = 50
+SAMPLE_NOTE = "50 örnek koşu yalnızca gösterim içindir; olasılıklar 10.000 simülasyondan hesaplanır."
+
+
+def _minutes(rng: np.random.Generator, k: int, lo: int, hi: int, extra_max: int) -> list[tuple[int, int]]:
+    """k gol için (dakika, uzatma) çiftleri: uniform lo..hi, %10 olasılıkla hi+1..hi+extra_max."""
+    base = rng.integers(lo, hi + 1, k)
+    stoppage = rng.random(k) < 0.10
+    extra = rng.integers(1, extra_max + 1, k)
+    return [(hi, int(e)) if st else (int(b), 0) for b, st, e in zip(base, stoppage, extra)]
+
+
+def _fmt_min(m: int, e: int) -> int | str:
+    return f"{m}+{e}" if e else m
+
+
+def sample_runs(h1, a1, h2, a2, w, seed: int, n: int = SAMPLE_N) -> dict:
+    """10.000'lik ağırlıklı örneklemden ağırlığa göre n maç seçer ve gol dakikalarını üretir.
+
+    Yalnızca gösterim içindir; olasılıklar bu koşulardan hesaplanmaz.
+    """
+    rng = np.random.default_rng([seed, n, 0x5A])   # ana Monte Carlo akışından bağımsız, maç tohumuna bağlı
+    idx = rng.choice(len(w), size=n, replace=True, p=w)
+    runs = []
+    res = {"1": 0, "X": 0, "2": 0}
+    o25 = btts = 0
+    scores: dict[str, int] = {}
+    for i, j in enumerate(idx, start=1):
+        hh1, aa1, hh2, aa2 = int(h1[j]), int(a1[j]), int(h2[j]), int(a2[j])
+        goals = []
+        for (hk, ak, lo, hi, ex) in ((hh1, aa1, 1, 45, 4), (hh2, aa2, 46, 90, 5)):
+            sides = ["home"] * hk + ["away"] * ak
+            mins = _minutes(rng, hk + ak, lo, hi, ex)
+            half = sorted(zip(mins, sides), key=lambda t: (t[0][0], t[0][1]))
+            goals += [{"min": _fmt_min(*m), "side": sd} for m, sd in half]
+        hg, ag = hh1 + hh2, aa1 + aa2
+        runs.append({"i": i, "ft": [hg, ag], "ht": [hh1, aa1], "goals": goals})
+        res["1" if hg > ag else "X" if hg == ag else "2"] += 1
+        o25 += hg + ag > 2
+        btts += hg > 0 and ag > 0
+        key = f"{hg}-{ag}"
+        scores[key] = scores.get(key, 0) + 1
+    top = sorted(scores.items(), key=lambda t: (-t[1], t[0]))[:5]
+    return {
+        "n": n, "runs": runs,
+        "summary": {**res, "O2.5": int(o25), "BTTS_Y": int(btts), "top_scores": [[s, c] for s, c in top]},
+        "note": SAMPLE_NOTE,
+    }
+
+
 def simulate(lh: float, la: float, rho: float, ht_share: float = 0.44,
              n: int = 10_000, seed: int = 0) -> dict:
     rho = clamp_rho(rho, lh, la)   # kupa çapraz λ'larında τ negatife düşmesin
@@ -52,4 +102,5 @@ def simulate(lh: float, la: float, rho: float, ht_share: float = 0.44,
         "top_scores": [{"score": s, "p": round(p, 4)} for s, p in flat[:5]],
         "score_matrix": [[round(float(x), 4) for x in row] for row in small],
         "total_goals": [round(x, 4) for x in total_goals],
+        "sample_runs": sample_runs(h1, a1, h2, a2, w, seed),
     }

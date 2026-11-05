@@ -7,6 +7,7 @@ import { Bars, Heatmap, LineChart, ProbBar } from '../components/charts';
 import { Badge, Empty, FormStrip, Loading, Section, Stars } from '../components/ui';
 import { AddToCoupon } from '../components/AddToCoupon';
 import { PROV_LABEL } from '../components/MatchCard';
+import { Simulation50 } from '../components/Simulation50';
 
 export default function MatchDetail() {
   const { date = '', id = '' } = useParams();
@@ -150,6 +151,13 @@ function ModelSections({ m }: { m: Match }) {
           <Section title="Skor olasılıkları">
             <div className="panel p-3"><Heatmap matrix={md.score_matrix} home={m.home.name} away={m.away.name} /></div>
           </Section>
+        ) : null}
+        {md.sample_runs?.runs?.length ? (
+          <section id="sim50" className="md:col-span-2 md:order-last">
+            <Section title="50 Maç Simülasyonu" aside={<span className="text-[12px] text-muted">Örnek koşular</span>}>
+              <Simulation50 data={md.sample_runs} home={m.home.name} away={m.away.name} />
+            </Section>
+          </section>
         ) : null}
         <div>
           {md.top_scores?.length ? (

@@ -53,6 +53,41 @@ function model(lh, la, quality = 'high') {
   };
 }
 
+// 50 örnek koşu — ayrı, maç id'sine bağlı RNG (diğer örnek sayıları değişmesin).
+// Pipeline'daki gibi: skor ağırlığa (DC τ dahil) göre seçilir, İY payı ~%44, dakikalar uniform.
+function sampleRuns(id, lh, la, rho = -0.08, hts = 0.44) {
+  let st = [...id].reduce((h, c) => (Math.imul(h, 31) + c.charCodeAt(0)) >>> 0, 2166136261);
+  const r = () => ((st = (Math.imul(st, 1664525) + 1013904223) >>> 0) / 4294967296);
+  const ri = (lo, hi) => lo + Math.floor(r() * (hi - lo + 1));
+  const N = 11, cells = [];
+  const tau = (h, a) => (h === 0 && a === 0 ? 1 - lh * la * rho : h === 0 && a === 1 ? 1 + lh * rho : h === 1 && a === 0 ? 1 + la * rho : h === 1 && a === 1 ? 1 - rho : 1);
+  let tot = 0;
+  for (let h = 0; h < N; h++) for (let a = 0; a < N; a++) { const w = pois(lh, h) * pois(la, a) * tau(h, a); cells.push([h, a, w]); tot += w; }
+  const pick = () => { let u = r() * tot; for (const c of cells) { u -= c[2]; if (u <= 0) return c; } return cells[0]; };
+  const mins = (k, lo, hi, ex) => Array.from({ length: k }, () => (r() < 0.1 ? [hi, ri(1, ex)] : [ri(lo, hi), 0]));
+  const runs = [], sm = { '1': 0, X: 0, '2': 0, 'O2.5': 0, BTTS_Y: 0 }, cnt = {};
+  for (let i = 1; i <= 50; i++) {
+    const [hg, ag] = pick();
+    let h1 = 0, a1 = 0;
+    for (let k = 0; k < hg; k++) if (r() < hts) h1++;
+    for (let k = 0; k < ag; k++) if (r() < hts) a1++;
+    const goals = [];
+    for (const [hk, ak, lo, hi, ex] of [[h1, a1, 1, 45, 4], [hg - h1, ag - a1, 46, 90, 5]]) {
+      const sides = [...Array(hk).fill('home'), ...Array(ak).fill('away')];
+      const m = mins(hk + ak, lo, hi, ex);
+      sides.map((sd, j) => [m[j], sd]).sort((x, y) => x[0][0] - y[0][0] || x[0][1] - y[0][1])
+        .forEach(([[b, e], sd]) => goals.push({ min: e ? `${b}+${e}` : b, side: sd }));
+    }
+    runs.push({ i, ft: [hg, ag], ht: [h1, a1], goals });
+    sm[hg > ag ? '1' : hg === ag ? 'X' : '2']++;
+    if (hg + ag > 2) sm['O2.5']++;
+    if (hg > 0 && ag > 0) sm.BTTS_Y++;
+    cnt[`${hg}-${ag}`] = (cnt[`${hg}-${ag}`] ?? 0) + 1;
+  }
+  const top = Object.entries(cnt).sort((x, y) => y[1] - x[1] || (x[0] < y[0] ? -1 : 1)).slice(0, 5);
+  return { n: 50, runs, summary: { ...sm, top_scores: top }, note: '50 örnek koşu yalnızca gösterim içindir; olasılıklar 10.000 simülasyondan hesaplanır.' };
+}
+
 function oddsFrom(p, margin = 1.06) {
   const o = {};
   for (const k of ['1', 'X', '2', 'O2.5', 'U2.5', 'BTTS_Y', 'BTTS_N', 'O1.5', 'U1.5', 'O3.5', 'U3.5', '1X', 'X2', '12']) {
@@ -95,9 +130,10 @@ function teamStats(base) {
 }
 
 function match(date, spec) {
-  const { lg, h, a, time, lh, la, code = null, mbs = 1, noOdds, noModel, noSquad, finished, quality = 'high', alarm, flags = [], lowStats, boost } = spec;
+  const { lg, h, a, time, lh, la, code = null, mbs = 1, noOdds, noModel, noSquad, finished, quality = 'high', alarm, flags = [], lowStats, boost, noSim } = spec;
   const kickoff = `${date}T${time}:00+03:00`;
   const md = noModel ? null : model(lh, la, quality);
+  if (md && !noSim) md.sample_runs = sampleRuns(`${lg}-${date.replace(/-/g, '')}-${slug(h)}-${slug(a)}`, lh, la);
   const p = md?.probs ?? model(lh, la).probs;
   const odds = noOdds ? null : oddsFrom(p);
   if (odds && boost) for (const b of [].concat(boost)) odds[b] = r2(odds[b] * 1.2);
@@ -182,7 +218,7 @@ const today = [
   { lg: 'TR1', h: 'Galatasaray', a: 'Fenerbahçe', time: '20:00', lh: 1.62, la: 1.08, code: '1234', mbs: 1, alarm: true, boost: 'BTTS_Y' },
   { lg: 'TR1', h: 'Trabzonspor', a: 'Başakşehir', time: '17:00', lh: 1.45, la: 1.05, code: '1235', mbs: 1 },
   { lg: 'TR1', h: 'Samsunspor', a: 'Kasımpaşa', time: '14:30', lh: 1.3, la: 1.2, code: '1236', mbs: 2, finished: { ft: [2, 1], ht: [1, 0] } },
-  { lg: 'TR2', h: 'Erzurumspor', a: 'Bandırmaspor', time: '13:30', lh: 1.25, la: 0.95, code: '1240', mbs: 3, noOdds: true, noSquad: true, quality: 'low', lowStats: true },
+  { lg: 'TR2', h: 'Erzurumspor', a: 'Bandırmaspor', time: '13:30', lh: 1.25, la: 0.95, code: '1240', mbs: 3, noOdds: true, noSquad: true, quality: 'low', lowStats: true, noSim: true },
   { lg: 'TR2', h: 'Iğdır FK', a: 'Ankara Keçiörengücü', time: '16:00', lh: 1.1, la: 1.0, code: null, mbs: null, noModel: true, noOdds: true, noSquad: true, lowStats: true, flags: ['Düşük veri'] },
   { lg: 'UCL', h: 'Real Madrid', a: 'Liverpool', time: '23:00', lh: 1.55, la: 1.45, code: '1301', mbs: 1, boost: ['O2.5', 'BTTS_Y'] },
   { lg: 'UCL', h: 'Bayern München', a: 'Paris Saint-Germain', time: '23:00', lh: 1.75, la: 1.35, code: '1302', mbs: 1 },
