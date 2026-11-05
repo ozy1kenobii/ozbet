@@ -21,16 +21,32 @@ LINK = re.compile(r"^/en/betting-tips/([a-z0-9-]+)-(\d{5,})/?$")
 MAX_PAGES = 20
 
 
+_TIP_WORDS = re.compile(r"\b(win|draw|over|under|both teams|btts|goals?)\b", re.I)
+
+
 def parse_match(html: str) -> tuple[str, str, str] | None:
+    """Takımlar <title>/h1'den ('X vs Y Prediction - ...'); tahmin: 'Prediction' içeren satırı izleyen,
+    bahis ifadesi içeren ilk kısa satır."""
     soup = BeautifulSoup(html, "lxml")
-    text = soup.get_text("\n", strip=True)
-    m = re.search(r"Prediction\s*:?\s*\n?\s*([^\n]{4,120})", text)
-    h1 = soup.find("h1")
-    title = h1.get_text(" ", strip=True) if h1 else ""
-    tm = re.search(r"(.+?)\s+(?:vs\.?|-)\s+(.+?)(?:\s+(?:prediction|betting tips|odds).*)?$", title, re.I)
-    if not m or not tm:
+    title = (soup.title.get_text(" ", strip=True) if soup.title else "") or \
+            (soup.find("h1").get_text(" ", strip=True) if soup.find("h1") else "")
+    tm = re.search(r"^(.+?)\s+vs\.?\s+(.+?)\s+(?:prediction|betting tips|odds)\b", title, re.I)
+    if not tm:
         return None
-    return tm.group(1).strip(), tm.group(2).strip(), m.group(1).strip()
+    home, away = tm.group(1).strip(), tm.group(2).strip()
+    for s in soup(["script", "style", "noscript"]):
+        s.decompose()
+    lines = [l.strip() for l in soup.get_text("\n", strip=True).split("\n") if l.strip()]
+    for i, line in enumerate(lines):
+        if re.search(r"\bprediction\b", line, re.I) and len(line) < 140:
+            # aynı satırda ':' sonrası veya sonraki 3 satır
+            cands = [line.split(":", 1)[1]] if ":" in line else []
+            cands += lines[i + 1:i + 4]
+            for c in cands:
+                c = c.strip()
+                if 3 < len(c) < 120 and _TIP_WORDS.search(c) and "odds" not in c.lower():
+                    return home, away, c
+    return None
 
 
 def predictions(client: PoliteClient, day: date, fixtures=()) -> list[Prediction]:

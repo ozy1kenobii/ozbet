@@ -69,6 +69,10 @@ class PoliteClient:
         cp = self._cache_path(url, params)
         if ttl > 0 and cp.exists() and time.time() - cp.stat().st_mtime < ttl:
             text = cp.read_text(encoding="utf-8", errors="replace")
+            if len(text.strip()) < 20:   # eski sürümün önbelleğe yazdığı boş yanıt → yok say
+                cp.unlink(missing_ok=True)
+                return self.get(url, params=params, headers=headers, ttl=0, check_robots=check_robots,
+                                retries=retries)
             self.recent = (self.recent + [(url + " [önbellek]", 200, text[:150_000])])[-60:]
             return text
         if check_robots and not self.allowed(url):
@@ -84,7 +88,7 @@ class PoliteClient:
                     raise Blocked(f"HTTP {r.status_code}: {url}")
                 r.raise_for_status()
                 text = r.text
-                if ttl > 0:
+                if ttl > 0 and len(text.strip()) >= 20:   # "0" gibi boş/hata yanıtları önbelleğe girmesin
                     cp.write_text(text, encoding="utf-8")
                 return text
             except Blocked:

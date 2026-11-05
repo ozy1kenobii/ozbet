@@ -23,6 +23,7 @@ from .base import Fixture, MissingPlayer, TeamNews, now_iso
 log = logging.getLogger("ozbet.flashscore")
 HOSTS = ["https://d.flashscore.com.tr", "https://d.flashscore.com"]
 FSIGN = os.environ.get("FLASHSCORE_FSIGN") or "SW9D1eZo"
+FEED_HOST: str | None = None   # keşifte tarayıcının kullandığı feed sunucusu
 
 
 def parse_feed(text: str, t: str) -> list[Fixture]:
@@ -66,18 +67,34 @@ def discover_fsign() -> str | None:
     except ImportError:
         return None
     found: list[str] = []
+    seen: list[str] = []
+    note = ""
     try:
         with sync_playwright() as p:
             br = p.chromium.launch()
             pg = br.new_page(locale="tr-TR")
-            pg.on("request", lambda r: found.append(r.headers.get("x-fsign", "")) if "/x/feed/" in r.url else None)
-            pg.goto("https://www.flashscore.com.tr/", timeout=45000)
-            pg.wait_for_timeout(6000)
+
+            def on_req(r):
+                if "/x/feed/" in r.url or "feed" in r.url:
+                    seen.append(f"{r.url} fsign={r.headers.get('x-fsign', '-')}")
+                    if r.headers.get("x-fsign"):
+                        found.append(r.headers["x-fsign"])
+                        global FEED_HOST
+                        FEED_HOST = r.url.split("/x/feed/")[0] if "/x/feed/" in r.url else FEED_HOST
+            pg.on("request", on_req)
+            resp = pg.goto("https://www.flashscore.com.tr/", timeout=45000)
+            note = f"ana sayfa HTTP {resp.status if resp else '?'}; başlık: {pg.title()[:80]}"
+            pg.wait_for_timeout(8000)
             br.close()
     except Exception as e:  # noqa: BLE001
+        note = f"Playwright hatası: {type(e).__name__}: {str(e)[:200]}"
         log.info("fsign keşfi başarısız: %s", e)
-    vals = [v for v in found if v]
-    return vals[0] if vals else None
+    try:
+        d = config.CACHE_DIR / "debug"; d.mkdir(parents=True, exist_ok=True)
+        (d / "flashscore-kesif.txt").write_text(note + "\n" + "\n".join(seen[:40]), encoding="utf-8")
+    except OSError:
+        pass
+    return found[0] if found else None
 
 
 def _feed(client: PoliteClient, offset: int, ttl: float) -> str:
@@ -85,7 +102,7 @@ def _feed(client: PoliteClient, offset: int, ttl: float) -> str:
     err = None
     for attempt in range(2):
         sign = _fsign or FSIGN
-        for host in HOSTS:
+        for host in ([FEED_HOST] if FEED_HOST else []) + HOSTS:
             lang = "tr" if host.endswith(".tr") else "en"
             url = f"{host}/x/feed/f_1_{offset}_3_{lang}_1"
             try:
