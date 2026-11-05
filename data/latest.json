@@ -1,14 +1,14 @@
 {
  "schema_version": 1,
  "date": "2026-11-05",
- "generated_at": "2026-11-05T16:19:58+03:00",
+ "generated_at": "2026-11-05T16:24:31+03:00",
  "run_label": "18:30",
  "sources": [
   {
    "id": "nesine",
    "name": "Nesine iddaa bülteni (kod, MBS, oran)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:17:20+03:00",
+   "fetched_at": "2026-11-05T16:22:51+03:00",
    "note": null,
    "items": 1099
   },
@@ -16,7 +16,7 @@
    "id": "iddaa",
    "name": "iddaa.com resmi bülten (oran, MBS)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:17:23+03:00",
+   "fetched_at": "2026-11-05T16:22:51+03:00",
    "note": null,
    "items": 1099
   },
@@ -24,7 +24,7 @@
    "id": "flashscore",
    "name": "Flashscore (fikstür)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:17:23+03:00",
+   "fetched_at": "2026-11-05T16:22:52+03:00",
    "note": null,
    "items": 175
   },
@@ -32,7 +32,7 @@
    "id": "api_football",
    "name": "API-Football (yedek, anahtar gerekir)",
    "status": "partial",
-   "fetched_at": "2026-11-05T16:17:23+03:00",
+   "fetched_at": "2026-11-05T16:22:52+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -40,7 +40,7 @@
    "id": "football_data_fixtures",
    "name": "football-data.co.uk fixtures.csv (oran yedeği)",
    "status": "partial",
-   "fetched_at": "2026-11-05T16:17:23+03:00",
+   "fetched_at": "2026-11-05T16:22:52+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -48,7 +48,7 @@
    "id": "football_data_history",
    "name": "football-data.co.uk (geçmiş sonuçlar + oranlar)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:18:11+03:00",
+   "fetched_at": "2026-11-05T16:23:00+03:00",
    "note": null,
    "items": 12475
   },
@@ -56,7 +56,7 @@
    "id": "understat",
    "name": "Understat (xG, 5 büyük lig)",
    "status": "missing",
-   "fetched_at": "2026-11-05T16:18:11+03:00",
+   "fetched_at": "2026-11-05T16:23:00+03:00",
    "note": "RuntimeError: understat bakımda",
    "items": 0
   },
@@ -64,7 +64,7 @@
    "id": "api_football_history",
    "name": "API-Football geçmiş (1. Lig vb., anahtar gerekir)",
    "status": "partial",
-   "fetched_at": "2026-11-05T16:18:11+03:00",
+   "fetched_at": "2026-11-05T16:23:00+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -72,7 +72,7 @@
    "id": "flashscore_news",
    "name": "Flashscore (sakat/cezalı)",
    "status": "partial",
-   "fetched_at": "2026-11-05T16:19:39+03:00",
+   "fetched_at": "2026-11-05T16:24:28+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -80,7 +80,7 @@
    "id": "transfermarkt",
    "name": "Transfermarkt (sakatlık listesi)",
    "status": "partial",
-   "fetched_at": "2026-11-05T16:19:39+03:00",
+   "fetched_at": "2026-11-05T16:24:28+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -88,7 +88,7 @@
    "id": "forebet",
    "name": "Forebet (matematiksel tahmin)",
    "status": "missing",
-   "fetched_at": "2026-11-05T16:19:39+03:00",
+   "fetched_at": "2026-11-05T16:24:29+03:00",
    "note": "Blocked: Forebet bot koruması (Cloudflare) erişimi engelliyor: HTTP 403: https://www.forebet.com/en/football-tips-and-predictions-for-today",
    "items": 0
   },
@@ -96,7 +96,7 @@
    "id": "sportytrader",
    "name": "SportyTrader (uzman tahmini)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:19:44+03:00",
+   "fetched_at": "2026-11-05T16:24:30+03:00",
    "note": null,
    "items": 14
   },
@@ -104,7 +104,7 @@
    "id": "freesupertips",
    "name": "FreeSuperTips (ipucu)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:19:57+03:00",
+   "fetched_at": "2026-11-05T16:24:31+03:00",
    "note": null,
    "items": 20
   },
@@ -112,7 +112,7 @@
    "id": "soccerstats",
    "name": "SoccerStats (lig istatistik eğilimi)",
    "status": "partial",
-   "fetched_at": "2026-11-05T16:19:57+03:00",
+   "fetched_at": "2026-11-05T16:24:31+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -120,7 +120,7 @@
    "id": "nesine_results",
    "name": "Nesine (sonuçlar)",
    "status": "partial",
-   "fetched_at": "2026-11-05T16:19:57+03:00",
+   "fetched_at": "2026-11-05T16:24:31+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -128,7 +128,7 @@
    "id": "flashscore_results",
    "name": "Flashscore (sonuçlar)",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:19:57+03:00",
+   "fetched_at": "2026-11-05T16:24:31+03:00",
    "note": null,
    "items": 268
   },
@@ -136,7 +136,7 @@
    "id": "pipeline",
    "name": "OZBET işleme",
    "status": "ok",
-   "fetched_at": "2026-11-05T16:19:58+03:00",
+   "fetched_at": "2026-11-05T16:24:31+03:00",
    "note": "Eşlenemeyen lig adları (ilk 15): Arjantin Primera A Kapanış, Kadınlar, Arjantin Primera LPF, Kapanış, Botsvana Premier Ligi, Fransa Ulusal Lig, Hindistan Süper Ligi, Irak Ligi, Katar 2. Lig, Mısır Kupası, Romanya 2. Lig, SAFF Şampiyonası, A Grubu, Senegal Premier Lig, UEFA Avrupa Ligi Günlük Bahisler, UEFA Konf. Ligi Günlük Bahisler, Uganda Premier Ligi, Umman Ligi",
    "items": 82
   }
@@ -184,11 +184,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -317,15 +317,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-05T16:19:40+03:00"
+     "t": "2026-11-05T16:24:29+03:00"
     }
    },
    "odds": {
@@ -417,7 +417,7 @@
        "OU25": "O2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:19:40+03:00",
+      "fetched_at": "2026-11-05T16:24:29+03:00",
       "note": "Over 2.5 goals"
      },
      {
@@ -472,19 +472,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:19:57+03:00"
+     "t": "2026-11-05T16:24:31+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:19:44+03:00"
+     "t": "2026-11-05T16:24:30+03:00"
     }
    },
    "odds": {
@@ -675,6 +675,1315 @@
      0.1151,
      0.0955
     ],
+    "sample_runs": {
+     "n": 50,
+     "runs": [
+      {
+       "i": 1,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 59,
+         "side": "home"
+        },
+        {
+         "min": 66,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 2,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 10,
+         "side": "away"
+        },
+        {
+         "min": 51,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 3,
+       "ft": [
+        5,
+        2
+       ],
+       "ht": [
+        4,
+        1
+       ],
+       "goals": [
+        {
+         "min": 20,
+         "side": "home"
+        },
+        {
+         "min": 23,
+         "side": "home"
+        },
+        {
+         "min": 27,
+         "side": "home"
+        },
+        {
+         "min": 33,
+         "side": "home"
+        },
+        {
+         "min": 37,
+         "side": "away"
+        },
+        {
+         "min": 55,
+         "side": "away"
+        },
+        {
+         "min": 70,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 4,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 5,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 6,
+       "ft": [
+        3,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 19,
+         "side": "away"
+        },
+        {
+         "min": 48,
+         "side": "home"
+        },
+        {
+         "min": 48,
+         "side": "home"
+        },
+        {
+         "min": 66,
+         "side": "away"
+        },
+        {
+         "min": "90+2",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 7,
+       "ft": [
+        5,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 38,
+         "side": "home"
+        },
+        {
+         "min": 46,
+         "side": "home"
+        },
+        {
+         "min": 50,
+         "side": "home"
+        },
+        {
+         "min": 68,
+         "side": "home"
+        },
+        {
+         "min": 87,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 8,
+       "ft": [
+        1,
+        3
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 36,
+         "side": "home"
+        },
+        {
+         "min": 45,
+         "side": "away"
+        },
+        {
+         "min": 49,
+         "side": "away"
+        },
+        {
+         "min": 71,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 9,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 18,
+         "side": "home"
+        },
+        {
+         "min": "45+3",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 10,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 20,
+         "side": "home"
+        },
+        {
+         "min": 46,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 11,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 30,
+         "side": "away"
+        },
+        {
+         "min": 36,
+         "side": "away"
+        },
+        {
+         "min": 59,
+         "side": "home"
+        },
+        {
+         "min": "90+5",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 12,
+       "ft": [
+        4,
+        4
+       ],
+       "ht": [
+        2,
+        2
+       ],
+       "goals": [
+        {
+         "min": 13,
+         "side": "away"
+        },
+        {
+         "min": 19,
+         "side": "home"
+        },
+        {
+         "min": 27,
+         "side": "home"
+        },
+        {
+         "min": 45,
+         "side": "away"
+        },
+        {
+         "min": 48,
+         "side": "away"
+        },
+        {
+         "min": 67,
+         "side": "home"
+        },
+        {
+         "min": 77,
+         "side": "away"
+        },
+        {
+         "min": 81,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 13,
+       "ft": [
+        0,
+        3
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 38,
+         "side": "away"
+        },
+        {
+         "min": 47,
+         "side": "away"
+        },
+        {
+         "min": 74,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 14,
+       "ft": [
+        3,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 50,
+         "side": "home"
+        },
+        {
+         "min": 50,
+         "side": "away"
+        },
+        {
+         "min": 68,
+         "side": "away"
+        },
+        {
+         "min": 90,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 15,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 1,
+         "side": "home"
+        },
+        {
+         "min": 55,
+         "side": "away"
+        },
+        {
+         "min": 81,
+         "side": "away"
+        },
+        {
+         "min": 82,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 16,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 16,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 17,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 39,
+         "side": "home"
+        },
+        {
+         "min": 52,
+         "side": "away"
+        },
+        {
+         "min": "90+5",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 18,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 37,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 19,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 20,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 17,
+         "side": "home"
+        },
+        {
+         "min": 26,
+         "side": "away"
+        },
+        {
+         "min": 85,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 21,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 40,
+         "side": "home"
+        },
+        {
+         "min": 53,
+         "side": "home"
+        },
+        {
+         "min": 71,
+         "side": "away"
+        },
+        {
+         "min": 89,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 22,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 23,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 14,
+         "side": "home"
+        },
+        {
+         "min": 63,
+         "side": "home"
+        },
+        {
+         "min": 84,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 24,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 87,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 25,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 38,
+         "side": "away"
+        },
+        {
+         "min": "45+3",
+         "side": "away"
+        },
+        {
+         "min": 68,
+         "side": "home"
+        },
+        {
+         "min": 77,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 26,
+       "ft": [
+        1,
+        3
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 21,
+         "side": "away"
+        },
+        {
+         "min": 24,
+         "side": "home"
+        },
+        {
+         "min": 70,
+         "side": "away"
+        },
+        {
+         "min": "90+1",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 27,
+       "ft": [
+        0,
+        4
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 42,
+         "side": "away"
+        },
+        {
+         "min": 58,
+         "side": "away"
+        },
+        {
+         "min": 78,
+         "side": "away"
+        },
+        {
+         "min": "90+4",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 28,
+       "ft": [
+        0,
+        3
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 42,
+         "side": "away"
+        },
+        {
+         "min": "45+4",
+         "side": "away"
+        },
+        {
+         "min": 72,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 29,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 23,
+         "side": "away"
+        },
+        {
+         "min": 50,
+         "side": "home"
+        },
+        {
+         "min": 67,
+         "side": "home"
+        },
+        {
+         "min": "90+1",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 30,
+       "ft": [
+        1,
+        3
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 14,
+         "side": "home"
+        },
+        {
+         "min": 19,
+         "side": "away"
+        },
+        {
+         "min": 52,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 31,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 26,
+         "side": "away"
+        },
+        {
+         "min": 33,
+         "side": "home"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        },
+        {
+         "min": 85,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 32,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 7,
+         "side": "home"
+        },
+        {
+         "min": 75,
+         "side": "home"
+        },
+        {
+         "min": 87,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 33,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 54,
+         "side": "home"
+        },
+        {
+         "min": 58,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 34,
+       "ft": [
+        2,
+        3
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": "45+1",
+         "side": "away"
+        },
+        {
+         "min": "45+2",
+         "side": "away"
+        },
+        {
+         "min": 81,
+         "side": "home"
+        },
+        {
+         "min": "90+1",
+         "side": "home"
+        },
+        {
+         "min": "90+5",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 35,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 5,
+         "side": "home"
+        },
+        {
+         "min": 73,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 36,
+       "ft": [
+        2,
+        3
+       ],
+       "ht": [
+        2,
+        2
+       ],
+       "goals": [
+        {
+         "min": 2,
+         "side": "away"
+        },
+        {
+         "min": 18,
+         "side": "away"
+        },
+        {
+         "min": 32,
+         "side": "home"
+        },
+        {
+         "min": "45+2",
+         "side": "home"
+        },
+        {
+         "min": 66,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 37,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 54,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 38,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "home"
+        },
+        {
+         "min": "90+4",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 39,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 17,
+         "side": "home"
+        },
+        {
+         "min": "45+2",
+         "side": "away"
+        },
+        {
+         "min": "90+2",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 40,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 67,
+         "side": "home"
+        },
+        {
+         "min": 72,
+         "side": "away"
+        },
+        {
+         "min": "90+2",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 41,
+       "ft": [
+        3,
+        4
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 35,
+         "side": "away"
+        },
+        {
+         "min": 50,
+         "side": "away"
+        },
+        {
+         "min": 53,
+         "side": "home"
+        },
+        {
+         "min": 67,
+         "side": "away"
+        },
+        {
+         "min": 69,
+         "side": "home"
+        },
+        {
+         "min": 71,
+         "side": "away"
+        },
+        {
+         "min": 72,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 42,
+       "ft": [
+        3,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 34,
+         "side": "away"
+        },
+        {
+         "min": 66,
+         "side": "home"
+        },
+        {
+         "min": 86,
+         "side": "home"
+        },
+        {
+         "min": 87,
+         "side": "away"
+        },
+        {
+         "min": "90+1",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 43,
+       "ft": [
+        1,
+        3
+       ],
+       "ht": [
+        1,
+        2
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "away"
+        },
+        {
+         "min": 8,
+         "side": "home"
+        },
+        {
+         "min": 43,
+         "side": "away"
+        },
+        {
+         "min": 69,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 44,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 45,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 21,
+         "side": "away"
+        },
+        {
+         "min": 67,
+         "side": "home"
+        },
+        {
+         "min": 74,
+         "side": "away"
+        },
+        {
+         "min": "90+5",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 46,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 11,
+         "side": "away"
+        },
+        {
+         "min": 34,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 47,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 6,
+         "side": "home"
+        },
+        {
+         "min": 30,
+         "side": "home"
+        },
+        {
+         "min": "45+3",
+         "side": "away"
+        },
+        {
+         "min": 90,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 48,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 70,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 49,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 39,
+         "side": "home"
+        },
+        {
+         "min": 59,
+         "side": "home"
+        },
+        {
+         "min": 72,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 50,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 24,
+         "side": "home"
+        },
+        {
+         "min": 32,
+         "side": "home"
+        },
+        {
+         "min": 33,
+         "side": "away"
+        },
+        {
+         "min": 89,
+         "side": "home"
+        }
+       ]
+      }
+     ],
+     "summary": {
+      "1": 21,
+      "X": 13,
+      "2": 16,
+      "O2.5": 32,
+      "BTTS_Y": 29,
+      "top_scores": [
+       [
+        "2-2",
+        6
+       ],
+       [
+        "2-0",
+        5
+       ],
+       [
+        "0-0",
+        4
+       ],
+       [
+        "1-3",
+        4
+       ],
+       [
+        "2-1",
+        4
+       ]
+      ]
+     },
+     "note": "50 örnek koşu yalnızca gösterim içindir; olasılıklar 10.000 simülasyondan hesaplanır."
+    },
     "data_quality": "medium",
     "notes": [
      "Farklı ligler: yaklaşık lig gücü katsayısı kullanıldı"
@@ -692,7 +2001,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:19:44+03:00",
+      "fetched_at": "2026-11-05T16:24:30+03:00",
       "note": "Crystal Palace to Win; Crystal Palace 3-1"
      },
      {
@@ -782,11 +2091,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -910,15 +2219,15 @@
    "provenance": {
     "fixture": {
      "source": "iddaa.com",
-     "t": "2026-11-05T16:17:20+03:00"
+     "t": "2026-11-05T16:22:51+03:00"
     },
     "odds": {
      "source": "iddaa.com",
-     "t": "2026-11-05T16:17:20+03:00"
+     "t": "2026-11-05T16:22:51+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-05T16:19:40+03:00"
+     "t": "2026-11-05T16:24:29+03:00"
     }
    },
    "odds": {
@@ -1014,7 +2323,7 @@
        "OU25": "U2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:19:40+03:00",
+      "fetched_at": "2026-11-05T16:24:29+03:00",
       "note": "Under 2.5 goals"
      },
      {
@@ -1069,15 +2378,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-05T16:19:40+03:00"
+     "t": "2026-11-05T16:24:29+03:00"
     }
    },
    "odds": {
@@ -1160,7 +2469,7 @@
        "OU25": "O2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:19:40+03:00",
+      "fetched_at": "2026-11-05T16:24:29+03:00",
       "note": "Over 2.5 goals"
      },
      {
@@ -1215,11 +2524,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -1336,19 +2645,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:19:57+03:00"
+     "t": "2026-11-05T16:24:31+03:00"
     },
     "predictions": {
      "source": "sportytrader, freesupertips",
-     "t": "2026-11-05T16:19:40+03:00"
+     "t": "2026-11-05T16:24:29+03:00"
     }
    },
    "odds": {
@@ -1536,6 +2845,1274 @@
      0.1049,
      0.0902
     ],
+    "sample_runs": {
+     "n": 50,
+     "runs": [
+      {
+       "i": 1,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 19,
+         "side": "away"
+        },
+        {
+         "min": 54,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 2,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 35,
+         "side": "home"
+        },
+        {
+         "min": 47,
+         "side": "home"
+        },
+        {
+         "min": "90+1",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 3,
+       "ft": [
+        0,
+        3
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 76,
+         "side": "away"
+        },
+        {
+         "min": 81,
+         "side": "away"
+        },
+        {
+         "min": 85,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 4,
+       "ft": [
+        5,
+        0
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "home"
+        },
+        {
+         "min": 32,
+         "side": "home"
+        },
+        {
+         "min": 48,
+         "side": "home"
+        },
+        {
+         "min": 64,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 5,
+       "ft": [
+        5,
+        2
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "home"
+        },
+        {
+         "min": 50,
+         "side": "home"
+        },
+        {
+         "min": 50,
+         "side": "home"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        },
+        {
+         "min": 66,
+         "side": "away"
+        },
+        {
+         "min": 78,
+         "side": "home"
+        },
+        {
+         "min": "90+5",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 6,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 72,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 7,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 8,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 13,
+         "side": "home"
+        },
+        {
+         "min": 20,
+         "side": "away"
+        },
+        {
+         "min": 65,
+         "side": "home"
+        },
+        {
+         "min": 68,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 9,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 39,
+         "side": "home"
+        },
+        {
+         "min": 56,
+         "side": "home"
+        },
+        {
+         "min": 67,
+         "side": "home"
+        },
+        {
+         "min": 81,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 10,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 69,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 11,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 19,
+         "side": "away"
+        },
+        {
+         "min": 23,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 12,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 23,
+         "side": "away"
+        },
+        {
+         "min": 47,
+         "side": "home"
+        },
+        {
+         "min": 53,
+         "side": "away"
+        },
+        {
+         "min": 59,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 13,
+       "ft": [
+        4,
+        4
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 23,
+         "side": "home"
+        },
+        {
+         "min": 33,
+         "side": "home"
+        },
+        {
+         "min": "45+3",
+         "side": "away"
+        },
+        {
+         "min": 47,
+         "side": "away"
+        },
+        {
+         "min": 63,
+         "side": "home"
+        },
+        {
+         "min": 63,
+         "side": "away"
+        },
+        {
+         "min": 74,
+         "side": "away"
+        },
+        {
+         "min": 80,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 14,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 67,
+         "side": "away"
+        },
+        {
+         "min": 88,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 15,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 45,
+         "side": "home"
+        },
+        {
+         "min": 68,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "away"
+        },
+        {
+         "min": "90+1",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 16,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 19,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 17,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "away"
+        },
+        {
+         "min": 78,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 18,
+       "ft": [
+        2,
+        3
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 31,
+         "side": "home"
+        },
+        {
+         "min": 47,
+         "side": "away"
+        },
+        {
+         "min": 52,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        },
+        {
+         "min": 75,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 19,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": "90+4",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 20,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 29,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 21,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 76,
+         "side": "away"
+        },
+        {
+         "min": "90+1",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 22,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 23,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 43,
+         "side": "home"
+        },
+        {
+         "min": "45+4",
+         "side": "home"
+        },
+        {
+         "min": 76,
+         "side": "home"
+        },
+        {
+         "min": 76,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 24,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 25,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 26,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "home"
+        },
+        {
+         "min": 80,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 26,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 90,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 27,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 28,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 16,
+         "side": "home"
+        },
+        {
+         "min": 48,
+         "side": "home"
+        },
+        {
+         "min": 67,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 29,
+       "ft": [
+        1,
+        4
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 45,
+         "side": "away"
+        },
+        {
+         "min": 53,
+         "side": "home"
+        },
+        {
+         "min": 72,
+         "side": "away"
+        },
+        {
+         "min": 76,
+         "side": "away"
+        },
+        {
+         "min": 90,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 30,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": "90+5",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 31,
+       "ft": [
+        4,
+        1
+       ],
+       "ht": [
+        3,
+        0
+       ],
+       "goals": [
+        {
+         "min": 34,
+         "side": "home"
+        },
+        {
+         "min": 43,
+         "side": "home"
+        },
+        {
+         "min": "45+1",
+         "side": "home"
+        },
+        {
+         "min": 57,
+         "side": "home"
+        },
+        {
+         "min": 84,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 32,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 61,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 33,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 25,
+         "side": "home"
+        },
+        {
+         "min": 52,
+         "side": "home"
+        },
+        {
+         "min": 78,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 34,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 24,
+         "side": "home"
+        },
+        {
+         "min": 48,
+         "side": "away"
+        },
+        {
+         "min": 84,
+         "side": "home"
+        },
+        {
+         "min": 88,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 35,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 47,
+         "side": "home"
+        },
+        {
+         "min": 61,
+         "side": "away"
+        },
+        {
+         "min": 90,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 36,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": "45+3",
+         "side": "away"
+        },
+        {
+         "min": 48,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 37,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 67,
+         "side": "away"
+        },
+        {
+         "min": 84,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 38,
+       "ft": [
+        3,
+        4
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 2,
+         "side": "away"
+        },
+        {
+         "min": 22,
+         "side": "away"
+        },
+        {
+         "min": 53,
+         "side": "home"
+        },
+        {
+         "min": 60,
+         "side": "home"
+        },
+        {
+         "min": 68,
+         "side": "away"
+        },
+        {
+         "min": 75,
+         "side": "away"
+        },
+        {
+         "min": "90+1",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 39,
+       "ft": [
+        3,
+        3
+       ],
+       "ht": [
+        1,
+        2
+       ],
+       "goals": [
+        {
+         "min": 18,
+         "side": "home"
+        },
+        {
+         "min": 22,
+         "side": "away"
+        },
+        {
+         "min": "45+2",
+         "side": "away"
+        },
+        {
+         "min": 55,
+         "side": "home"
+        },
+        {
+         "min": 68,
+         "side": "away"
+        },
+        {
+         "min": 84,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 40,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 33,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 41,
+       "ft": [
+        5,
+        1
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 40,
+         "side": "home"
+        },
+        {
+         "min": 44,
+         "side": "home"
+        },
+        {
+         "min": 47,
+         "side": "home"
+        },
+        {
+         "min": 69,
+         "side": "away"
+        },
+        {
+         "min": 75,
+         "side": "home"
+        },
+        {
+         "min": 86,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 42,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 43,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 44,
+       "ft": [
+        4,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 21,
+         "side": "away"
+        },
+        {
+         "min": 63,
+         "side": "away"
+        },
+        {
+         "min": 75,
+         "side": "home"
+        },
+        {
+         "min": 77,
+         "side": "home"
+        },
+        {
+         "min": 83,
+         "side": "home"
+        },
+        {
+         "min": 84,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 45,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 6,
+         "side": "home"
+        },
+        {
+         "min": 46,
+         "side": "home"
+        },
+        {
+         "min": 70,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 46,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 55,
+         "side": "home"
+        },
+        {
+         "min": 62,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 47,
+       "ft": [
+        3,
+        2
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 20,
+         "side": "home"
+        },
+        {
+         "min": 27,
+         "side": "home"
+        },
+        {
+         "min": 34,
+         "side": "away"
+        },
+        {
+         "min": 76,
+         "side": "home"
+        },
+        {
+         "min": "90+2",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 48,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 30,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 49,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 2,
+         "side": "away"
+        },
+        {
+         "min": 20,
+         "side": "home"
+        },
+        {
+         "min": 33,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 50,
+       "ft": [
+        3,
+        2
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 21,
+         "side": "home"
+        },
+        {
+         "min": 27,
+         "side": "home"
+        },
+        {
+         "min": 46,
+         "side": "home"
+        },
+        {
+         "min": 46,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        }
+       ]
+      }
+     ],
+     "summary": {
+      "1": 21,
+      "X": 12,
+      "2": 17,
+      "O2.5": 26,
+      "BTTS_Y": 25,
+      "top_scores": [
+       [
+        "0-1",
+        7
+       ],
+       [
+        "0-0",
+        5
+       ],
+       [
+        "0-2",
+        5
+       ],
+       [
+        "3-1",
+        5
+       ],
+       [
+        "1-0",
+        3
+       ]
+      ]
+     },
+     "note": "50 örnek koşu yalnızca gösterim içindir; olasılıklar 10.000 simülasyondan hesaplanır."
+    },
     "data_quality": "medium",
     "notes": [
      "Farklı ligler: yaklaşık lig gücü katsayısı kullanıldı"
@@ -1553,7 +4130,7 @@
        "OU25": "O2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:19:40+03:00",
+      "fetched_at": "2026-11-05T16:24:29+03:00",
       "note": "Over 2.5 goals"
      },
      {
@@ -1563,7 +4140,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:19:44+03:00",
+      "fetched_at": "2026-11-05T16:24:30+03:00",
       "note": "Over 2.5 Match Goals; Real Sociedad 2-1"
      },
      {
@@ -1653,15 +4230,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:19:44+03:00"
+     "t": "2026-11-05T16:24:30+03:00"
     }
    },
    "odds": {
@@ -1754,7 +4331,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:19:44+03:00",
+      "fetched_at": "2026-11-05T16:24:30+03:00",
       "note": "AFC Bournemouth To Win To Nil; AFC Bournemouth 2-0"
      },
      {
@@ -1809,19 +4386,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:19:57+03:00"
+     "t": "2026-11-05T16:24:31+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:19:44+03:00"
+     "t": "2026-11-05T16:24:30+03:00"
     }
    },
    "odds": {
@@ -2020,6 +4597,1187 @@
      0.0606,
      0.0389
     ],
+    "sample_runs": {
+     "n": 50,
+     "runs": [
+      {
+       "i": 1,
+       "ft": [
+        4,
+        2
+       ],
+       "ht": [
+        3,
+        1
+       ],
+       "goals": [
+        {
+         "min": 26,
+         "side": "home"
+        },
+        {
+         "min": 27,
+         "side": "away"
+        },
+        {
+         "min": 34,
+         "side": "home"
+        },
+        {
+         "min": 40,
+         "side": "home"
+        },
+        {
+         "min": 68,
+         "side": "home"
+        },
+        {
+         "min": 87,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 2,
+       "ft": [
+        1,
+        3
+       ],
+       "ht": [
+        1,
+        2
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "away"
+        },
+        {
+         "min": 11,
+         "side": "away"
+        },
+        {
+         "min": 17,
+         "side": "home"
+        },
+        {
+         "min": 56,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 3,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "away"
+        },
+        {
+         "min": "45+1",
+         "side": "home"
+        },
+        {
+         "min": 57,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 4,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 15,
+         "side": "home"
+        },
+        {
+         "min": 27,
+         "side": "away"
+        },
+        {
+         "min": 39,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 5,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 9,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 6,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 30,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 7,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 46,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 8,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 9,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 53,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "home"
+        },
+        {
+         "min": "90+5",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 10,
+       "ft": [
+        2,
+        3
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "away"
+        },
+        {
+         "min": 42,
+         "side": "home"
+        },
+        {
+         "min": 55,
+         "side": "home"
+        },
+        {
+         "min": 71,
+         "side": "away"
+        },
+        {
+         "min": 80,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 11,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 12,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 48,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 13,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 88,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 14,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 22,
+         "side": "away"
+        },
+        {
+         "min": "90+4",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 15,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 61,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 16,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 62,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 17,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 69,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 18,
+       "ft": [
+        3,
+        6
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": "45+1",
+         "side": "away"
+        },
+        {
+         "min": 48,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        },
+        {
+         "min": 70,
+         "side": "home"
+        },
+        {
+         "min": 70,
+         "side": "away"
+        },
+        {
+         "min": 75,
+         "side": "away"
+        },
+        {
+         "min": 86,
+         "side": "home"
+        },
+        {
+         "min": 87,
+         "side": "away"
+        },
+        {
+         "min": "90+4",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 19,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": "45+2",
+         "side": "away"
+        },
+        {
+         "min": 71,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 20,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 62,
+         "side": "home"
+        },
+        {
+         "min": 71,
+         "side": "away"
+        },
+        {
+         "min": 86,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 21,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 49,
+         "side": "away"
+        },
+        {
+         "min": 76,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 22,
+       "ft": [
+        2,
+        5
+       ],
+       "ht": [
+        0,
+        4
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "away"
+        },
+        {
+         "min": 9,
+         "side": "away"
+        },
+        {
+         "min": 10,
+         "side": "away"
+        },
+        {
+         "min": 30,
+         "side": "away"
+        },
+        {
+         "min": 55,
+         "side": "away"
+        },
+        {
+         "min": 83,
+         "side": "home"
+        },
+        {
+         "min": 88,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 23,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 10,
+         "side": "away"
+        },
+        {
+         "min": "90+2",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 24,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 49,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 25,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 57,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 26,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 21,
+         "side": "home"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 27,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 51,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 28,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 11,
+         "side": "home"
+        },
+        {
+         "min": 12,
+         "side": "away"
+        },
+        {
+         "min": "45+3",
+         "side": "home"
+        },
+        {
+         "min": 77,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 29,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 9,
+         "side": "home"
+        },
+        {
+         "min": 10,
+         "side": "home"
+        },
+        {
+         "min": 12,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 30,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 63,
+         "side": "away"
+        },
+        {
+         "min": 64,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 31,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 71,
+         "side": "away"
+        },
+        {
+         "min": 74,
+         "side": "home"
+        },
+        {
+         "min": 88,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 32,
+       "ft": [
+        1,
+        3
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 44,
+         "side": "home"
+        },
+        {
+         "min": 66,
+         "side": "away"
+        },
+        {
+         "min": 84,
+         "side": "away"
+        },
+        {
+         "min": 88,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 33,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 69,
+         "side": "away"
+        },
+        {
+         "min": 90,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 34,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "home"
+        },
+        {
+         "min": 46,
+         "side": "home"
+        },
+        {
+         "min": 84,
+         "side": "away"
+        },
+        {
+         "min": 87,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 35,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 50,
+         "side": "home"
+        },
+        {
+         "min": 73,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 36,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 34,
+         "side": "away"
+        },
+        {
+         "min": 49,
+         "side": "away"
+        },
+        {
+         "min": "90+1",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 37,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 38,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 42,
+         "side": "away"
+        },
+        {
+         "min": 69,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 39,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": "90+1",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 40,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 21,
+         "side": "away"
+        },
+        {
+         "min": 76,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 41,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 75,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 42,
+       "ft": [
+        1,
+        3
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "away"
+        },
+        {
+         "min": 25,
+         "side": "away"
+        },
+        {
+         "min": 76,
+         "side": "home"
+        },
+        {
+         "min": 81,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 43,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 8,
+         "side": "away"
+        },
+        {
+         "min": 38,
+         "side": "away"
+        },
+        {
+         "min": 72,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 44,
+       "ft": [
+        1,
+        3
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 7,
+         "side": "away"
+        },
+        {
+         "min": 41,
+         "side": "away"
+        },
+        {
+         "min": 78,
+         "side": "home"
+        },
+        {
+         "min": 82,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 45,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 23,
+         "side": "home"
+        },
+        {
+         "min": 72,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 46,
+       "ft": [
+        0,
+        4
+       ],
+       "ht": [
+        0,
+        3
+       ],
+       "goals": [
+        {
+         "min": 24,
+         "side": "away"
+        },
+        {
+         "min": "45+3",
+         "side": "away"
+        },
+        {
+         "min": "45+3",
+         "side": "away"
+        },
+        {
+         "min": 52,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 47,
+       "ft": [
+        1,
+        3
+       ],
+       "ht": [
+        1,
+        2
+       ],
+       "goals": [
+        {
+         "min": 11,
+         "side": "away"
+        },
+        {
+         "min": 44,
+         "side": "away"
+        },
+        {
+         "min": 45,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 48,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 49,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 69,
+         "side": "away"
+        },
+        {
+         "min": "90+2",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 50,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 67,
+         "side": "home"
+        },
+        {
+         "min": 75,
+         "side": "away"
+        },
+        {
+         "min": 76,
+         "side": "away"
+        }
+       ]
+      }
+     ],
+     "summary": {
+      "1": 13,
+      "X": 11,
+      "2": 26,
+      "O2.5": 22,
+      "BTTS_Y": 27,
+      "top_scores": [
+       [
+        "1-0",
+        7
+       ],
+       [
+        "0-2",
+        6
+       ],
+       [
+        "1-1",
+        6
+       ],
+       [
+        "1-2",
+        6
+       ],
+       [
+        "0-1",
+        5
+       ]
+      ]
+     },
+     "note": "50 örnek koşu yalnızca gösterim içindir; olasılıklar 10.000 simülasyondan hesaplanır."
+    },
     "data_quality": "medium",
     "notes": [
      "Farklı ligler: yaklaşık lig gücü katsayısı kullanıldı"
@@ -2037,7 +5795,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:19:44+03:00",
+      "fetched_at": "2026-11-05T16:24:30+03:00",
       "note": "Juventus to Win; Juventus 2-0"
      },
      {
@@ -2128,19 +5886,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:19:57+03:00"
+     "t": "2026-11-05T16:24:31+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:19:44+03:00"
+     "t": "2026-11-05T16:24:30+03:00"
     }
    },
    "odds": {
@@ -2333,6 +6091,1446 @@
      0.1499,
      0.1849
     ],
+    "sample_runs": {
+     "n": 50,
+     "runs": [
+      {
+       "i": 1,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 46,
+         "side": "away"
+        },
+        {
+         "min": 53,
+         "side": "home"
+        },
+        {
+         "min": 86,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 2,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 56,
+         "side": "home"
+        },
+        {
+         "min": 75,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 3,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 20,
+         "side": "away"
+        },
+        {
+         "min": "90+3",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 4,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 9,
+         "side": "home"
+        },
+        {
+         "min": 38,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 5,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 31,
+         "side": "away"
+        },
+        {
+         "min": 55,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 6,
+       "ft": [
+        3,
+        3
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 42,
+         "side": "home"
+        },
+        {
+         "min": 43,
+         "side": "home"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        },
+        {
+         "min": 66,
+         "side": "home"
+        },
+        {
+         "min": 73,
+         "side": "away"
+        },
+        {
+         "min": 83,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 7,
+       "ft": [
+        3,
+        2
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 40,
+         "side": "away"
+        },
+        {
+         "min": "45+4",
+         "side": "away"
+        },
+        {
+         "min": 59,
+         "side": "home"
+        },
+        {
+         "min": 73,
+         "side": "home"
+        },
+        {
+         "min": 88,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 8,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 11,
+         "side": "home"
+        },
+        {
+         "min": 30,
+         "side": "away"
+        },
+        {
+         "min": 43,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 9,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "home"
+        },
+        {
+         "min": 41,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 10,
+       "ft": [
+        0,
+        3
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 10,
+         "side": "away"
+        },
+        {
+         "min": "45+1",
+         "side": "away"
+        },
+        {
+         "min": 84,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 11,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 28,
+         "side": "home"
+        },
+        {
+         "min": 30,
+         "side": "home"
+        },
+        {
+         "min": 70,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 12,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "home"
+        },
+        {
+         "min": 32,
+         "side": "away"
+        },
+        {
+         "min": 46,
+         "side": "home"
+        },
+        {
+         "min": 81,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 13,
+       "ft": [
+        2,
+        4
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 8,
+         "side": "away"
+        },
+        {
+         "min": 24,
+         "side": "away"
+        },
+        {
+         "min": 65,
+         "side": "home"
+        },
+        {
+         "min": 65,
+         "side": "away"
+        },
+        {
+         "min": 67,
+         "side": "home"
+        },
+        {
+         "min": 76,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 14,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 54,
+         "side": "home"
+        },
+        {
+         "min": 64,
+         "side": "home"
+        },
+        {
+         "min": 78,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 15,
+       "ft": [
+        5,
+        4
+       ],
+       "ht": [
+        4,
+        0
+       ],
+       "goals": [
+        {
+         "min": 14,
+         "side": "home"
+        },
+        {
+         "min": 17,
+         "side": "home"
+        },
+        {
+         "min": 26,
+         "side": "home"
+        },
+        {
+         "min": 27,
+         "side": "home"
+        },
+        {
+         "min": 48,
+         "side": "away"
+        },
+        {
+         "min": 78,
+         "side": "away"
+        },
+        {
+         "min": 79,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "away"
+        },
+        {
+         "min": "90+4",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 16,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "home"
+        },
+        {
+         "min": 18,
+         "side": "away"
+        },
+        {
+         "min": 25,
+         "side": "home"
+        },
+        {
+         "min": 46,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 17,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 31,
+         "side": "away"
+        },
+        {
+         "min": 66,
+         "side": "home"
+        },
+        {
+         "min": 74,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 18,
+       "ft": [
+        2,
+        4
+       ],
+       "ht": [
+        1,
+        2
+       ],
+       "goals": [
+        {
+         "min": 2,
+         "side": "away"
+        },
+        {
+         "min": 29,
+         "side": "home"
+        },
+        {
+         "min": 35,
+         "side": "away"
+        },
+        {
+         "min": 53,
+         "side": "away"
+        },
+        {
+         "min": 79,
+         "side": "away"
+        },
+        {
+         "min": 87,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 19,
+       "ft": [
+        4,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 13,
+         "side": "home"
+        },
+        {
+         "min": 21,
+         "side": "away"
+        },
+        {
+         "min": 81,
+         "side": "home"
+        },
+        {
+         "min": 84,
+         "side": "home"
+        },
+        {
+         "min": "90+4",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 20,
+       "ft": [
+        5,
+        1
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 45,
+         "side": "home"
+        },
+        {
+         "min": "45+1",
+         "side": "home"
+        },
+        {
+         "min": 61,
+         "side": "away"
+        },
+        {
+         "min": 71,
+         "side": "home"
+        },
+        {
+         "min": 84,
+         "side": "home"
+        },
+        {
+         "min": 88,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 21,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 14,
+         "side": "home"
+        },
+        {
+         "min": 34,
+         "side": "away"
+        },
+        {
+         "min": 83,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 22,
+       "ft": [
+        0,
+        6
+       ],
+       "ht": [
+        0,
+        4
+       ],
+       "goals": [
+        {
+         "min": 1,
+         "side": "away"
+        },
+        {
+         "min": 13,
+         "side": "away"
+        },
+        {
+         "min": 27,
+         "side": "away"
+        },
+        {
+         "min": 32,
+         "side": "away"
+        },
+        {
+         "min": 79,
+         "side": "away"
+        },
+        {
+         "min": "90+5",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 23,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 24,
+       "ft": [
+        3,
+        3
+       ],
+       "ht": [
+        3,
+        1
+       ],
+       "goals": [
+        {
+         "min": 11,
+         "side": "home"
+        },
+        {
+         "min": 31,
+         "side": "home"
+        },
+        {
+         "min": 32,
+         "side": "away"
+        },
+        {
+         "min": "45+1",
+         "side": "home"
+        },
+        {
+         "min": 54,
+         "side": "away"
+        },
+        {
+         "min": 75,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 25,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 14,
+         "side": "home"
+        },
+        {
+         "min": 54,
+         "side": "home"
+        },
+        {
+         "min": 58,
+         "side": "away"
+        },
+        {
+         "min": 75,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 26,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 60,
+         "side": "away"
+        },
+        {
+         "min": 64,
+         "side": "home"
+        },
+        {
+         "min": "90+2",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 27,
+       "ft": [
+        2,
+        3
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 38,
+         "side": "away"
+        },
+        {
+         "min": 59,
+         "side": "home"
+        },
+        {
+         "min": 62,
+         "side": "away"
+        },
+        {
+         "min": 64,
+         "side": "home"
+        },
+        {
+         "min": 89,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 28,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": "45+4",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 29,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 84,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 30,
+       "ft": [
+        2,
+        3
+       ],
+       "ht": [
+        0,
+        3
+       ],
+       "goals": [
+        {
+         "min": 10,
+         "side": "away"
+        },
+        {
+         "min": 25,
+         "side": "away"
+        },
+        {
+         "min": 26,
+         "side": "away"
+        },
+        {
+         "min": 83,
+         "side": "home"
+        },
+        {
+         "min": 87,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 31,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 48,
+         "side": "home"
+        },
+        {
+         "min": 57,
+         "side": "home"
+        },
+        {
+         "min": 65,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 32,
+       "ft": [
+        4,
+        3
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 43,
+         "side": "away"
+        },
+        {
+         "min": 46,
+         "side": "home"
+        },
+        {
+         "min": 52,
+         "side": "away"
+        },
+        {
+         "min": 61,
+         "side": "away"
+        },
+        {
+         "min": 67,
+         "side": "home"
+        },
+        {
+         "min": 71,
+         "side": "home"
+        },
+        {
+         "min": 80,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 33,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 88,
+         "side": "home"
+        },
+        {
+         "min": "90+1",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 34,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "home"
+        },
+        {
+         "min": 87,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 35,
+       "ft": [
+        2,
+        4
+       ],
+       "ht": [
+        1,
+        2
+       ],
+       "goals": [
+        {
+         "min": 14,
+         "side": "home"
+        },
+        {
+         "min": 32,
+         "side": "away"
+        },
+        {
+         "min": 36,
+         "side": "away"
+        },
+        {
+         "min": 59,
+         "side": "away"
+        },
+        {
+         "min": 67,
+         "side": "away"
+        },
+        {
+         "min": "90+2",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 36,
+       "ft": [
+        4,
+        2
+       ],
+       "ht": [
+        3,
+        1
+       ],
+       "goals": [
+        {
+         "min": 1,
+         "side": "home"
+        },
+        {
+         "min": 4,
+         "side": "home"
+        },
+        {
+         "min": 22,
+         "side": "home"
+        },
+        {
+         "min": 41,
+         "side": "away"
+        },
+        {
+         "min": 67,
+         "side": "away"
+        },
+        {
+         "min": 72,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 37,
+       "ft": [
+        3,
+        3
+       ],
+       "ht": [
+        1,
+        2
+       ],
+       "goals": [
+        {
+         "min": 23,
+         "side": "home"
+        },
+        {
+         "min": 24,
+         "side": "away"
+        },
+        {
+         "min": 31,
+         "side": "away"
+        },
+        {
+         "min": 61,
+         "side": "home"
+        },
+        {
+         "min": 74,
+         "side": "home"
+        },
+        {
+         "min": 76,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 38,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 44,
+         "side": "home"
+        },
+        {
+         "min": 67,
+         "side": "home"
+        },
+        {
+         "min": 69,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 39,
+       "ft": [
+        4,
+        2
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 16,
+         "side": "home"
+        },
+        {
+         "min": 46,
+         "side": "away"
+        },
+        {
+         "min": 53,
+         "side": "away"
+        },
+        {
+         "min": 56,
+         "side": "home"
+        },
+        {
+         "min": 61,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 40,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 52,
+         "side": "home"
+        },
+        {
+         "min": 62,
+         "side": "away"
+        },
+        {
+         "min": "90+4",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 41,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 10,
+         "side": "home"
+        },
+        {
+         "min": 35,
+         "side": "away"
+        },
+        {
+         "min": 53,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 42,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 27,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 43,
+       "ft": [
+        4,
+        2
+       ],
+       "ht": [
+        3,
+        2
+       ],
+       "goals": [
+        {
+         "min": 5,
+         "side": "away"
+        },
+        {
+         "min": 9,
+         "side": "home"
+        },
+        {
+         "min": 16,
+         "side": "away"
+        },
+        {
+         "min": 19,
+         "side": "home"
+        },
+        {
+         "min": 44,
+         "side": "home"
+        },
+        {
+         "min": 49,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 44,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 80,
+         "side": "home"
+        },
+        {
+         "min": 86,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 45,
+       "ft": [
+        0,
+        3
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 67,
+         "side": "away"
+        },
+        {
+         "min": 84,
+         "side": "away"
+        },
+        {
+         "min": 87,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 46,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 26,
+         "side": "home"
+        },
+        {
+         "min": 39,
+         "side": "home"
+        },
+        {
+         "min": 42,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 47,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 73,
+         "side": "away"
+        },
+        {
+         "min": 84,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 48,
+       "ft": [
+        3,
+        2
+       ],
+       "ht": [
+        3,
+        0
+       ],
+       "goals": [
+        {
+         "min": 37,
+         "side": "home"
+        },
+        {
+         "min": 37,
+         "side": "home"
+        },
+        {
+         "min": 39,
+         "side": "home"
+        },
+        {
+         "min": 67,
+         "side": "away"
+        },
+        {
+         "min": 86,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 49,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 29,
+         "side": "away"
+        },
+        {
+         "min": 41,
+         "side": "home"
+        },
+        {
+         "min": 70,
+         "side": "home"
+        },
+        {
+         "min": 71,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 50,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 34,
+         "side": "away"
+        }
+       ]
+      }
+     ],
+     "summary": {
+      "1": 22,
+      "X": 11,
+      "2": 17,
+      "O2.5": 36,
+      "BTTS_Y": 37,
+      "top_scores": [
+       [
+        "1-1",
+        5
+       ],
+       [
+        "1-2",
+        5
+       ],
+       [
+        "2-1",
+        4
+       ],
+       [
+        "3-1",
+        4
+       ],
+       [
+        "2-4",
+        3
+       ]
+      ]
+     },
+     "note": "50 örnek koşu yalnızca gösterim içindir; olasılıklar 10.000 simülasyondan hesaplanır."
+    },
     "data_quality": "medium",
     "notes": [
      "Farklı ligler: yaklaşık lig gücü katsayısı kullanıldı"
@@ -2351,7 +7549,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:19:44+03:00",
+      "fetched_at": "2026-11-05T16:24:30+03:00",
       "note": "Bayer Leverkusen to Win and Over 2.5 Match Goals; Bayer Leverkusen 3-1"
      },
      {
@@ -2441,11 +7639,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -2549,15 +7747,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:19:57+03:00"
+     "t": "2026-11-05T16:24:31+03:00"
     }
    },
    "odds": {
@@ -2742,6 +7940,1154 @@
      0.0456,
      0.0222
     ],
+    "sample_runs": {
+     "n": 50,
+     "runs": [
+      {
+       "i": 1,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 18,
+         "side": "away"
+        },
+        {
+         "min": 56,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 2,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 51,
+         "side": "away"
+        },
+        {
+         "min": 72,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 3,
+       "ft": [
+        1,
+        3
+       ],
+       "ht": [
+        0,
+        3
+       ],
+       "goals": [
+        {
+         "min": 7,
+         "side": "away"
+        },
+        {
+         "min": 33,
+         "side": "away"
+        },
+        {
+         "min": 45,
+         "side": "away"
+        },
+        {
+         "min": 52,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 4,
+       "ft": [
+        2,
+        4
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 25,
+         "side": "away"
+        },
+        {
+         "min": 30,
+         "side": "home"
+        },
+        {
+         "min": 42,
+         "side": "home"
+        },
+        {
+         "min": 49,
+         "side": "away"
+        },
+        {
+         "min": 75,
+         "side": "away"
+        },
+        {
+         "min": "90+2",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 5,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "away"
+        },
+        {
+         "min": 43,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 6,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 6,
+         "side": "away"
+        },
+        {
+         "min": 22,
+         "side": "away"
+        },
+        {
+         "min": 64,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 7,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 14,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "home"
+        },
+        {
+         "min": 83,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 8,
+       "ft": [
+        2,
+        4
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 50,
+         "side": "away"
+        },
+        {
+         "min": 58,
+         "side": "away"
+        },
+        {
+         "min": 68,
+         "side": "away"
+        },
+        {
+         "min": 70,
+         "side": "away"
+        },
+        {
+         "min": 74,
+         "side": "home"
+        },
+        {
+         "min": 88,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 9,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "away"
+        },
+        {
+         "min": 32,
+         "side": "home"
+        },
+        {
+         "min": 80,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 10,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 6,
+         "side": "home"
+        },
+        {
+         "min": "90+2",
+         "side": "away"
+        },
+        {
+         "min": "90+4",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 11,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 44,
+         "side": "home"
+        },
+        {
+         "min": 45,
+         "side": "home"
+        },
+        {
+         "min": 66,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 12,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": "45+3",
+         "side": "away"
+        },
+        {
+         "min": 90,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 13,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 51,
+         "side": "home"
+        },
+        {
+         "min": 67,
+         "side": "home"
+        },
+        {
+         "min": 76,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 14,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 39,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 15,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 52,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "away"
+        },
+        {
+         "min": 81,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 16,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 26,
+         "side": "home"
+        },
+        {
+         "min": 28,
+         "side": "away"
+        },
+        {
+         "min": 43,
+         "side": "home"
+        },
+        {
+         "min": "90+5",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 17,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 55,
+         "side": "away"
+        },
+        {
+         "min": 84,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 18,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 21,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 19,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 61,
+         "side": "home"
+        },
+        {
+         "min": 90,
+         "side": "away"
+        },
+        {
+         "min": "90+4",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 20,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 40,
+         "side": "away"
+        },
+        {
+         "min": 79,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 21,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 39,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 22,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 81,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 23,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 24,
+       "ft": [
+        0,
+        5
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 27,
+         "side": "away"
+        },
+        {
+         "min": 53,
+         "side": "away"
+        },
+        {
+         "min": 55,
+         "side": "away"
+        },
+        {
+         "min": 71,
+         "side": "away"
+        },
+        {
+         "min": 75,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 25,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 55,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 26,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 75,
+         "side": "away"
+        },
+        {
+         "min": 78,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 27,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 26,
+         "side": "home"
+        },
+        {
+         "min": 30,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 28,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 47,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 29,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 26,
+         "side": "away"
+        },
+        {
+         "min": "90+5",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 30,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 88,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 31,
+       "ft": [
+        4,
+        1
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 19,
+         "side": "home"
+        },
+        {
+         "min": 30,
+         "side": "home"
+        },
+        {
+         "min": 72,
+         "side": "away"
+        },
+        {
+         "min": 75,
+         "side": "home"
+        },
+        {
+         "min": 90,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 32,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 11,
+         "side": "home"
+        },
+        {
+         "min": "90+1",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 33,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 36,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 34,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": "90+5",
+         "side": "away"
+        },
+        {
+         "min": "90+5",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 35,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 36,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 49,
+         "side": "home"
+        },
+        {
+         "min": 50,
+         "side": "away"
+        },
+        {
+         "min": 71,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 37,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 80,
+         "side": "home"
+        },
+        {
+         "min": 88,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 38,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 21,
+         "side": "home"
+        },
+        {
+         "min": 22,
+         "side": "away"
+        },
+        {
+         "min": 70,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 39,
+       "ft": [
+        0,
+        5
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 22,
+         "side": "away"
+        },
+        {
+         "min": 35,
+         "side": "away"
+        },
+        {
+         "min": 52,
+         "side": "away"
+        },
+        {
+         "min": 87,
+         "side": "away"
+        },
+        {
+         "min": "90+5",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 40,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 62,
+         "side": "away"
+        },
+        {
+         "min": 64,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 41,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 59,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 42,
+       "ft": [
+        0,
+        3
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 44,
+         "side": "away"
+        },
+        {
+         "min": 65,
+         "side": "away"
+        },
+        {
+         "min": 67,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 43,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 44,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 15,
+         "side": "home"
+        },
+        {
+         "min": 59,
+         "side": "away"
+        },
+        {
+         "min": 72,
+         "side": "home"
+        },
+        {
+         "min": "90+4",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 45,
+       "ft": [
+        0,
+        4
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 35,
+         "side": "away"
+        },
+        {
+         "min": 42,
+         "side": "away"
+        },
+        {
+         "min": 50,
+         "side": "away"
+        },
+        {
+         "min": 73,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 46,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 15,
+         "side": "home"
+        },
+        {
+         "min": 23,
+         "side": "home"
+        },
+        {
+         "min": "45+4",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 47,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 48,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 49,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 14,
+         "side": "away"
+        },
+        {
+         "min": 72,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 50,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 22,
+         "side": "away"
+        }
+       ]
+      }
+     ],
+     "summary": {
+      "1": 13,
+      "X": 12,
+      "2": 25,
+      "O2.5": 21,
+      "BTTS_Y": 22,
+      "top_scores": [
+       [
+        "0-2",
+        7
+       ],
+       [
+        "0-1",
+        6
+       ],
+       [
+        "1-1",
+        6
+       ],
+       [
+        "0-0",
+        5
+       ],
+       [
+        "1-2",
+        5
+       ]
+      ]
+     },
+     "note": "50 örnek koşu yalnızca gösterim içindir; olasılıklar 10.000 simülasyondan hesaplanır."
+    },
     "data_quality": "medium",
     "notes": [
      "Farklı ligler: yaklaşık lig gücü katsayısı kullanıldı"
@@ -2840,11 +9186,11 @@
    "provenance": {
     "fixture": {
      "source": "iddaa.com",
-     "t": "2026-11-05T16:17:20+03:00"
+     "t": "2026-11-05T16:22:51+03:00"
     },
     "odds": {
      "source": "iddaa.com",
-     "t": "2026-11-05T16:17:20+03:00"
+     "t": "2026-11-05T16:22:51+03:00"
     }
    },
    "odds": {
@@ -2974,19 +9320,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:19:57+03:00"
+     "t": "2026-11-05T16:24:31+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:19:44+03:00"
+     "t": "2026-11-05T16:24:30+03:00"
     }
    },
    "odds": {
@@ -3166,6 +9512,1253 @@
      0.0984,
      0.091
     ],
+    "sample_runs": {
+     "n": 50,
+     "runs": [
+      {
+       "i": 1,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 1,
+         "side": "home"
+        },
+        {
+         "min": 34,
+         "side": "home"
+        },
+        {
+         "min": 49,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 2,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 44,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 3,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 25,
+         "side": "away"
+        },
+        {
+         "min": 45,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 4,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 8,
+         "side": "home"
+        },
+        {
+         "min": 63,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 5,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 19,
+         "side": "home"
+        },
+        {
+         "min": 44,
+         "side": "home"
+        },
+        {
+         "min": 58,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 6,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 35,
+         "side": "home"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        },
+        {
+         "min": 65,
+         "side": "home"
+        },
+        {
+         "min": 76,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 7,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 11,
+         "side": "home"
+        },
+        {
+         "min": 14,
+         "side": "home"
+        },
+        {
+         "min": 47,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 8,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 78,
+         "side": "home"
+        },
+        {
+         "min": 82,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 9,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 30,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 10,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 21,
+         "side": "away"
+        },
+        {
+         "min": 56,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 11,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "away"
+        },
+        {
+         "min": 38,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 12,
+       "ft": [
+        3,
+        2
+       ],
+       "ht": [
+        1,
+        2
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "home"
+        },
+        {
+         "min": 8,
+         "side": "away"
+        },
+        {
+         "min": 20,
+         "side": "away"
+        },
+        {
+         "min": 77,
+         "side": "home"
+        },
+        {
+         "min": 88,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 13,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 40,
+         "side": "home"
+        },
+        {
+         "min": "90+2",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 14,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 12,
+         "side": "away"
+        },
+        {
+         "min": 55,
+         "side": "home"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 15,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 10,
+         "side": "away"
+        },
+        {
+         "min": 17,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 16,
+       "ft": [
+        4,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 49,
+         "side": "home"
+        },
+        {
+         "min": 59,
+         "side": "home"
+        },
+        {
+         "min": 61,
+         "side": "home"
+        },
+        {
+         "min": 72,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 17,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 9,
+         "side": "home"
+        },
+        {
+         "min": 38,
+         "side": "away"
+        },
+        {
+         "min": 75,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 18,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 68,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 19,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 12,
+         "side": "home"
+        },
+        {
+         "min": 68,
+         "side": "home"
+        },
+        {
+         "min": 86,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 20,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 34,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 21,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 15,
+         "side": "home"
+        },
+        {
+         "min": "45+4",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 22,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 23,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 41,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 24,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 11,
+         "side": "away"
+        },
+        {
+         "min": 34,
+         "side": "home"
+        },
+        {
+         "min": 80,
+         "side": "home"
+        },
+        {
+         "min": 87,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 25,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 44,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 26,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 22,
+         "side": "away"
+        },
+        {
+         "min": 37,
+         "side": "home"
+        },
+        {
+         "min": 56,
+         "side": "home"
+        },
+        {
+         "min": 71,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 27,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 1,
+         "side": "home"
+        },
+        {
+         "min": 69,
+         "side": "home"
+        },
+        {
+         "min": 72,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 28,
+       "ft": [
+        0,
+        3
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": "45+1",
+         "side": "away"
+        },
+        {
+         "min": 82,
+         "side": "away"
+        },
+        {
+         "min": "90+4",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 29,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 67,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 30,
+       "ft": [
+        4,
+        1
+       ],
+       "ht": [
+        3,
+        0
+       ],
+       "goals": [
+        {
+         "min": 24,
+         "side": "home"
+        },
+        {
+         "min": 29,
+         "side": "home"
+        },
+        {
+         "min": 44,
+         "side": "home"
+        },
+        {
+         "min": 62,
+         "side": "home"
+        },
+        {
+         "min": 76,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 31,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 15,
+         "side": "home"
+        },
+        {
+         "min": 71,
+         "side": "home"
+        },
+        {
+         "min": 89,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 32,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 33,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 15,
+         "side": "home"
+        },
+        {
+         "min": 41,
+         "side": "away"
+        },
+        {
+         "min": 66,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 34,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 31,
+         "side": "away"
+        },
+        {
+         "min": 48,
+         "side": "home"
+        },
+        {
+         "min": 52,
+         "side": "home"
+        },
+        {
+         "min": "90+4",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 35,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 31,
+         "side": "home"
+        },
+        {
+         "min": 45,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 36,
+       "ft": [
+        4,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 11,
+         "side": "away"
+        },
+        {
+         "min": 59,
+         "side": "home"
+        },
+        {
+         "min": 70,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "home"
+        },
+        {
+         "min": 85,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 37,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": "45+2",
+         "side": "home"
+        },
+        {
+         "min": 75,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 38,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 82,
+         "side": "home"
+        },
+        {
+         "min": 90,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 39,
+       "ft": [
+        4,
+        3
+       ],
+       "ht": [
+        2,
+        2
+       ],
+       "goals": [
+        {
+         "min": 19,
+         "side": "away"
+        },
+        {
+         "min": 27,
+         "side": "away"
+        },
+        {
+         "min": 36,
+         "side": "home"
+        },
+        {
+         "min": "45+4",
+         "side": "home"
+        },
+        {
+         "min": 61,
+         "side": "home"
+        },
+        {
+         "min": 82,
+         "side": "home"
+        },
+        {
+         "min": 88,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 40,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 57,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 41,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 17,
+         "side": "home"
+        },
+        {
+         "min": 64,
+         "side": "home"
+        },
+        {
+         "min": 64,
+         "side": "home"
+        },
+        {
+         "min": 66,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 42,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 30,
+         "side": "home"
+        },
+        {
+         "min": "45+3",
+         "side": "away"
+        },
+        {
+         "min": 60,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 43,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 16,
+         "side": "away"
+        },
+        {
+         "min": 33,
+         "side": "away"
+        },
+        {
+         "min": 51,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 44,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 7,
+         "side": "home"
+        },
+        {
+         "min": 21,
+         "side": "away"
+        },
+        {
+         "min": "90+2",
+         "side": "home"
+        },
+        {
+         "min": "90+5",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 45,
+       "ft": [
+        4,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "home"
+        },
+        {
+         "min": 61,
+         "side": "home"
+        },
+        {
+         "min": 75,
+         "side": "away"
+        },
+        {
+         "min": 78,
+         "side": "home"
+        },
+        {
+         "min": 85,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 46,
+       "ft": [
+        4,
+        2
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 13,
+         "side": "home"
+        },
+        {
+         "min": 48,
+         "side": "home"
+        },
+        {
+         "min": 48,
+         "side": "away"
+        },
+        {
+         "min": 49,
+         "side": "away"
+        },
+        {
+         "min": 60,
+         "side": "home"
+        },
+        {
+         "min": 77,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 47,
+       "ft": [
+        3,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 17,
+         "side": "away"
+        },
+        {
+         "min": 29,
+         "side": "home"
+        },
+        {
+         "min": 47,
+         "side": "away"
+        },
+        {
+         "min": 51,
+         "side": "home"
+        },
+        {
+         "min": 64,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 48,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": "90+1",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 49,
+       "ft": [
+        3,
+        2
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 17,
+         "side": "home"
+        },
+        {
+         "min": 22,
+         "side": "away"
+        },
+        {
+         "min": 44,
+         "side": "home"
+        },
+        {
+         "min": 54,
+         "side": "away"
+        },
+        {
+         "min": 83,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 50,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 28,
+         "side": "home"
+        },
+        {
+         "min": 84,
+         "side": "home"
+        }
+       ]
+      }
+     ],
+     "summary": {
+      "1": 34,
+      "X": 9,
+      "2": 7,
+      "O2.5": 27,
+      "BTTS_Y": 26,
+      "top_scores": [
+       [
+        "1-0",
+        7
+       ],
+       [
+        "2-0",
+        6
+       ],
+       [
+        "1-1",
+        5
+       ],
+       [
+        "2-1",
+        4
+       ],
+       [
+        "3-0",
+        4
+       ]
+      ]
+     },
+     "note": "50 örnek koşu yalnızca gösterim içindir; olasılıklar 10.000 simülasyondan hesaplanır."
+    },
     "data_quality": "medium",
     "notes": [
      "Farklı ligler: yaklaşık lig gücü katsayısı kullanıldı"
@@ -3183,7 +10776,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:19:44+03:00",
+      "fetched_at": "2026-11-05T16:24:30+03:00",
       "note": "Besiktas to Win; Besiktas 3-1"
      },
      {
@@ -3273,11 +10866,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -3377,11 +10970,11 @@
    "provenance": {
     "fixture": {
      "source": "iddaa.com",
-     "t": "2026-11-05T16:17:20+03:00"
+     "t": "2026-11-05T16:22:51+03:00"
     },
     "odds": {
      "source": "iddaa.com",
-     "t": "2026-11-05T16:17:20+03:00"
+     "t": "2026-11-05T16:22:51+03:00"
     }
    },
    "odds": {
@@ -3483,11 +11076,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -3591,15 +11184,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:19:44+03:00"
+     "t": "2026-11-05T16:24:30+03:00"
     }
    },
    "odds": {
@@ -3677,7 +11270,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:19:44+03:00",
+      "fetched_at": "2026-11-05T16:24:30+03:00",
       "note": "Both Teams To Score; Sunderland 2-1"
      },
      {
@@ -3739,11 +11332,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -3864,11 +11457,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -3995,11 +11588,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -4110,11 +11703,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -4237,11 +11830,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -4340,15 +11933,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-05T16:19:40+03:00"
+     "t": "2026-11-05T16:24:29+03:00"
     }
    },
    "odds": {
@@ -4436,7 +12029,7 @@
        "OU25": "O2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:19:40+03:00",
+      "fetched_at": "2026-11-05T16:24:29+03:00",
       "note": "Over 2.5 goals & BTTS"
      },
      {
@@ -4498,11 +12091,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -4619,15 +12212,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-05T16:19:40+03:00"
+     "t": "2026-11-05T16:24:29+03:00"
     }
    },
    "odds": {
@@ -4705,7 +12298,7 @@
        "OU25": "U2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:19:40+03:00",
+      "fetched_at": "2026-11-05T16:24:29+03:00",
       "note": "Under 2.5 goals"
      },
      {
@@ -4760,15 +12353,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:19:44+03:00"
+     "t": "2026-11-05T16:24:30+03:00"
     }
    },
    "odds": {
@@ -4863,7 +12456,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:19:44+03:00",
+      "fetched_at": "2026-11-05T16:24:30+03:00",
       "note": "Hearts to Win and Over 3.5 Match Goals; Hearts 3-1"
      },
      {
@@ -4925,15 +12518,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:19:57+03:00"
+     "t": "2026-11-05T16:24:31+03:00"
     }
    },
    "odds": {
@@ -5125,6 +12718,1280 @@
      0.1063,
      0.0922
     ],
+    "sample_runs": {
+     "n": 50,
+     "runs": [
+      {
+       "i": 1,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 2,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 49,
+         "side": "home"
+        },
+        {
+         "min": 51,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 3,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 25,
+         "side": "away"
+        },
+        {
+         "min": 37,
+         "side": "home"
+        },
+        {
+         "min": 55,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 4,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 5,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 9,
+         "side": "away"
+        },
+        {
+         "min": 88,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 6,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 36,
+         "side": "home"
+        },
+        {
+         "min": 36,
+         "side": "away"
+        },
+        {
+         "min": 49,
+         "side": "home"
+        },
+        {
+         "min": 86,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 7,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 15,
+         "side": "home"
+        },
+        {
+         "min": 25,
+         "side": "away"
+        },
+        {
+         "min": 49,
+         "side": "home"
+        },
+        {
+         "min": 83,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 8,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "away"
+        },
+        {
+         "min": 74,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 9,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 34,
+         "side": "home"
+        },
+        {
+         "min": 85,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 10,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 56,
+         "side": "away"
+        },
+        {
+         "min": 71,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 11,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "home"
+        },
+        {
+         "min": 8,
+         "side": "away"
+        },
+        {
+         "min": 72,
+         "side": "home"
+        },
+        {
+         "min": "90+1",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 12,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 1,
+         "side": "away"
+        },
+        {
+         "min": 9,
+         "side": "home"
+        },
+        {
+         "min": 29,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 13,
+       "ft": [
+        4,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "home"
+        },
+        {
+         "min": 19,
+         "side": "home"
+        },
+        {
+         "min": 41,
+         "side": "away"
+        },
+        {
+         "min": 50,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 14,
+       "ft": [
+        4,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 7,
+         "side": "home"
+        },
+        {
+         "min": 30,
+         "side": "away"
+        },
+        {
+         "min": "45+3",
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "home"
+        },
+        {
+         "min": 81,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 15,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 22,
+         "side": "home"
+        },
+        {
+         "min": 53,
+         "side": "away"
+        },
+        {
+         "min": 72,
+         "side": "away"
+        },
+        {
+         "min": 82,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 16,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 19,
+         "side": "away"
+        },
+        {
+         "min": 30,
+         "side": "home"
+        },
+        {
+         "min": "90+4",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 17,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 17,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 18,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 12,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 19,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 37,
+         "side": "away"
+        },
+        {
+         "min": 53,
+         "side": "home"
+        },
+        {
+         "min": 87,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 20,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 70,
+         "side": "away"
+        },
+        {
+         "min": 76,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 21,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 18,
+         "side": "home"
+        },
+        {
+         "min": 57,
+         "side": "home"
+        },
+        {
+         "min": 72,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 22,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 49,
+         "side": "home"
+        },
+        {
+         "min": 74,
+         "side": "home"
+        },
+        {
+         "min": "90+2",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 23,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 18,
+         "side": "away"
+        },
+        {
+         "min": "45+4",
+         "side": "home"
+        },
+        {
+         "min": "45+4",
+         "side": "home"
+        },
+        {
+         "min": 75,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 24,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 62,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 25,
+       "ft": [
+        1,
+        3
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 41,
+         "side": "away"
+        },
+        {
+         "min": 68,
+         "side": "away"
+        },
+        {
+         "min": 77,
+         "side": "away"
+        },
+        {
+         "min": 82,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 26,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 1,
+         "side": "home"
+        },
+        {
+         "min": 82,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 27,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 38,
+         "side": "home"
+        },
+        {
+         "min": 51,
+         "side": "home"
+        },
+        {
+         "min": "90+4",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 28,
+       "ft": [
+        1,
+        3
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 39,
+         "side": "away"
+        },
+        {
+         "min": 46,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        },
+        {
+         "min": 71,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 29,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 40,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 30,
+       "ft": [
+        2,
+        3
+       ],
+       "ht": [
+        1,
+        2
+       ],
+       "goals": [
+        {
+         "min": 5,
+         "side": "away"
+        },
+        {
+         "min": 43,
+         "side": "home"
+        },
+        {
+         "min": "45+3",
+         "side": "away"
+        },
+        {
+         "min": 69,
+         "side": "home"
+        },
+        {
+         "min": 83,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 31,
+       "ft": [
+        2,
+        4
+       ],
+       "ht": [
+        1,
+        2
+       ],
+       "goals": [
+        {
+         "min": 14,
+         "side": "away"
+        },
+        {
+         "min": "45+1",
+         "side": "home"
+        },
+        {
+         "min": "45+1",
+         "side": "away"
+        },
+        {
+         "min": 46,
+         "side": "away"
+        },
+        {
+         "min": 69,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 32,
+       "ft": [
+        3,
+        2
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 2,
+         "side": "home"
+        },
+        {
+         "min": 59,
+         "side": "home"
+        },
+        {
+         "min": 67,
+         "side": "home"
+        },
+        {
+         "min": 70,
+         "side": "away"
+        },
+        {
+         "min": "90+5",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 33,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 17,
+         "side": "away"
+        },
+        {
+         "min": 40,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "home"
+        },
+        {
+         "min": 61,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 34,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "away"
+        },
+        {
+         "min": 53,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 35,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 14,
+         "side": "home"
+        },
+        {
+         "min": 27,
+         "side": "away"
+        },
+        {
+         "min": 84,
+         "side": "away"
+        },
+        {
+         "min": "90+3",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 36,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 23,
+         "side": "home"
+        },
+        {
+         "min": 39,
+         "side": "away"
+        },
+        {
+         "min": 50,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 37,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 34,
+         "side": "away"
+        },
+        {
+         "min": 48,
+         "side": "home"
+        },
+        {
+         "min": 49,
+         "side": "away"
+        },
+        {
+         "min": 60,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 38,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 57,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 39,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 10,
+         "side": "away"
+        },
+        {
+         "min": 34,
+         "side": "home"
+        },
+        {
+         "min": 39,
+         "side": "home"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 40,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 26,
+         "side": "away"
+        },
+        {
+         "min": "45+4",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 41,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 69,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 42,
+       "ft": [
+        6,
+        1
+       ],
+       "ht": [
+        4,
+        0
+       ],
+       "goals": [
+        {
+         "min": 8,
+         "side": "home"
+        },
+        {
+         "min": 34,
+         "side": "home"
+        },
+        {
+         "min": 39,
+         "side": "home"
+        },
+        {
+         "min": 45,
+         "side": "home"
+        },
+        {
+         "min": 48,
+         "side": "home"
+        },
+        {
+         "min": 77,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 43,
+       "ft": [
+        5,
+        4
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 7,
+         "side": "home"
+        },
+        {
+         "min": 38,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        },
+        {
+         "min": 58,
+         "side": "home"
+        },
+        {
+         "min": 66,
+         "side": "home"
+        },
+        {
+         "min": 72,
+         "side": "away"
+        },
+        {
+         "min": 83,
+         "side": "home"
+        },
+        {
+         "min": 83,
+         "side": "away"
+        },
+        {
+         "min": 88,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 44,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 45,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "home"
+        },
+        {
+         "min": 9,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 46,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 10,
+         "side": "home"
+        },
+        {
+         "min": 32,
+         "side": "home"
+        },
+        {
+         "min": 89,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 47,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "away"
+        },
+        {
+         "min": 54,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 48,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 72,
+         "side": "away"
+        },
+        {
+         "min": 78,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 49,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 15,
+         "side": "home"
+        },
+        {
+         "min": 75,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 50,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 8,
+         "side": "away"
+        },
+        {
+         "min": 19,
+         "side": "away"
+        }
+       ]
+      }
+     ],
+     "summary": {
+      "1": 22,
+      "X": 15,
+      "2": 13,
+      "O2.5": 27,
+      "BTTS_Y": 29,
+      "top_scores": [
+       [
+        "0-2",
+        7
+       ],
+       [
+        "2-2",
+        7
+       ],
+       [
+        "1-1",
+        5
+       ],
+       [
+        "2-1",
+        5
+       ],
+       [
+        "1-0",
+        4
+       ]
+      ]
+     },
+     "note": "50 örnek koşu yalnızca gösterim içindir; olasılıklar 10.000 simülasyondan hesaplanır."
+    },
     "data_quality": "medium",
     "notes": [
      "Farklı ligler: yaklaşık lig gücü katsayısı kullanıldı"
@@ -5223,19 +14090,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-05T16:19:57+03:00"
+     "t": "2026-11-05T16:24:31+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-05T16:19:44+03:00"
+     "t": "2026-11-05T16:24:30+03:00"
     }
    },
    "odds": {
@@ -5425,6 +14292,1160 @@
      0.0368,
      0.0159
     ],
+    "sample_runs": {
+     "n": 50,
+     "runs": [
+      {
+       "i": 1,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        2
+       ],
+       "goals": [
+        {
+         "min": 22,
+         "side": "home"
+        },
+        {
+         "min": 26,
+         "side": "away"
+        },
+        {
+         "min": 30,
+         "side": "away"
+        },
+        {
+         "min": 65,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 2,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 43,
+         "side": "away"
+        },
+        {
+         "min": 69,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 3,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 55,
+         "side": "home"
+        },
+        {
+         "min": 62,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 4,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 65,
+         "side": "away"
+        },
+        {
+         "min": "90+3",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 5,
+       "ft": [
+        1,
+        3
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 6,
+         "side": "away"
+        },
+        {
+         "min": 27,
+         "side": "away"
+        },
+        {
+         "min": 62,
+         "side": "home"
+        },
+        {
+         "min": 66,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 6,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 15,
+         "side": "away"
+        },
+        {
+         "min": 55,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 7,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 60,
+         "side": "home"
+        },
+        {
+         "min": 64,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 8,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 9,
+         "side": "away"
+        },
+        {
+         "min": 61,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 9,
+       "ft": [
+        4,
+        1
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 38,
+         "side": "home"
+        },
+        {
+         "min": "45+1",
+         "side": "home"
+        },
+        {
+         "min": 60,
+         "side": "home"
+        },
+        {
+         "min": 68,
+         "side": "home"
+        },
+        {
+         "min": 70,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 10,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 54,
+         "side": "away"
+        },
+        {
+         "min": 69,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 11,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "away"
+        },
+        {
+         "min": 48,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 12,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 64,
+         "side": "away"
+        },
+        {
+         "min": 69,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 13,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": "90+2",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 14,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 20,
+         "side": "home"
+        },
+        {
+         "min": 73,
+         "side": "home"
+        },
+        {
+         "min": 84,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 15,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 29,
+         "side": "away"
+        },
+        {
+         "min": "45+1",
+         "side": "home"
+        },
+        {
+         "min": 85,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 16,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 17,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 18,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 65,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 19,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "away"
+        },
+        {
+         "min": 22,
+         "side": "home"
+        },
+        {
+         "min": 87,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 20,
+       "ft": [
+        0,
+        3
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 20,
+         "side": "away"
+        },
+        {
+         "min": 62,
+         "side": "away"
+        },
+        {
+         "min": 73,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 21,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 60,
+         "side": "away"
+        },
+        {
+         "min": 70,
+         "side": "home"
+        },
+        {
+         "min": 88,
+         "side": "away"
+        },
+        {
+         "min": "90+1",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 22,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 53,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 23,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 44,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 24,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        1,
+        2
+       ],
+       "goals": [
+        {
+         "min": 16,
+         "side": "away"
+        },
+        {
+         "min": 18,
+         "side": "home"
+        },
+        {
+         "min": 34,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 25,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 18,
+         "side": "home"
+        },
+        {
+         "min": 46,
+         "side": "home"
+        },
+        {
+         "min": 88,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 26,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "away"
+        },
+        {
+         "min": 54,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 27,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        2
+       ],
+       "goals": [
+        {
+         "min": 6,
+         "side": "home"
+        },
+        {
+         "min": 13,
+         "side": "away"
+        },
+        {
+         "min": 21,
+         "side": "away"
+        },
+        {
+         "min": "90+3",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 28,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 42,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 29,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 7,
+         "side": "away"
+        },
+        {
+         "min": 35,
+         "side": "home"
+        },
+        {
+         "min": 58,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 30,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 27,
+         "side": "home"
+        },
+        {
+         "min": 66,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 31,
+       "ft": [
+        2,
+        3
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 30,
+         "side": "home"
+        },
+        {
+         "min": 41,
+         "side": "away"
+        },
+        {
+         "min": 67,
+         "side": "home"
+        },
+        {
+         "min": 75,
+         "side": "away"
+        },
+        {
+         "min": 78,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 32,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 46,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 33,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 15,
+         "side": "home"
+        },
+        {
+         "min": "45+2",
+         "side": "home"
+        },
+        {
+         "min": 59,
+         "side": "away"
+        },
+        {
+         "min": 90,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 34,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 26,
+         "side": "away"
+        },
+        {
+         "min": 38,
+         "side": "home"
+        },
+        {
+         "min": 48,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 35,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 36,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": "45+4",
+         "side": "away"
+        },
+        {
+         "min": 74,
+         "side": "home"
+        },
+        {
+         "min": "90+2",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 37,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 54,
+         "side": "away"
+        },
+        {
+         "min": 73,
+         "side": "away"
+        },
+        {
+         "min": "90+1",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 38,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 51,
+         "side": "away"
+        },
+        {
+         "min": 51,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 39,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 2,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "away"
+        },
+        {
+         "min": 88,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 40,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 56,
+         "side": "home"
+        },
+        {
+         "min": 61,
+         "side": "home"
+        },
+        {
+         "min": 65,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 41,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 19,
+         "side": "away"
+        },
+        {
+         "min": "90+5",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 42,
+       "ft": [
+        3,
+        2
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 11,
+         "side": "home"
+        },
+        {
+         "min": "45+2",
+         "side": "home"
+        },
+        {
+         "min": 47,
+         "side": "home"
+        },
+        {
+         "min": 51,
+         "side": "away"
+        },
+        {
+         "min": 79,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 43,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 72,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 44,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 45,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": "45+1",
+         "side": "home"
+        },
+        {
+         "min": "90+1",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 46,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 72,
+         "side": "away"
+        },
+        {
+         "min": "90+5",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 47,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 17,
+         "side": "home"
+        },
+        {
+         "min": 24,
+         "side": "away"
+        },
+        {
+         "min": 50,
+         "side": "home"
+        },
+        {
+         "min": 81,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 48,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 47,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "home"
+        },
+        {
+         "min": 80,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 49,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 72,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 50,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 72,
+         "side": "home"
+        }
+       ]
+      }
+     ],
+     "summary": {
+      "1": 17,
+      "X": 15,
+      "2": 18,
+      "O2.5": 22,
+      "BTTS_Y": 28,
+      "top_scores": [
+       [
+        "1-1",
+        9
+       ],
+       [
+        "1-0",
+        6
+       ],
+       [
+        "1-2",
+        6
+       ],
+       [
+        "0-2",
+        5
+       ],
+       [
+        "0-1",
+        4
+       ]
+      ]
+     },
+     "note": "50 örnek koşu yalnızca gösterim içindir; olasılıklar 10.000 simülasyondan hesaplanır."
+    },
     "data_quality": "medium",
     "notes": [
      "Farklı ligler: yaklaşık lig gücü katsayısı kullanıldı"
@@ -5443,7 +15464,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-05T16:19:44+03:00",
+      "fetched_at": "2026-11-05T16:24:30+03:00",
       "note": "Brighton to Win and Over 2.5 Match Goals; Brighton 3-0"
      },
      {
@@ -5533,11 +15554,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -5640,11 +15661,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -5755,11 +15776,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -5877,11 +15898,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -6006,11 +16027,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -6115,11 +16136,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -6234,11 +16255,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -6366,11 +16387,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -8807,11 +18828,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -8928,11 +18949,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -9040,11 +19061,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -9162,11 +19183,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -9296,11 +19317,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -9394,11 +19415,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -9494,11 +19515,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -9610,11 +19631,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -9723,11 +19744,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -9843,11 +19864,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -9968,11 +19989,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -10089,11 +20110,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -10213,11 +20234,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -10313,11 +20334,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -10420,11 +20441,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -10516,11 +20537,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -10616,11 +20637,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -10701,7 +20722,7 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": null,
@@ -10744,7 +20765,7 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": null,
@@ -10786,11 +20807,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -10895,11 +20916,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -10993,11 +21014,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
@@ -11115,11 +21136,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-05T16:17:19+03:00"
+     "t": "2026-11-05T16:22:50+03:00"
     }
    },
    "odds": {
