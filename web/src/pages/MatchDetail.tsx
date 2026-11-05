@@ -9,6 +9,7 @@ import { Badge, DropBadge, Empty, FormStrip, Loading, ResultBadge, Section, Star
 import { AddToCoupon } from '../components/AddToCoupon';
 import { PROV_LABEL, pickResult } from '../components/MatchCard';
 import { Simulation50 } from '../components/Simulation50';
+import { NewsList } from '../components/NewsList';
 
 export default function MatchDetail() {
   const { date = '', id = '' } = useParams();
@@ -199,12 +200,8 @@ function Detail({ m, date }: { m: Match; date: string }) {
           <SquadSection m={m} />
         </section>
       )}
-      {/*
-        HABERLER — <NewsList /> buraya, kadro bölümünün hemen altına gelecek.
-        Bileşen kendi kökünü <section id="haberler"> olarak render eder; kadro verisi
-        yoksa "Kadro/Haber" sekmesi doğrudan #haberler çapasına gider. Örnek:
-          <NewsList m={m} />
-      */}
+      {/* HABERLER — kendi kökü <section id="haberler">; veri yoksa render edilmez */}
+      <NewsList m={m} />
 
       {/* KAYNAKLAR */}
       {(hasConsensus || hasProv || (m.model?.notes?.length ?? 0) > 0) && (

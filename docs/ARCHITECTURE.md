@@ -99,6 +99,10 @@ HT/FT anahtarları: `1/1, 1/X, 1/2, X/1, X/X, X/2, 2/1, 2/X, 2/2`
     "away": { "...": "aynı" },
     "source": "flashscore", "fetched_at": "..."
   },                                     // veya null
+  "news": {                              // opsiyonel; iki tarafta da haber yoksa anahtar yok (docs/NEWS_SOURCES.md)
+    "home": [ {"title":"...","url":"https://...","source":"A Spor","published":"2026-11-05T15:39:43+03:00","tags":["sakat"]} ],
+    "away": [], "fetched_at": "..."      // tags ⊂ sakat|ceza|td|kadro|transfer; son 72 saat, takım başına ≤6
+  },
   "consensus": {
     "sources": [ {"source":"forebet","picks":{"1X2":"1","OU25":"O2.5","BTTS":"BTTS_Y"},"probs":{"1":0.5,"X":0.27,"2":0.23},"fetched_at":"..."} ],
     "summary": [ {"market":"BTTS_Y","agree":4,"total":5,"text":"5 kaynaktan 4'ü KG Var diyor"} ]

@@ -15,7 +15,7 @@ from typing import Callable
 
 from .. import config
 from ..teams import similar, team_key
-from . import api_football, flashscore, forebet, freesupertips, iddaa, nesine, soccerstats, sportytrader, transfermarkt, understat
+from . import api_football, flashscore, forebet, freesupertips, iddaa, nesine, news_rss, soccerstats, sportytrader, transfermarkt, understat
 
 
 @dataclass
@@ -57,6 +57,16 @@ def extra_history(client, board, today) -> dict:
     got = board.run("api_football_history", "API-Football geçmiş (1. Lig vb., anahtar gerekir)",
                     lambda: api_football.history(client, today),
                     count=lambda d: sum(len(v) for v in d.values()))
+    return got or {}
+
+
+def rss_news(client, board, fixtures) -> dict:
+    """RSS/Atom haber akışları (takım haberleri + etiketler). Hata olursa boş döner, akış durmaz."""
+    got = board.run("news_rss", "Haber akışları (RSS/Atom: A Spor, NTV Spor, Fotomaç, TRT, AA, ESPN, Sky...)",
+                    lambda: news_rss.collect(client, fixtures),
+                    count=lambda d: sum(len(v["items"]) for v in d["teams"].values()))
+    if got and got.get("feeds_failed"):
+        board.note("news_rss", f"{got['feeds_ok']} akış okundu; okunamayan: {', '.join(got['feeds_failed'][:10])}")
     return got or {}
 
 

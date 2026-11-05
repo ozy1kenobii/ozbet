@@ -18,7 +18,7 @@ from . import config
 from .agents import bulletin, commentator, consensus, market, scorecard, simulation, squad, stats, value
 from .http import PoliteClient
 from .sources import football_data as fd
-from .sources import registry
+from .sources import news_rss, registry
 from .sources.base import Fixture, StatusBoard, now_iso
 from .teams import TeamMatcher, team_key
 
@@ -155,6 +155,19 @@ def attach_xg(hist: dict[str, list[dict]], xg_rows: dict[str, list[dict]] | None
                     break
 
 
+def attach_news(m: dict, f: Fixture, rss: dict | None) -> None:
+    """Maça RSS haber bloğunu ekler: {"home":[...], "away":[...], "fetched_at"}; haber yoksa anahtar eklenmez."""
+    from .sources import news_rss
+    try:
+        blk = news_rss.for_match(f.home, f.away, rss)
+    except Exception as e:  # noqa: BLE001
+        log.warning("Haber iliştirilemedi %s - %s: %s", f.home, f.away, e)
+        blk = None
+    if blk:
+        m["news"] = blk
+        m["provenance"]["news"] = {"source": "RSS/Atom haber akışları", "t": blk["fetched_at"]}
+
+
 def find_prediction(preds, f: Fixture):
     out = []
     for p in preds or []:
@@ -236,6 +249,12 @@ def main(argv=None):
         got = board.run(src.id, src.name, lambda s=src: s.team_news(client, today, today_fx)) or {}
         for k, v in got.items():
             news.setdefault(k, v)
+    prio_fx = [f for f in today_fx if f.league_id]
+    rss = registry.rss_news(client, board, prio_fx)
+    try:
+        squad.add_coach_signals(news, news_rss.coach_change_keys(rss), prio_fx)
+    except Exception as e:  # noqa: BLE001
+        log.warning("TD sinyali eklenemedi: %s", e)
     preds = []
     for src in registry.PREDICTION_SOURCES:
         preds += board.run(src.id, src.name, lambda s=src: s.predictions(client, today, today_fx)) or []
@@ -306,6 +325,8 @@ def main(argv=None):
                     m["provenance"]["stats"] = {"source": "football-data.co.uk" + (" + xG" if M.xg else ""),
                                                 "t": board.items["football_data_history"].fetched_at}
             m.setdefault("stats", None)
+            # haberler (RSS) — yorumdan önce
+            attach_news(m, f, rss)
             # kadro
             m["squad"] = squad.build(f.home, f.away, f.kickoff, f.league_id, news, all_fx)
             if m["squad"]:

@@ -1633,6 +1633,56 @@
         "source": "flashscore",
         "fetched_at": "2026-11-05T18:31:00+03:00"
       },
+      "news": {
+        "home": [
+          {
+            "title": "ÖRNEK: Ev sahibinde golcü antrenmanda sakatlandı",
+            "url": "https://example.com/haber/home-1-ev-sahibinde-golcu-antrenmanda",
+            "source": "A Spor",
+            "published": "2026-11-05T10:31:00+00:00",
+            "tags": [
+              "sakat"
+            ]
+          },
+          {
+            "title": "ÖRNEK: Derbi öncesi son çalışma tamamlandı",
+            "url": "https://example.com/haber/home-2-derbi-oncesi-son-calisma-tamam",
+            "source": "NTV Spor",
+            "published": "2026-11-05T06:31:00+00:00",
+            "tags": []
+          },
+          {
+            "title": "ÖRNEK: Orta saha oyuncusu kırmızı kart cezası nedeniyle yok",
+            "url": "https://example.com/haber/home-3-orta-saha-oyuncusu-kirmizi-kar",
+            "source": "Fotomaç",
+            "published": "2026-11-04T09:31:00+00:00",
+            "tags": [
+              "ceza"
+            ]
+          }
+        ],
+        "away": [
+          {
+            "title": "ÖRNEK: Teknik direktör görevine yeni isim getirildi",
+            "url": "https://example.com/haber/away-1-teknik-direktor-gorevine-yeni-",
+            "source": "AA",
+            "published": "2026-11-03T23:31:00+00:00",
+            "tags": [
+              "td"
+            ]
+          },
+          {
+            "title": "ÖRNEK: Kadroya alınmayan iki oyuncu derbide yok",
+            "url": "https://example.com/haber/away-2-kadroya-alinmayan-iki-oyuncu-d",
+            "source": "TRT Haber",
+            "published": "2026-11-04T19:31:00+00:00",
+            "tags": [
+              "kadro"
+            ]
+          }
+        ],
+        "fetched_at": "2026-11-05T18:31:00+03:00"
+      },
       "consensus": {
         "sources": [
           {
@@ -1710,6 +1760,10 @@
         },
         "squad": {
           "source": "flashscore",
+          "t": "2026-11-05T18:31:00+03:00"
+        },
+        "news": {
+          "source": "RSS/Atom haber akışları",
           "t": "2026-11-05T18:31:00+03:00"
         }
       }
@@ -6839,6 +6893,30 @@
         "source": "flashscore",
         "fetched_at": "2026-11-05T18:31:00+03:00"
       },
+      "news": {
+        "home": [],
+        "away": [
+          {
+            "title": "ÖRNEK: Defender ruled out with hamstring injury",
+            "url": "https://example.com/haber/away-1-defender-ruled-out-with-hamstr",
+            "source": "Sky Sports",
+            "published": "2026-11-05T03:31:00+00:00",
+            "tags": [
+              "sakat"
+            ]
+          },
+          {
+            "title": "ÖRNEK: Rotation expected before weekend fixture",
+            "url": "https://example.com/haber/away-2-rotation-expected-before-weeke",
+            "source": "ESPN",
+            "published": "2026-11-04T13:31:00+00:00",
+            "tags": [
+              "kadro"
+            ]
+          }
+        ],
+        "fetched_at": "2026-11-05T18:31:00+03:00"
+      },
       "consensus": {
         "sources": [
           {
@@ -6916,6 +6994,10 @@
         },
         "squad": {
           "source": "flashscore",
+          "t": "2026-11-05T18:31:00+03:00"
+        },
+        "news": {
+          "source": "RSS/Atom haber akışları",
           "t": "2026-11-05T18:31:00+03:00"
         }
       }
@@ -13191,6 +13273,21 @@
         "source": "flashscore",
         "fetched_at": "2026-11-05T18:31:00+03:00"
       },
+      "news": {
+        "home": [
+          {
+            "title": "ÖRNEK: Club confirms new loan signing",
+            "url": "https://example.com/haber/home-1-club-confirms-new-loan-signing",
+            "source": "ESPN",
+            "published": "2026-11-05T00:31:00+00:00",
+            "tags": [
+              "transfer"
+            ]
+          }
+        ],
+        "away": [],
+        "fetched_at": "2026-11-05T18:31:00+03:00"
+      },
       "consensus": {
         "sources": [
           {
@@ -13260,6 +13357,10 @@
         },
         "squad": {
           "source": "flashscore",
+          "t": "2026-11-05T18:31:00+03:00"
+        },
+        "news": {
+          "source": "RSS/Atom haber akışları",
           "t": "2026-11-05T18:31:00+03:00"
         }
       }

@@ -95,6 +95,27 @@ def _form_sentence(team: str, st: dict, venue: str) -> str | None:
     return s + "."
 
 
+NEWS_TAG_WORD = {"td": "teknik direktör", "sakat": "sakatlık", "ceza": "ceza"}
+
+
+def news_sentence(m: dict) -> str | None:
+    """RSS haberlerinden en fazla 1 cümle: takım başına en sık geçen önemli etiket (td > sakat > ceza)."""
+    news = m.get("news") or {}
+    parts = []
+    for side in ("home", "away"):
+        items = news.get(side) or []
+        best = None
+        for t in ("td", "sakat", "ceza"):
+            c = sum(1 for it in items if t in (it.get("tags") or []))
+            if c and (best is None or c > best[1]):
+                best = (t, c)
+        if best:
+            parts.append(f"{m[side]['name']} ile ilgili {best[1]} {NEWS_TAG_WORD[best[0]]}")
+    if not parts:
+        return None
+    return f"Son 3 günde {' ve '.join(parts)} haberi var."
+
+
 def rule_comment(m: dict) -> str:
     H, A = m["home"]["name"], m["away"]["name"]
     model, stats, squad = m.get("model"), m.get("stats") or {}, m.get("squad") or {}
@@ -129,6 +150,9 @@ def rule_comment(m: dict) -> str:
             out.append(f"{team} tarafında kilit eksik: {names}.")
         elif sq.get("rotation_risk"):
             out.append(f"{team} için Avrupa maçı nedeniyle rotasyon riski var.")
+    ns = news_sentence(m)
+    if ns:
+        out.append(ns)
     cons = m.get("consensus") or {}
     ext = [s for s in cons.get("sources", []) if s["source"] not in ("OZBET Model", "Piyasa (oran)")]
     if cons.get("summary") and ext:

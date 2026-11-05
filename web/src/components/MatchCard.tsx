@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import type { MarketKey, Match } from '../lib/types';
 import { fmtTime, odd, pct } from '../lib/format';
 import { marketLabel, marketWins } from '../lib/markets';
-import { DropBadge, Icon, ResultBadge, Stars, ValueBadge } from './ui';
+import { Badge, DropBadge, Icon, ResultBadge, Stars, ValueBadge } from './ui';
 import { AddToCoupon } from './AddToCoupon';
 
 /** Kartta gösterilen sakin oran satırı */
@@ -10,7 +10,7 @@ const ODDS_COLS: { k: MarketKey; t: string }[] = [
   { k: '1', t: '1' }, { k: 'X', t: 'X' }, { k: '2', t: '2' }, { k: 'O2.5', t: 'Ü2,5' },
 ];
 
-export const PROV_LABEL: Record<string, string> = { fixture: 'Bülten', odds: 'Oran', stats: 'İstatistik', squad: 'Kadro', model: 'Model', predictions: 'Tahmin siteleri', consensus: 'Konsensüs', fixtures: 'Bülten', results: 'Sonuç' };
+export const PROV_LABEL: Record<string, string> = { news: 'Haber', fixture: 'Bülten', odds: 'Oran', stats: 'İstatistik', squad: 'Kadro', model: 'Model', predictions: 'Tahmin siteleri', consensus: 'Konsensüs', fixtures: 'Bülten', results: 'Sonuç' };
 
 /** Provenance içindeki farklı kaynak adlarının sayısı (virgülle birleşik olanlar ayrılır). */
 export function sourceCount(m: Match): number {
@@ -43,6 +43,7 @@ export function MatchCard({ m, date, showLeague = false }: { m: Match; date: str
   const alarms = m.market?.drop_alarms ?? [];
   const nSrc = sourceCount(m);
   const isValue = (m.value?.length ?? 0) > 0;
+  const hasNews = [...(m.news?.home ?? []), ...(m.news?.away ?? [])].some((n) => n.tags?.some((t) => t === 'sakat' || t === 'ceza' || t === 'td'));
 
   return (
     <article className="panel relative">
@@ -77,9 +78,10 @@ export function MatchCard({ m, date, showLeague = false }: { m: Match; date: str
       {/* Erişilebilir tercih özeti (görsel satır aria-hidden) */}
       {pick && <span className="sr-only">OZBET Tercihi {pick.label || marketLabel(pick.market)}, model {pct(pick.p)}, güven {pick.stars} yıldız{won != null ? (won ? ', tuttu' : ', tutmadı') : ''}</span>}
 
-      {(isValue || alarms.length > 0) && (
+      {(isValue || alarms.length > 0 || hasNews) && (
         <div className="mx-3.5 mt-2 flex flex-wrap gap-1.5">
           {isValue && <ValueBadge />}
+          {hasNews && <Badge tone="warn" title="Sakatlık, ceza veya teknik direktör haberi var">Haber</Badge>}
           {alarms.length > 0 && <DropBadge>Düşen oran: {alarms.map(marketLabel).join(', ')}</DropBadge>}
         </div>
       )}
