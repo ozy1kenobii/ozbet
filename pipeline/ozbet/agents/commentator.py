@@ -66,7 +66,8 @@ def stars(m: dict, pick: dict, trust: dict[str, float]) -> int:
         score -= 1
     s = int(max(1, min(5, round(1 + score))))
     flags = m.get("flags", [])
-    if q == "low" or "Lig dışı/düşük kapsam" in flags or any(f.startswith("Model-piyasa farkı") for f in flags):
+    if q == "low" or "Lig dışı/düşük kapsam" in flags or any(
+            f.startswith(("Model-piyasa farkı", "Kupa/çapraz lig")) for f in flags):
         s = min(s, 2)
     return s
 
@@ -125,7 +126,8 @@ def rule_comment(m: dict) -> str:
     cons = m.get("consensus") or {}
     ext = [s for s in cons.get("sources", []) if s["source"] not in ("OZBET Model", "Piyasa (oran)")]
     if cons.get("summary") and ext:
-        out.append(cons["summary"][0]["text"].capitalize() + ".")
+        t0 = cons["summary"][0]["text"]
+        out.append(t0[:1].upper() + t0[1:] + ".")
     mk = m.get("market") or {}
     if mk.get("drop_alarms"):
         k = mk["drop_alarms"][0]
@@ -172,7 +174,10 @@ def annotate(m: dict, trust: dict[str, float], use_llm: bool = True) -> None:
         pick["stars"] = stars(m, pick, trust)
     m["pick"] = pick
     if not m.get("value"):
-        m["value_note"] = "Değer yok" if m.get("odds") and m.get("model") else "Oran/model yok – değer hesaplanamadı"
+        if any(f.startswith("Kupa/çapraz lig") for f in m.get("flags", [])):
+            m["value_note"] = "Kupa maçı – değer etiketi verilmez"
+        else:
+            m["value_note"] = "Değer yok" if m.get("odds") and m.get("model") else "Oran/model yok – değer hesaplanamadı"
     text = llm_comment(m) if use_llm else None
     m["comment"] = text or rule_comment(m)
     m["comment_source"] = "llm" if text else "kural"

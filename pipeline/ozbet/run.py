@@ -43,6 +43,26 @@ def _write(p: Path, obj):
     tmp.replace(p)
 
 
+DEBUG_HOSTS = {"flashscore": "flashscore", "flashscore_results": "flashscore", "forebet": "forebet",
+               "sportytrader": "sportytrader", "freesupertips": "freesupertips", "soccerstats": "soccerstats",
+               "understat": "understat", "transfermarkt": "transfermarkt", "nesine": "nesine", "iddaa": "iddaa",
+               "football_data_fixtures": "football-data"}
+
+
+def dump_debug(client, board):
+    """Boş/hatalı dönen kaynakların ham yanıtlarını .cache/debug altına yazar (Actions artifact'ı olarak yüklenir,
+    depoya/siteye girmez). Seçici güncellemek için kullanılır."""
+    d = config.CACHE_DIR / "debug"
+    d.mkdir(parents=True, exist_ok=True)
+    for sid, st in board.items.items():
+        host = DEBUG_HOSTS.get(sid)
+        if not host or st.status == "ok":
+            continue
+        hits = [r for r in client.recent if host in r[0]]
+        for i, (url, code, body) in enumerate(hits[-4:]):
+            (d / f"{sid}-{i}.txt").write_text(f"URL: {url}\nHTTP: {code}\n\n{body}", encoding="utf-8")
+
+
 def run_label(now: datetime) -> str:
     h = now.hour + now.minute / 60
     return "08:30" if h < 11 else ("13:30" if h < 16 else "18:30")
@@ -273,7 +293,10 @@ def main(argv=None):
             if m["model"] and mk and "1" in mk["implied"] and max(
                     abs(m["model"]["probs"][k] - mk["implied"][k]) for k in ("1", "X", "2")) > value.MAX_EDGE:
                 m["flags"].append("Model-piyasa farkı çok büyük (veri hatası olabilir)")
-            m["value"] = value.find_value((m["model"] or {}).get("probs"), m["odds"], (mk or {}).get("implied"), trust)
+            cup = bool(lg and lg.cup) or not lg
+            if cup and m["model"]:
+                m["flags"].append("Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez")
+            m["value"] = [] if cup else value.find_value((m["model"] or {}).get("probs"), m["odds"], (mk or {}).get("implied"), trust)
             commentator.annotate(m, trust, use_llm=not args.no_llm and lg is not None)
             if f.result:
                 m["status"] = "finished"
@@ -314,6 +337,10 @@ def main(argv=None):
                     {"id": "OTHER", "name": "Diğer ligler", "country": "", "priority": 99} for l in leagues_present],
         "matches": matches,
     }
+    try:
+        dump_debug(client, board)
+    except Exception as e:  # noqa: BLE001
+        log.info("debug dökümü yazılamadı: %s", e)
     _write(snap_path, snaps)
     _write(data / f"{today.isoformat()}.json", doc)
     idx = _read(data / "index.json", {"dates": []}) or {"dates": []}

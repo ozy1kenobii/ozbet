@@ -213,3 +213,13 @@ def test_rho_bounds_keep_tau_positive():
     assert tau(0, 0, 2.5, 1.5, r) > 0 and r <= 1 / (2.5 * 1.5)
     s = simulate(2.5, 1.5, 0.3, 0.44, 5000, 1)
     assert s["score_matrix"][0][0] >= 0 and abs(sum(s["total_goals"]) - 1) < 1e-6
+
+
+def test_value_blend_weight(monkeypatch):
+    monkeypatch.setattr(config, "MODEL_WEIGHT", 0.4)
+    odds = {"1": 2.2, "X": 3.4, "2": 4.0}
+    imp = market.implied(odds)["implied"]
+    # ham fark 0.10 → harmanla 0.04 < %5 eşik → değer yok
+    assert value.find_value({"1": imp["1"] + 0.10, "X": 0.2, "2": 0.2}, odds, imp) == []
+    v = value.find_value({"1": imp["1"] + 0.15, "X": 0.2, "2": 0.2}, odds, imp)
+    assert v and abs(v[0]["edge"] - 0.06) < 1e-3

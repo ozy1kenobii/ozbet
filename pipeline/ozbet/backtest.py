@@ -40,6 +40,9 @@ def run_league(rows: list[dict], test_seasons: list[str], edge: float = config.V
         return None
     acc = {"n": 0, "mb": 0.0, "kb": 0.0, "ml": 0.0, "kl": 0.0, "ou_mb": 0.0, "ou_kb": 0.0, "ou_n": 0,
            "bets": 0, "profit": 0.0, "clv_sum": 0.0, "clv_n": 0}
+    ALPHAS, EDGES = (1.0, 0.6, 0.4, 0.25), (0.03, 0.05, 0.08, 0.10)
+    grid = {(a, e): [0, 0.0] for a in ALPHAS for e in EDGES}
+    blend_brier = {a: 0.0 for a in ALPHAS}
     start = test[0]["date"]
     week = start
     model = None
@@ -65,8 +68,22 @@ def run_league(rows: list[dict], test_seasons: list[str], edge: float = config.V
             if "O2.5" in q:
                 ov = 1.0 if r["hg"] + r["ag"] > 2 else 0.0
                 acc["ou_mb"] += (p["O2.5"] - ov) ** 2; acc["ou_kb"] += (q["O2.5"] - ov) ** 2; acc["ou_n"] += 1
-            # değer bahisleri: açılış oranı
+            # değer bahisleri: kapanış öncesi ortalama oran (Avg)
             op = implied(r["odds_open"])
+            if op and "1" in op["implied"]:
+                qo = op["implied"]
+                for a in ALPHAS:
+                    pb = {k: a * p[k] + (1 - a) * qo[k] for k in ("1", "X", "2")}
+                    blend_brier[a] += _brier(pb, o)
+                    for k in ("1", "X", "2", "O2.5", "U2.5"):
+                        if k not in qo or k not in r["odds_open"]:
+                            continue
+                        pk = a * p[k] + (1 - a) * qo[k]
+                        for e in EDGES:
+                            if pk - qo[k] >= e:
+                                g = grid[(a, e)]
+                                g[0] += 1
+                                g[1] += (r["odds_open"][k] - 1) if outcome_won(k, r["hg"], r["ag"]) else -1
             if op:
                 for k in ("1", "X", "2", "O2.5", "U2.5"):
                     if k in op["implied"] and k in r["odds_open"] and p[k] - op["implied"][k] >= edge:
@@ -87,6 +104,9 @@ def run_league(rows: list[dict], test_seasons: list[str], edge: float = config.V
         "n_value_bets": acc["bets"],
         "roi_value_bets": round(acc["profit"] / acc["bets"], 4) if acc["bets"] else None,
         "avg_clv": round(acc["clv_sum"] / acc["clv_n"], 4) if acc["clv_n"] else None,
+        "blend_brier": {str(a): round(v / n, 4) for a, v in blend_brier.items()},
+        "grid": [{"alpha": a, "edge": e, "bets": g[0], "profit": round(g[1], 2),
+                  "roi": round(g[1] / g[0], 4) if g[0] else None} for (a, e), g in grid.items()],
     }
 
 
@@ -127,6 +147,17 @@ def main(argv=None):
             "n_value_bets": bets,
             "roi_value_bets": round(sum((b["roi_value_bets"] or 0) * b["n_value_bets"] for b in bl) / bets, 4) if bets else None,
         }
+    if bl and all("grid" in b for b in bl):
+        agg = {}
+        for b in bl:
+            for g in b["grid"]:
+                k = (g["alpha"], g["edge"])
+                x = agg.setdefault(k, [0, 0.0]); x[0] += g["bets"]; x[1] += g["profit"]
+        out["grid"] = [{"alpha": a, "edge": e, "bets": x[0], "profit": round(x[1], 2),
+                        "roi": round(x[1] / x[0], 4) if x[0] else None} for (a, e), x in sorted(agg.items())]
+        n = sum(b["n"] for b in bl)
+        out["blend_brier"] = {a: round(sum(b["blend_brier"][a] * b["n"] for b in bl) / n, 4)
+                              for a in bl[0]["blend_brier"]}
     (config.DATA_DIR).mkdir(parents=True, exist_ok=True)
     (config.DATA_DIR / "backtest.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     return out

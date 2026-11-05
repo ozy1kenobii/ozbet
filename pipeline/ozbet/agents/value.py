@@ -16,6 +16,7 @@ def find_value(model_probs: dict | None, odds: dict | None, implied: dict | None
         o, ip, mp = odds.get(k), implied.get(k), model_probs.get(k)
         if not (o and ip and mp):
             continue
+        mp = config.MODEL_WEIGHT * mp + (1 - config.MODEL_WEIGHT) * ip   # piyasa ile harman (backtest'e göre)
         if mp - ip > MAX_EDGE:   # ham fark aşırı → büyük olasılıkla veri/eşleme hatası; büzülme bunu gizlemesin
             continue
         t = (trust or {}).get(k, 1.0)

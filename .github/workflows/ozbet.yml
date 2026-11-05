@@ -93,6 +93,15 @@ jobs:
         working-directory: pipeline
         run: python -m ozbet.backtest
 
+      - name: Teşhis dökümü (boş dönen kaynakların ham yanıtları)
+        if: always() && github.event_name != 'push'
+        uses: actions/upload-artifact@v4
+        with:
+          name: kaynak-teshis
+          path: .cache/debug
+          retention-days: 5
+          if-no-files-found: ignore
+
       - name: Veriyi depoya kaydet
         if: github.event_name != 'push'
         run: |

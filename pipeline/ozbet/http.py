@@ -32,6 +32,7 @@ class PoliteClient:
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self._last: dict[str, float] = {}
         self._robots: dict[str, urllib.robotparser.RobotFileParser | None] = {}
+        self.recent: list[tuple[str, int, str]] = []   # (url, http durum, gövde başı) — teşhis için
 
     # --- robots.txt ---
     def allowed(self, url: str) -> bool:
@@ -67,7 +68,9 @@ class PoliteClient:
             check_robots: bool = True, retries: int = 2) -> str:
         cp = self._cache_path(url, params)
         if ttl > 0 and cp.exists() and time.time() - cp.stat().st_mtime < ttl:
-            return cp.read_text(encoding="utf-8", errors="replace")
+            text = cp.read_text(encoding="utf-8", errors="replace")
+            self.recent = (self.recent + [(url + " [önbellek]", 200, text[:150_000])])[-60:]
+            return text
         if check_robots and not self.allowed(url):
             raise Blocked(f"robots.txt izin vermiyor: {url}")
         host = urlparse(url).netloc
@@ -76,6 +79,7 @@ class PoliteClient:
             self._wait(host)
             try:
                 r = self.s.get(url, params=params, headers=headers, timeout=config.REQUEST_TIMEOUT_S)
+                self.recent = (self.recent + [(r.url, r.status_code, r.text[:150_000])])[-60:]
                 if r.status_code in (401, 403, 429, 451):
                     raise Blocked(f"HTTP {r.status_code}: {url}")
                 r.raise_for_status()

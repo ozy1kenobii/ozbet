@@ -24,7 +24,9 @@ VALUE_EDGE = 0.05          # model_p - ima_p eşiği
 DROP_ALARM = 0.07          # oranda %7+ düşüş → alarm
 TIME_DECAY_XI = 0.0019     # Dixon-Coles zaman ağırlığı (gün başına) ~ yarı ömür ~365 gün
 MIN_TEAM_MATCHES = 6       # bundan az maçı olan takım için "düşük veri"
-XG_BLEND = 0.35            # xG varsa λ = (1-w)*λ_gol + w*λ_xG
+XG_BLEND = 0.35
+# Değer hesabında model ağırlığı: p = α·model + (1-α)·piyasa. Backtest ızgarasıyla seçilir (data/backtest.json "grid").
+MODEL_WEIGHT = float(os.environ.get("OZBET_MODEL_WEIGHT", "0.4"))            # xG varsa λ = (1-w)*λ_gol + w*λ_xG
 
 
 @dataclass(frozen=True)
