@@ -94,7 +94,8 @@ HT/FT anahtarları: `1/1, 1/X, 1/2, X/1, X/X, X/2, 2/1, 2/X, 2/2`
              "btts_pct":0.5, "o25_pct":0.6, "clean_sheets_venue":5, "venue_n":6,
              "corners_avg":5.4, "cards_avg":2.1, "n":10},
     "away": { "...": "aynı" },
-    "h2h": [ {"date":"2026-03-01","home":"Fenerbahçe","away":"Galatasaray","score":"1-1"} ]
+    "h2h": [ {"date":"2026-03-01","home":"Fenerbahçe","away":"Galatasaray","score":"1-1"} ],
+    "h2h_summary": {"n":6,"home_wins":2,"draws":2,"away_wins":2,"avg_goals":4.33,"btts":5,"o25":5}
   },
   "squad": {
     "home": {"missing":[{"name":"X","reason":"sakat|cezalı|şüpheli","key":true}], "rotation_risk":false, "coach_change":false, "adjustment":0.0},
@@ -162,3 +163,9 @@ diye lig başına **en çok satırı olan tek kaynağı** seçer. Ana ligler (fo
 
 ## data/index.json
 `{"dates":["2026-11-05","2026-11-04"], "latest":"2026-11-05"}`
+
+## Puan durumu ve trend kartları (agents/standings.py, agents/trends.py)
+- Gün dosyası: `standings = {lig_id: {season, updated, rows, home, away}}` — yalnız o gün maçı olan (kupa dışı) ligler.
+  Satır: `team,pos,o,g,b,m,ag,yg,av,p,form` (form en yeni başta). Sıralama puan > averaj > atılan gol. `updated` = tablodaki son maç tarihi (football-data gecikmesi).
+- Maç: `table = {home:{team,pos,pts,played}, away:{...}}`; `trends = [{team:"home|away|both", text, market, hits, n, p, odds}]`
+  (≥5 maçta ≥%80 / ≤%20 ya da ≥4 maçlık seri; maç başına en fazla 6). Trend kartları geçmişi özetler, tahmin değildir.

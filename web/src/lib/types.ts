@@ -52,6 +52,44 @@ export interface H2H {
   score: string;
 }
 
+export interface H2HSummary {
+  n: number;
+  home_wins: number;   // bugünkü ev sahibinin galibiyetleri (eski maçın sahasından bağımsız)
+  draws: number;
+  away_wins: number;
+  avg_goals: number;
+  btts: number;
+  o25: number;
+}
+
+export interface StandingRow {
+  team: string;
+  pos: number;
+  o: number; g: number; b: number; m: number;
+  ag: number; yg: number; av: number; p: number;
+  form: FormLetter[];
+}
+
+export interface LeagueStandings {
+  season: string;
+  updated: string;
+  rows: StandingRow[];
+  home: StandingRow[];
+  away: StandingRow[];
+}
+
+export interface TablePos { team: string; pos: number; pts: number; played: number }
+
+export interface Trend {
+  team: 'home' | 'away' | 'both';
+  text: string;
+  market: string;
+  hits: number;
+  n: number;
+  p?: number | null;
+  odds?: number | null;
+}
+
 export interface MissingPlayer {
   name: string;
   reason: 'sakat' | 'cezalı' | 'şüpheli' | string;
@@ -200,7 +238,9 @@ export interface Match {
     drop_alarms: MarketKey[];
   } | null;
   model: Model | null;
-  stats: { home: TeamStats; away: TeamStats; h2h: H2H[] } | null;
+  stats: { home: TeamStats; away: TeamStats; h2h: H2H[]; h2h_summary?: H2HSummary | null } | null;
+  table?: { home: TablePos; away: TablePos } | null;
+  trends?: Trend[] | null;
   news?: MatchNews | null;
   squad: { home: SquadSide | null; away: SquadSide | null; source: string | null; fetched_at: string | null } | null;
   consensus: { sources: ConsensusSource[]; summary: ConsensusSummary[] } | null;
@@ -222,6 +262,7 @@ export interface DayFile {
   sources: Source[];
   leagues: League[];
   matches: Match[];
+  standings?: Record<string, LeagueStandings>;
   market_labels?: Record<string, string>;
   market_categories?: MarketCategory[];
 }
