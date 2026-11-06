@@ -8,7 +8,8 @@ Roller:
   RESULT_SOURCES     .results(client, day) -> {(date, hkey, akey): {"ft":[h,a], "ht":[h,a]}}
                      .archive_feed(client, day) -> list[Fixture]  (opsiyonel; birikimli sonuç arşivini besler)
   ELO_SOURCES        .elo(client, day) -> clubelo.EloTable
-  extra_history      football-data.co.uk'ta olmayan ligler (1. Lig): soccerstats, birikimli arşiv, API-Football
+  extra_history      football-data.co.uk'ta olmayan ligler (1. Lig): soccerstats, TFF, birikimli arşiv, API-Football
+  tff_referees       Süper Lig hakemleri (tff.org) → TR1 geçmiş satırları + bugünkü fikstürler
 """
 from __future__ import annotations
 
@@ -18,7 +19,7 @@ from typing import Callable
 
 from .. import config
 from ..teams import similar, team_key
-from . import api_football, archive, clubelo, forebet, freesupertips, iddaa, nesine, news_rss, soccerstats, sportytrader, transfermarkt, understat
+from . import api_football, archive, clubelo, forebet, freesupertips, iddaa, nesine, news_rss, soccerstats, sportytrader, tff, transfermarkt, understat
 
 
 @dataclass
@@ -79,6 +80,10 @@ def extra_history(client, board, today, data_dir=None) -> dict:
                          lambda c=code: soccerstats.results_history(client, c, today))
         if rows:
             cands.setdefault(lid, []).append(("soccerstats", rows))
+    rows = board.run("tff_tr2", f"TFF sonuçlar ({config.LEAGUE_BY_ID['TR2'].name} güncel sezon; {tff.ATTRIBUTION})",
+                     lambda: tff.tr2_history(client, today))
+    if rows:
+        cands.setdefault("TR2", []).append(("tff", rows))
     arch = board.run("archive_history", "Birikimli sonuç arşivi (modele giren ligler)",
                      lambda: {lid: archive.history_rows(data_dir, lid) for lid in archive.leagues(data_dir)},
                      empty_is_partial=False,
@@ -97,6 +102,19 @@ def extra_history(client, board, today, data_dir=None) -> dict:
     for lid, rows in (got or {}).items():
         cands.setdefault(lid, []).append(("api-football", rows))
     return {lid: max(lst, key=lambda x: len(x[1]))[1] for lid, lst in cands.items()}
+
+
+def tff_referees(client, board, today, hist: dict, fixtures) -> list[dict]:
+    """Süper Lig hakemleri (tff.org): TR1 geçmiş satırlarına `referee` (football-data'da TR1 hakem kolonu yok) ve
+    bugünkü TR1 fikstürlerine `extra["referee"]`. Hata olursa boş döner, akış durmaz."""
+    refs = board.run("tff_referees", f"TFF hakem atamaları (Süper Lig; {tff.ATTRIBUTION})",
+                     lambda: tff.tr1_referees(client, today)) or []
+    if refs:
+        nh = tff.attach_referees_history(hist.get("TR1", []), refs)
+        nf = tff.attach_referees_fixtures(fixtures, refs)
+        board.note("tff_referees", f"{len(refs)} maç hakemi okundu; {nh} geçmiş satıra, {nf} bugünkü maça eklendi. "
+                   + tff.ATTRIBUTION)
+    return refs
 
 
 def rss_news(client, board, fixtures) -> dict:
