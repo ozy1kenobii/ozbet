@@ -1,14 +1,14 @@
 {
  "schema_version": 1,
  "date": "2026-11-06",
- "generated_at": "2026-11-06T16:33:20+03:00",
+ "generated_at": "2026-11-06T16:45:31+03:00",
  "run_label": "18:30",
  "sources": [
   {
    "id": "flashscore",
    "name": "Flashscore (fikstür, sonuç, eksik oyuncu)",
    "status": "skipped",
-   "fetched_at": "2026-11-06T16:29:53+03:00",
+   "fetched_at": "2026-11-06T16:43:33+03:00",
    "note": "Devre dışı: kullanım şartları otomatik istek ve veri çıkarmayı yasaklıyor (md. 2.9-2.10).",
    "items": 0
   },
@@ -16,7 +16,7 @@
    "id": "nesine",
    "name": "Nesine iddaa bülteni (kod, MBS, oran)",
    "status": "ok",
-   "fetched_at": "2026-11-06T16:29:55+03:00",
+   "fetched_at": "2026-11-06T16:43:35+03:00",
    "note": null,
    "items": 1290
   },
@@ -24,7 +24,7 @@
    "id": "iddaa",
    "name": "iddaa.com resmi bülten (oran, MBS)",
    "status": "ok",
-   "fetched_at": "2026-11-06T16:29:59+03:00",
+   "fetched_at": "2026-11-06T16:43:38+03:00",
    "note": null,
    "items": 1307
   },
@@ -32,7 +32,7 @@
    "id": "api_football",
    "name": "API-Football (yedek, anahtar gerekir)",
    "status": "partial",
-   "fetched_at": "2026-11-06T16:29:59+03:00",
+   "fetched_at": "2026-11-06T16:43:38+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -40,7 +40,7 @@
    "id": "football_data_fixtures",
    "name": "football-data.co.uk fixtures.csv (oran yedeği)",
    "status": "ok",
-   "fetched_at": "2026-11-06T16:30:00+03:00",
+   "fetched_at": "2026-11-06T16:43:38+03:00",
    "note": null,
    "items": 20
   },
@@ -48,7 +48,7 @@
    "id": "football_data_history",
    "name": "football-data.co.uk (geçmiş sonuçlar + oranlar)",
    "status": "ok",
-   "fetched_at": "2026-11-06T16:30:11+03:00",
+   "fetched_at": "2026-11-06T16:43:54+03:00",
    "note": null,
    "items": 12475
   },
@@ -56,7 +56,7 @@
    "id": "understat",
    "name": "Understat (xG, 5 büyük lig)",
    "status": "missing",
-   "fetched_at": "2026-11-06T16:30:14+03:00",
+   "fetched_at": "2026-11-06T16:43:54+03:00",
    "note": "RuntimeError: understat bakımda",
    "items": 0
   },
@@ -64,7 +64,7 @@
    "id": "soccerstats_tr2",
    "name": "SoccerStats sonuçlar (1. Lig geçmişi)",
    "status": "missing",
-   "fetched_at": "2026-11-06T16:30:19+03:00",
+   "fetched_at": "2026-11-06T16:43:59+03:00",
    "note": "RuntimeError: soccerstats sonuç sayfaları okunamadı: turkey2: Blocked; turkey2_2026: Blocked; turkey2_2025: Blocked",
    "items": 0
   },
@@ -72,7 +72,7 @@
    "id": "archive_history",
    "name": "Birikimli sonuç arşivi (modele giren ligler)",
    "status": "ok",
-   "fetched_at": "2026-11-06T16:30:19+03:00",
+   "fetched_at": "2026-11-06T16:43:59+03:00",
    "note": "Henüz eşik altında: BEL1 10/60, ESP1 10/60, GER1 9/60, GER2 9/60, GRE1 7/60, ITA1 12/60, ITA2 10/60, NED1 9/60, POR1 9/60, SCO1 3/60, TR1 9/60",
    "items": 0
   },
@@ -80,7 +80,7 @@
    "id": "api_football_history",
    "name": "API-Football geçmiş (1. Lig vb., anahtar gerekir)",
    "status": "partial",
-   "fetched_at": "2026-11-06T16:30:19+03:00",
+   "fetched_at": "2026-11-06T16:43:59+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -88,7 +88,7 @@
    "id": "clubelo",
    "name": "ClubElo (kulüp Elo puanları, lig-arası düzeltme)",
    "status": "missing",
-   "fetched_at": "2026-11-06T16:31:07+03:00",
+   "fetched_at": "2026-11-06T16:44:57+03:00",
    "note": "HTTPError: 502 Server Error: Bad Gateway for url: http://api.clubelo.com/2026-11-06",
    "items": 0
   },
@@ -96,7 +96,7 @@
    "id": "transfermarkt",
    "name": "Transfermarkt (sakatlık listesi)",
    "status": "partial",
-   "fetched_at": "2026-11-06T16:31:20+03:00",
+   "fetched_at": "2026-11-06T16:45:10+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -104,7 +104,7 @@
    "id": "news_rss",
    "name": "Haber akışları (RSS/Atom: A Spor, NTV Spor, Fotomaç, TRT, AA, ESPN, Sky...)",
    "status": "ok",
-   "fetched_at": "2026-11-06T16:31:35+03:00",
+   "fetched_at": "2026-11-06T16:45:10+03:00",
    "note": "14 akış okundu; okunamayan: espn_soccer(boş)",
    "items": 15
   },
@@ -112,7 +112,7 @@
    "id": "forebet",
    "name": "Forebet (matematiksel tahmin)",
    "status": "missing",
-   "fetched_at": "2026-11-06T16:31:35+03:00",
+   "fetched_at": "2026-11-06T16:45:10+03:00",
    "note": "Blocked: Forebet bot koruması (Cloudflare) erişimi engelliyor: HTTP 403: https://www.forebet.com/en/football-tips-and-predictions-for-today",
    "items": 0
   },
@@ -120,7 +120,7 @@
    "id": "sportytrader",
    "name": "SportyTrader (uzman tahmini)",
    "status": "ok",
-   "fetched_at": "2026-11-06T16:32:21+03:00",
+   "fetched_at": "2026-11-06T16:45:13+03:00",
    "note": null,
    "items": 13
   },
@@ -128,7 +128,7 @@
    "id": "freesupertips",
    "name": "FreeSuperTips (ipucu)",
    "status": "ok",
-   "fetched_at": "2026-11-06T16:33:04+03:00",
+   "fetched_at": "2026-11-06T16:45:13+03:00",
    "note": null,
    "items": 19
   },
@@ -136,25 +136,25 @@
    "id": "soccerstats",
    "name": "SoccerStats (lig istatistik eğilimi)",
    "status": "missing",
-   "fetched_at": "2026-11-06T16:33:19+03:00",
+   "fetched_at": "2026-11-06T16:45:28+03:00",
    "note": "RuntimeError: soccerstats: hiçbir lig tablosu okunamadı",
    "items": 0
   },
   {
    "id": "nesine_results",
    "name": "Nesine (sonuçlar)",
-   "status": "partial",
-   "fetched_at": "2026-11-06T16:33:19+03:00",
-   "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
+   "status": "missing",
+   "fetched_at": "2026-11-06T16:45:30+03:00",
+   "note": "Blocked: robots.txt izin vermiyor: https://ls.nesine.com/api/v2/Bet/GetLiveBetResultsWithVersion?v=0",
    "items": 0
   },
   {
    "id": "pipeline",
    "name": "OZBET işleme",
    "status": "ok",
-   "fetched_at": "2026-11-06T16:33:20+03:00",
+   "fetched_at": "2026-11-06T16:45:31+03:00",
    "note": "Eşlenemeyen lig adları (ilk 15): Almanya 3. Lig, Almanya Bundesliga Haftalık Bahisler, Almanya Böl. Lig, Batı, Almanya Böl. Lig, Bavyera, Almanya Böl. Lig, Kuzey , Almanya Böl. Lig, Kuzey Doğu, Almanya Kadınlar Bundesliga, Arjantin Primera A Kapanış, Kadınlar, Arjantin Primera LPF, Kapanış, Avusturya 2. Lig, Avusturya Bundesliga, Azerbaycan Premier Lig, BAE 1.Lig, Bahreyn 2. Lig, Belarus Premier Lig",
-   "items": 211
+   "items": 213
   }
  ],
  "leagues": [
@@ -276,27 +276,27 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "news": {
      "source": "RSS/Atom haber akışları",
-     "t": "2026-11-06T16:31:35+03:00"
+     "t": "2026-11-06T16:45:10+03:00"
     },
     "squad": {
      "source": "haber_rss",
-     "t": "2026-11-06T16:31:35+03:00"
+     "t": "2026-11-06T16:45:10+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:20+03:00"
+     "t": "2026-11-06T16:45:31+03:00"
     }
    },
    "odds": {
@@ -535,7 +535,7 @@
       ]
      }
     ],
-    "fetched_at": "2026-11-06T16:31:35+03:00"
+    "fetched_at": "2026-11-06T16:45:10+03:00"
    },
    "squad": {
     "home": null,
@@ -546,7 +546,7 @@
      "adjustment": 0.0
     },
     "source": "haber_rss",
-    "fetched_at": "2026-11-06T16:31:35+03:00"
+    "fetched_at": "2026-11-06T16:45:10+03:00"
    },
    "model": {
     "lambda_home": 1.308,
@@ -1999,15 +1999,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "news": {
      "source": "RSS/Atom haber akışları",
-     "t": "2026-11-06T16:31:35+03:00"
+     "t": "2026-11-06T16:45:10+03:00"
     }
    },
    "odds": {
@@ -2093,7 +2093,7 @@
       "tags": []
      }
     ],
-    "fetched_at": "2026-11-06T16:31:35+03:00"
+    "fetched_at": "2026-11-06T16:45:10+03:00"
    },
    "squad": null,
    "model": null,
@@ -2143,15 +2143,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "news": {
      "source": "RSS/Atom haber akışları",
-     "t": "2026-11-06T16:31:35+03:00"
+     "t": "2026-11-06T16:45:10+03:00"
     }
    },
    "odds": {
@@ -2239,7 +2239,7 @@
       "tags": []
      }
     ],
-    "fetched_at": "2026-11-06T16:31:35+03:00"
+    "fetched_at": "2026-11-06T16:45:10+03:00"
    },
    "squad": null,
    "model": null,
@@ -2287,27 +2287,27 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "news": {
      "source": "RSS/Atom haber akışları",
-     "t": "2026-11-06T16:31:35+03:00"
+     "t": "2026-11-06T16:45:10+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:19+03:00"
+     "t": "2026-11-06T16:45:30+03:00"
     },
     "predictions": {
      "source": "sportytrader, freesupertips",
-     "t": "2026-11-06T16:31:35+03:00"
+     "t": "2026-11-06T16:45:10+03:00"
     }
    },
    "odds": {
@@ -2495,7 +2495,7 @@
       "tags": []
      }
     ],
-    "fetched_at": "2026-11-06T16:31:35+03:00"
+    "fetched_at": "2026-11-06T16:45:10+03:00"
    },
    "squad": null,
    "model": {
@@ -3871,7 +3871,7 @@
        "OU25": "U2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-06T16:31:35+03:00",
+      "fetched_at": "2026-11-06T16:45:10+03:00",
       "note": "Under 2.5 goals"
      },
      {
@@ -3880,7 +3880,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-06T16:32:21+03:00",
+      "fetched_at": "2026-11-06T16:45:13+03:00",
       "note": "Everton to Win; Everton 1-0"
      },
      {
@@ -3968,23 +3968,23 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:20+03:00"
+     "t": "2026-11-06T16:45:31+03:00"
     },
     "predictions": {
      "source": "sportytrader, freesupertips",
-     "t": "2026-11-06T16:31:35+03:00"
+     "t": "2026-11-06T16:45:10+03:00"
     }
    },
    "odds": {
@@ -5551,7 +5551,7 @@
        "BTTS": "BTTS_Y"
       },
       "probs": {},
-      "fetched_at": "2026-11-06T16:31:35+03:00",
+      "fetched_at": "2026-11-06T16:45:10+03:00",
       "note": "Sevilla wins & BTTS"
      },
      {
@@ -5560,7 +5560,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-06T16:32:21+03:00",
+      "fetched_at": "2026-11-06T16:45:13+03:00",
       "note": "Sevilla to Win; Sevilla 2-1"
      },
      {
@@ -5648,23 +5648,23 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:19+03:00"
+     "t": "2026-11-06T16:45:30+03:00"
     },
     "predictions": {
      "source": "sportytrader, freesupertips",
-     "t": "2026-11-06T16:31:35+03:00"
+     "t": "2026-11-06T16:45:10+03:00"
     }
    },
    "odds": {
@@ -7189,7 +7189,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-06T16:31:35+03:00",
+      "fetched_at": "2026-11-06T16:45:10+03:00",
       "note": "Udinese to win + under 2.5 goals"
      },
      {
@@ -7198,7 +7198,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-06T16:32:21+03:00",
+      "fetched_at": "2026-11-06T16:45:13+03:00",
       "note": "Venezia to Win; Venezia 2-1"
      },
      {
@@ -7286,23 +7286,23 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:20+03:00"
+     "t": "2026-11-06T16:45:30+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-06T16:32:21+03:00"
+     "t": "2026-11-06T16:45:13+03:00"
     }
    },
    "odds": {
@@ -8864,7 +8864,7 @@
        "1X2": "2"
       },
       "probs": {},
-      "fetched_at": "2026-11-06T16:32:21+03:00",
+      "fetched_at": "2026-11-06T16:45:13+03:00",
       "note": "Borussia Monchengladbach to Win; Borussia Monchengladbach 3-1"
      },
      {
@@ -8952,23 +8952,23 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:20+03:00"
+     "t": "2026-11-06T16:45:30+03:00"
     },
     "predictions": {
      "source": "freesupertips",
-     "t": "2026-11-06T16:32:21+03:00"
+     "t": "2026-11-06T16:45:13+03:00"
     }
    },
    "odds": {
@@ -10607,7 +10607,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-06T16:32:21+03:00",
+      "fetched_at": "2026-11-06T16:45:13+03:00",
       "note": "Toulouse to Win; Toulouse 3-1"
      },
      {
@@ -10676,6 +10676,1676 @@
    "comment_source": "kural"
   },
   {
+   "id": "20261106-derby-bolton",
+   "code": "3271262",
+   "mbs": 1,
+   "league": "ENG2",
+   "league_name": "Championship",
+   "league_priority": 20,
+   "kickoff": "2026-11-06T23:00:00+03:00",
+   "home": {
+    "name": "Derby County"
+   },
+   "away": {
+    "name": "Bolton"
+   },
+   "status": "scheduled",
+   "result": null,
+   "flags": [],
+   "provenance": {
+    "fixture": {
+     "source": "nesine",
+     "t": "2026-11-06T16:43:34+03:00"
+    },
+    "odds": {
+     "source": "iddaa.com, nesine",
+     "t": "2026-11-06T16:43:34+03:00"
+    },
+    "stats": {
+     "source": "football-data.co.uk",
+     "t": "2026-11-06T16:43:54+03:00"
+    },
+    "model": {
+     "source": "OZBET Dixon-Coles + 10.000 MC",
+     "t": "2026-11-06T16:45:31+03:00"
+    },
+    "predictions": {
+     "source": "freesupertips",
+     "t": "2026-11-06T16:45:13+03:00"
+    }
+   },
+   "odds": {
+    "1": 2.27,
+    "X": 3.14,
+    "2": 2.33,
+    "1X": 1.31,
+    "12": 1.16,
+    "X2": 1.33,
+    "BTTS_Y": 1.42,
+    "BTTS_N": 2.06,
+    "U1.5": 3.83,
+    "O1.5": 1.08,
+    "U2.5": 1.88,
+    "O2.5": 1.53,
+    "O3.5": 2.54,
+    "U3.5": 1.32
+   },
+   "odds_history": [
+    {
+     "t": "2026-11-06T16:45:30+03:00",
+     "1": 2.27,
+     "X": 3.14,
+     "2": 2.33,
+     "O2.5": 1.53,
+     "U2.5": 1.88
+    }
+   ],
+   "market": {
+    "implied": {
+     "1": 0.3708,
+     "X": 0.268,
+     "2": 0.3612,
+     "O1.5": 0.78,
+     "U1.5": 0.22,
+     "O2.5": 0.5513,
+     "U2.5": 0.4487,
+     "O3.5": 0.342,
+     "U3.5": 0.658,
+     "BTTS_Y": 0.592,
+     "BTTS_N": 0.408,
+     "1X": 0.6388,
+     "X2": 0.6292,
+     "12": 0.732
+    },
+    "margin": {
+     "1x2": 0.1882,
+     "ou15": 0.187,
+     "ou25": 0.1855,
+     "ou35": 0.1513,
+     "btts": 0.1897
+    },
+    "movement": {},
+    "drop_alarms": []
+   },
+   "stats": {
+    "home": {
+     "n": 10,
+     "form": [
+      "L",
+      "L",
+      "D",
+      "L",
+      "L",
+      "D",
+      "D",
+      "L",
+      "L",
+      "L"
+     ],
+     "venue_form": [
+      "L",
+      "L",
+      "D",
+      "L",
+      "L",
+      "L",
+      "D",
+      "L",
+      "W",
+      "W"
+     ],
+     "venue_n": 10,
+     "gf_avg": 0.6,
+     "ga_avg": 2.2,
+     "venue_gf_avg": 0.8,
+     "venue_ga_avg": 1.6,
+     "xg_avg": null,
+     "xga_avg": null,
+     "btts_pct": 0.6,
+     "o25_pct": 0.5,
+     "clean_sheets_venue": 2,
+     "failed_to_score_venue": 4,
+     "corners_avg": 5.9,
+     "cards_avg": 2.1,
+     "last_match_date": "2026-11-03"
+    },
+    "away": {
+     "n": 10,
+     "form": [
+      "W",
+      "L",
+      "L",
+      "D",
+      "W",
+      "L",
+      "W",
+      "W",
+      "L",
+      "L"
+     ],
+     "venue_form": [
+      "W",
+      "D",
+      "W",
+      "W",
+      "L",
+      "L",
+      "D"
+     ],
+     "venue_n": 7,
+     "gf_avg": 1.5,
+     "ga_avg": 2.1,
+     "venue_gf_avg": 1.43,
+     "venue_ga_avg": 1.57,
+     "xg_avg": null,
+     "xga_avg": null,
+     "btts_pct": 0.6,
+     "o25_pct": 0.7,
+     "clean_sheets_venue": 3,
+     "failed_to_score_venue": 3,
+     "corners_avg": 4.9,
+     "cards_avg": 1.8,
+     "last_match_date": "2026-11-03"
+    },
+    "h2h": []
+   },
+   "squad": null,
+   "model": {
+    "lambda_home": 1.696,
+    "lambda_away": 1.284,
+    "sims": 10000,
+    "rho": -0.035,
+    "probs": {
+     "1": 0.4621,
+     "X": 0.2459,
+     "2": 0.2919,
+     "1X": 0.7081,
+     "X2": 0.5379,
+     "12": 0.7541,
+     "O1.5": 0.8087,
+     "U1.5": 0.1913,
+     "O2.5": 0.5776,
+     "U2.5": 0.4224,
+     "O3.5": 0.3597,
+     "U3.5": 0.6403,
+     "BTTS_Y": 0.6007,
+     "BTTS_N": 0.3993
+    },
+    "htft": {
+     "1/1": 0.2942,
+     "1/X": 0.0548,
+     "1/2": 0.022,
+     "X/1": 0.1392,
+     "X/X": 0.1365,
+     "X/2": 0.0959,
+     "2/1": 0.0287,
+     "2/X": 0.0546,
+     "2/2": 0.174
+    },
+    "top_scores": [
+     {
+      "score": "1-1",
+      "p": 0.116
+     },
+     {
+      "score": "2-1",
+      "p": 0.0897
+     },
+     {
+      "score": "1-0",
+      "p": 0.0785
+     },
+     {
+      "score": "2-0",
+      "p": 0.0731
+     },
+     {
+      "score": "1-2",
+      "p": 0.0707
+     }
+    ],
+    "score_matrix": [
+     [
+      0.051,
+      0.0618,
+      0.0419,
+      0.0163,
+      0.0062,
+      0.0015
+     ],
+     [
+      0.0785,
+      0.116,
+      0.0707,
+      0.0299,
+      0.0095,
+      0.0031
+     ],
+     [
+      0.0731,
+      0.0897,
+      0.0605,
+      0.0284,
+      0.0107,
+      0.0028
+     ],
+     [
+      0.0412,
+      0.0525,
+      0.0325,
+      0.0161,
+      0.0048,
+      0.0013
+     ],
+     [
+      0.0166,
+      0.0231,
+      0.015,
+      0.0067,
+      0.0021,
+      0.0003
+     ],
+     [
+      0.0087,
+      0.0074,
+      0.0041,
+      0.0035,
+      0.0006,
+      0.0002
+     ]
+    ],
+    "total_goals": [
+     0.051,
+     0.1403,
+     0.231,
+     0.2179,
+     0.1657,
+     0.1037,
+     0.0903
+    ],
+    "sample_runs": {
+     "n": 50,
+     "runs": [
+      {
+       "i": 1,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 32,
+         "side": "home"
+        },
+        {
+         "min": 54,
+         "side": "away"
+        },
+        {
+         "min": 74,
+         "side": "home"
+        },
+        {
+         "min": 77,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 2,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 28,
+         "side": "home"
+        },
+        {
+         "min": 51,
+         "side": "home"
+        },
+        {
+         "min": 74,
+         "side": "away"
+        },
+        {
+         "min": "90+1",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 3,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 13,
+         "side": "home"
+        },
+        {
+         "min": 78,
+         "side": "away"
+        },
+        {
+         "min": 80,
+         "side": "home"
+        },
+        {
+         "min": 90,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 4,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 42,
+         "side": "away"
+        },
+        {
+         "min": 61,
+         "side": "home"
+        },
+        {
+         "min": 81,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 5,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 6,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 61,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 7,
+       "ft": [
+        2,
+        3
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 19,
+         "side": "home"
+        },
+        {
+         "min": "45+1",
+         "side": "home"
+        },
+        {
+         "min": 70,
+         "side": "away"
+        },
+        {
+         "min": 74,
+         "side": "away"
+        },
+        {
+         "min": 87,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 8,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 25,
+         "side": "home"
+        },
+        {
+         "min": 88,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 9,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 56,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 10,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 57,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 11,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 63,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 12,
+       "ft": [
+        1,
+        3
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 24,
+         "side": "away"
+        },
+        {
+         "min": 25,
+         "side": "away"
+        },
+        {
+         "min": 54,
+         "side": "away"
+        },
+        {
+         "min": 71,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 13,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 44,
+         "side": "home"
+        },
+        {
+         "min": 78,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 14,
+       "ft": [
+        1,
+        3
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 1,
+         "side": "away"
+        },
+        {
+         "min": 12,
+         "side": "away"
+        },
+        {
+         "min": 47,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 15,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 26,
+         "side": "home"
+        },
+        {
+         "min": 48,
+         "side": "home"
+        },
+        {
+         "min": 52,
+         "side": "home"
+        },
+        {
+         "min": 72,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 16,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 20,
+         "side": "home"
+        },
+        {
+         "min": 56,
+         "side": "home"
+        },
+        {
+         "min": 72,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 17,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 6,
+         "side": "home"
+        },
+        {
+         "min": 85,
+         "side": "home"
+        },
+        {
+         "min": "90+5",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 18,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 19,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 23,
+         "side": "home"
+        },
+        {
+         "min": 33,
+         "side": "home"
+        },
+        {
+         "min": 70,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 20,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 65,
+         "side": "home"
+        },
+        {
+         "min": 66,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 21,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "home"
+        },
+        {
+         "min": 16,
+         "side": "away"
+        },
+        {
+         "min": 86,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 22,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 26,
+         "side": "home"
+        },
+        {
+         "min": 84,
+         "side": "home"
+        },
+        {
+         "min": 86,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 23,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 24,
+       "ft": [
+        2,
+        3
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 26,
+         "side": "home"
+        },
+        {
+         "min": 36,
+         "side": "home"
+        },
+        {
+         "min": 80,
+         "side": "away"
+        },
+        {
+         "min": 81,
+         "side": "away"
+        },
+        {
+         "min": 86,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 25,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 38,
+         "side": "home"
+        },
+        {
+         "min": "45+1",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 26,
+       "ft": [
+        3,
+        4
+       ],
+       "ht": [
+        2,
+        2
+       ],
+       "goals": [
+        {
+         "min": 1,
+         "side": "home"
+        },
+        {
+         "min": 14,
+         "side": "away"
+        },
+        {
+         "min": 19,
+         "side": "away"
+        },
+        {
+         "min": 42,
+         "side": "home"
+        },
+        {
+         "min": 52,
+         "side": "away"
+        },
+        {
+         "min": 66,
+         "side": "home"
+        },
+        {
+         "min": 71,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 27,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 18,
+         "side": "home"
+        },
+        {
+         "min": 78,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 28,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 45,
+         "side": "home"
+        },
+        {
+         "min": "90+2",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 29,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 51,
+         "side": "home"
+        },
+        {
+         "min": 58,
+         "side": "home"
+        },
+        {
+         "min": 89,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 30,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 2,
+         "side": "away"
+        },
+        {
+         "min": 34,
+         "side": "home"
+        },
+        {
+         "min": 38,
+         "side": "home"
+        },
+        {
+         "min": 59,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 31,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 37,
+         "side": "home"
+        },
+        {
+         "min": 83,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 32,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 40,
+         "side": "home"
+        },
+        {
+         "min": 47,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 33,
+       "ft": [
+        2,
+        3
+       ],
+       "ht": [
+        1,
+        2
+       ],
+       "goals": [
+        {
+         "min": 1,
+         "side": "away"
+        },
+        {
+         "min": 21,
+         "side": "away"
+        },
+        {
+         "min": 30,
+         "side": "home"
+        },
+        {
+         "min": 69,
+         "side": "away"
+        },
+        {
+         "min": 71,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 34,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 1,
+         "side": "home"
+        },
+        {
+         "min": 13,
+         "side": "away"
+        },
+        {
+         "min": 74,
+         "side": "away"
+        },
+        {
+         "min": 90,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 35,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 61,
+         "side": "away"
+        },
+        {
+         "min": 86,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 36,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 28,
+         "side": "home"
+        },
+        {
+         "min": 51,
+         "side": "home"
+        },
+        {
+         "min": 53,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 37,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 23,
+         "side": "away"
+        },
+        {
+         "min": 67,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 38,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 72,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 39,
+       "ft": [
+        5,
+        0
+       ],
+       "ht": [
+        3,
+        0
+       ],
+       "goals": [
+        {
+         "min": 22,
+         "side": "home"
+        },
+        {
+         "min": 35,
+         "side": "home"
+        },
+        {
+         "min": 41,
+         "side": "home"
+        },
+        {
+         "min": 77,
+         "side": "home"
+        },
+        {
+         "min": 85,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 40,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 20,
+         "side": "home"
+        },
+        {
+         "min": "45+4",
+         "side": "home"
+        },
+        {
+         "min": 53,
+         "side": "home"
+        },
+        {
+         "min": 74,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 41,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 13,
+         "side": "home"
+        },
+        {
+         "min": 49,
+         "side": "away"
+        },
+        {
+         "min": 56,
+         "side": "home"
+        },
+        {
+         "min": 66,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 42,
+       "ft": [
+        4,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 5,
+         "side": "home"
+        },
+        {
+         "min": 29,
+         "side": "away"
+        },
+        {
+         "min": 61,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "home"
+        },
+        {
+         "min": 84,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 43,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 32,
+         "side": "away"
+        },
+        {
+         "min": 79,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 44,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 8,
+         "side": "home"
+        },
+        {
+         "min": 69,
+         "side": "away"
+        },
+        {
+         "min": 86,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 45,
+       "ft": [
+        5,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 68,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "home"
+        },
+        {
+         "min": 86,
+         "side": "home"
+        },
+        {
+         "min": 87,
+         "side": "home"
+        },
+        {
+         "min": 87,
+         "side": "away"
+        },
+        {
+         "min": 90,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 46,
+       "ft": [
+        4,
+        2
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 8,
+         "side": "home"
+        },
+        {
+         "min": 20,
+         "side": "home"
+        },
+        {
+         "min": 46,
+         "side": "home"
+        },
+        {
+         "min": 50,
+         "side": "home"
+        },
+        {
+         "min": 72,
+         "side": "away"
+        },
+        {
+         "min": 86,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 47,
+       "ft": [
+        3,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "away"
+        },
+        {
+         "min": 4,
+         "side": "home"
+        },
+        {
+         "min": 63,
+         "side": "home"
+        },
+        {
+         "min": 85,
+         "side": "away"
+        },
+        {
+         "min": "90+4",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 48,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 51,
+         "side": "away"
+        },
+        {
+         "min": 65,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 49,
+       "ft": [
+        0,
+        4
+       ],
+       "ht": [
+        0,
+        2
+       ],
+       "goals": [
+        {
+         "min": 6,
+         "side": "away"
+        },
+        {
+         "min": 38,
+         "side": "away"
+        },
+        {
+         "min": 62,
+         "side": "away"
+        },
+        {
+         "min": 65,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 50,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 53,
+         "side": "home"
+        },
+        {
+         "min": 60,
+         "side": "home"
+        }
+       ]
+      }
+     ],
+     "summary": {
+      "1": 23,
+      "X": 15,
+      "2": 12,
+      "O2.5": 29,
+      "BTTS_Y": 33,
+      "top_scores": [
+       [
+        "1-1",
+        9
+       ],
+       [
+        "3-1",
+        8
+       ],
+       [
+        "0-0",
+        3
+       ],
+       [
+        "0-1",
+        3
+       ],
+       [
+        "2-0",
+        3
+       ]
+      ]
+     },
+     "note": "50 örnek koşu yalnızca gösterim içindir; olasılıklar 10.000 simülasyondan hesaplanır."
+    },
+    "data_quality": "medium",
+    "notes": [],
+    "n_matches": {
+     "home": 106,
+     "away": 14
+    },
+    "method": "league"
+   },
+   "consensus": {
+    "sources": [
+     {
+      "source": "freesupertips",
+      "picks": {
+       "1X2": "X"
+      },
+      "probs": {},
+      "fetched_at": "2026-11-06T16:45:13+03:00",
+      "note": "Bolton Double Chance (Win or Draw); Bolton 1-0"
+     },
+     {
+      "source": "OZBET Model",
+      "picks": {
+       "1X2": "1",
+       "OU25": "O2.5",
+       "BTTS": "BTTS_Y"
+      },
+      "probs": {
+       "1": 0.4621,
+       "X": 0.2459,
+       "2": 0.2919
+      }
+     },
+     {
+      "source": "Piyasa (oran)",
+      "picks": {
+       "1X2": "1",
+       "OU25": "O2.5",
+       "BTTS": "BTTS_Y"
+      },
+      "probs": {
+       "1": 0.3708,
+       "X": 0.268,
+       "2": 0.3612
+      }
+     }
+    ],
+    "summary": [
+     {
+      "market": "O2.5",
+      "group": "OU25",
+      "agree": 2,
+      "total": 2,
+      "text": "2 kaynağın tümü 2.5 Üst diyor"
+     },
+     {
+      "market": "BTTS_Y",
+      "group": "BTTS",
+      "agree": 2,
+      "total": 2,
+      "text": "2 kaynağın tümü KG Var diyor"
+     },
+     {
+      "market": "1",
+      "group": "1X2",
+      "agree": 2,
+      "total": 3,
+      "text": "3 kaynaktan 2'si MS 1 diyor"
+     }
+    ]
+   },
+   "value": [],
+   "pick": {
+    "market": "BTTS_Y",
+    "label": "KG Var",
+    "p": 0.5942,
+    "odds": 1.42,
+    "is_value": false,
+    "blended": true,
+    "stars": 3
+   },
+   "value_note": "Değer yok",
+   "comment": "Model ev sahibine %46, beraberliğe %25, deplasmana %29 olasılık veriyor; beklenen gol 1.7 - 1.3. Derby County son 10 iç saha maçında 2 galibiyet, 2 beraberlik, 6 mağlubiyet aldı. Bolton son 7 deplasman maçında 3 galibiyet, 2 beraberlik, 2 mağlubiyet aldı; bu maçların 3 tanesinde gol yemedi. İki takımın son maçlarında 2.5 Üst oranı %50 ve %70 – gollü bir eğilim var. 2 kaynağın tümü 2.5 Üst diyor. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
+   "comment_source": "kural"
+  },
+  {
    "id": "20261106-derby-county-bolton",
    "code": "3271262",
    "mbs": 1,
@@ -10692,7 +12362,8 @@
    "status": "scheduled",
    "result": null,
    "flags": [
-    "Veri yetersiz"
+    "Veri yetersiz",
+    "Önceki çalıştırmadan (kaynak güncellenemedi)"
    ],
    "provenance": {
     "fixture": {
@@ -10818,19 +12489,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:20+03:00"
+     "t": "2026-11-06T16:45:30+03:00"
     }
    },
    "odds": {
@@ -12516,6 +14187,1712 @@
    "comment_source": "kural"
   },
   {
+   "id": "20261106-d-dresden-greuther-furth",
+   "code": "3271153",
+   "mbs": 1,
+   "league": "GER2",
+   "league_name": "2. Bundesliga",
+   "league_priority": 21,
+   "kickoff": "2026-11-06T20:30:00+03:00",
+   "home": {
+    "name": "D. Dresden"
+   },
+   "away": {
+    "name": "G. Furth"
+   },
+   "status": "scheduled",
+   "result": null,
+   "flags": [],
+   "provenance": {
+    "fixture": {
+     "source": "nesine",
+     "t": "2026-11-06T16:43:34+03:00"
+    },
+    "odds": {
+     "source": "iddaa.com, nesine",
+     "t": "2026-11-06T16:43:34+03:00"
+    },
+    "stats": {
+     "source": "football-data.co.uk",
+     "t": "2026-11-06T16:43:54+03:00"
+    },
+    "model": {
+     "source": "OZBET Dixon-Coles + 10.000 MC",
+     "t": "2026-11-06T16:45:30+03:00"
+    }
+   },
+   "odds": {
+    "1": 1.79,
+    "X": 3.26,
+    "2": 3.11,
+    "BTTS_Y": 1.41,
+    "BTTS_N": 2.08,
+    "1X": 1.15,
+    "12": 1.15,
+    "X2": 1.58,
+    "U1.5": 4.07,
+    "O1.5": 1.06,
+    "U2.5": 1.97,
+    "O2.5": 1.47,
+    "O3.5": 2.41,
+    "U3.5": 1.36
+   },
+   "odds_history": [
+    {
+     "t": "2026-11-06T16:45:30+03:00",
+     "1": 1.79,
+     "X": 3.26,
+     "2": 3.11,
+     "O2.5": 1.47,
+     "U2.5": 1.97
+    }
+   ],
+   "market": {
+    "implied": {
+     "1": 0.4707,
+     "X": 0.2584,
+     "2": 0.2709,
+     "O1.5": 0.7934,
+     "U1.5": 0.2066,
+     "O2.5": 0.5727,
+     "U2.5": 0.4273,
+     "O3.5": 0.3607,
+     "U3.5": 0.6393,
+     "BTTS_Y": 0.596,
+     "BTTS_N": 0.404,
+     "1X": 0.7291,
+     "X2": 0.5293,
+     "12": 0.7416
+    },
+    "margin": {
+     "1x2": 0.187,
+     "ou15": 0.1891,
+     "ou25": 0.1879,
+     "ou35": 0.1502,
+     "btts": 0.19
+    },
+    "movement": {},
+    "drop_alarms": []
+   },
+   "stats": {
+    "home": {
+     "n": 10,
+     "form": [
+      "L",
+      "L",
+      "W",
+      "D",
+      "L",
+      "D",
+      "L",
+      "L",
+      "W",
+      "L"
+     ],
+     "venue_form": [
+      "W",
+      "L",
+      "L",
+      "W",
+      "W",
+      "W",
+      "W",
+      "L",
+      "W",
+      "W"
+     ],
+     "venue_n": 10,
+     "gf_avg": 1.2,
+     "ga_avg": 2.0,
+     "venue_gf_avg": 1.9,
+     "venue_ga_avg": 0.7,
+     "xg_avg": null,
+     "xga_avg": null,
+     "btts_pct": 0.6,
+     "o25_pct": 0.7,
+     "clean_sheets_venue": 5,
+     "failed_to_score_venue": 1,
+     "corners_avg": 6.6,
+     "cards_avg": 2.4,
+     "last_match_date": "2026-11-01"
+    },
+    "away": {
+     "n": 10,
+     "form": [
+      "W",
+      "L",
+      "W",
+      "L",
+      "D",
+      "D",
+      "L",
+      "W",
+      "L",
+      "D"
+     ],
+     "venue_form": [
+      "L",
+      "L",
+      "D",
+      "W",
+      "D",
+      "L",
+      "L",
+      "D",
+      "L",
+      "W"
+     ],
+     "venue_n": 10,
+     "gf_avg": 1.3,
+     "ga_avg": 1.6,
+     "venue_gf_avg": 1.2,
+     "venue_ga_avg": 1.8,
+     "xg_avg": null,
+     "xga_avg": null,
+     "btts_pct": 0.6,
+     "o25_pct": 0.4,
+     "clean_sheets_venue": 1,
+     "failed_to_score_venue": 2,
+     "corners_avg": 6.4,
+     "cards_avg": 0.8,
+     "last_match_date": "2026-11-01"
+    },
+    "h2h": [
+     {
+      "date": "2026-01-17",
+      "home": "Dresden",
+      "away": "Greuther Furth",
+      "score": "2-0"
+     },
+     {
+      "date": "2025-08-03",
+      "home": "Greuther Furth",
+      "away": "Dresden",
+      "score": "3-2"
+     }
+    ]
+   },
+   "squad": null,
+   "model": {
+    "lambda_home": 2.044,
+    "lambda_away": 1.352,
+    "sims": 10000,
+    "rho": -0.0459,
+    "probs": {
+     "1": 0.5233,
+     "X": 0.2233,
+     "2": 0.2534,
+     "1X": 0.7466,
+     "X2": 0.4767,
+     "12": 0.7767,
+     "O1.5": 0.8584,
+     "U1.5": 0.1416,
+     "O2.5": 0.657,
+     "U2.5": 0.343,
+     "O3.5": 0.4356,
+     "U3.5": 0.5644,
+     "BTTS_Y": 0.6469,
+     "BTTS_N": 0.3531
+    },
+    "htft": {
+     "1/1": 0.3298,
+     "1/X": 0.0547,
+     "1/2": 0.0209,
+     "X/1": 0.1584,
+     "X/X": 0.1219,
+     "X/2": 0.0826,
+     "2/1": 0.0351,
+     "2/X": 0.0467,
+     "2/2": 0.1499
+    },
+    "top_scores": [
+     {
+      "score": "1-1",
+      "p": 0.0971
+     },
+     {
+      "score": "2-1",
+      "p": 0.0926
+     },
+     {
+      "score": "2-0",
+      "p": 0.0719
+     },
+     {
+      "score": "2-2",
+      "p": 0.0649
+     },
+     {
+      "score": "1-0",
+      "p": 0.0645
+     }
+    ],
+    "score_matrix": [
+     [
+      0.0383,
+      0.0388,
+      0.0324,
+      0.015,
+      0.0039,
+      0.0015
+     ],
+     [
+      0.0645,
+      0.0971,
+      0.0644,
+      0.0291,
+      0.0104,
+      0.0033
+     ],
+     [
+      0.0719,
+      0.0926,
+      0.0649,
+      0.0301,
+      0.0098,
+      0.0035
+     ],
+     [
+      0.0495,
+      0.0643,
+      0.0383,
+      0.0196,
+      0.006,
+      0.0026
+     ],
+     [
+      0.0244,
+      0.036,
+      0.0195,
+      0.0102,
+      0.0031,
+      0.0004
+     ],
+     [
+      0.0086,
+      0.0121,
+      0.0091,
+      0.0037,
+      0.0013,
+      0.0003
+     ]
+    ],
+    "total_goals": [
+     0.0383,
+     0.1033,
+     0.2014,
+     0.2214,
+     0.1865,
+     0.1249,
+     0.1242
+    ],
+    "sample_runs": {
+     "n": 50,
+     "runs": [
+      {
+       "i": 1,
+       "ft": [
+        1,
+        5
+       ],
+       "ht": [
+        0,
+        3
+       ],
+       "goals": [
+        {
+         "min": 9,
+         "side": "away"
+        },
+        {
+         "min": 33,
+         "side": "away"
+        },
+        {
+         "min": 38,
+         "side": "away"
+        },
+        {
+         "min": 66,
+         "side": "away"
+        },
+        {
+         "min": 86,
+         "side": "away"
+        },
+        {
+         "min": 90,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 2,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 56,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 3,
+       "ft": [
+        2,
+        3
+       ],
+       "ht": [
+        1,
+        3
+       ],
+       "goals": [
+        {
+         "min": 8,
+         "side": "away"
+        },
+        {
+         "min": 33,
+         "side": "home"
+        },
+        {
+         "min": 41,
+         "side": "away"
+        },
+        {
+         "min": "45+1",
+         "side": "away"
+        },
+        {
+         "min": 72,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 4,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 74,
+         "side": "away"
+        },
+        {
+         "min": 86,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 5,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 35,
+         "side": "home"
+        },
+        {
+         "min": 83,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 6,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": "45+4",
+         "side": "away"
+        },
+        {
+         "min": 79,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 7,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 11,
+         "side": "away"
+        },
+        {
+         "min": 18,
+         "side": "home"
+        },
+        {
+         "min": 64,
+         "side": "home"
+        },
+        {
+         "min": 64,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 8,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 29,
+         "side": "away"
+        },
+        {
+         "min": 59,
+         "side": "away"
+        },
+        {
+         "min": 73,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 9,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 21,
+         "side": "away"
+        },
+        {
+         "min": 79,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 10,
+       "ft": [
+        4,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 17,
+         "side": "away"
+        },
+        {
+         "min": 20,
+         "side": "home"
+        },
+        {
+         "min": 51,
+         "side": "away"
+        },
+        {
+         "min": 56,
+         "side": "home"
+        },
+        {
+         "min": 83,
+         "side": "home"
+        },
+        {
+         "min": 84,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 11,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 15,
+         "side": "home"
+        },
+        {
+         "min": 68,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 12,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 2,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 13,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 1,
+         "side": "home"
+        },
+        {
+         "min": 50,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 14,
+       "ft": [
+        4,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 18,
+         "side": "home"
+        },
+        {
+         "min": 32,
+         "side": "away"
+        },
+        {
+         "min": 60,
+         "side": "away"
+        },
+        {
+         "min": 67,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 15,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 57,
+         "side": "away"
+        },
+        {
+         "min": 63,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 16,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 9,
+         "side": "home"
+        },
+        {
+         "min": 21,
+         "side": "away"
+        },
+        {
+         "min": 34,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 17,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 62,
+         "side": "home"
+        },
+        {
+         "min": 75,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 18,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 16,
+         "side": "away"
+        },
+        {
+         "min": 59,
+         "side": "home"
+        },
+        {
+         "min": 65,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 19,
+       "ft": [
+        1,
+        5
+       ],
+       "ht": [
+        0,
+        3
+       ],
+       "goals": [
+        {
+         "min": 26,
+         "side": "away"
+        },
+        {
+         "min": 32,
+         "side": "away"
+        },
+        {
+         "min": 39,
+         "side": "away"
+        },
+        {
+         "min": 49,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "home"
+        },
+        {
+         "min": "90+4",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 20,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 61,
+         "side": "home"
+        },
+        {
+         "min": 90,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 21,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 21,
+         "side": "home"
+        },
+        {
+         "min": 47,
+         "side": "home"
+        },
+        {
+         "min": 59,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 22,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 16,
+         "side": "home"
+        },
+        {
+         "min": 80,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 23,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 26,
+         "side": "home"
+        },
+        {
+         "min": 53,
+         "side": "home"
+        },
+        {
+         "min": 64,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 24,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 6,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 25,
+       "ft": [
+        4,
+        3
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 37,
+         "side": "home"
+        },
+        {
+         "min": 55,
+         "side": "away"
+        },
+        {
+         "min": 60,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "away"
+        },
+        {
+         "min": 89,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "home"
+        },
+        {
+         "min": "90+4",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 26,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 61,
+         "side": "away"
+        },
+        {
+         "min": 85,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 27,
+       "ft": [
+        4,
+        1
+       ],
+       "ht": [
+        4,
+        0
+       ],
+       "goals": [
+        {
+         "min": 7,
+         "side": "home"
+        },
+        {
+         "min": 38,
+         "side": "home"
+        },
+        {
+         "min": 39,
+         "side": "home"
+        },
+        {
+         "min": "45+2",
+         "side": "home"
+        },
+        {
+         "min": 78,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 28,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 13,
+         "side": "home"
+        },
+        {
+         "min": 38,
+         "side": "away"
+        },
+        {
+         "min": 82,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 29,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": "45+2",
+         "side": "home"
+        },
+        {
+         "min": 64,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 30,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 30,
+         "side": "away"
+        },
+        {
+         "min": 52,
+         "side": "away"
+        },
+        {
+         "min": 65,
+         "side": "home"
+        },
+        {
+         "min": 75,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 31,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 1,
+         "side": "home"
+        },
+        {
+         "min": 47,
+         "side": "home"
+        },
+        {
+         "min": 78,
+         "side": "home"
+        },
+        {
+         "min": 80,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 32,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 63,
+         "side": "home"
+        },
+        {
+         "min": "90+5",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 33,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 42,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 34,
+       "ft": [
+        4,
+        2
+       ],
+       "ht": [
+        3,
+        0
+       ],
+       "goals": [
+        {
+         "min": 25,
+         "side": "home"
+        },
+        {
+         "min": 35,
+         "side": "home"
+        },
+        {
+         "min": "45+1",
+         "side": "home"
+        },
+        {
+         "min": 52,
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "away"
+        },
+        {
+         "min": 82,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 35,
+       "ft": [
+        5,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 21,
+         "side": "home"
+        },
+        {
+         "min": 34,
+         "side": "away"
+        },
+        {
+         "min": 50,
+         "side": "home"
+        },
+        {
+         "min": 51,
+         "side": "home"
+        },
+        {
+         "min": 55,
+         "side": "home"
+        },
+        {
+         "min": 72,
+         "side": "away"
+        },
+        {
+         "min": 77,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 36,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "home"
+        },
+        {
+         "min": 4,
+         "side": "home"
+        },
+        {
+         "min": 30,
+         "side": "away"
+        },
+        {
+         "min": 77,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 37,
+       "ft": [
+        4,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 49,
+         "side": "home"
+        },
+        {
+         "min": 69,
+         "side": "home"
+        },
+        {
+         "min": 83,
+         "side": "home"
+        },
+        {
+         "min": "90+2",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 38,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 49,
+         "side": "home"
+        },
+        {
+         "min": 74,
+         "side": "away"
+        },
+        {
+         "min": "90+5",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 39,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 70,
+         "side": "home"
+        },
+        {
+         "min": 86,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 40,
+       "ft": [
+        4,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 13,
+         "side": "home"
+        },
+        {
+         "min": 24,
+         "side": "away"
+        },
+        {
+         "min": 59,
+         "side": "home"
+        },
+        {
+         "min": 75,
+         "side": "home"
+        },
+        {
+         "min": 80,
+         "side": "home"
+        },
+        {
+         "min": 88,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 41,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 42,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 69,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 43,
+       "ft": [
+        3,
+        3
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "home"
+        },
+        {
+         "min": 9,
+         "side": "home"
+        },
+        {
+         "min": 50,
+         "side": "away"
+        },
+        {
+         "min": 55,
+         "side": "away"
+        },
+        {
+         "min": 74,
+         "side": "away"
+        },
+        {
+         "min": "90+5",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 44,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 45,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 20,
+         "side": "away"
+        },
+        {
+         "min": 77,
+         "side": "home"
+        },
+        {
+         "min": 88,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 46,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 17,
+         "side": "home"
+        },
+        {
+         "min": 37,
+         "side": "away"
+        },
+        {
+         "min": 38,
+         "side": "home"
+        },
+        {
+         "min": 89,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 47,
+       "ft": [
+        5,
+        2
+       ],
+       "ht": [
+        3,
+        1
+       ],
+       "goals": [
+        {
+         "min": 5,
+         "side": "home"
+        },
+        {
+         "min": 14,
+         "side": "away"
+        },
+        {
+         "min": 15,
+         "side": "home"
+        },
+        {
+         "min": 34,
+         "side": "home"
+        },
+        {
+         "min": 59,
+         "side": "home"
+        },
+        {
+         "min": 85,
+         "side": "away"
+        },
+        {
+         "min": 87,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 48,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": "45+1",
+         "side": "away"
+        },
+        {
+         "min": 89,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 49,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 47,
+         "side": "home"
+        },
+        {
+         "min": 65,
+         "side": "home"
+        },
+        {
+         "min": "90+1",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 50,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 71,
+         "side": "away"
+        },
+        {
+         "min": "90+2",
+         "side": "home"
+        }
+       ]
+      }
+     ],
+     "summary": {
+      "1": 27,
+      "X": 14,
+      "2": 9,
+      "O2.5": 28,
+      "BTTS_Y": 34,
+      "top_scores": [
+       [
+        "1-1",
+        9
+       ],
+       [
+        "2-1",
+        5
+       ],
+       [
+        "1-0",
+        4
+       ],
+       [
+        "2-0",
+        4
+       ],
+       [
+        "4-2",
+        4
+       ]
+      ]
+     },
+     "note": "50 örnek koşu yalnızca gösterim içindir; olasılıklar 10.000 simülasyondan hesaplanır."
+    },
+    "data_quality": "high",
+    "notes": [],
+    "n_matches": {
+     "home": 44,
+     "away": 78
+    },
+    "method": "league"
+   },
+   "consensus": {
+    "sources": [
+     {
+      "source": "OZBET Model",
+      "picks": {
+       "1X2": "1",
+       "OU25": "O2.5",
+       "BTTS": "BTTS_Y"
+      },
+      "probs": {
+       "1": 0.5233,
+       "X": 0.2233,
+       "2": 0.2534
+      }
+     },
+     {
+      "source": "Piyasa (oran)",
+      "picks": {
+       "1X2": "1",
+       "OU25": "O2.5",
+       "BTTS": "BTTS_Y"
+      },
+      "probs": {
+       "1": 0.4707,
+       "X": 0.2584,
+       "2": 0.2709
+      }
+     }
+    ],
+    "summary": [
+     {
+      "market": "1",
+      "group": "1X2",
+      "agree": 2,
+      "total": 2,
+      "text": "2 kaynağın tümü MS 1 diyor"
+     },
+     {
+      "market": "O2.5",
+      "group": "OU25",
+      "agree": 2,
+      "total": 2,
+      "text": "2 kaynağın tümü 2.5 Üst diyor"
+     },
+     {
+      "market": "BTTS_Y",
+      "group": "BTTS",
+      "agree": 2,
+      "total": 2,
+      "text": "2 kaynağın tümü KG Var diyor"
+     }
+    ]
+   },
+   "value": [],
+   "pick": {
+    "market": "BTTS_Y",
+    "label": "KG Var",
+    "p": 0.6087,
+    "odds": 1.41,
+    "is_value": false,
+    "blended": true,
+    "stars": 4
+   },
+   "value_note": "Değer yok",
+   "comment": "Model ev sahibine %52, beraberliğe %22, deplasmana %25 olasılık veriyor; beklenen gol 2.0 - 1.4. D. Dresden son 10 iç saha maçında 7 galibiyet, 0 beraberlik, 3 mağlubiyet aldı; bu maçların 5 tanesinde gol yemedi. G. Furth son 10 deplasman maçında 2 galibiyet, 3 beraberlik, 5 mağlubiyet aldı. KG Var oranları %60 ve %60 seviyesinde. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
+   "comment_source": "kural"
+  },
+  {
    "id": "20261106-d-dresden-g-furth",
    "code": "3271153",
    "mbs": 1,
@@ -12532,7 +15909,8 @@
    "status": "scheduled",
    "result": null,
    "flags": [
-    "Veri yetersiz"
+    "Veri yetersiz",
+    "Önceki çalıştırmadan (kaynak güncellenemedi)"
    ],
    "provenance": {
     "fixture": {
@@ -12660,7 +16038,8 @@
    "status": "live",
    "result": null,
    "flags": [
-    "Veri yetersiz"
+    "Veri yetersiz",
+    "Önceki çalıştırmadan (kaynak güncellenemedi)"
    ],
    "provenance": {
     "fixture": {
@@ -12780,19 +16159,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:19+03:00"
+     "t": "2026-11-06T16:45:30+03:00"
     }
    },
    "odds": {
@@ -15873,19 +19252,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:20+03:00"
+     "t": "2026-11-06T16:45:31+03:00"
     }
    },
    "odds": {
@@ -17332,19 +20711,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:19+03:00"
+     "t": "2026-11-06T16:45:30+03:00"
     }
    },
    "odds": {
@@ -19107,19 +22486,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:20+03:00"
+     "t": "2026-11-06T16:45:30+03:00"
     }
    },
    "odds": {
@@ -20664,19 +24043,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:20+03:00"
+     "t": "2026-11-06T16:45:30+03:00"
     }
    },
    "odds": {
@@ -22259,19 +25638,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:20+03:00"
+     "t": "2026-11-06T16:45:31+03:00"
     }
    },
    "odds": {
@@ -23752,19 +27131,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:19+03:00"
+     "t": "2026-11-06T16:45:30+03:00"
     }
    },
    "odds": {
@@ -25287,23 +28666,23 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:20+03:00"
+     "t": "2026-11-06T16:45:30+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-06T16:31:35+03:00"
+     "t": "2026-11-06T16:45:10+03:00"
     }
    },
    "odds": {
@@ -26749,7 +30128,7 @@
        "OU25": "O2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-06T16:31:35+03:00",
+      "fetched_at": "2026-11-06T16:45:10+03:00",
       "note": "Over 2.5 goals"
      },
      {
@@ -26837,19 +30216,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:20+03:00"
+     "t": "2026-11-06T16:45:31+03:00"
     }
    },
    "odds": {
@@ -28459,19 +31838,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-06T16:30:11+03:00"
+     "t": "2026-11-06T16:43:54+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-06T16:33:20+03:00"
+     "t": "2026-11-06T16:45:30+03:00"
     }
    },
    "odds": {
@@ -33723,11 +37102,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -33845,11 +37224,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -33972,11 +37351,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -34088,11 +37467,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -34208,11 +37587,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -34328,11 +37707,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -34451,11 +37830,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -34556,11 +37935,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -34669,11 +38048,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -34788,11 +38167,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -34909,11 +38288,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -35031,11 +38410,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -35140,11 +38519,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -35265,11 +38644,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -35373,11 +38752,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -35488,11 +38867,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -35594,11 +38973,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -35707,11 +39086,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -35824,11 +39203,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -35949,11 +39328,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -36073,11 +39452,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -36182,11 +39561,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -36294,11 +39673,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -36410,15 +39789,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-06T16:31:35+03:00"
+     "t": "2026-11-06T16:45:10+03:00"
     }
    },
    "odds": {
@@ -36497,7 +39876,7 @@
        "BTTS": "BTTS_Y"
       },
       "probs": {},
-      "fetched_at": "2026-11-06T16:31:35+03:00",
+      "fetched_at": "2026-11-06T16:45:10+03:00",
       "note": "BTTS"
      },
      {
@@ -36553,11 +39932,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -36669,11 +40048,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -36791,11 +40170,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -36905,11 +40284,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -37019,11 +40398,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -37128,11 +40507,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -37223,11 +40602,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -37337,11 +40716,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -37458,11 +40837,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -37681,11 +41060,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -37791,11 +41170,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -37910,11 +41289,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -38023,11 +41402,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -38154,11 +41533,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -38276,11 +41655,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -38405,11 +41784,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -38504,11 +41883,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -38592,11 +41971,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -38708,11 +42087,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -38833,11 +42212,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -38957,11 +42336,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -39057,11 +42436,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -39175,11 +42554,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -39299,11 +42678,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -39420,11 +42799,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -39540,11 +42919,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -39656,11 +43035,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -39775,11 +43154,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -39892,11 +43271,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -40011,11 +43390,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -40132,11 +43511,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -40246,11 +43625,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -40381,11 +43760,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -40479,11 +43858,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -40586,11 +43965,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -40696,11 +44075,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -40817,11 +44196,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -40925,11 +44304,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -41059,11 +44438,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -41180,11 +44559,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -41293,11 +44672,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -41416,11 +44795,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -41539,7 +44918,7 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": null,
@@ -41581,11 +44960,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -41681,11 +45060,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -41801,11 +45180,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -41921,11 +45300,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -42041,11 +45420,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -42172,11 +45551,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -42254,11 +45633,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -42360,11 +45739,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -42488,11 +45867,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -42620,11 +45999,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -42749,11 +46128,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -42883,11 +46262,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -42992,11 +46371,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -43091,11 +46470,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -43213,11 +46592,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -43309,11 +46688,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -43442,11 +46821,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -43568,11 +46947,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -43665,11 +47044,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -43772,11 +47151,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -43869,11 +47248,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -43981,11 +47360,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -44090,11 +47469,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -44218,11 +47597,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -44329,15 +47708,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-06T16:31:35+03:00"
+     "t": "2026-11-06T16:45:10+03:00"
     }
    },
    "odds": {
@@ -44425,7 +47804,7 @@
        "OU25": "O2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-06T16:31:35+03:00",
+      "fetched_at": "2026-11-06T16:45:10+03:00",
       "note": "Over 2.5 goals"
      },
      {
@@ -44481,11 +47860,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -44594,11 +47973,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -44724,11 +48103,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -44849,11 +48228,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -44966,11 +48345,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -45099,11 +48478,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -45196,11 +48575,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -45301,11 +48680,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -45427,11 +48806,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -45552,11 +48931,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -45681,11 +49060,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -45781,11 +49160,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -45891,11 +49270,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -45991,11 +49370,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -46118,11 +49497,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -46237,11 +49616,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -46367,11 +49746,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -46496,11 +49875,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -46609,11 +49988,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -46709,11 +50088,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -46827,11 +50206,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -46940,11 +50319,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -47030,11 +50409,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -47140,11 +50519,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -47246,11 +50625,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -47353,11 +50732,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -47476,11 +50855,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -47572,11 +50951,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -47662,11 +51041,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -47758,11 +51137,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -47883,11 +51262,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -47983,11 +51362,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -48101,11 +51480,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -48206,11 +51585,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -48323,11 +51702,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -48415,11 +51794,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -48525,11 +51904,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -48625,11 +52004,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -48715,11 +52094,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -48831,7 +52210,7 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": null,
@@ -48873,11 +52252,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -48970,11 +52349,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -49065,11 +52444,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -49162,11 +52541,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -49272,11 +52651,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -49372,11 +52751,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -49482,11 +52861,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -49586,11 +52965,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -49696,11 +53075,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -49795,11 +53174,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -49890,11 +53269,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -49987,11 +53366,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -50093,11 +53472,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -50190,11 +53569,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -50307,11 +53686,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -50392,11 +53771,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -50487,11 +53866,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
@@ -50597,11 +53976,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-06T16:29:54+03:00"
+     "t": "2026-11-06T16:43:34+03:00"
     }
    },
    "odds": {
