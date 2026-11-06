@@ -18,7 +18,7 @@ from typing import Callable
 
 from .. import config
 from ..teams import similar, team_key
-from . import api_football, archive, clubelo, flashscore, forebet, freesupertips, iddaa, nesine, news_rss, soccerstats, sportytrader, transfermarkt, understat
+from . import api_football, archive, clubelo, forebet, freesupertips, iddaa, nesine, news_rss, soccerstats, sportytrader, transfermarkt, understat
 
 
 @dataclass
@@ -37,12 +37,10 @@ class Src:
 FIXTURE_SOURCES = [
     Src("nesine", "Nesine iddaa bülteni (kod, MBS, oran)", fixtures=nesine.fixtures),
     Src("iddaa", "iddaa.com resmi bülten (oran, MBS)", fixtures=iddaa.fixtures),
-    Src("flashscore", "Flashscore (fikstür)", fixtures=flashscore.fixtures),
     Src("api_football", "API-Football (yedek, anahtar gerekir)", fixtures=api_football.fixtures),
 ]
 XG_SOURCES = [Src("understat", "Understat (xG, 5 büyük lig)", league_xg=understat.league_xg)]
 NEWS_SOURCES = [
-    Src("flashscore_news", "Flashscore (sakat/cezalı)", team_news=flashscore.team_news),
     Src("transfermarkt", "Transfermarkt (sakatlık listesi)", team_news=transfermarkt.team_news),
 ]
 PREDICTION_SOURCES = [
@@ -53,8 +51,14 @@ PREDICTION_SOURCES = [
 ]
 RESULT_SOURCES = [
     Src("nesine_results", "Nesine (sonuçlar)", results=nesine.results),
-    Src("flashscore_results", "Flashscore (sonuçlar)", results=flashscore.results,
-        archive_feed=flashscore.finished),
+    # Not: Flashscore sonuçları birikimli arşivi (data/archive) besliyordu; kullanım şartları nedeniyle kapatıldı.
+    # Mevcut arşiv dosyaları okunmaya devam eder.
+]
+# Kullanım şartları veya robots.txt otomatik erişimi yasakladığı için devre dışı bırakılan kaynaklar.
+# Kod silinmez; durum sayfasında "Atlandı" olarak gerekçesiyle görünür.
+DISABLED = [
+    ("flashscore", "Flashscore (fikstür, sonuç, eksik oyuncu)",
+     "Devre dışı: kullanım şartları otomatik istek ve veri çıkarmayı yasaklıyor (md. 2.9-2.10)."),
 ]
 ELO_SOURCES = [Src("clubelo", "ClubElo (kulüp Elo puanları, lig-arası düzeltme)", elo=clubelo.ratings)]
 # football-data.co.uk'ta geçmişi olmayan ve soccerstats sonuç sayfasından okunan ligler

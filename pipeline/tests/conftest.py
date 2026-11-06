@@ -20,3 +20,8 @@ def no_network(monkeypatch):
     monkeypatch.setattr(requests.Session, "get", refuse)
     monkeypatch.setattr(requests, "post", refuse)
     monkeypatch.setattr(ozhttp.time, "sleep", lambda s: None)
+
+
+@pytest.fixture(autouse=True)
+def fast_retry(monkeypatch):
+    monkeypatch.setattr(config, "RETRY_DELAY_S", 0.0)

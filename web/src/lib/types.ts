@@ -8,6 +8,7 @@ export interface Source {
   status: SourceStatus;
   fetched_at: string | null;
   note?: string | null;
+  items?: number;
 }
 
 export interface League {
@@ -222,7 +223,34 @@ export interface Scorecard {
   recent: { date: string; match: string; pick: string; odds: number | null; won: boolean; score: string }[];
 }
 
-export type StatusFile = { generated_at?: string; sources: Source[] } | Source[];
+export type HealthLevel = 'ok' | 'uyari' | 'alarm' | 'kronik' | 'kapali';
+export interface SourceHealth {
+  history: ('ok' | 'partial' | 'missing' | 'skipped')[];
+  streak: number;
+  ok_rate: number | null;
+  last_ok: string | null;
+  level: HealthLevel;
+}
+export interface QualityReport {
+  matches: number;
+  league_mapped_pct: number | null;
+  team_match_pct: number | null;
+  odds_coverage_pct: number | null;
+  model_coverage_pct: number | null;
+  cross_source_match_pct: number | null;
+  cross_source?: { pct: number | null; joined?: number; nesine?: number; iddaa?: number; note?: string };
+  unmatched_teams: Record<string, string[]>;
+  unknown_leagues: string[];
+  validation: Record<string, number>;
+}
+export type StatusFile =
+  | {
+      generated_at?: string;
+      sources: Source[];
+      health?: { sources: Record<string, SourceHealth>; alerts: string[]; runs: number };
+      quality?: QualityReport;
+    }
+  | Source[];
 
 export interface BacktestSummary {
   n: number;

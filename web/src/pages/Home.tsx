@@ -292,6 +292,7 @@ function SourceSummary({ day }: { day: DayFile }) {
   const ok = sources.filter((s) => s.status === 'ok').length;
   const partial = sources.filter((s) => s.status === 'partial').length;
   const missing = sources.filter((s) => s.status === 'missing').length;
+  const alerts = st.state === 'ready' && !Array.isArray(st.data) ? st.data.health?.alerts ?? [] : [];
   return (
     <div className="mt-2">
       <button className="w-full min-h-[40px] flex items-center gap-3 text-left t-meta" aria-expanded={open} onClick={() => setOpen(!open)}>
@@ -300,6 +301,11 @@ function SourceSummary({ day }: { day: DayFile }) {
         {missing > 0 && <span className="flex items-center gap-1.5"><Dot s="missing" /> <b className="num text-ink">{missing}</b> eksik</span>}
         <span className="ml-auto"><Chevron open={open} size={14} /></span>
       </button>
+      {alerts.length > 0 && (
+        <Link to="/kaynaklar" className="mt-1 flex items-center gap-2 rounded-md border border-loss/40 bg-loss/10 px-3 py-2 text-[13px] font-semibold text-loss">
+          <span aria-hidden="true">⚠</span> {alerts.length} kaynakta alarm: veri gelmiyor — ayrıntılar
+        </Link>
+      )}
       {open && (
         <ul className="panel px-3.5 py-2 text-sm space-y-1.5">
           {sources.map((s) => (

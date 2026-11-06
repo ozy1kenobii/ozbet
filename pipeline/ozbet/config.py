@@ -20,6 +20,9 @@ REQUEST_DELAY_S = float(os.environ.get("OZBET_DELAY", "2.5"))  # aynı alan adı
 REQUEST_TIMEOUT_S = 25
 
 MC_SIMS = 10_000
+SOURCE_RETRIES = 1          # geçici hata (bağlantı/5xx) alan kaynak aynı çalıştırmada bir kez daha denenir
+RETRY_DELAY_S = float(os.environ.get("OZBET_RETRY_DELAY", "20"))
+HEALTH_WINDOW_RUNS = 42     # sağlık geçmişi: ~14 gün x 3 çalıştırma
 VALUE_EDGE = 0.05          # model_p - ima_p eşiği
 DROP_ALARM = 0.07          # oranda %7+ düşüş → alarm
 TIME_DECAY_XI = 0.0019     # Dixon-Coles zaman ağırlığı (gün başına) ~ yarı ömür ~365 gün

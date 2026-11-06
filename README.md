@@ -87,7 +87,7 @@ etiketlerinde geçmişte kâr üretmedi (ROI −%4 … −%14). Bu yüzden:
 | **Nesine** bülten JSON | iddaa maç kodu, MBS, oranlar | ✅ Canlıda çalışıyor (5 Kasım: ~1.100 maç). Sonuç uç noktası yok. |
 | **iddaa.com** sportsbookv2 (eklendi) | Resmi bülten, oran, MBS | ✅ Canlıda çalışıyor. Nesine düşerse yerine geçer. |
 | **football-data.co.uk** (eklendi) | Geçmiş sonuçlar, şut/korner/kart, açılış ve kapanış oranları; fixtures.csv oran yedeği | ✅ Çalışıyor (12.475 geçmiş maç). Model eğitimi ve backtest'in omurgası. Site verinin kişisel kullanım için olduğunu belirtir; günde en fazla birkaç dosya iner, önbelleklenir, ham veri yeniden yayınlanmaz. |
-| **Flashscore** | Fikstür, dünün sonuçları, eksik oyuncular (Playwright) | ✅ Fikstür ve sonuçlar çalışıyor (feed sunucusu `global.flashscore.ninja/10`, anahtar engellenirse Playwright ile otomatik keşfedilir). ⚠️ Eksik oyuncu bölümü henüz canlıda doğrulanmadı. |
+| **Flashscore** | (eskiden) fikstür yedeği, sonuçlar, eksik oyuncular | ⛔ **Kapalı (6 Kasım 2026):** kullanım şartları otomatik istek ve veri çıkarmayı yasaklıyor (md. 2.9–2.10). Adapter kodu duruyor ama çalıştırılmıyor; daha önce biriken `data/archive` sonuçları okunmaya devam eder. |
 | **SoccerStats** | Ü2,5 % ve KG % eğilimleri (konsensüse "istatistik oyu") | ⏳ Yalnızca kapsadığı liglerde maç olan günlerde çalışır; ilk Süper Lig gününde doğrulanacak. |
 | **Forebet** | Matematiksel tahmin | ❌ **Engelli:** Cloudflare bot koruması GitHub Actions isteklerini reddediyor (HTTP 403). Koruma aşılmaya çalışılmaz; kaynak "eksik" görünür. |
 | **SportyTrader** | Uzman tahmini (metinden market çıkarımı) | ✅ Çalışıyor (günde en fazla 20 maç sayfası). |
@@ -130,3 +130,9 @@ python -m ozbet.run --date 2026-11-05                                    # günl
 python -m ozbet.backtest                                                 # backtest raporu
 cd ../web && npm ci && npm run dev:sample                                # örnek veriyle arayüz
 ```
+
+## Kaynak sağlığı ve veri kalitesi (Faz 1)
+- Her çalıştırmada kaynak durumları `data/health.json`'a eklenir (son 42 çalıştırma ≈ 14 gün). Daha önce çalışan bir kaynak **üst üste 2 çalıştırma** veri getirmezse sitede kırmızı **alarm** çıkar (ana sayfa + Kaynaklar). Hiç çalışmamış kaynaklar "kronik" (bilinen engel) olarak ayrı gösterilir.
+- Geçici hatalar (bağlantı kopması, zaman aşımı, 5xx) aynı çalıştırmada 20 sn sonra bir kez daha denenir; engeller (403, robots.txt) yeniden denenmez.
+- **Doğrulama:** aralık dışı oranlar (1,01–100), marjı tutarsız market grupları, eksik MS oranları, bozuk/çelişen skorlar, tekrar eden maçlar ayıklanır; sayıları Kaynaklar sayfasında görünür.
+- **Kalite raporu:** Nesine↔iddaa maç eşleşme oranı, geçmiş veride bulunamayan takımlar (sözlüğe eklenecek adaylar), tanınmayan lig adları, oran/model kapsamı.

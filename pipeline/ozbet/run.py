@@ -14,7 +14,7 @@ import logging
 from datetime import date, datetime, timedelta
 from pathlib import Path
 
-from . import config
+from . import config, health, validate
 from .agents import bulletin, commentator, consensus, market, scorecard, simulation, squad, stats, value
 from .http import PoliteClient
 from .sources import football_data as fd
@@ -200,6 +200,9 @@ def main(argv=None):
     if args.offline:
         client.get = _offline_get(client.get)  # type: ignore[assignment]
     board = StatusBoard()
+    vrep = validate.Report()
+    for sid, name, note in registry.DISABLED:
+        board.skip(sid, name, note)
 
     # 1) Bülten
     fixture_lists = {}
@@ -215,8 +218,11 @@ def main(argv=None):
     except Exception as e:  # noqa: BLE001
         log.warning("Bülten birleştirme hatası, yalnız birincil kaynak kullanılıyor: %s", e)
         all_fx = list(nonempty[0]) if nonempty else []
+    all_fx = validate.clean_fixtures(all_fx, today, vrep)
     for f in all_fx:
         f.league_id = f.league_id or bulletin.league_for(f.league_name_raw)
+    # kaynaklar arası eşleşme: iki ana bülten kaynağının ortak maçlarının ne kadarı birleştirilebildi
+    cross = _cross_source(fixture_lists, all_fx, today)
     today_fx = [f for f in all_fx if f.kickoff.date() == today]
 
     # 2) Geçmiş veri + xG
@@ -247,6 +253,7 @@ def main(argv=None):
         if elo_table:
             break
 
+    hist = {lid: validate.clean_history(rows, vrep) for lid, rows in hist.items()}
     # 3) Modeller
     models = {}
     for lid, rows in hist.items():
@@ -403,7 +410,11 @@ def main(argv=None):
             if tag not in fl:
                 fl.append(tag)
             matches.append(pm)
+    matches = validate.dedupe_matches(matches, vrep)
     matches.sort(key=lambda m: (m["league_priority"], m["kickoff"], m["home"]["name"]))
+    quality = _quality(prio, models, matches, unknown_leagues=sorted(
+        {f.league_name_raw for f in today_fx if not f.league_id and f.league_name_raw}), cross=cross,
+        validation=vrep.as_dict())
 
     unknown = sorted({f.league_name_raw for f in today_fx if not f.league_id and f.league_name_raw})
     from .sources.base import SourceStatus
@@ -435,11 +446,61 @@ def main(argv=None):
     dates = sorted({*idx.get("dates", []), today.isoformat()}, reverse=True)
     _write(data / "index.json", {"dates": dates, "latest": dates[0]})
     _write(data / "scorecard.json", card)
-    _write(data / "status.json", {"generated_at": now_iso(), "run_label": doc["run_label"], "sources": board.as_list()})
+    try:
+        hsum = health.update(data / "health.json", now_iso(), doc["run_label"], board.as_list(), quality)
+    except Exception as e:  # noqa: BLE001
+        log.warning("Sağlık geçmişi yazılamadı: %s", e)
+        hsum = {"sources": {}, "alerts": [], "runs": 0}
+    _write(data / "status.json", {"generated_at": now_iso(), "run_label": doc["run_label"], "sources": board.as_list(),
+                                  "health": hsum, "quality": quality})
     n_model = sum(1 for m in matches if m.get("model"))
     log.info("Bitti: %d maç (%d modelli), %d kaynak ok", len(matches), n_model,
              sum(1 for s in board.as_list() if s["status"] == "ok"))
     return doc
+
+
+def _cross_source(fixture_lists: dict, merged: list, today: date) -> dict:
+    """Nesine ve iddaa'nın ikisinde de olması gereken maçların kaçı tek maç olarak birleştirilebildi.
+    Düşük oran = takım/saat eşlemesi bozuluyor (aynı maç iki kez görünür ya da oran yanlış maça gider)."""
+    a = [f for f in fixture_lists.get("nesine") or [] if f.kickoff.date() == today]
+    b = [f for f in fixture_lists.get("iddaa") or [] if f.kickoff.date() == today]
+    if not a or not b:
+        return {"pct": None, "note": "İki bülten kaynağından biri yok"}
+    joined = sum(1 for f in merged if f.source == "nesine" and f.kickoff.date() == today
+                 and "iddaa.com" in f.extra.get("also_in", []))
+    base = min(len(a), len(b))
+    return {"pct": round(joined / base, 3) if base else None, "joined": joined, "nesine": len(a), "iddaa": len(b)}
+
+
+def _quality(prio, models, matches, unknown_leagues, cross, validation) -> dict:
+    """Günlük eşleşme kalitesi raporu (status.json → Kaynaklar sayfası)."""
+    unmatched: dict[str, list[str]] = {}
+    tried = hit = 0
+    for f in prio:
+        M = models.get(f.league_id or "")
+        if not M:
+            continue
+        for name in (f.home, f.away):
+            tried += 1
+            if M.team(name):
+                hit += 1
+            else:
+                unmatched.setdefault(f.league_id, []).append(name)
+    n = len(matches)
+    known = [m for m in matches if m["league"] != "OTHER"]
+    pct = lambda a, b: round(a / b, 3) if b else None  # noqa: E731
+    return {
+        "matches": n,
+        "league_mapped_pct": pct(len(known), n),
+        "team_match_pct": pct(hit, tried),
+        "odds_coverage_pct": pct(sum(1 for m in known if m.get("odds")), len(known)),
+        "model_coverage_pct": pct(sum(1 for m in known if m.get("model")), len(known)),
+        "cross_source_match_pct": cross.get("pct"),
+        "cross_source": cross,
+        "unmatched_teams": {k: sorted(set(v))[:20] for k, v in unmatched.items()},
+        "unknown_leagues": unknown_leagues[:40],
+        "validation": validation,
+    }
 
 
 def _grade_past(data: Path, today: date, results_by_key: dict):

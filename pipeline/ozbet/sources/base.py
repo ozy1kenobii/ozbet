@@ -71,6 +71,30 @@ class SourceStatus:
     items: int = 0
 
 
+def _transient(e: Exception) -> bool:
+    """Bağlantı kopması, zaman aşımı ve 5xx: yeniden denemeye değer. Engel (403/robots) ve anahtar yokluğu değil."""
+    from ..http import Blocked
+    if isinstance(e, Blocked):
+        return False
+    import requests
+    if isinstance(e, (requests.ConnectionError, requests.Timeout)):
+        return True
+    resp = getattr(e, "response", None)
+    return resp is not None and getattr(resp, "status_code", 0) >= 500
+
+
+def _with_retry(fn, sid: str):
+    import time
+    for attempt in range(config.SOURCE_RETRIES + 1):
+        try:
+            return fn()
+        except Exception as e:  # noqa: BLE001
+            if attempt >= config.SOURCE_RETRIES or not _transient(e):
+                raise
+            log.info("Kaynak %s geçici hata (%s), %ss sonra yeniden deneniyor", sid, e, config.RETRY_DELAY_S)
+            time.sleep(config.RETRY_DELAY_S)
+
+
 class StatusBoard:
     def __init__(self):
         self.items: dict[str, SourceStatus] = {}
@@ -81,7 +105,7 @@ class StatusBoard:
         st = SourceStatus(sid, name)
         self.items[sid] = st
         try:
-            out = fn()
+            out = _with_retry(fn, sid)
             st.fetched_at = now_iso()
             st.items = count(out) if out is not None else 0
             if st.items == 0:
