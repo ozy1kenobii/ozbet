@@ -111,7 +111,8 @@ jobs:
           if git diff --cached --quiet; then echo "Değişiklik yok"; else
             git commit -m "veri: $(TZ=Europe/Istanbul date '+%Y-%m-%d %H:%M')"
             for i in 1 2 3; do
-              git pull --rebase --autostash && git push && break
+              git pull --rebase --autostash -X theirs && git push && break   # çakışmada bu çalıştırmanın verisi geçerli
+              git rebase --abort 2>/dev/null || true
               echo "Push denemesi $i başarısız, tekrar deneniyor"; sleep 5
             done
           fi
