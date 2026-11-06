@@ -86,8 +86,28 @@ def parse(doc: dict, day: date | None, t: str) -> list[Fixture]:
 
 def fixtures(client: PoliteClient, day: date) -> list[Fixture]:
     doc = client.get_json(URL, ttl=15 * 60, headers={"Accept": "application/json"})
+    try:
+        from . import market_catalog
+        market_catalog.dump("nesine", market_catalog.nesine(doc))
+    except Exception:  # noqa: BLE001 — teşhis asla akışı bozmaz
+        pass
     return parse(doc, day, now_iso())
 
 
+LIVE_RESULTS = "https://ls.nesine.com/api/v2/Bet/GetLiveBetResultsWithVersion?v=0"
+
+
 def results(client: PoliteClient, day: date) -> dict:
+    """Şimdilik yalnız teşhis: canlı/sonuç uç noktasının yapısını döker (Faz 2'de ayrıştırıcı yazılacak)."""
+    text = client.get(LIVE_RESULTS, ttl=10 * 60, headers={"Accept": "application/json"})
+    try:
+        from . import market_catalog
+        import json as _j
+        doc = _j.loads(text)
+        items = doc.get("d") if isinstance(doc, dict) else doc
+        head = _j.dumps(items[:3] if isinstance(items, list) else doc, ensure_ascii=False)[:5000]
+        market_catalog.dump("nesine-sonuc", f"tip={type(items).__name__} adet={len(items) if isinstance(items, list) else '?'}\n"
+                            f"anahtarlar={list(doc)[:20] if isinstance(doc, dict) else ''}\n{head}")
+    except Exception:  # noqa: BLE001
+        pass
     return {}

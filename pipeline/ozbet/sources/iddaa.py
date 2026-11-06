@@ -86,4 +86,13 @@ def fixtures(client: PoliteClient, day: date) -> list[Fixture]:
     ej = client.get_json(f"{BASE}/events", params={"st": 1, "type": 0, "version": 0}, ttl=15 * 60, headers=HDR)
     if not ej.get("isSuccess", True):
         raise RuntimeError("iddaa: isSuccess=false")
+    try:
+        from . import market_catalog
+        try:
+            mc = client.get_json(f"{BASE}/get_market_config", ttl=24 * 3600, headers=HDR)
+        except Exception:  # noqa: BLE001
+            mc = None
+        market_catalog.dump("iddaa", market_catalog.iddaa((ej.get("data") or {}).get("events", []), mc))
+    except Exception:  # noqa: BLE001
+        pass
     return parse_events((ej.get("data") or {}).get("events", []), comps, day, t)
