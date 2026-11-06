@@ -136,3 +136,7 @@ cd ../web && npm ci && npm run dev:sample                                # örne
 - Geçici hatalar (bağlantı kopması, zaman aşımı, 5xx) aynı çalıştırmada 20 sn sonra bir kez daha denenir; engeller (403, robots.txt) yeniden denenmez.
 - **Doğrulama:** aralık dışı oranlar (1,01–100), marjı tutarsız market grupları, eksik MS oranları, bozuk/çelişen skorlar, tekrar eden maçlar ayıklanır; sayıları Kaynaklar sayfasında görünür.
 - **Kalite raporu:** Nesine↔iddaa maç eşleşme oranı, geçmiş veride bulunamayan takımlar (sözlüğe eklenecek adaylar), tanınmayan lig adları, oran/model kapsamı.
+
+
+### Şut tabanlı güç (Faz 2, 6 Kasım 2026)
+İsabetli şut (football-data.co.uk HST/AST) üretme/yeme güçleri gol modeliyle aynı yöntemle bulunur, ligin gol/isabetli şut oranıyla beklenen gole çevrilir ve %40 ağırlıkla gol modeline katılır. Backtest (6 lig, 3.985 maç): log-loss 0,9885 → 0,9851, Brier 0,5895 → 0,5871, 2.5 Ü/A Brier 0,2459 → 0,2437; altı ligin hepsinde iyileşme. Piyasa kapanış oranı (Brier 0,5732) hâlâ daha iyi; fark kapandı ama yenilmedi.

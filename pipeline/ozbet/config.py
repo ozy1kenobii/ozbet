@@ -29,7 +29,9 @@ TIME_DECAY_XI = 0.0019     # Dixon-Coles zaman ağırlığı (gün başına) ~ y
 MIN_TEAM_MATCHES = 6       # bundan az maçı olan takım için "düşük veri"
 XG_BLEND = 0.35
 # Şut tabanlı güç ağırlığı: λ = (1-w)·λ_gol + w·λ_şut. Backtest ızgarasıyla seçilir (data/backtest.json "shot_blend").
-SHOT_BLEND = float(os.environ.get("OZBET_SHOT_BLEND", "0.0"))
+SHOT_BLEND = float(os.environ.get("OZBET_SHOT_BLEND", "0.4"))
+# 6 Kasım 2026 backtest (6 lig, 3985 maç): log-loss 0.9885 → 0.9851, Brier 0.5895 → 0.5871, Ü2.5 Brier 0.2459 → 0.2437;
+# 6 ligin hepsinde iyileşme, en iyi 0.35–0.5 arası.
 # Değer hesabında model ağırlığı: p = α·model + (1-α)·piyasa. Backtest ızgarasıyla seçilir (data/backtest.json "grid").
 MODEL_WEIGHT = float(os.environ.get("OZBET_MODEL_WEIGHT", "0.25"))
 # 5 Kasım 2026 backtest'i (6 lig, 2 sezon, 3985 maç): Brier model 0.5895, α=0.25 harman 0.5767, kapanış piyasası 0.5732.
