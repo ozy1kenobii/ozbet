@@ -11,6 +11,8 @@ import { AddToCoupon } from '../components/AddToCoupon';
 import { PROV_LABEL, pickResult } from '../components/MatchCard';
 import { Simulation50 } from '../components/Simulation50';
 import { NewsList } from '../components/NewsList';
+import { H2HSummaryStrip, StandingsSection, TrendsSection } from '../components/FormExtras';
+import type { LeagueStandings } from '../lib/types';
 
 export default function MatchDetail() {
   const { date = '', id = '' } = useParams();
@@ -20,7 +22,7 @@ export default function MatchDetail() {
   const m = day.data.matches?.find((x) => x.id === decodeURIComponent(id));
   if (!m) return <Empty title="Maç bulunamadı">Bu gün dosyasında böyle bir maç yok. <Link className="text-accent font-semibold" to="/">Bültene dön</Link></Empty>;
   setMarketLabels(day.data.market_labels);
-  return <Detail m={m} date={day.data.date} cats={day.data.market_categories} />;
+  return <Detail m={m} date={day.data.date} cats={day.data.market_categories} table={day.data.standings?.[m.league]} />;
 }
 
 /**
@@ -70,7 +72,7 @@ function useSectionTabs(root: React.RefObject<HTMLElement>) {
   return { avail, active };
 }
 
-function Detail({ m, date, cats }: { m: Match; date: string; cats?: MarketCategory[] }) {
+function Detail({ m, date, cats, table }: { m: Match; date: string; cats?: MarketCategory[]; table?: LeagueStandings }) {
   const finished = m.status === 'finished' && m.result;
   const rootRef = useRef<HTMLDivElement>(null);
   const headRef = useRef<HTMLElement>(null);
@@ -192,8 +194,10 @@ function Detail({ m, date, cats }: { m: Match; date: string; cats?: MarketCatego
       {/* SİMÜLASYON: <section id="sim50"> Olasılıklar bölümündeki model bloğunun içinde render edilir. */}
 
       {/* FORM */}
-      {hasStats && (
+      {(hasStats || (m.trends?.length ?? 0) > 0) && (
         <section id="form" className="scroll-mt-32" aria-label="Form ve istatistik">
+          <StandingsSection m={m} table={table} />
+          <TrendsSection m={m} date={date} />
           <StatsSection m={m} />
         </section>
       )}
@@ -591,6 +595,7 @@ function StatsSection({ m }: { m: Match }) {
       </Section>
 
       <Section title="Aralarındaki maçlar">
+        <H2HSummaryStrip m={m} />
         {s.h2h?.length ? (
           <ul className="panel divide-y divide-line text-sm">
             {s.h2h.map((g, i) => (

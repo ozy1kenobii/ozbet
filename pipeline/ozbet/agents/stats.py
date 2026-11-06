@@ -58,3 +58,18 @@ def h2h(rows: list[dict], a: str, b: str, before: date, n: int = 6) -> list[dict
                    key=lambda r: r["date"], reverse=True)[:n]
     return [{"date": r["date"].isoformat(), "home": r["home"], "away": r["away"],
              "score": f'{r["hg"]}-{r["ag"]}'} for r in games]
+
+
+def h2h_summary(rows: list[dict], a: str, b: str, before: date, n: int = 6) -> dict | None:
+    """Son n karşılaşmanın özeti; galibiyetler bugünkü maçın ev sahibi (a) ve deplasmanı (b) açısından sayılır
+    (eski maçta kimin evinde oynandığından bağımsız)."""
+    games = sorted((r for r in rows if r["date"] < before and {r["home"], r["away"]} == {a, b}),
+                   key=lambda r: r["date"], reverse=True)[:n]
+    if not games:
+        return None
+    aw = sum(1 for r in games if (r["hg"] > r["ag"] and r["home"] == a) or (r["ag"] > r["hg"] and r["away"] == a))
+    dr = sum(1 for r in games if r["hg"] == r["ag"])
+    return {"n": len(games), "home_wins": aw, "draws": dr, "away_wins": len(games) - aw - dr,
+            "avg_goals": round(sum(r["hg"] + r["ag"] for r in games) / len(games), 2),
+            "btts": sum(1 for r in games if r["hg"] > 0 and r["ag"] > 0),
+            "o25": sum(1 for r in games if r["hg"] + r["ag"] > 2)}

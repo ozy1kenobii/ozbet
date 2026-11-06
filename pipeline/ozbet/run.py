@@ -17,7 +17,7 @@ from pathlib import Path
 from . import config, health, validate
 from .markets import all_labels, all_probs
 from .markets import categories as market_categories
-from .agents import market_map, odds_analysis, bulletin, commentator, consensus, market, scorecard, simulation, squad, stats, value
+from .agents import market_map, odds_analysis, bulletin, commentator, consensus, market, scorecard, simulation, squad, standings, stats, trends, value
 from .http import PoliteClient
 from .sources import football_data as fd
 from .sources import archive, news_rss, registry
@@ -332,6 +332,8 @@ def main(argv=None):
     prev_doc = _read(data / f"{today.isoformat()}.json", {}) or {}
     prev = {m["id"]: m for m in prev_doc.get("matches", [])}
     matches, bad_matches = [], []
+    tables: dict[str, dict | None] = {}     # lig → puan durumu (yalnız bugün maçı olan ligler)
+    lg_avgs: dict[str, dict] = {}
     prio = [f for f in today_fx if f.league_id]
     other = sorted((f for f in today_fx if not f.league_id), key=lambda f: f.kickoff)[:MAX_OTHER]
     for f in prio + other:
@@ -372,12 +374,24 @@ def main(argv=None):
                     log.info("Oran analizi %s: %s", mid, e)
             # istatistik
             M = models.get(f.league_id or "")
+            th = ta = None
             if M and rows_l:
                 th, ta = M.team(f.home), M.team(f.away)
                 if th and ta:
                     m["stats"] = {"home": stats.team_stats(rows_l, th, today, "home"),
                                   "away": stats.team_stats(rows_l, ta, today, "away"),
-                                  "h2h": stats.h2h(rows_l, th, ta, today)}
+                                  "h2h": stats.h2h(rows_l, th, ta, today),
+                                  "h2h_summary": stats.h2h_summary(rows_l, th, ta, today)}
+                    if lg and not lg.cup:
+                        try:
+                            if f.league_id not in tables:
+                                tables[f.league_id] = standings.build(rows_l, today)
+                            tb = tables[f.league_id]
+                            ph, pa = standings.position(tb, th), standings.position(tb, ta)
+                            if ph and pa:
+                                m["table"] = {"home": ph, "away": pa}
+                        except Exception as e:  # noqa: BLE001
+                            log.info("Puan durumu %s: %s", mid, e)
                     src_name = (rows_l[-1].get("src") or "football-data.co.uk") if rows_l else "football-data.co.uk"
                     st_item = board.items.get("football_data_history")
                     m["provenance"]["stats"] = {"source": src_name + (" + xG" if M.xg else ""),
@@ -421,6 +435,16 @@ def main(argv=None):
             if m["model"] and mk and "1" in mk["implied"] and max(
                     abs(m["model"]["probs"][k] - mk["implied"][k]) for k in ("1", "X", "2")) > value.MAX_EDGE:
                 m["flags"].append("Model-piyasa farkı çok büyük (veri hatası olabilir)")
+            if th and ta and rows_l:
+                try:
+                    if f.league_id not in lg_avgs:
+                        lg_avgs[f.league_id] = trends.league_averages(rows_l)
+                    tr = trends.build(rows_l, th, ta, f.home, f.away, today, all_probs(m["model"]), m["odds"],
+                                      lg_avgs[f.league_id])
+                    if tr:
+                        m["trends"] = tr
+                except Exception as e:  # noqa: BLE001
+                    log.info("Trend %s: %s", mid, e)
             cup = bool(lg and lg.cup) or not lg
             if cup and m["model"]:
                 m["flags"].append(CUP_FLAG_ELO if m["model"].get("method") == "elo" else CUP_FLAG)
@@ -469,6 +493,7 @@ def main(argv=None):
                      "priority": config.LEAGUE_BY_ID[l].priority} if l in config.LEAGUE_BY_ID else
                     {"id": "OTHER", "name": "Diğer ligler", "country": "", "priority": 99} for l in leagues_present],
         "matches": matches,
+        "standings": {l: tables[l] for l in leagues_present if tables.get(l)},
         "market_labels": all_labels(),
         "market_categories": market_categories(),
     }

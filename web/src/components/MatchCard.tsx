@@ -56,12 +56,17 @@ export function MatchCard({ m, date, showLeague = false }: { m: Match; date: str
         </div>
         <Link to={href} className="min-w-0 flex-1 group pb-1" aria-label={`${m.home.name} – ${m.away.name} maç detayı`}>
           {showLeague && <div className="t-micro truncate mb-0.5">{m.league_name}</div>}
-          {[m.home.name, m.away.name].map((name, i) => (
+          {[m.home.name, m.away.name].map((name, i) => {
+            const pos = m.table?.[i === 0 ? 'home' : 'away']?.pos;
+            return (
             <div key={i} className="flex items-center justify-between gap-2">
-              <span className="truncate text-[16px] font-semibold leading-6 group-hover:text-accent">{name}</span>
+              <span className="min-w-0 truncate text-[16px] font-semibold leading-6 group-hover:text-accent">
+                {name}{pos != null && <span className="ml-1.5 text-[12px] font-normal text-muted num" title="Lig sırası">{pos}.</span>}
+              </span>
               {finished && <span className="display text-lg font-bold leading-6 num">{m.result!.ft[i]}</span>}
             </div>
-          ))}
+            );
+          })}
         </Link>
         <div className="shrink-0"><AddToCoupon match={m} date={date} compact /></div>
       </div>
