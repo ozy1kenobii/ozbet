@@ -18,7 +18,7 @@ def sim():
 
 
 def test_extra_keys_labelled_and_groups_sum_to_one(sim):
-    e = sim["extra"]
+    e = {**sim["extra"], **{f"HTFT_{k}": v for k, v in sim["htft"].items()}}
     assert set(e) == set(EXTRA_LABELS)
     for g, ks in EXTRA_GROUPS.items():
         assert abs(sum(e[k] for k in ks) - 1) < 1e-3, g

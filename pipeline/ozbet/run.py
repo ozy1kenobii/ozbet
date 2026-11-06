@@ -17,7 +17,7 @@ from pathlib import Path
 from . import config, health, validate
 from .markets import all_labels, all_probs
 from .markets import categories as market_categories
-from .agents import bulletin, commentator, consensus, market, scorecard, simulation, squad, stats, value
+from .agents import market_map, bulletin, commentator, consensus, market, scorecard, simulation, squad, stats, value
 from .http import PoliteClient
 from .sources import football_data as fd
 from .sources import archive, news_rss, registry
@@ -266,6 +266,29 @@ def main(argv=None):
         except Exception as e:  # noqa: BLE001
             log.warning("Model %s kurulamadı: %s", lid, e)
 
+    # 3b) Belirsiz iddaa marketlerinin veriyle çözülmesi (İY/2Y, ev/dep gol, handikap yönü, MS&KG)
+    map_report = {}
+    try:
+        samples = []
+        for f in today_fx:
+            raw = f.extra.get("iddaa_raw")
+            if not raw or f.league_id not in models or len(samples) >= 60:
+                continue
+            sm = simulation.predict(f.home, f.away, f.league_id, models, None, "map-" + bulletin.match_id(f))
+            if sm:
+                samples.append((raw, sm))
+        decisions, map_report = market_map.resolve(samples)
+        added = 0
+        for f in all_fx:
+            if f.extra.get("iddaa_raw"):
+                added += market_map.apply(f.extra["iddaa_raw"], f.odds, decisions)
+                f.odds = validate.clean_odds(f.odds, vrep)
+        map_report["added_odds"] = added
+        log.info("Market eşleme kararları: %s", decisions)
+    except Exception as e:  # noqa: BLE001
+        log.warning("Market eşleme çözümleyicisi hata verdi: %s", e)
+        map_report = {"error": f"{type(e).__name__}: {e}"}
+
     # 4) Kadro/haber ve dış tahminler
     news = {}
     for src in registry.NEWS_SOURCES:
@@ -418,6 +441,7 @@ def main(argv=None):
     quality = _quality(prio, models, matches, unknown_leagues=sorted(
         {f.league_name_raw for f in today_fx if not f.league_id and f.league_name_raw}), cross=cross,
         validation=vrep.as_dict())
+    quality["market_map"] = map_report
 
     unknown = sorted({f.league_name_raw for f in today_fx if not f.league_id and f.league_name_raw})
     from .sources.base import SourceStatus

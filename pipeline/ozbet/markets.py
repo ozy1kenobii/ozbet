@@ -34,6 +34,7 @@ EXTRA_LABELS: dict[str, str] = {
     "HT_BTTS_Y": "İY KG Var", "HT_BTTS_N": "İY KG Yok", "BOTH_HALVES_O0.5": "İki yarıda da gol",
     "H_WIN_HALF": "Ev bir yarıyı kazanır", "A_WIN_HALF": "Dep bir yarıyı kazanır",
     "H_WIN_NIL": "Ev gol yemeden kazanır", "A_WIN_NIL": "Dep gol yemeden kazanır",
+    **{f"HTFT_{a}/{b}": f"İY/MS {a}/{b}" for a in "1X2" for b in "1X2"},
 }
 # Birbirini dışlayan ek gruplar (marj temizliği için)
 EXTRA_GROUPS: dict[str, list[str]] = {
@@ -47,6 +48,7 @@ EXTRA_GROUPS: dict[str, list[str]] = {
     **{f"ou{ln}": [f"O{ln}", f"U{ln}"] for ln in (0.5, 4.5, 5.5)},
     **{f"{s}_ou{ln}": [f"{s}_O{ln}", f"{s}_U{ln}"] for s in "HA" for ln in (0.5, 1.5, 2.5)},
     **{f"hcp{h:+d}": [f"HCP{h:+d}_1", f"HCP{h:+d}_X", f"HCP{h:+d}_2"] for h in (-2, -1, 1, 2)},
+    "htft": [f"HTFT_{a}/{b}" for a in "1X2" for b in "1X2"],
 }
 # Birbirini dışlayan market grupları (marj temizliği için)
 GROUPS = {
@@ -109,6 +111,7 @@ def all_probs(model: dict | None) -> dict[str, float]:
         return {}
     out = dict(model.get("probs") or {})
     out.update(model.get("extra") or {})
+    out.update({f"HTFT_{k}": v for k, v in (model.get("htft") or {}).items()})
     for kind in ("corners", "cards"):
         out.update((model.get(kind) or {}).get("probs") or {})
     return out
@@ -123,11 +126,14 @@ def settle(market: str, ft: list[int], ht: list[int] | None = None) -> bool | No
         return outcome_won(market, hg, ag)
     if market not in EXTRA_LABELS:
         return None
-    needs_ht = market.startswith(("HT_", "2H_", "MGH_", "BOTH_HALVES")) or "WIN_HALF" in market
+    needs_ht = market.startswith(("HT_", "2H_", "MGH_", "BOTH_HALVES", "HTFT_")) or "WIN_HALF" in market
     if not ht or ht[0] is None:
         if needs_ht:
             return None
         ht = [0, 0]   # yalnız MS skoruna bağlı marketlerde İY değeri sonucu etkilemez
+    if market.startswith("HTFT_"):
+        r = lambda x, y: "1" if x > y else ("X" if x == y else "2")  # noqa: E731
+        return market == f"HTFT_{r(int(ht[0]), int(ht[1]))}/{r(hg, ag)}"
     from .model.simulate import extra_markets
     h1, a1 = np.array([int(ht[0])]), np.array([int(ht[1])])
     v = extra_markets(h1, a1, np.array([hg]) - h1, np.array([ag]) - a1, np.array([1.0]))
@@ -148,7 +154,8 @@ def categories() -> list[dict]:
         {"id": "yari", "title": "Yarılar", "keys": ["HT_1", "HT_X", "HT_2", *line("HT_", (0.5, 1.5, 2.5)),
                                                     "HT_BTTS_Y", "HT_BTTS_N", "2H_1", "2H_X", "2H_2",
                                                     "MGH_1", "MGH_X", "MGH_2", "BOTH_HALVES_O0.5",
-                                                    "H_WIN_HALF", "A_WIN_HALF"]},
+                                                    "H_WIN_HALF", "A_WIN_HALF",
+                                                    *[f"HTFT_{a}/{b}" for a in "1X2" for b in "1X2"]]},
         {"id": "kombi", "title": "Kombine", "keys": [*[f"{r}&{m}" for r in "1X2" for m in ("O2.5", "U2.5")],
                                                      *[f"{r}&{m}" for r in "1X2" for m in ("BTTS_Y", "BTTS_N")],
                                                      "BTTS_Y&O2.5", "BTTS_Y&U2.5", "BTTS_N&O2.5", "BTTS_N&U2.5"]},
