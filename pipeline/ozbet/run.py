@@ -20,7 +20,7 @@ from .markets import categories as market_categories
 from .agents import market_map, odds_analysis, bulletin, commentator, consensus, market, scorecard, simulation, squad, stats, value
 from .http import PoliteClient
 from .sources import football_data as fd
-from .sources import archive, news_rss, registry
+from .sources import archive, news_rss, registry, tff
 from .sources.base import Fixture, StatusBoard, now_iso
 from .teams import TeamMatcher, team_key
 
@@ -50,7 +50,8 @@ def _write(p: Path, obj):
 DEBUG_HOSTS = {"flashscore": "flashscore", "flashscore_results": "flashscore", "forebet": "forebet",
                "sportytrader": "sportytrader", "freesupertips": "freesupertips", "soccerstats": "soccerstats",
                "understat": "understat", "transfermarkt": "transfermarkt", "nesine": "nesine", "iddaa": "iddaa",
-               "football_data_fixtures": "football-data", "clubelo": "clubelo", "soccerstats_tr2": "soccerstats"}
+               "football_data_fixtures": "football-data", "clubelo": "clubelo", "soccerstats_tr2": "soccerstats",
+               "tff_tr2": "tff", "tff_referees": "tff"}
 
 
 def dump_debug(client, board):
@@ -62,9 +63,13 @@ def dump_debug(client, board):
         host = DEBUG_HOSTS.get(sid)
         if not host or st.status == "ok":
             continue
-        hits = [r for r in client.recent if host in r[0]]
+        recent = list(client.recent) + list(getattr(getattr(client, "_tff", None), "recent", []))
+        hits = [r for r in recent if host in r[0]]
         for i, (url, code, body) in enumerate(hits[-4:]):
             (d / f"{sid}-{i}.txt").write_text(_skeleton(url, code, body), encoding="utf-8")
+    # tff: hafta + maç sayfası yapısı her durumda (ilk canlı çalıştırmada seçici doğrulaması için)
+    for kind, (url, code, body) in tff.SAMPLES.items():
+        (d / f"tff-{kind}.txt").write_text(_skeleton(url, code, body), encoding="utf-8")
 
 
 def _skeleton(url: str, code: int, body: str) -> str:
@@ -248,6 +253,8 @@ def main(argv=None):
                       empty_is_partial=False, count=lambda d: sum(d.values()))
     for lid, rows in registry.extra_history(client, board, today).items():
         hist.setdefault(lid, rows)
+    # Süper Lig hakemleri (tff.org) → TR1 geçmiş satırları + bugünkü fikstürler (kart modeli hakem etkisi)
+    registry.tff_referees(client, board, today, hist, today_fx)
     # ClubElo: günde 1 istek; yoksa simülasyon lig gücü katsayısına düşer
     elo_table = None
     for src in registry.ELO_SOURCES:
@@ -379,6 +386,8 @@ def main(argv=None):
                                   "away": stats.team_stats(rows_l, ta, today, "away"),
                                   "h2h": stats.h2h(rows_l, th, ta, today)}
                     src_name = (rows_l[-1].get("src") or "football-data.co.uk") if rows_l else "football-data.co.uk"
+                    if src_name == tff.SOURCE:
+                        src_name = tff.ATTRIBUTION
                     st_item = board.items.get("football_data_history")
                     m["provenance"]["stats"] = {"source": src_name + (" + xG" if M.xg else ""),
                                                 "t": st_item.fetched_at if st_item else now_iso()}
@@ -398,6 +407,10 @@ def main(argv=None):
                     log.info("Elo eşleme %s: %s", mid, e)
             if elo:
                 m["elo"] = {k: elo[k] for k in ("home", "away", "source", "date")}
+            if f.extra.get("referee"):
+                m["referee"] = f.extra["referee"]
+                if f.extra.get("referee_source"):
+                    m["provenance"]["referee"] = {"source": f.extra["referee_source"], "t": f.fetched_at}
             # model
             try:
                 m["model"] = simulation.predict(f.home, f.away, f.league_id, models, m["squad"], mid, elo=elo,
