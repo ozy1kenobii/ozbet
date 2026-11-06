@@ -4,6 +4,7 @@ from __future__ import annotations
 from .. import config
 
 MAX_EDGE = 0.20
+EXPERIMENTAL = ("C_", "K_", "CR_", "KR_")
 VALUE_MARKETS = ["1", "X", "2", "O2.5", "U2.5", "BTTS_Y", "BTTS_N", "O1.5", "U1.5", "O3.5", "U3.5"]
 
 
@@ -12,7 +13,10 @@ def find_value(model_probs: dict | None, odds: dict | None, implied: dict | None
     if not model_probs or not odds or not implied:
         return []
     out = []
-    keys = VALUE_MARKETS + [k for k in implied if k not in VALUE_MARKETS and k not in ("1X", "X2", "12")]
+    # Korner/kart marketleri değer etiketi almaz: iddaa'nın sayım kuralı (ör. kırmızı kart kaç sayılır) ile
+    # football-data verisinin uyumu karnede doğrulanana kadar deneysel. Olasılıkları yine gösterilir.
+    keys = VALUE_MARKETS + [k for k in implied if k not in VALUE_MARKETS and k not in ("1X", "X2", "12")
+                            and not k.startswith(EXPERIMENTAL)]
     for k in keys:
         o, ip, mp = odds.get(k), implied.get(k), model_probs.get(k)
         if not (o and ip and mp):

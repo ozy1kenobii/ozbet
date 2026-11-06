@@ -104,8 +104,9 @@ def test_implied_and_value_cover_extra_markets(sim):
     assert {"HT_1", "ODD", "C_O9.5"} <= set(mk["implied"]) and "ht1x2" in mk["margin"]
     probs = all_probs(model)
     assert "C_O9.5" in probs and "HT_1" in probs and "1" in probs
-    v = value.find_value({**probs, "C_O9.5": 0.66}, odds, mk["implied"])
-    assert any(x["market"] == "C_O9.5" for x in v)
+    v = value.find_value({**probs, "C_O9.5": 0.66, "ODD": 0.62}, odds, mk["implied"])
+    assert any(x["market"] == "ODD" for x in v)              # ek gol marketi değer alabilir
+    assert not any(x["market"] == "C_O9.5" for x in v)       # korner/kart deneysel: değer etiketi yok
     assert set(all_groups()) >= set(EXTRA_GROUPS) and "Korner 9.5 Üst" in all_labels().values()
 
 
