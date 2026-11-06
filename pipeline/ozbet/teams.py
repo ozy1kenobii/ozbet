@@ -89,6 +89,9 @@ ALIASES: dict[str, list[str]] = {
     "Olympique Marsilya": ["Marseille", "Olympique Marseille", "Marsilya"],
     "Olympique Lyon": ["Lyon", "Olympique Lyonnais"],
     "St Etienne": ["Saint-Etienne", "St. Etienne"],
+    "Dresden": ["Dynamo Dresden", "SG Dynamo Dresden"],
+    "Greuther Furth": ["G. Furth", "Greuther Fürth", "SpVgg Greuther Fürth", "Fürth"],
+    "Derby": ["Derby County"],
 }
 
 
