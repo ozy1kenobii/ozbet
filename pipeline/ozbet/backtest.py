@@ -18,7 +18,7 @@ from . import config
 from .agents.market import implied
 from .http import PoliteClient
 from .markets import outcome_won, probs_from_matrix
-from .model.dixon_coles import clamp_rho, fit, score_matrix
+from .model.dixon_coles import clamp_rho, fit, fit_shots, score_matrix
 from .sources import football_data as fd
 from .sources.base import now_iso
 
@@ -43,12 +43,16 @@ def run_league(rows: list[dict], test_seasons: list[str], edge: float = config.V
     ALPHAS, EDGES = (1.0, 0.6, 0.4, 0.25), (0.03, 0.05, 0.08, 0.10)
     grid = {(a, e): [0, 0.0] for a in ALPHAS for e in EDGES}
     blend_brier = {a: 0.0 for a in ALPHAS}
+    SHOTS = (0.0, 0.2, 0.35, 0.5, 0.7)
+    shot = {w: [0.0, 0.0, 0.0, 0] for w in SHOTS}      # brier, logloss, ou25 brier, n
     start = test[0]["date"]
     week = start
     model = None
     while week <= test[-1]["date"]:
         nxt = week + timedelta(days=7)
-        model = fit([r for r in rows if r["date"] < week], week, config.TIME_DECAY_XI)
+        past = [r for r in rows if r["date"] < week]
+        model = fit(past, week, config.TIME_DECAY_XI)
+        sm, conv = fit_shots(past, week, config.TIME_DECAY_XI)
         for r in (x for x in test if week <= x["date"] < nxt):
             if model is None or r["home"] not in model.attack or r["away"] not in model.attack:
                 continue
@@ -62,6 +66,14 @@ def run_league(rows: list[dict], test_seasons: list[str], edge: float = config.V
             p = probs_from_matrix(score_matrix(lh, la, clamp_rho(model.rho, lh, la)))
             o = "1" if r["hg"] > r["ag"] else ("X" if r["hg"] == r["ag"] else "2")
             q = close["implied"]
+            if sm is not None and r["home"] in sm.attack and r["away"] in sm.attack:
+                sh, sa = sm.lambdas(r["home"], r["away"])
+                ov = 1.0 if r["hg"] + r["ag"] > 2 else 0.0
+                for w in SHOTS:
+                    bh, ba = (1 - w) * lh + w * sh * conv, (1 - w) * la + w * sa * conv
+                    pw = probs_from_matrix(score_matrix(bh, ba, clamp_rho(model.rho, bh, ba)))
+                    sacc = shot[w]
+                    sacc[0] += _brier(pw, o); sacc[1] += _ll(pw, o); sacc[2] += (pw["O2.5"] - ov) ** 2; sacc[3] += 1
             acc["n"] += 1
             acc["mb"] += _brier(p, o); acc["kb"] += _brier(q, o)
             acc["ml"] += _ll(p, o); acc["kl"] += _ll(q, o)
@@ -105,6 +117,8 @@ def run_league(rows: list[dict], test_seasons: list[str], edge: float = config.V
         "roi_value_bets": round(acc["profit"] / acc["bets"], 4) if acc["bets"] else None,
         "avg_clv": round(acc["clv_sum"] / acc["clv_n"], 4) if acc["clv_n"] else None,
         "blend_brier": {str(a): round(v / n, 4) for a, v in blend_brier.items()},
+        "shot_blend": [{"w": w, "n": v[3], "brier": round(v[0] / v[3], 4), "logloss": round(v[1] / v[3], 4),
+                        "ou25_brier": round(v[2] / v[3], 4)} for w, v in shot.items() if v[3]],
         "grid": [{"alpha": a, "edge": e, "bets": g[0], "profit": round(g[1], 2),
                   "roi": round(g[1] / g[0], 4) if g[0] else None} for (a, e), g in grid.items()],
     }
@@ -158,6 +172,17 @@ def main(argv=None):
         n = sum(b["n"] for b in bl)
         out["blend_brier"] = {a: round(sum(b["blend_brier"][a] * b["n"] for b in bl) / n, 4)
                               for a in bl[0]["blend_brier"]}
+    sb = [b for b in bl if b.get("shot_blend")]
+    if sb:
+        agg = {}
+        for b in sb:
+            for x in b["shot_blend"]:
+                a = agg.setdefault(x["w"], [0, 0.0, 0.0, 0.0])
+                a[0] += x["n"]; a[1] += x["brier"] * x["n"]; a[2] += x["logloss"] * x["n"]; a[3] += x["ou25_brier"] * x["n"]
+        out["shot_blend"] = [{"w": w, "n": a[0], "brier": round(a[1] / a[0], 4), "logloss": round(a[2] / a[0], 4),
+                              "ou25_brier": round(a[3] / a[0], 4)} for w, a in sorted(agg.items())]
+        best = min(out["shot_blend"], key=lambda x: x["logloss"])
+        out["shot_blend_best"] = best["w"]
     (config.DATA_DIR).mkdir(parents=True, exist_ok=True)
     (config.DATA_DIR / "backtest.json").write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     return out

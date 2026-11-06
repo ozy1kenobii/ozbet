@@ -150,3 +150,22 @@ def score_matrix(lh: float, la: float, rho: float, max_goals: int = 10) -> np.nd
     t = tau(x[:, None], x[None, :], lh, la, rho)
     m = m * t
     return m / m.sum()
+
+
+def fit_shots(matches, ref_date, xi: float):
+    """İsabetli şut (HST/AST) üretme/yeme güçleri + lig dönüşüm oranı (gol / isabetli şut).
+
+    Döner: (Ratings, conv) — Ratings.lambdas() beklenen isabetli şutu verir; × conv = şut tabanlı beklenen gol.
+    """
+    rows = [dict(m, hxg=m["hst"], axg=m["ast"]) for m in matches
+            if m.get("hst") is not None and m.get("ast") is not None and m["date"] < ref_date]
+    if len(rows) < 60:
+        return None, None
+    R = fit(rows, ref_date, xi, use_xg=True)
+    if R is None:
+        return None, None
+    w = np.exp(-xi * np.clip(np.array([(ref_date - m["date"]).days for m in rows], float), 0, None))
+    goals = np.array([m["hg"] + m["ag"] for m in rows], float)
+    sot = np.array([m["hst"] + m["ast"] for m in rows], float)
+    conv = float(np.sum(w * goals) / max(np.sum(w * sot), 1e-9))
+    return R, conv

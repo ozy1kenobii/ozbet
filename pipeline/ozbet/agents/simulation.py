@@ -28,6 +28,8 @@ class LeagueModel:
     goals: Ratings
     xg: Ratings | None
     matcher: TeamMatcher
+    shots: Ratings | None = None
+    shot_conv: float | None = None
     corners: object | None = None   # model.counts.CountModel
     cards: object | None = None
 
@@ -50,7 +52,13 @@ def build(league_id: str, rows: list[dict], ref: date) -> LeagueModel | None:
     except Exception as e:  # noqa: BLE001
         log.warning("Korner/kart modeli %s kurulamadı: %s", league_id, e)
         cm = km = None
-    return LeagueModel(league_id, g, x, TeamMatcher(g.teams), cm, km)
+    from ..model.dixon_coles import fit_shots
+    try:
+        sh, conv = fit_shots(past, ref, config.TIME_DECAY_XI)
+    except Exception as e:  # noqa: BLE001
+        log.warning("Şut modeli %s kurulamadı: %s", league_id, e)
+        sh, conv = None, None
+    return LeagueModel(league_id, g, x, TeamMatcher(g.teams), sh, conv, cm, km)
 
 
 def _squad_mult(sq: dict | None) -> tuple[float, float, list[str]]:
@@ -143,6 +151,11 @@ def predict(home_name: str, away_name: str, league_id: str | None, models: dict[
             w = config.XG_BLEND
             lh, la = (1 - w) * lh + w * xh, (1 - w) * la + w * xa
             notes.append("xG harmanı kullanıldı")
+        if config.SHOT_BLEND > 0 and M.shots is not None and h in M.shots.attack and a in M.shots.attack:
+            sh_h, sh_a = M.shots.lambdas(h, a, neutral)
+            w = config.SHOT_BLEND
+            lh, la = (1 - w) * lh + w * sh_h * M.shot_conv, (1 - w) * la + w * sh_a * M.shot_conv
+            notes.append(f"Şut tabanlı güç harmanı (%{round(w * 100)})")
         nh, na = R.n_matches.get(h, 0), R.n_matches.get(a, 0)
         rho, hts = R.rho, R.ht_share
         quality = "high" if min(nh, na) >= 15 else ("medium" if min(nh, na) >= config.MIN_TEAM_MATCHES else "low")
