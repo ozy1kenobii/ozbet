@@ -45,7 +45,7 @@ def clean_odds(odds: dict[str, float] | None, rep: Report | None = None) -> dict
         if all(k in out for k in keys):
             margin = sum(1 / out[k] for k in keys) - 1
             # çok seçenekli ek marketlerde (ör. MS & Ü/A, 6 seçenek) marj doğal olarak daha yüksek
-            hi = MARGIN_MAX if g in GROUPS else MARGIN_MAX + 0.08 * (len(keys) - 2)
+            hi = MARGIN_MAX if g in GROUPS else min(0.40, MARGIN_MAX + 0.04 * (len(keys) - 2))
             if not (MARGIN_MIN <= margin <= hi):
                 for k in keys:
                     out.pop(k, None)

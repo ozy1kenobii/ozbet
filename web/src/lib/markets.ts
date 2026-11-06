@@ -43,13 +43,14 @@ export function marketLabel(key: string): string {
 }
 
 /** Bir maçın tüm market olasılıkları: ana + ek gol + korner + kart. */
-export function allProbs(m: { model?: { probs?: Record<string, number | undefined>; extra?: Record<string, number>;
+export function allProbs(m: { model?: { htft?: Record<string, number>; probs?: Record<string, number | undefined>; extra?: Record<string, number>;
   corners?: { probs: Record<string, number> }; cards?: { probs: Record<string, number> } } | null }): Record<string, number> {
   const md = m.model;
   if (!md) return {};
   const out: Record<string, number> = {};
   for (const [k, v] of Object.entries(md.probs ?? {})) if (v != null) out[k] = v;
   Object.assign(out, md.extra ?? {}, md.corners?.probs ?? {}, md.cards?.probs ?? {});
+  for (const [k, v] of Object.entries((md as { htft?: Record<string, number> }).htft ?? {})) out[`HTFT_${k}`] = v;
   return out;
 }
 

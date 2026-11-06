@@ -31,7 +31,7 @@ export function MarketScanner({ day }: { day: DayFile }) {
   const rows = useMemo(() => {
     const out: { m: Match; p: number; o?: number; imp?: number }[] = [];
     for (const m of day.matches) {
-      if (m.status === 'finished') continue;
+      if (m.status !== 'scheduled') continue;   // canlı/biten maçta maç öncesi olasılık yanıltır
       const p = allProbs(m)[mk];
       if (p == null) continue;
       const o = (m.odds as Record<string, number | undefined> | null)?.[mk];

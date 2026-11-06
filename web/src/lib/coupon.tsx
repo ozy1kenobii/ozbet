@@ -108,9 +108,8 @@ export function analyze(items: Selection[]): CouponAnalysis {
       const { p, covered } = jointFromMatrix(mat, its.map((x) => x.market as MarketKey));
       groups.push({ matchId, title, items: its, p, method: 'matris', tail: Math.max(0, 1 - covered), contradictory: p <= 1e-9 });
     } else {
-      const ps = its.map((x) => x.p);
-      const p = ps.every((x) => x != null) ? (ps as number[]).reduce((a, b) => a * b, 1) : null;
-      groups.push({ matchId, title, items: its, p, method: 'carpim', tail: null, contradictory: false });
+      // Aynı maçta ek market: olaylar bağımlı, çarpım yanlış olur → birleşik olasılık hesaplanmaz
+      groups.push({ matchId, title, items: its, p: null, method: 'carpim', tail: null, contradictory: false });
     }
   }
   const gp = groups.map((g) => g.p);

@@ -141,7 +141,8 @@ def fit(matches, ref_date, xi: float, l2: float = 0.5, use_xg: bool = False) -> 
         if s_ft > 0:
             ht_share = float(np.clip(s_ht / s_ft, 0.35, 0.5))
     draw_adj = 1.0
-    if not use_xg:
+    from .. import config as _cfg
+    if not use_xg and getattr(_cfg, "DRAW_CALIBRATION", False):
         draw_adj = estimate_draw_adj(np.exp(mu + h + a[hi] + d[ai]), np.exp(mu + a[ai] + d[hi]), rho,
                                      hg.astype(int) == ag.astype(int), w)
     return Ratings(teams, dict(zip(teams, a.tolist())), dict(zip(teams, d.tolist())),
