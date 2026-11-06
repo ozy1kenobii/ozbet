@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-06T17:03:36+03:00",
+ "generated_at": "2026-11-06T17:24:11+03:00",
  "seasons": [
   "2425",
   "2526"
@@ -19,19 +19,24 @@
    "name": "Süper Lig",
    "n": 620,
    "model_brier": 0.5785,
-   "market_brier": 0.5566,
+   "market_brier": 0.5553,
+   "market_brier_proportional": 0.5566,
+   "market_logloss_proportional": 0.9409,
+   "model_brier_drawcal": 0.5789,
+   "model_logloss_drawcal": 0.9726,
+   "draw_adj_last": 0.982,
    "model_logloss": 0.9721,
-   "market_logloss": 0.9409,
+   "market_logloss": 0.9389,
    "ou25_model_brier": 0.2417,
-   "ou25_market_brier": 0.2333,
-   "n_value_bets": 650,
-   "roi_value_bets": -0.0984,
-   "avg_clv": -0.0087,
+   "ou25_market_brier": 0.2328,
+   "n_value_bets": 663,
+   "roi_value_bets": -0.1166,
+   "avg_clv": -0.0079,
    "blend_brier": {
     "1.0": 0.5785,
-    "0.6": 0.5679,
-    "0.4": 0.564,
-    "0.25": 0.5618
+    "0.6": 0.5672,
+    "0.4": 0.5631,
+    "0.25": 0.5607
    },
    "shot_blend": [
     {
@@ -74,100 +79,100 @@
     {
      "alpha": 1.0,
      "edge": 0.03,
-     "bets": 995,
-     "profit": -99.76,
-     "roi": -0.1003
+     "bets": 1014,
+     "profit": -131.81,
+     "roi": -0.13
     },
     {
      "alpha": 1.0,
      "edge": 0.05,
-     "bets": 650,
-     "profit": -63.98,
-     "roi": -0.0984
+     "bets": 663,
+     "profit": -77.33,
+     "roi": -0.1166
     },
     {
      "alpha": 1.0,
      "edge": 0.08,
-     "bets": 348,
-     "profit": -47.26,
-     "roi": -0.1358
+     "bets": 351,
+     "profit": -36.87,
+     "roi": -0.105
     },
     {
      "alpha": 1.0,
      "edge": 0.1,
-     "bets": 210,
-     "profit": -24.16,
-     "roi": -0.115
+     "bets": 215,
+     "profit": -15.84,
+     "roi": -0.0737
     },
     {
      "alpha": 0.6,
      "edge": 0.03,
-     "bets": 650,
-     "profit": -63.98,
-     "roi": -0.0984
+     "bets": 663,
+     "profit": -77.33,
+     "roi": -0.1166
     },
     {
      "alpha": 0.6,
      "edge": 0.05,
-     "bets": 324,
-     "profit": -43.28,
-     "roi": -0.1336
+     "bets": 325,
+     "profit": -41.79,
+     "roi": -0.1286
     },
     {
      "alpha": 0.6,
      "edge": 0.08,
-     "bets": 97,
-     "profit": -5.13,
-     "roi": -0.0529
+     "bets": 104,
+     "profit": -12.48,
+     "roi": -0.12
     },
     {
      "alpha": 0.6,
      "edge": 0.1,
-     "bets": 42,
-     "profit": 1.08,
-     "roi": 0.0257
+     "bets": 44,
+     "profit": -0.92,
+     "roi": -0.0209
     },
     {
      "alpha": 0.4,
      "edge": 0.03,
-     "bets": 385,
-     "profit": -50.97,
-     "roi": -0.1324
+     "bets": 394,
+     "profit": -41.2,
+     "roi": -0.1046
     },
     {
      "alpha": 0.4,
      "edge": 0.05,
-     "bets": 115,
-     "profit": -13.06,
-     "roi": -0.1136
+     "bets": 118,
+     "profit": -18.26,
+     "roi": -0.1547
     },
     {
      "alpha": 0.4,
      "edge": 0.08,
      "bets": 17,
-     "profit": -2.37,
-     "roi": -0.1394
+     "profit": -4.06,
+     "roi": -0.2388
     },
     {
      "alpha": 0.4,
      "edge": 0.1,
-     "bets": 2,
-     "profit": -2.0,
+     "bets": 3,
+     "profit": -3.0,
      "roi": -1.0
     },
     {
      "alpha": 0.25,
      "edge": 0.03,
-     "bets": 126,
-     "profit": -13.65,
-     "roi": -0.1083
+     "bets": 131,
+     "profit": -22.84,
+     "roi": -0.1744
     },
     {
      "alpha": 0.25,
      "edge": 0.05,
      "bets": 17,
-     "profit": -2.37,
-     "roi": -0.1394
+     "profit": -4.06,
+     "roi": -0.2388
     },
     {
      "alpha": 0.25,
@@ -190,19 +195,24 @@
    "name": "Premier Lig",
    "n": 731,
    "model_brier": 0.5995,
-   "market_brier": 0.592,
+   "market_brier": 0.5924,
+   "market_brier_proportional": 0.592,
+   "market_logloss_proportional": 0.9902,
+   "model_brier_drawcal": 0.5994,
+   "model_logloss_drawcal": 1.0014,
+   "draw_adj_last": 1.035,
    "model_logloss": 1.0013,
-   "market_logloss": 0.9902,
+   "market_logloss": 0.9905,
    "ou25_model_brier": 0.2495,
-   "ou25_market_brier": 0.2435,
-   "n_value_bets": 681,
-   "roi_value_bets": -0.0653,
-   "avg_clv": -0.0008,
+   "ou25_market_brier": 0.2437,
+   "n_value_bets": 692,
+   "roi_value_bets": -0.0441,
+   "avg_clv": -0.0004,
    "blend_brier": {
     "1.0": 0.5995,
-    "0.6": 0.5953,
-    "0.4": 0.5945,
-    "0.25": 0.5943
+    "0.6": 0.5954,
+    "0.4": 0.5946,
+    "0.25": 0.5946
    },
    "shot_blend": [
     {
@@ -245,79 +255,79 @@
     {
      "alpha": 1.0,
      "edge": 0.03,
-     "bets": 1066,
-     "profit": -16.78,
-     "roi": -0.0157
+     "bets": 1091,
+     "profit": 24.44,
+     "roi": 0.0224
     },
     {
      "alpha": 1.0,
      "edge": 0.05,
-     "bets": 681,
-     "profit": -44.49,
-     "roi": -0.0653
+     "bets": 692,
+     "profit": -30.55,
+     "roi": -0.0441
     },
     {
      "alpha": 1.0,
      "edge": 0.08,
-     "bets": 340,
-     "profit": -13.03,
-     "roi": -0.0383
+     "bets": 355,
+     "profit": -9.46,
+     "roi": -0.0266
     },
     {
      "alpha": 1.0,
      "edge": 0.1,
-     "bets": 212,
-     "profit": -11.65,
-     "roi": -0.055
+     "bets": 208,
+     "profit": -10.97,
+     "roi": -0.0527
     },
     {
      "alpha": 0.6,
      "edge": 0.03,
-     "bets": 681,
-     "profit": -44.49,
-     "roi": -0.0653
+     "bets": 692,
+     "profit": -30.55,
+     "roi": -0.0441
     },
     {
      "alpha": 0.6,
      "edge": 0.05,
-     "bets": 313,
-     "profit": -13.03,
-     "roi": -0.0416
+     "bets": 322,
+     "profit": -6.49,
+     "roi": -0.0202
     },
     {
      "alpha": 0.6,
      "edge": 0.08,
-     "bets": 70,
-     "profit": -0.09,
-     "roi": -0.0013
+     "bets": 75,
+     "profit": -1.5,
+     "roi": -0.02
     },
     {
      "alpha": 0.6,
      "edge": 0.1,
-     "bets": 27,
-     "profit": -3.34,
-     "roi": -0.1237
+     "bets": 29,
+     "profit": -5.34,
+     "roi": -0.1841
     },
     {
      "alpha": 0.4,
      "edge": 0.03,
      "bets": 390,
-     "profit": -12.46,
-     "roi": -0.0319
+     "profit": -14.22,
+     "roi": -0.0365
     },
     {
      "alpha": 0.4,
      "edge": 0.05,
-     "bets": 95,
-     "profit": -1.97,
-     "roi": -0.0207
+     "bets": 98,
+     "profit": -7.4,
+     "roi": -0.0755
     },
     {
      "alpha": 0.4,
      "edge": 0.08,
-     "bets": 13,
-     "profit": -0.93,
-     "roi": -0.0715
+     "bets": 16,
+     "profit": -1.71,
+     "roi": -0.1069
     },
     {
      "alpha": 0.4,
@@ -329,16 +339,16 @@
     {
      "alpha": 0.25,
      "edge": 0.03,
-     "bets": 116,
-     "profit": -3.88,
-     "roi": -0.0334
+     "bets": 113,
+     "profit": -2.62,
+     "roi": -0.0232
     },
     {
      "alpha": 0.25,
      "edge": 0.05,
-     "bets": 13,
-     "profit": -0.93,
-     "roi": -0.0715
+     "bets": 16,
+     "profit": -1.71,
+     "roi": -0.1069
     },
     {
      "alpha": 0.25,
@@ -361,19 +371,24 @@
    "name": "La Liga",
    "n": 724,
    "model_brier": 0.5848,
-   "market_brier": 0.567,
+   "market_brier": 0.566,
+   "market_brier_proportional": 0.567,
+   "market_logloss_proportional": 0.9585,
+   "model_brier_drawcal": 0.5852,
+   "model_logloss_drawcal": 0.9849,
+   "draw_adj_last": 1.043,
    "model_logloss": 0.9841,
-   "market_logloss": 0.9585,
+   "market_logloss": 0.9571,
    "ou25_model_brier": 0.2465,
-   "ou25_market_brier": 0.2385,
-   "n_value_bets": 664,
-   "roi_value_bets": -0.1009,
-   "avg_clv": -0.0052,
+   "ou25_market_brier": 0.2387,
+   "n_value_bets": 663,
+   "roi_value_bets": -0.141,
+   "avg_clv": -0.0059,
    "blend_brier": {
     "1.0": 0.5848,
-    "0.6": 0.5766,
-    "0.4": 0.5735,
-    "0.25": 0.5716
+    "0.6": 0.5761,
+    "0.4": 0.5728,
+    "0.25": 0.5708
    },
    "shot_blend": [
     {
@@ -416,100 +431,100 @@
     {
      "alpha": 1.0,
      "edge": 0.03,
-     "bets": 1008,
-     "profit": -154.02,
-     "roi": -0.1528
+     "bets": 1015,
+     "profit": -137.69,
+     "roi": -0.1357
     },
     {
      "alpha": 1.0,
      "edge": 0.05,
-     "bets": 664,
-     "profit": -66.98,
-     "roi": -0.1009
+     "bets": 663,
+     "profit": -93.5,
+     "roi": -0.141
     },
     {
      "alpha": 1.0,
      "edge": 0.08,
-     "bets": 345,
-     "profit": -42.99,
-     "roi": -0.1246
+     "bets": 347,
+     "profit": -37.97,
+     "roi": -0.1094
     },
     {
      "alpha": 1.0,
      "edge": 0.1,
-     "bets": 221,
-     "profit": -31.28,
-     "roi": -0.1415
+     "bets": 210,
+     "profit": -32.38,
+     "roi": -0.1542
     },
     {
      "alpha": 0.6,
      "edge": 0.03,
-     "bets": 664,
-     "profit": -66.98,
-     "roi": -0.1009
+     "bets": 663,
+     "profit": -93.5,
+     "roi": -0.141
     },
     {
      "alpha": 0.6,
      "edge": 0.05,
-     "bets": 327,
-     "profit": -44.81,
-     "roi": -0.137
+     "bets": 320,
+     "profit": -40.48,
+     "roi": -0.1265
     },
     {
      "alpha": 0.6,
      "edge": 0.08,
-     "bets": 98,
-     "profit": -6.13,
-     "roi": -0.0626
+     "bets": 91,
+     "profit": -5.78,
+     "roi": -0.0635
     },
     {
      "alpha": 0.6,
      "edge": 0.1,
-     "bets": 38,
-     "profit": 7.43,
-     "roi": 0.1955
+     "bets": 34,
+     "profit": 6.17,
+     "roi": 0.1815
     },
     {
      "alpha": 0.4,
      "edge": 0.03,
-     "bets": 388,
-     "profit": -47.69,
-     "roi": -0.1229
+     "bets": 386,
+     "profit": -41.35,
+     "roi": -0.1071
     },
     {
      "alpha": 0.4,
      "edge": 0.05,
-     "bets": 130,
-     "profit": -17.04,
-     "roi": -0.1311
+     "bets": 124,
+     "profit": -14.2,
+     "roi": -0.1145
     },
     {
      "alpha": 0.4,
      "edge": 0.08,
-     "bets": 11,
-     "profit": 5.88,
-     "roi": 0.5345
+     "bets": 10,
+     "profit": 5.21,
+     "roi": 0.521
     },
     {
      "alpha": 0.4,
      "edge": 0.1,
-     "bets": 1,
-     "profit": 3.19,
-     "roi": 3.19
+     "bets": 2,
+     "profit": 2.19,
+     "roi": 1.095
     },
     {
      "alpha": 0.25,
      "edge": 0.03,
-     "bets": 142,
-     "profit": -27.42,
-     "roi": -0.1931
+     "bets": 141,
+     "profit": -24.25,
+     "roi": -0.172
     },
     {
      "alpha": 0.25,
      "edge": 0.05,
-     "bets": 11,
-     "profit": 5.88,
-     "roi": 0.5345
+     "bets": 10,
+     "profit": 5.21,
+     "roi": 0.521
     },
     {
      "alpha": 0.25,
@@ -532,19 +547,24 @@
    "name": "Serie A",
    "n": 728,
    "model_brier": 0.588,
-   "market_brier": 0.5738,
+   "market_brier": 0.5732,
+   "market_brier_proportional": 0.5738,
+   "market_logloss_proportional": 0.9633,
+   "model_brier_drawcal": 0.5886,
+   "model_logloss_drawcal": 0.9843,
+   "draw_adj_last": 1.047,
    "model_logloss": 0.9836,
-   "market_logloss": 0.9633,
+   "market_logloss": 0.9621,
    "ou25_model_brier": 0.2564,
-   "ou25_market_brier": 0.2483,
-   "n_value_bets": 745,
+   "ou25_market_brier": 0.2486,
+   "n_value_bets": 753,
    "roi_value_bets": -0.0798,
-   "avg_clv": -0.003,
+   "avg_clv": -0.0035,
    "blend_brier": {
     "1.0": 0.588,
-    "0.6": 0.5801,
-    "0.4": 0.5773,
-    "0.25": 0.5758
+    "0.6": 0.5797,
+    "0.4": 0.5768,
+    "0.25": 0.5752
    },
    "shot_blend": [
     {
@@ -587,79 +607,79 @@
     {
      "alpha": 1.0,
      "edge": 0.03,
-     "bets": 1086,
-     "profit": -68.91,
-     "roi": -0.0635
+     "bets": 1124,
+     "profit": -75.8,
+     "roi": -0.0674
     },
     {
      "alpha": 1.0,
      "edge": 0.05,
-     "bets": 745,
-     "profit": -59.47,
+     "bets": 753,
+     "profit": -60.09,
      "roi": -0.0798
     },
     {
      "alpha": 1.0,
      "edge": 0.08,
-     "bets": 338,
-     "profit": -60.02,
-     "roi": -0.1776
+     "bets": 337,
+     "profit": -42.28,
+     "roi": -0.1255
     },
     {
      "alpha": 1.0,
      "edge": 0.1,
-     "bets": 188,
-     "profit": -44.88,
-     "roi": -0.2387
+     "bets": 178,
+     "profit": -37.75,
+     "roi": -0.2121
     },
     {
      "alpha": 0.6,
      "edge": 0.03,
-     "bets": 745,
-     "profit": -59.47,
+     "bets": 753,
+     "profit": -60.09,
      "roi": -0.0798
     },
     {
      "alpha": 0.6,
      "edge": 0.05,
-     "bets": 309,
-     "profit": -54.13,
-     "roi": -0.1752
+     "bets": 311,
+     "profit": -56.35,
+     "roi": -0.1812
     },
     {
      "alpha": 0.6,
      "edge": 0.08,
-     "bets": 79,
-     "profit": -18.9,
-     "roi": -0.2392
+     "bets": 78,
+     "profit": -13.18,
+     "roi": -0.169
     },
     {
      "alpha": 0.6,
      "edge": 0.1,
-     "bets": 21,
-     "profit": -5.93,
-     "roi": -0.2824
+     "bets": 20,
+     "profit": -6.5,
+     "roi": -0.325
     },
     {
      "alpha": 0.4,
      "edge": 0.03,
-     "bets": 382,
-     "profit": -66.7,
-     "roi": -0.1746
+     "bets": 384,
+     "profit": -51.38,
+     "roi": -0.1338
     },
     {
      "alpha": 0.4,
      "edge": 0.05,
-     "bets": 99,
-     "profit": -20.23,
-     "roi": -0.2043
+     "bets": 97,
+     "profit": -21.36,
+     "roi": -0.2202
     },
     {
      "alpha": 0.4,
      "edge": 0.08,
-     "bets": 5,
-     "profit": -2.65,
-     "roi": -0.53
+     "bets": 6,
+     "profit": -3.65,
+     "roi": -0.6083
     },
     {
      "alpha": 0.4,
@@ -671,16 +691,16 @@
     {
      "alpha": 0.25,
      "edge": 0.03,
-     "bets": 109,
-     "profit": -25.29,
-     "roi": -0.232
+     "bets": 106,
+     "profit": -26.92,
+     "roi": -0.254
     },
     {
      "alpha": 0.25,
      "edge": 0.05,
-     "bets": 5,
-     "profit": -2.65,
-     "roi": -0.53
+     "bets": 6,
+     "profit": -3.65,
+     "roi": -0.6083
     },
     {
      "alpha": 0.25,
@@ -703,19 +723,24 @@
    "name": "Bundesliga",
    "n": 594,
    "model_brier": 0.5943,
-   "market_brier": 0.5732,
+   "market_brier": 0.5727,
+   "market_brier_proportional": 0.5732,
+   "market_logloss_proportional": 0.9655,
+   "model_brier_drawcal": 0.5948,
+   "model_logloss_drawcal": 0.9998,
+   "draw_adj_last": 1.117,
    "model_logloss": 0.9991,
-   "market_logloss": 0.9655,
+   "market_logloss": 0.9648,
    "ou25_model_brier": 0.2326,
-   "ou25_market_brier": 0.2241,
-   "n_value_bets": 583,
-   "roi_value_bets": -0.1566,
-   "avg_clv": -0.0084,
+   "ou25_market_brier": 0.2236,
+   "n_value_bets": 579,
+   "roi_value_bets": -0.195,
+   "avg_clv": -0.008,
    "blend_brier": {
     "1.0": 0.5943,
-    "0.6": 0.5842,
-    "0.4": 0.5804,
-    "0.25": 0.5781
+    "0.6": 0.584,
+    "0.4": 0.5801,
+    "0.25": 0.5777
    },
    "shot_blend": [
     {
@@ -758,100 +783,100 @@
     {
      "alpha": 1.0,
      "edge": 0.03,
-     "bets": 873,
-     "profit": -130.38,
-     "roi": -0.1493
+     "bets": 886,
+     "profit": -138.34,
+     "roi": -0.1561
     },
     {
      "alpha": 1.0,
      "edge": 0.05,
-     "bets": 583,
-     "profit": -91.28,
-     "roi": -0.1566
+     "bets": 579,
+     "profit": -112.9,
+     "roi": -0.195
     },
     {
      "alpha": 1.0,
      "edge": 0.08,
-     "bets": 307,
-     "profit": -29.04,
-     "roi": -0.0946
+     "bets": 299,
+     "profit": -27.88,
+     "roi": -0.0932
     },
     {
      "alpha": 1.0,
      "edge": 0.1,
-     "bets": 193,
-     "profit": -18.93,
-     "roi": -0.0981
+     "bets": 189,
+     "profit": -7.76,
+     "roi": -0.0411
     },
     {
      "alpha": 0.6,
      "edge": 0.03,
-     "bets": 583,
-     "profit": -91.28,
-     "roi": -0.1566
+     "bets": 579,
+     "profit": -112.9,
+     "roi": -0.195
     },
     {
      "alpha": 0.6,
      "edge": 0.05,
-     "bets": 291,
-     "profit": -26.55,
-     "roi": -0.0912
+     "bets": 269,
+     "profit": -27.82,
+     "roi": -0.1034
     },
     {
      "alpha": 0.6,
      "edge": 0.08,
-     "bets": 79,
-     "profit": 0.99,
-     "roi": 0.0125
+     "bets": 76,
+     "profit": -1.36,
+     "roi": -0.0179
     },
     {
      "alpha": 0.6,
      "edge": 0.1,
-     "bets": 32,
-     "profit": -1.7,
-     "roi": -0.0531
+     "bets": 31,
+     "profit": -0.7,
+     "roi": -0.0226
     },
     {
      "alpha": 0.4,
      "edge": 0.03,
-     "bets": 339,
-     "profit": -29.96,
-     "roi": -0.0884
+     "bets": 336,
+     "profit": -36.43,
+     "roi": -0.1084
     },
     {
      "alpha": 0.4,
      "edge": 0.05,
-     "bets": 101,
-     "profit": -2.51,
-     "roi": -0.0249
+     "bets": 91,
+     "profit": 0.28,
+     "roi": 0.0031
     },
     {
      "alpha": 0.4,
      "edge": 0.08,
-     "bets": 12,
-     "profit": -4.66,
-     "roi": -0.3883
+     "bets": 11,
+     "profit": -3.66,
+     "roi": -0.3327
     },
     {
      "alpha": 0.4,
      "edge": 0.1,
-     "bets": 2,
-     "profit": 0.36,
-     "roi": 0.18
+     "bets": 3,
+     "profit": -0.64,
+     "roi": -0.2133
     },
     {
      "alpha": 0.25,
      "edge": 0.03,
-     "bets": 114,
-     "profit": -3.75,
-     "roi": -0.0329
+     "bets": 109,
+     "profit": 4.28,
+     "roi": 0.0393
     },
     {
      "alpha": 0.25,
      "edge": 0.05,
-     "bets": 12,
-     "profit": -4.66,
-     "roi": -0.3883
+     "bets": 11,
+     "profit": -3.66,
+     "roi": -0.3327
     },
     {
      "alpha": 0.25,
@@ -874,19 +899,24 @@
    "name": "Ligue 1",
    "n": 588,
    "model_brier": 0.5912,
-   "market_brier": 0.5745,
+   "market_brier": 0.5743,
+   "market_brier_proportional": 0.5745,
+   "market_logloss_proportional": 0.9671,
+   "model_brier_drawcal": 0.5907,
+   "model_logloss_drawcal": 0.99,
+   "draw_adj_last": 0.98,
    "model_logloss": 0.9909,
-   "market_logloss": 0.9671,
+   "market_logloss": 0.9666,
    "ou25_model_brier": 0.2456,
-   "ou25_market_brier": 0.2367,
-   "n_value_bets": 548,
-   "roi_value_bets": -0.0252,
-   "avg_clv": -0.0063,
+   "ou25_market_brier": 0.2365,
+   "n_value_bets": 557,
+   "roi_value_bets": -0.0476,
+   "avg_clv": -0.0062,
    "blend_brier": {
     "1.0": 0.5912,
-    "0.6": 0.5822,
-    "0.4": 0.5788,
-    "0.25": 0.5768
+    "0.6": 0.5819,
+    "0.4": 0.5785,
+    "0.25": 0.5764
    },
    "shot_blend": [
     {
@@ -929,100 +959,100 @@
     {
      "alpha": 1.0,
      "edge": 0.03,
-     "bets": 844,
-     "profit": -84.4,
-     "roi": -0.1
+     "bets": 874,
+     "profit": -107.84,
+     "roi": -0.1234
     },
     {
      "alpha": 1.0,
      "edge": 0.05,
-     "bets": 548,
-     "profit": -13.79,
-     "roi": -0.0252
+     "bets": 557,
+     "profit": -26.52,
+     "roi": -0.0476
     },
     {
      "alpha": 1.0,
      "edge": 0.08,
-     "bets": 275,
-     "profit": -43.69,
-     "roi": -0.1589
+     "bets": 278,
+     "profit": -42.52,
+     "roi": -0.1529
     },
     {
      "alpha": 1.0,
      "edge": 0.1,
-     "bets": 175,
-     "profit": -24.79,
-     "roi": -0.1417
+     "bets": 182,
+     "profit": -21.06,
+     "roi": -0.1157
     },
     {
      "alpha": 0.6,
      "edge": 0.03,
-     "bets": 548,
-     "profit": -13.79,
-     "roi": -0.0252
+     "bets": 557,
+     "profit": -26.52,
+     "roi": -0.0476
     },
     {
      "alpha": 0.6,
      "edge": 0.05,
-     "bets": 258,
-     "profit": -49.53,
-     "roi": -0.192
+     "bets": 262,
+     "profit": -45.86,
+     "roi": -0.175
     },
     {
      "alpha": 0.6,
      "edge": 0.08,
      "bets": 76,
-     "profit": -14.95,
-     "roi": -0.1967
+     "profit": -13.92,
+     "roi": -0.1832
     },
     {
      "alpha": 0.6,
      "edge": 0.1,
-     "bets": 33,
-     "profit": -4.86,
-     "roi": -0.1473
+     "bets": 32,
+     "profit": -3.86,
+     "roi": -0.1206
     },
     {
      "alpha": 0.4,
      "edge": 0.03,
-     "bets": 313,
-     "profit": -40.6,
-     "roi": -0.1297
+     "bets": 317,
+     "profit": -37.95,
+     "roi": -0.1197
     },
     {
      "alpha": 0.4,
      "edge": 0.05,
-     "bets": 97,
-     "profit": -15.43,
-     "roi": -0.1591
+     "bets": 95,
+     "profit": -14.08,
+     "roi": -0.1482
     },
     {
      "alpha": 0.4,
      "edge": 0.08,
-     "bets": 10,
-     "profit": -4.93,
-     "roi": -0.493
+     "bets": 9,
+     "profit": -3.93,
+     "roi": -0.4367
     },
     {
      "alpha": 0.4,
      "edge": 0.1,
-     "bets": 2,
-     "profit": -2.0,
+     "bets": 1,
+     "profit": -1.0,
      "roi": -1.0
     },
     {
      "alpha": 0.25,
      "edge": 0.03,
-     "bets": 110,
-     "profit": -18.71,
-     "roi": -0.1701
+     "bets": 106,
+     "profit": -10.88,
+     "roi": -0.1026
     },
     {
      "alpha": 0.25,
      "edge": 0.05,
-     "bets": 10,
-     "profit": -4.93,
-     "roi": -0.493
+     "bets": 9,
+     "profit": -3.93,
+     "roi": -0.4367
     },
     {
      "alpha": 0.25,
@@ -1045,26 +1075,30 @@
  "summary": {
   "n": 3985,
   "model_brier": 0.5895,
-  "market_brier": 0.5732,
+  "market_brier": 0.5727,
   "model_logloss": 0.9885,
-  "market_logloss": 0.9648,
-  "n_value_bets": 3871,
-  "roi_value_bets": -0.0878
+  "market_logloss": 0.9639,
+  "n_value_bets": 3907,
+  "market_brier_proportional": 0.5732,
+  "market_logloss_proportional": 0.9648,
+  "model_brier_drawcal": 0.5897,
+  "model_logloss_drawcal": 0.9889,
+  "roi_value_bets": -0.1026
  },
  "grid": [
   {
    "alpha": 0.25,
    "edge": 0.03,
-   "bets": 717,
-   "profit": -92.7,
-   "roi": -0.1293
+   "bets": 706,
+   "profit": -83.23,
+   "roi": -0.1179
   },
   {
    "alpha": 0.25,
    "edge": 0.05,
-   "bets": 68,
-   "profit": -9.66,
-   "roi": -0.1421
+   "bets": 69,
+   "profit": -11.8,
+   "roi": -0.171
   },
   {
    "alpha": 0.25,
@@ -1083,93 +1117,93 @@
   {
    "alpha": 0.4,
    "edge": 0.03,
-   "bets": 2197,
-   "profit": -248.38,
-   "roi": -0.1131
+   "bets": 2207,
+   "profit": -222.53,
+   "roi": -0.1008
   },
   {
    "alpha": 0.4,
    "edge": 0.05,
-   "bets": 637,
-   "profit": -70.24,
-   "roi": -0.1103
+   "bets": 623,
+   "profit": -75.02,
+   "roi": -0.1204
   },
   {
    "alpha": 0.4,
    "edge": 0.08,
-   "bets": 68,
-   "profit": -9.66,
-   "roi": -0.1421
+   "bets": 69,
+   "profit": -11.8,
+   "roi": -0.171
   },
   {
    "alpha": 0.4,
    "edge": 0.1,
-   "bets": 10,
-   "profit": 1.79,
-   "roi": 0.179
+   "bets": 12,
+   "profit": -0.21,
+   "roi": -0.0175
   },
   {
    "alpha": 0.6,
    "edge": 0.03,
-   "bets": 3871,
-   "profit": -339.99,
-   "roi": -0.0878
+   "bets": 3907,
+   "profit": -400.89,
+   "roi": -0.1026
   },
   {
    "alpha": 0.6,
    "edge": 0.05,
-   "bets": 1822,
-   "profit": -231.33,
-   "roi": -0.127
+   "bets": 1809,
+   "profit": -218.79,
+   "roi": -0.1209
   },
   {
    "alpha": 0.6,
    "edge": 0.08,
-   "bets": 499,
-   "profit": -44.21,
-   "roi": -0.0886
+   "bets": 500,
+   "profit": -48.22,
+   "roi": -0.0964
   },
   {
    "alpha": 0.6,
    "edge": 0.1,
-   "bets": 193,
-   "profit": -7.32,
-   "roi": -0.0379
+   "bets": 190,
+   "profit": -11.15,
+   "roi": -0.0587
   },
   {
    "alpha": 1.0,
    "edge": 0.03,
-   "bets": 5872,
-   "profit": -554.25,
+   "bets": 6004,
+   "profit": -567.04,
    "roi": -0.0944
   },
   {
    "alpha": 1.0,
    "edge": 0.05,
-   "bets": 3871,
-   "profit": -339.99,
-   "roi": -0.0878
+   "bets": 3907,
+   "profit": -400.89,
+   "roi": -0.1026
   },
   {
    "alpha": 1.0,
    "edge": 0.08,
-   "bets": 1953,
-   "profit": -236.03,
-   "roi": -0.1209
+   "bets": 1967,
+   "profit": -196.98,
+   "roi": -0.1001
   },
   {
    "alpha": 1.0,
    "edge": 0.1,
-   "bets": 1199,
-   "profit": -155.69,
-   "roi": -0.1298
+   "bets": 1182,
+   "profit": -125.76,
+   "roi": -0.1064
   }
  ],
  "blend_brier": {
   "1.0": 0.5895,
-  "0.6": 0.5813,
-  "0.4": 0.5784,
-  "0.25": 0.5767
+  "0.6": 0.5809,
+  "0.4": 0.5779,
+  "0.25": 0.5763
  },
  "shot_blend": [
   {
