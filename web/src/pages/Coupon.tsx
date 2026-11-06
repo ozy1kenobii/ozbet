@@ -34,7 +34,7 @@ export default function Coupon() {
           <div><dt className="text-[13px] text-muted">Toplam oran</dt><dd className="display text-[28px] font-bold leading-tight">{a.totalOdds != null ? odd(a.totalOdds) : '–'}</dd></div>
           <div><dt className="text-[13px] text-muted">Beklenen değer</dt><dd className={`display text-[28px] font-bold leading-tight ${evTone}`}>{a.ev != null ? signedPct(a.ev) : '–'}</dd></div>
         </dl>
-        <p className="mt-2 text-[12px] text-muted">EV = birleşik olasılık × toplam oran − 1. Pozitif EV modele göre değerli, yine de sonuç garantisi yoktur.</p>
+        <p className="mt-2 text-[12px] text-muted">EV = birleşik olasılık × toplam oran − 1. Pozitif EV modele göre değerli; sonuç yine de belirsizdir.</p>
       </section>
 
       {(a.correlated || a.crowded.length > 0 || a.missingOdds.length > 0 || a.missingP.length > 0) && (

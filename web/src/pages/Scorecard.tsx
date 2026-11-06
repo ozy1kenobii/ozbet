@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useBacktest, useScorecard } from '../lib/data';
-import type { Backtest, BacktestGridRow, BacktestSummary, ScoreBlock } from '../lib/types';
+import type { Backtest, BacktestGridRow, BacktestSummary, CalibBin, Scorecard as ScorecardT, ScoreBlock, ShotBlendRow } from '../lib/types';
 import { fmtDateTime, fmtShortDate, num, odd, pct, signedNum, signedPct } from '../lib/format';
 import { Calibration, LineChart } from '../components/charts';
 import { Empty, Loading, ResultBadge, Section } from '../components/ui';
@@ -12,7 +13,7 @@ export default function Scorecard() {
   return (
     <div>
       <h1 className="display text-[32px] font-bold leading-tight">Karne</h1>
-      <p className="t-meta">Biten maçlarda OZBET Tercihlerinin sonuçları. Sanal kasa: her tercihe 1 birim.</p>
+      <p className="t-meta">Biten maçlarda OZBET Tercihlerinin sonuçları. Sanal kasa: her tercihe 1 birim. Terimler için <Link to="/rehber" className="text-accent underline underline-offset-2">Rehber</Link>.</p>
       {bt.state === 'ready' && <HonestBox b={bt.data} />}
       {(sc.state === 'loading' || bt.state === 'loading') && <div className="mt-4"><Loading variant="page" /></div>}
       {sc.state === 'empty' && <div className="mt-4"><Empty /></div>}
@@ -29,6 +30,8 @@ export default function Scorecard() {
               <Block title="Tüm zamanlar" b={d.overall} />
               <Block title="Son 30 gün" b={d.last30} />
             </div>
+
+            <AllMarkets d={d} />
 
             {bank.length > 1 && (
               <Section title="Kasa eğrisi">
@@ -50,7 +53,7 @@ export default function Scorecard() {
               </Section>
             )}
 
-            <div className="grid gap-x-6 md:grid-cols-2">
+            <div className="grid gap-x-6 md:grid-cols-2 [&>*]:min-w-0">
               {d.by_league?.length > 0 && (
                 <Section title="Lig bazında">
                   <div className="panel px-2 py-1 overflow-x-auto">
@@ -98,6 +101,8 @@ export default function Scorecard() {
       })()}
 
       {bt.state === 'ready' && <BacktestView b={bt.data} />}
+      {bt.state === 'ready' && <BacktestExtras b={bt.data} />}
+      <p className="mt-8 t-meta">Marketlerin ve sayıların nasıl okunacağı: <Link to="/rehber" className="text-accent underline underline-offset-2">Rehber</Link>.</p>
     </div>
   );
 }
@@ -152,7 +157,7 @@ function HonestBox({ b }: { b: Backtest }) {
       </p>
       <p className="mt-2 t-meta max-w-[68ch]">
         {beat
-          ? 'Geçmiş sezonlarda model olasılıkları kapanış oranlarından daha isabetli çıktı. Yine de bu geleceği garanti etmez.'
+          ? 'Geçmiş sezonlarda model olasılıkları kapanış oranlarından daha isabetli çıktı. Geçmiş başarı gelecekte de süreceği anlamına gelmez.'
           : `Geçmiş ${b.seasons?.length ?? ''} sezonda modelin olasılıkları, bürolara göre daha az isabetliydi${roi != null ? ` ve “değerli” etiketli bahisler ${signedPct(roi)} getiri verdi (${s.n_value_bets.toLocaleString('tr-TR')} bahis)` : ''}. Tercihleri bir görüş olarak okuyun, oranları her zaman piyasayla karşılaştırın.`}
       </p>
     </section>
@@ -255,7 +260,7 @@ function BacktestView({ b }: { b: Backtest }) {
       </div>
     )}
     {sc && (
-      <div className="grid gap-x-6 lg:grid-cols-2">
+      <div className="grid gap-x-6 lg:grid-cols-2 [&>*]:min-w-0">
         {sc.blend && Object.keys(sc.blend).length > 0 && (
           <Section title="Model–piyasa karışımı">
             <p className="mb-2 t-meta">α, model olasılığının ağırlığı; kalanı piyasa kapanış olasılığı. Brier ne kadar düşükse o kadar isabetli.</p>
@@ -271,5 +276,179 @@ function BacktestView({ b }: { b: Backtest }) {
       </div>
     )}
     </>
+  );
+}
+
+const MIN_N = 30;
+
+function NotEnough({ n, what }: { n: number; what: string }) {
+  return (
+    <p className="panel px-4 py-3 text-sm text-muted">
+      Henüz yeterli maç yok (n={n}). Karne yeni başladı; {what} ilk anlamlı puanlar birkaç gün içinde oluşacak.
+    </p>
+  );
+}
+
+/** Tüm marketler: kategori tablosu, iki serili kalibrasyon ve değerli bahis karnesi. */
+function AllMarkets({ d }: { d: ScorecardT }) {
+  const cats = d.by_category ?? [];
+  const total = cats.reduce((a, c) => a + c.n, 0);
+  const cm = d.calibration_markets;
+  const vb = d.value_bets;
+  if (!d.by_category && !cm && !vb) return null;
+  return (
+    <>
+      <Section title="Kategori bazında model ve piyasa" aside={<span className="text-[12px] text-muted num">{total} market sonucu</span>}>
+        {total < MIN_N ? <NotEnough n={total} what="kategori karşılaştırmasında" /> : (
+          <>
+            <p className="mb-2 t-meta max-w-[68ch]">Oranı olan bütün marketler (korner ve kart hariç; sonuç verisi yok). Düşük Brier ve log-loss daha iyidir; modelin piyasadan iyi olduğu hücreler yeşil.</p>
+            <div className="panel px-2 py-1 overflow-x-auto">
+              <table className="tbl min-w-[520px]">
+                <thead><tr><th>Kategori</th><th className="text-right">n</th><th className="text-right">Brier model</th><th className="text-right">Brier piyasa</th><th className="text-right">Log-loss model</th><th className="text-right">Log-loss piyasa</th></tr></thead>
+                <tbody>{cats.map((c) => (
+                  <tr key={c.category}>
+                    <td className="font-medium">{c.title}</td><td className="text-right">{c.n}</td>
+                    <td className={`text-right ${c.model_brier < c.market_brier ? 'text-win font-semibold' : ''}`}>{num(c.model_brier, 3)}</td>
+                    <td className="text-right text-muted">{num(c.market_brier, 3)}</td>
+                    <td className={`text-right ${c.model_logloss < c.market_logloss ? 'text-win font-semibold' : ''}`}>{num(c.model_logloss, 3)}</td>
+                    <td className="text-right text-muted">{num(c.market_logloss, 3)}</td>
+                  </tr>
+                ))}</tbody>
+              </table>
+            </div>
+            {cats.some((c) => c.n < MIN_N) && <p className="mt-1 t-micro">n &lt; {MIN_N} olan satırlar henüz gürültülü; tek tek yorumlamayın.</p>}
+          </>
+        )}
+      </Section>
+
+      {cm && (
+        <Section title="Tüm marketler kalibrasyonu" aside={<span className="text-[12px] text-muted">Kesikli çizgi: ideal</span>}>
+          {total < MIN_N ? <NotEnough n={total} what="kalibrasyon grafiğinde" /> : (
+            <div className="panel p-4">
+              <DualCalibration model={cm.model} market={cm.market} />
+              <p className="mt-2 text-[13px] text-muted max-w-[60ch]">Her kova (0–10%, 10–20% …) için ortalama tahmin ve gerçekleşen oran. Nokta köşegene ne kadar yakınsa olasılıklar o kadar gerçekçi. n&lt;5 olan kovalar çizilmez.</p>
+            </div>
+          )}
+        </Section>
+      )}
+
+      {vb && (
+        <Section title="Değerli bahis karnesi">
+          {vb.n < MIN_N ? <NotEnough n={vb.n} what="değerli bahislerde" /> : (
+            <div className="panel p-4">
+              <dl className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-2 num">
+                <div><dt className="text-[13px] text-muted">Bahis</dt><dd className="display text-[26px] font-bold leading-none">{vb.n}</dd></div>
+                <div><dt className="text-[13px] text-muted">İsabet</dt><dd className="display text-[26px] font-bold leading-none">{pct(vb.hit_rate, 1)}</dd></div>
+                <div><dt className="text-[13px] text-muted">ROI</dt><dd className={`display text-[26px] font-bold leading-none ${roiCls(vb.roi)}`}>{signedPct(vb.roi)}</dd></div>
+                <div><dt className="text-[13px] text-muted">Ort. oran</dt><dd className="text-lg font-semibold">{vb.avg_odds != null ? odd(vb.avg_odds) : '–'}</dd></div>
+              </dl>
+            </div>
+          )}
+          <p className="mt-2 t-meta max-w-[68ch]">“Değerli” etiketi alan her market, iddaa oranıyla 1 birim oynanmış sayılır. Tercih karnesinden ayrıdır.</p>
+        </Section>
+      )}
+    </>
+  );
+}
+
+function DualCalibration({ model, market }: { model: CalibBin[]; market: CalibBin[] }) {
+  const S = 280, p = 34;
+  const sc = (v: number) => p + v * (S - p - 10);
+  const sy = (v: number) => S - p - v * (S - p - 10);
+  const series = [
+    { name: 'Model', bins: model.filter((b) => b.n >= 5), line: 'stroke-accent', fill: 'fill-accent', dash: undefined },
+    { name: 'Piyasa', bins: market.filter((b) => b.n >= 5), line: 'stroke-muted', fill: 'fill-muted', dash: '3 2' },
+  ];
+  return (
+    <div>
+      <svg viewBox={`0 0 ${S} ${S}`} className="w-full max-w-[360px] h-auto mx-auto" role="img"
+        aria-label={series.map((s) => `${s.name}: ${s.bins.map((b) => `tahmin ${pct(b.predicted)} gerçekleşen ${pct(b.observed)}`).join(', ')}`).join('; ')}>
+        {[0, 0.25, 0.5, 0.75, 1].map((t) => (
+          <g key={t}>
+            <line x1={sc(0)} x2={sc(1)} y1={sy(t)} y2={sy(t)} className="stroke-line" strokeWidth={0.75} />
+            <text x={p - 4} y={sy(t) + 3} textAnchor="end" fontSize="9" className="fill-muted">{t * 100}</text>
+            <text x={sc(t)} y={S - p + 13} textAnchor="middle" fontSize="9" className="fill-muted">{t * 100}</text>
+          </g>
+        ))}
+        <line x1={sc(0)} y1={sy(0)} x2={sc(1)} y2={sy(1)} className="stroke-muted" strokeDasharray="4 4" strokeWidth={1} />
+        {series.map((s) => {
+          const pts = [...s.bins].sort((a, b) => a.predicted - b.predicted);
+          return (
+            <g key={s.name}>
+              <polyline points={pts.map((b) => `${sc(b.predicted)},${sy(b.observed)}`).join(' ')} fill="none" className={s.line} strokeWidth={1.75} strokeDasharray={s.dash} />
+              {pts.map((b) => (
+                <circle key={b.bin} cx={sc(b.predicted)} cy={sy(b.observed)} r={s.name === 'Model' ? 4 : 3} className={s.fill}>
+                  <title>{`${s.name} ${b.bin}: tahmin ${pct(b.predicted)}, gerçekleşen ${pct(b.observed)}, n=${b.n}`}</title>
+                </circle>
+              ))}
+            </g>
+          );
+        })}
+        <text x={sc(0.5)} y={S - 4} textAnchor="middle" fontSize="10" className="fill-muted">Tahmin edilen %</text>
+        <text x={10} y={sy(0.5)} textAnchor="middle" fontSize="10" className="fill-muted" transform={`rotate(-90 10 ${sy(0.5)})`}>Gerçekleşen %</text>
+      </svg>
+      <div className="mt-2 flex justify-center gap-5 text-[13px]">
+        <span className="inline-flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full bg-accent" />Model</span>
+        <span className="inline-flex items-center gap-1.5"><span className="h-2.5 w-2.5 rounded-full bg-muted" />Piyasa (marjsız)</span>
+      </div>
+    </div>
+  );
+}
+
+function Compare({ label, a, aName, b, bName, note }: { label: string; a: number; aName: string; b: number; bName: string; note: string }) {
+  const better = a < b;
+  return (
+    <div className="panel p-4">
+      <p className="font-semibold">{label}</p>
+      <dl className="mt-2 grid grid-cols-2 gap-3 num">
+        <div><dt className="text-[13px] text-muted">{aName}</dt><dd className={`text-xl font-bold ${better ? 'text-win' : ''}`}>{num(a, 4)}</dd></div>
+        <div><dt className="text-[13px] text-muted">{bName}</dt><dd className={`text-xl font-bold ${!better ? 'text-win' : ''}`}>{num(b, 4)}</dd></div>
+      </dl>
+      <p className="mt-2 t-meta">Fark {signedNum(a - b, 4)}. {note}</p>
+    </div>
+  );
+}
+
+/** backtest.json yeni alanları: şut harmanı ızgarası, marj yöntemi ve beraberlik düzeltmesi. Alan yoksa gizli. */
+function BacktestExtras({ b }: { b: Backtest }) {
+  const s = b.summary;
+  const grid: ShotBlendRow[] = b.shot_blend ?? [];
+  const prop = s?.market_brier_proportional, dc = s?.model_brier_drawcal;
+  if (!grid.length && prop == null && dc == null) return null;
+  const best = b.shot_blend_best;
+  return (
+    <div>
+      {grid.length > 0 && (
+        <Section title="Şut tabanlı güç ağırlığı (w)">
+          <p className="mb-2 t-meta max-w-[68ch]">Takım gücü λ = (1−w)·gol + w·şut. Her satır aynı maçlarda farklı w ile modelin skoru; düşük daha iyi.</p>
+          <div className="panel px-2 py-1 overflow-x-auto">
+            <table className="tbl">
+              <thead><tr><th>w</th><th className="text-right">n</th><th className="text-right">Brier 1X2</th><th className="text-right">Log-loss</th><th className="text-right">2.5 Ü/A Brier</th></tr></thead>
+              <tbody>{grid.map((g) => (
+                <tr key={g.w} className={g.w === best ? 'font-semibold' : ''}>
+                  <td>{num(g.w, 2)}{g.w === best && <span className="ml-1.5 rounded bg-accent px-1.5 py-0.5 text-[11px] text-accent-ink">en iyi</span>}</td>
+                  <td className="text-right">{g.n.toLocaleString('tr-TR')}</td><td className="text-right">{num(g.brier, 4)}</td>
+                  <td className="text-right">{num(g.logloss, 4)}</td><td className="text-right">{num(g.ou25_brier, 4)}</td>
+                </tr>
+              ))}</tbody>
+            </table>
+          </div>
+        </Section>
+      )}
+      {(prop != null || dc != null) && (
+        <Section title="Yöntem karşılaştırmaları">
+          <div className="grid gap-3 md:grid-cols-2">
+            {prop != null && s?.market_brier != null && (
+              <Compare label="Piyasa marjı temizleme" aName="Shin" a={s.market_brier} bName="Orantılı" b={prop}
+                note="Piyasa olasılığı oranlardan iki yöntemle çıkarıldı; yeşil olan daha isabetli." />
+            )}
+            {dc != null && s?.model_brier != null && (
+              <Compare label="Beraberlik düzeltmesi" aName="Düzeltmeli" a={dc} bName="Ham model" b={s.model_brier}
+                note="Modelin beraberlik olasılığı geçmiş verilere göre düzeltildiğinde Brier." />
+            )}
+          </div>
+        </Section>
+      )}
+    </div>
   );
 }

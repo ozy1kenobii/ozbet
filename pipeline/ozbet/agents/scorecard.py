@@ -9,7 +9,9 @@ from datetime import date, timedelta
 from pathlib import Path
 
 from .. import config
-from ..markets import LABELS, all_labels, settle
+import math
+
+from ..markets import LABELS, all_labels, all_probs, categories, settle
 
 START_BANK = 100.0
 
@@ -34,6 +36,9 @@ def grade_day(day_doc: dict, results: dict[str, dict]) -> list[dict]:
             row["brier_1x2"] = round(sum((p[k] - (1.0 if o[k] else 0.0)) ** 2 for k in o), 4)
             row["p1x2"] = {k: p[k] for k in ("1", "X", "2")}
             row["outcome_1x2"] = next(k for k, v in o.items() if v)
+        mk = market_rows(m, [hg, ag], res.get("ht"))
+        if mk:
+            row["markets"] = mk
         pk = m.get("pick")
         won = settle(pk["market"], [hg, ag], res.get("ht")) if pk else None
         if pk and won is not None:   # sonucu belirlenemeyen market (ör. İY skoru yok) puanlanmaz
@@ -41,6 +46,76 @@ def grade_day(day_doc: dict, results: dict[str, dict]) -> list[dict]:
                         "stars": pk.get("stars"), "is_value": pk.get("is_value", False), "won": won})
         graded.append(row)
     return graded
+
+
+def market_rows(m: dict, ft: list[int], ht: list[int] | None) -> list[dict]:
+    """Oranı ve model olasılığı olan tüm marketleri sonuçlandırır (korner/kart gibi sonucu bilinmeyenler atlanır).
+    Kısa alanlar: m=market, p=model, q=piyasa (marjsız ima), o=oran, won, v=değerli bahis mi."""
+    odds = m.get("odds") or {}
+    probs = all_probs(m.get("model"))
+    implied = (m.get("market") or {}).get("implied") or {}
+    vals = {v["market"] for v in (m.get("value") or [])}
+    out = []
+    for k, o in odds.items():
+        p = probs.get(k)
+        if not o or p is None:
+            continue
+        won = settle(k, ft, ht)
+        if won is None:
+            continue
+        e = {"m": k, "p": round(float(p), 4), "o": o, "won": won}
+        if implied.get(k) is not None:
+            e["q"] = round(float(implied[k]), 4)
+        if k in vals:
+            e["v"] = True
+        out.append(e)
+    return out
+
+
+def _cat_of() -> dict[str, str]:
+    return {k: c["id"] for c in categories() for k in c["keys"]}
+
+
+def _ll(p: float, y: int) -> float:
+    p = min(1 - 1e-6, max(1e-6, p))
+    return -math.log(p if y else 1 - p)
+
+
+def market_calibration(rows: list[dict]) -> dict:
+    """Tüm marketler kalibrasyonu: kategori bazında model/piyasa Brier ve log-loss + kovalar."""
+    cat_of, titles = _cat_of(), {c["id"]: c["title"] for c in categories()}
+    acc = defaultdict(lambda: {"n": 0, "mb": 0.0, "qb": 0.0, "ml": 0.0, "ql": 0.0})
+    bins = {s: defaultdict(lambda: [0.0, 0, 0]) for s in ("model", "market")}
+    for r in rows:
+        for e in r.get("markets") or []:
+            if e.get("q") is None:
+                continue
+            y = int(bool(e["won"]))
+            a = acc[cat_of.get(e["m"], "diger")]
+            a["n"] += 1
+            a["mb"] += (e["p"] - y) ** 2; a["qb"] += (e["q"] - y) ** 2
+            a["ml"] += _ll(e["p"], y); a["ql"] += _ll(e["q"], y)
+            for s, p in (("model", e["p"]), ("market", e["q"])):
+                b = bins[s][min(9, int(p * 10))]
+                b[0] += p; b[1] += 1; b[2] += y
+    order = [c["id"] for c in categories()] + ["diger"]
+    by_cat = [{"category": c, "title": titles.get(c, "Diğer"), "n": a["n"],
+               "model_brier": round(a["mb"] / a["n"], 4), "market_brier": round(a["qb"] / a["n"], 4),
+               "model_logloss": round(a["ml"] / a["n"], 4), "market_logloss": round(a["ql"] / a["n"], 4)}
+              for c, a in sorted(acc.items(), key=lambda kv: order.index(kv[0]) if kv[0] in order else 99)]
+    calib = {s: [{"bin": f"{b/10:.1f}-{(b+1)/10:.1f}", "predicted": round(t / n, 4), "observed": round(o / n, 4), "n": n}
+                 for b, (t, n, o) in sorted(bb.items())] for s, bb in bins.items()}
+    return {"by_category": by_cat, "calibration_markets": calib}
+
+
+def value_bets(rows: list[dict]) -> dict:
+    """Değerli bahis karnesi: değer etiketi alan her market, iddaa oranıyla 1 birim."""
+    vb = [e for r in rows for e in (r.get("markets") or []) if e.get("v") and e.get("o")]
+    if not vb:
+        return {"n": 0, "hit_rate": None, "profit": 0.0, "roi": None, "avg_odds": None}
+    profit = sum((e["o"] - 1) if e["won"] else -1 for e in vb)
+    return {"n": len(vb), "hit_rate": round(sum(e["won"] for e in vb) / len(vb), 4), "profit": round(profit, 2),
+            "roi": round(profit / len(vb), 4), "avg_odds": round(sum(e["o"] for e in vb) / len(vb), 3)}
 
 
 def _agg(rows: list[dict]) -> dict:
@@ -66,7 +141,13 @@ def trust_from(rows: list[dict], today: date, window_days: int = 90, min_n: int 
     cut = (today - timedelta(days=window_days)).isoformat()
     by = defaultdict(list)
     for r in rows:
-        if "won" in r and r["date"] >= cut:
+        if r["date"] < cut:
+            continue
+        mk = r.get("markets")
+        if mk:   # tüm marketler (tercih de bunların içinde)
+            for e in mk:
+                by[e["m"]].append(e)
+        elif "won" in r:   # eski satırlar: yalnız tercih
             by[r["pick"]].append(r)
     out = {}
     for mk, rs in by.items():
@@ -115,6 +196,8 @@ def build_scorecard(rows: list[dict], today: date) -> dict:
                              for k, v in by_market.items()), key=lambda x: -x["n"]),
         "trust": trust,
         "calibration": calib,
+        **market_calibration(rows),
+        "value_bets": value_bets(rows),
         "bankroll": curve,
         "recent": recent,
     }
