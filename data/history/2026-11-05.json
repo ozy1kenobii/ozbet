@@ -1,0 +1,455 @@
+{
+ "date": "2026-11-05",
+ "rows": [
+  {
+   "id": "20261105-milan-ferencvaros",
+   "date": "2026-11-05",
+   "league": "UEL",
+   "league_name": "Avrupa Ligi",
+   "match": "AC Milan - Ferencvaros",
+   "score": "0-2"
+  },
+  {
+   "id": "20261105-anderlecht-salzburg",
+   "date": "2026-11-05",
+   "league": "UEL",
+   "league_name": "Avrupa Ligi",
+   "match": "Anderlecht - Salzburg",
+   "score": "2-0"
+  },
+  {
+   "id": "20261105-crystal-palace-hoffenheim",
+   "date": "2026-11-05",
+   "league": "UEL",
+   "league_name": "Avrupa Ligi",
+   "match": "Crystal Palace - Hoffenheim",
+   "score": "1-1",
+   "brier_1x2": 0.8695,
+   "p1x2": {
+    "1": 0.3817,
+    "X": 0.2386,
+    "2": 0.3796
+   },
+   "outcome_1x2": "X",
+   "pick": "BTTS_Y",
+   "pick_label": "KG Var",
+   "p": 0.6398,
+   "odds": 1.31,
+   "stars": 2,
+   "is_value": false,
+   "won": true
+  },
+  {
+   "id": "20261105-nec-nijmegen-omonia",
+   "date": "2026-11-05",
+   "league": "UEL",
+   "league_name": "Avrupa Ligi",
+   "match": "NEC Nijmegen - Omonia",
+   "score": "3-1"
+  },
+  {
+   "id": "20261105-r-sociedad-olympique-lyon",
+   "date": "2026-11-05",
+   "league": "UEL",
+   "league_name": "Avrupa Ligi",
+   "match": "R. Sociedad - Lyon",
+   "score": "1-1",
+   "brier_1x2": 0.8404,
+   "p1x2": {
+    "1": 0.3631,
+    "X": 0.2516,
+    "2": 0.3853
+   },
+   "outcome_1x2": "X",
+   "pick": "O2.5",
+   "pick_label": "2.5 Üst",
+   "p": 0.6181,
+   "odds": 1.34,
+   "stars": 2,
+   "is_value": false,
+   "won": false
+  },
+  {
+   "id": "20261105-sparta-prag-bournemouth",
+   "date": "2026-11-05",
+   "league": "UEL",
+   "league_name": "Avrupa Ligi",
+   "match": "Sparta Prag - Bournemouth",
+   "score": "1-3"
+  },
+  {
+   "id": "20261105-az-alkmaar-juventus",
+   "date": "2026-11-05",
+   "league": "UEL",
+   "league_name": "Avrupa Ligi",
+   "match": "AZ Alkmaar - Juventus",
+   "score": "1-2",
+   "brier_1x2": 0.4399,
+   "p1x2": {
+    "1": 0.27,
+    "X": 0.2715,
+    "2": 0.4584
+   },
+   "outcome_1x2": "2",
+   "pick": "X2",
+   "pick_label": "ÇŞ X2",
+   "p": 0.7479,
+   "odds": 1.12,
+   "stars": 2,
+   "is_value": false,
+   "won": true
+  },
+  {
+   "id": "20261105-leverkusen-olympique-marsilya",
+   "date": "2026-11-05",
+   "league": "UEL",
+   "league_name": "Avrupa Ligi",
+   "match": "B. Leverkusen - Marsilya",
+   "score": "0-1",
+   "brier_1x2": 0.7783,
+   "p1x2": {
+    "1": 0.4891,
+    "X": 0.2134,
+    "2": 0.2975
+   },
+   "outcome_1x2": "2",
+   "pick": "O2.5",
+   "pick_label": "2.5 Üst",
+   "p": 0.7122,
+   "odds": 1.2,
+   "stars": 2,
+   "is_value": false,
+   "won": false
+  },
+  {
+   "id": "20261105-celtic-besiktas",
+   "date": "2026-11-05",
+   "league": "UEL",
+   "league_name": "Avrupa Ligi",
+   "match": "Celtic - Beşiktaş",
+   "score": "3-2",
+   "brier_1x2": 0.3243,
+   "p1x2": {
+    "1": 0.535,
+    "X": 0.2335,
+    "2": 0.2315
+   },
+   "outcome_1x2": "1",
+   "pick": "BTTS_Y",
+   "pick_label": "KG Var",
+   "p": 0.6362,
+   "odds": 1.29,
+   "stars": 2,
+   "is_value": false,
+   "won": true
+  },
+  {
+   "id": "20261105-hapoel-beer-sheva-ofi-crete",
+   "date": "2026-11-05",
+   "league": "UEL",
+   "league_name": "Avrupa Ligi",
+   "match": "Hapoel Beer Sheva - Ofi Crete",
+   "score": "0-2"
+  },
+  {
+   "id": "20261105-sturm-graz-nk-celje",
+   "date": "2026-11-05",
+   "league": "UEL",
+   "league_name": "Avrupa Ligi",
+   "match": "Sturm Graz - NK Celje",
+   "score": "2-3"
+  },
+  {
+   "id": "20261105-sunderland-d-zagreb",
+   "date": "2026-11-05",
+   "league": "UEL",
+   "league_name": "Avrupa Ligi",
+   "match": "Sunderland - D. Zagreb",
+   "score": "0-2"
+  },
+  {
+   "id": "20261105-agf-aarhus-braga",
+   "date": "2026-11-05",
+   "league": "UECL",
+   "league_name": "Konferans Ligi",
+   "match": "AGF Aarhus - Braga",
+   "score": "0-0"
+  },
+  {
+   "id": "20261105-atalanta-k-almaty",
+   "date": "2026-11-05",
+   "league": "UECL",
+   "league_name": "Konferans Ligi",
+   "match": "Atalanta - K. Almaty",
+   "score": "1-1"
+  },
+  {
+   "id": "20261105-lincoln-red-hajduk-split",
+   "date": "2026-11-05",
+   "league": "UECL",
+   "league_name": "Konferans Ligi",
+   "match": "Lincoln Red - Hajduk Split",
+   "score": "1-0"
+  },
+  {
+   "id": "20261105-midtjylland-ajax",
+   "date": "2026-11-05",
+   "league": "UECL",
+   "league_name": "Konferans Ligi",
+   "match": "Midtjylland - Ajax",
+   "score": "1-6"
+  },
+  {
+   "id": "20261105-mjallby-banja-luka",
+   "date": "2026-11-05",
+   "league": "UECL",
+   "league_name": "Konferans Ligi",
+   "match": "Mjallby - Banja Luka",
+   "score": "2-0"
+  },
+  {
+   "id": "20261105-thun-hearts",
+   "date": "2026-11-05",
+   "league": "UECL",
+   "league_name": "Konferans Ligi",
+   "match": "Thun - Hearts",
+   "score": "3-1"
+  },
+  {
+   "id": "20261105-trabzonspor-freiburg",
+   "date": "2026-11-05",
+   "league": "UECL",
+   "league_name": "Konferans Ligi",
+   "match": "Trabzonspor - Freiburg",
+   "score": "0-1",
+   "brier_1x2": 0.7971,
+   "p1x2": {
+    "1": 0.4733,
+    "X": 0.2435,
+    "2": 0.2832
+   },
+   "outcome_1x2": "2",
+   "pick": "BTTS_Y",
+   "pick_label": "KG Var",
+   "p": 0.6317,
+   "odds": 1.33,
+   "stars": 2,
+   "is_value": false,
+   "won": false
+  },
+  {
+   "id": "20261105-getafe-brighton",
+   "date": "2026-11-05",
+   "league": "UECL",
+   "league_name": "Konferans Ligi",
+   "match": "Getafe - Brighton",
+   "score": "0-1",
+   "brier_1x2": 0.4448,
+   "p1x2": {
+    "1": 0.2365,
+    "X": 0.3065,
+    "2": 0.4569
+   },
+   "outcome_1x2": "2",
+   "pick": "2",
+   "pick_label": "MS 2",
+   "p": 0.5756,
+   "odds": 1.37,
+   "stars": 2,
+   "is_value": false,
+   "won": true
+  },
+  {
+   "id": "20261105-monaco-nordsjlland",
+   "date": "2026-11-05",
+   "league": "UECL",
+   "league_name": "Konferans Ligi",
+   "match": "Monaco - Nordsjælland",
+   "score": "2-0"
+  },
+  {
+   "id": "20261105-panathinaikos-cska-sofya",
+   "date": "2026-11-05",
+   "league": "UECL",
+   "league_name": "Konferans Ligi",
+   "match": "Panathinaikos - CSKA Sofya",
+   "score": "2-1"
+  },
+  {
+   "id": "20261105-riga-jablonec",
+   "date": "2026-11-05",
+   "league": "UECL",
+   "league_name": "Konferans Ligi",
+   "match": "Riga - Jablonec",
+   "score": "1-1"
+  },
+  {
+   "id": "20261105-st-truidense-brann",
+   "date": "2026-11-05",
+   "league": "UECL",
+   "league_name": "Konferans Ligi",
+   "match": "St. Truidense - Brann",
+   "score": "1-1"
+  },
+  {
+   "id": "20261105-twente-pafos",
+   "date": "2026-11-05",
+   "league": "UECL",
+   "league_name": "Konferans Ligi",
+   "match": "Twente - Pafos",
+   "score": "3-1"
+  },
+  {
+   "id": "20261105-un-craiova-kf-egnatia-r",
+   "date": "2026-11-05",
+   "league": "UECL",
+   "league_name": "Konferans Ligi",
+   "match": "Un. Craiova - KF Egnatia R.",
+   "score": "2-0"
+  },
+  {
+   "id": "20261105-pakistan-hindistan",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "SAFF Şampiyonası, B Grubu",
+   "match": "Pakistan - Hindistan",
+   "score": "2-3"
+  },
+  {
+   "id": "20261105-kitchee-phnom-penh-crown",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "AFC Kupası",
+   "match": "Kitchee SC - Phnom Penh Crown",
+   "score": "2-1"
+  },
+  {
+   "id": "20261105-al-kahraba-zakho",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "Irak Ligi",
+   "match": "AL Kahraba - Zakho",
+   "score": "2-1"
+  },
+  {
+   "id": "20261105-chirundu-utd-green-eagles",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "Zambiya Süper Lig, Grup B",
+   "match": "Chirundu Utd - Green Eagles",
+   "score": "0-2"
+  },
+  {
+   "id": "20261105-green-buffaloes-zesco-utd",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "Zambiya Süper Lig, Grup B",
+   "match": "Green Buffaloes - Zesco Utd",
+   "score": "0-0"
+  },
+  {
+   "id": "20261105-marines-police",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "Ruanda Ulusal Lig",
+   "match": "Marines - Police",
+   "score": "1-0"
+  },
+  {
+   "id": "20261105-napsa-stars-power-dynamos",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "Zambiya Süper Lig, Grup A",
+   "match": "Napsa Stars - Power Dynamos",
+   "score": "0-1"
+  },
+  {
+   "id": "20261105-bunyodkor-xorazm-urganch",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "Özbekistan Süper Ligi",
+   "match": "Bunyodkor - Xorazm Fk Urganch",
+   "score": "1-2"
+  },
+  {
+   "id": "20261105-diyala-al-minaa",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "Irak Ligi",
+   "match": "Diyala - AL Minaa",
+   "score": "0-0"
+  },
+  {
+   "id": "20261105-bhutan-banglades",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "SAFF Şampiyonası, A Grubu",
+   "match": "Bhutan - Bangladeş",
+   "score": "0-1"
+  },
+  {
+   "id": "20261105-mohun-bagan-odisha",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "Hindistan Süper Ligi",
+   "match": "Mohun Bagan - Odisha",
+   "score": "3-2"
+  },
+  {
+   "id": "20261105-al-markhiya-al-waab",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "Katar 2. Lig",
+   "match": "AL Markhiya - AL Waab",
+   "score": "2-0"
+  },
+  {
+   "id": "20261105-katar--u23-al-khoor",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "Katar 2. Lig",
+   "match": "Katar U23 - Al Khoor",
+   "score": "0-3"
+  },
+  {
+   "id": "20261105-express-blacks-power",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "Uganda Premier Ligi",
+   "match": "Express - Blacks Power",
+   "score": "3-2"
+  },
+  {
+   "id": "20261105-teungueth-us-ouakam",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "Senegal Premier Lig",
+   "match": "Teungueth - US Ouakam",
+   "score": "1-0"
+  },
+  {
+   "id": "20261105-police-xi-township-rollers",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "Botsvana Premier Ligi",
+   "match": "Police Xi - Township Rollers",
+   "score": "1-4"
+  },
+  {
+   "id": "20261105-aldosivi-river-plate",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "Arjantin Primera LPF, Kapanış",
+   "match": "Aldosivi - River Plate",
+   "score": "0-2"
+  },
+  {
+   "id": "20261105-valenciennes-orleans",
+   "date": "2026-11-05",
+   "league": "OTHER",
+   "league_name": "Fransa Ulusal Lig",
+   "match": "Valenciennes - Orleans",
+   "score": "2-2"
+  }
+ ]
+}
