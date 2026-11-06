@@ -207,7 +207,10 @@ def predict(home_name: str, away_name: str, league_id: str | None, models: dict[
         notes.append("Kadro eksikleri λ'ya yansıtıldı")
     notes += [f"Ev: {n}" for n in nh_] + [f"Deplasman: {n}" for n in na_]
 
-    sim = simulate(lh, la, rho, hts, config.MC_SIMS, seed_for(key))
+    dadj = R.draw_adj if (not cross and config.DRAW_CALIBRATION) else 1.0
+    sim = simulate(lh, la, rho, hts, config.MC_SIMS, seed_for(key), draw_adj=dadj)
+    if dadj != 1.0:
+        notes.append(f"Lig beraberlik kalibrasyonu ×{dadj:.2f}")
     sim["data_quality"] = quality
     sim["notes"] = notes
     sim["n_matches"] = {"home": nh, "away": na}

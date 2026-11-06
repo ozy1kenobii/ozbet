@@ -119,13 +119,15 @@ def extra_markets(h1, a1, h2, a2, w) -> dict[str, float]:
 
 
 def simulate(lh: float, la: float, rho: float, ht_share: float = 0.44,
-             n: int = 10_000, seed: int = 0) -> dict:
+             n: int = 10_000, seed: int = 0, draw_adj: float = 1.0) -> dict:
     rho = clamp_rho(rho, lh, la)   # kupa çapraz λ'larında τ negatife düşmesin
     rng = np.random.default_rng(seed)
     h1 = rng.poisson(lh * ht_share, n); a1 = rng.poisson(la * ht_share, n)
     h2 = rng.poisson(lh * (1 - ht_share), n); a2 = rng.poisson(la * (1 - ht_share), n)
     hg = h1 + h2; ag = a1 + a2
     w = tau(hg, ag, lh, la, rho)
+    if draw_adj != 1.0:
+        w = np.where(hg == ag, w * draw_adj, w)   # lig beraberlik kalibrasyonu
     w = w / w.sum()
 
     cap = 6  # matris 0..5, sonrası ayrı

@@ -17,7 +17,7 @@ from pathlib import Path
 from . import config, health, validate
 from .markets import all_labels, all_probs
 from .markets import categories as market_categories
-from .agents import market_map, bulletin, commentator, consensus, market, scorecard, simulation, squad, stats, value
+from .agents import market_map, odds_analysis, bulletin, commentator, consensus, market, scorecard, simulation, squad, stats, value
 from .http import PoliteClient
 from .sources import football_data as fd
 from .sources import archive, news_rss, registry
@@ -256,6 +256,11 @@ def main(argv=None):
             break
 
     hist = {lid: validate.clean_history(rows, vrep) for lid, rows in hist.items()}
+    try:
+        odds_pool = odds_analysis.Pool(hist)
+    except Exception as e:  # noqa: BLE001
+        log.warning("Oran arşivi kurulamadı: %s", e)
+        odds_pool = None
     # 3) Modeller
     models = {}
     for lid, rows in hist.items():
@@ -360,6 +365,11 @@ def main(argv=None):
                 mv, alarms = market.movement(m["odds_history"])
                 mk["movement"], mk["drop_alarms"] = mv, alarms
             m["market"] = mk
+            if odds_pool is not None and mk:
+                try:
+                    m["odds_analysis"] = odds_pool.analyze(mk.get("implied"), f.league_id)
+                except Exception as e:  # noqa: BLE001
+                    log.info("Oran analizi %s: %s", mid, e)
             # istatistik
             M = models.get(f.league_id or "")
             if M and rows_l:

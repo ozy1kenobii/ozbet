@@ -18,7 +18,7 @@ from . import config
 from .agents.market import implied
 from .http import PoliteClient
 from .markets import outcome_won, probs_from_matrix
-from .model.dixon_coles import clamp_rho, fit, fit_shots, score_matrix
+from .model.dixon_coles import apply_draw_adj, clamp_rho, fit, fit_shots, score_matrix
 from .sources import football_data as fd
 from .sources.base import now_iso
 
@@ -66,6 +66,12 @@ def run_league(rows: list[dict], test_seasons: list[str], edge: float = config.V
             p = probs_from_matrix(score_matrix(lh, la, clamp_rho(model.rho, lh, la)))
             o = "1" if r["hg"] > r["ag"] else ("X" if r["hg"] == r["ag"] else "2")
             q = close["implied"]
+            qp = (implied(r["odds_close"], "proportional") or implied(r["odds_open"], "proportional"))["implied"]
+            acc["kb_prop"] = acc.get("kb_prop", 0.0) + _brier(qp, o)
+            acc["kl_prop"] = acc.get("kl_prop", 0.0) + _ll(qp, o)
+            pd_ = probs_from_matrix(apply_draw_adj(score_matrix(lh, la, clamp_rho(model.rho, lh, la)), model.draw_adj))
+            acc["mb_draw"] = acc.get("mb_draw", 0.0) + _brier(pd_, o)
+            acc["ml_draw"] = acc.get("ml_draw", 0.0) + _ll(pd_, o)
             if sm is not None and r["home"] in sm.attack and r["away"] in sm.attack:
                 sh, sa = sm.lambdas(r["home"], r["away"])
                 ov = 1.0 if r["hg"] + r["ag"] > 2 else 0.0
@@ -110,6 +116,11 @@ def run_league(rows: list[dict], test_seasons: list[str], edge: float = config.V
     return {
         "n": n,
         "model_brier": round(acc["mb"] / n, 4), "market_brier": round(acc["kb"] / n, 4),
+        "market_brier_proportional": round(acc.get("kb_prop", 0) / n, 4),
+        "market_logloss_proportional": round(acc.get("kl_prop", 0) / n, 4),
+        "model_brier_drawcal": round(acc.get("mb_draw", 0) / n, 4),
+        "model_logloss_drawcal": round(acc.get("ml_draw", 0) / n, 4),
+        "draw_adj_last": round(model.draw_adj, 3) if model else None,
         "model_logloss": round(acc["ml"] / n, 4), "market_logloss": round(acc["kl"] / n, 4),
         "ou25_model_brier": round(acc["ou_mb"] / acc["ou_n"], 4) if acc["ou_n"] else None,
         "ou25_market_brier": round(acc["ou_kb"] / acc["ou_n"], 4) if acc["ou_n"] else None,
@@ -159,6 +170,8 @@ def main(argv=None):
             "n": n, "model_brier": w("model_brier"), "market_brier": w("market_brier"),
             "model_logloss": w("model_logloss"), "market_logloss": w("market_logloss"),
             "n_value_bets": bets,
+            **{k: w(k) for k in ("market_brier_proportional", "market_logloss_proportional",
+                                 "model_brier_drawcal", "model_logloss_drawcal")},
             "roi_value_bets": round(sum((b["roi_value_bets"] or 0) * b["n_value_bets"] for b in bl) / bets, 4) if bets else None,
         }
     if bl and all("grid" in b for b in bl):

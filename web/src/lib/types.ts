@@ -154,6 +154,15 @@ export interface CountPrediction {
 
 export interface MarketCategory { id: string; title: string; keys: string[] }
 
+export interface OddsAnalysis {
+  status: 'ok' | 'dusuk_guven' | 'az_ornek';
+  n: number;
+  scope?: 'lig' | 'tüm ligler';
+  match_point?: { '1': number; X: number; '2': number };
+  markets?: { market: string; observed: number; ci: [number, number]; market_p: number | null; diff: number | null; notable: boolean }[];
+  disclaimer: string;
+}
+
 export type NewsTag = 'sakat' | 'ceza' | 'td' | 'kadro' | 'transfer';
 
 export interface NewsItem {
@@ -202,6 +211,7 @@ export interface Match {
   comment_source: 'kural' | 'llm' | null;
   flags: string[];
   provenance: Record<string, { source: string; t: string }> | null;
+  odds_analysis?: OddsAnalysis | null;
 }
 
 export interface DayFile {

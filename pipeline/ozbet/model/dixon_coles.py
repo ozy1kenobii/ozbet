@@ -36,6 +36,7 @@ class Ratings:
     rho: float = 0.0
     n_matches: dict[str, float] = field(default_factory=dict)   # ağırlıksız maç sayısı
     ht_share: float = 0.44
+    draw_adj: float = 1.0          # lig beraberlik düzeltmesi: gözlenen / modelin beklediği beraberlik
 
     def lambdas(self, home: str, away: str, neutral: bool = False,
                 att_adj: tuple[float, float] = (0.0, 0.0),
@@ -139,8 +140,33 @@ def fit(matches, ref_date, xi: float, l2: float = 0.5, use_xg: bool = False) -> 
         s_ht = sum(a for a, _ in hts); s_ft = sum(b for _, b in hts)
         if s_ft > 0:
             ht_share = float(np.clip(s_ht / s_ft, 0.35, 0.5))
+    draw_adj = 1.0
+    if not use_xg:
+        draw_adj = estimate_draw_adj(np.exp(mu + h + a[hi] + d[ai]), np.exp(mu + a[ai] + d[hi]), rho,
+                                     hg.astype(int) == ag.astype(int), w)
     return Ratings(teams, dict(zip(teams, a.tolist())), dict(zip(teams, d.tolist())),
-                   float(mu), float(h), rho, counts, ht_share)
+                   float(mu), float(h), rho, counts, ht_share, draw_adj)
+
+
+def draw_prob(lh: float, la: float, rho: float) -> float:
+    return float(np.trace(score_matrix(lh, la, clamp_rho(rho, lh, la))))
+
+
+def estimate_draw_adj(lh, la, rho, is_draw, w, lo: float = 0.85, hi: float = 1.20) -> float:
+    """Zaman ağırlıklı gözlenen beraberlik oranı / modelin beklediği. Bağımsız Poisson + DC τ beraberliği
+    sistematik olarak eksik tahmin edebilir (FiveThirtyEight SPI de beraberliği şişirir). Uç değerlere kırpılır."""
+    pred = np.array([draw_prob(x, y, rho) for x, y in zip(lh, la)])
+    obs = np.asarray(is_draw, float)
+    r = float(np.sum(w * obs) / max(np.sum(w * pred), 1e-9))
+    return float(np.clip(r, lo, hi))
+
+
+def apply_draw_adj(m: np.ndarray, adj: float) -> np.ndarray:
+    if adj == 1.0:
+        return m
+    m = m.copy()
+    np.fill_diagonal(m, np.diag(m) * adj)
+    return m / m.sum()
 
 
 def score_matrix(lh: float, la: float, rho: float, max_goals: int = 10) -> np.ndarray:

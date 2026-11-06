@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDay } from '../lib/data';
-import type { CountPrediction, HtFtKey, MarketCategory, MarketKey, Match, TeamStats } from '../lib/types';
+import type { OddsAnalysis, CountPrediction, HtFtKey, MarketCategory, MarketKey, Match, TeamStats } from '../lib/types';
 import { fmtDateTime, fmtShortDate, fmtTime, num, odd, pct, signedPct } from '../lib/format';
 import { HTFT_KEYS, MARKET_GROUPS, allProbs, marketLabel, setMarketLabels } from '../lib/markets';
 import { useCoupon } from '../lib/coupon';
@@ -185,6 +185,7 @@ function Detail({ m, date, cats }: { m: Match; date: string; cats?: MarketCatego
         )}
         <CountsPanel m={m} />
         <MarketTable m={m} date={date} cats={cats} />
+        <OddsArchive m={m} />
         <OddsMovement m={m} />
       </section>
 
@@ -409,6 +410,40 @@ function MarketTable({ m, date, cats }: { m: Match; date: string; cats?: MarketC
       {m.market?.margin && Object.keys(m.market.margin).length > 0 && (
         <p className="mt-1 text-[12px] text-muted num">Büro marjı: {Object.entries(m.market.margin).slice(0, 6).map(([k, v]) => `${k === '1x2' ? '1X2' : k === 'ou25' ? 'Ü/A 2.5' : k} ${pct(v, 1)}`).join(' · ')}</p>
       )}
+    </Section>
+  );
+}
+
+function OddsArchive({ m }: { m: Match }) {
+  const a: OddsAnalysis | null | undefined = m.odds_analysis;
+  if (!a) return null;
+  if (a.status === 'az_ornek' || !a.markets) {
+    return (
+      <Section title="Benzer oranlı geçmiş maçlar">
+        <p className="rounded-md bg-sunken px-4 py-3 text-sm text-muted">Bu oran bölgesinde arşivde yeterli maç yok ({a.n} &lt; 100); dağılım gösterilmiyor.</p>
+      </Section>
+    );
+  }
+  return (
+    <Section title="Benzer oranlı geçmiş maçlar"
+      aside={<span className="text-[12px] text-muted num">{a.n} maç · {a.scope}{a.status === 'dusuk_guven' ? ' · düşük güven' : ''}</span>}>
+      <div className="panel px-2 py-1 overflow-x-auto md:max-w-2xl">
+        <table className="tbl">
+          <thead><tr><th>Sonuç</th><th className="text-right">Gerçekleşen</th><th className="text-right">%95 aralık</th><th className="text-right">Piyasa</th><th className="text-right">Fark</th></tr></thead>
+          <tbody>
+            {a.markets.map((x) => (
+              <tr key={x.market}>
+                <td className="font-medium">{marketLabel(x.market)}</td>
+                <td className="text-right font-semibold num">{pct(x.observed, 1)}</td>
+                <td className="text-right text-muted num">{pct(x.ci[0], 0)}–{pct(x.ci[1], 0).replace('%', '')}</td>
+                <td className="text-right text-muted num">{pct(x.market_p, 1)}</td>
+                <td className={`text-right num ${x.notable ? 'font-semibold text-accent' : 'text-muted'}`}>{x.diff != null ? signedPct(x.diff) : '–'}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="mt-1.5 text-[12px] text-muted">{a.disclaimer} Marjı temizlenmiş kapanış olasılığı bugünkü maça en yakın (±3 puan) maçlar; kaynak football-data.co.uk. Mavi fark: piyasa olasılığı güven aralığının dışında.</p>
     </Section>
   );
 }
