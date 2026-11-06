@@ -10,6 +10,7 @@ const MatchDetail = lazy(() => import('./pages/MatchDetail'));
 const Coupon = lazy(() => import('./pages/Coupon'));
 const Scorecard = lazy(() => import('./pages/Scorecard'));
 const Sources = lazy(() => import('./pages/Sources'));
+const Rehber = lazy(() => import('./pages/Rehber'));
 
 const NAV = [
   { to: '/', label: 'Bülten', icon: 'M4 5h16M4 10h16M4 15h10M4 20h7' },
@@ -80,6 +81,7 @@ export default function App() {
             <Route path="/kupon" element={<Coupon />} />
             <Route path="/karne" element={<Scorecard />} />
             <Route path="/kaynaklar" element={<Sources />} />
+            <Route path="/rehber" element={<Rehber />} />
             <Route path="*" element={<p className="text-muted py-10 text-center">Sayfa bulunamadı.</p>} />
           </Routes>
         </Suspense>
@@ -88,7 +90,7 @@ export default function App() {
       <footer className="border-t border-line mt-4 pb-24 md:pb-6">
         <div className="mx-auto max-w-5xl px-4 py-5 text-[13px] text-muted space-y-1">
           <p>İstatistiksel tahmindir, sonuç garantisi yoktur. 18+, sorumlu oyna.</p>
-          <p>© OZBET</p>
+          <p><NavLink to="/rehber" className="text-accent underline underline-offset-2">Rehber</NavLink> · © OZBET</p>
         </div>
       </footer>
 

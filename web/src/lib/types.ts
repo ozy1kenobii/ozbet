@@ -249,7 +249,12 @@ export interface Scorecard {
   calibration: { bin: string; predicted: number; observed: number; n: number }[];
   bankroll: { date: string; balance: number }[];
   recent: { date: string; match: string; pick: string; odds: number | null; won: boolean; score: string }[];
+  /** Tüm marketler kalibrasyonu: kategori bazında model ve piyasa */
+  by_category?: { category: string; title: string; n: number; model_brier: number; market_brier: number; model_logloss: number; market_logloss: number }[];
+  calibration_markets?: { model: CalibBin[]; market: CalibBin[] };
+  value_bets?: { n: number; hit_rate: number | null; profit: number; roi: number | null; avg_odds: number | null };
 }
+export interface CalibBin { bin: string; predicted: number; observed: number; n: number }
 
 export type HealthLevel = 'ok' | 'uyari' | 'alarm' | 'kronik' | 'kapali';
 export interface SourceHealth {
@@ -288,7 +293,12 @@ export interface BacktestSummary {
   market_logloss: number | null;
   roi_value_bets: number | null;
   n_value_bets: number;
+  market_brier_proportional?: number | null;
+  market_logloss_proportional?: number | null;
+  model_brier_drawcal?: number | null;
+  model_logloss_drawcal?: number | null;
 }
+export interface ShotBlendRow { w: number; n: number; brier: number; logloss: number; ou25_brier: number }
 
 /** backtest.json içindeki eşik taraması satırı (alpha = model/piyasa karışım ağırlığı) */
 export interface BacktestGridRow {
@@ -310,4 +320,6 @@ export interface Backtest {
   grid?: BacktestGridRow[];
   /** Opsiyonel: alpha → karışım Brier skoru */
   blend_brier?: Record<string, number>;
+  shot_blend?: ShotBlendRow[];
+  shot_blend_best?: number;
 }
