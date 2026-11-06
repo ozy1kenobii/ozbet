@@ -67,6 +67,57 @@ def sample_runs(h1, a1, h2, a2, w, seed: int, n: int = SAMPLE_N) -> dict:
     }
 
 
+def extra_markets(h1, a1, h2, a2, w) -> dict[str, float]:
+    """iddaa'daki ek gol marketleri — hepsi aynı ağırlıklı 10.000 simülasyondan (Dixon-Coles τ dahil).
+
+    Anahtarlar markets.EXTRA_LABELS ile aynıdır.
+    """
+    hg, ag = h1 + h2, a1 + a2
+    t, t1, t2 = hg + ag, h1 + a1, h2 + a2
+    P = lambda mask: float(w[mask].sum())  # noqa: E731
+    out: dict[str, float] = {}
+    # İlk yarı sonucu ve İY gol
+    out["HT_1"], out["HT_X"], out["HT_2"] = P(h1 > a1), P(h1 == a1), P(h1 < a1)
+    for ln in (0.5, 1.5, 2.5):
+        out[f"HT_O{ln}"] = P(t1 > ln); out[f"HT_U{ln}"] = 1 - out[f"HT_O{ln}"]
+    # İkinci yarı sonucu
+    out["2H_1"], out["2H_X"], out["2H_2"] = P(h2 > a2), P(h2 == a2), P(h2 < a2)
+    # En çok gol olacak yarı
+    out["MGH_1"], out["MGH_X"], out["MGH_2"] = P(t1 > t2), P(t1 == t2), P(t1 < t2)
+    # Toplam gol ek çizgiler
+    for ln in (0.5, 4.5, 5.5):
+        out[f"O{ln}"] = P(t > ln); out[f"U{ln}"] = 1 - out[f"O{ln}"]
+    # Gol aralığı ve tek/çift
+    out["G0-1"], out["G2-3"], out["G4-5"], out["G6+"] = P(t <= 1), P((t >= 2) & (t <= 3)), P((t >= 4) & (t <= 5)), P(t >= 6)
+    out["ODD"] = P(t % 2 == 1); out["EVEN"] = 1 - out["ODD"]
+    # Takım golleri
+    for side, g in (("H", hg), ("A", ag)):
+        for ln in (0.5, 1.5, 2.5):
+            out[f"{side}_O{ln}"] = P(g > ln); out[f"{side}_U{ln}"] = 1 - out[f"{side}_O{ln}"]
+    # Handikaplı MS (iddaa usulü 3 yollu: ev sahibine -1/-2 veya +1/+2 gol)
+    for hc in (-2, -1, 1, 2):
+        d = hg - ag + hc
+        tag = f"{hc:+d}"
+        out[f"HCP{tag}_1"], out[f"HCP{tag}_X"], out[f"HCP{tag}_2"] = P(d > 0), P(d == 0), P(d < 0)
+    # MS + Alt/Üst 2.5 ve MS + KG
+    res = {"1": hg > ag, "X": hg == ag, "2": hg < ag}
+    both = (hg > 0) & (ag > 0)
+    for r, m in res.items():
+        out[f"{r}&O2.5"] = P(m & (t > 2)); out[f"{r}&U2.5"] = P(m & (t <= 2))
+        out[f"{r}&BTTS_Y"] = P(m & both); out[f"{r}&BTTS_N"] = P(m & ~both)
+    # KG + Alt/Üst 2.5
+    out["BTTS_Y&O2.5"] = P(both & (t > 2)); out["BTTS_Y&U2.5"] = P(both & (t <= 2))
+    out["BTTS_N&O2.5"] = P(~both & (t > 2)); out["BTTS_N&U2.5"] = P(~both & (t <= 2))
+    # Her iki yarıda gol / ilk yarı KG
+    out["HT_BTTS_Y"] = P((h1 > 0) & (a1 > 0)); out["HT_BTTS_N"] = 1 - out["HT_BTTS_Y"]
+    out["BOTH_HALVES_O0.5"] = P((t1 > 0) & (t2 > 0))
+    # Ev / deplasman yarı kazanır
+    out["H_WIN_HALF"] = P((h1 > a1) | (h2 > a2)); out["A_WIN_HALF"] = P((a1 > h1) | (a2 > h2))
+    # Gol yemeden kazanır
+    out["H_WIN_NIL"] = P((hg > ag) & (ag == 0)); out["A_WIN_NIL"] = P((ag > hg) & (hg == 0))
+    return out
+
+
 def simulate(lh: float, la: float, rho: float, ht_share: float = 0.44,
              n: int = 10_000, seed: int = 0) -> dict:
     rho = clamp_rho(rho, lh, la)   # kupa çapraz λ'larında τ negatife düşmesin
@@ -103,4 +154,5 @@ def simulate(lh: float, la: float, rho: float, ht_share: float = 0.44,
         "score_matrix": [[round(float(x), 4) for x in row] for row in small],
         "total_goals": [round(x, 4) for x in total_goals],
         "sample_runs": sample_runs(h1, a1, h2, a2, w, seed),
+        "extra": {k: round(v, 4) for k, v in extra_markets(h1, a1, h2, a2, w).items()},
     }

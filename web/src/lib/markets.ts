@@ -32,8 +32,25 @@ export const MARKET_GROUPS: { title: string; keys: MarketKey[] }[] = [
 
 export const HTFT_KEYS: HtFtKey[] = ['1/1', '1/X', '1/2', 'X/1', 'X/X', 'X/2', '2/1', '2/X', '2/2'];
 
+/** Veri hattının gönderdiği tam etiket listesi (day.market_labels); ek marketler için. */
+let EXTRA: Record<string, string> = {};
+export function setMarketLabels(labels: Record<string, string> | undefined) {
+  if (labels) EXTRA = { ...EXTRA, ...labels };
+}
+
 export function marketLabel(key: string): string {
-  return (MARKET_LABELS as Record<string, string>)[key] ?? key;
+  return (MARKET_LABELS as Record<string, string>)[key] ?? EXTRA[key] ?? key;
+}
+
+/** Bir maçın tüm market olasılıkları: ana + ek gol + korner + kart. */
+export function allProbs(m: { model?: { probs?: Record<string, number | undefined>; extra?: Record<string, number>;
+  corners?: { probs: Record<string, number> }; cards?: { probs: Record<string, number> } } | null }): Record<string, number> {
+  const md = m.model;
+  if (!md) return {};
+  const out: Record<string, number> = {};
+  for (const [k, v] of Object.entries(md.probs ?? {})) if (v != null) out[k] = v;
+  Object.assign(out, md.extra ?? {}, md.corners?.probs ?? {}, md.cards?.probs ?? {});
+  return out;
 }
 
 /** Skor (ev, dep) verilen market için kazanır mı? Skor matrisi ile tam olasılık hesabında kullanılır. */

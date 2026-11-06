@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDay } from '../lib/data';
-import type { HtFtKey, MarketKey, Match, TeamStats } from '../lib/types';
+import type { CountPrediction, HtFtKey, MarketCategory, MarketKey, Match, TeamStats } from '../lib/types';
 import { fmtDateTime, fmtShortDate, fmtTime, num, odd, pct, signedPct } from '../lib/format';
-import { HTFT_KEYS, MARKET_GROUPS, marketLabel } from '../lib/markets';
+import { HTFT_KEYS, MARKET_GROUPS, allProbs, marketLabel, setMarketLabels } from '../lib/markets';
+import { useCoupon } from '../lib/coupon';
 import { Bars, Heatmap, LineChart, ProbBar } from '../components/charts';
 import { Badge, DropBadge, Empty, FormStrip, Loading, ResultBadge, Section, Stars, ValueBadge } from '../components/ui';
 import { AddToCoupon } from '../components/AddToCoupon';
@@ -18,7 +19,8 @@ export default function MatchDetail() {
   if (day.state === 'empty') return <Empty />;
   const m = day.data.matches?.find((x) => x.id === decodeURIComponent(id));
   if (!m) return <Empty title="Maç bulunamadı">Bu gün dosyasında böyle bir maç yok. <Link className="text-accent font-semibold" to="/">Bültene dön</Link></Empty>;
-  return <Detail m={m} date={day.data.date} />;
+  setMarketLabels(day.data.market_labels);
+  return <Detail m={m} date={day.data.date} cats={day.data.market_categories} />;
 }
 
 /**
@@ -68,7 +70,7 @@ function useSectionTabs(root: React.RefObject<HTMLElement>) {
   return { avail, active };
 }
 
-function Detail({ m, date }: { m: Match; date: string }) {
+function Detail({ m, date, cats }: { m: Match; date: string; cats?: MarketCategory[] }) {
   const finished = m.status === 'finished' && m.result;
   const rootRef = useRef<HTMLDivElement>(null);
   const headRef = useRef<HTMLElement>(null);
@@ -181,7 +183,8 @@ function Detail({ m, date }: { m: Match; date: string }) {
         {m.model ? <ModelSections m={m} /> : (
           <p className="mt-6 rounded-md bg-sunken px-4 py-3 text-sm text-muted">Veri yetersiz – model çalıştırılmadı. Aşağıda yalnızca piyasa oranları var.</p>
         )}
-        <MarketTable m={m} />
+        <CountsPanel m={m} />
+        <MarketTable m={m} date={date} cats={cats} />
         <OddsMovement m={m} />
       </section>
 
@@ -353,40 +356,97 @@ function ModelSections({ m }: { m: Match }) {
   );
 }
 
-function MarketTable({ m }: { m: Match }) {
-  const probs = m.model?.probs ?? {};
-  const imp = m.market?.implied ?? {};
-  const has = (k: MarketKey) => probs[k] != null || imp[k] != null || m.odds?.[k] != null;
-  const groups = MARKET_GROUPS.map((g) => ({ ...g, keys: g.keys.filter(has) })).filter((g) => g.keys.length);
-  if (!groups.length) return null;
-  const valueSet = new Set((m.value ?? []).map((v) => v.market));
+function MarketTable({ m, date, cats }: { m: Match; date: string; cats?: MarketCategory[] }) {
+  const probs = allProbs(m);
+  const imp = (m.market?.implied ?? {}) as Record<string, number | undefined>;
+  const odds = (m.odds ?? {}) as Record<string, number | undefined>;
+  const has = (k: string) => probs[k] != null || imp[k] != null || odds[k] != null;
+  const base: MarketCategory[] = cats?.length ? cats
+    : MARKET_GROUPS.map((g, i) => ({ id: `g${i}`, title: g.title, keys: g.keys as string[] }));
+  const tabs = base.map((c) => ({ ...c, keys: c.keys.filter(has) })).filter((c) => c.keys.length);
+  const [tab, setTab] = useState<string>('');
+  const { add, remove, has: inCoupon } = useCoupon();
+  if (!tabs.length) return null;
+  const cur = tabs.find((t) => t.id === tab) ?? tabs[0];
+  const valueSet = new Set<string>((m.value ?? []).map((v) => v.market));
+  const withOdds = (c: MarketCategory) => c.keys.filter((k) => odds[k] != null).length;
   return (
-    <Section title="Tüm marketler" aside={<span className="text-[12px] text-muted">Piyasa = marjı temizlenmiş ima olasılığı</span>}>
+    <Section title="Tüm marketler" aside={<span className="text-[12px] text-muted">Model · Piyasa (marjsız) · Oran</span>}>
+      <div className="-mx-1 mb-2 flex gap-1.5 overflow-x-auto px-1 pb-1" role="tablist" aria-label="Market kategorisi">
+        {tabs.map((t) => (
+          <button key={t.id} role="tab" aria-selected={t.id === cur.id} onClick={() => setTab(t.id)}
+            className={`chip shrink-0 ${t.id === cur.id ? 'chip-on' : ''}`}>
+            {t.title}{withOdds(t) > 0 && <span className="ml-1 num opacity-70">{withOdds(t)}</span>}
+          </button>
+        ))}
+      </div>
       <div className="panel px-2 py-1 overflow-x-auto md:max-w-2xl">
         <table className="tbl">
-          <thead><tr><th>Market</th><th className="text-right">Model</th><th className="text-right">Piyasa</th><th className="text-right">Fark</th><th className="text-right">Oran</th></tr></thead>
-          {groups.map((g) => (
-            <tbody key={g.title}>
-              <tr><td colSpan={5} className="pt-3 pb-1 text-[12px] font-semibold text-muted">{g.title}</td></tr>
-              {g.keys.map((k) => {
-                const d = probs[k] != null && imp[k] != null ? probs[k]! - imp[k]! : null;
-                return (
-                  <tr key={k}>
-                    <td className="font-medium">{marketLabel(k)} {valueSet.has(k) && <ValueBadge />}</td>
-                    <td className="text-right font-semibold">{pct(probs[k], 1)}</td>
-                    <td className="text-right text-muted">{pct(imp[k], 1)}</td>
-                    <td className={`text-right ${d != null && d >= 0.05 ? 'text-accent font-semibold' : 'text-muted'}`}>{d != null ? signedPct(d) : '–'}</td>
-                    <td className="text-right">{m.odds?.[k] != null ? odd(m.odds[k]) : '–'}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          ))}
+          <thead><tr><th>Market</th><th className="text-right">Model</th><th className="text-right">Piyasa</th><th className="text-right">Fark</th><th className="text-right">Oran</th><th className="w-10"><span className="sr-only">Kupon</span></th></tr></thead>
+          <tbody>
+            {cur.keys.map((k) => {
+              const d = probs[k] != null && imp[k] != null ? probs[k]! - imp[k]! : null;
+              const on = inCoupon(m.id, k);
+              return (
+                <tr key={k}>
+                  <td className="font-medium">{marketLabel(k)} {valueSet.has(k) && <ValueBadge />}</td>
+                  <td className="text-right font-semibold">{pct(probs[k], 1)}</td>
+                  <td className="text-right text-muted">{pct(imp[k], 1)}</td>
+                  <td className={`text-right ${d != null && d >= 0.05 ? 'text-accent font-semibold' : 'text-muted'}`}>{d != null ? signedPct(d) : '–'}</td>
+                  <td className="text-right">{odds[k] != null ? odd(odds[k]!) : '–'}</td>
+                  <td className="text-right">
+                    <button type="button" aria-pressed={on} aria-label={`${marketLabel(k)} kupona ${on ? 'eklendi' : 'ekle'}`}
+                      onClick={() => (on ? remove(`${m.id}|${k}`) : add(m, date, k))}
+                      className={`h-8 w-8 rounded-md border text-sm font-bold ${on ? 'border-accent bg-accent text-accent-ink' : 'border-line'}`}>{on ? '✓' : '+'}</button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
         </table>
       </div>
+      <p className="mt-1.5 text-[12px] text-muted">Oranı olmayan satırlarda yalnızca model olasılığı gösterilir; bu marketler bugünkü bültende yok ya da eşleşmedi.</p>
       {m.market?.margin && Object.keys(m.market.margin).length > 0 && (
-        <p className="mt-1.5 text-[12px] text-muted num">Büro marjı: {Object.entries(m.market.margin).map(([k, v]) => `${k === '1x2' ? '1X2' : k === 'ou25' ? 'Ü/A 2.5' : k} ${pct(v, 1)}`).join(' · ')}</p>
+        <p className="mt-1 text-[12px] text-muted num">Büro marjı: {Object.entries(m.market.margin).slice(0, 6).map(([k, v]) => `${k === '1x2' ? '1X2' : k === 'ou25' ? 'Ü/A 2.5' : k} ${pct(v, 1)}`).join(' · ')}</p>
       )}
+    </Section>
+  );
+}
+
+function CountBlock({ title, c, unit }: { title: string; c: CountPrediction; unit: string }) {
+  const diff = c.exp_total - c.league_avg;
+  return (
+    <div className="panel px-4 py-3">
+      <div className="flex items-baseline justify-between">
+        <span className="font-semibold">{title}</span>
+        <span className="t-micro text-muted num">lig ort. {num(c.league_avg, 1)}</span>
+      </div>
+      <div className="mt-1 flex items-baseline gap-3">
+        <span className="num text-3xl font-bold">{num(c.exp_total, 1)}</span>
+        <span className="text-sm text-muted num">ev {num(c.exp_home, 1)} · dep {num(c.exp_away, 1)} {unit}</span>
+      </div>
+      <div className={`text-[12px] ${Math.abs(diff) >= 0.7 ? 'font-semibold text-accent' : 'text-muted'}`}>
+        Lig ortalamasının {diff >= 0 ? 'üstünde' : 'altında'} ({diff >= 0 ? '+' : ''}{num(diff, 1)})
+      </div>
+      {c.referee && (
+        <div className="mt-1 text-[12px] text-muted">
+          Hakem: <b className="text-ink">{c.referee}</b>
+          {c.referee_factor != null ? ` · kart eğilimi ×${num(c.referee_factor, 2)} (${c.referee_matches} maç)` : ' · geçmiş verisi yok'}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function CountsPanel({ m }: { m: Match }) {
+  const c = m.model?.corners, k = m.model?.cards;
+  if (!c && !k) return null;
+  return (
+    <Section title="Korner ve kart beklentisi" aside={<span className="text-[12px] text-muted">Negatif binom model · football-data.co.uk</span>}>
+      <div className="grid gap-2 md:grid-cols-2 md:max-w-2xl">
+        {c && <CountBlock title="Korner" c={c} unit="korner" />}
+        {k && <CountBlock title="Kart (sarı + kırmızı)" c={k} unit="kart" />}
+      </div>
     </Section>
   );
 }

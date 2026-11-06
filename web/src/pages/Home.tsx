@@ -5,6 +5,7 @@ import { fmtDay, fmtTime, istHour, odd } from '../lib/format';
 import type { DayFile, Match, Source } from '../lib/types';
 import { HighlightCard, KickoffCell, MatchCard, matchHref } from '../components/MatchCard';
 import { Chevron, Dot, Empty, Loading } from '../components/ui';
+import { MarketScanner } from '../components/MarketScanner';
 import { readLS, writeLS } from '../lib/storage';
 
 const FILTER_KEY = 'ozbet-filtre-v2';
@@ -130,6 +131,7 @@ function DayView({ day }: { day: DayFile }) {
     <div>
       <SourceSummary day={day} />
       <Highlights day={day} now={now} />
+      <MarketScanner day={day} />
 
       {/* Araç çubuğu */}
       <div className="mt-6 space-y-2">

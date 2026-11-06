@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { MarketKey, Match } from '../lib/types';
 import { fmtTime, odd, pct } from '../lib/format';
-import { marketLabel, marketWins } from '../lib/markets';
+import { marketLabel, marketWins, isMarketKey } from '../lib/markets';
 import { Badge, DropBadge, Icon, ResultBadge, Stars, ValueBadge } from './ui';
 import { AddToCoupon } from './AddToCoupon';
 
@@ -23,6 +23,8 @@ export function sourceCount(m: Match): number {
 
 export function pickResult(m: Match): boolean | null {
   if (m.status !== 'finished' || !m.result || !m.pick) return null;
+  // Ek marketlerin (İY, korner...) sonucu karnede veri hattınca belirlenir; kartta yalnız ana marketler gösterilir
+  if (!isMarketKey(m.pick.market)) return null;
   return marketWins(m.pick.market, m.result.ft[0], m.result.ft[1]);
 }
 

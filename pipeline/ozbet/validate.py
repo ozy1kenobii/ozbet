@@ -7,7 +7,7 @@ from __future__ import annotations
 from collections import Counter
 from datetime import date, timedelta
 
-from .markets import GROUPS
+from .markets import GROUPS, all_groups
 
 ODDS_MIN, ODDS_MAX = 1.01, 100.0
 MARGIN_MIN, MARGIN_MAX = -0.02, 0.45   # marj negatifse arbitraj = veri hatası; %45 üstü bozuk satır
@@ -41,10 +41,12 @@ def clean_odds(odds: dict[str, float] | None, rep: Report | None = None) -> dict
             out[k] = v
         else:
             rep and rep.add("oran_aralik_disi")
-    for g, keys in GROUPS.items():
+    for g, keys in all_groups().items():
         if all(k in out for k in keys):
             margin = sum(1 / out[k] for k in keys) - 1
-            if not (MARGIN_MIN <= margin <= MARGIN_MAX):
+            # çok seçenekli ek marketlerde (ör. MS & Ü/A, 6 seçenek) marj doğal olarak daha yüksek
+            hi = MARGIN_MAX if g in GROUPS else MARGIN_MAX + 0.08 * (len(keys) - 2)
+            if not (MARGIN_MIN <= margin <= hi):
                 for k in keys:
                     out.pop(k, None)
                 rep and rep.add(f"marj_tutarsiz_{g}")

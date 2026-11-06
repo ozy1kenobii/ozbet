@@ -12,7 +12,8 @@ def find_value(model_probs: dict | None, odds: dict | None, implied: dict | None
     if not model_probs or not odds or not implied:
         return []
     out = []
-    for k in VALUE_MARKETS:
+    keys = VALUE_MARKETS + [k for k in implied if k not in VALUE_MARKETS and k not in ("1X", "X2", "12")]
+    for k in keys:
         o, ip, mp = odds.get(k), implied.get(k), model_probs.get(k)
         if not (o and ip and mp):
             continue

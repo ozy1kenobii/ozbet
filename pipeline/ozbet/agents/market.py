@@ -2,14 +2,14 @@
 from __future__ import annotations
 
 from .. import config
-from ..markets import GROUPS
+from ..markets import all_groups
 
 
 def implied(odds: dict[str, float] | None) -> dict | None:
     if not odds:
         return None
     imp, margin = {}, {}
-    for g, keys in GROUPS.items():
+    for g, keys in all_groups().items():
         if all(odds.get(k) and odds[k] > 1.0 for k in keys):
             raw = [1 / odds[k] for k in keys]
             s = sum(raw)

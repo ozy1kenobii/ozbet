@@ -9,7 +9,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 from .. import config
-from ..markets import LABELS, outcome_won
+from ..markets import LABELS, all_labels, settle
 
 START_BANK = 100.0
 
@@ -35,10 +35,10 @@ def grade_day(day_doc: dict, results: dict[str, dict]) -> list[dict]:
             row["p1x2"] = {k: p[k] for k in ("1", "X", "2")}
             row["outcome_1x2"] = next(k for k, v in o.items() if v)
         pk = m.get("pick")
-        if pk:
+        won = settle(pk["market"], [hg, ag], res.get("ht")) if pk else None
+        if pk and won is not None:   # sonucu belirlenemeyen market (ör. İY skoru yok) puanlanmaz
             row.update({"pick": pk["market"], "pick_label": pk["label"], "p": pk["p"], "odds": pk.get("odds"),
-                        "stars": pk.get("stars"), "is_value": pk.get("is_value", False),
-                        "won": outcome_won(pk["market"], hg, ag)})
+                        "stars": pk.get("stars"), "is_value": pk.get("is_value", False), "won": won})
         graded.append(row)
     return graded
 
@@ -111,7 +111,7 @@ def build_scorecard(rows: list[dict], today: date) -> dict:
         "last30": _agg([r for r in rows if r["date"] >= cut30]),
         "by_league": sorted(({"league": k[0], "name": k[1], **_agg(v)} for k, v in by_league.items()),
                             key=lambda x: -x["n"]),
-        "by_market": sorted(({"market": k, "label": LABELS.get(k, k), **_agg(v), "trust": trust.get(k, 1.0)}
+        "by_market": sorted(({"market": k, "label": all_labels().get(k, k), **_agg(v), "trust": trust.get(k, 1.0)}
                              for k, v in by_market.items()), key=lambda x: -x["n"]),
         "trust": trust,
         "calibration": calib,

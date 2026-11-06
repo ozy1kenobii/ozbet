@@ -15,6 +15,8 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 
 from . import config, health, validate
+from .markets import all_labels, all_probs
+from .markets import categories as market_categories
 from .agents import bulletin, commentator, consensus, market, scorecard, simulation, squad, stats, value
 from .http import PoliteClient
 from .sources import football_data as fd
@@ -365,7 +367,8 @@ def main(argv=None):
                 m["elo"] = {k: elo[k] for k in ("home", "away", "source", "date")}
             # model
             try:
-                m["model"] = simulation.predict(f.home, f.away, f.league_id, models, m["squad"], mid, elo=elo)
+                m["model"] = simulation.predict(f.home, f.away, f.league_id, models, m["squad"], mid, elo=elo,
+                                                  referee=f.extra.get("referee"))
             except Exception as e:  # noqa: BLE001
                 log.warning("Simülasyon %s: %s", mid, e); m["model"] = None
             if m["model"]:
@@ -388,7 +391,7 @@ def main(argv=None):
             cup = bool(lg and lg.cup) or not lg
             if cup and m["model"]:
                 m["flags"].append(CUP_FLAG_ELO if m["model"].get("method") == "elo" else CUP_FLAG)
-            m["value"] = [] if cup else value.find_value((m["model"] or {}).get("probs"), m["odds"], (mk or {}).get("implied"), trust)
+            m["value"] = [] if cup else value.find_value(all_probs(m["model"]), m["odds"], (mk or {}).get("implied"), trust)
             commentator.annotate(m, trust, use_llm=not args.no_llm and lg is not None)
             if f.result:
                 m["status"] = "finished"
@@ -432,6 +435,8 @@ def main(argv=None):
                      "priority": config.LEAGUE_BY_ID[l].priority} if l in config.LEAGUE_BY_ID else
                     {"id": "OTHER", "name": "Diğer ligler", "country": "", "priority": 99} for l in leagues_present],
         "matches": matches,
+        "market_labels": all_labels(),
+        "market_categories": market_categories(),
     }
     try:
         dump_debug(client, board)

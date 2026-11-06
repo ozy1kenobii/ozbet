@@ -80,7 +80,7 @@ export interface ConsensusSummary {
 }
 
 export interface ValueItem {
-  market: MarketKey;
+  market: string;
   model_p: number;
   implied_p: number;
   odds: number;
@@ -89,7 +89,7 @@ export interface ValueItem {
 }
 
 export interface Pick {
-  market: MarketKey;
+  market: string;
   label: string;
   p: number;
   odds: number | null;
@@ -97,11 +97,9 @@ export interface Pick {
   is_value: boolean;
 }
 
-export type Odds = Partial<Record<MarketKey, number>>;
+export type Odds = Partial<Record<MarketKey, number>> & Record<string, number | undefined>;
 
-export interface OddsSnapshot extends Odds {
-  t: string;
-}
+export type OddsSnapshot = Partial<Record<MarketKey, number>> & { t: string };
 
 /** 50 örnek maç akışı — yalnızca gösterim; olasılıklar 10.000 simülasyondan gelir. */
 export interface SampleGoal {
@@ -136,7 +134,25 @@ export interface Model {
   data_quality: 'high' | 'medium' | 'low';
   notes: string[];
   sample_runs?: SampleRuns;
+  /** Ek gol marketleri (İY, handikap, gol aralığı, takım golü, kombine...) — anahtarlar day.market_labels'ta */
+  extra?: Record<string, number>;
+  corners?: CountPrediction;
+  cards?: CountPrediction;
 }
+
+export interface CountPrediction {
+  exp_home: number;
+  exp_away: number;
+  exp_total: number;
+  league_avg: number;
+  dispersion: number;
+  probs: Record<string, number>;
+  referee?: string | null;
+  referee_factor?: number | null;
+  referee_matches?: number;
+}
+
+export interface MarketCategory { id: string; title: string; keys: string[] }
 
 export type NewsTag = 'sakat' | 'ceza' | 'td' | 'kadro' | 'transfer';
 
@@ -196,6 +212,8 @@ export interface DayFile {
   sources: Source[];
   leagues: League[];
   matches: Match[];
+  market_labels?: Record<string, string>;
+  market_categories?: MarketCategory[];
 }
 
 export interface IndexFile {

@@ -1,13 +1,13 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
 import type { MarketKey, Match } from './types';
 import { readLS, writeLS } from './storage';
-import { marketLabel, marketWins } from './markets';
+import { allProbs, isMarketKey, marketLabel, marketWins } from './markets';
 
 export interface Selection {
   key: string;              // matchId|market
   matchId: string;
   date: string;
-  market: MarketKey;
+  market: string;
   label: string;
   home: string;
   away: string;
@@ -23,10 +23,10 @@ const KEY = 'ozbet-kupon-v1';
 
 interface Ctx {
   items: Selection[];
-  add: (m: Match, date: string, market: MarketKey) => void;
+  add: (m: Match, date: string, market: string) => void;
   remove: (key: string) => void;
   clear: () => void;
-  has: (matchId: string, market: MarketKey) => boolean;
+  has: (matchId: string, market: string) => boolean;
 }
 
 const CouponCtx = createContext<Ctx | null>(null);
@@ -38,19 +38,19 @@ export function CouponProvider({ children }: { children: ReactNode }) {
   });
   useEffect(() => { writeLS(KEY, items); }, [items]);
 
-  const add = useCallback((m: Match, date: string, market: MarketKey) => {
+  const add = useCallback((m: Match, date: string, market: string) => {
     const key = `${m.id}|${market}`;
     setItems((cur) => cur.some((x) => x.key === key) ? cur : [...cur, {
       key, matchId: m.id, date, market, label: marketLabel(market),
       home: m.home.name, away: m.away.name, league: m.league, league_name: m.league_name, kickoff: m.kickoff,
-      p: m.model?.probs?.[market] ?? null,
+      p: allProbs(m)[market] ?? null,
       odds: m.odds?.[market] ?? null,
       score_matrix: m.model?.score_matrix ?? null,
     }]);
   }, []);
   const remove = useCallback((key: string) => setItems((cur) => cur.filter((x) => x.key !== key)), []);
   const clear = useCallback(() => setItems([]), []);
-  const has = useCallback((id: string, mk: MarketKey) => items.some((x) => x.key === `${id}|${mk}`), [items]);
+  const has = useCallback((id: string, mk: string) => items.some((x) => x.key === `${id}|${mk}`), [items]);
 
   const v = useMemo(() => ({ items, add, remove, clear, has }), [items, add, remove, clear, has]);
   return <CouponCtx.Provider value={v}>{children}</CouponCtx.Provider>;
@@ -104,8 +104,8 @@ export function analyze(items: Selection[]): CouponAnalysis {
     }
     correlated = true;
     const mat = its.find((x) => x.score_matrix && x.score_matrix.length)?.score_matrix ?? null;
-    if (mat) {
-      const { p, covered } = jointFromMatrix(mat, its.map((x) => x.market));
+    if (mat && its.every((x) => isMarketKey(x.market))) {
+      const { p, covered } = jointFromMatrix(mat, its.map((x) => x.market as MarketKey));
       groups.push({ matchId, title, items: its, p, method: 'matris', tail: Math.max(0, 1 - covered), contradictory: p <= 1e-9 });
     } else {
       const ps = its.map((x) => x.p);

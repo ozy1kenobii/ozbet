@@ -9,7 +9,9 @@ import json
 import logging
 
 from .. import config
-from ..markets import LABELS
+from ..markets import LABELS, all_labels
+
+ALL_LABELS = all_labels()
 from .consensus import agreement_for
 
 log = logging.getLogger("ozbet.comment")
@@ -43,7 +45,7 @@ def choose_pick(m: dict) -> dict | None:
             p[k] = config.MODEL_WEIGHT * p[k] + (1 - config.MODEL_WEIGHT) * q
     if m.get("value"):
         v = m["value"][0]
-        return {"market": v["market"], "label": LABELS[v["market"]], "p": v["model_p"],
+        return {"market": v["market"], "label": ALL_LABELS[v["market"]], "p": v["model_p"],
                 "odds": v["odds"], "is_value": True}
     # Değer yoksa: anlamlı tekil marketlerde en yüksek olasılık (1.5 Üst/3.5 Alt çok kolay → elenir eşiği yüksek)
     cands = [(k, p[k]) for k in ["1", "2", "O2.5", "U2.5", "BTTS_Y", "BTTS_N"] if k in p]
@@ -164,7 +166,7 @@ def rule_comment(m: dict) -> str:
         out.append(f"{LABELS.get(k, k)} oranı ilk görüldüğünden bu yana {pct(abs(mk['movement'][k]))} düştü.")
     if m.get("value"):
         v = m["value"][0]
-        out.append(f"{LABELS[v['market']]} için model olasılığı ({pct(v['model_p'])}) orandan ima edilen "
+        out.append(f"{ALL_LABELS[v['market']]} için model olasılığı ({pct(v['model_p'])}) orandan ima edilen "
                    f"olasılığın ({pct(v['implied_p'])}) üzerinde.")
     elif m.get("odds") and model:
         out.append("Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.")

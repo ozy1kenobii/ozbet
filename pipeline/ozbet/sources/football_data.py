@@ -88,6 +88,7 @@ def history(client: PoliteClient, fd_code: str, seasons: list[str]) -> list[dict
                 "hst": _num(r.get("HST")), "ast": _num(r.get("AST")),
                 "hc": _num(r.get("HC")), "ac": _num(r.get("AC")),
                 "hy": _num(r.get("HY")), "ay": _num(r.get("AY")),
+                "referee": (str(r.get("Referee")).strip() if isinstance(r.get("Referee"), str) else None),
                 "hr": _num(r.get("HR")), "ar": _num(r.get("AR")),
                 "odds_open": _odds_from_row(r), "odds_close": _odds_from_row(r, closing=True),
                 "src": "football-data.co.uk",
@@ -117,5 +118,6 @@ def fixtures(client: PoliteClient, day: date) -> list[Fixture]:
             league_id=CODE_TO_LEAGUE.get(code), league_name_raw=code, kickoff=ko,
             home=str(r["HomeTeam"]).strip(), away=str(r["AwayTeam"]).strip(),
             source="football-data.co.uk", fetched_at=t, odds=_odds_from_row(r),
+            extra={"referee": r["Referee"].strip()} if isinstance(r.get("Referee"), str) else {},
         ))
     return out

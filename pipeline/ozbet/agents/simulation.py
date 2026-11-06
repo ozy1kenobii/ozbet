@@ -28,6 +28,8 @@ class LeagueModel:
     goals: Ratings
     xg: Ratings | None
     matcher: TeamMatcher
+    corners: object | None = None   # model.counts.CountModel
+    cards: object | None = None
 
     def team(self, name: str) -> str | None:
         return self.matcher.match(name)
@@ -41,7 +43,14 @@ def build(league_id: str, rows: list[dict], ref: date) -> LeagueModel | None:
     x = None
     if sum(1 for r in past if r.get("hxg") is not None) >= 60:
         x = fit(past, ref, config.TIME_DECAY_XI, use_xg=True)
-    return LeagueModel(league_id, g, x, TeamMatcher(g.teams))
+    from ..model import counts
+    try:
+        cm = counts.fit(past, ref, config.TIME_DECAY_XI, "corners")
+        km = counts.fit(past, ref, config.TIME_DECAY_XI, "cards")
+    except Exception as e:  # noqa: BLE001
+        log.warning("Korner/kart modeli %s kurulamadı: %s", league_id, e)
+        cm = km = None
+    return LeagueModel(league_id, g, x, TeamMatcher(g.teams), cm, km)
 
 
 def _squad_mult(sq: dict | None) -> tuple[float, float, list[str]]:
@@ -114,7 +123,8 @@ def _find_team(name: str, models: dict[str, LeagueModel]):
 
 
 def predict(home_name: str, away_name: str, league_id: str | None, models: dict[str, LeagueModel],
-            squad: dict | None, key: str, neutral: bool = False, elo: dict | None = None) -> dict | None:
+            squad: dict | None, key: str, neutral: bool = False, elo: dict | None = None,
+            referee: str | None = None) -> dict | None:
     """elo: {"home":1850,"away":1720,...} (clubelo). Çapraz lig/kupa maçında varsa lig gücü katsayısı yerine kullanılır."""
     lg = config.LEAGUE_BY_ID.get(league_id) if league_id else None
     notes: list[str] = []
@@ -189,4 +199,12 @@ def predict(home_name: str, away_name: str, league_id: str | None, models: dict[
     sim["notes"] = notes
     sim["n_matches"] = {"home": nh, "away": na}
     sim["method"] = "elo" if sim_elo else ("league_strength" if cross else "league")
+    if not cross:
+        from ..model import counts
+        for kind, cmod in (("corners", M.corners), ("cards", M.cards)):
+            if cmod is not None and h in cmod.gen and a in cmod.gen:
+                try:
+                    sim[kind] = counts.predict(cmod, h, a, referee if kind == "cards" else None, key)
+                except Exception as e:  # noqa: BLE001
+                    log.info("%s tahmini %s: %s", kind, key, e)
     return sim
