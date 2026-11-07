@@ -1,0 +1,93 @@
+{
+ "date": "2026-11-06",
+ "rows": [
+  {
+   "id": "20261106-genesis-pn-real-cd-espana",
+   "date": "2026-11-06",
+   "league": "OTHER",
+   "league_name": "Honduras Ulusal Lig, Açılış",
+   "match": "Genesis PN - Real CD Espana",
+   "score": "1-1"
+  },
+  {
+   "id": "20261106-gladiador-liverpool-m",
+   "date": "2026-11-06",
+   "league": "OTHER",
+   "league_name": "Uruguay Kupası",
+   "match": "Gladiador - Liverpool M.",
+   "score": "0-2"
+  },
+  {
+   "id": "20261106-u-chile-antofagasta",
+   "date": "2026-11-06",
+   "league": "OTHER",
+   "league_name": "Şili Kupası",
+   "match": "U. Chile - Antofagasta",
+   "score": "4-0"
+  },
+  {
+   "id": "20261106-gimnasia-belgrano",
+   "date": "2026-11-06",
+   "league": "OTHER",
+   "league_name": "Arjantin Primera LPF, Kapanış",
+   "match": "Gimnasia - Belgrano",
+   "score": "2-1"
+  },
+  {
+   "id": "20261106-botafogo-londrina-pr",
+   "date": "2026-11-06",
+   "league": "OTHER",
+   "league_name": "Brezilya Serie B",
+   "match": "Botafogo - Londrina PR",
+   "score": "4-0"
+  },
+  {
+   "id": "20261106-bolivar-real-potosi",
+   "date": "2026-11-06",
+   "league": "OTHER",
+   "league_name": "Bolivya Profesyonel Lig Kupası, Playoff",
+   "match": "Club Bolivar - Real Potosi",
+   "score": "1-0"
+  },
+  {
+   "id": "20261106-inter-san-carlos-cs-cartagines",
+   "date": "2026-11-06",
+   "league": "OTHER",
+   "league_name": "Kosta Rika Prmr Ligi, Açılış",
+   "match": "Inter San Carlos - CS Cartagines",
+   "score": "1-1"
+  },
+  {
+   "id": "20261106-arnett-gardens-mount-pleasant",
+   "date": "2026-11-06",
+   "league": "OTHER",
+   "league_name": "Jamaika Premier Lig",
+   "match": "Arnett Gardens - Mount Pleasant",
+   "score": "1-1"
+  },
+  {
+   "id": "20261106-cruzeiro-mg-bahia-ba",
+   "date": "2026-11-06",
+   "league": "OTHER",
+   "league_name": "Brezilya Serie A",
+   "match": "Cruzeiro MG - Bahia BA",
+   "score": "3-2"
+  },
+  {
+   "id": "20261106-marathon-platense",
+   "date": "2026-11-06",
+   "league": "OTHER",
+   "league_name": "Honduras Ulusal Lig, Açılış",
+   "match": "Marathon - Platense",
+   "score": "3-1"
+  },
+  {
+   "id": "20261106-cs-herediano-d-saprissa",
+   "date": "2026-11-06",
+   "league": "OTHER",
+   "league_name": "Kosta Rika Prmr Ligi, Açılış",
+   "match": "CS Herediano - D. Saprissa",
+   "score": "0-2"
+  }
+ ]
+}
