@@ -1,0 +1,29 @@
+name: Backtest veri paketi
+# Geliştirme için football-data.co.uk ham CSV'lerini (oranlar dahil: Avg, Max, Pinnacle, kapanış) indirip artifact yapar.
+# Yalnız elle tetiklenir; nazik istek: dosyalar arası 3 sn.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  paket:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CSV indir
+        run: |
+          mkdir -p fd
+          for s in 1920 2021 2122 2223 2324 2425 2526 2627; do
+            for l in T1 E0 E1 SP1 I1 D1 F1 N1 P1 B1; do
+              curl -sfL -A "ozbet-backtest (kisisel, ticari olmayan)" -o fd/${l}_${s}.csv \
+                "https://www.football-data.co.uk/mmz4281/${s}/${l}.csv" || echo "yok: ${l}_${s}"
+              sleep 3
+            done
+          done
+          ls fd | wc -l
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fd-csv
+          path: fd
+          retention-days: 30
