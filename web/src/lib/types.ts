@@ -169,8 +169,14 @@ export interface Model {
   top_scores: { score: string; p: number }[];
   score_matrix: number[][];
   total_goals: number[];
-  data_quality: 'high' | 'medium' | 'low';
+  data_quality: 'high' | 'medium' | 'low' | 'market';
   notes: string[];
+  /** "piyasa": iddaa 1X2 + Alt/Üst oranlarından (Shin) türetilmiş λ — bağımsız tahmin değildir */
+  source?: 'piyasa';
+  method?: string;
+  ht_share?: number;
+  fit_kl?: number;
+  fit_markets?: string[];
   sample_runs?: SampleRuns;
   /** Ek gol marketleri (İY, handikap, gol aralığı, takım golü, kombine...) — anahtarlar day.market_labels'ta */
   extra?: Record<string, number>;
@@ -252,6 +258,19 @@ export interface Match {
   flags: string[];
   provenance: Record<string, { source: string; t: string }> | null;
   odds_analysis?: OddsAnalysis | null;
+  /** Lig modeli olan maçlarda kıyas için piyasa-tabanlı λ ve olasılıklar */
+  market_model?: globalThis.Pick<Model, 'lambda_home' | 'lambda_away' | 'rho' | 'probs' | 'extra' | 'htft' | 'source'> & { ht_share: number; fit_kl: number } | null;
+  /** iddaa iç tutarlılık: ek marketlerde piyasa-tabanlı adil olasılığa göre fiyatı en iyi ilk 5 satır (değer DEĞİL) */
+  consistency?: ConsistencyItem[] | null;
+}
+
+export interface ConsistencyItem {
+  market: string;
+  label: string;
+  odds: number;
+  fair_p: number;
+  /** p·oran − 1; genelde negatif */
+  ev: number;
 }
 
 export interface DayFile {

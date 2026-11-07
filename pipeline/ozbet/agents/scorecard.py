@@ -30,7 +30,7 @@ def grade_day(day_doc: dict, results: dict[str, dict]) -> list[dict]:
         row = {"id": m["id"], "date": day_doc["date"], "league": m["league"], "league_name": m.get("league_name"),
                "match": f'{m["home"]["name"]} - {m["away"]["name"]}', "score": f"{hg}-{ag}"}
         model = m.get("model")
-        if model:
+        if model and model.get("source") != "piyasa":   # piyasa-tabanlı model piyasayla kıyaslanmaz
             p = model["probs"]
             o = {"1": hg > ag, "X": hg == ag, "2": hg < ag}
             row["brier_1x2"] = round(sum((p[k] - (1.0 if o[k] else 0.0)) ** 2 for k in o), 4)
@@ -52,6 +52,8 @@ def market_rows(m: dict, ft: list[int], ht: list[int] | None) -> list[dict]:
     """Oranı ve model olasılığı olan tüm marketleri sonuçlandırır (korner/kart gibi sonucu bilinmeyenler atlanır).
     Kısa alanlar: m=market, p=model, q=piyasa (marjsız ima), o=oran, won, v=değerli bahis mi."""
     odds = m.get("odds") or {}
+    if (m.get("model") or {}).get("source") == "piyasa":
+        return []
     probs = all_probs(m.get("model"))
     implied = (m.get("market") or {}).get("implied") or {}
     vals = {v["market"] for v in (m.get("value") or [])}

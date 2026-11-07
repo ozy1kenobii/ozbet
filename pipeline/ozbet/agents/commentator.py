@@ -34,7 +34,7 @@ def pct(p):
 
 def choose_pick(m: dict) -> dict | None:
     model = m.get("model")
-    if not model:
+    if not model or model.get("source") == "piyasa":   # piyasa-tabanlı modelden "tercih" üretilmez
         return None
     p = dict(model["probs"])
     odds = m.get("odds") or {}
