@@ -2300,8 +2300,14 @@
    "away": {
     "name": "Bursaspor"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     1
+    ],
+    "ht": null
+   },
    "flags": [],
    "provenance": {
     "fixture": {

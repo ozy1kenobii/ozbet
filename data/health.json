@@ -801,20 +801,24 @@
 }
 },
 {
-"t": "2026-11-07T04:20:41+03:00",
+"t": "2026-11-07T04:30:40+03:00",
 "label": "08:30",
 "sources": {
+"nesine_results": [
+"skipped",
+0
+],
 "flashscore": [
 "skipped",
 0
 ],
 "nesine": [
 "ok",
-1200
+1215
 ],
 "iddaa": [
 "ok",
-1215
+1214
 ],
 "api_football": [
 "partial",
@@ -826,7 +830,7 @@
 ],
 "football_data_history": [
 "ok",
-22362
+21264
 ],
 "understat": [
 "missing",
@@ -838,7 +842,7 @@
 ],
 "tff_tr2": [
 "ok",
-120
+131
 ],
 "archive_history": [
 "ok",
@@ -850,7 +854,7 @@
 ],
 "tff_referees": [
 "ok",
-49
+89
 ],
 "clubelo": [
 "missing",
@@ -880,20 +884,16 @@
 "missing",
 0
 ],
-"nesine_results": [
-"missing",
-0
-],
 "pipeline": [
 "ok",
-261
+255
 ]
 },
 "quality": {
-"league_mapped_pct": 0.425,
-"team_match_pct": 0.829,
+"league_mapped_pct": 0.412,
+"team_match_pct": 0.824,
 "odds_coverage_pct": 1.0,
-"cross_source_match_pct": 0.877
+"cross_source_match_pct": 0.899
 }
 }
 ]
