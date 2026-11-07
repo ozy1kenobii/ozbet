@@ -11,10 +11,12 @@ const Coupon = lazy(() => import('./pages/Coupon'));
 const Scorecard = lazy(() => import('./pages/Scorecard'));
 const Sources = lazy(() => import('./pages/Sources'));
 const Rehber = lazy(() => import('./pages/Rehber'));
+const BenzerOran = lazy(() => import('./pages/BenzerOran'));
 
 const NAV = [
   { to: '/', label: 'Bülten', icon: 'M4 5h16M4 10h16M4 15h10M4 20h7' },
   { to: '/kupon', label: 'Kupon', icon: 'M5 3h14v18l-3.5-2-3.5 2-3.5-2L5 21zM9 8h6M9 12h6' },
+  { to: '/benzer-oran', label: 'Benzer Oran', icon: 'M3 17l5-5 4 4 8-8M14 8h6v6' },
   { to: '/karne', label: 'Karne', icon: 'M4 20V10M10 20V4M16 20v-7M22 20H2' },
   { to: '/kaynaklar', label: 'Kaynaklar', icon: 'M12 3a9 9 0 100 18 9 9 0 000-18zM3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18' },
 ];
@@ -82,6 +84,7 @@ export default function App() {
             <Route path="/karne" element={<Scorecard />} />
             <Route path="/kaynaklar" element={<Sources />} />
             <Route path="/rehber" element={<Rehber />} />
+            <Route path="/benzer-oran" element={<BenzerOran />} />
             <Route path="*" element={<p className="text-muted py-10 text-center">Sayfa bulunamadı.</p>} />
           </Routes>
         </Suspense>
@@ -95,11 +98,11 @@ export default function App() {
       </footer>
 
       <nav className="md:hidden fixed bottom-0 inset-x-0 z-30 bg-surface border-t border-line" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }} aria-label="Alt menü">
-        <ul className="grid grid-cols-4">
+        <ul className="grid grid-cols-5">
           {NAV.map((n) => (
             <li key={n.to}>
               <NavLink to={n.to} end={n.to === '/'}
-                className={({ isActive }) => `flex flex-col items-center justify-center h-16 gap-0.5 text-[12px] font-medium ${isActive ? 'text-accent' : 'text-muted'}`}>
+                className={({ isActive }) => `flex flex-col items-center justify-center h-16 gap-0.5 text-[11px] leading-tight text-center font-medium ${isActive ? 'text-accent' : 'text-muted'}`}>
                 <span className="relative">
                   <NavIcon d={n.icon} />
                   {n.to === '/kupon' && items.length > 0 && (

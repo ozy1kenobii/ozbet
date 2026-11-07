@@ -64,7 +64,7 @@ export default function Rehber() {
             ['Değer etiketi', 'Fark belirli eşiği (5 puan) geçtiğinde ve iddaa oranıyla beklenen getiri pozitif olduğunda verilir. Bu bir fırsat iddiası değil; modelin piyasadan ayrıştığı yerleri gösterir.'],
             ['Yıldız (1–5)', 'Tercihe duyulan güven: veri kalitesi, farkın büyüklüğü ve o marketin karnedeki geçmiş performansı birlikte değerlendirilir. Karnede kötü giden marketlerde yıldız düşer.'],
             ['Güven aralığı', 'Simülasyon ve veri belirsizliğinden doğan aralık. Aralık genişse olasılığı yaklaşık bir değer olarak okuyun.'],
-            ['Benzer oranlı geçmiş maçlar', 'Geçmişte benzer oranla oynanmış maçlarda bu sonucun ne sıklıkla çıktığı. Piyasanın kendi isabetine bakmanın basit bir yolu.'],
+            ['Benzer oranlı geçmiş maçlar', 'Marjı temizlenmiş olasılığı bugünkü maça yakın (±3 puan) geçmiş maçlarda sonucun ne sıklıkla çıktığı, %95 güven aralığı ve piyasa olasılığıyla. Ham oranla eşleştirmiyoruz: iddaa marjı (~%20) arşivdeki kapanış marjından (~%7) çok yüksek, aynı ham oran arşivde neredeyse hiç yok. Testimizde bu dağılım marjsız olasılıktan daha iyi tahmin etmedi; bir tahmin ya da değer işareti değildir.'],
           ].map(([t, d]) => (
             <div key={t} className="px-4 py-3"><dt className="font-semibold">{t}</dt><dd className="mt-0.5 text-muted">{d}</dd></div>
           ))}

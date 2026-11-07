@@ -203,8 +203,20 @@ export interface OddsAnalysis {
   n: number;
   scope?: 'lig' | 'tüm ligler';
   match_point?: { '1': number; X: number; '2': number };
-  markets?: { market: string; observed: number; ci: [number, number]; market_p: number | null; diff: number | null; notable: boolean }[];
+  date_range?: [string, string] | null;
+  markets?: { market: string; observed: number; ci: [number, number]; market_p: number | null; note: string | null }[];
+  goals?: number[];
+  scores?: number[][];
+  scores_other?: number;
   disclaimer: string;
+}
+
+export interface IddaaArchiveInfo {
+  rows: number;
+  resulted: number;
+  filled_now?: number;
+  min_n: number;
+  months?: string[];
 }
 
 export type NewsTag = 'sakat' | 'ceza' | 'td' | 'kadro' | 'transfer';
@@ -258,6 +270,7 @@ export interface Match {
   flags: string[];
   provenance: Record<string, { source: string; t: string }> | null;
   odds_analysis?: OddsAnalysis | null;
+  odds_analysis_iddaa?: OddsAnalysis | null;
   /** Lig modeli olan maçlarda kıyas için piyasa-tabanlı λ ve olasılıklar */
   market_model?: globalThis.Pick<Model, 'lambda_home' | 'lambda_away' | 'rho' | 'probs' | 'extra' | 'htft' | 'source'> & { ht_share: number; fit_kl: number } | null;
   /** iddaa iç tutarlılık: ek marketlerde piyasa-tabanlı adil olasılığa göre fiyatı en iyi ilk 5 satır (değer DEĞİL) */
@@ -284,6 +297,7 @@ export interface DayFile {
   standings?: Record<string, LeagueStandings>;
   market_labels?: Record<string, string>;
   market_categories?: MarketCategory[];
+  iddaa_archive?: IddaaArchiveInfo | null;
 }
 
 export interface IndexFile {

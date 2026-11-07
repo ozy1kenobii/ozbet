@@ -50,14 +50,16 @@ PREDICTION_SOURCES = [
     Src("freesupertips", "FreeSuperTips (ipucu)", predictions=freesupertips.predictions),
     Src("soccerstats", "SoccerStats (lig istatistik eğilimi)", predictions=soccerstats.predictions),
 ]
-RESULT_SOURCES = [
-    Src("nesine_results", "Nesine (sonuçlar)", results=nesine.results),
+RESULT_SOURCES: list[Src] = [
+    # Not: Nesine sonuç sayfası robots.txt ile yasak; kaldırıldı. Sonuçlar football-data/TFF/arşivden gelir.
     # Not: Flashscore sonuçları birikimli arşivi (data/archive) besliyordu; kullanım şartları nedeniyle kapatıldı.
     # Mevcut arşiv dosyaları okunmaya devam eder.
 ]
 # Kullanım şartları veya robots.txt otomatik erişimi yasakladığı için devre dışı bırakılan kaynaklar.
 # Kod silinmez; durum sayfasında "Atlandı" olarak gerekçesiyle görünür.
 DISABLED = [
+    ("nesine_results", "Nesine (sonuçlar)",
+     "Devre dışı: robots.txt sonuç sayfalarına otomatik erişimi yasaklıyor."),
     ("flashscore", "Flashscore (fikstür, sonuç, eksik oyuncu)",
      "Devre dışı: kullanım şartları otomatik istek ve veri çıkarmayı yasaklıyor (md. 2.9-2.10)."),
 ]

@@ -19,7 +19,7 @@ from .markets import all_labels, all_probs
 from .markets import categories as market_categories
 from .model import market_lambda
 from .model.simulate import seed_for
-from .agents import market_map, odds_analysis, bulletin, commentator, consensus, market, scorecard, simulation, squad, standings, stats, trends, value
+from .agents import iddaa_archive, market_map, odds_analysis, bulletin, commentator, consensus, market, scorecard, simulation, squad, standings, stats, trends, value
 from .http import PoliteClient
 from .sources import football_data as fd
 from .sources import archive, news_rss, registry, tff
@@ -493,6 +493,12 @@ def main(argv=None):
             log.warning("Maç %s - %s işlenemedi: %s", f.home, f.away, e)
             bad_matches.append(f"{f.home} - {f.away}: {type(e).__name__}")
 
+    # iddaa oran arşivi: yalnız bu çalıştırmada kaynaktan gelen maçlar (açılış bir kez, kapanış ko öncesi)
+    arch_info = None
+    try:
+        arch_info = _update_iddaa_archive(data, today, now, matches, hist, hist_results)
+    except Exception as e:  # noqa: BLE001
+        log.warning("iddaa arşivi güncellenemedi: %s", e)
     # Önceki çalıştırmada olup bu sefer kaynaktan düşen maçları koru (kaynak geçici çöktüyse)
     ids = {m["id"] for m in matches}
     for mid, pm in prev.items():
@@ -530,6 +536,7 @@ def main(argv=None):
                     {"id": "OTHER", "name": "Diğer ligler", "country": "", "priority": 99} for l in leagues_present],
         "matches": matches,
         "standings": {l: tables[l] for l in leagues_present if tables.get(l)},
+        "iddaa_archive": arch_info,
         "market_labels": all_labels(),
         "market_categories": market_categories(),
     }
@@ -557,6 +564,30 @@ def main(argv=None):
     log.info("Bitti: %d maç (%d modelli), %d kaynak ok", len(matches), n_model,
              sum(1 for s in board.as_list() if s["status"] == "ok"))
     return doc
+
+
+def _update_iddaa_archive(data: Path, today: date, now: datetime, matches: list[dict], hist: dict,
+                          hist_results: dict) -> dict:
+    """Arşive birleştir, son 7 günün sonuçlarını doldur, manifesti yaz; sonuçlu satır ≥30 ise iddaa eşleşmesi."""
+    iddaa_archive.update(data, matches, {}, now)
+    by_src: dict[str, dict[str, list[dict]]] = {}
+    for lid, rows in hist.items():
+        for r in rows:
+            by_src.setdefault(r.get("src") or "football-data.co.uk", {}).setdefault(lid, []).append(r)
+    sources = [(name, registry.results_from_history(h)) for name, h in by_src.items()]
+    sources.append(("diğer", hist_results))
+    filled = iddaa_archive.fill_results(data, today, now, sources, registry.lookup_result)
+    idx = iddaa_archive.write_index(data, now)
+    info = {"rows": idx["rows"], "resulted": idx["resulted"], "filled_now": filled,
+            "min_n": odds_analysis.IDDAA_MIN_N, "months": sorted(idx["months"])}
+    if idx["resulted"] >= odds_analysis.IDDAA_MIN_N:
+        pool = odds_analysis.Pool(odds_analysis.rows_from_iddaa(iddaa_archive.all_rows(data)))
+        for m in matches:
+            imp = (m.get("market") or {}).get("implied")
+            a = pool.analyze(imp, m.get("league"), min_n=odds_analysis.IDDAA_MIN_N) if imp else None
+            if a and a.get("status") != "az_ornek":
+                m["odds_analysis_iddaa"] = a
+    return info
 
 
 def _cross_source(fixture_lists: dict, merged: list, today: date) -> dict:

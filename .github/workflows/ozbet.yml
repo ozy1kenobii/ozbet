@@ -6,6 +6,10 @@ on:
     - cron: "30 5 * * *"    # 08:30 TR – günlük bülten + dünün karnesi
     - cron: "30 10 * * *"   # 13:30 TR – kadro/oran güncellemesi
     - cron: "30 15 * * *"   # 18:30 TR – kadro/oran güncellemesi
+    # Akşam maçlarının kapanış oranını iddaa arşivine (data/iddaa_archive) yakalamak için; aynı tam çalıştırma,
+    # concurrency grubu üst üste binmeyi engeller. Kapanış = maç başlamadan önce görülen son oran.
+    - cron: "30 17 * * *"   # 20:30 TR – kapanış oranı yakalama
+    - cron: "30 19 * * *"   # 22:30 TR – kapanış oranı yakalama (geç maçlar)
     - cron: "0 3 * * 1"     # Pazartesi 06:00 TR – haftalık backtest raporu
   workflow_dispatch:
     inputs:

@@ -45,7 +45,7 @@ def test_pool_analyze_finds_bias_and_ci():
     m1 = next(x for x in out["markets"] if x["market"] == "1")
     assert m1["ci"][0] <= m1["observed"] <= m1["ci"][1]
     assert abs(m1["market_p"] - 0.5) < 0.03
-    assert m1["diff"] > 0                                   # yanlılık yönü doğru bulunur
+    assert m1["observed"] > m1["market_p"]                  # yanlılık yönü doğru bulunur
     assert abs(sum(x["observed"] for x in out["markets"][:3]) - 1) < 1e-6
 
 
@@ -53,3 +53,25 @@ def test_pool_small_sample():
     pool = oa.Pool({"TR1": _hist(200)["TR1"]})
     out = pool.analyze({"1": 0.9, "X": 0.06, "2": 0.04}, "TR1")
     assert out["status"] == "az_ornek"
+
+
+def test_pool_goals_scores_and_no_notable():
+    pool = oa.Pool(_hist())
+    out = pool.analyze({"1": 0.5, "X": 0.27, "2": 0.23}, "TR1")
+    assert [x["market"] for x in out["markets"]] == ["1", "X", "2", "O2.5", "U2.5"]
+    assert all("notable" not in x and "diff" not in x for x in out["markets"])
+    assert all(x["note"] in (None, oa.NOTE_OK, oa.NOTE_OUT) for x in out["markets"])
+    assert len(out["goals"]) == 6 and abs(sum(out["goals"]) - 1) < 1e-3
+    assert len(out["scores"]) == 5 and all(len(r) == 5 for r in out["scores"])
+    assert abs(sum(map(sum, out["scores"])) + out["scores_other"] - 1) < 1e-3
+    # sentetik skorlar: 2-0, 1-1, 0-1 → toplam gol 2 ya da 1
+    assert out["goals"][0] == 0 and out["goals"][3] == 0
+    assert abs(out["scores"][2][0] - out["markets"][0]["observed"]) < 1e-3
+    assert out["date_range"] == ["2025-01-01", "2025-01-01"]
+
+
+def test_rows_from_iddaa_only_resulted():
+    rows = [{"lg": "TR1", "d": "2026-11-07", "ft": [1, 0], "o": {"1": 2.0}, "c": {"1": 1.9}},
+            {"lg": "TR1", "d": "2026-11-07", "ft": None, "o": {"1": 2.0}, "c": {}}]
+    h = oa.rows_from_iddaa(rows)
+    assert len(h["TR1"]) == 1 and h["TR1"][0]["odds_close"] == {"1": 1.9}
