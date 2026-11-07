@@ -123,10 +123,11 @@ def collect_history(client, board, today, leagues_needed) -> dict[str, list[dict
     ok, fail = 0, []
     for lid in leagues_needed:
         lg = config.LEAGUE_BY_ID[lid]
-        if not lg.fd_code:
+        if not lg.fd_code and not lg.fd_extra:
             continue
         try:
-            rows = fd.history(client, lg.fd_code, seasons)
+            rows = (fd.history(client, lg.fd_code, seasons) if lg.fd_code
+                    else fd.history_new(client, lg.fd_extra, seasons))
             if rows:
                 hist[lid] = rows; ok += 1
             else:
@@ -233,7 +234,9 @@ def main(argv=None):
     today_fx = [f for f in all_fx if f.kickoff.date() == today]
 
     # 2) Geçmiş veri + xG
-    needed = [lg.id for lg in config.LEAGUES if lg.fd_code]
+    # "new" lig dosyaları yalnız bugün bültende maçı olan ligler için indirilir
+    present = {f.league_id for f in today_fx}
+    needed = [lg.id for lg in config.LEAGUES if lg.fd_code or (lg.fd_extra and lg.id in present)]
     hist = collect_history(client, board, today, needed)
     xg_rows = {}
     for src in registry.XG_SOURCES:

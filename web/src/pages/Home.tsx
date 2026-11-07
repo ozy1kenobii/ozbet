@@ -9,6 +9,10 @@ import { MarketScanner } from '../components/MarketScanner';
 import { readLS, writeLS } from '../lib/storage';
 
 const FILTER_KEY = 'ozbet-filtre-v2';
+const SCOPE_KEY = 'ozbet-kapsam';
+type Scope = 'analyzed' | 'all';
+const loadScope = (): Scope => (readLS<string>(SCOPE_KEY, 'analyzed') === 'all' ? 'all' : 'analyzed');
+const isAnalyzed = (m: Match) => !!m.model;
 type TimeFilter = 'soon' | 'evening' | 'all';
 interface Filters { time: TimeFilter; strong: boolean; value: boolean; open: Record<string, boolean> }
 const DEFAULTS: Filters = { time: 'all', strong: false, value: false, open: {} };
@@ -92,10 +96,16 @@ interface Group { id: string; name: string; priority: number; modeled: Match[]; 
 function DayView({ day }: { day: DayFile }) {
   const [f, setF] = useState<Filters>(loadFilters);
   const [q, setQ] = useState('');
+  const [scope, setScopeState] = useState<Scope>(loadScope);
+  const setScope = (s: Scope) => { setScopeState(s); writeLS(SCOPE_KEY, s); };
   const upd = (n: Filters) => { setF(n); writeLS(FILTER_KEY, n); };
   const now = Date.now();
 
-  const matches = useMemo(() => (Array.isArray(day.matches) ? day.matches : []), [day]);
+  const allMatches = useMemo(() => (Array.isArray(day.matches) ? day.matches : []), [day]);
+  const nAnalyzed = useMemo(() => allMatches.filter(isAnalyzed).length, [allMatches]);
+  // Seçili sekme: lig grupları, MarketScanner, öne çıkanlar ve saat filtresi yalnız bu kümeyle çalışır
+  const matches = useMemo(() => (scope === 'analyzed' ? allMatches.filter(isAnalyzed) : allMatches), [allMatches, scope]);
+  const scopedDay = useMemo<DayFile>(() => ({ ...day, matches }), [day, matches]);
   const qf = fold(q.trim());
 
   const filtered = matches.filter((m) =>
@@ -130,8 +140,24 @@ function DayView({ day }: { day: DayFile }) {
   return (
     <div>
       <SourceSummary day={day} />
-      <Highlights day={day} now={now} />
-      <MarketScanner day={day} />
+      <div className="mt-3 seg w-full flex" role="tablist" aria-label="Maç kapsamı">
+        {([['analyzed', 'Analizli', nAnalyzed], ['all', 'Tüm bülten', allMatches.length]] as const).map(([k, t, n]) => (
+          <button key={k} className="flex-1" role="tab" aria-selected={scope === k} aria-pressed={scope === k} onClick={() => setScope(k)}
+            title={k === 'analyzed' ? 'Modeli olan (bilinen lig) maçlar' : 'Bültendeki tüm maçlar; çoğu yalnız oranlı'}>
+            {t} <span className="num">({n})</span>
+          </button>
+        ))}
+      </div>
+      {scope === 'analyzed' && nAnalyzed === 0 && allMatches.length > 0 && (
+        <div className="mt-4">
+          <Empty title="Bugün analizli maç yok">
+            Bültendeki {allMatches.length} maçın hiçbiri modellenen liglerde değil.{' '}
+            <button className="text-accent font-semibold underline-offset-2 hover:underline" onClick={() => setScope('all')}>Tüm bülteni göster</button>
+          </Empty>
+        </div>
+      )}
+      <Highlights day={scopedDay} now={now} />
+      {matches.length > 0 && <MarketScanner day={scopedDay} />}
 
       {/* Araç çubuğu */}
       <div className="mt-6 space-y-2">
@@ -158,7 +184,7 @@ function DayView({ day }: { day: DayFile }) {
         {anyFilter ? `${filtered.length} / ${matches.length} maç` : `${matches.length} maç`} · {day.run_label} çalıştırması, güncelleme {fmtTime(day.generated_at)}
       </p>
 
-      {!matches.length && <div className="mt-4"><Empty title="Bu gün için maç yok" /></div>}
+      {!allMatches.length && <div className="mt-4"><Empty title="Bu gün için maç yok" /></div>}
       {matches.length > 0 && !groups.length && (
         <div className="mt-4">
           <Empty title="Filtreye uyan maç yok">
@@ -228,7 +254,12 @@ function PlainList({ ms, date, showLeague }: { ms: Match[]; date: string; showLe
             <Link to={matchHref(date, m)} className="flex items-center gap-3 px-3.5 py-2 min-h-[52px] hover:bg-sunken/60">
               <span className="w-11 shrink-0 text-[14px] font-semibold num"><KickoffCell m={m} /></span>
               <span className="min-w-0 flex-1">
-                {showLeague && <span className="block t-micro truncate">{m.league_name}</span>}
+                {(showLeague || (isOther(m) && !m.model)) && (
+                  <span className="flex items-center gap-1.5 min-w-0">
+                    {showLeague && <span className="t-micro truncate">{m.league_name}</span>}
+                    {isOther(m) && !m.model && <span className="shrink-0 rounded px-1 text-[10px] font-semibold leading-[16px] border border-line text-muted">Yalnız oran</span>}
+                  </span>
+                )}
                 <span className="block truncate text-[15px] leading-tight">{m.home.name} – {m.away.name}</span>
               </span>
               {m.status === 'finished' && m.result ? (

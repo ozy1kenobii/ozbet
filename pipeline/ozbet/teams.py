@@ -11,13 +11,20 @@ from functools import lru_cache
 from rapidfuzz import fuzz, process
 
 _TR = str.maketrans({"ı": "i", "İ": "i", "ş": "s", "Ş": "s", "ğ": "g", "Ğ": "g",
-                     "ç": "c", "Ç": "c", "ö": "o", "Ö": "o", "ü": "u", "Ü": "u"})
+                     "ç": "c", "Ç": "c", "ö": "o", "Ö": "o", "ü": "u", "Ü": "u",
+                     # NFKD'nin ayrıştırmadığı harfler (İskandinav/Polonya/Almanya): yoksa "Brøndby" → "brndby"
+                     "ø": "o", "Ø": "o", "æ": "ae", "Æ": "ae", "ß": "ss", "ł": "l", "Ł": "l",
+                     "đ": "d", "Đ": "d"})
 _NOISE = re.compile(
     r"\b(fc|fk|sk|cf|afc|ac|as|a\.?s\.?|jk|bk|cfc|sc|sv|ssc|ss|vfb|vfl|tsg|1\.|calcio|club|kulubu|futbol|football|de|the)\b"
 )
 
 # kanonik ad → bilinen yazımlar (normalize edilmeden önce; normalleştirme ayrıca uygulanır)
 ALIASES: dict[str, list[str]] = {
+    # football-data "new" ligleri (İngilizce adlar ↔ yerel yazımlar)
+    "FC Copenhagen": ["FC Copenhagen", "Copenhagen", "København", "FC København", "F.C. København",
+                      "Kopenhag"],
+    "Djurgarden": ["Djurgarden", "Djurgårdens IF", "Djurgardens IF", "Djurgården"],
     # Süper Lig
     "Galatasaray": ["Galatasaray", "Galatasaray AS", "Galatasaray A.Ş."],
     "Fenerbahçe": ["Fenerbahce", "Fenerbahçe SK", "Fenerbahce Istanbul"],

@@ -121,3 +121,54 @@ def fixtures(client: PoliteClient, day: date) -> list[Fixture]:
             extra={"referee": r["Referee"].strip()} if isinstance(r.get("Referee"), str) else {},
         ))
     return out
+
+
+def _new_season_label(raw, summer: bool) -> str | None:
+    """'2025/2026' → '2526'; yaz ligi '2025' → '2526' (config.summer_label). Tanınmayan → None."""
+    s = str(raw).strip()
+    if s.endswith(".0"):
+        s = s[:-2]
+    if "/" in s:
+        a, _, b = s.partition("/")
+        if a.isdigit() and b.isdigit():
+            return f"{int(a) % 100:02d}{int(b) % 100:02d}"
+        return None
+    if s.isdigit() and len(s) == 4:
+        y = int(s)
+        return config.summer_label(y) if summer else f"{(y - 1) % 100:02d}{y % 100:02d}"
+    return None
+
+
+def history_new(client: PoliteClient, code: str, seasons: list[str]) -> list[dict]:
+    """football-data.co.uk "new leagues" dosyası (new/{KOD}.csv: tüm sezonlar tek dosyada).
+
+    Kolonlar: Country,League,Season,Date,Time,Home,Away,HG,AG,Res,PSCH..,MaxCH..,AvgCH..
+    İY skoru / şut / korner yok → bu alanlar None (model varsayılan ht_share, şut harmanı yok).
+    `seasons` config.season_codes biçimindedir ('2627','2526',...); yaz ligleri (config.SUMMER_FD)
+    için takvim yılına çevrilir (config.summer_years)."""
+    summer = code in config.SUMMER_FD
+    if summer:
+        wanted = {config.summer_label(y) for y in config.summer_years(seasons)}
+    else:
+        wanted = set(seasons)
+    text = client.get(f"{BASE}/new/{code}.csv", ttl=6 * 3600)
+    df = _read_csv(text)
+    rows: list[dict] = []
+    for _, r in df.iterrows():
+        lab = _new_season_label(r.get("Season"), summer)
+        if lab is None or lab not in wanted:
+            continue
+        d = _parse_date(r.get("Date"))
+        hg, ag = _num(r.get("HG")), _num(r.get("AG"))
+        home, away = r.get("Home"), r.get("Away")
+        if d is None or hg is None or ag is None or not isinstance(home, str) or not isinstance(away, str):
+            continue
+        rows.append({
+            "date": d, "season": lab, "home": home.strip(), "away": away.strip(),
+            "hg": int(hg), "ag": int(ag), "hthg": None, "htag": None,
+            "hs": None, "as": None, "hst": None, "ast": None, "hc": None, "ac": None,
+            "hy": None, "ay": None, "referee": None, "hr": None, "ar": None,
+            "odds_open": {}, "odds_close": _odds_from_row(r, closing=True),
+            "src": "football-data.co.uk/new",
+        })
+    return rows

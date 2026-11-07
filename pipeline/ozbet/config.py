@@ -108,11 +108,51 @@ EXTRA_FD_LEAGUES = {
     "G1": ("GRE1", "Super League", "Yunanistan", (
         "yunanistan süper lig", "greece super league", "yunanistan süper ligi", "yunanistan super league",
         "yunanistan super league 1", "greece super league 1")),
+    "SC1": ("SCO2", "Championship", "İskoçya", (
+        "iskoçya championship", "scottish championship", "scotland championship")),
+    # "İngiltere 1. Lig"/"2. Lig" belirsiz (Championship de olabilir) → yalnız açık adlar
+    "E2": ("ENG3", "League One", "İngiltere", (
+        "ingiltere league one", "league one", "efl league one", "england league one")),
+    "E3": ("ENG4", "League Two", "İngiltere", (
+        "ingiltere league two", "league two", "efl league two", "england league two")),
 }
 for i, (code, (lid, name, country, al)) in enumerate(EXTRA_FD_LEAGUES.items()):
     lg = League(lid, name, country, 20 + i, fd_code=code, aliases=al)
     LEAGUES.append(lg)
     LEAGUE_BY_ID[lid] = lg
+
+# football-data.co.uk "new leagues" dosyaları (new/{KOD}.csv): tek dosya, tüm sezonlar, YALNIZ en üst lig.
+# İY skoru ve şut yok → model ht_share varsayılanıyla ve şut harmanı olmadan çalışır.
+# summer=True: takvim yılı sezonu ("2025"); False: "2025/2026".
+# Türkçe takma adlar yalnız bültende (Nesine) görülmüş yazımlardır; ikinci kademeler ("Danimarka 1. Lig",
+# "Avusturya 2. Lig", "Polonya 1. Lig", "İsviçre Challenge Ligi") bilerek EŞLENMEZ.
+NEW_FD_LEAGUES = {
+    "AUT": ("AUT1", "Bundesliga", "Avusturya", False, (
+        "avusturya bundesliga", "austria bundesliga")),
+    "DNK": ("DEN1", "Superliga", "Danimarka", False, (
+        "danimarka süper ligi", "denmark superliga")),
+    "SWZ": ("SUI1", "Super League", "İsviçre", False, ("switzerland super league",)),
+    "POL": ("POL1", "Ekstraklasa", "Polonya", False, ("polonya ekstraklasa", "poland ekstraklasa")),
+    "ROU": ("ROU1", "Liga 1", "Romanya", False, ("romanya 1. lig", "romania liga 1")),
+    "RUS": ("RUS1", "Premier Lig", "Rusya", False, ("rusya premier lig", "russia premier league")),
+    "NOR": ("NOR1", "Eliteserien", "Norveç", True, ("norveç eliteserien", "norway eliteserien")),
+    "SWE": ("SWE1", "Allsvenskan", "İsveç", True, ("isveç allsvenskan", "sweden allsvenskan")),
+    "FIN": ("FIN1", "Veikkausliiga", "Finlandiya", True, ("finlandiya veikkausliiga", "finland veikkausliiga")),
+    "IRL": ("IRL1", "Premier Division", "İrlanda", True, ("ireland premier division",)),
+    "USA": ("USA1", "MLS", "ABD", True, ("abd mls", "usa mls", "major league soccer")),
+    "BRA": ("BRA1", "Serie A", "Brezilya", True, ("brezilya serie a", "brazil serie a")),
+    "ARG": ("ARG1", "Liga Profesional", "Arjantin", True, (
+        "arjantin primera lpf", "arjantin primera lpf, kapanış", "arjantin primera lpf, açılış",
+        "argentina liga profesional")),
+    "MEX": ("MEX1", "Liga MX", "Meksika", False, ("mexico liga mx",)),
+    "JPN": ("JPN1", "J1 League", "Japonya", True, ("japan j1 league",)),
+    "CHN": ("CHN1", "Super League", "Çin", True, ("china super league",)),
+}
+for i, (code, (lid, name, country, _summer, al)) in enumerate(NEW_FD_LEAGUES.items()):
+    lg = League(lid, name, country, 40 + i, fd_extra=code, aliases=al)
+    LEAGUES.append(lg)
+    LEAGUE_BY_ID[lid] = lg
+SUMMER_FD = {code for code, v in NEW_FD_LEAGUES.items() if v[3]}
 
 # ClubElo (lig-arası Elo düzeltmesi)
 ELO_HFA = 63.0             # iç saha avantajı (Elo puanı); clubelo.com ülkeye göre ~50-80 arası kullanır
@@ -134,3 +174,17 @@ def season_codes(today) -> list[str]:
         y = start - k
         out.append(f"{y % 100:02d}{(y + 1) % 100:02d}")
     return out
+
+
+def summer_years(seasons: list[str]) -> list[int]:
+    """season_codes çıktısını takvim yılı sezonlarına çevirir: '2627','2526','2425' → 2027, 2026, 2025, 2024.
+    Sezon kodunun başlangıç yılı + (en yeni kod için) bir sonraki yıl; dosyada olmayan yıl zaten boş döner."""
+    if not seasons:
+        return []
+    ys = [2000 + int(s[:2]) for s in seasons]
+    return sorted({ys[0] + 1, *ys}, reverse=True)
+
+
+def summer_label(year: int) -> str:
+    """Takvim yılı sezonunu satır 'season' etiketine çevirir (2026 → '2627'), standings ile uyumlu."""
+    return f"{year % 100:02d}{(year + 1) % 100:02d}"

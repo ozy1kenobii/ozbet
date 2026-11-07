@@ -141,7 +141,7 @@ def test_predict_league_without_model_is_not_invented_from_elo():
     ("Portekiz 2. Lig", None), ("Türkiye 2. Lig", None), ("Türkiye 1. Lig Kadınlar", None),
     ("Hollanda Eredivisie Kadınlar", None), ("Belçika Pro League U21", None), ("Romanya 2. Lig", None),
     ("Katar 2. Lig", None), ("İtalya Serie C", None), ("Belçika Birinci Lig B", None),
-    ("İskoçya Championship", None), ("Fransa Ulusal Lig", None), ("Hollanda 1. Lig", None),
+    ("İskoçya Championship", "SCO2"), ("Fransa Ulusal Lig", None), ("Hollanda 1. Lig", None),
     ("UEFA Avrupa Ligi Günlük Bahisler", None),
 ])
 def test_league_aliases(raw, exp):
