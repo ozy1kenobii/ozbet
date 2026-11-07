@@ -17,6 +17,12 @@ export const fmtTime = (iso: string | null | undefined) => { const d = safe(iso)
 export const fmtDateTime = (iso: string | null | undefined) => { const d = safe(iso); return d ? dateTimeFmt.format(d) : '–'; };
 /** "2026-11-05" → "Perşembe, 5 Kasım" */
 export const fmtDay = (ymd: string) => { const d = safe(ymd + 'T12:00:00Z'); return d ? longDateFmt.format(d) : ymd; };
+/** Bugün/Yarın/2 gün sonra etiketi (İstanbul saatine göre), yoksa boş. */
+export function relDay(ymd: string): string {
+  const now = new Date(Date.now() + 3 * 3600_000).toISOString().slice(0, 10);
+  const diff = Math.round((Date.parse(ymd + 'T00:00:00Z') - Date.parse(now + 'T00:00:00Z')) / 86400_000);
+  return diff === 0 ? 'Bugün' : diff === 1 ? 'Yarın' : diff === 2 ? '2 gün sonra' : diff === -1 ? 'Dün' : '';
+}
 export const fmtShortDate = (ymd: string) => { const d = safe(ymd.slice(0, 10) + 'T12:00:00Z'); return d ? shortDateFmt.format(d) : ymd; };
 
 export function pct(p: number | null | undefined, digits = 0): string {

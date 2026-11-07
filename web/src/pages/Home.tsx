@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { statusSources, useDay, useIndex, useStatus } from '../lib/data';
-import { fmtDay, fmtTime, istHour, odd } from '../lib/format';
+import { fmtDay, relDay, fmtTime, istHour, odd } from '../lib/format';
 import type { DayFile, Match, Source } from '../lib/types';
 import { HighlightCard, KickoffCell, MatchCard, matchHref } from '../components/MatchCard';
 import { Chevron, Dot, Empty, Loading } from '../components/ui';
@@ -54,7 +54,7 @@ export default function Home() {
             <select id="gun" value={shownDate} onChange={(e) => go(e.target.value)}
               className="w-full min-h-[44px] rounded-md border border-line bg-surface px-3 display text-xl font-semibold appearance-none text-center">
               {!dates.includes(shownDate) && shownDate && <option value={shownDate}>{fmtDay(shownDate)}</option>}
-              {dates.map((d) => <option key={d} value={d}>{fmtDay(d)}{d === latest ? ' (son)' : ''}</option>)}
+              {dates.map((d) => { const r = relDay(d); return <option key={d} value={d}>{r ? `${r} · ` : ''}{fmtDay(d)}</option>; })}
             </select>
           ) : (
             <div className="min-h-[44px] grid place-items-center display text-xl font-semibold">{shownDate ? fmtDay(shownDate) : 'Bülten'}</div>

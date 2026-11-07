@@ -327,8 +327,10 @@ def main(argv=None):
     for src in registry.RESULT_SOURCES:
         got = board.run(src.id, src.name, lambda s=src: s.results(client, today - timedelta(days=1))) or {}
         hist_results.update(got)
+    ahead = today > now.date()   # ileri tarihli bülten: karne/sağlık/son gün dosyasına dokunma
     try:
-        _grade_past(data, today, hist_results)
+        if not ahead:
+            _grade_past(data, today, hist_results)
     except Exception as e:  # noqa: BLE001
         log.warning("Karne puanlama hatası: %s", e)
     rows = scorecard.load_history(data)
@@ -547,11 +549,17 @@ def main(argv=None):
     _write(snap_path, snaps)
     _write(data / f"{today.isoformat()}.json", doc)
     idx = _read(data / "index.json", {"dates": []}) or {"dates": []}
-    latest_date = max([today.isoformat(), *idx.get("dates", [])])
-    if latest_date == today.isoformat():
+    real_today = now.date().isoformat()
+    past = [d for d in idx.get("dates", []) if d <= real_today]
+    if not ahead and today.isoformat() >= max([*past, today.isoformat()]):
         _write(data / "latest.json", doc)
     dates = sorted({*idx.get("dates", []), today.isoformat()}, reverse=True)
-    _write(data / "index.json", {"dates": dates, "latest": dates[0]})
+    # "latest" = gerçek bugüne en yakın geçmiş gün (ileri günler seçicide görünür ama varsayılan değildir)
+    latest = max([d for d in dates if d <= real_today], default=dates[-1])
+    _write(data / "index.json", {"dates": dates, "latest": latest})
+    if ahead:
+        log.info("İleri tarih (%s): yalnız gün dosyası ve indeks yazıldı", today)
+        return
     _write(data / "scorecard.json", card)
     try:
         hsum = health.update(data / "health.json", now_iso(), doc["run_label"], board.as_list(), quality)

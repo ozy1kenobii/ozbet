@@ -90,6 +90,13 @@ jobs:
             python -m ozbet.run --date "$RUN_DATE"
           else
             python -m ozbet.run
+            # Sabah/öğle/18:30 çalıştırmalarında sonraki 2 günün bülteni de (akşam kapanış koşuları yalnız bugün)
+            H=$(date -u +%H)
+            if [ "$H" -lt 17 ]; then
+              for k in 1 2; do
+                python -m ozbet.run --date "$(TZ=Europe/Istanbul date -d "+$k day" +%F)" || echo "İleri gün $k başarısız"
+              done
+            fi
           fi
 
       - name: Backtest
