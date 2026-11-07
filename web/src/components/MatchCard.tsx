@@ -79,6 +79,8 @@ export function MatchCard({ m, date, showLeague = false }: { m: Match; date: str
           <span className="text-[13px] num text-muted shrink-0">{pct(pick.p)}{pick.odds != null && <> · <span className="text-ink">{odd(pick.odds)}</span></>}</span>
           <span className="ml-auto shrink-0">{won != null ? <ResultBadge won={won} /> : <Stars n={pick.stars} size={13} />}</span>
         </Link>
+      ) : m.model?.source === 'piyasa' ? (
+        <p className="mx-3.5 mt-1.5"><Badge tone="neutral" title="Olasılıklar iddaa oranlarından türetildi; bağımsız tahmin değildir">Piyasa modeli</Badge></p>
       ) : m.model ? null : (
         <p className="mx-3.5 mt-1 t-micro">Model yok – yalnız oranlar</p>
       )}

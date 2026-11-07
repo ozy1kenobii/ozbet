@@ -289,13 +289,21 @@ function PickBox({ m }: { m: Match }) {
 function ModelSections({ m }: { m: Match }) {
   const md = m.model!;
   const tg = md.total_goals ?? [];
+  const isMarket = md.source === 'piyasa';
   return (
     <>
-      <Section title="Model olasılıkları" aside={<span className="text-[12px] text-muted num">λ {num(md.lambda_home)} – {num(md.lambda_away)} · {md.sims?.toLocaleString('tr-TR')} simülasyon</span>}>
+      {isMarket && (
+        <div className="mt-6 rounded-md border border-line bg-sunken px-4 py-3 text-[14px]" role="note">
+          <p className="font-semibold">Piyasa modeli</p>
+          <p className="mt-0.5 text-muted">Bu maç için geçmiş veri yok. Olasılıklar iddaa'nın 1X2 ve Alt/Üst oranlarından (marj Shin yöntemiyle temizlenerek) türetildi; bağımsız tahmin değildir, bu yüzden değer etiketi ve tercih verilmez.</p>
+        </div>
+      )}
+      <ConsistencyBox m={m} />
+      <Section title={isMarket ? 'Piyasa modeli olasılıkları' : 'Model olasılıkları'} aside={<span className="text-[12px] text-muted num">λ {num(md.lambda_home)} – {num(md.lambda_away)} · {md.sims?.toLocaleString('tr-TR')} simülasyon</span>}>
         <div className="panel p-4">
           <ProbBar probs={md.probs} home={m.home.name} away={m.away.name} />
           <div className="mt-1.5 flex justify-between text-[13px] text-muted"><span>{m.home.name}</span><span>Beraberlik</span><span>{m.away.name}</span></div>
-          <p className="mt-2 text-[13px] text-muted">Veri kalitesi: {{ high: 'yüksek', medium: 'orta', low: 'düşük' }[md.data_quality] ?? md.data_quality}</p>
+          <p className="mt-2 text-[13px] text-muted">{isMarket ? 'Kaynak: iddaa oranları (piyasa)' : <>Veri kalitesi: {{ high: 'yüksek', medium: 'orta', low: 'düşük' }[md.data_quality as string] ?? md.data_quality}</>}</p>
         </div>
       </Section>
 
@@ -690,5 +698,24 @@ function ConsensusSection({ m }: { m: Match }) {
         </div>
       )}
     </Section>
+  );
+}
+
+function ConsistencyBox({ m }: { m: Match }) {
+  const rows = m.consistency ?? [];
+  if (!rows.length) return null;
+  return (
+    <div className="mt-4 panel p-4">
+      <p className="font-semibold text-[14px]">En iyi fiyatlı seçenekler</p>
+      <p className="mt-0.5 text-[12px] text-muted">Bu maçta iddaa'nın ek marketleri arasında marjı en düşük satırlar (1X2 + Alt/Üst'ten türetilen adil olasılığa göre). Değerli bahis anlamına gelmez; beklenen getiri genelde yine negatiftir.</p>
+      <table className="mt-2 w-full text-[13px] num">
+        <thead><tr className="text-muted text-left"><th className="font-normal">Market</th><th className="font-normal text-right">Oran</th><th className="font-normal text-right">Adil olasılık</th><th className="font-normal text-right">Beklenen getiri</th></tr></thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr key={r.market}><td>{r.label}</td><td className="text-right">{r.odds.toFixed(2)}</td><td className="text-right">%{(r.fair_p * 100).toFixed(1)}</td><td className="text-right">{r.ev >= 0 ? '+' : ''}{(r.ev * 100).toFixed(1)}%</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }

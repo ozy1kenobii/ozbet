@@ -17,6 +17,8 @@ from pathlib import Path
 from . import config, health, validate
 from .markets import all_labels, all_probs
 from .markets import categories as market_categories
+from .model import market_lambda
+from .model.simulate import seed_for
 from .agents import market_map, odds_analysis, bulletin, commentator, consensus, market, scorecard, simulation, squad, standings, stats, trends, value
 from .http import PoliteClient
 from .sources import football_data as fd
@@ -434,7 +436,24 @@ def main(argv=None):
                                                   referee=f.extra.get("referee"))
             except Exception as e:  # noqa: BLE001
                 log.warning("Simülasyon %s: %s", mid, e); m["model"] = None
-            if m["model"]:
+            # piyasa-tabanlı model: lig modeli yoksa m.model, varsa kıyas için m.market_model
+            try:
+                mm = market_lambda.build_model(f.odds, seed_for("mkt-" + mid), config.MC_SIMS)
+            except Exception as e:  # noqa: BLE001
+                log.info("Piyasa modeli %s: %s", mid, e); mm = None
+            if mm and not m["model"]:
+                m["model"] = mm
+            elif mm:
+                m["market_model"] = {k: mm[k] for k in ("lambda_home", "lambda_away", "rho", "ht_share",
+                                                        "probs", "extra", "htft", "fit_kl", "source")}
+            try:
+                m["consistency"] = market_lambda.consistency(m["odds"], mm)
+            except Exception as e:  # noqa: BLE001
+                log.info("Tutarlılık %s: %s", mid, e); m["consistency"] = []
+            if m["model"] and m["model"].get("source") == "piyasa":
+                m["provenance"]["model"] = {"source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC", "t": now_iso()}
+                m["flags"].append("Piyasa modeli")
+            elif m["model"]:
                 m["provenance"]["model"] = {"source": "OZBET Dixon-Coles + 10.000 MC", "t": now_iso()}
                 if m["model"]["data_quality"] == "low":
                     m["flags"].append("Düşük veri")
@@ -444,11 +463,12 @@ def main(argv=None):
                 m["flags"].append("Lig dışı/düşük kapsam")
             # konsensüs + değer + yorum
             ext = find_prediction(preds, f)
-            m["consensus"] = consensus.build(ext, (m["model"] or {}).get("probs"), (mk or {}).get("implied"))
+            m["consensus"] = consensus.build(ext, None if (m["model"] or {}).get("source") == "piyasa"
+                                       else (m["model"] or {}).get("probs"), (mk or {}).get("implied"))
             if ext:
                 m["provenance"]["predictions"] = {"source": ", ".join(e["source"] for e in ext),
                                                   "t": ext[0]["fetched_at"]}
-            if m["model"] and mk and "1" in mk["implied"] and max(
+            if m["model"] and m["model"].get("source") != "piyasa" and mk and "1" in mk["implied"] and max(
                     abs(m["model"]["probs"][k] - mk["implied"][k]) for k in ("1", "X", "2")) > value.MAX_EDGE:
                 m["flags"].append("Model-piyasa farkı çok büyük (veri hatası olabilir)")
             if th and ta and rows_l:
@@ -462,9 +482,9 @@ def main(argv=None):
                 except Exception as e:  # noqa: BLE001
                     log.info("Trend %s: %s", mid, e)
             cup = bool(lg and lg.cup) or not lg
-            if cup and m["model"]:
+            if cup and m["model"] and m["model"].get("source") != "piyasa":
                 m["flags"].append(CUP_FLAG_ELO if m["model"].get("method") == "elo" else CUP_FLAG)
-            m["value"] = [] if cup else value.find_value(all_probs(m["model"]), m["odds"], (mk or {}).get("implied"), trust)
+            m["value"] = [] if (cup or (m["model"] or {}).get("source") == "piyasa") else value.find_value(all_probs(m["model"]), m["odds"], (mk or {}).get("implied"), trust)
             commentator.annotate(m, trust, use_llm=not args.no_llm and lg is not None)
             if f.result:
                 m["status"] = "finished"
