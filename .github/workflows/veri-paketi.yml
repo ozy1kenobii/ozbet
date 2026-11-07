@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   paket:
@@ -22,8 +22,10 @@ jobs:
             done
           done
           ls fd | wc -l
-      - uses: actions/upload-artifact@v4
-        with:
-          name: fd-csv
-          path: fd
-          retention-days: 30
+      - name: backtest-veri dalına yaz
+        run: |
+          cd fd
+          git init -q -b backtest-veri
+          git config user.name "ozbet-bot"; git config user.email "ozbet-bot@users.noreply.github.com"
+          git add . && git commit -qm "football-data ham CSV ($(date -u +%F))"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" backtest-veri
