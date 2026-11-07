@@ -39,6 +39,8 @@ jobs:
       contents: write   # yalnızca data/ commit'i için
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main   # sıradaki çalıştırma tetiklendiği anki eski commit'i değil, en güncel veriyi alsın
 
       - name: Python
         if: github.event_name != 'push'
