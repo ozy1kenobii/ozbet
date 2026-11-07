@@ -12,7 +12,7 @@ const FILTER_KEY = 'ozbet-filtre-v2';
 const SCOPE_KEY = 'ozbet-kapsam';
 type Scope = 'analyzed' | 'all';
 const loadScope = (): Scope => (readLS<string>(SCOPE_KEY, 'analyzed') === 'all' ? 'all' : 'analyzed');
-const isAnalyzed = (m: Match) => !!m.model;
+const isAnalyzed = (m: Match) => !!m.model && m.model.source !== 'piyasa';   // piyasa modeli "analizli" sayılmaz
 type TimeFilter = 'soon' | 'evening' | 'all';
 interface Filters { time: TimeFilter; strong: boolean; value: boolean; open: Record<string, boolean> }
 const DEFAULTS: Filters = { time: 'all', strong: false, value: false, open: {} };
@@ -295,7 +295,7 @@ function Highlights({ day, now }: { day: DayFile; now: number }) {
       .slice(0, 4).forEach((m) => push(m, 'value'));
     // Düşen oran: önce modelli maçlar, sonra yakın başlama saati
     ms.filter((m) => (m.market?.drop_alarms?.length ?? 0) > 0)
-      .sort((a, b) => (Number(!!b.model) - Number(!!a.model)) || Math.abs(Date.parse(a.kickoff) - now) - Math.abs(Date.parse(b.kickoff) - now))
+      .sort((a, b) => (Number(isAnalyzed(b)) - Number(isAnalyzed(a))) || Math.abs(Date.parse(a.kickoff) - now) - Math.abs(Date.parse(b.kickoff) - now))
       .slice(0, 4).forEach((m) => push(m, 'drop'));
     return out;
   }, [day, now]);
