@@ -17,6 +17,8 @@ export interface Selection {
   p: number | null;         // model olasılığı
   odds: number | null;
   score_matrix: number[][] | null;
+  implied_p?: number | null;  // piyasanın marjı temizlenmiş olasılığı
+  mbs?: number | null;        // iddaa minimum bahis sayısı
 }
 
 const KEY = 'ozbet-kupon-v1';
@@ -46,6 +48,8 @@ export function CouponProvider({ children }: { children: ReactNode }) {
       p: allProbs(m)[market] ?? null,
       odds: m.odds?.[market] ?? null,
       score_matrix: m.model?.score_matrix ?? null,
+      implied_p: (m.market?.implied as Record<string, number | undefined> | undefined)?.[market] ?? null,
+      mbs: m.mbs ?? null,
     }]);
   }, []);
   const remove = useCallback((key: string) => setItems((cur) => cur.filter((x) => x.key !== key)), []);
@@ -85,6 +89,38 @@ export interface CouponAnalysis {
   missingP: Selection[];
   correlated: boolean;
   crowded: { league: string; time: string; count: number }[];
+  margin: MarginEffect | null;
+  mbsNeeded: number | null;   // kupondaki en yüksek MBS
+  mbsShort: boolean;          // maç sayısı MBS'yi karşılamıyor
+}
+
+export interface MarginEffect {
+  /** Piyasa olasılıkları doğruysa kuponun beklenen dönüşü: Π(ima_p × oran). 1'in altı = beklenen kayıp. */
+  marketReturn: number;
+  /** Seçim başına ortalama dönüş (geometrik) — tekli oynansa beklenen dönüş. */
+  perLeg: number;
+  legs: number;
+}
+
+/** Kombine marj etkisi: her bacağın marjı çarpılır. Örn. %20 marjlı 1X2'de bacak dönüşü ≈ 1/1.20 = 0.833;
+ *  2'li ≈ 0.694 (−%31), 3'lü ≈ 0.579 (−%42). Aynı maçtaki seçimler bağımlı olduğundan maç başına bir bacak sayılır. */
+export function marginEffect(items: Pick<Selection, 'matchId' | 'implied_p' | 'odds'>[]): MarginEffect | null {
+  const seen = new Set<string>();
+  const rets: number[] = [];
+  for (const s of items) {
+    if (seen.has(s.matchId)) continue;
+    seen.add(s.matchId);
+    if (s.implied_p == null || s.odds == null || !(s.odds > 1) || !(s.implied_p > 0)) return null;
+    rets.push(s.implied_p * s.odds);
+  }
+  if (!rets.length) return null;
+  const marketReturn = rets.reduce((a, b) => a * b, 1);
+  return { marketReturn, perLeg: Math.pow(marketReturn, 1 / rets.length), legs: rets.length };
+}
+
+/** Teorik: her bacakta aynı marj m varsa n'li kombinenin beklenen ROI'si (1/(1+m))^n − 1. */
+export function comboRoi(margin: number, legs: number): number {
+  return Math.pow(1 / (1 + margin), legs) - 1;
 }
 
 export function analyze(items: Selection[]): CouponAnalysis {
@@ -129,5 +165,9 @@ export function analyze(items: Selection[]): CouponAnalysis {
   }
   const crowded = [...slot.values()].filter((e) => e.ids.size >= 3).map((e) => ({ league: e.league, time: e.time, count: e.ids.size }));
 
-  return { groups, jointP, totalOdds, ev, missingOdds, missingP, correlated, crowded };
+  const margin = byMatch.size > 1 ? marginEffect(items) : null;
+  const mbsVals = items.map((x) => x.mbs).filter((x): x is number => typeof x === 'number' && x > 0);
+  const mbsNeeded = mbsVals.length ? Math.max(...mbsVals) : null;
+  const mbsShort = mbsNeeded != null && byMatch.size < mbsNeeded;
+  return { groups, jointP, totalOdds, ev, missingOdds, missingP, correlated, crowded, margin, mbsNeeded, mbsShort };
 }
