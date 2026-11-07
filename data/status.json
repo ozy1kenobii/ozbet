@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-07T19:09:21+03:00",
+ "generated_at": "2026-11-07T21:11:13+03:00",
  "run_label": "18:30",
  "sources": [
   {
    "id": "nesine_results",
    "name": "Nesine (sonuçlar)",
    "status": "skipped",
-   "fetched_at": "2026-11-07T19:01:55+03:00",
+   "fetched_at": "2026-11-07T21:04:37+03:00",
    "note": "Devre dışı: robots.txt sonuç sayfalarına otomatik erişimi yasaklıyor.",
    "items": 0
   },
@@ -14,7 +14,7 @@
    "id": "flashscore",
    "name": "Flashscore (fikstür, sonuç, eksik oyuncu)",
    "status": "skipped",
-   "fetched_at": "2026-11-07T19:01:55+03:00",
+   "fetched_at": "2026-11-07T21:04:37+03:00",
    "note": "Devre dışı: kullanım şartları otomatik istek ve veri çıkarmayı yasaklıyor (md. 2.9-2.10).",
    "items": 0
   },
@@ -22,23 +22,23 @@
    "id": "nesine",
    "name": "Nesine iddaa bülteni (kod, MBS, oran)",
    "status": "ok",
-   "fetched_at": "2026-11-07T19:01:57+03:00",
+   "fetched_at": "2026-11-07T21:04:39+03:00",
    "note": null,
-   "items": 801
+   "items": 719
   },
   {
    "id": "iddaa",
    "name": "iddaa.com resmi bülten (oran, MBS)",
    "status": "ok",
-   "fetched_at": "2026-11-07T19:02:02+03:00",
+   "fetched_at": "2026-11-07T21:04:42+03:00",
    "note": null,
-   "items": 788
+   "items": 706
   },
   {
    "id": "api_football",
    "name": "API-Football (yedek, anahtar gerekir)",
    "status": "partial",
-   "fetched_at": "2026-11-07T19:02:02+03:00",
+   "fetched_at": "2026-11-07T21:04:42+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -46,7 +46,7 @@
    "id": "football_data_fixtures",
    "name": "football-data.co.uk fixtures.csv (oran yedeği)",
    "status": "ok",
-   "fetched_at": "2026-11-07T19:02:03+03:00",
+   "fetched_at": "2026-11-07T21:04:44+03:00",
    "note": null,
    "items": 81
   },
@@ -54,15 +54,15 @@
    "id": "football_data_history",
    "name": "football-data.co.uk (geçmiş sonuçlar + oranlar)",
    "status": "ok",
-   "fetched_at": "2026-11-07T19:02:58+03:00",
+   "fetched_at": "2026-11-07T21:04:59+03:00",
    "note": null,
-   "items": 21264
+   "items": 18926
   },
   {
    "id": "understat",
    "name": "Understat (xG, 5 büyük lig)",
    "status": "missing",
-   "fetched_at": "2026-11-07T19:02:58+03:00",
+   "fetched_at": "2026-11-07T21:05:02+03:00",
    "note": "RuntimeError: understat bakımda",
    "items": 0
   },
@@ -70,7 +70,7 @@
    "id": "soccerstats_tr2",
    "name": "SoccerStats sonuçlar (1. Lig geçmişi)",
    "status": "missing",
-   "fetched_at": "2026-11-07T19:03:03+03:00",
+   "fetched_at": "2026-11-07T21:05:08+03:00",
    "note": "RuntimeError: soccerstats sonuç sayfaları okunamadı: turkey2: Blocked; turkey2_2026: Blocked; turkey2_2025: Blocked",
    "items": 0
   },
@@ -78,15 +78,15 @@
    "id": "tff_tr2",
    "name": "TFF sonuçlar (1. Lig güncel sezon; Kaynak: TFF (tff.org))",
    "status": "ok",
-   "fetched_at": "2026-11-07T19:03:14+03:00",
+   "fetched_at": "2026-11-07T21:05:31+03:00",
    "note": null,
-   "items": 131
+   "items": 134
   },
   {
    "id": "archive_history",
    "name": "Birikimli sonuç arşivi (modele giren ligler)",
    "status": "ok",
-   "fetched_at": "2026-11-07T19:03:14+03:00",
+   "fetched_at": "2026-11-07T21:05:31+03:00",
    "note": "Henüz eşik altında: BEL1 10/60, ESP1 10/60, GER1 9/60, GER2 9/60, GRE1 7/60, ITA1 12/60, ITA2 10/60, NED1 9/60, POR1 9/60, SCO1 3/60, TR1 9/60",
    "items": 0
   },
@@ -94,7 +94,7 @@
    "id": "api_football_history",
    "name": "API-Football geçmiş (1. Lig vb., anahtar gerekir)",
    "status": "partial",
-   "fetched_at": "2026-11-07T19:03:14+03:00",
+   "fetched_at": "2026-11-07T21:05:31+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -102,15 +102,15 @@
    "id": "tff_referees",
    "name": "TFF hakem atamaları (Süper Lig; Kaynak: TFF (tff.org))",
    "status": "ok",
-   "fetched_at": "2026-11-07T19:06:40+03:00",
-   "note": "99 maç hakemi okundu; 80 geçmiş satıra, 1 bugünkü maça eklendi. Kaynak: TFF (tff.org)",
-   "items": 99
+   "fetched_at": "2026-11-07T21:09:06+03:00",
+   "note": "49 maç hakemi okundu; 44 geçmiş satıra, 0 bugünkü maça eklendi. Kaynak: TFF (tff.org)",
+   "items": 49
   },
   {
    "id": "clubelo",
    "name": "ClubElo (kulüp Elo puanları, lig-arası düzeltme)",
    "status": "missing",
-   "fetched_at": "2026-11-07T19:07:28+03:00",
+   "fetched_at": "2026-11-07T21:09:53+03:00",
    "note": "HTTPError: 502 Server Error: Bad Gateway for url: http://api.clubelo.com/2026-11-07",
    "items": 0
   },
@@ -118,7 +118,7 @@
    "id": "transfermarkt",
    "name": "Transfermarkt (sakatlık listesi)",
    "status": "partial",
-   "fetched_at": "2026-11-07T19:07:46+03:00",
+   "fetched_at": "2026-11-07T21:10:02+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -126,15 +126,15 @@
    "id": "news_rss",
    "name": "Haber akışları (RSS/Atom: A Spor, NTV Spor, Fotomaç, TRT, AA, ESPN, Sky...)",
    "status": "ok",
-   "fetched_at": "2026-11-07T19:08:04+03:00",
-   "note": "15 akış okundu; okunamayan: espn_soccer(boş)",
-   "items": 29
+   "fetched_at": "2026-11-07T21:10:14+03:00",
+   "note": "11 akış okundu; okunamayan: espn_soccer(boş)",
+   "items": 5
   },
   {
    "id": "forebet",
    "name": "Forebet (matematiksel tahmin)",
    "status": "missing",
-   "fetched_at": "2026-11-07T19:08:04+03:00",
+   "fetched_at": "2026-11-07T21:10:14+03:00",
    "note": "Blocked: Forebet bot koruması (Cloudflare) erişimi engelliyor: HTTP 403: https://www.forebet.com/en/football-tips-and-predictions-for-today",
    "items": 0
   },
@@ -142,7 +142,7 @@
    "id": "sportytrader",
    "name": "SportyTrader (uzman tahmini)",
    "status": "ok",
-   "fetched_at": "2026-11-07T19:08:39+03:00",
+   "fetched_at": "2026-11-07T21:10:28+03:00",
    "note": null,
    "items": 13
   },
@@ -150,7 +150,7 @@
    "id": "freesupertips",
    "name": "FreeSuperTips (ipucu)",
    "status": "ok",
-   "fetched_at": "2026-11-07T19:08:54+03:00",
+   "fetched_at": "2026-11-07T21:11:02+03:00",
    "note": null,
    "items": 20
   },
@@ -158,7 +158,7 @@
    "id": "soccerstats",
    "name": "SoccerStats (lig istatistik eğilimi)",
    "status": "missing",
-   "fetched_at": "2026-11-07T19:09:09+03:00",
+   "fetched_at": "2026-11-07T21:11:07+03:00",
    "note": "RuntimeError: soccerstats: hiçbir lig tablosu okunamadı",
    "items": 0
   },
@@ -166,8 +166,8 @@
    "id": "pipeline",
    "name": "OZBET işleme",
    "status": "ok",
-   "fetched_at": "2026-11-07T19:09:19+03:00",
-   "note": "Eşlenemeyen lig adları (ilk 15): Almanya Böl. Lig, Kuzey , Andorra Primera Division, Arjantin Primera A Kapanış, Kadınlar, Arnavutluk Süper Ligi, Avusturya 2. Lig, Belarus Premier Lig, Belçika 2. Lig, İlk Etap, Belçika Süper Lig, Kadınlar, Bolivya Profesyonel Ligi, Bosna Hersek Premier Lig, Brezilya Serie B, Bulgaristan Parva Ligi, Cezayir 1. Lig, Ekvador Serie A, Eleme Turu, Fas Botola 2",
+   "fetched_at": "2026-11-07T21:11:12+03:00",
+   "note": "Eşlenemeyen lig adları (ilk 15): Andorra Primera Division, Arjantin Primera A Kapanış, Kadınlar, Belçika 2. Lig, İlk Etap, Belçika Süper Lig, Kadınlar, Bolivya Profesyonel Ligi, Brezilya Serie B, Ekvador Serie A, Eleme Turu, Fas Premier Ligi, Fransa Kadınlar 1. Lig, Galler Championship, Güney, Kanada Premier Lig, Playoff, Kolombiya Prmr B Kapanış, Yük. Gr B, Kuzey İrlanda Premiership, Macaristan NB III, Kuzeybatı Grubu, Mısır Kupası",
    "items": 452
   }
  ],
@@ -187,6 +187,7 @@
      "skipped",
      "skipped",
      "skipped",
+     "skipped",
      "skipped"
     ],
     "streak": 9,
@@ -196,6 +197,7 @@
    },
    "flashscore": {
     "history": [
+     "skipped",
      "skipped",
      "skipped",
      "skipped",
@@ -229,11 +231,12 @@
      "ok",
      "ok",
      "ok",
+     "ok",
      "ok"
     ],
     "streak": 0,
     "ok_rate": 1.0,
-    "last_ok": "2026-11-07T19:09:21+03:00",
+    "last_ok": "2026-11-07T21:11:13+03:00",
     "level": "ok"
    },
    "iddaa": {
@@ -250,11 +253,12 @@
      "ok",
      "ok",
      "ok",
+     "ok",
      "ok"
     ],
     "streak": 0,
     "ok_rate": 1.0,
-    "last_ok": "2026-11-07T19:09:21+03:00",
+    "last_ok": "2026-11-07T21:11:13+03:00",
     "level": "ok"
    },
    "api_football": {
@@ -271,9 +275,10 @@
      "partial",
      "partial",
      "partial",
+     "partial",
      "partial"
     ],
-    "streak": 13,
+    "streak": 14,
     "ok_rate": 0.0,
     "last_ok": null,
     "level": "kronik"
@@ -292,11 +297,12 @@
      "ok",
      "ok",
      "ok",
+     "ok",
      "ok"
     ],
     "streak": 0,
     "ok_rate": 1.0,
-    "last_ok": "2026-11-07T19:09:21+03:00",
+    "last_ok": "2026-11-07T21:11:13+03:00",
     "level": "ok"
    },
    "football_data_history": {
@@ -313,11 +319,12 @@
      "ok",
      "ok",
      "ok",
+     "ok",
      "ok"
     ],
     "streak": 0,
     "ok_rate": 1.0,
-    "last_ok": "2026-11-07T19:09:21+03:00",
+    "last_ok": "2026-11-07T21:11:13+03:00",
     "level": "ok"
    },
    "understat": {
@@ -334,9 +341,10 @@
      "missing",
      "missing",
      "missing",
+     "missing",
      "missing"
     ],
-    "streak": 13,
+    "streak": 14,
     "ok_rate": 0.0,
     "last_ok": null,
     "level": "kronik"
@@ -355,9 +363,10 @@
      "missing",
      "missing",
      "missing",
+     "missing",
      "missing"
     ],
-    "streak": 13,
+    "streak": 14,
     "ok_rate": 0.0,
     "last_ok": null,
     "level": "kronik"
@@ -368,11 +377,12 @@
      "ok",
      "ok",
      "ok",
+     "ok",
      "ok"
     ],
     "streak": 0,
     "ok_rate": 1.0,
-    "last_ok": "2026-11-07T19:09:21+03:00",
+    "last_ok": "2026-11-07T21:11:13+03:00",
     "level": "ok"
    },
    "archive_history": {
@@ -389,11 +399,12 @@
      "ok",
      "ok",
      "ok",
+     "ok",
      "ok"
     ],
     "streak": 0,
     "ok_rate": 1.0,
-    "last_ok": "2026-11-07T19:09:21+03:00",
+    "last_ok": "2026-11-07T21:11:13+03:00",
     "level": "ok"
    },
    "api_football_history": {
@@ -410,9 +421,10 @@
      "partial",
      "partial",
      "partial",
+     "partial",
      "partial"
     ],
-    "streak": 13,
+    "streak": 14,
     "ok_rate": 0.0,
     "last_ok": null,
     "level": "kronik"
@@ -423,11 +435,12 @@
      "ok",
      "ok",
      "ok",
+     "ok",
      "ok"
     ],
     "streak": 0,
     "ok_rate": 1.0,
-    "last_ok": "2026-11-07T19:09:21+03:00",
+    "last_ok": "2026-11-07T21:11:13+03:00",
     "level": "ok"
    },
    "clubelo": {
@@ -444,9 +457,10 @@
      "missing",
      "missing",
      "missing",
+     "missing",
      "missing"
     ],
-    "streak": 13,
+    "streak": 14,
     "ok_rate": 0.0,
     "last_ok": null,
     "level": "kronik"
@@ -465,9 +479,10 @@
      "partial",
      "partial",
      "partial",
+     "partial",
      "partial"
     ],
-    "streak": 13,
+    "streak": 14,
     "ok_rate": 0.0,
     "last_ok": null,
     "level": "kronik"
@@ -486,11 +501,12 @@
      "ok",
      "ok",
      "ok",
+     "ok",
      "ok"
     ],
     "streak": 0,
     "ok_rate": 1.0,
-    "last_ok": "2026-11-07T19:09:21+03:00",
+    "last_ok": "2026-11-07T21:11:13+03:00",
     "level": "ok"
    },
    "forebet": {
@@ -507,9 +523,10 @@
      "missing",
      "missing",
      "missing",
+     "missing",
      "missing"
     ],
-    "streak": 13,
+    "streak": 14,
     "ok_rate": 0.0,
     "last_ok": null,
     "level": "kronik"
@@ -528,11 +545,12 @@
      "ok",
      "ok",
      "ok",
+     "ok",
      "ok"
     ],
     "streak": 0,
     "ok_rate": 1.0,
-    "last_ok": "2026-11-07T19:09:21+03:00",
+    "last_ok": "2026-11-07T21:11:13+03:00",
     "level": "ok"
    },
    "freesupertips": {
@@ -549,11 +567,12 @@
      "ok",
      "ok",
      "ok",
+     "ok",
      "ok"
     ],
     "streak": 0,
     "ok_rate": 1.0,
-    "last_ok": "2026-11-07T19:09:21+03:00",
+    "last_ok": "2026-11-07T21:11:13+03:00",
     "level": "ok"
    },
    "soccerstats": {
@@ -570,9 +589,10 @@
      "missing",
      "missing",
      "missing",
+     "missing",
      "missing"
     ],
-    "streak": 13,
+    "streak": 14,
     "ok_rate": 0.0,
     "last_ok": null,
     "level": "kronik"
@@ -591,40 +611,32 @@
      "ok",
      "ok",
      "ok",
+     "ok",
      "ok"
     ],
     "streak": 0,
     "ok_rate": 1.0,
-    "last_ok": "2026-11-07T19:09:21+03:00",
+    "last_ok": "2026-11-07T21:11:13+03:00",
     "level": "ok"
    }
   },
   "alerts": [],
-  "runs": 13
+  "runs": 14
  },
  "quality": {
   "matches": 452,
   "league_mapped_pct": 0.232,
-  "team_match_pct": 0.856,
+  "team_match_pct": 0.812,
   "odds_coverage_pct": 1.0,
   "model_coverage_pct": 0.971,
-  "cross_source_match_pct": 0.877,
+  "cross_source_match_pct": 0.811,
   "cross_source": {
-   "pct": 0.877,
-   "joined": 107,
-   "nesine": 145,
-   "iddaa": 122
+   "pct": 0.811,
+   "joined": 30,
+   "nesine": 51,
+   "iddaa": 37
   },
   "unmatched_teams": {
-   "RUS1": [
-    "CSKA Moskova"
-   ],
-   "ITA2": [
-    "Hellas Verona"
-   ],
-   "TR2": [
-    "Pendikspor"
-   ],
    "POR1": [
     "Sporting CP",
     "Sporting Lizbon"
@@ -638,9 +650,6 @@
    "GER2": [
     "Hertha Berlin"
    ],
-   "BEL1": [
-    "O. H. Leuven"
-   ],
    "ARG1": [
     "Def. Justicia",
     "Ind. Mendoza",
@@ -649,84 +658,68 @@
    ]
   },
   "unknown_leagues": [
-   "Almanya Böl. Lig, Kuzey ",
    "Andorra Primera Division",
    "Arjantin Primera A Kapanış, Kadınlar",
-   "Arnavutluk Süper Ligi",
-   "Avusturya 2. Lig",
-   "Belarus Premier Lig",
    "Belçika 2. Lig, İlk Etap",
    "Belçika Süper Lig, Kadınlar",
    "Bolivya Profesyonel Ligi",
-   "Bosna Hersek Premier Lig",
    "Brezilya Serie B",
-   "Bulgaristan Parva Ligi",
-   "Cezayir 1. Lig",
    "Ekvador Serie A, Eleme Turu",
-   "Fas Botola 2",
    "Fas Premier Ligi",
    "Fransa Kadınlar 1. Lig",
    "Galler Championship, Güney",
-   "Hırvatistan 1. HNL",
    "Kanada Premier Lig, Playoff",
-   "Katar Yıldızlar Ligi",
    "Kolombiya Prmr B Kapanış, Yük. Gr B",
-   "Kuveyt Premier Ligi",
    "Kuzey İrlanda Premiership",
-   "Macaristan 1. Ligi",
-   "Macaristan 2. Ligi",
-   "Macaristan NB III, Güneybatı Grubu",
    "Macaristan NB III, Kuzeybatı Grubu",
    "Mısır Kupası",
    "Peru Prmr Ligi, Kapanış",
-   "Polonya 2. Lig",
-   "Polonya 3. Lig",
-   "Polonya Ekstraliga Kadınlar",
    "Portekiz 3. Lig A Grubu",
-   "Senegal Premier Lig",
-   "Slovakya 2. Lig",
-   "Slovakya Superliga",
-   "Slovenya 2. Lig",
-   "Slovenya PrvaLiga",
-   "Suudi Arabistan 1. Lig"
+   "İngiltere Federasyon Kupası",
+   "İspanya 3. Federasyon",
+   "İspanya Primera RFEF",
+   "İspanya Segunda RFEF",
+   "İsviçre Süper Lig",
+   "Şili Premier Lig"
   ],
   "validation": {
-   "eksik_1x2": 30
+   "eksik_1x2": 29
   },
   "market_map": {
    "half": {
-    "n": 28,
+    "n": 12,
     "mse": {
-     "36=HT": 0.00866,
-     "36=2H": 0.00565
+     "36=HT": 0.01054,
+     "36=2H": 0.00772
     },
-    "decision": "36=2H"
+    "decision": null,
+    "why": "hipotezler arasında fark net değil"
    },
    "team": {
-    "n": 28,
+    "n": 12,
     "mse": {
-     "603=H": 0.01434,
-     "603=A": 0.12232
+     "603=H": 0.01877,
+     "603=A": 0.12768
     },
     "decision": "603=H"
    },
    "hcp": {
-    "n": 28,
+    "n": 12,
     "mse": {
-     "sov=ev": 0.00542,
-     "sov=dep": 0.12253
+     "sov=ev": 0.00769,
+     "sov=dep": 0.13108
     },
     "decision": "sov=ev"
    },
    "mskg": {
-    "n": 28,
+    "n": 12,
     "mse": {
-     "698": 0.00166,
-     "699": 0.01533
+     "698": 0.00207,
+     "699": 0.01564
     },
     "decision": "698"
    },
-   "added_odds": 9561
+   "added_odds": 5639
   }
  }
 }
