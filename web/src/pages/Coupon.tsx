@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { analyze, useCoupon } from '../lib/coupon';
+import { analyze, comboRoi, useCoupon } from '../lib/coupon';
 import { fmtDateTime, fmtTime, odd, pct, signedPct } from '../lib/format';
 
 export default function Coupon() {
@@ -35,6 +35,27 @@ export default function Coupon() {
           <div><dt className="text-[13px] text-muted">Beklenen değer</dt><dd className={`display text-[28px] font-bold leading-tight ${evTone}`}>{a.ev != null ? signedPct(a.ev) : '–'}</dd></div>
         </dl>
         <p className="mt-2 text-[12px] text-muted">EV = birleşik olasılık × toplam oran − 1. Pozitif EV modele göre değerli; sonuç yine de belirsizdir.</p>
+      </section>
+
+      <section className="mt-3 rounded-md border border-warn/60 px-3.5 py-3 text-sm" aria-label="Kombine marj etkisi">
+        <b className="text-warn">Kombine marj etkisi</b>
+        {a.margin ? (
+          <p className="mt-1">
+            Piyasa olasılıkları doğruysa bu {a.margin.legs}’li kombinenin beklenen dönüşü{' '}
+            <b className="num">{pct(a.margin.marketReturn, 1)}</b> — yani 100 TL’de ortalama{' '}
+            <b className="num text-loss">{Math.round((1 - a.margin.marketReturn) * 100)} TL</b> beklenen kayıp
+            (tek tek oynansa seçim başına ≈ {Math.round((1 - a.margin.perLeg) * 100)} TL). Büro marjı her bacakta çarpılır.
+          </p>
+        ) : (
+          <p className="mt-1">iddaa 1X2 marjı ≈ %20 iken her bacakta büro payı çarpılır.</p>
+        )}
+        <p className="mt-1 text-[12px] text-muted num">
+          Teorik beklenen getiri (%20 marj): tekli {signedPct(comboRoi(0.2, 1))} · 2’li {signedPct(comboRoi(0.2, 2))} · 3’lü {signedPct(comboRoi(0.2, 3))} · 5’li {signedPct(comboRoi(0.2, 5))}.
+          Geçmiş testte (2025–27) %70+ olasılıklı seçimler iddaa benzeri fiyatla tekli ≈ −%10, 2’li ≈ −%19, 3’lü ≈ −%26 getirdi. Mümkünse MBS 1 maçlarda tekli oyna, kombineyi kısa tut.
+        </p>
+        {a.mbsShort && (
+          <p className="mt-1 text-warn">Kuponda MBS {a.mbsNeeded} olan maç var; en az {a.mbsNeeded} farklı maç gerekir.</p>
+        )}
       </section>
 
       {(a.correlated || a.crowded.length > 0 || a.missingOdds.length > 0 || a.missingP.length > 0) && (

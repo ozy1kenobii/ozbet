@@ -6,6 +6,7 @@ import { fmtDateTime, fmtShortDate, num, odd, pct, signedNum, signedPct } from '
 import { Calibration, LineChart } from '../components/charts';
 import { Empty, Loading, ResultBadge, Section } from '../components/ui';
 import { marketLabel } from '../lib/markets';
+import { comboRoi } from '../lib/coupon';
 
 export default function Scorecard() {
   const sc = useScorecard();
@@ -15,6 +16,7 @@ export default function Scorecard() {
       <h1 className="display text-[32px] font-bold leading-tight">Karne</h1>
       <p className="t-meta">Biten maçlarda OZBET Tercihlerinin sonuçları. Sanal kasa: her tercihe 1 birim. Terimler için <Link to="/rehber" className="text-accent underline underline-offset-2">Rehber</Link>.</p>
       {bt.state === 'ready' && <HonestBox b={bt.data} />}
+      <ComboMarginBox />
       {(sc.state === 'loading' || bt.state === 'loading') && <div className="mt-4"><Loading variant="page" /></div>}
       {sc.state === 'empty' && <div className="mt-4"><Empty /></div>}
       {sc.state === 'ready' && (() => {
@@ -137,6 +139,30 @@ function BtRow({ name, s }: { name: string; s: BacktestSummary }) {
       <td className={`text-right ${s.roi_value_bets != null ? roiCls(s.roi_value_bets) : ''}`}>{s.roi_value_bets != null ? signedPct(s.roi_value_bets) : '–'}</td>
       <td className="text-right">{s.n_value_bets}</td>
     </tr>
+  );
+}
+
+/** Kombine marj etkisi: iddaa marjı bacak sayısıyla çarpılır (docs/research/roi-secim.md). */
+function ComboMarginBox() {
+  const rows = [1, 2, 3, 4, 5];
+  return (
+    <section className="mt-4 rounded-lg border-2 border-warn/70 bg-surface p-4" aria-label="Kombine marj etkisi">
+      <p className="display text-[20px] font-bold leading-tight">Kombine, beklenen kaybı büyütür</p>
+      <p className="mt-1 t-meta max-w-[68ch]">
+        iddaa 1X2 marjı ≈ %20, 2.5 Alt/Üst ≈ %18. Olasılıklar adil olsa bile her bacak ≈ 1/1,20 dönüş verir ve kombinede bu çarpılır.
+      </p>
+      <table className="mt-2 text-sm num">
+        <thead><tr className="text-muted"><th className="pr-4 text-left font-medium">Bacak</th>{rows.map((n) => <th key={n} className="pr-4 font-medium">{n === 1 ? 'Tekli' : `${n}’li`}</th>)}</tr></thead>
+        <tbody>
+          <tr><td className="pr-4 text-muted">%20 marj</td>{rows.map((n) => <td key={n} className="pr-4 text-loss">{signedPct(comboRoi(0.2, n))}</td>)}</tr>
+          <tr><td className="pr-4 text-muted">%5 marj (iyi büro)</td>{rows.map((n) => <td key={n} className="pr-4">{signedPct(comboRoi(0.05, n))}</td>)}</tr>
+        </tbody>
+      </table>
+      <p className="mt-2 t-meta max-w-[68ch]">
+        Kilitli testte (2025–27, 10 lig) en iyi seçim kuralları bile iddaa benzeri fiyatla zarar etti; %70+ olasılıklı seçimler %81 tuttu ama
+        tekli ≈ −%10, 2’li ≈ −%19, 3’lü ≈ −%26 getirdi. Yüksek isabet, kâr demek değildir.
+      </p>
+    </section>
   );
 }
 
