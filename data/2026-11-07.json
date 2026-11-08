@@ -14946,8 +14946,14 @@
    "away": {
     "name": "Esenler Erokspor"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     5
+    ],
+    "ht": null
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
