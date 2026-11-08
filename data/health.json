@@ -1567,6 +1567,102 @@
 "odds_coverage_pct": 1.0,
 "cross_source_match_pct": 0.914
 }
+},
+{
+"t": "2026-11-08T19:08:08+03:00",
+"label": "18:30",
+"sources": {
+"nesine_results": [
+"skipped",
+0
+],
+"flashscore": [
+"skipped",
+0
+],
+"nesine": [
+"ok",
+229
+],
+"iddaa": [
+"ok",
+229
+],
+"api_football": [
+"partial",
+0
+],
+"football_data_fixtures": [
+"ok",
+58
+],
+"football_data_history": [
+"ok",
+18994
+],
+"understat": [
+"missing",
+0
+],
+"soccerstats_tr2": [
+"missing",
+0
+],
+"tff_tr2": [
+"ok",
+135
+],
+"archive_history": [
+"ok",
+0
+],
+"api_football_history": [
+"partial",
+0
+],
+"tff_referees": [
+"ok",
+49
+],
+"clubelo": [
+"missing",
+0
+],
+"transfermarkt": [
+"partial",
+0
+],
+"news_rss": [
+"ok",
+38
+],
+"forebet": [
+"missing",
+0
+],
+"sportytrader": [
+"ok",
+9
+],
+"freesupertips": [
+"ok",
+20
+],
+"soccerstats": [
+"missing",
+0
+],
+"pipeline": [
+"ok",
+594
+]
+},
+"quality": {
+"league_mapped_pct": 0.165,
+"team_match_pct": 0.875,
+"odds_coverage_pct": 1.0,
+"cross_source_match_pct": 0.925
+}
 }
 ]
 }
