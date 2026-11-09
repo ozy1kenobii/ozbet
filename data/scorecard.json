@@ -1,24 +1,24 @@
 {
- "generated_at": "2026-11-08T23:17:06+03:00",
+ "generated_at": "2026-11-09T09:40:13+03:00",
  "overall": {
-  "n": 9,
-  "hit_rate": 0.4444,
-  "avg_p": 0.6373,
-  "brier_1x2": 0.6963,
-  "staked": 9,
-  "profit": -3.91,
-  "roi": -0.4344,
+  "n": 11,
+  "hit_rate": 0.5455,
+  "avg_p": 0.6295,
+  "brier_1x2": 0.6641,
+  "staked": 11,
+  "profit": -2.93,
+  "roi": -0.2664,
   "value_n": 0,
   "value_roi": null
  },
  "last30": {
-  "n": 9,
-  "hit_rate": 0.4444,
-  "avg_p": 0.6373,
-  "brier_1x2": 0.6963,
-  "staked": 9,
-  "profit": -3.91,
-  "roi": -0.4344,
+  "n": 11,
+  "hit_rate": 0.5455,
+  "avg_p": 0.6295,
+  "brier_1x2": 0.6641,
+  "staked": 11,
+  "profit": -2.93,
+  "roi": -0.2664,
   "value_n": 0,
   "value_roi": null
  },
@@ -37,6 +37,19 @@
    "value_roi": null
   },
   {
+   "league": "TR2",
+   "name": "1. Lig",
+   "n": 4,
+   "hit_rate": 0.5,
+   "avg_p": 0.5906,
+   "brier_1x2": 0.7027,
+   "staked": 4,
+   "profit": -1.02,
+   "roi": -0.255,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
    "league": "UECL",
    "name": "Konferans Ligi",
    "n": 2,
@@ -46,19 +59,6 @@
    "staked": 2,
    "profit": -0.63,
    "roi": -0.315,
-   "value_n": 0,
-   "value_roi": null
-  },
-  {
-   "league": "TR2",
-   "name": "1. Lig",
-   "n": 2,
-   "hit_rate": 0.0,
-   "avg_p": 0.587,
-   "brier_1x2": 0.8861,
-   "staked": 2,
-   "profit": -2,
-   "roi": -1.0,
    "value_n": 0,
    "value_roi": null
   },
@@ -366,13 +366,27 @@
   {
    "market": "BTTS_Y",
    "label": "KG Var",
-   "n": 4,
-   "hit_rate": 0.5,
-   "avg_p": 0.6205,
-   "brier_1x2": 0.6675,
-   "staked": 4,
-   "profit": -1.4,
-   "roi": -0.35,
+   "n": 5,
+   "hit_rate": 0.6,
+   "avg_p": 0.6121,
+   "brier_1x2": 0.7116,
+   "staked": 5,
+   "profit": -0.91,
+   "roi": -0.182,
+   "value_n": 0,
+   "value_roi": null,
+   "trust": 1.0
+  },
+  {
+   "market": "2",
+   "label": "MS 2",
+   "n": 3,
+   "hit_rate": 0.6667,
+   "avg_p": 0.595,
+   "brier_1x2": 0.5629,
+   "staked": 3,
+   "profit": -0.14,
+   "roi": -0.0467,
    "value_n": 0,
    "value_roi": null,
    "trust": 1.0
@@ -387,20 +401,6 @@
    "staked": 2,
    "profit": -2,
    "roi": -1.0,
-   "value_n": 0,
-   "value_roi": null,
-   "trust": 1.0
-  },
-  {
-   "market": "2",
-   "label": "MS 2",
-   "n": 2,
-   "hit_rate": 0.5,
-   "avg_p": 0.5877,
-   "brier_1x2": 0.769,
-   "staked": 2,
-   "profit": -0.63,
-   "roi": -0.315,
    "value_n": 0,
    "value_roi": null,
    "trust": 1.0
@@ -424,9 +424,9 @@
  "calibration": [
   {
    "bin": "0.2-0.3",
-   "predicted": 0.2519,
-   "observed": 0.3636,
-   "n": 11
+   "predicted": 0.2496,
+   "observed": 0.3571,
+   "n": 14
   },
   {
    "bin": "0.3-0.4",
@@ -439,157 +439,166 @@
   {
    "category": "ms",
    "title": "Maç sonucu",
-   "n": 52,
-   "model_brier": 0.249,
-   "market_brier": 0.2525,
-   "model_logloss": 0.6981,
-   "market_logloss": 0.7068
+   "n": 66,
+   "model_brier": 0.2399,
+   "market_brier": 0.2463,
+   "model_logloss": 0.6763,
+   "market_logloss": 0.6926
   },
   {
    "category": "gol",
    "title": "Gol",
-   "n": 68,
-   "model_brier": 0.2564,
-   "market_brier": 0.2573,
-   "model_logloss": 0.7055,
-   "market_logloss": 0.7096
+   "n": 88,
+   "model_brier": 0.2483,
+   "market_brier": 0.2336,
+   "model_logloss": 0.6845,
+   "market_logloss": 0.6565
   },
   {
    "category": "takim",
    "title": "Takım golü",
-   "n": 4,
-   "model_brier": 0.4721,
-   "market_brier": 0.3811,
-   "model_logloss": 1.185,
-   "market_logloss": 0.9712
+   "n": 8,
+   "model_brier": 0.4175,
+   "market_brier": 0.2784,
+   "model_logloss": 1.0599,
+   "market_logloss": 0.7564
+  },
+  {
+   "category": "yari",
+   "title": "Yarılar",
+   "n": 19,
+   "model_brier": 0.174,
+   "market_brier": 0.1546,
+   "model_logloss": 0.5088,
+   "market_logloss": 0.4471
   },
   {
    "category": "kombi",
    "title": "Kombine",
-   "n": 10,
-   "model_brier": 0.2057,
-   "market_brier": 0.1882,
-   "model_logloss": 0.6474,
-   "market_logloss": 0.5935
+   "n": 20,
+   "model_brier": 0.2107,
+   "market_brier": 0.1544,
+   "model_logloss": 0.6281,
+   "market_logloss": 0.4842
   }
  ],
  "calibration_markets": {
   "model": [
    {
     "bin": "0.0-0.1",
-    "predicted": 0.0821,
-    "observed": 0.25,
-    "n": 4
+    "predicted": 0.05,
+    "observed": 0.1111,
+    "n": 18
    },
    {
     "bin": "0.1-0.2",
-    "predicted": 0.1688,
-    "observed": 0.3333,
-    "n": 12
+    "predicted": 0.1608,
+    "observed": 0.2857,
+    "n": 21
    },
    {
     "bin": "0.2-0.3",
-    "predicted": 0.2503,
-    "observed": 0.45,
-    "n": 20
+    "predicted": 0.2543,
+    "observed": 0.4667,
+    "n": 30
    },
    {
     "bin": "0.3-0.4",
-    "predicted": 0.3606,
-    "observed": 0.375,
-    "n": 24
+    "predicted": 0.3602,
+    "observed": 0.3667,
+    "n": 30
    },
    {
     "bin": "0.4-0.5",
-    "predicted": 0.4499,
-    "observed": 0.4706,
-    "n": 17
+    "predicted": 0.4547,
+    "observed": 0.52,
+    "n": 25
    },
    {
     "bin": "0.5-0.6",
-    "predicted": 0.5531,
-    "observed": 0.4667,
-    "n": 15
+    "predicted": 0.55,
+    "observed": 0.381,
+    "n": 21
    },
    {
     "bin": "0.6-0.7",
-    "predicted": 0.6395,
-    "observed": 0.5652,
-    "n": 23
+    "predicted": 0.6409,
+    "observed": 0.5556,
+    "n": 27
    },
    {
     "bin": "0.7-0.8",
-    "predicted": 0.7446,
-    "observed": 0.5,
-    "n": 14
+    "predicted": 0.7428,
+    "observed": 0.4762,
+    "n": 21
    },
    {
     "bin": "0.8-0.9",
-    "predicted": 0.8207,
-    "observed": 0.5,
-    "n": 4
+    "predicted": 0.8308,
+    "observed": 0.6667,
+    "n": 6
    },
    {
     "bin": "0.9-1.0",
-    "predicted": 0.9132,
+    "predicted": 0.9146,
     "observed": 1.0,
-    "n": 1
+    "n": 2
    }
   ],
   "market": [
    {
     "bin": "0.0-0.1",
-    "predicted": 0.0584,
-    "observed": 0.3333,
-    "n": 3
+    "predicted": 0.0581,
+    "observed": 0.0769,
+    "n": 13
    },
    {
     "bin": "0.1-0.2",
-    "predicted": 0.1602,
-    "observed": 0.1667,
-    "n": 12
+    "predicted": 0.1597,
+    "observed": 0.1429,
+    "n": 21
    },
    {
     "bin": "0.2-0.3",
-    "predicted": 0.2494,
-    "observed": 0.4783,
-    "n": 23
+    "predicted": 0.2459,
+    "observed": 0.4242,
+    "n": 33
    },
    {
     "bin": "0.3-0.4",
-    "predicted": 0.3591,
-    "observed": 0.4,
-    "n": 15
+    "predicted": 0.3546,
+    "observed": 0.3636,
+    "n": 22
    },
    {
     "bin": "0.4-0.5",
-    "predicted": 0.4556,
-    "observed": 0.4583,
-    "n": 24
+    "predicted": 0.4566,
+    "observed": 0.4211,
+    "n": 38
    },
    {
     "bin": "0.5-0.6",
-    "predicted": 0.5448,
-    "observed": 0.4783,
-    "n": 23
+    "predicted": 0.5409,
+    "observed": 0.5484,
+    "n": 31
    },
    {
     "bin": "0.6-0.7",
-    "predicted": 0.6416,
-    "observed": 0.5714,
-    "n": 14
+    "predicted": 0.6431,
+    "observed": 0.5625,
+    "n": 16
    },
    {
     "bin": "0.7-0.8",
-    "predicted": 0.7467,
-    "observed": 0.5294,
-    "n": 17
+    "predicted": 0.7513,
+    "observed": 0.6087,
+    "n": 23
    },
    {
     "bin": "0.8-0.9",
-    "predicted": 0.812,
-    "observed": 0.6667,
-    "n": 3
+    "predicted": 0.8186,
+    "observed": 0.75,
+    "n": 4
    }
   ]
  },
@@ -612,9 +621,33 @@
   {
    "date": "2026-11-07",
    "balance": 96.09
+  },
+  {
+   "date": "2026-11-08",
+   "balance": 97.07
   }
  ],
  "recent": [
+  {
+   "date": "2026-11-08",
+   "match": "Mardin 1969 - Batman Petrol",
+   "pick": "KG Var",
+   "odds": 1.49,
+   "p": 0.5789,
+   "won": true,
+   "score": "1-1",
+   "league": "TR2"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Boluspor - Bodrum FK",
+   "pick": "MS 2",
+   "odds": 1.49,
+   "p": 0.6097,
+   "won": true,
+   "score": "1-2",
+   "league": "TR2"
+  },
   {
    "date": "2026-11-07",
    "match": "Muğlaspor - Esenler Erokspor",

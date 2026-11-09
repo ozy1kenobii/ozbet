@@ -11368,8 +11368,17 @@
    "away": {
     "name": "Bodrum FK"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     2
+    ],
+    "ht": [
+     0,
+     2
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -15042,8 +15051,17 @@
    "away": {
     "name": "Batman Petrol"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
