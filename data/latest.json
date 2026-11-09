@@ -1,14 +1,14 @@
 {
  "schema_version": 1,
  "date": "2026-11-09",
- "generated_at": "2026-11-09T19:35:30+03:00",
+ "generated_at": "2026-11-09T23:31:07+03:00",
  "run_label": "18:30",
  "sources": [
   {
    "id": "nesine_results",
    "name": "Nesine (sonuçlar)",
    "status": "skipped",
-   "fetched_at": "2026-11-09T19:28:11+03:00",
+   "fetched_at": "2026-11-09T23:24:56+03:00",
    "note": "Devre dışı: robots.txt sonuç sayfalarına otomatik erişimi yasaklıyor.",
    "items": 0
   },
@@ -16,7 +16,7 @@
    "id": "flashscore",
    "name": "Flashscore (fikstür, sonuç, eksik oyuncu)",
    "status": "skipped",
-   "fetched_at": "2026-11-09T19:28:11+03:00",
+   "fetched_at": "2026-11-09T23:24:56+03:00",
    "note": "Devre dışı: kullanım şartları otomatik istek ve veri çıkarmayı yasaklıyor (md. 2.9-2.10).",
    "items": 0
   },
@@ -24,23 +24,23 @@
    "id": "nesine",
    "name": "Nesine iddaa bülteni (kod, MBS, oran)",
    "status": "ok",
-   "fetched_at": "2026-11-09T19:28:12+03:00",
+   "fetched_at": "2026-11-09T23:24:57+03:00",
    "note": null,
-   "items": 141
+   "items": 123
   },
   {
    "id": "iddaa",
    "name": "iddaa.com resmi bülten (oran, MBS)",
    "status": "ok",
-   "fetched_at": "2026-11-09T19:28:15+03:00",
+   "fetched_at": "2026-11-09T23:24:58+03:00",
    "note": null,
-   "items": 141
+   "items": 121
   },
   {
    "id": "api_football",
    "name": "API-Football (yedek, anahtar gerekir)",
    "status": "partial",
-   "fetched_at": "2026-11-09T19:28:15+03:00",
+   "fetched_at": "2026-11-09T23:24:58+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -48,7 +48,7 @@
    "id": "football_data_fixtures",
    "name": "football-data.co.uk fixtures.csv (oran yedeği)",
    "status": "ok",
-   "fetched_at": "2026-11-09T19:28:20+03:00",
+   "fetched_at": "2026-11-09T23:25:00+03:00",
    "note": null,
    "items": 1
   },
@@ -56,15 +56,15 @@
    "id": "football_data_history",
    "name": "football-data.co.uk (geçmiş sonuçlar + oranlar)",
    "status": "ok",
-   "fetched_at": "2026-11-09T19:29:47+03:00",
+   "fetched_at": "2026-11-09T23:25:47+03:00",
    "note": null,
-   "items": 17007
+   "items": 15577
   },
   {
    "id": "understat",
    "name": "Understat (xG, 5 büyük lig)",
    "status": "missing",
-   "fetched_at": "2026-11-09T19:29:50+03:00",
+   "fetched_at": "2026-11-09T23:25:47+03:00",
    "note": "RuntimeError: understat bakımda",
    "items": 0
   },
@@ -72,7 +72,7 @@
    "id": "soccerstats_tr2",
    "name": "SoccerStats sonuçlar (1. Lig geçmişi)",
    "status": "missing",
-   "fetched_at": "2026-11-09T19:29:55+03:00",
+   "fetched_at": "2026-11-09T23:25:52+03:00",
    "note": "RuntimeError: soccerstats sonuç sayfaları okunamadı: turkey2: Blocked; turkey2_2026: Blocked; turkey2_2025: Blocked",
    "items": 0
   },
@@ -80,7 +80,7 @@
    "id": "tff_tr2",
    "name": "TFF sonuçlar (1. Lig güncel sezon; Kaynak: TFF (tff.org))",
    "status": "ok",
-   "fetched_at": "2026-11-09T19:30:08+03:00",
+   "fetched_at": "2026-11-09T23:26:04+03:00",
    "note": null,
    "items": 139
   },
@@ -88,7 +88,7 @@
    "id": "archive_history",
    "name": "Birikimli sonuç arşivi (modele giren ligler)",
    "status": "ok",
-   "fetched_at": "2026-11-09T19:30:08+03:00",
+   "fetched_at": "2026-11-09T23:26:04+03:00",
    "note": "Henüz eşik altında: BEL1 10/60, ESP1 10/60, GER1 9/60, GER2 9/60, GRE1 7/60, ITA1 12/60, ITA2 10/60, NED1 9/60, POR1 9/60, SCO1 3/60, TR1 9/60",
    "items": 0
   },
@@ -96,7 +96,7 @@
    "id": "api_football_history",
    "name": "API-Football geçmiş (1. Lig vb., anahtar gerekir)",
    "status": "partial",
-   "fetched_at": "2026-11-09T19:30:08+03:00",
+   "fetched_at": "2026-11-09T23:26:04+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -104,15 +104,15 @@
    "id": "tff_referees",
    "name": "TFF hakem atamaları (Süper Lig; Kaynak: TFF (tff.org))",
    "status": "ok",
-   "fetched_at": "2026-11-09T19:33:38+03:00",
-   "note": "49 maç hakemi okundu; 44 geçmiş satıra, 0 bugünkü maça eklendi. Kaynak: TFF (tff.org)",
-   "items": 49
+   "fetched_at": "2026-11-09T23:29:30+03:00",
+   "note": "99 maç hakemi okundu; 88 geçmiş satıra, 0 bugünkü maça eklendi. Kaynak: TFF (tff.org)",
+   "items": 99
   },
   {
    "id": "clubelo",
    "name": "ClubElo (kulüp Elo puanları, lig-arası düzeltme)",
    "status": "missing",
-   "fetched_at": "2026-11-09T19:34:25+03:00",
+   "fetched_at": "2026-11-09T23:30:18+03:00",
    "note": "HTTPError: 502 Server Error: Bad Gateway for url: http://api.clubelo.com/2026-11-09",
    "items": 0
   },
@@ -120,7 +120,7 @@
    "id": "transfermarkt",
    "name": "Transfermarkt (sakatlık listesi)",
    "status": "partial",
-   "fetched_at": "2026-11-09T19:34:27+03:00",
+   "fetched_at": "2026-11-09T23:30:21+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -128,15 +128,15 @@
    "id": "news_rss",
    "name": "Haber akışları (RSS/Atom: A Spor, NTV Spor, Fotomaç, TRT, AA, ESPN, Sky...)",
    "status": "partial",
-   "fetched_at": "2026-11-09T19:34:39+03:00",
-   "note": "11 akış okundu; okunamayan: espn_soccer(boş)",
+   "fetched_at": "2026-11-09T23:30:21+03:00",
+   "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
   {
    "id": "forebet",
    "name": "Forebet (matematiksel tahmin)",
    "status": "missing",
-   "fetched_at": "2026-11-09T19:34:39+03:00",
+   "fetched_at": "2026-11-09T23:30:21+03:00",
    "note": "Blocked: Forebet bot koruması (Cloudflare) erişimi engelliyor: HTTP 403: https://www.forebet.com/en/football-tips-and-predictions-for-today",
    "items": 0
   },
@@ -144,23 +144,23 @@
    "id": "sportytrader",
    "name": "SportyTrader (uzman tahmini)",
    "status": "ok",
-   "fetched_at": "2026-11-09T19:34:45+03:00",
+   "fetched_at": "2026-11-09T23:30:24+03:00",
    "note": null,
-   "items": 1
+   "items": 2
   },
   {
    "id": "freesupertips",
    "name": "FreeSuperTips (ipucu)",
    "status": "ok",
-   "fetched_at": "2026-11-09T19:35:08+03:00",
+   "fetched_at": "2026-11-09T23:30:32+03:00",
    "note": null,
-   "items": 11
+   "items": 12
   },
   {
    "id": "soccerstats",
    "name": "SoccerStats (lig istatistik eğilimi)",
    "status": "partial",
-   "fetched_at": "2026-11-09T19:35:08+03:00",
+   "fetched_at": "2026-11-09T23:30:32+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -168,8 +168,8 @@
    "id": "pipeline",
    "name": "OZBET işleme",
    "status": "ok",
-   "fetched_at": "2026-11-09T19:35:30+03:00",
-   "note": "Eşlenemeyen lig adları (ilk 15): Almanya Kadınlar Bundesliga, Danimarka 1. Lig, Ekvador Pro Lig, Düşme Turu, Kolombiya Prmr B Kapanış, Yük. Gr A, Portekiz 2. Lig, Rusya Ulusal Ligi, Uruguay Kupası, İngiltere Federasyon Kupası, İngiltere Güney Ligi, Merkez, İngiltere Premier Lig 2, 1. Grup, İngiltere U21 Premier Lig Kupası, İngiltere Ulusal Lig, Güney, İspanya Primera Ligi Kadınlar, İtalya Serie C",
+   "fetched_at": "2026-11-09T23:31:07+03:00",
+   "note": "Eşlenemeyen lig adları (ilk 15): Ekvador Pro Lig, Düşme Turu, Kolombiya Prmr B Kapanış, Yük. Gr A, Portekiz 2. Lig, İspanya Primera Ligi Kadınlar",
    "items": 66
   }
  ],
@@ -222,7 +222,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -2151,7 +2153,8 @@
    "status": "scheduled",
    "result": null,
    "flags": [
-    "Piyasa modeli"
+    "Piyasa modeli",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -3770,7 +3773,8 @@
    "status": "live",
    "result": null,
    "flags": [
-    "Piyasa modeli"
+    "Piyasa modeli",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -5574,7 +5578,8 @@
    "status": "scheduled",
    "result": null,
    "flags": [
-    "Piyasa modeli"
+    "Piyasa modeli",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -7322,7 +7327,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -78131,7 +78138,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -79860,7 +79868,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -81784,7 +81793,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -83635,7 +83645,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -85501,7 +85512,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -87183,7 +87195,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -88914,7 +88927,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -90819,7 +90833,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -92431,7 +92446,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -94229,7 +94245,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -95887,7 +95904,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -97575,7 +97593,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -99459,7 +99478,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -101091,7 +101111,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -102865,7 +102886,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -104768,25 +104790,25 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-09T19:28:12+03:00"
+     "t": "2026-11-09T23:24:56+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-09T19:28:12+03:00"
+     "t": "2026-11-09T23:24:56+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-09T19:35:17+03:00"
+     "t": "2026-11-09T23:30:46+03:00"
     }
    },
    "odds": {
-    "1": 1.41,
-    "X": 3.36,
-    "2": 4.38,
-    "BTTS_Y": 1.63,
-    "BTTS_N": 1.6,
+    "1": 1.39,
+    "X": 3.37,
+    "2": 4.66,
+    "BTTS_Y": 1.66,
+    "BTTS_N": 1.59,
     "12": 1.08,
-    "X2": 1.8,
+    "X2": 1.86,
     "U2.5": 1.63,
     "O2.5": 1.61
    },
@@ -104822,29 +104844,38 @@
      "2": 4.38,
      "O2.5": 1.61,
      "U2.5": 1.63
+    },
+    {
+     "t": "2026-11-09T23:30:46+03:00",
+     "1": 1.39,
+     "X": 3.37,
+     "2": 4.66,
+     "O2.5": 1.61,
+     "U2.5": 1.63
     }
    ],
    "market": {
     "implied": {
-     "1": 0.615,
-     "X": 0.2245,
-     "2": 0.1604,
+     "1": 0.6264,
+     "X": 0.2248,
+     "2": 0.1488,
      "O2.5": 0.5038,
      "U2.5": 0.4962,
-     "BTTS_Y": 0.4942,
-     "BTTS_N": 0.5058,
-     "1X": 0.8395,
-     "X2": 0.3849,
-     "12": 0.7754
+     "BTTS_Y": 0.4867,
+     "BTTS_N": 0.5133,
+     "1X": 0.8512,
+     "X2": 0.3736,
+     "12": 0.7752
     },
     "margin": {
-     "1x2": 0.2351,
+     "1x2": 0.2308,
      "ou25": 0.2346,
-     "btts": 0.2385
+     "btts": 0.2313
     },
     "method": "shin",
     "movement": {
-     "2": 0.0306,
+     "1": -0.0211,
+     "2": 0.0965,
      "U2.5": -0.0121
     },
     "drop_alarms": []
@@ -104854,228 +104885,228 @@
     "n": 400,
     "scope": "tüm ligler",
     "match_point": {
-     "1": 0.615,
+     "1": 0.626,
      "X": 0.225,
-     "2": 0.16
+     "2": 0.149
     },
     "date_range": [
-     "2024-04-28",
+     "2024-08-03",
      "2026-11-08"
     ],
     "markets": [
      {
       "market": "1",
-      "observed": 0.6475,
+      "observed": 0.64,
       "ci": [
-       0.5995,
-       0.6927
+       0.5918,
+       0.6855
       ],
-      "market_p": 0.6146,
+      "market_p": 0.6274,
       "note": "piyasayla uyumlu"
      },
      {
       "market": "X",
-      "observed": 0.205,
+      "observed": 0.23,
       "ci": [
-       0.1683,
-       0.2473
+       0.1914,
+       0.2737
       ],
-      "market_p": 0.2249,
+      "market_p": 0.2216,
       "note": "piyasayla uyumlu"
      },
      {
       "market": "2",
-      "observed": 0.1475,
+      "observed": 0.13,
       "ci": [
-       0.1161,
-       0.1856
+       0.1005,
+       0.1665
       ],
-      "market_p": 0.1605,
+      "market_p": 0.151,
       "note": "piyasayla uyumlu"
      },
      {
       "market": "O2.5",
-      "observed": 0.595,
+      "observed": 0.5975,
       "ci": [
-       0.5462,
-       0.642
+       0.5487,
+       0.6444
       ],
-      "market_p": 0.5428,
+      "market_p": 0.5365,
       "note": "fark GA dışında (çoklu karşılaştırmada rastlantı olabilir)"
      },
      {
       "market": "U2.5",
-      "observed": 0.405,
+      "observed": 0.4025,
       "ci": [
-       0.358,
-       0.4538
+       0.3556,
+       0.4513
       ],
-      "market_p": 0.4572,
+      "market_p": 0.4635,
       "note": "fark GA dışında (çoklu karşılaştırmada rastlantı olabilir)"
      }
     ],
     "disclaimer": "Geçmişte benzer oranla fiyatlanan maçların sonuç dağılımı. Yeni bir tahmin değildir; testte bu dağılım piyasanın marjsız olasılığından daha iyi tahmin etmedi.",
     "goals": [
-     0.0425,
-     0.17,
-     0.1925,
-     0.2625,
-     0.1825,
-     0.15
+     0.0525,
+     0.155,
+     0.195,
+     0.255,
+     0.18,
+     0.1625
     ],
     "scores": [
      [
-      0.0425,
-      0.0275,
-      0.0175,
-      0.0125,
+      0.0525,
+      0.04,
+      0.005,
+      0.0075,
       0.0025
      ],
      [
-      0.1425,
-      0.0925,
+      0.115,
+      0.1025,
+      0.045,
+      0.0075,
+      0.0025
+     ],
+     [
+      0.0875,
+      0.1325,
       0.06,
-      0.01,
+      0.015,
       0.0025
      ],
      [
-      0.0825,
-      0.1225,
-      0.055,
-      0.0125,
-      0.0025
-     ],
-     [
-      0.0675,
-      0.0725,
-      0.0275,
-      0.0125,
+      0.07,
+      0.0625,
+      0.0375,
+      0.015,
       0.0
      ],
      [
-      0.0425,
-      0.0325,
+      0.0475,
+      0.0375,
       0.0075,
       0.0025,
-      0.0025
+      0.0
      ]
     ],
-    "scores_other": 0.0475
+    "scores_other": 0.0425
    },
    "stats": null,
    "squad": null,
    "model": {
-    "lambda_home": 1.868,
-    "lambda_away": 0.848,
+    "lambda_home": 1.896,
+    "lambda_away": 0.818,
     "sims": 10000,
-    "rho": -0.0348,
+    "rho": -0.0547,
     "probs": {
-     "1": 0.6117,
-     "X": 0.2247,
-     "2": 0.1636,
-     "1X": 0.8364,
-     "X2": 0.3883,
-     "12": 0.7753,
-     "O1.5": 0.7576,
-     "U1.5": 0.2424,
-     "O2.5": 0.5091,
-     "U2.5": 0.4909,
-     "O3.5": 0.2853,
-     "U3.5": 0.7147,
-     "BTTS_Y": 0.4819,
-     "BTTS_N": 0.5181
+     "1": 0.6269,
+     "X": 0.2263,
+     "2": 0.1468,
+     "1X": 0.8532,
+     "X2": 0.3731,
+     "12": 0.7737,
+     "O1.5": 0.7616,
+     "U1.5": 0.2384,
+     "O2.5": 0.5073,
+     "U2.5": 0.4927,
+     "O3.5": 0.2842,
+     "U3.5": 0.7158,
+     "BTTS_Y": 0.4799,
+     "BTTS_N": 0.5201
     },
     "htft": {
-     "1/1": 0.385,
-     "1/X": 0.0437,
-     "1/2": 0.0103,
-     "X/1": 0.1988,
-     "X/X": 0.1382,
-     "X/2": 0.0672,
-     "2/1": 0.0279,
-     "2/X": 0.0428,
-     "2/2": 0.0861
+     "1/1": 0.3937,
+     "1/X": 0.0419,
+     "1/2": 0.0094,
+     "X/1": 0.2057,
+     "X/X": 0.142,
+     "X/2": 0.0597,
+     "2/1": 0.0276,
+     "2/X": 0.0425,
+     "2/2": 0.0777
     },
     "top_scores": [
      {
-      "score": "1-0",
-      "p": 0.119
+      "score": "2-0",
+      "p": 0.1229
      },
      {
-      "score": "2-0",
-      "p": 0.1138
+      "score": "1-0",
+      "p": 0.1226
      },
      {
       "score": "1-1",
-      "p": 0.1112
+      "p": 0.1094
      },
      {
       "score": "2-1",
-      "p": 0.0972
+      "p": 0.098
      },
      {
       "score": "3-0",
-      "p": 0.076
+      "p": 0.0756
      }
     ],
     "score_matrix": [
      [
-      0.0668,
-      0.0566,
-      0.0235,
-      0.0067,
-      0.0014,
-      0.0002
-     ],
-     [
-      0.119,
-      0.1112,
-      0.0438,
-      0.0131,
-      0.0021,
-      0.0006
-     ],
-     [
-      0.1138,
-      0.0972,
-      0.04,
-      0.0102,
-      0.0026,
-      0.0004
-     ],
-     [
-      0.076,
-      0.0593,
-      0.0244,
-      0.0059,
-      0.0019,
+      0.0696,
+      0.0461,
+      0.0221,
+      0.0048,
+      0.0007,
       0.0003
      ],
      [
-      0.0354,
-      0.0286,
-      0.0112,
-      0.0031,
-      0.0008,
+      0.1226,
+      0.1094,
+      0.0447,
+      0.0115,
+      0.0018,
+      0.0005
+     ],
+     [
+      0.1229,
+      0.098,
+      0.0389,
+      0.0093,
+      0.0033,
       0.0001
      ],
      [
-      0.0135,
-      0.0124,
-      0.0041,
-      0.0006,
-      0.0006,
+      0.0756,
+      0.0607,
+      0.025,
+      0.0081,
+      0.0012,
+      0.0002
+     ],
+     [
+      0.0356,
+      0.0301,
+      0.0105,
+      0.0028,
+      0.0003,
+      0.0001
+     ],
+     [
+      0.0139,
+      0.0104,
+      0.0043,
+      0.0011,
+      0.0001,
       0.0
      ]
     ],
     "total_goals": [
-     0.0668,
-     0.1756,
-     0.2485,
-     0.2238,
-     0.1492,
-     0.079,
-     0.057
+     0.0696,
+     0.1687,
+     0.2544,
+     0.2231,
+     0.1474,
+     0.0804,
+     0.0564
     ],
     "sample_runs": {
      "n": 50,
@@ -105083,28 +105114,32 @@
       {
        "i": 1,
        "ft": [
-        3,
-        1
+        5,
+        0
        ],
        "ht": [
-        1,
+        2,
         0
        ],
        "goals": [
+        {
+         "min": 11,
+         "side": "home"
+        },
         {
          "min": "45+1",
          "side": "home"
         },
         {
-         "min": 51,
-         "side": "away"
-        },
-        {
-         "min": 61,
+         "min": 49,
          "side": "home"
         },
         {
-         "min": 66,
+         "min": 52,
+         "side": "home"
+        },
+        {
+         "min": 74,
          "side": "home"
         }
        ]
@@ -105113,315 +105148,37 @@
        "i": 2,
        "ft": [
         2,
-        2
+        3
        ],
        "ht": [
         1,
-        1
+        2
        ],
        "goals": [
         {
-         "min": 31,
+         "min": 8,
          "side": "away"
         },
         {
-         "min": 34,
+         "min": 19,
+         "side": "away"
+        },
+        {
+         "min": 21,
          "side": "home"
         },
         {
-         "min": 49,
+         "min": 59,
          "side": "home"
         },
         {
-         "min": 80,
+         "min": 76,
          "side": "away"
         }
        ]
       },
       {
        "i": 3,
-       "ft": [
-        4,
-        0
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": 14,
-         "side": "home"
-        },
-        {
-         "min": 55,
-         "side": "home"
-        },
-        {
-         "min": 68,
-         "side": "home"
-        },
-        {
-         "min": 89,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 4,
-       "ft": [
-        3,
-        1
-       ],
-       "ht": [
-        0,
-        0
-       ],
-       "goals": [
-        {
-         "min": 62,
-         "side": "home"
-        },
-        {
-         "min": 73,
-         "side": "home"
-        },
-        {
-         "min": 79,
-         "side": "home"
-        },
-        {
-         "min": 83,
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 5,
-       "ft": [
-        5,
-        0
-       ],
-       "ht": [
-        2,
-        0
-       ],
-       "goals": [
-        {
-         "min": 17,
-         "side": "home"
-        },
-        {
-         "min": 44,
-         "side": "home"
-        },
-        {
-         "min": 79,
-         "side": "home"
-        },
-        {
-         "min": 84,
-         "side": "home"
-        },
-        {
-         "min": 85,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 6,
-       "ft": [
-        2,
-        2
-       ],
-       "ht": [
-        0,
-        1
-       ],
-       "goals": [
-        {
-         "min": 13,
-         "side": "away"
-        },
-        {
-         "min": 47,
-         "side": "home"
-        },
-        {
-         "min": 51,
-         "side": "home"
-        },
-        {
-         "min": 60,
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 7,
-       "ft": [
-        3,
-        3
-       ],
-       "ht": [
-        1,
-        1
-       ],
-       "goals": [
-        {
-         "min": 18,
-         "side": "away"
-        },
-        {
-         "min": "45+1",
-         "side": "home"
-        },
-        {
-         "min": 58,
-         "side": "home"
-        },
-        {
-         "min": 59,
-         "side": "away"
-        },
-        {
-         "min": 68,
-         "side": "home"
-        },
-        {
-         "min": 75,
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 8,
-       "ft": [
-        1,
-        1
-       ],
-       "ht": [
-        0,
-        0
-       ],
-       "goals": [
-        {
-         "min": 48,
-         "side": "home"
-        },
-        {
-         "min": 72,
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 9,
-       "ft": [
-        5,
-        0
-       ],
-       "ht": [
-        4,
-        0
-       ],
-       "goals": [
-        {
-         "min": 2,
-         "side": "home"
-        },
-        {
-         "min": 4,
-         "side": "home"
-        },
-        {
-         "min": 6,
-         "side": "home"
-        },
-        {
-         "min": 10,
-         "side": "home"
-        },
-        {
-         "min": "90+3",
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 10,
-       "ft": [
-        2,
-        0
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": 34,
-         "side": "home"
-        },
-        {
-         "min": 64,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 11,
-       "ft": [
-        1,
-        2
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": 19,
-         "side": "home"
-        },
-        {
-         "min": 50,
-         "side": "away"
-        },
-        {
-         "min": 57,
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 12,
-       "ft": [
-        1,
-        2
-       ],
-       "ht": [
-        0,
-        2
-       ],
-       "goals": [
-        {
-         "min": 29,
-         "side": "away"
-        },
-        {
-         "min": "45+3",
-         "side": "away"
-        },
-        {
-         "min": 46,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 13,
        "ft": [
         0,
         0
@@ -105433,65 +105190,73 @@
        "goals": []
       },
       {
-       "i": 14,
+       "i": 4,
        "ft": [
-        1,
-        1
+        0,
+        0
        ],
        "ht": [
         0,
-        1
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 5,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        1,
+        0
        ],
        "goals": [
         {
-         "min": 2,
-         "side": "away"
+         "min": 45,
+         "side": "home"
         },
         {
-         "min": 75,
+         "min": 87,
          "side": "home"
         }
        ]
       },
       {
-       "i": 15,
+       "i": 6,
        "ft": [
-        1,
-        5
+        5,
+        0
        ],
        "ht": [
-        0,
-        2
+        4,
+        0
        ],
        "goals": [
         {
-         "min": 15,
-         "side": "away"
-        },
-        {
-         "min": 44,
-         "side": "away"
-        },
-        {
-         "min": 58,
-         "side": "away"
-        },
-        {
-         "min": 59,
+         "min": 17,
          "side": "home"
         },
         {
-         "min": 59,
-         "side": "away"
+         "min": 28,
+         "side": "home"
         },
         {
-         "min": 71,
-         "side": "away"
+         "min": 34,
+         "side": "home"
+        },
+        {
+         "min": 38,
+         "side": "home"
+        },
+        {
+         "min": 62,
+         "side": "home"
         }
        ]
       },
       {
-       "i": 16,
+       "i": 7,
        "ft": [
         1,
         0
@@ -105508,10 +105273,10 @@
        ]
       },
       {
-       "i": 17,
+       "i": 8,
        "ft": [
-        2,
-        3
+        3,
+        0
        ],
        "ht": [
         1,
@@ -105519,7 +105284,245 @@
        ],
        "goals": [
         {
-         "min": 17,
+         "min": 34,
+         "side": "home"
+        },
+        {
+         "min": 52,
+         "side": "home"
+        },
+        {
+         "min": 65,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 9,
+       "ft": [
+        4,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 47,
+         "side": "home"
+        },
+        {
+         "min": 47,
+         "side": "away"
+        },
+        {
+         "min": 51,
+         "side": "away"
+        },
+        {
+         "min": 58,
+         "side": "home"
+        },
+        {
+         "min": 63,
+         "side": "home"
+        },
+        {
+         "min": 76,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 10,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 68,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 11,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 62,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 12,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 35,
+         "side": "home"
+        },
+        {
+         "min": 84,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 13,
+       "ft": [
+        3,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "away"
+        },
+        {
+         "min": 63,
+         "side": "home"
+        },
+        {
+         "min": 81,
+         "side": "home"
+        },
+        {
+         "min": "90+1",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 14,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 59,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 15,
+       "ft": [
+        4,
+        0
+       ],
+       "ht": [
+        3,
+        0
+       ],
+       "goals": [
+        {
+         "min": 7,
+         "side": "home"
+        },
+        {
+         "min": 36,
+         "side": "home"
+        },
+        {
+         "min": "45+2",
+         "side": "home"
+        },
+        {
+         "min": 64,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 16,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 19,
+         "side": "home"
+        },
+        {
+         "min": 25,
+         "side": "home"
+        },
+        {
+         "min": 26,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 17,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 74,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 18,
+       "ft": [
+        2,
+        2
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 34,
+         "side": "home"
+        },
+        {
+         "min": 46,
          "side": "home"
         },
         {
@@ -105527,40 +105530,7 @@
          "side": "away"
         },
         {
-         "min": 52,
-         "side": "home"
-        },
-        {
-         "min": 68,
-         "side": "away"
-        },
-        {
-         "min": 73,
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 18,
-       "ft": [
-        1,
-        2
-       ],
-       "ht": [
-        1,
-        1
-       ],
-       "goals": [
-        {
-         "min": 18,
-         "side": "home"
-        },
-        {
-         "min": 23,
-         "side": "away"
-        },
-        {
-         "min": 52,
+         "min": 67,
          "side": "away"
         }
        ]
@@ -105569,138 +105539,25 @@
        "i": 19,
        "ft": [
         2,
-        1
+        0
        ],
        "ht": [
-        0,
-        1
+        1,
+        0
        ],
        "goals": [
         {
-         "min": 6,
-         "side": "away"
-        },
-        {
-         "min": 62,
+         "min": 44,
          "side": "home"
         },
         {
-         "min": 80,
+         "min": 79,
          "side": "home"
         }
        ]
       },
       {
        "i": 20,
-       "ft": [
-        0,
-        2
-       ],
-       "ht": [
-        0,
-        2
-       ],
-       "goals": [
-        {
-         "min": 35,
-         "side": "away"
-        },
-        {
-         "min": "45+3",
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 21,
-       "ft": [
-        3,
-        1
-       ],
-       "ht": [
-        1,
-        1
-       ],
-       "goals": [
-        {
-         "min": 11,
-         "side": "home"
-        },
-        {
-         "min": 37,
-         "side": "away"
-        },
-        {
-         "min": 48,
-         "side": "home"
-        },
-        {
-         "min": 54,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 22,
-       "ft": [
-        2,
-        0
-       ],
-       "ht": [
-        0,
-        0
-       ],
-       "goals": [
-        {
-         "min": 67,
-         "side": "home"
-        },
-        {
-         "min": 84,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 23,
-       "ft": [
-        1,
-        0
-       ],
-       "ht": [
-        0,
-        0
-       ],
-       "goals": [
-        {
-         "min": 81,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 24,
-       "ft": [
-        2,
-        0
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": 8,
-         "side": "home"
-        },
-        {
-         "min": "90+2",
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 25,
        "ft": [
         1,
         0
@@ -105717,10 +105574,106 @@
        ]
       },
       {
-       "i": 26,
+       "i": 21,
        "ft": [
-        3,
-        3
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 78,
+         "side": "home"
+        },
+        {
+         "min": 82,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 22,
+       "ft": [
+        2,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 8,
+         "side": "away"
+        },
+        {
+         "min": 56,
+         "side": "home"
+        },
+        {
+         "min": 63,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 23,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 52,
+         "side": "home"
+        },
+        {
+         "min": 73,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 24,
+       "ft": [
+        4,
+        0
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 5,
+         "side": "home"
+        },
+        {
+         "min": 11,
+         "side": "home"
+        },
+        {
+         "min": 63,
+         "side": "home"
+        },
+        {
+         "min": 68,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 25,
+       "ft": [
+        4,
+        1
        ],
        "ht": [
         3,
@@ -105728,28 +105681,41 @@
        ],
        "goals": [
         {
-         "min": 13,
+         "min": 27,
          "side": "home"
         },
         {
-         "min": 23,
+         "min": 29,
          "side": "away"
         },
         {
-         "min": 43,
+         "min": 35,
          "side": "home"
         },
         {
-         "min": 45,
+         "min": "45+2",
          "side": "home"
         },
         {
-         "min": 78,
-         "side": "away"
-        },
+         "min": 80,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 26,
+       "ft": [
+        1,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
         {
-         "min": 88,
-         "side": "away"
+         "min": 14,
+         "side": "home"
         }
        ]
       },
@@ -105765,21 +105731,100 @@
        ],
        "goals": [
         {
-         "min": 36,
-         "side": "away"
-        },
-        {
-         "min": "45+3",
+         "min": 11,
          "side": "home"
         },
         {
-         "min": 84,
+         "min": 37,
+         "side": "away"
+        },
+        {
+         "min": 54,
          "side": "away"
         }
        ]
       },
       {
        "i": 28,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 50,
+         "side": "home"
+        },
+        {
+         "min": 63,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 29,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": "45+2",
+         "side": "home"
+        },
+        {
+         "min": 78,
+         "side": "home"
+        },
+        {
+         "min": 81,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 30,
+       "ft": [
+        4,
+        1
+       ],
+       "ht": [
+        4,
+        1
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "home"
+        },
+        {
+         "min": 13,
+         "side": "home"
+        },
+        {
+         "min": 14,
+         "side": "away"
+        },
+        {
+         "min": 15,
+         "side": "home"
+        },
+        {
+         "min": 40,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 31,
        "ft": [
         1,
         0
@@ -105796,85 +105841,109 @@
        ]
       },
       {
-       "i": 29,
+       "i": 32,
        "ft": [
-        4,
-        1
+        1,
+        2
        ],
        "ht": [
-        3,
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 43,
+         "side": "home"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        },
+        {
+         "min": 60,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 33,
+       "ft": [
+        2,
+        3
+       ],
+       "ht": [
+        2,
         1
        ],
        "goals": [
+        {
+         "min": 10,
+         "side": "home"
+        },
         {
          "min": 12,
          "side": "home"
         },
         {
-         "min": 38,
-         "side": "home"
-        },
-        {
-         "min": 39,
-         "side": "home"
-        },
-        {
-         "min": 43,
+         "min": 32,
          "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        },
+        {
+         "min": 83,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 34,
+       "ft": [
+        3,
+        3
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 1,
+         "side": "home"
+        },
+        {
+         "min": 10,
+         "side": "home"
         },
         {
          "min": 50,
          "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 30,
-       "ft": [
-        1,
-        0
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": 40,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 31,
-       "ft": [
-        2,
-        0
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": 3,
-         "side": "home"
         },
         {
-         "min": 72,
-         "side": "home"
+         "min": 59,
+         "side": "away"
+        },
+        {
+         "min": 79,
+         "side": "away"
+        },
+        {
+         "min": 80,
+         "side": "away"
         }
        ]
       },
       {
-       "i": 32,
+       "i": 35,
        "ft": [
-        2,
-        1
+        3,
+        0
        ],
        "ht": [
-        1,
-        1
+        2,
+        0
        ],
        "goals": [
         {
@@ -105883,7 +105952,7 @@
         },
         {
          "min": 37,
-         "side": "away"
+         "side": "home"
         },
         {
          "min": 87,
@@ -105892,10 +105961,22 @@
        ]
       },
       {
-       "i": 33,
+       "i": 36,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 37,
        "ft": [
         2,
-        0
+        1
        ],
        "ht": [
         1,
@@ -105907,119 +105988,11 @@
          "side": "home"
         },
         {
+         "min": 47,
+         "side": "away"
+        },
+        {
          "min": 61,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 34,
-       "ft": [
-        2,
-        1
-       ],
-       "ht": [
-        0,
-        1
-       ],
-       "goals": [
-        {
-         "min": 28,
-         "side": "away"
-        },
-        {
-         "min": 54,
-         "side": "home"
-        },
-        {
-         "min": 59,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 35,
-       "ft": [
-        0,
-        2
-       ],
-       "ht": [
-        0,
-        1
-       ],
-       "goals": [
-        {
-         "min": 43,
-         "side": "away"
-        },
-        {
-         "min": 57,
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 36,
-       "ft": [
-        4,
-        0
-       ],
-       "ht": [
-        3,
-        0
-       ],
-       "goals": [
-        {
-         "min": 6,
-         "side": "home"
-        },
-        {
-         "min": 20,
-         "side": "home"
-        },
-        {
-         "min": 31,
-         "side": "home"
-        },
-        {
-         "min": 63,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 37,
-       "ft": [
-        5,
-        1
-       ],
-       "ht": [
-        2,
-        1
-       ],
-       "goals": [
-        {
-         "min": 15,
-         "side": "away"
-        },
-        {
-         "min": 16,
-         "side": "home"
-        },
-        {
-         "min": 19,
-         "side": "home"
-        },
-        {
-         "min": 51,
-         "side": "home"
-        },
-        {
-         "min": 74,
-         "side": "home"
-        },
-        {
-         "min": 80,
          "side": "home"
         }
        ]
@@ -106028,24 +106001,16 @@
        "i": 38,
        "ft": [
         2,
-        2
+        0
        ],
        "ht": [
-        0,
-        1
+        1,
+        0
        ],
        "goals": [
         {
-         "min": 2,
-         "side": "away"
-        },
-        {
-         "min": 47,
+         "min": 14,
          "side": "home"
-        },
-        {
-         "min": 69,
-         "side": "away"
         },
         {
          "min": "90+5",
@@ -106056,32 +106021,16 @@
       {
        "i": 39,
        "ft": [
-        5,
+        1,
         0
        ],
        "ht": [
-        0,
+        1,
         0
        ],
        "goals": [
         {
-         "min": 51,
-         "side": "home"
-        },
-        {
-         "min": 60,
-         "side": "home"
-        },
-        {
-         "min": 60,
-         "side": "home"
-        },
-        {
-         "min": 86,
-         "side": "home"
-        },
-        {
-         "min": "90+1",
+         "min": 43,
          "side": "home"
         }
        ]
@@ -106089,24 +106038,40 @@
       {
        "i": 40,
        "ft": [
-        3,
+        7,
         0
        ],
        "ht": [
-        0,
+        4,
         0
        ],
        "goals": [
         {
-         "min": 57,
+         "min": 12,
          "side": "home"
         },
         {
-         "min": 74,
+         "min": 19,
          "side": "home"
         },
         {
-         "min": 88,
+         "min": 33,
+         "side": "home"
+        },
+        {
+         "min": 39,
+         "side": "home"
+        },
+        {
+         "min": 54,
+         "side": "home"
+        },
+        {
+         "min": 63,
+         "side": "home"
+        },
+        {
+         "min": 71,
          "side": "home"
         }
        ]
@@ -106114,61 +106079,53 @@
       {
        "i": 41,
        "ft": [
-        2,
-        1
+        1,
+        2
        ],
        "ht": [
-        1,
-        0
+        0,
+        2
        ],
        "goals": [
         {
-         "min": "45+3",
-         "side": "home"
-        },
-        {
-         "min": 78,
-         "side": "home"
-        },
-        {
-         "min": "90+2",
+         "min": 6,
          "side": "away"
+        },
+        {
+         "min": "45+4",
+         "side": "away"
+        },
+        {
+         "min": 90,
+         "side": "home"
         }
        ]
       },
       {
        "i": 42,
        "ft": [
-        2,
-        4
+        4,
+        0
        ],
        "ht": [
-        1,
-        2
+        2,
+        0
        ],
        "goals": [
         {
-         "min": 19,
-         "side": "away"
-        },
-        {
-         "min": 30,
-         "side": "away"
-        },
-        {
-         "min": 33,
+         "min": 28,
          "side": "home"
         },
         {
-         "min": 63,
-         "side": "away"
+         "min": 45,
+         "side": "home"
         },
         {
-         "min": 73,
-         "side": "away"
+         "min": 47,
+         "side": "home"
         },
         {
-         "min": 76,
+         "min": 75,
          "side": "home"
         }
        ]
@@ -106176,29 +106133,17 @@
       {
        "i": 43,
        "ft": [
-        3,
-        1
+        1,
+        0
        ],
        "ht": [
-        3,
+        0,
         0
        ],
        "goals": [
         {
-         "min": 9,
+         "min": 68,
          "side": "home"
-        },
-        {
-         "min": 10,
-         "side": "home"
-        },
-        {
-         "min": 35,
-         "side": "home"
-        },
-        {
-         "min": 55,
-         "side": "away"
         }
        ]
       },
@@ -106206,19 +106151,15 @@
        "i": 44,
        "ft": [
         1,
-        1
+        0
        ],
        "ht": [
         1,
-        1
+        0
        ],
        "goals": [
         {
-         "min": 5,
-         "side": "away"
-        },
-        {
-         "min": 42,
+         "min": 15,
          "side": "home"
         }
        ]
@@ -106226,130 +106167,22 @@
       {
        "i": 45,
        "ft": [
-        0,
-        2
+        1,
+        0
        ],
        "ht": [
-        0,
-        1
+        1,
+        0
        ],
        "goals": [
         {
-         "min": 17,
-         "side": "away"
-        },
-        {
-         "min": 47,
-         "side": "away"
+         "min": 15,
+         "side": "home"
         }
        ]
       },
       {
        "i": 46,
-       "ft": [
-        1,
-        1
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": 31,
-         "side": "home"
-        },
-        {
-         "min": 64,
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 47,
-       "ft": [
-        3,
-        1
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": 2,
-         "side": "home"
-        },
-        {
-         "min": 48,
-         "side": "away"
-        },
-        {
-         "min": 85,
-         "side": "home"
-        },
-        {
-         "min": "90+2",
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 48,
-       "ft": [
-        2,
-        0
-       ],
-       "ht": [
-        0,
-        0
-       ],
-       "goals": [
-        {
-         "min": 50,
-         "side": "home"
-        },
-        {
-         "min": 56,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 49,
-       "ft": [
-        1,
-        4
-       ],
-       "ht": [
-        1,
-        1
-       ],
-       "goals": [
-        {
-         "min": 8,
-         "side": "home"
-        },
-        {
-         "min": 29,
-         "side": "away"
-        },
-        {
-         "min": 68,
-         "side": "away"
-        },
-        {
-         "min": 77,
-         "side": "away"
-        },
-        {
-         "min": "90+4",
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 50,
        "ft": [
         0,
         0
@@ -106359,120 +106192,199 @@
         0
        ],
        "goals": []
+      },
+      {
+       "i": 47,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 46,
+         "side": "home"
+        },
+        {
+         "min": 54,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 48,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 49,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 2,
+         "side": "home"
+        },
+        {
+         "min": 6,
+         "side": "home"
+        },
+        {
+         "min": 55,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 50,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 13,
+         "side": "home"
+        },
+        {
+         "min": 17,
+         "side": "home"
+        }
+       ]
       }
      ],
      "summary": {
-      "1": 28,
-      "X": 11,
-      "2": 11,
-      "O2.5": 30,
-      "BTTS_Y": 28,
+      "1": 34,
+      "X": 10,
+      "2": 6,
+      "O2.5": 24,
+      "BTTS_Y": 17,
       "top_scores": [
+       [
+        "1-0",
+        11
+       ],
        [
         "2-0",
         6
        ],
        [
-        "1-0",
+        "0-0",
         5
        ],
        [
-        "3-1",
-        5
+        "3-0",
+        4
        ],
        [
         "1-1",
-        4
-       ],
-       [
-        "1-2",
-        4
+        3
        ]
       ]
      },
      "note": "50 örnek koşu yalnızca gösterim içindir; olasılıklar 10.000 simülasyondan hesaplanır."
     },
     "extra": {
-     "HT_1": 0.4389,
-     "HT_X": 0.4042,
-     "HT_2": 0.1569,
-     "HT_O0.5": 0.6986,
-     "HT_U0.5": 0.3014,
-     "HT_O1.5": 0.3386,
-     "HT_U1.5": 0.6614,
-     "HT_O2.5": 0.1177,
-     "HT_U2.5": 0.8823,
-     "2H_1": 0.5012,
-     "2H_X": 0.3314,
-     "2H_2": 0.1674,
-     "MGH_1": 0.2965,
-     "MGH_X": 0.2548,
-     "MGH_2": 0.4486,
-     "O0.5": 0.9332,
-     "U0.5": 0.0668,
-     "O4.5": 0.136,
-     "U4.5": 0.864,
-     "O5.5": 0.057,
-     "U5.5": 0.943,
-     "G0-1": 0.2424,
-     "G2-3": 0.4723,
-     "G4-5": 0.2283,
-     "G6+": 0.057,
-     "ODD": 0.495,
-     "EVEN": 0.505,
-     "H_O0.5": 0.8448,
-     "H_U0.5": 0.1552,
-     "H_O1.5": 0.555,
-     "H_U1.5": 0.445,
-     "H_O2.5": 0.2907,
-     "H_U2.5": 0.7093,
-     "A_O0.5": 0.5703,
-     "A_U0.5": 0.4297,
-     "A_O1.5": 0.1998,
-     "A_U1.5": 0.8002,
-     "A_O2.5": 0.0509,
-     "A_U2.5": 0.9491,
-     "HCP-2_1": 0.1823,
-     "HCP-2_X": 0.1851,
-     "HCP-2_2": 0.6327,
-     "HCP-1_1": 0.3673,
-     "HCP-1_X": 0.2444,
-     "HCP-1_2": 0.3883,
-     "HCP+1_1": 0.8364,
-     "HCP+1_X": 0.1126,
-     "HCP+1_2": 0.051,
-     "HCP+2_1": 0.949,
-     "HCP+2_X": 0.0395,
-     "HCP+2_2": 0.0115,
-     "1&O2.5": 0.3788,
-     "1&U2.5": 0.2329,
-     "1&BTTS_Y": 0.2488,
-     "1&BTTS_N": 0.3629,
-     "X&O2.5": 0.0467,
-     "X&U2.5": 0.178,
-     "X&BTTS_Y": 0.1579,
-     "X&BTTS_N": 0.0668,
-     "2&O2.5": 0.0835,
-     "2&U2.5": 0.0801,
-     "2&BTTS_Y": 0.0752,
-     "2&BTTS_N": 0.0884,
-     "BTTS_Y&O2.5": 0.3707,
-     "BTTS_Y&U2.5": 0.1112,
-     "BTTS_N&O2.5": 0.1383,
-     "BTTS_N&U2.5": 0.3798,
-     "HT_BTTS_Y": 0.1772,
-     "HT_BTTS_N": 0.8228,
-     "BOTH_HALVES_O0.5": 0.5535,
-     "H_WIN_HALF": 0.7159,
-     "A_WIN_HALF": 0.2978,
-     "H_WIN_NIL": 0.3629,
-     "A_WIN_NIL": 0.0884
+     "HT_1": 0.4449,
+     "HT_X": 0.4073,
+     "HT_2": 0.1477,
+     "HT_O0.5": 0.6951,
+     "HT_U0.5": 0.3049,
+     "HT_O1.5": 0.342,
+     "HT_U1.5": 0.658,
+     "HT_O2.5": 0.116,
+     "HT_U2.5": 0.884,
+     "2H_1": 0.5064,
+     "2H_X": 0.3382,
+     "2H_2": 0.1554,
+     "MGH_1": 0.2973,
+     "MGH_X": 0.2592,
+     "MGH_2": 0.4436,
+     "O0.5": 0.9304,
+     "U0.5": 0.0696,
+     "O4.5": 0.1368,
+     "U4.5": 0.8632,
+     "O5.5": 0.0564,
+     "U5.5": 0.9436,
+     "G0-1": 0.2384,
+     "G2-3": 0.4775,
+     "G4-5": 0.2278,
+     "G6+": 0.0564,
+     "ODD": 0.4877,
+     "EVEN": 0.5123,
+     "H_O0.5": 0.8564,
+     "H_U0.5": 0.1436,
+     "H_O1.5": 0.5658,
+     "H_U1.5": 0.4342,
+     "H_O2.5": 0.2933,
+     "H_U2.5": 0.7067,
+     "A_O0.5": 0.5538,
+     "A_U0.5": 0.4462,
+     "A_O1.5": 0.1947,
+     "A_U1.5": 0.8053,
+     "A_O2.5": 0.0469,
+     "A_U2.5": 0.9531,
+     "HCP-2_1": 0.1831,
+     "HCP-2_X": 0.1953,
+     "HCP-2_2": 0.6216,
+     "HCP-1_1": 0.3784,
+     "HCP-1_X": 0.2485,
+     "HCP-1_2": 0.3731,
+     "HCP+1_1": 0.8532,
+     "HCP+1_X": 0.1014,
+     "HCP+1_2": 0.0454,
+     "HCP+2_1": 0.9546,
+     "HCP+2_X": 0.0371,
+     "HCP+2_2": 0.0083,
+     "1&O2.5": 0.3814,
+     "1&U2.5": 0.2455,
+     "1&BTTS_Y": 0.2504,
+     "1&BTTS_N": 0.3765,
+     "X&O2.5": 0.0473,
+     "X&U2.5": 0.179,
+     "X&BTTS_Y": 0.1567,
+     "X&BTTS_N": 0.0696,
+     "2&O2.5": 0.0786,
+     "2&U2.5": 0.0682,
+     "2&BTTS_Y": 0.0728,
+     "2&BTTS_N": 0.074,
+     "BTTS_Y&O2.5": 0.3705,
+     "BTTS_Y&U2.5": 0.1094,
+     "BTTS_N&O2.5": 0.1368,
+     "BTTS_N&U2.5": 0.3833,
+     "HT_BTTS_Y": 0.1763,
+     "HT_BTTS_N": 0.8237,
+     "BOTH_HALVES_O0.5": 0.5475,
+     "H_WIN_HALF": 0.7289,
+     "A_WIN_HALF": 0.2791,
+     "H_WIN_NIL": 0.3765,
+     "A_WIN_NIL": 0.074
     },
     "source": "piyasa",
     "method": "market",
     "data_quality": "market",
     "ht_share": 0.44,
-    "fit_kl": 0.00023,
+    "fit_kl": 0.00019,
     "fit_markets": [
      "1x2",
      "btts",
@@ -106497,9 +106409,9 @@
        "BTTS": "BTTS_N"
       },
       "probs": {
-       "1": 0.615,
-       "X": 0.2245,
-       "2": 0.1604
+       "1": 0.6264,
+       "X": 0.2248,
+       "2": 0.1488
       }
      }
     ],
@@ -106508,7 +106420,7 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %61, beraberliğe %22, deplasmana %16 olasılık veriyor; beklenen gol 1.9 - 0.8. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
+   "comment": "Model ev sahibine %63, beraberliğe %23, deplasmana %15 olasılık veriyor; beklenen gol 1.9 - 0.8. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
    "comment_source": "kural"
   },
   {
@@ -106534,55 +106446,29 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-09T19:28:12+03:00"
+     "t": "2026-11-09T23:24:56+03:00"
     },
     "odds": {
-     "source": "iddaa.com, nesine",
-     "t": "2026-11-09T19:28:12+03:00"
+     "source": "nesine",
+     "t": "2026-11-09T23:24:56+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-09T19:35:17+03:00"
+     "t": "2026-11-09T23:30:46+03:00"
     }
    },
    "odds": {
-    "1": 1.7,
-    "X": 3.06,
-    "2": 3.15,
-    "BTTS_Y": 1.41,
-    "BTTS_N": 1.92,
-    "U1.5": 3.53,
-    "1X": 1.1,
+    "1": 1.67,
+    "X": 3.13,
+    "2": 3.2,
+    "BTTS_Y": 1.4,
+    "BTTS_N": 1.93,
+    "U1.5": 3.6,
+    "1X": 1.09,
     "12": 1.11,
-    "X2": 1.51,
-    "U2.5": 1.81,
-    "O2.5": 1.47,
-    "HT_O1.5": 2.17,
-    "HT_U1.5": 1.36,
-    "O1.5": 1.08,
-    "O3.5": 2.38,
-    "U3.5": 1.29,
-    "1&U2.5": 4.83,
-    "X&U2.5": 4.37,
-    "2&U2.5": 8.11,
-    "1&O2.5": 2.56,
-    "X&O2.5": 9.62,
-    "2&O2.5": 5.07,
-    "BTTS_Y&U2.5": 6.46,
-    "BTTS_Y&O2.5": 1.79,
-    "BTTS_N&U2.5": 2.52,
-    "BTTS_N&O2.5": 8.32,
-    "G0-1": 3.83,
-    "G2-3": 1.84,
-    "G4-5": 3.08,
-    "G6+": 9.98,
-    "ODD": 1.74,
-    "EVEN": 1.61,
-    "HT_BTTS_Y": 3.45,
-    "HT_BTTS_N": 1.1,
-    "MGH_1": 2.78,
-    "MGH_X": 3.24,
-    "MGH_2": 1.9
+    "X2": 1.54,
+    "U2.5": 1.85,
+    "O2.5": 1.45
    },
    "odds_history": [
     {
@@ -106616,68 +106502,41 @@
      "2": 3.15,
      "O2.5": 1.47,
      "U2.5": 1.81
+    },
+    {
+     "t": "2026-11-09T23:30:46+03:00",
+     "1": 1.67,
+     "X": 3.13,
+     "2": 3.2,
+     "O2.5": 1.45,
+     "U2.5": 1.85
     }
    ],
    "market": {
     "implied": {
-     "1": 0.5013,
-     "X": 0.2537,
-     "2": 0.245,
-     "O1.5": 0.8213,
-     "U1.5": 0.1787,
-     "O2.5": 0.5639,
-     "U2.5": 0.4361,
-     "O3.5": 0.3225,
-     "U3.5": 0.6775,
-     "BTTS_Y": 0.5942,
-     "BTTS_N": 0.4058,
-     "MGH_1": 0.2964,
-     "MGH_X": 0.2479,
-     "MGH_2": 0.4556,
-     "G0-1": 0.2057,
-     "G2-3": 0.4693,
-     "G4-5": 0.2648,
-     "G6+": 0.0602,
-     "ODD": 0.4768,
-     "EVEN": 0.5232,
-     "HT_BTTS_Y": 0.1904,
-     "HT_BTTS_N": 0.8096,
-     "1&O2.5": 0.3326,
-     "1&U2.5": 0.165,
-     "X&O2.5": 0.0722,
-     "X&U2.5": 0.1848,
-     "2&O2.5": 0.1561,
-     "2&U2.5": 0.0894,
-     "BTTS_Y&O2.5": 0.4831,
-     "BTTS_Y&U2.5": 0.108,
-     "BTTS_N&O2.5": 0.0772,
-     "BTTS_N&U2.5": 0.3317,
-     "HT_O1.5": 0.3628,
-     "HT_U1.5": 0.6372,
-     "1X": 0.755,
-     "X2": 0.4987,
-     "12": 0.7463
+     "1": 0.512,
+     "X": 0.2473,
+     "2": 0.2407,
+     "O2.5": 0.5746,
+     "U2.5": 0.4254,
+     "BTTS_Y": 0.5981,
+     "BTTS_N": 0.4019,
+     "1X": 0.7593,
+     "X2": 0.488,
+     "12": 0.7527
     },
     "margin": {
-     "1x2": 0.2325,
-     "ou15": 0.2092,
-     "ou25": 0.2328,
-     "ou35": 0.1954,
-     "btts": 0.2301,
-     "mgh": 0.1947,
-     "goals_range": 0.2295,
-     "oddeven": 0.1958,
-     "htbtts": 0.1989,
-     "ms_ou25": 0.251,
-     "btts_ou25": 0.2305,
-     "ht_ou1.5": 0.1961
+     "1x2": 0.2308,
+     "ou25": 0.2302,
+     "btts": 0.2324
     },
     "method": "shin",
     "movement": {
-     "1": -0.0811,
-     "2": 0.1455,
-     "O2.5": -0.0455,
-     "U2.5": 0.0523
+     "1": -0.0973,
+     "X": 0.0262,
+     "2": 0.1636,
+     "O2.5": -0.0584,
+     "U2.5": 0.0756
     },
     "drop_alarms": [
      "1"
@@ -106688,228 +106547,228 @@
     "n": 400,
     "scope": "tüm ligler",
     "match_point": {
-     "1": 0.501,
-     "X": 0.254,
-     "2": 0.245
+     "1": 0.512,
+     "X": 0.247,
+     "2": 0.241
     },
     "date_range": [
-     "2024-04-21",
+     "2024-08-03",
      "2026-11-08"
     ],
     "markets": [
      {
       "market": "1",
-      "observed": 0.4775,
+      "observed": 0.54,
       "ci": [
-       0.429,
-       0.5264
+       0.491,
+       0.5882
       ],
-      "market_p": 0.4993,
+      "market_p": 0.5087,
       "note": "piyasayla uyumlu"
      },
      {
       "market": "X",
-      "observed": 0.2675,
+      "observed": 0.2325,
       "ci": [
-       0.2265,
-       0.3129
+       0.1938,
+       0.2763
       ],
-      "market_p": 0.2579,
+      "market_p": 0.2544,
       "note": "piyasayla uyumlu"
      },
      {
       "market": "2",
-      "observed": 0.255,
+      "observed": 0.2275,
       "ci": [
-       0.2148,
-       0.2999
+       0.1891,
+       0.2711
       ],
-      "market_p": 0.2429,
+      "market_p": 0.2369,
       "note": "piyasayla uyumlu"
      },
      {
       "market": "O2.5",
-      "observed": 0.535,
+      "observed": 0.555,
       "ci": [
-       0.486,
-       0.5833
+       0.506,
+       0.603
       ],
-      "market_p": 0.5314,
+      "market_p": 0.5404,
       "note": "piyasayla uyumlu"
      },
      {
       "market": "U2.5",
-      "observed": 0.465,
+      "observed": 0.445,
       "ci": [
-       0.4167,
-       0.514
+       0.397,
+       0.494
       ],
-      "market_p": 0.4686,
+      "market_p": 0.4596,
       "note": "piyasayla uyumlu"
      }
     ],
     "disclaimer": "Geçmişte benzer oranla fiyatlanan maçların sonuç dağılımı. Yeni bir tahmin değildir; testte bu dağılım piyasanın marjsız olasılığından daha iyi tahmin etmedi.",
     "goals": [
-     0.0625,
-     0.1575,
-     0.245,
-     0.2475,
-     0.1525,
-     0.135
+     0.06,
+     0.16,
+     0.225,
+     0.2175,
+     0.1675,
+     0.17
     ],
     "scores": [
      [
-      0.0625,
-      0.07,
-      0.0275,
-      0.015,
-      0.005
+      0.06,
+      0.06,
+      0.025,
+      0.01,
+      0.0075
      ],
      [
-      0.0875,
-      0.1375,
-      0.085,
-      0.02,
+      0.1,
+      0.105,
+      0.0675,
+      0.0225,
       0.0025
      ],
      [
-      0.08,
-      0.1,
+      0.095,
+      0.1025,
       0.055,
-      0.0175,
-      0.0
+      0.015,
+      0.0025
      ],
      [
-      0.0475,
-      0.0575,
-      0.04,
+      0.0375,
+      0.0725,
+      0.05,
+      0.01,
+      0.0025
+     ],
+     [
+      0.01,
+      0.02,
       0.0125,
-      0.005
-     ],
-     [
-      0.015,
-      0.015,
-      0.0075,
-      0.0075,
-      0.0
+      0.0125,
+      0.0025
      ]
     ],
-    "scores_other": 0.0275
+    "scores_other": 0.04
    },
    "stats": null,
    "squad": null,
    "model": {
-    "lambda_home": 1.764,
-    "lambda_away": 1.183,
+    "lambda_home": 1.816,
+    "lambda_away": 1.194,
     "sims": 10000,
-    "rho": -0.1351,
+    "rho": -0.0898,
     "probs": {
-     "1": 0.5019,
-     "X": 0.261,
-     "2": 0.2371,
-     "1X": 0.7629,
-     "X2": 0.4981,
-     "12": 0.739,
-     "O1.5": 0.804,
-     "U1.5": 0.196,
-     "O2.5": 0.5566,
-     "U2.5": 0.4434,
-     "O3.5": 0.3398,
-     "U3.5": 0.6602,
-     "BTTS_Y": 0.5763,
-     "BTTS_N": 0.4237
+     "1": 0.5186,
+     "X": 0.2449,
+     "2": 0.2365,
+     "1X": 0.7635,
+     "X2": 0.4814,
+     "12": 0.7551,
+     "O1.5": 0.8072,
+     "U1.5": 0.1928,
+     "O2.5": 0.577,
+     "U2.5": 0.423,
+     "O3.5": 0.3531,
+     "U3.5": 0.6469,
+     "BTTS_Y": 0.5846,
+     "BTTS_N": 0.4154
     },
     "htft": {
-     "1/1": 0.3118,
-     "1/X": 0.0485,
-     "1/2": 0.0192,
-     "X/1": 0.1626,
-     "X/X": 0.1559,
-     "X/2": 0.082,
-     "2/1": 0.0275,
-     "2/X": 0.0566,
-     "2/2": 0.1359
+     "1/1": 0.3214,
+     "1/X": 0.05,
+     "1/2": 0.0188,
+     "X/1": 0.1668,
+     "X/X": 0.1415,
+     "X/2": 0.084,
+     "2/1": 0.0304,
+     "2/X": 0.0534,
+     "2/2": 0.1337
     },
     "top_scores": [
      {
       "score": "1-1",
-      "p": 0.1237
+      "p": 0.1131
      },
      {
       "score": "2-1",
-      "p": 0.0905
-     },
-     {
-      "score": "2-0",
-      "p": 0.086
+      "p": 0.096
      },
      {
       "score": "1-0",
-      "p": 0.0799
+      "p": 0.084
      },
      {
-      "score": "0-0",
-      "p": 0.0661
+      "score": "2-0",
+      "p": 0.0814
+     },
+     {
+      "score": "1-2",
+      "p": 0.0613
      }
     ],
     "score_matrix": [
      [
-      0.0661,
-      0.05,
-      0.0377,
-      0.0157,
-      0.0038,
-      0.0017
-     ],
-     [
-      0.0799,
-      0.1237,
-      0.0608,
-      0.0223,
-      0.0079,
+      0.0604,
+      0.0485,
+      0.0357,
+      0.0151,
+      0.0037,
       0.001
      ],
      [
-      0.086,
-      0.0905,
-      0.0561,
-      0.0209,
-      0.0074,
+      0.084,
+      0.1131,
+      0.0613,
+      0.026,
+      0.0068,
+      0.0016
+     ],
+     [
+      0.0814,
+      0.096,
+      0.0574,
+      0.0202,
+      0.0077,
       0.0018
      ],
      [
-      0.0497,
-      0.0575,
-      0.037,
-      0.0134,
-      0.0035,
-      0.0006
+      0.0514,
+      0.0595,
+      0.0353,
+      0.0123,
+      0.0043,
+      0.0011
      ],
      [
-      0.0229,
-      0.0233,
-      0.0159,
-      0.0055,
+      0.0227,
+      0.0284,
+      0.0173,
+      0.0047,
       0.0017,
-      0.0007
+      0.0001
      ],
      [
-      0.0065,
-      0.0077,
-      0.0061,
-      0.0021,
-      0.0007,
-      0.0
+      0.0079,
+      0.0105,
+      0.0056,
+      0.0032,
+      0.0008,
+      0.0001
      ]
     ],
     "total_goals": [
-     0.0661,
-     0.1299,
-     0.2474,
-     0.2167,
-     0.1627,
-     0.0974,
-     0.0798
+     0.0604,
+     0.1324,
+     0.2302,
+     0.2239,
+     0.1694,
+     0.0996,
+     0.0841
     ],
     "sample_runs": {
      "n": 50,
@@ -106918,61 +106777,48 @@
        "i": 1,
        "ft": [
         2,
-        1
+        2
        ],
        "ht": [
-        1,
-        1
+        0,
+        0
        ],
        "goals": [
         {
-         "min": 44,
-         "side": "home"
-        },
-        {
-         "min": "45+4",
+         "min": 62,
          "side": "away"
         },
         {
-         "min": 60,
+         "min": 79,
          "side": "home"
+        },
+        {
+         "min": "90+2",
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "away"
         }
        ]
       },
       {
        "i": 2,
        "ft": [
-        0,
+        6,
         2
        ],
        "ht": [
-        0,
+        1,
         1
        ],
        "goals": [
         {
-         "min": 10,
+         "min": 8,
          "side": "away"
         },
         {
-         "min": 76,
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 3,
-       "ft": [
-        4,
-        0
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": 26,
+         "min": 31,
          "side": "home"
         },
         {
@@ -106986,79 +106832,25 @@
         {
          "min": 78,
          "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 4,
-       "ft": [
-        4,
-        1
-       ],
-       "ht": [
-        2,
-        1
-       ],
-       "goals": [
+        },
         {
-         "min": 2,
+         "min": 79,
          "side": "away"
         },
         {
-         "min": 40,
+         "min": 83,
          "side": "home"
         },
         {
-         "min": 42,
-         "side": "home"
-        },
-        {
-         "min": 71,
-         "side": "home"
-        },
-        {
-         "min": 82,
+         "min": 83,
          "side": "home"
         }
        ]
       },
       {
-       "i": 5,
+       "i": 3,
        "ft": [
-        0,
-        0
-       ],
-       "ht": [
-        0,
-        0
-       ],
-       "goals": []
-      },
-      {
-       "i": 6,
-       "ft": [
-        0,
-        2
-       ],
-       "ht": [
-        0,
-        2
-       ],
-       "goals": [
-        {
-         "min": 29,
-         "side": "away"
-        },
-        {
-         "min": "45+4",
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 7,
-       "ft": [
-        3,
+        1,
         1
        ],
        "ht": [
@@ -107067,74 +106859,103 @@
        ],
        "goals": [
         {
-         "min": 28,
+         "min": 26,
+         "side": "away"
+        },
+        {
+         "min": 37,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 4,
+       "ft": [
+        3,
+        2
+       ],
+       "ht": [
+        2,
+        2
+       ],
+       "goals": [
+        {
+         "min": 2,
+         "side": "away"
+        },
+        {
+         "min": 7,
          "side": "home"
         },
         {
-         "min": "45+4",
+         "min": 27,
          "side": "away"
+        },
+        {
+         "min": 29,
+         "side": "home"
         },
         {
          "min": 51,
          "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 5,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 42,
+         "side": "home"
         },
         {
-         "min": 74,
+         "min": 46,
+         "side": "home"
+        },
+        {
+         "min": "90+2",
          "side": "home"
         }
        ]
       },
       {
-       "i": 8,
+       "i": 6,
        "ft": [
-        0,
-        2
-       ],
-       "ht": [
-        0,
+        2,
         1
        ],
-       "goals": [
-        {
-         "min": 1,
-         "side": "away"
-        },
-        {
-         "min": 63,
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 9,
-       "ft": [
-        0,
-        3
-       ],
        "ht": [
-        0,
-        2
+        1,
+        0
        ],
        "goals": [
-        {
-         "min": 18,
-         "side": "away"
-        },
         {
          "min": 41,
-         "side": "away"
+         "side": "home"
         },
         {
-         "min": 62,
+         "min": 76,
+         "side": "home"
+        },
+        {
+         "min": 76,
          "side": "away"
         }
        ]
       },
       {
-       "i": 10,
+       "i": 7,
        "ft": [
-        3,
-        0
+        1,
+        3
        ],
        "ht": [
         1,
@@ -107147,52 +106968,39 @@
         },
         {
          "min": 46,
-         "side": "home"
+         "side": "away"
         },
         {
          "min": 81,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 11,
-       "ft": [
-        1,
-        1
-       ],
-       "ht": [
-        0,
-        0
-       ],
-       "goals": [
-        {
-         "min": 49,
          "side": "away"
         },
         {
-         "min": 75,
-         "side": "home"
+         "min": "90+3",
+         "side": "away"
         }
        ]
       },
       {
-       "i": 12,
+       "i": 8,
        "ft": [
-        2,
+        3,
         2
        ],
        "ht": [
-        1,
+        2,
         1
        ],
        "goals": [
         {
-         "min": 14,
+         "min": 18,
+         "side": "home"
+        },
+        {
+         "min": 37,
          "side": "away"
         },
         {
-         "min": 17,
+         "min": 39,
          "side": "home"
         },
         {
@@ -107206,19 +107014,19 @@
        ]
       },
       {
-       "i": 13,
+       "i": 9,
        "ft": [
-        6,
-        0
+        4,
+        3
        ],
        "ht": [
-        3,
-        0
+        2,
+        1
        ],
        "goals": [
         {
          "min": 10,
-         "side": "home"
+         "side": "away"
         },
         {
          "min": 15,
@@ -107230,7 +107038,11 @@
         },
         {
          "min": 62,
-         "side": "home"
+         "side": "away"
+        },
+        {
+         "min": 68,
+         "side": "away"
         },
         {
          "min": 87,
@@ -107243,30 +107055,134 @@
        ]
       },
       {
-       "i": 14,
+       "i": 10,
        "ft": [
         2,
         2
        ],
        "ht": [
-        0,
-        2
+        2,
+        0
        ],
        "goals": [
         {
-         "min": 25,
-         "side": "away"
-        },
-        {
-         "min": 30,
-         "side": "away"
-        },
-        {
-         "min": 57,
+         "min": 34,
          "side": "home"
         },
         {
-         "min": 81,
+         "min": "45+3",
+         "side": "home"
+        },
+        {
+         "min": 75,
+         "side": "away"
+        },
+        {
+         "min": 82,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 11,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 58,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 12,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        1,
+        0
+       ],
+       "goals": [
+        {
+         "min": 3,
+         "side": "home"
+        },
+        {
+         "min": 50,
+         "side": "home"
+        },
+        {
+         "min": 52,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 13,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 4,
+         "side": "away"
+        },
+        {
+         "min": 33,
+         "side": "home"
+        },
+        {
+         "min": "90+5",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 14,
+       "ft": [
+        3,
+        3
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 2,
+         "side": "away"
+        },
+        {
+         "min": "45+4",
+         "side": "home"
+        },
+        {
+         "min": 48,
+         "side": "away"
+        },
+        {
+         "min": 48,
+         "side": "away"
+        },
+        {
+         "min": 53,
+         "side": "home"
+        },
+        {
+         "min": 73,
          "side": "home"
         }
        ]
@@ -107275,19 +107191,23 @@
        "i": 15,
        "ft": [
         1,
-        1
+        2
        ],
        "ht": [
         1,
-        0
+        1
        ],
        "goals": [
         {
-         "min": 12,
+         "min": 2,
+         "side": "away"
+        },
+        {
+         "min": 30,
          "side": "home"
         },
         {
-         "min": 58,
+         "min": 73,
          "side": "away"
         }
        ]
@@ -107304,15 +107224,15 @@
        ],
        "goals": [
         {
-         "min": 3,
+         "min": 38,
          "side": "away"
         },
         {
-         "min": 50,
+         "min": 46,
          "side": "home"
         },
         {
-         "min": 52,
+         "min": "90+3",
          "side": "home"
         }
        ]
@@ -107321,27 +107241,19 @@
        "i": 17,
        "ft": [
         2,
-        2
+        0
        ],
        "ht": [
-        0,
-        1
+        1,
+        0
        ],
        "goals": [
         {
-         "min": 33,
-         "side": "away"
-        },
-        {
-         "min": 90,
+         "min": "45+4",
          "side": "home"
         },
         {
-         "min": "90+1",
-         "side": "away"
-        },
-        {
-         "min": "90+2",
+         "min": 59,
          "side": "home"
         }
        ]
@@ -107349,20 +107261,28 @@
       {
        "i": 18,
        "ft": [
-        1,
-        1
+        2,
+        2
        ],
        "ht": [
         0,
-        1
+        2
        ],
        "goals": [
         {
-         "min": 8,
+         "min": 24,
          "side": "away"
         },
         {
-         "min": "90+1",
+         "min": 39,
+         "side": "away"
+        },
+        {
+         "min": 67,
+         "side": "home"
+        },
+        {
+         "min": "90+4",
          "side": "home"
         }
        ]
@@ -107370,28 +107290,24 @@
       {
        "i": 19,
        "ft": [
-        2,
-        2
+        0,
+        3
        ],
        "ht": [
-        2,
+        0,
         1
        ],
        "goals": [
         {
-         "min": 5,
-         "side": "home"
-        },
-        {
-         "min": 16,
+         "min": 25,
          "side": "away"
         },
         {
-         "min": 18,
-         "side": "home"
+         "min": 52,
+         "side": "away"
         },
         {
-         "min": 75,
+         "min": 57,
          "side": "away"
         }
        ]
@@ -107399,53 +107315,61 @@
       {
        "i": 20,
        "ft": [
-        2,
+        5,
         1
        ],
        "ht": [
-        1,
+        3,
         0
        ],
        "goals": [
         {
-         "min": 35,
+         "min": 4,
          "side": "home"
         },
         {
-         "min": 73,
+         "min": 24,
          "side": "home"
         },
         {
-         "min": "90+1",
+         "min": "45+2",
+         "side": "home"
+        },
+        {
+         "min": 55,
          "side": "away"
+        },
+        {
+         "min": 70,
+         "side": "home"
+        },
+        {
+         "min": 87,
+         "side": "home"
         }
        ]
       },
       {
        "i": 21,
        "ft": [
-        4,
-        0
+        2,
+        1
        ],
        "ht": [
-        1,
+        0,
         0
        ],
        "goals": [
         {
-         "min": 1,
+         "min": 49,
          "side": "home"
         },
         {
-         "min": 75,
-         "side": "home"
+         "min": 57,
+         "side": "away"
         },
         {
-         "min": 75,
-         "side": "home"
-        },
-        {
-         "min": "90+5",
+         "min": 88,
          "side": "home"
         }
        ]
@@ -107453,8 +107377,41 @@
       {
        "i": 22,
        "ft": [
+        4,
+        1
+       ],
+       "ht": [
         3,
-        0
+        1
+       ],
+       "goals": [
+        {
+         "min": 7,
+         "side": "home"
+        },
+        {
+         "min": 18,
+         "side": "away"
+        },
+        {
+         "min": 39,
+         "side": "home"
+        },
+        {
+         "min": "45+3",
+         "side": "home"
+        },
+        {
+         "min": 79,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 23,
+       "ft": [
+        0,
+        1
        ],
        "ht": [
         0,
@@ -107463,23 +107420,15 @@
        "goals": [
         {
          "min": 65,
-         "side": "home"
-        },
-        {
-         "min": 69,
-         "side": "home"
-        },
-        {
-         "min": 84,
-         "side": "home"
+         "side": "away"
         }
        ]
       },
       {
-       "i": 23,
+       "i": 24,
        "ft": [
-        2,
-        1
+        3,
+        0
        ],
        "ht": [
         1,
@@ -107487,24 +107436,143 @@
        ],
        "goals": [
         {
-         "min": 23,
+         "min": 34,
          "side": "home"
         },
         {
-         "min": 47,
-         "side": "away"
+         "min": 49,
+         "side": "home"
         },
         {
-         "min": 70,
+         "min": 58,
          "side": "home"
         }
        ]
       },
       {
-       "i": 24,
+       "i": 25,
        "ft": [
         2,
+        3
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 10,
+         "side": "away"
+        },
+        {
+         "min": 27,
+         "side": "home"
+        },
+        {
+         "min": 65,
+         "side": "home"
+        },
+        {
+         "min": 84,
+         "side": "away"
+        },
+        {
+         "min": "90+5",
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 26,
+       "ft": [
+        7,
+        3
+       ],
+       "ht": [
+        4,
+        1
+       ],
+       "goals": [
+        {
+         "min": 2,
+         "side": "home"
+        },
+        {
+         "min": 8,
+         "side": "home"
+        },
+        {
+         "min": 14,
+         "side": "away"
+        },
+        {
+         "min": 18,
+         "side": "home"
+        },
+        {
+         "min": 37,
+         "side": "home"
+        },
+        {
+         "min": 51,
+         "side": "home"
+        },
+        {
+         "min": 54,
+         "side": "away"
+        },
+        {
+         "min": 56,
+         "side": "home"
+        },
+        {
+         "min": 62,
+         "side": "home"
+        },
+        {
+         "min": 80,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 27,
+       "ft": [
+        4,
+        1
+       ],
+       "ht": [
+        2,
         0
+       ],
+       "goals": [
+        {
+         "min": 17,
+         "side": "home"
+        },
+        {
+         "min": 39,
+         "side": "home"
+        },
+        {
+         "min": 61,
+         "side": "home"
+        },
+        {
+         "min": 67,
+         "side": "home"
+        },
+        {
+         "min": 72,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 28,
+       "ft": [
+        2,
+        1
        ],
        "ht": [
         1,
@@ -107518,105 +107586,9 @@
         {
          "min": 49,
          "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 25,
-       "ft": [
-        2,
-        2
-       ],
-       "ht": [
-        1,
-        1
-       ],
-       "goals": [
-        {
-         "min": 42,
-         "side": "away"
         },
         {
-         "min": "45+2",
-         "side": "home"
-        },
-        {
-         "min": 70,
-         "side": "away"
-        },
-        {
-         "min": 87,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 26,
-       "ft": [
-        1,
-        1
-       ],
-       "ht": [
-        0,
-        1
-       ],
-       "goals": [
-        {
-         "min": 44,
-         "side": "away"
-        },
-        {
-         "min": 49,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 27,
-       "ft": [
-        3,
-        1
-       ],
-       "ht": [
-        1,
-        1
-       ],
-       "goals": [
-        {
-         "min": 21,
-         "side": "away"
-        },
-        {
-         "min": 26,
-         "side": "home"
-        },
-        {
-         "min": 81,
-         "side": "home"
-        },
-        {
-         "min": "90+5",
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 28,
-       "ft": [
-        1,
-        1
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": 4,
-         "side": "home"
-        },
-        {
-         "min": 71,
+         "min": "90+4",
          "side": "away"
         }
        ]
@@ -107624,36 +107596,28 @@
       {
        "i": 29,
        "ft": [
-        6,
-        0
+        3,
+        1
        ],
        "ht": [
-        2,
-        0
+        1,
+        1
        ],
        "goals": [
         {
-         "min": 34,
+         "min": 1,
+         "side": "away"
+        },
+        {
+         "min": 9,
          "side": "home"
         },
         {
-         "min": 40,
+         "min": 50,
          "side": "home"
         },
         {
-         "min": 61,
-         "side": "home"
-        },
-        {
-         "min": 85,
-         "side": "home"
-        },
-        {
-         "min": 88,
-         "side": "home"
-        },
-        {
-         "min": "90+3",
+         "min": 79,
          "side": "home"
         }
        ]
@@ -107661,7 +107625,44 @@
       {
        "i": 30,
        "ft": [
-        2,
+        5,
+        1
+       ],
+       "ht": [
+        3,
+        0
+       ],
+       "goals": [
+        {
+         "min": 20,
+         "side": "home"
+        },
+        {
+         "min": 31,
+         "side": "home"
+        },
+        {
+         "min": 39,
+         "side": "home"
+        },
+        {
+         "min": 70,
+         "side": "away"
+        },
+        {
+         "min": 75,
+         "side": "home"
+        },
+        {
+         "min": 84,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 31,
+       "ft": [
+        1,
         1
        ],
        "ht": [
@@ -107670,23 +107671,19 @@
        ],
        "goals": [
         {
-         "min": 30,
+         "min": 14,
          "side": "home"
         },
         {
-         "min": 65,
-         "side": "home"
-        },
-        {
-         "min": 83,
+         "min": "90+1",
          "side": "away"
         }
        ]
       },
       {
-       "i": 31,
+       "i": 32,
        "ft": [
-        4,
+        1,
         0
        ],
        "ht": [
@@ -107695,25 +107692,13 @@
        ],
        "goals": [
         {
-         "min": 5,
-         "side": "home"
-        },
-        {
-         "min": 53,
-         "side": "home"
-        },
-        {
-         "min": 63,
-         "side": "home"
-        },
-        {
-         "min": 82,
+         "min": 28,
          "side": "home"
         }
        ]
       },
       {
-       "i": 32,
+       "i": 33,
        "ft": [
         3,
         1
@@ -107724,7 +107709,7 @@
        ],
        "goals": [
         {
-         "min": 33,
+         "min": 31,
          "side": "home"
         },
         {
@@ -107732,45 +107717,12 @@
          "side": "home"
         },
         {
-         "min": 51,
+         "min": 65,
          "side": "home"
         },
         {
-         "min": 62,
+         "min": 72,
          "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 33,
-       "ft": [
-        5,
-        0
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": 6,
-         "side": "home"
-        },
-        {
-         "min": 52,
-         "side": "home"
-        },
-        {
-         "min": 53,
-         "side": "home"
-        },
-        {
-         "min": 73,
-         "side": "home"
-        },
-        {
-         "min": 82,
-         "side": "home"
         }
        ]
       },
@@ -107782,15 +107734,15 @@
        ],
        "ht": [
         0,
-        1
+        0
        ],
        "goals": [
         {
-         "min": 22,
+         "min": 82,
          "side": "away"
         },
         {
-         "min": 52,
+         "min": 84,
          "side": "home"
         }
        ]
@@ -107798,28 +107750,24 @@
       {
        "i": 35,
        "ft": [
-        5,
+        4,
         0
        ],
        "ht": [
-        2,
+        1,
         0
        ],
        "goals": [
         {
-         "min": 5,
+         "min": "45+3",
          "side": "home"
         },
         {
-         "min": 12,
+         "min": 55,
          "side": "home"
         },
         {
-         "min": 54,
-         "side": "home"
-        },
-        {
-         "min": "90+4",
+         "min": 66,
          "side": "home"
         },
         {
@@ -107831,8 +107779,8 @@
       {
        "i": 36,
        "ft": [
-        0,
-        1
+        2,
+        2
        ],
        "ht": [
         0,
@@ -107840,7 +107788,19 @@
        ],
        "goals": [
         {
-         "min": 22,
+         "min": 29,
+         "side": "away"
+        },
+        {
+         "min": 49,
+         "side": "home"
+        },
+        {
+         "min": 83,
+         "side": "home"
+        },
+        {
+         "min": 86,
          "side": "away"
         }
        ]
@@ -107848,106 +107808,60 @@
       {
        "i": 37,
        "ft": [
-        4,
-        0
+        0,
+        1
        ],
        "ht": [
-        3,
+        0,
         0
        ],
        "goals": [
         {
-         "min": 5,
-         "side": "home"
-        },
-        {
-         "min": 21,
-         "side": "home"
-        },
-        {
-         "min": 34,
-         "side": "home"
-        },
-        {
-         "min": 80,
-         "side": "home"
+         "min": 82,
+         "side": "away"
         }
        ]
       },
       {
        "i": 38,
        "ft": [
-        0,
+        5,
         1
        ],
        "ht": [
-        0,
+        3,
         1
        ],
        "goals": [
         {
-         "min": 41,
+         "min": 1,
          "side": "away"
+        },
+        {
+         "min": 29,
+         "side": "home"
+        },
+        {
+         "min": 42,
+         "side": "home"
+        },
+        {
+         "min": "45+2",
+         "side": "home"
+        },
+        {
+         "min": 47,
+         "side": "home"
+        },
+        {
+         "min": 75,
+         "side": "home"
         }
        ]
       },
       {
        "i": 39,
        "ft": [
-        2,
-        1
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": 30,
-         "side": "home"
-        },
-        {
-         "min": 67,
-         "side": "home"
-        },
-        {
-         "min": 68,
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 40,
-       "ft": [
-        1,
-        3
-       ],
-       "ht": [
-        1,
-        3
-       ],
-       "goals": [
-        {
-         "min": 14,
-         "side": "home"
-        },
-        {
-         "min": 17,
-         "side": "away"
-        },
-        {
-         "min": 42,
-         "side": "away"
-        },
-        {
-         "min": "45+3",
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 41,
-       "ft": [
         1,
         1
        ],
@@ -107957,7 +107871,7 @@
        ],
        "goals": [
         {
-         "min": 13,
+         "min": 6,
          "side": "away"
         },
         {
@@ -107967,7 +107881,7 @@
        ]
       },
       {
-       "i": 42,
+       "i": 40,
        "ft": [
         1,
         1
@@ -107978,38 +107892,17 @@
        ],
        "goals": [
         {
-         "min": 80,
+         "min": 49,
          "side": "away"
         },
         {
-         "min": 87,
+         "min": "90+4",
          "side": "home"
         }
        ]
       },
       {
-       "i": 43,
-       "ft": [
-        1,
-        1
-       ],
-       "ht": [
-        0,
-        0
-       ],
-       "goals": [
-        {
-         "min": 80,
-         "side": "home"
-        },
-        {
-         "min": 90,
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 44,
+       "i": 41,
        "ft": [
         0,
         0
@@ -108021,57 +107914,115 @@
        "goals": []
       },
       {
-       "i": 45,
+       "i": 42,
        "ft": [
         2,
-        2
+        0
        ],
        "ht": [
-        1,
-        2
+        0,
+        0
        ],
        "goals": [
         {
-         "min": 10,
-         "side": "away"
-        },
-        {
-         "min": 21,
-         "side": "away"
-        },
-        {
-         "min": "45+4",
+         "min": 50,
          "side": "home"
         },
         {
-         "min": 74,
+         "min": 59,
          "side": "home"
         }
        ]
       },
       {
-       "i": 46,
+       "i": 43,
        "ft": [
-        1,
+        6,
         1
        ],
        "ht": [
-        0,
+        2,
         1
        ],
        "goals": [
         {
-         "min": 38,
+         "min": 29,
+         "side": "home"
+        },
+        {
+         "min": 32,
+         "side": "home"
+        },
+        {
+         "min": "45+2",
          "side": "away"
         },
         {
          "min": 63,
          "side": "home"
+        },
+        {
+         "min": 66,
+         "side": "home"
+        },
+        {
+         "min": 68,
+         "side": "home"
+        },
+        {
+         "min": 90,
+         "side": "home"
         }
        ]
       },
       {
-       "i": 47,
+       "i": 44,
+       "ft": [
+        2,
+        0
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 1,
+         "side": "home"
+        },
+        {
+         "min": 2,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 45,
+       "ft": [
+        1,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 51,
+         "side": "away"
+        },
+        {
+         "min": 54,
+         "side": "home"
+        },
+        {
+         "min": 56,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 46,
        "ft": [
         4,
         1
@@ -108082,32 +108033,32 @@
        ],
        "goals": [
         {
-         "min": 31,
+         "min": 7,
          "side": "home"
         },
         {
-         "min": 41,
+         "min": 9,
          "side": "away"
         },
         {
-         "min": 42,
+         "min": 12,
          "side": "home"
         },
         {
-         "min": 62,
+         "min": 56,
          "side": "home"
         },
         {
-         "min": "90+3",
+         "min": 85,
          "side": "home"
         }
        ]
       },
       {
-       "i": 48,
+       "i": 47,
        "ft": [
-        2,
-        1
+        0,
+        2
        ],
        "ht": [
         0,
@@ -108115,16 +108066,49 @@
        ],
        "goals": [
         {
-         "min": 47,
-         "side": "home"
-        },
-        {
-         "min": 62,
-         "side": "home"
-        },
-        {
-         "min": 65,
+         "min": 63,
          "side": "away"
+        },
+        {
+         "min": 66,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 48,
+       "ft": [
+        5,
+        1
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 18,
+         "side": "home"
+        },
+        {
+         "min": "45+1",
+         "side": "home"
+        },
+        {
+         "min": 57,
+         "side": "away"
+        },
+        {
+         "min": 80,
+         "side": "home"
+        },
+        {
+         "min": 81,
+         "side": "home"
+        },
+        {
+         "min": "90+2",
+         "side": "home"
         }
        ]
       },
@@ -108132,20 +108116,32 @@
        "i": 49,
        "ft": [
         2,
-        0
+        3
        ],
        "ht": [
-        1,
-        0
+        2,
+        1
        ],
        "goals": [
         {
-         "min": 6,
+         "min": 2,
          "side": "home"
         },
         {
-         "min": 65,
+         "min": 8,
+         "side": "away"
+        },
+        {
+         "min": 21,
          "side": "home"
+        },
+        {
+         "min": 58,
+         "side": "away"
+        },
+        {
+         "min": "90+5",
+         "side": "away"
         }
        ]
       },
@@ -108156,46 +108152,46 @@
         1
        ],
        "ht": [
-        1,
+        0,
         0
        ],
        "goals": [
         {
-         "min": "45+1",
-         "side": "home"
+         "min": 77,
+         "side": "away"
         },
         {
-         "min": 55,
-         "side": "away"
+         "min": "90+2",
+         "side": "home"
         }
        ]
       }
      ],
      "summary": {
-      "1": 24,
-      "X": 19,
-      "2": 7,
-      "O2.5": 30,
-      "BTTS_Y": 30,
+      "1": 27,
+      "X": 12,
+      "2": 11,
+      "O2.5": 35,
+      "BTTS_Y": 36,
       "top_scores": [
        [
         "1-1",
-        11
-       ],
-       [
-        "2-1",
-        7
-       ],
-       [
-        "2-2",
         6
        ],
        [
-        "4-0",
+        "2-1",
         4
        ],
        [
-        "0-2",
+        "2-2",
+        4
+       ],
+       [
+        "5-1",
+        4
+       ],
+       [
+        "0-1",
         3
        ]
       ]
@@ -108203,93 +108199,90 @@
      "note": "50 örnek koşu yalnızca gösterim içindir; olasılıklar 10.000 simülasyondan hesaplanır."
     },
     "extra": {
-     "HT_1": 0.3796,
-     "HT_X": 0.4004,
-     "HT_2": 0.22,
-     "HT_O0.5": 0.7156,
-     "HT_U0.5": 0.2844,
-     "HT_O1.5": 0.3633,
-     "HT_U1.5": 0.6367,
-     "HT_O2.5": 0.1381,
-     "HT_U2.5": 0.8619,
-     "2H_1": 0.4261,
-     "2H_X": 0.3465,
-     "2H_2": 0.2274,
-     "MGH_1": 0.2831,
-     "MGH_X": 0.2635,
-     "MGH_2": 0.4534,
-     "O0.5": 0.9339,
-     "U0.5": 0.0661,
-     "O4.5": 0.1772,
-     "U4.5": 0.8228,
-     "O5.5": 0.0798,
-     "U5.5": 0.9202,
-     "G0-1": 0.196,
-     "G2-3": 0.4641,
-     "G4-5": 0.26,
-     "G6+": 0.0798,
-     "ODD": 0.4677,
-     "EVEN": 0.5323,
-     "H_O0.5": 0.8248,
-     "H_U0.5": 0.1752,
-     "H_O1.5": 0.5288,
-     "H_U1.5": 0.4712,
-     "H_O2.5": 0.2658,
-     "H_U2.5": 0.7342,
-     "A_O0.5": 0.6854,
-     "A_U0.5": 0.3146,
-     "A_O1.5": 0.3289,
-     "A_U1.5": 0.6711,
-     "A_O2.5": 0.1129,
-     "A_U2.5": 0.8871,
-     "HCP-2_1": 0.1266,
-     "HCP-2_X": 0.1617,
-     "HCP-2_2": 0.7117,
-     "HCP-1_1": 0.2883,
-     "HCP-1_X": 0.2136,
-     "HCP-1_2": 0.4981,
-     "HCP+1_1": 0.7629,
-     "HCP+1_X": 0.1359,
-     "HCP+1_2": 0.1012,
-     "HCP+2_1": 0.8988,
-     "HCP+2_X": 0.068,
-     "HCP+2_2": 0.0332,
-     "1&O2.5": 0.3359,
-     "1&U2.5": 0.166,
-     "1&BTTS_Y": 0.2534,
-     "1&BTTS_N": 0.2485,
-     "X&O2.5": 0.0712,
-     "X&U2.5": 0.1898,
-     "X&BTTS_Y": 0.1949,
-     "X&BTTS_N": 0.0661,
-     "2&O2.5": 0.1494,
-     "2&U2.5": 0.0876,
-     "2&BTTS_Y": 0.128,
-     "2&BTTS_N": 0.1091,
-     "BTTS_Y&O2.5": 0.4526,
-     "BTTS_Y&U2.5": 0.1237,
-     "BTTS_N&O2.5": 0.104,
-     "BTTS_N&U2.5": 0.3197,
-     "HT_BTTS_Y": 0.2102,
-     "HT_BTTS_N": 0.7898,
-     "BOTH_HALVES_O0.5": 0.5906,
-     "H_WIN_HALF": 0.6389,
-     "A_WIN_HALF": 0.3929,
-     "H_WIN_NIL": 0.2485,
-     "A_WIN_NIL": 0.1091
+     "HT_1": 0.3902,
+     "HT_X": 0.3923,
+     "HT_2": 0.2175,
+     "HT_O0.5": 0.7308,
+     "HT_U0.5": 0.2692,
+     "HT_O1.5": 0.3832,
+     "HT_U1.5": 0.6168,
+     "HT_O2.5": 0.1454,
+     "HT_U2.5": 0.8546,
+     "2H_1": 0.4348,
+     "2H_X": 0.3394,
+     "2H_2": 0.2258,
+     "MGH_1": 0.292,
+     "MGH_X": 0.2564,
+     "MGH_2": 0.4516,
+     "O0.5": 0.9396,
+     "U0.5": 0.0604,
+     "O4.5": 0.1838,
+     "U4.5": 0.8162,
+     "O5.5": 0.0841,
+     "U5.5": 0.9159,
+     "G0-1": 0.1928,
+     "G2-3": 0.4541,
+     "G4-5": 0.269,
+     "G6+": 0.0841,
+     "ODD": 0.4784,
+     "EVEN": 0.5216,
+     "H_O0.5": 0.8352,
+     "H_U0.5": 0.1648,
+     "H_O1.5": 0.5424,
+     "H_U1.5": 0.4576,
+     "H_O2.5": 0.2773,
+     "H_U2.5": 0.7227,
+     "A_O0.5": 0.689,
+     "A_U0.5": 0.311,
+     "A_O1.5": 0.329,
+     "A_U1.5": 0.671,
+     "A_O2.5": 0.1144,
+     "A_U2.5": 0.8856,
+     "HCP-2_1": 0.1361,
+     "HCP-2_X": 0.1618,
+     "HCP-2_2": 0.7022,
+     "HCP-1_1": 0.2978,
+     "HCP-1_X": 0.2208,
+     "HCP-1_2": 0.4814,
+     "HCP+1_1": 0.7635,
+     "HCP+1_X": 0.1345,
+     "HCP+1_2": 0.1019,
+     "HCP+2_1": 0.8981,
+     "HCP+2_X": 0.0706,
+     "HCP+2_2": 0.0313,
+     "1&O2.5": 0.3532,
+     "1&U2.5": 0.1654,
+     "1&BTTS_Y": 0.268,
+     "1&BTTS_N": 0.2506,
+     "X&O2.5": 0.0715,
+     "X&U2.5": 0.1734,
+     "X&BTTS_Y": 0.1846,
+     "X&BTTS_N": 0.0604,
+     "2&O2.5": 0.1523,
+     "2&U2.5": 0.0842,
+     "2&BTTS_Y": 0.132,
+     "2&BTTS_N": 0.1044,
+     "BTTS_Y&O2.5": 0.4716,
+     "BTTS_Y&U2.5": 0.1131,
+     "BTTS_N&O2.5": 0.1054,
+     "BTTS_N&U2.5": 0.3099,
+     "HT_BTTS_Y": 0.2227,
+     "HT_BTTS_N": 0.7773,
+     "BOTH_HALVES_O0.5": 0.5996,
+     "H_WIN_HALF": 0.6544,
+     "A_WIN_HALF": 0.3924,
+     "H_WIN_NIL": 0.2506,
+     "A_WIN_NIL": 0.1044
     },
     "source": "piyasa",
     "method": "market",
     "data_quality": "market",
-    "ht_share": 0.431,
-    "fit_kl": 0.0017,
+    "ht_share": 0.44,
+    "fit_kl": 0.0001,
     "fit_markets": [
      "1x2",
      "btts",
-     "ou15",
-     "ou25",
-     "ou35",
-     "ht_ou1.5"
+     "ou25"
     ],
     "notes": [
      "Piyasa oranlarından türetildi; bağımsız tahmin değildir."
@@ -108299,43 +108292,7 @@
      "away": 0
     }
    },
-   "consistency": [
-    {
-     "market": "HT_BTTS_N",
-     "label": "İY KG Yok",
-     "odds": 1.1,
-     "fair_p": 0.7898,
-     "ev": -0.1312
-    },
-    {
-     "market": "HT_U1.5",
-     "label": "İY 1.5 Alt",
-     "odds": 1.36,
-     "fair_p": 0.6367,
-     "ev": -0.1341
-    },
-    {
-     "market": "BTTS_N&O2.5",
-     "label": "KG Yok & 2.5 Üst",
-     "odds": 8.32,
-     "fair_p": 0.104,
-     "ev": -0.1347
-    },
-    {
-     "market": "MGH_2",
-     "label": "Çok gol: 2. yarı",
-     "odds": 1.9,
-     "fair_p": 0.4534,
-     "ev": -0.1385
-    },
-    {
-     "market": "1&O2.5",
-     "label": "MS 1 & 2.5 Üst",
-     "odds": 2.56,
-     "fair_p": 0.3359,
-     "ev": -0.1401
-    }
-   ],
+   "consistency": [],
    "consensus": {
     "sources": [
      {
@@ -108346,9 +108303,9 @@
        "BTTS": "BTTS_Y"
       },
       "probs": {
-       "1": 0.5013,
-       "X": 0.2537,
-       "2": 0.245
+       "1": 0.512,
+       "X": 0.2473,
+       "2": 0.2407
       }
      }
     ],
@@ -108357,7 +108314,7 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %50, beraberliğe %26, deplasmana %24 olasılık veriyor; beklenen gol 1.8 - 1.2. MS 1 oranı ilk görüldüğünden bu yana %8 düştü. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
+   "comment": "Model ev sahibine %52, beraberliğe %24, deplasmana %24 olasılık veriyor; beklenen gol 1.8 - 1.2. MS 1 oranı ilk görüldüğünden bu yana %10 düştü. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
    "comment_source": "kural"
   },
   {
@@ -108383,26 +108340,24 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-09T19:28:12+03:00"
+     "t": "2026-11-09T23:24:56+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-09T19:28:12+03:00"
+     "t": "2026-11-09T23:24:56+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-09T19:35:17+03:00"
+     "t": "2026-11-09T23:30:46+03:00"
     }
    },
    "odds": {
-    "1": 1.25,
-    "X": 3.83,
-    "2": 5.78,
-    "BTTS_Y": 1.74,
-    "BTTS_N": 1.52,
-    "X2": 2.13,
-    "U2.5": 1.69,
-    "O2.5": 1.55
+    "1": 1.23,
+    "X": 4.22,
+    "2": 5.5,
+    "BTTS_Y": 1.53,
+    "BTTS_N": 1.74,
+    "X2": 2.2
    },
    "odds_history": [
     {
@@ -108436,37 +108391,37 @@
      "2": 5.78,
      "O2.5": 1.55,
      "U2.5": 1.69
+    },
+    {
+     "t": "2026-11-09T23:30:46+03:00",
+     "1": 1.23,
+     "X": 4.22,
+     "2": 5.5
     }
    ],
    "market": {
     "implied": {
-     "1": 0.7015,
-     "X": 0.1893,
-     "2": 0.1093,
-     "O2.5": 0.5267,
-     "U2.5": 0.4733,
-     "BTTS_Y": 0.4584,
-     "BTTS_N": 0.5416,
-     "1X": 0.8908,
-     "X2": 0.2986,
-     "12": 0.8108
+     "1": 0.7149,
+     "X": 0.1676,
+     "2": 0.1176,
+     "BTTS_Y": 0.5394,
+     "BTTS_N": 0.4606,
+     "1X": 0.8825,
+     "X2": 0.2852,
+     "12": 0.8325
     },
     "margin": {
-     "1x2": 0.2341,
-     "ou25": 0.2369,
-     "btts": 0.2326
+     "1x2": 0.2318,
+     "btts": 0.2283
     },
     "method": "shin",
     "movement": {
-     "1": -0.1667,
-     "X": 0.2395,
-     "2": 0.4132,
-     "O2.5": -0.153,
-     "U2.5": 0.1575
+     "1": -0.18,
+     "X": 0.3657,
+     "2": 0.3447
     },
     "drop_alarms": [
-     "1",
-     "O2.5"
+     "1"
     ]
    },
    "odds_analysis": {
@@ -108474,228 +108429,228 @@
     "n": 400,
     "scope": "tüm ligler",
     "match_point": {
-     "1": 0.702,
-     "X": 0.189,
-     "2": 0.109
+     "1": 0.715,
+     "X": 0.168,
+     "2": 0.118
     },
     "date_range": [
-     "2024-04-01",
+     "2024-07-26",
      "2026-11-07"
     ],
     "markets": [
      {
       "market": "1",
-      "observed": 0.7375,
+      "observed": 0.7225,
       "ci": [
-       0.6923,
-       0.7782
+       0.6767,
+       0.7641
       ],
-      "market_p": 0.7026,
+      "market_p": 0.7088,
       "note": "piyasayla uyumlu"
      },
      {
       "market": "X",
-      "observed": 0.1825,
+      "observed": 0.1875,
       "ci": [
-       0.1477,
-       0.2233
+       0.1523,
+       0.2287
       ],
-      "market_p": 0.1858,
+      "market_p": 0.1804,
       "note": "piyasayla uyumlu"
      },
      {
       "market": "2",
-      "observed": 0.08,
+      "observed": 0.09,
       "ci": [
-       0.0572,
-       0.1108
+       0.0657,
+       0.1221
       ],
-      "market_p": 0.1115,
-      "note": "fark GA dışında (çoklu karşılaştırmada rastlantı olabilir)"
+      "market_p": 0.1109,
+      "note": "piyasayla uyumlu"
      },
      {
       "market": "O2.5",
-      "observed": 0.5975,
+      "observed": 0.6,
       "ci": [
-       0.5487,
-       0.6444
+       0.5513,
+       0.6468
       ],
-      "market_p": 0.5907,
+      "market_p": 0.6127,
       "note": "piyasayla uyumlu"
      },
      {
       "market": "U2.5",
-      "observed": 0.4025,
+      "observed": 0.4,
       "ci": [
-       0.3556,
-       0.4513
+       0.3532,
+       0.4487
       ],
-      "market_p": 0.4093,
+      "market_p": 0.3873,
       "note": "piyasayla uyumlu"
      }
     ],
     "disclaimer": "Geçmişte benzer oranla fiyatlanan maçların sonuç dağılımı. Yeni bir tahmin değildir; testte bu dağılım piyasanın marjsız olasılığından daha iyi tahmin etmedi.",
     "goals": [
-     0.04,
-     0.175,
-     0.1875,
-     0.2275,
-     0.1775,
-     0.1925
+     0.0375,
+     0.1575,
+     0.205,
+     0.2325,
+     0.1725,
+     0.195
     ],
     "scores": [
      [
-      0.04,
-      0.0275,
-      0.0025,
-      0.0025,
-      0.0
-     ],
-     [
-      0.1475,
-      0.0725,
-      0.025,
-      0.0125,
-      0.0
-     ],
-     [
-      0.1125,
-      0.0975,
-      0.065,
-      0.0,
-      0.005
-     ],
-     [
-      0.1025,
-      0.0625,
-      0.04,
-      0.0025,
-      0.005
-     ],
-     [
       0.0375,
-      0.0425,
-      0.025,
+      0.0175,
+      0.005,
       0.0025,
+      0.0025
+     ],
+     [
+      0.14,
+      0.075,
+      0.0425,
+      0.01,
+      0.0
+     ],
+     [
+      0.125,
+      0.095,
+      0.0675,
+      0.0025,
+      0.0025
+     ],
+     [
+      0.0925,
+      0.06,
+      0.035,
+      0.0025,
+      0.005
+     ],
+     [
+      0.0325,
+      0.0425,
+      0.0175,
+      0.005,
       0.0025
      ]
     ],
-    "scores_other": 0.0675
+    "scores_other": 0.08
    },
    "stats": null,
    "squad": null,
    "model": {
-    "lambda_home": 2.107,
-    "lambda_away": 0.712,
+    "lambda_home": 2.446,
+    "lambda_away": 0.892,
     "sims": 10000,
-    "rho": -0.0264,
+    "rho": -0.0035,
     "probs": {
-     "1": 0.6897,
-     "X": 0.1988,
-     "2": 0.1115,
-     "1X": 0.8885,
-     "X2": 0.3103,
-     "12": 0.8012,
-     "O1.5": 0.7735,
-     "U1.5": 0.2265,
-     "O2.5": 0.5309,
-     "U2.5": 0.4691,
-     "O3.5": 0.3094,
-     "U3.5": 0.6906,
-     "BTTS_Y": 0.4511,
-     "BTTS_N": 0.5489
+     "1": 0.7165,
+     "X": 0.1699,
+     "2": 0.1135,
+     "1X": 0.8865,
+     "X2": 0.2835,
+     "12": 0.8301,
+     "O1.5": 0.8446,
+     "U1.5": 0.1554,
+     "O2.5": 0.6484,
+     "U2.5": 0.3516,
+     "O3.5": 0.4309,
+     "U3.5": 0.5691,
+     "BTTS_Y": 0.5406,
+     "BTTS_N": 0.4594
     },
     "htft": {
-     "1/1": 0.4501,
-     "1/X": 0.0371,
-     "1/2": 0.0065,
-     "X/1": 0.213,
-     "X/X": 0.1253,
-     "X/2": 0.0466,
-     "2/1": 0.0266,
-     "2/X": 0.0364,
-     "2/2": 0.0584
+     "1/1": 0.4836,
+     "1/X": 0.0356,
+     "1/2": 0.0075,
+     "X/1": 0.1969,
+     "X/X": 0.0984,
+     "X/2": 0.044,
+     "2/1": 0.0361,
+     "2/X": 0.036,
+     "2/2": 0.062
     },
     "top_scores": [
      {
       "score": "2-0",
-      "p": 0.134
-     },
-     {
-      "score": "1-0",
-      "p": 0.1248
-     },
-     {
-      "score": "3-0",
-      "p": 0.0933
-     },
-     {
-      "score": "1-1",
-      "p": 0.0926
+      "p": 0.1061
      },
      {
       "score": "2-1",
-      "p": 0.0916
+      "p": 0.0964
+     },
+     {
+      "score": "1-0",
+      "p": 0.0869
+     },
+     {
+      "score": "3-0",
+      "p": 0.0843
+     },
+     {
+      "score": "1-1",
+      "p": 0.0772
      }
     ],
     "score_matrix": [
      [
-      0.0636,
-      0.0381,
-      0.0161,
-      0.0027,
-      0.0002,
-      0.0002
-     ],
-     [
-      0.1248,
-      0.0926,
-      0.0339,
-      0.0078,
-      0.0013,
-      0.0
-     ],
-     [
-      0.134,
-      0.0916,
-      0.0368,
-      0.0078,
-      0.0023,
-      0.0002
-     ],
-     [
-      0.0933,
-      0.0654,
-      0.0236,
-      0.0051,
-      0.0007,
-      0.0002
-     ],
-     [
-      0.0491,
-      0.0326,
-      0.012,
-      0.002,
-      0.0007,
+      0.0366,
+      0.0319,
+      0.0129,
+      0.0053,
+      0.0009,
       0.0001
      ],
      [
-      0.0177,
-      0.0158,
-      0.0051,
+      0.0869,
+      0.0772,
+      0.0315,
+      0.01,
+      0.0021,
+      0.0007
+     ],
+     [
+      0.1061,
+      0.0964,
+      0.0413,
+      0.0128,
+      0.0026,
+      0.0002
+     ],
+     [
+      0.0843,
+      0.076,
+      0.0344,
+      0.0131,
+      0.0019,
+      0.0005
+     ],
+     [
+      0.0527,
+      0.0516,
+      0.0217,
+      0.0075,
       0.0017,
-      0.0002,
-      0.0
+      0.0001
+     ],
+     [
+      0.0259,
+      0.021,
+      0.0106,
+      0.0025,
+      0.0008,
+      0.0001
      ]
     ],
     "total_goals": [
-     0.0636,
-     0.1628,
-     0.2426,
-     0.2215,
-     0.1593,
-     0.0832,
-     0.067
+     0.0366,
+     0.1189,
+     0.1962,
+     0.2175,
+     0.1809,
+     0.1269,
+     0.1231
     ],
     "sample_runs": {
      "n": 50,
@@ -108704,11 +108659,11 @@
        "i": 1,
        "ft": [
         4,
-        1
+        0
        ],
        "ht": [
-        3,
-        1
+        2,
+        0
        ],
        "goals": [
         {
@@ -108716,19 +108671,15 @@
          "side": "home"
         },
         {
-         "min": 36,
-         "side": "home"
-        },
-        {
          "min": 43,
          "side": "home"
         },
         {
-         "min": 43,
-         "side": "away"
+         "min": 54,
+         "side": "home"
         },
         {
-         "min": 56,
+         "min": 60,
          "side": "home"
         }
        ]
@@ -108737,13 +108688,17 @@
        "i": 2,
        "ft": [
         1,
-        1
+        2
        ],
        "ht": [
         0,
-        0
+        1
        ],
        "goals": [
+        {
+         "min": 11,
+         "side": "away"
+        },
         {
          "min": 63,
          "side": "away"
@@ -108757,12 +108712,12 @@
       {
        "i": 3,
        "ft": [
-        1,
-        2
+        2,
+        1
        ],
        "ht": [
-        1,
-        2
+        2,
+        1
        ],
        "goals": [
         {
@@ -108775,60 +108730,72 @@
         },
         {
          "min": 33,
-         "side": "away"
+         "side": "home"
         }
        ]
       },
       {
        "i": 4,
        "ft": [
-        1,
-        0
+        5,
+        2
        ],
        "ht": [
-        1,
+        3,
         0
        ],
        "goals": [
         {
+         "min": 19,
+         "side": "home"
+        },
+        {
          "min": 37,
          "side": "home"
+        },
+        {
+         "min": "45+4",
+         "side": "home"
+        },
+        {
+         "min": 55,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "home"
+        },
+        {
+         "min": 70,
+         "side": "home"
+        },
+        {
+         "min": 70,
+         "side": "away"
         }
        ]
       },
       {
        "i": 5,
        "ft": [
-        6,
-        0
+        2,
+        1
        ],
        "ht": [
-        4,
-        0
+        1,
+        1
        ],
        "goals": [
         {
-         "min": 1,
+         "min": 17,
+         "side": "away"
+        },
+        {
+         "min": 21,
          "side": "home"
         },
         {
-         "min": 26,
-         "side": "home"
-        },
-        {
-         "min": 27,
-         "side": "home"
-        },
-        {
-         "min": 31,
-         "side": "home"
-        },
-        {
-         "min": 46,
-         "side": "home"
-        },
-        {
-         "min": 63,
+         "min": "90+2",
          "side": "home"
         }
        ]
@@ -108836,7 +108803,7 @@
       {
        "i": 6,
        "ft": [
-        2,
+        5,
         0
        ],
        "ht": [
@@ -108845,11 +108812,23 @@
        ],
        "goals": [
         {
-         "min": 17,
+         "min": 2,
          "side": "home"
         },
         {
-         "min": 21,
+         "min": 27,
+         "side": "home"
+        },
+        {
+         "min": 55,
+         "side": "home"
+        },
+        {
+         "min": 81,
+         "side": "home"
+        },
+        {
+         "min": 90,
          "side": "home"
         }
        ]
@@ -108858,27 +108837,23 @@
        "i": 7,
        "ft": [
         3,
-        1
+        0
        ],
        "ht": [
-        1,
-        1
+        2,
+        0
        ],
        "goals": [
         {
-         "min": 16,
-         "side": "away"
-        },
-        {
-         "min": "45+3",
+         "min": 22,
          "side": "home"
         },
         {
-         "min": 83,
+         "min": 36,
          "side": "home"
         },
         {
-         "min": 84,
+         "min": 73,
          "side": "home"
         }
        ]
@@ -108886,16 +108861,28 @@
       {
        "i": 8,
        "ft": [
-        1,
+        4,
         0
        ],
        "ht": [
-        0,
+        1,
         0
        ],
        "goals": [
         {
-         "min": 59,
+         "min": 17,
+         "side": "home"
+        },
+        {
+         "min": 66,
+         "side": "home"
+        },
+        {
+         "min": 74,
+         "side": "home"
+        },
+        {
+         "min": 79,
          "side": "home"
         }
        ]
@@ -108903,8 +108890,8 @@
       {
        "i": 9,
        "ft": [
-        1,
-        0
+        2,
+        2
        ],
        "ht": [
         0,
@@ -108912,8 +108899,20 @@
        ],
        "goals": [
         {
-         "min": 80,
+         "min": 46,
+         "side": "away"
+        },
+        {
+         "min": 56,
          "side": "home"
+        },
+        {
+         "min": 86,
+         "side": "home"
+        },
+        {
+         "min": "90+1",
+         "side": "away"
         }
        ]
       },
@@ -108932,29 +108931,29 @@
       {
        "i": 11,
        "ft": [
-        2,
-        2
+        3,
+        1
        ],
        "ht": [
-        2,
+        3,
         1
        ],
        "goals": [
         {
-         "min": 22,
-         "side": "home"
-        },
-        {
-         "min": 24,
+         "min": 8,
          "side": "away"
         },
         {
-         "min": 36,
+         "min": 11,
          "side": "home"
         },
         {
-         "min": 62,
-         "side": "away"
+         "min": 18,
+         "side": "home"
+        },
+        {
+         "min": 39,
+         "side": "home"
         }
        ]
       },
@@ -108962,82 +108961,103 @@
        "i": 12,
        "ft": [
         0,
-        0
+        1
        ],
        "ht": [
         0,
-        0
+        1
        ],
-       "goals": []
+       "goals": [
+        {
+         "min": 18,
+         "side": "away"
+        }
+       ]
       },
       {
        "i": 13,
        "ft": [
-        1,
-        2
+        4,
+        0
        ],
        "ht": [
-        0,
+        2,
         0
        ],
        "goals": [
         {
-         "min": 66,
+         "min": 14,
          "side": "home"
         },
         {
-         "min": 74,
-         "side": "away"
+         "min": 25,
+         "side": "home"
         },
         {
-         "min": 79,
-         "side": "away"
+         "min": 62,
+         "side": "home"
+        },
+        {
+         "min": "90+5",
+         "side": "home"
         }
        ]
       },
       {
        "i": 14,
        "ft": [
-        2,
+        5,
         2
        ],
        "ht": [
-        2,
-        2
+        1,
+        0
        ],
        "goals": [
         {
-         "min": 1,
-         "side": "away"
-        },
-        {
-         "min": 11,
+         "min": 31,
          "side": "home"
         },
         {
-         "min": 41,
+         "min": 70,
          "side": "home"
         },
         {
-         "min": "45+1",
+         "min": 81,
+         "side": "home"
+        },
+        {
+         "min": 86,
+         "side": "home"
+        },
+        {
+         "min": 86,
          "side": "away"
+        },
+        {
+         "min": "90+2",
+         "side": "away"
+        },
+        {
+         "min": "90+3",
+         "side": "home"
         }
        ]
       },
       {
        "i": 15,
        "ft": [
-        1,
-        0
+        0,
+        1
        ],
        "ht": [
-        1,
-        0
+        0,
+        1
        ],
        "goals": [
         {
-         "min": 11,
-         "side": "home"
+         "min": "45+4",
+         "side": "away"
         }
        ]
       },
@@ -109045,49 +109065,57 @@
        "i": 16,
        "ft": [
         1,
-        0
+        1
        ],
        "ht": [
-        0,
-        0
+        1,
+        1
        ],
        "goals": [
         {
-         "min": 85,
+         "min": 14,
          "side": "home"
+        },
+        {
+         "min": 28,
+         "side": "away"
         }
        ]
       },
       {
        "i": 17,
        "ft": [
-        2,
-        1
+        4,
+        0
        ],
        "ht": [
         2,
-        1
+        0
        ],
        "goals": [
         {
-         "min": 12,
+         "min": 5,
          "side": "home"
         },
         {
-         "min": 13,
+         "min": 42,
          "side": "home"
         },
         {
-         "min": 39,
-         "side": "away"
+         "min": 48,
+         "side": "home"
+        },
+        {
+         "min": 53,
+         "side": "home"
         }
        ]
       },
       {
        "i": 18,
        "ft": [
-        3,
-        0
+        0,
+        2
        ],
        "ht": [
         0,
@@ -109095,56 +109123,40 @@
        ],
        "goals": [
         {
-         "min": 70,
-         "side": "home"
+         "min": 56,
+         "side": "away"
         },
         {
-         "min": 89,
-         "side": "home"
-        },
-        {
-         "min": "90+5",
-         "side": "home"
+         "min": 80,
+         "side": "away"
         }
        ]
       },
       {
        "i": 19,
        "ft": [
-        6,
-        1
+        4,
+        0
        ],
        "ht": [
         2,
-        1
+        0
        ],
        "goals": [
         {
-         "min": 25,
+         "min": 11,
          "side": "home"
         },
         {
-         "min": 34,
+         "min": 27,
          "side": "home"
         },
         {
-         "min": 42,
-         "side": "away"
-        },
-        {
-         "min": 64,
+         "min": 58,
          "side": "home"
         },
         {
-         "min": 71,
-         "side": "home"
-        },
-        {
-         "min": 80,
-         "side": "home"
-        },
-        {
-         "min": "90+5",
+         "min": 63,
          "side": "home"
         }
        ]
@@ -109152,148 +109164,32 @@
       {
        "i": 20,
        "ft": [
-        0,
-        0
+        1,
+        1
        ],
        "ht": [
         0,
         0
        ],
-       "goals": []
+       "goals": [
+        {
+         "min": 64,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "away"
+        }
+       ]
       },
       {
        "i": 21,
        "ft": [
-        3,
-        2
-       ],
-       "ht": [
-        0,
-        2
-       ],
-       "goals": [
-        {
-         "min": 36,
-         "side": "away"
-        },
-        {
-         "min": 38,
-         "side": "away"
-        },
-        {
-         "min": 54,
-         "side": "home"
-        },
-        {
-         "min": 59,
-         "side": "home"
-        },
-        {
-         "min": 73,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 22,
-       "ft": [
-        1,
-        1
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": "45+1",
-         "side": "home"
-        },
-        {
-         "min": 48,
-         "side": "away"
-        }
-       ]
-      },
-      {
-       "i": 23,
-       "ft": [
-        2,
+        6,
         0
        ],
        "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": 33,
-         "side": "home"
-        },
-        {
-         "min": 80,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 24,
-       "ft": [
-        2,
-        0
-       ],
-       "ht": [
-        0,
-        0
-       ],
-       "goals": [
-        {
-         "min": 51,
-         "side": "home"
-        },
-        {
-         "min": 75,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 25,
-       "ft": [
-        3,
-        1
-       ],
-       "ht": [
-        2,
-        1
-       ],
-       "goals": [
-        {
-         "min": 11,
-         "side": "away"
-        },
-        {
-         "min": 35,
-         "side": "home"
-        },
-        {
-         "min": 39,
-         "side": "home"
-        },
-        {
-         "min": 64,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 26,
-       "ft": [
-        2,
-        0
-       ],
-       "ht": [
-        1,
+        5,
         0
        ],
        "goals": [
@@ -109302,7 +109198,163 @@
          "side": "home"
         },
         {
-         "min": 60,
+         "min": 5,
+         "side": "home"
+        },
+        {
+         "min": 15,
+         "side": "home"
+        },
+        {
+         "min": 15,
+         "side": "home"
+        },
+        {
+         "min": 43,
+         "side": "home"
+        },
+        {
+         "min": 50,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 22,
+       "ft": [
+        2,
+        3
+       ],
+       "ht": [
+        2,
+        1
+       ],
+       "goals": [
+        {
+         "min": 20,
+         "side": "home"
+        },
+        {
+         "min": 21,
+         "side": "away"
+        },
+        {
+         "min": 22,
+         "side": "home"
+        },
+        {
+         "min": 52,
+         "side": "away"
+        },
+        {
+         "min": 73,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 23,
+       "ft": [
+        0,
+        0
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": []
+      },
+      {
+       "i": 24,
+       "ft": [
+        5,
+        0
+       ],
+       "ht": [
+        3,
+        0
+       ],
+       "goals": [
+        {
+         "min": 24,
+         "side": "home"
+        },
+        {
+         "min": 34,
+         "side": "home"
+        },
+        {
+         "min": "45+4",
+         "side": "home"
+        },
+        {
+         "min": 64,
+         "side": "home"
+        },
+        {
+         "min": 83,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 25,
+       "ft": [
+        3,
+        0
+       ],
+       "ht": [
+        2,
+        0
+       ],
+       "goals": [
+        {
+         "min": 11,
+         "side": "home"
+        },
+        {
+         "min": 17,
+         "side": "home"
+        },
+        {
+         "min": 81,
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 26,
+       "ft": [
+        4,
+        2
+       ],
+       "ht": [
+        3,
+        0
+       ],
+       "goals": [
+        {
+         "min": 14,
+         "side": "home"
+        },
+        {
+         "min": 18,
+         "side": "home"
+        },
+        {
+         "min": 39,
+         "side": "home"
+        },
+        {
+         "min": 62,
+         "side": "away"
+        },
+        {
+         "min": 64,
+         "side": "away"
+        },
+        {
+         "min": "90+1",
          "side": "home"
         }
        ]
@@ -109310,25 +109362,45 @@
       {
        "i": 27,
        "ft": [
-        0,
-        3
+        6,
+        2
        ],
        "ht": [
-        0,
-        2
+        4,
+        1
        ],
        "goals": [
         {
-         "min": 5,
+         "min": 1,
          "side": "away"
         },
         {
-         "min": 35,
+         "min": 8,
+         "side": "home"
+        },
+        {
+         "min": 19,
+         "side": "home"
+        },
+        {
+         "min": 30,
+         "side": "home"
+        },
+        {
+         "min": 33,
+         "side": "home"
+        },
+        {
+         "min": 50,
          "side": "away"
         },
         {
-         "min": 86,
-         "side": "away"
+         "min": 73,
+         "side": "home"
+        },
+        {
+         "min": 83,
+         "side": "home"
         }
        ]
       },
@@ -109340,11 +109412,11 @@
        ],
        "ht": [
         0,
-        1
+        0
        ],
        "goals": [
         {
-         "min": 33,
+         "min": 77,
          "side": "away"
         }
        ]
@@ -109352,20 +109424,32 @@
       {
        "i": 29,
        "ft": [
-        1,
-        1
+        5,
+        0
        ],
        "ht": [
-        0,
+        3,
         0
        ],
        "goals": [
         {
-         "min": 47,
-         "side": "away"
+         "min": 24,
+         "side": "home"
+        },
+        {
+         "min": 36,
+         "side": "home"
+        },
+        {
+         "min": 37,
+         "side": "home"
         },
         {
          "min": 50,
+         "side": "home"
+        },
+        {
+         "min": 63,
          "side": "home"
         }
        ]
@@ -109373,62 +109457,41 @@
       {
        "i": 30,
        "ft": [
+        3,
+        2
+       ],
+       "ht": [
         2,
         1
        ],
-       "ht": [
-        0,
-        0
-       ],
        "goals": [
         {
-         "min": 57,
+         "min": 22,
          "side": "home"
         },
         {
-         "min": 73,
+         "min": 23,
+         "side": "home"
+        },
+        {
+         "min": 23,
          "side": "away"
         },
         {
-         "min": 76,
+         "min": 49,
          "side": "home"
+        },
+        {
+         "min": 83,
+         "side": "away"
         }
        ]
       },
       {
        "i": 31,
        "ft": [
-        4,
-        0
-       ],
-       "ht": [
-        0,
-        0
-       ],
-       "goals": [
-        {
-         "min": 46,
-         "side": "home"
-        },
-        {
-         "min": 62,
-         "side": "home"
-        },
-        {
-         "min": 80,
-         "side": "home"
-        },
-        {
-         "min": "90+5",
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 32,
-       "ft": [
-        1,
-        3
+        2,
+        2
        ],
        "ht": [
         0,
@@ -109436,28 +109499,69 @@
        ],
        "goals": [
         {
-         "min": 38,
+         "min": 35,
          "side": "away"
         },
         {
-         "min": 61,
-         "side": "away"
-        },
-        {
-         "min": 78,
+         "min": 47,
          "side": "home"
         },
         {
-         "min": 86,
+         "min": 56,
+         "side": "home"
+        },
+        {
+         "min": 57,
          "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 32,
+       "ft": [
+        5,
+        2
+       ],
+       "ht": [
+        2,
+        2
+       ],
+       "goals": [
+        {
+         "min": 10,
+         "side": "away"
+        },
+        {
+         "min": 21,
+         "side": "home"
+        },
+        {
+         "min": 22,
+         "side": "home"
+        },
+        {
+         "min": 37,
+         "side": "away"
+        },
+        {
+         "min": 58,
+         "side": "home"
+        },
+        {
+         "min": 61,
+         "side": "home"
+        },
+        {
+         "min": "90+3",
+         "side": "home"
         }
        ]
       },
       {
        "i": 33,
        "ft": [
-        3,
-        0
+        4,
+        2
        ],
        "ht": [
         1,
@@ -109465,15 +109569,27 @@
        ],
        "goals": [
         {
-         "min": 36,
+         "min": 6,
          "side": "home"
         },
         {
-         "min": 63,
+         "min": 50,
          "side": "home"
         },
         {
-         "min": 84,
+         "min": 58,
+         "side": "home"
+        },
+        {
+         "min": 67,
+         "side": "away"
+        },
+        {
+         "min": 86,
+         "side": "away"
+        },
+        {
+         "min": "90+2",
          "side": "home"
         }
        ]
@@ -109482,48 +109598,6 @@
        "i": 34,
        "ft": [
         1,
-        0
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": "45+4",
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 35,
-       "ft": [
-        3,
-        0
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": "45+2",
-         "side": "home"
-        },
-        {
-         "min": 47,
-         "side": "home"
-        },
-        {
-         "min": 58,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 36,
-       "ft": [
-        1,
         1
        ],
        "ht": [
@@ -109532,28 +109606,36 @@
        ],
        "goals": [
         {
-         "min": 64,
+         "min": 83,
          "side": "home"
         },
         {
-         "min": 78,
+         "min": "90+2",
          "side": "away"
         }
        ]
       },
       {
-       "i": 37,
+       "i": 35,
        "ft": [
-        4,
+        5,
         0
        ],
        "ht": [
-        1,
+        3,
         0
        ],
        "goals": [
         {
-         "min": 42,
+         "min": 3,
+         "side": "home"
+        },
+        {
+         "min": 22,
+         "side": "home"
+        },
+        {
+         "min": 40,
          "side": "home"
         },
         {
@@ -109561,8 +109643,62 @@
          "side": "home"
         },
         {
-         "min": 71,
+         "min": 81,
          "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 36,
+       "ft": [
+        3,
+        3
+       ],
+       "ht": [
+        1,
+        2
+       ],
+       "goals": [
+        {
+         "min": 13,
+         "side": "away"
+        },
+        {
+         "min": 22,
+         "side": "home"
+        },
+        {
+         "min": 43,
+         "side": "away"
+        },
+        {
+         "min": 77,
+         "side": "home"
+        },
+        {
+         "min": 84,
+         "side": "home"
+        },
+        {
+         "min": 89,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 37,
+       "ft": [
+        1,
+        1
+       ],
+       "ht": [
+        0,
+        1
+       ],
+       "goals": [
+        {
+         "min": 29,
+         "side": "away"
         },
         {
          "min": "90+4",
@@ -109573,20 +109709,24 @@
       {
        "i": 38,
        "ft": [
-        2,
+        3,
         0
        ],
        "ht": [
-        0,
+        1,
         0
        ],
        "goals": [
         {
-         "min": 55,
+         "min": 37,
          "side": "home"
         },
         {
-         "min": 70,
+         "min": 51,
+         "side": "home"
+        },
+        {
+         "min": 71,
          "side": "home"
         }
        ]
@@ -109594,24 +109734,32 @@
       {
        "i": 39,
        "ft": [
-        2,
+        4,
         1
        ],
        "ht": [
-        0,
+        1,
         1
        ],
        "goals": [
         {
-         "min": 32,
-         "side": "away"
-        },
-        {
-         "min": 81,
+         "min": 30,
          "side": "home"
         },
         {
-         "min": 82,
+         "min": 39,
+         "side": "away"
+        },
+        {
+         "min": 57,
+         "side": "home"
+        },
+        {
+         "min": 83,
+         "side": "home"
+        },
+        {
+         "min": 83,
          "side": "home"
         }
        ]
@@ -109619,20 +109767,16 @@
       {
        "i": 40,
        "ft": [
-        3,
+        2,
         0
        ],
        "ht": [
-        2,
+        1,
         0
        ],
        "goals": [
         {
-         "min": 33,
-         "side": "home"
-        },
-        {
-         "min": "45+1",
+         "min": 40,
          "side": "home"
         },
         {
@@ -109644,32 +109788,77 @@
       {
        "i": 41,
        "ft": [
-        0,
+        7,
         0
        ],
        "ht": [
-        0,
-        0
-       ],
-       "goals": []
-      },
-      {
-       "i": 42,
-       "ft": [
-        2,
-        0
-       ],
-       "ht": [
-        1,
+        4,
         0
        ],
        "goals": [
+        {
+         "min": 20,
+         "side": "home"
+        },
         {
          "min": 22,
          "side": "home"
         },
         {
-         "min": 60,
+         "min": "45+1",
+         "side": "home"
+        },
+        {
+         "min": "45+3",
+         "side": "home"
+        },
+        {
+         "min": 63,
+         "side": "home"
+        },
+        {
+         "min": 63,
+         "side": "home"
+        },
+        {
+         "min": "90+4",
+         "side": "home"
+        }
+       ]
+      },
+      {
+       "i": 42,
+       "ft": [
+        6,
+        0
+       ],
+       "ht": [
+        3,
+        0
+       ],
+       "goals": [
+        {
+         "min": 10,
+         "side": "home"
+        },
+        {
+         "min": 21,
+         "side": "home"
+        },
+        {
+         "min": 39,
+         "side": "home"
+        },
+        {
+         "min": 76,
+         "side": "home"
+        },
+        {
+         "min": 88,
+         "side": "home"
+        },
+        {
+         "min": "90+2",
          "side": "home"
         }
        ]
@@ -109678,6 +109867,65 @@
        "i": 43,
        "ft": [
         1,
+        1
+       ],
+       "ht": [
+        1,
+        1
+       ],
+       "goals": [
+        {
+         "min": 27,
+         "side": "home"
+        },
+        {
+         "min": 38,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 44,
+       "ft": [
+        0,
+        1
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 52,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 45,
+       "ft": [
+        0,
+        2
+       ],
+       "ht": [
+        0,
+        0
+       ],
+       "goals": [
+        {
+         "min": 84,
+         "side": "away"
+        },
+        {
+         "min": 90,
+         "side": "away"
+        }
+       ]
+      },
+      {
+       "i": 46,
+       "ft": [
+        1,
         0
        ],
        "ht": [
@@ -109686,90 +109934,7 @@
        ],
        "goals": [
         {
-         "min": 76,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 44,
-       "ft": [
-        4,
-        1
-       ],
-       "ht": [
-        3,
-        1
-       ],
-       "goals": [
-        {
-         "min": 4,
-         "side": "home"
-        },
-        {
-         "min": 23,
-         "side": "away"
-        },
-        {
-         "min": 38,
-         "side": "home"
-        },
-        {
-         "min": "45+2",
-         "side": "home"
-        },
-        {
-         "min": 46,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 45,
-       "ft": [
-        3,
-        1
-       ],
-       "ht": [
-        2,
-        1
-       ],
-       "goals": [
-        {
-         "min": 19,
-         "side": "home"
-        },
-        {
-         "min": 24,
-         "side": "home"
-        },
-        {
-         "min": 44,
-         "side": "away"
-        },
-        {
-         "min": 63,
-         "side": "home"
-        }
-       ]
-      },
-      {
-       "i": 46,
-       "ft": [
-        2,
-        0
-       ],
-       "ht": [
-        1,
-        0
-       ],
-       "goals": [
-        {
-         "min": 33,
-         "side": "home"
-        },
-        {
-         "min": 61,
+         "min": 69,
          "side": "home"
         }
        ]
@@ -109777,32 +109942,24 @@
       {
        "i": 47,
        "ft": [
-        4,
-        1
+        1,
+        2
        ],
        "ht": [
-        1,
-        0
+        0,
+        1
        ],
        "goals": [
         {
-         "min": "45+1",
-         "side": "home"
-        },
-        {
-         "min": 69,
+         "min": 34,
          "side": "away"
         },
         {
-         "min": 78,
-         "side": "home"
+         "min": 63,
+         "side": "away"
         },
         {
-         "min": 80,
-         "side": "home"
-        },
-        {
-         "min": "90+2",
+         "min": 86,
          "side": "home"
         }
        ]
@@ -109814,12 +109971,12 @@
         0
        ],
        "ht": [
-        0,
+        1,
         0
        ],
        "goals": [
         {
-         "min": 51,
+         "min": "45+2",
          "side": "home"
         }
        ]
@@ -109827,24 +109984,32 @@
       {
        "i": 49,
        "ft": [
-        1,
+        3,
         2
        ],
        "ht": [
-        1,
-        1
+        2,
+        0
        ],
        "goals": [
         {
-         "min": 22,
+         "min": 5,
          "side": "home"
         },
         {
-         "min": "45+3",
-         "side": "away"
+         "min": 12,
+         "side": "home"
         },
         {
          "min": 83,
+         "side": "home"
+        },
+        {
+         "min": "90+1",
+         "side": "away"
+        },
+        {
+         "min": "90+2",
          "side": "away"
         }
        ]
@@ -109853,156 +110018,151 @@
        "i": 50,
        "ft": [
         5,
-        1
+        0
        ],
        "ht": [
-        2,
-        1
+        1,
+        0
        ],
        "goals": [
         {
-         "min": 5,
+         "min": 16,
          "side": "home"
         },
         {
-         "min": 24,
+         "min": 51,
          "side": "home"
         },
         {
-         "min": 36,
-         "side": "away"
-        },
-        {
-         "min": 76,
+         "min": 69,
          "side": "home"
         },
         {
-         "min": 82,
+         "min": 70,
          "side": "home"
         },
         {
-         "min": 85,
+         "min": "90+5",
          "side": "home"
         }
        ]
       }
      ],
      "summary": {
-      "1": 34,
+      "1": 31,
       "X": 10,
-      "2": 6,
-      "O2.5": 26,
-      "BTTS_Y": 22,
+      "2": 9,
+      "O2.5": 34,
+      "BTTS_Y": 23,
       "top_scores": [
        [
-        "1-0",
-        8
-       ],
-       [
-        "2-0",
-        7
-       ],
-       [
-        "0-0",
-        4
-       ],
-       [
         "1-1",
+        5
+       ],
+       [
+        "4-0",
+        5
+       ],
+       [
+        "5-0",
+        5
+       ],
+       [
+        "0-1",
         4
        ],
        [
         "3-0",
-        4
+        3
        ]
       ]
      },
      "note": "50 örnek koşu yalnızca gösterim içindir; olasılıklar 10.000 simülasyondan hesaplanır."
     },
     "extra": {
-     "HT_1": 0.4936,
-     "HT_X": 0.385,
-     "HT_2": 0.1214,
-     "HT_O0.5": 0.7077,
-     "HT_U0.5": 0.2923,
-     "HT_O1.5": 0.3513,
-     "HT_U1.5": 0.6487,
-     "HT_O2.5": 0.1286,
-     "HT_U2.5": 0.8714,
-     "2H_1": 0.5595,
-     "2H_X": 0.3157,
-     "2H_2": 0.1248,
-     "MGH_1": 0.2981,
-     "MGH_X": 0.2523,
-     "MGH_2": 0.4496,
-     "O0.5": 0.9364,
-     "U0.5": 0.0636,
-     "O4.5": 0.1502,
-     "U4.5": 0.8498,
-     "O5.5": 0.067,
-     "U5.5": 0.933,
-     "G0-1": 0.2265,
-     "G2-3": 0.4641,
-     "G4-5": 0.2425,
-     "G6+": 0.067,
-     "ODD": 0.4866,
-     "EVEN": 0.5134,
-     "H_O0.5": 0.8791,
-     "H_U0.5": 0.1209,
-     "H_O1.5": 0.6188,
-     "H_U1.5": 0.3812,
-     "H_O2.5": 0.3461,
-     "H_U2.5": 0.6539,
-     "A_O0.5": 0.5084,
-     "A_U0.5": 0.4916,
-     "A_O1.5": 0.1634,
-     "A_U1.5": 0.8366,
-     "A_O2.5": 0.0336,
-     "A_U2.5": 0.9664,
-     "HCP-2_1": 0.2345,
-     "HCP-2_X": 0.2131,
-     "HCP-2_2": 0.5525,
-     "HCP-1_1": 0.4475,
-     "HCP-1_X": 0.2422,
-     "HCP-1_2": 0.3103,
-     "HCP+1_1": 0.8885,
-     "HCP+1_X": 0.0805,
-     "HCP+1_2": 0.031,
-     "HCP+2_1": 0.969,
-     "HCP+2_X": 0.0264,
-     "HCP+2_2": 0.0046,
-     "1&O2.5": 0.4309,
-     "1&U2.5": 0.2588,
-     "1&BTTS_Y": 0.2617,
-     "1&BTTS_N": 0.428,
-     "X&O2.5": 0.0426,
-     "X&U2.5": 0.1562,
-     "X&BTTS_Y": 0.1352,
-     "X&BTTS_N": 0.0636,
-     "2&O2.5": 0.0574,
-     "2&U2.5": 0.0541,
-     "2&BTTS_Y": 0.0543,
-     "2&BTTS_N": 0.0572,
-     "BTTS_Y&O2.5": 0.3585,
-     "BTTS_Y&U2.5": 0.0926,
-     "BTTS_N&O2.5": 0.1724,
-     "BTTS_N&U2.5": 0.3765,
-     "HT_BTTS_Y": 0.1651,
-     "HT_BTTS_N": 0.8349,
-     "BOTH_HALVES_O0.5": 0.5622,
-     "H_WIN_HALF": 0.7757,
-     "A_WIN_HALF": 0.2307,
-     "H_WIN_NIL": 0.428,
-     "A_WIN_NIL": 0.0572
+     "HT_1": 0.5266,
+     "HT_X": 0.3393,
+     "HT_2": 0.134,
+     "HT_O0.5": 0.7672,
+     "HT_U0.5": 0.2328,
+     "HT_O1.5": 0.425,
+     "HT_U1.5": 0.575,
+     "HT_O2.5": 0.1869,
+     "HT_U2.5": 0.8131,
+     "2H_1": 0.5877,
+     "2H_X": 0.2813,
+     "2H_2": 0.131,
+     "MGH_1": 0.3035,
+     "MGH_X": 0.2205,
+     "MGH_2": 0.476,
+     "O0.5": 0.9634,
+     "U0.5": 0.0366,
+     "O4.5": 0.25,
+     "U4.5": 0.75,
+     "O5.5": 0.1231,
+     "U5.5": 0.8769,
+     "G0-1": 0.1554,
+     "G2-3": 0.4137,
+     "G4-5": 0.3078,
+     "G6+": 0.1231,
+     "ODD": 0.5007,
+     "EVEN": 0.4993,
+     "H_O0.5": 0.9123,
+     "H_U0.5": 0.0877,
+     "H_O1.5": 0.7039,
+     "H_U1.5": 0.2961,
+     "H_O2.5": 0.4445,
+     "H_U2.5": 0.5555,
+     "A_O0.5": 0.5917,
+     "A_U0.5": 0.4083,
+     "A_O1.5": 0.2239,
+     "A_U1.5": 0.7761,
+     "A_O2.5": 0.0654,
+     "A_U2.5": 0.9346,
+     "HCP-2_1": 0.2839,
+     "HCP-2_X": 0.2066,
+     "HCP-2_2": 0.5095,
+     "HCP-1_1": 0.4905,
+     "HCP-1_X": 0.226,
+     "HCP-1_2": 0.2835,
+     "HCP+1_1": 0.8865,
+     "HCP+1_X": 0.0782,
+     "HCP+1_2": 0.0353,
+     "HCP+2_1": 0.9647,
+     "HCP+2_X": 0.026,
+     "HCP+2_2": 0.0093,
+     "1&O2.5": 0.5235,
+     "1&U2.5": 0.193,
+     "1&BTTS_Y": 0.3448,
+     "1&BTTS_N": 0.3717,
+     "X&O2.5": 0.0562,
+     "X&U2.5": 0.1137,
+     "X&BTTS_Y": 0.1334,
+     "X&BTTS_N": 0.0366,
+     "2&O2.5": 0.0687,
+     "2&U2.5": 0.0448,
+     "2&BTTS_Y": 0.0624,
+     "2&BTTS_N": 0.0511,
+     "BTTS_Y&O2.5": 0.4634,
+     "BTTS_Y&U2.5": 0.0772,
+     "BTTS_N&O2.5": 0.185,
+     "BTTS_N&U2.5": 0.2744,
+     "HT_BTTS_Y": 0.2133,
+     "HT_BTTS_N": 0.7867,
+     "BOTH_HALVES_O0.5": 0.6508,
+     "H_WIN_HALF": 0.8016,
+     "A_WIN_HALF": 0.2488,
+     "H_WIN_NIL": 0.3717,
+     "A_WIN_NIL": 0.0511
     },
     "source": "piyasa",
     "method": "market",
     "data_quality": "market",
     "ht_share": 0.44,
-    "fit_kl": 0.00039,
+    "fit_kl": 0.0,
     "fit_markets": [
      "1x2",
-     "btts",
-     "ou25"
+     "btts"
     ],
     "notes": [
      "Piyasa oranlarından türetildi; bağımsız tahmin değildir."
@@ -110019,13 +110179,12 @@
       "source": "Piyasa (oran)",
       "picks": {
        "1X2": "1",
-       "OU25": "O2.5",
-       "BTTS": "BTTS_N"
+       "BTTS": "BTTS_Y"
       },
       "probs": {
-       "1": 0.7015,
-       "X": 0.1893,
-       "2": 0.1093
+       "1": 0.7149,
+       "X": 0.1676,
+       "2": 0.1176
       }
      }
     ],
@@ -110034,7 +110193,7 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %69, beraberliğe %20, deplasmana %11 olasılık veriyor; beklenen gol 2.1 - 0.7. MS 1 oranı ilk görüldüğünden bu yana %17 düştü. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
+   "comment": "Model ev sahibine %72, beraberliğe %17, deplasmana %11 olasılık veriyor; beklenen gol 2.4 - 0.9. MS 1 oranı ilk görüldüğünden bu yana %18 düştü. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
    "comment_source": "kural"
   },
   {
@@ -110060,15 +110219,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-09T19:28:12+03:00"
+     "t": "2026-11-09T23:24:56+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-09T19:28:12+03:00"
+     "t": "2026-11-09T23:24:56+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-09T19:35:17+03:00"
+     "t": "2026-11-09T23:30:46+03:00"
     }
    },
    "odds": {
@@ -110086,7 +110245,7 @@
     "HT_U0.5": 2.18,
     "ODD": 1.73,
     "EVEN": 1.62,
-    "HT_BTTS_Y": 4.59
+    "HT_BTTS_Y": 4.6
    },
    "odds_history": [
     {
@@ -110163,104 +110322,104 @@
      "2": 0.344
     },
     "date_range": [
-     "2024-04-16",
+     "2024-08-09",
      "2026-10-30"
     ],
     "markets": [
      {
       "market": "1",
-      "observed": 0.3475,
+      "observed": 0.35,
       "ci": [
-       0.3025,
-       0.3954
+       0.3049,
+       0.398
       ],
-      "market_p": 0.3606,
+      "market_p": 0.3608,
       "note": "piyasayla uyumlu"
      },
      {
       "market": "X",
-      "observed": 0.33,
+      "observed": 0.3175,
       "ci": [
-       0.2857,
-       0.3775
+       0.2738,
+       0.3647
       ],
-      "market_p": 0.2944,
+      "market_p": 0.2942,
       "note": "piyasayla uyumlu"
      },
      {
       "market": "2",
-      "observed": 0.3225,
+      "observed": 0.3325,
       "ci": [
-       0.2786,
-       0.3698
+       0.2881,
+       0.3801
       ],
-      "market_p": 0.345,
+      "market_p": 0.3449,
       "note": "piyasayla uyumlu"
      },
      {
       "market": "O2.5",
-      "observed": 0.455,
+      "observed": 0.46,
       "ci": [
-       0.4069,
-       0.504
+       0.4118,
+       0.509
       ],
-      "market_p": 0.4454,
+      "market_p": 0.4456,
       "note": "piyasayla uyumlu"
      },
      {
       "market": "U2.5",
-      "observed": 0.545,
+      "observed": 0.54,
       "ci": [
-       0.496,
-       0.5931
+       0.491,
+       0.5882
       ],
-      "market_p": 0.5546,
+      "market_p": 0.5544,
       "note": "piyasayla uyumlu"
      }
     ],
     "disclaimer": "Geçmişte benzer oranla fiyatlanan maçların sonuç dağılımı. Yeni bir tahmin değildir; testte bu dağılım piyasanın marjsız olasılığından daha iyi tahmin etmedi.",
     "goals": [
-     0.115,
+     0.1125,
      0.2125,
+     0.215,
      0.2175,
-     0.205,
-     0.14,
-     0.11
+     0.1375,
+     0.105
     ],
     "scores": [
      [
-      0.115,
+      0.1125,
       0.1,
-      0.035,
+      0.0375,
       0.0225,
       0.005
      ],
      [
       0.1125,
-      0.1425,
-      0.09,
-      0.0375,
+      0.1375,
+      0.095,
+      0.04,
       0.0075
      ],
      [
       0.04,
-      0.065,
-      0.0625,
+      0.0725,
+      0.06,
       0.0175,
       0.0
      ],
      [
       0.0275,
-      0.03,
+      0.0275,
       0.0375,
-      0.01,
+      0.0075,
       0.0
      ],
      [
       0.005,
       0.0125,
       0.005,
-      0.0025,
+      0.0,
       0.0
      ]
     ],
@@ -111554,9 +111713,9 @@
     {
      "market": "HT_BTTS_Y",
      "label": "İY KG Var",
-     "odds": 4.59,
+     "odds": 4.6,
      "fair_p": 0.1683,
-     "ev": -0.2275
+     "ev": -0.2258
     }
    ],
    "consensus": {
@@ -111584,2196 +111743,9 @@
    "comment_source": "kural"
   }
  ],
- "standings": {
-  "ESP2": {
-   "season": "2627",
-   "updated": "2026-11-08",
-   "rows": [
-    {
-     "team": "Almeria",
-     "o": 13,
-     "g": 9,
-     "b": 2,
-     "m": 2,
-     "ag": 24,
-     "yg": 10,
-     "av": 14,
-     "p": 29,
-     "form": [
-      "W",
-      "D",
-      "D",
-      "W",
-      "W"
-     ],
-     "pos": 1
-    },
-    {
-     "team": "Castellon",
-     "o": 12,
-     "g": 8,
-     "b": 3,
-     "m": 1,
-     "ag": 23,
-     "yg": 5,
-     "av": 18,
-     "p": 27,
-     "form": [
-      "D",
-      "W",
-      "W",
-      "L",
-      "D"
-     ],
-     "pos": 2
-    },
-    {
-     "team": "Burgos",
-     "o": 13,
-     "g": 7,
-     "b": 3,
-     "m": 3,
-     "ag": 19,
-     "yg": 14,
-     "av": 5,
-     "p": 24,
-     "form": [
-      "W",
-      "D",
-      "W",
-      "W",
-      "L"
-     ],
-     "pos": 3
-    },
-    {
-     "team": "Eibar",
-     "o": 12,
-     "g": 7,
-     "b": 2,
-     "m": 3,
-     "ag": 21,
-     "yg": 14,
-     "av": 7,
-     "p": 23,
-     "form": [
-      "D",
-      "L",
-      "D",
-      "L",
-      "W"
-     ],
-     "pos": 4
-    },
-    {
-     "team": "Granada",
-     "o": 12,
-     "g": 7,
-     "b": 2,
-     "m": 3,
-     "ag": 20,
-     "yg": 14,
-     "av": 6,
-     "p": 23,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 5
-    },
-    {
-     "team": "Mallorca",
-     "o": 12,
-     "g": 6,
-     "b": 4,
-     "m": 2,
-     "ag": 15,
-     "yg": 7,
-     "av": 8,
-     "p": 22,
-     "form": [
-      "W",
-      "D",
-      "D",
-      "W",
-      "D"
-     ],
-     "pos": 6
-    },
-    {
-     "team": "Sp Gijon",
-     "o": 13,
-     "g": 7,
-     "b": 1,
-     "m": 5,
-     "ag": 14,
-     "yg": 15,
-     "av": -1,
-     "p": 22,
-     "form": [
-      "L",
-      "W",
-      "L",
-      "W",
-      "W"
-     ],
-     "pos": 7
-    },
-    {
-     "team": "Girona",
-     "o": 13,
-     "g": 6,
-     "b": 3,
-     "m": 4,
-     "ag": 22,
-     "yg": 12,
-     "av": 10,
-     "p": 21,
-     "form": [
-      "L",
-      "L",
-      "W",
-      "W",
-      "D"
-     ],
-     "pos": 8
-    },
-    {
-     "team": "Oviedo",
-     "o": 13,
-     "g": 6,
-     "b": 3,
-     "m": 4,
-     "ag": 19,
-     "yg": 16,
-     "av": 3,
-     "p": 21,
-     "form": [
-      "W",
-      "L",
-      "D",
-      "W",
-      "W"
-     ],
-     "pos": 9
-    },
-    {
-     "team": "Cordoba",
-     "o": 13,
-     "g": 6,
-     "b": 1,
-     "m": 6,
-     "ag": 22,
-     "yg": 22,
-     "av": 0,
-     "p": 19,
-     "form": [
-      "W",
-      "D",
-      "W",
-      "W",
-      "L"
-     ],
-     "pos": 10
-    },
-    {
-     "team": "Valladolid",
-     "o": 13,
-     "g": 5,
-     "b": 3,
-     "m": 5,
-     "ag": 22,
-     "yg": 20,
-     "av": 2,
-     "p": 18,
-     "form": [
-      "W",
-      "W",
-      "L",
-      "L",
-      "W"
-     ],
-     "pos": 11
-    },
-    {
-     "team": "Sabadell",
-     "o": 12,
-     "g": 4,
-     "b": 5,
-     "m": 3,
-     "ag": 12,
-     "yg": 11,
-     "av": 1,
-     "p": 17,
-     "form": [
-      "L",
-      "D",
-      "L",
-      "W",
-      "D"
-     ],
-     "pos": 12
-    },
-    {
-     "team": "Las Palmas",
-     "o": 12,
-     "g": 5,
-     "b": 2,
-     "m": 5,
-     "ag": 17,
-     "yg": 21,
-     "av": -4,
-     "p": 17,
-     "form": [
-      "W",
-      "W",
-      "L",
-      "L",
-      "D"
-     ],
-     "pos": 13
-    },
-    {
-     "team": "Tenerife",
-     "o": 12,
-     "g": 3,
-     "b": 6,
-     "m": 3,
-     "ag": 15,
-     "yg": 17,
-     "av": -2,
-     "p": 15,
-     "form": [
-      "D",
-      "D",
-      "D",
-      "D",
-      "L"
-     ],
-     "pos": 14
-    },
-    {
-     "team": "Eldense",
-     "o": 12,
-     "g": 4,
-     "b": 2,
-     "m": 6,
-     "ag": 13,
-     "yg": 17,
-     "av": -4,
-     "p": 14,
-     "form": [
-      "L",
-      "L",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 15
-    },
-    {
-     "team": "Celta B",
-     "o": 13,
-     "g": 3,
-     "b": 4,
-     "m": 6,
-     "ag": 19,
-     "yg": 25,
-     "av": -6,
-     "p": 13,
-     "form": [
-      "L",
-      "D",
-      "L",
-      "D",
-      "W"
-     ],
-     "pos": 16
-    },
-    {
-     "team": "Leganes",
-     "o": 13,
-     "g": 3,
-     "b": 3,
-     "m": 7,
-     "ag": 11,
-     "yg": 23,
-     "av": -12,
-     "p": 12,
-     "form": [
-      "L",
-      "L",
-      "D",
-      "L",
-      "L"
-     ],
-     "pos": 17
-    },
-    {
-     "team": "Andorra",
-     "o": 12,
-     "g": 3,
-     "b": 2,
-     "m": 7,
-     "ag": 17,
-     "yg": 22,
-     "av": -5,
-     "p": 11,
-     "form": [
-      "D",
-      "L",
-      "L",
-      "W",
-      "D"
-     ],
-     "pos": 18
-    },
-    {
-     "team": "Sociedad B",
-     "o": 12,
-     "g": 3,
-     "b": 2,
-     "m": 7,
-     "ag": 15,
-     "yg": 22,
-     "av": -7,
-     "p": 11,
-     "form": [
-      "W",
-      "L",
-      "L",
-      "L",
-      "L"
-     ],
-     "pos": 19
-    },
-    {
-     "team": "Cadiz",
-     "o": 13,
-     "g": 2,
-     "b": 4,
-     "m": 7,
-     "ag": 16,
-     "yg": 18,
-     "av": -2,
-     "p": 10,
-     "form": [
-      "L",
-      "L",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 20
-    },
-    {
-     "team": "Albacete",
-     "o": 13,
-     "g": 3,
-     "b": 1,
-     "m": 9,
-     "ag": 13,
-     "yg": 24,
-     "av": -11,
-     "p": 10,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 21
-    },
-    {
-     "team": "Ceuta",
-     "o": 13,
-     "g": 1,
-     "b": 2,
-     "m": 10,
-     "ag": 10,
-     "yg": 30,
-     "av": -20,
-     "p": 5,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "L",
-      "L"
-     ],
-     "pos": 22
-    }
-   ],
-   "home": [
-    {
-     "team": "Burgos",
-     "o": 8,
-     "g": 5,
-     "b": 2,
-     "m": 1,
-     "ag": 13,
-     "yg": 8,
-     "av": 5,
-     "p": 17,
-     "form": [
-      "W",
-      "D",
-      "W",
-      "L",
-      "W"
-     ],
-     "pos": 1
-    },
-    {
-     "team": "Almeria",
-     "o": 6,
-     "g": 5,
-     "b": 1,
-     "m": 0,
-     "ag": 15,
-     "yg": 5,
-     "av": 10,
-     "p": 16,
-     "form": [
-      "D",
-      "W",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 2
-    },
-    {
-     "team": "Mallorca",
-     "o": 6,
-     "g": 5,
-     "b": 0,
-     "m": 1,
-     "ag": 12,
-     "yg": 3,
-     "av": 9,
-     "p": 15,
-     "form": [
-      "W",
-      "W",
-      "L",
-      "W",
-      "W"
-     ],
-     "pos": 3
-    },
-    {
-     "team": "Girona",
-     "o": 8,
-     "g": 4,
-     "b": 2,
-     "m": 2,
-     "ag": 16,
-     "yg": 7,
-     "av": 9,
-     "p": 14,
-     "form": [
-      "L",
-      "W",
-      "W",
-      "D",
-      "W"
-     ],
-     "pos": 4
-    },
-    {
-     "team": "Valladolid",
-     "o": 6,
-     "g": 4,
-     "b": 0,
-     "m": 2,
-     "ag": 15,
-     "yg": 10,
-     "av": 5,
-     "p": 12,
-     "form": [
-      "W",
-      "L",
-      "W",
-      "W",
-      "L"
-     ],
-     "pos": 5
-    },
-    {
-     "team": "Cordoba",
-     "o": 6,
-     "g": 4,
-     "b": 0,
-     "m": 2,
-     "ag": 11,
-     "yg": 8,
-     "av": 3,
-     "p": 12,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 6
-    },
-    {
-     "team": "Castellon",
-     "o": 5,
-     "g": 3,
-     "b": 2,
-     "m": 0,
-     "ag": 12,
-     "yg": 1,
-     "av": 11,
-     "p": 11,
-     "form": [
-      "W",
-      "D",
-      "W",
-      "W",
-      "D"
-     ],
-     "pos": 7
-    },
-    {
-     "team": "Sabadell",
-     "o": 5,
-     "g": 3,
-     "b": 2,
-     "m": 0,
-     "ag": 8,
-     "yg": 4,
-     "av": 4,
-     "p": 11,
-     "form": [
-      "D",
-      "D",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 8
-    },
-    {
-     "team": "Eibar",
-     "o": 6,
-     "g": 3,
-     "b": 2,
-     "m": 1,
-     "ag": 10,
-     "yg": 7,
-     "av": 3,
-     "p": 11,
-     "form": [
-      "D",
-      "D",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 9
-    },
-    {
-     "team": "Granada",
-     "o": 5,
-     "g": 3,
-     "b": 1,
-     "m": 1,
-     "ag": 9,
-     "yg": 5,
-     "av": 4,
-     "p": 10,
-     "form": [
-      "W",
-      "W",
-      "L",
-      "D",
-      "W"
-     ],
-     "pos": 10
-    },
-    {
-     "team": "Sp Gijon",
-     "o": 7,
-     "g": 3,
-     "b": 1,
-     "m": 3,
-     "ag": 7,
-     "yg": 8,
-     "av": -1,
-     "p": 10,
-     "form": [
-      "L",
-      "W",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 11
-    },
-    {
-     "team": "Tenerife",
-     "o": 6,
-     "g": 2,
-     "b": 3,
-     "m": 1,
-     "ag": 7,
-     "yg": 5,
-     "av": 2,
-     "p": 9,
-     "form": [
-      "D",
-      "D",
-      "D",
-      "W",
-      "L"
-     ],
-     "pos": 12
-    },
-    {
-     "team": "Celta B",
-     "o": 7,
-     "g": 2,
-     "b": 3,
-     "m": 2,
-     "ag": 13,
-     "yg": 13,
-     "av": 0,
-     "p": 9,
-     "form": [
-      "D",
-      "D",
-      "W",
-      "D",
-      "L"
-     ],
-     "pos": 13
-    },
-    {
-     "team": "Cadiz",
-     "o": 8,
-     "g": 2,
-     "b": 2,
-     "m": 4,
-     "ag": 10,
-     "yg": 8,
-     "av": 2,
-     "p": 8,
-     "form": [
-      "L",
-      "W",
-      "L",
-      "W",
-      "L"
-     ],
-     "pos": 14
-    },
-    {
-     "team": "Oviedo",
-     "o": 6,
-     "g": 2,
-     "b": 2,
-     "m": 2,
-     "ag": 7,
-     "yg": 5,
-     "av": 2,
-     "p": 8,
-     "form": [
-      "L",
-      "W",
-      "W",
-      "D",
-      "L"
-     ],
-     "pos": 15
-    },
-    {
-     "team": "Eldense",
-     "o": 6,
-     "g": 2,
-     "b": 2,
-     "m": 2,
-     "ag": 9,
-     "yg": 8,
-     "av": 1,
-     "p": 8,
-     "form": [
-      "L",
-      "W",
-      "W",
-      "L",
-      "D"
-     ],
-     "pos": 16
-    },
-    {
-     "team": "Las Palmas",
-     "o": 6,
-     "g": 2,
-     "b": 2,
-     "m": 2,
-     "ag": 6,
-     "yg": 8,
-     "av": -2,
-     "p": 8,
-     "form": [
-      "W",
-      "L",
-      "D",
-      "L",
-      "D"
-     ],
-     "pos": 17
-    },
-    {
-     "team": "Leganes",
-     "o": 6,
-     "g": 2,
-     "b": 1,
-     "m": 3,
-     "ag": 6,
-     "yg": 9,
-     "av": -3,
-     "p": 7,
-     "form": [
-      "L",
-      "D",
-      "L",
-      "L",
-      "W"
-     ],
-     "pos": 18
-    },
-    {
-     "team": "Andorra",
-     "o": 6,
-     "g": 2,
-     "b": 0,
-     "m": 4,
-     "ag": 10,
-     "yg": 11,
-     "av": -1,
-     "p": 6,
-     "form": [
-      "L",
-      "W",
-      "L",
-      "L",
-      "L"
-     ],
-     "pos": 19
-    },
-    {
-     "team": "Albacete",
-     "o": 6,
-     "g": 2,
-     "b": 0,
-     "m": 4,
-     "ag": 7,
-     "yg": 9,
-     "av": -2,
-     "p": 6,
-     "form": [
-      "W",
-      "W",
-      "L",
-      "L",
-      "L"
-     ],
-     "pos": 20
-    },
-    {
-     "team": "Sociedad B",
-     "o": 6,
-     "g": 1,
-     "b": 1,
-     "m": 4,
-     "ag": 6,
-     "yg": 10,
-     "av": -4,
-     "p": 4,
-     "form": [
-      "W",
-      "L",
-      "L",
-      "L",
-      "D"
-     ],
-     "pos": 21
-    },
-    {
-     "team": "Ceuta",
-     "o": 7,
-     "g": 1,
-     "b": 1,
-     "m": 5,
-     "ag": 6,
-     "yg": 12,
-     "av": -6,
-     "p": 4,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "W",
-      "D"
-     ],
-     "pos": 22
-    }
-   ],
-   "away": [
-    {
-     "team": "Castellon",
-     "o": 7,
-     "g": 5,
-     "b": 1,
-     "m": 1,
-     "ag": 11,
-     "yg": 4,
-     "av": 7,
-     "p": 16,
-     "form": [
-      "D",
-      "W",
-      "L",
-      "W",
-      "W"
-     ],
-     "pos": 1
-    },
-    {
-     "team": "Almeria",
-     "o": 7,
-     "g": 4,
-     "b": 1,
-     "m": 2,
-     "ag": 9,
-     "yg": 5,
-     "av": 4,
-     "p": 13,
-     "form": [
-      "W",
-      "D",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 2
-    },
-    {
-     "team": "Granada",
-     "o": 7,
-     "g": 4,
-     "b": 1,
-     "m": 2,
-     "ag": 11,
-     "yg": 9,
-     "av": 2,
-     "p": 13,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 3
-    },
-    {
-     "team": "Oviedo",
-     "o": 7,
-     "g": 4,
-     "b": 1,
-     "m": 2,
-     "ag": 12,
-     "yg": 11,
-     "av": 1,
-     "p": 13,
-     "form": [
-      "W",
-      "D",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 4
-    },
-    {
-     "team": "Eibar",
-     "o": 6,
-     "g": 4,
-     "b": 0,
-     "m": 2,
-     "ag": 11,
-     "yg": 7,
-     "av": 4,
-     "p": 12,
-     "form": [
-      "L",
-      "L",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 5
-    },
-    {
-     "team": "Sp Gijon",
-     "o": 6,
-     "g": 4,
-     "b": 0,
-     "m": 2,
-     "ag": 7,
-     "yg": 7,
-     "av": 0,
-     "p": 12,
-     "form": [
-      "W",
-      "L",
-      "W",
-      "L",
-      "W"
-     ],
-     "pos": 6
-    },
-    {
-     "team": "Las Palmas",
-     "o": 6,
-     "g": 3,
-     "b": 0,
-     "m": 3,
-     "ag": 11,
-     "yg": 13,
-     "av": -2,
-     "p": 9,
-     "form": [
-      "W",
-      "L",
-      "L",
-      "W",
-      "L"
-     ],
-     "pos": 7
-    },
-    {
-     "team": "Girona",
-     "o": 5,
-     "g": 2,
-     "b": 1,
-     "m": 2,
-     "ag": 6,
-     "yg": 5,
-     "av": 1,
-     "p": 7,
-     "form": [
-      "L",
-      "D",
-      "W",
-      "W",
-      "L"
-     ],
-     "pos": 8
-    },
-    {
-     "team": "Burgos",
-     "o": 5,
-     "g": 2,
-     "b": 1,
-     "m": 2,
-     "ag": 6,
-     "yg": 6,
-     "av": 0,
-     "p": 7,
-     "form": [
-      "W",
-      "L",
-      "W",
-      "D",
-      "L"
-     ],
-     "pos": 9
-    },
-    {
-     "team": "Mallorca",
-     "o": 6,
-     "g": 1,
-     "b": 4,
-     "m": 1,
-     "ag": 3,
-     "yg": 4,
-     "av": -1,
-     "p": 7,
-     "form": [
-      "D",
-      "D",
-      "D",
-      "W",
-      "D"
-     ],
-     "pos": 10
-    },
-    {
-     "team": "Cordoba",
-     "o": 7,
-     "g": 2,
-     "b": 1,
-     "m": 4,
-     "ag": 11,
-     "yg": 14,
-     "av": -3,
-     "p": 7,
-     "form": [
-      "D",
-      "W",
-      "L",
-      "L",
-      "W"
-     ],
-     "pos": 11
-    },
-    {
-     "team": "Sociedad B",
-     "o": 6,
-     "g": 2,
-     "b": 1,
-     "m": 3,
-     "ag": 9,
-     "yg": 12,
-     "av": -3,
-     "p": 7,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "W",
-      "D"
-     ],
-     "pos": 12
-    },
-    {
-     "team": "Valladolid",
-     "o": 7,
-     "g": 1,
-     "b": 3,
-     "m": 3,
-     "ag": 7,
-     "yg": 10,
-     "av": -3,
-     "p": 6,
-     "form": [
-      "W",
-      "L",
-      "D",
-      "D",
-      "D"
-     ],
-     "pos": 13
-    },
-    {
-     "team": "Sabadell",
-     "o": 7,
-     "g": 1,
-     "b": 3,
-     "m": 3,
-     "ag": 4,
-     "yg": 7,
-     "av": -3,
-     "p": 6,
-     "form": [
-      "L",
-      "L",
-      "W",
-      "D",
-      "L"
-     ],
-     "pos": 14
-    },
-    {
-     "team": "Tenerife",
-     "o": 6,
-     "g": 1,
-     "b": 3,
-     "m": 2,
-     "ag": 8,
-     "yg": 12,
-     "av": -4,
-     "p": 6,
-     "form": [
-      "D",
-      "D",
-      "L",
-      "L",
-      "D"
-     ],
-     "pos": 15
-    },
-    {
-     "team": "Eldense",
-     "o": 6,
-     "g": 2,
-     "b": 0,
-     "m": 4,
-     "ag": 4,
-     "yg": 9,
-     "av": -5,
-     "p": 6,
-     "form": [
-      "L",
-      "W",
-      "L",
-      "W",
-      "L"
-     ],
-     "pos": 16
-    },
-    {
-     "team": "Andorra",
-     "o": 6,
-     "g": 1,
-     "b": 2,
-     "m": 3,
-     "ag": 7,
-     "yg": 11,
-     "av": -4,
-     "p": 5,
-     "form": [
-      "D",
-      "L",
-      "D",
-      "W",
-      "L"
-     ],
-     "pos": 17
-    },
-    {
-     "team": "Leganes",
-     "o": 7,
-     "g": 1,
-     "b": 2,
-     "m": 4,
-     "ag": 5,
-     "yg": 14,
-     "av": -9,
-     "p": 5,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "L",
-      "D"
-     ],
-     "pos": 18
-    },
-    {
-     "team": "Celta B",
-     "o": 6,
-     "g": 1,
-     "b": 1,
-     "m": 4,
-     "ag": 6,
-     "yg": 12,
-     "av": -6,
-     "p": 4,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "L",
-      "W"
-     ],
-     "pos": 19
-    },
-    {
-     "team": "Albacete",
-     "o": 7,
-     "g": 1,
-     "b": 1,
-     "m": 5,
-     "ag": 6,
-     "yg": 15,
-     "av": -9,
-     "p": 4,
-     "form": [
-      "W",
-      "L",
-      "L",
-      "L",
-      "D"
-     ],
-     "pos": 20
-    },
-    {
-     "team": "Cadiz",
-     "o": 5,
-     "g": 0,
-     "b": 2,
-     "m": 3,
-     "ag": 6,
-     "yg": 10,
-     "av": -4,
-     "p": 2,
-     "form": [
-      "L",
-      "L",
-      "D",
-      "L",
-      "D"
-     ],
-     "pos": 21
-    },
-    {
-     "team": "Ceuta",
-     "o": 6,
-     "g": 0,
-     "b": 1,
-     "m": 5,
-     "ag": 4,
-     "yg": 18,
-     "av": -14,
-     "p": 1,
-     "form": [
-      "L",
-      "L",
-      "D",
-      "L",
-      "L"
-     ],
-     "pos": 22
-    }
-   ]
-  },
-  "NOR1": {
-   "season": "2627",
-   "updated": "2026-11-01",
-   "rows": [
-    {
-     "team": "Viking",
-     "o": 25,
-     "g": 19,
-     "b": 2,
-     "m": 4,
-     "ag": 64,
-     "yg": 26,
-     "av": 38,
-     "p": 59,
-     "form": [
-      "L",
-      "W",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 1
-    },
-    {
-     "team": "Bodo/Glimt",
-     "o": 25,
-     "g": 19,
-     "b": 2,
-     "m": 4,
-     "ag": 61,
-     "yg": 23,
-     "av": 38,
-     "p": 59,
-     "form": [
-      "W",
-      "L",
-      "W",
-      "W",
-      "L"
-     ],
-     "pos": 2
-    },
-    {
-     "team": "Molde",
-     "o": 25,
-     "g": 13,
-     "b": 4,
-     "m": 8,
-     "ag": 59,
-     "yg": 39,
-     "av": 20,
-     "p": 43,
-     "form": [
-      "L",
-      "W",
-      "W",
-      "D",
-      "L"
-     ],
-     "pos": 3
-    },
-    {
-     "team": "Rosenborg",
-     "o": 25,
-     "g": 13,
-     "b": 4,
-     "m": 8,
-     "ag": 49,
-     "yg": 31,
-     "av": 18,
-     "p": 43,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "D",
-      "W"
-     ],
-     "pos": 4
-    },
-    {
-     "team": "Lillestrom",
-     "o": 25,
-     "g": 13,
-     "b": 3,
-     "m": 9,
-     "ag": 36,
-     "yg": 33,
-     "av": 3,
-     "p": 42,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "D",
-      "L"
-     ],
-     "pos": 5
-    },
-    {
-     "team": "Tromso",
-     "o": 25,
-     "g": 11,
-     "b": 7,
-     "m": 7,
-     "ag": 43,
-     "yg": 38,
-     "av": 5,
-     "p": 40,
-     "form": [
-      "L",
-      "L",
-      "D",
-      "D",
-      "W"
-     ],
-     "pos": 6
-    },
-    {
-     "team": "Brann",
-     "o": 25,
-     "g": 10,
-     "b": 2,
-     "m": 13,
-     "ag": 45,
-     "yg": 42,
-     "av": 3,
-     "p": 32,
-     "form": [
-      "W",
-      "L",
-      "L",
-      "L",
-      "W"
-     ],
-     "pos": 7
-    },
-    {
-     "team": "Valerenga",
-     "o": 25,
-     "g": 9,
-     "b": 5,
-     "m": 11,
-     "ag": 43,
-     "yg": 46,
-     "av": -3,
-     "p": 32,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "L",
-      "D"
-     ],
-     "pos": 8
-    },
-    {
-     "team": "Sarpsborg 08",
-     "o": 25,
-     "g": 8,
-     "b": 7,
-     "m": 10,
-     "ag": 32,
-     "yg": 39,
-     "av": -7,
-     "p": 31,
-     "form": [
-      "L",
-      "W",
-      "L",
-      "W",
-      "L"
-     ],
-     "pos": 9
-    },
-    {
-     "team": "KFUM Oslo",
-     "o": 25,
-     "g": 8,
-     "b": 7,
-     "m": 10,
-     "ag": 32,
-     "yg": 41,
-     "av": -9,
-     "p": 31,
-     "form": [
-      "D",
-      "D",
-      "D",
-      "W",
-      "W"
-     ],
-     "pos": 10
-    },
-    {
-     "team": "Fredrikstad",
-     "o": 25,
-     "g": 8,
-     "b": 5,
-     "m": 12,
-     "ag": 29,
-     "yg": 44,
-     "av": -15,
-     "p": 29,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "D",
-      "D"
-     ],
-     "pos": 11
-    },
-    {
-     "team": "Sandefjord",
-     "o": 25,
-     "g": 7,
-     "b": 6,
-     "m": 12,
-     "ag": 26,
-     "yg": 34,
-     "av": -8,
-     "p": 27,
-     "form": [
-      "W",
-      "L",
-      "L",
-      "D",
-      "W"
-     ],
-     "pos": 12
-    },
-    {
-     "team": "HamKam",
-     "o": 25,
-     "g": 7,
-     "b": 6,
-     "m": 12,
-     "ag": 35,
-     "yg": 53,
-     "av": -18,
-     "p": 27,
-     "form": [
-      "D",
-      "L",
-      "L",
-      "W",
-      "L"
-     ],
-     "pos": 13
-    },
-    {
-     "team": "Aalesund",
-     "o": 25,
-     "g": 5,
-     "b": 9,
-     "m": 11,
-     "ag": 43,
-     "yg": 57,
-     "av": -14,
-     "p": 24,
-     "form": [
-      "L",
-      "L",
-      "W",
-      "L",
-      "W"
-     ],
-     "pos": 14
-    },
-    {
-     "team": "Kristiansund",
-     "o": 25,
-     "g": 6,
-     "b": 5,
-     "m": 14,
-     "ag": 29,
-     "yg": 51,
-     "av": -22,
-     "p": 23,
-     "form": [
-      "W",
-      "D",
-      "L",
-      "L",
-      "L"
-     ],
-     "pos": 15
-    },
-    {
-     "team": "Start",
-     "o": 25,
-     "g": 5,
-     "b": 4,
-     "m": 16,
-     "ag": 26,
-     "yg": 55,
-     "av": -29,
-     "p": 19,
-     "form": [
-      "L",
-      "W",
-      "L",
-      "L",
-      "L"
-     ],
-     "pos": 16
-    }
-   ],
-   "home": [
-    {
-     "team": "Viking",
-     "o": 12,
-     "g": 12,
-     "b": 0,
-     "m": 0,
-     "ag": 44,
-     "yg": 13,
-     "av": 31,
-     "p": 36,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 1
-    },
-    {
-     "team": "Bodo/Glimt",
-     "o": 13,
-     "g": 11,
-     "b": 0,
-     "m": 2,
-     "ag": 37,
-     "yg": 10,
-     "av": 27,
-     "p": 33,
-     "form": [
-      "W",
-      "L",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 2
-    },
-    {
-     "team": "Molde",
-     "o": 13,
-     "g": 9,
-     "b": 1,
-     "m": 3,
-     "ag": 35,
-     "yg": 15,
-     "av": 20,
-     "p": 28,
-     "form": [
-      "W",
-      "W",
-      "L",
-      "W",
-      "W"
-     ],
-     "pos": 3
-    },
-    {
-     "team": "Tromso",
-     "o": 12,
-     "g": 7,
-     "b": 4,
-     "m": 1,
-     "ag": 22,
-     "yg": 10,
-     "av": 12,
-     "p": 25,
-     "form": [
-      "D",
-      "W",
-      "D",
-      "W",
-      "D"
-     ],
-     "pos": 4
-    },
-    {
-     "team": "Rosenborg",
-     "o": 12,
-     "g": 7,
-     "b": 3,
-     "m": 2,
-     "ag": 28,
-     "yg": 14,
-     "av": 14,
-     "p": 24,
-     "form": [
-      "D",
-      "W",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 5
-    },
-    {
-     "team": "Brann",
-     "o": 13,
-     "g": 7,
-     "b": 0,
-     "m": 6,
-     "ag": 23,
-     "yg": 20,
-     "av": 3,
-     "p": 21,
-     "form": [
-      "W",
-      "L",
-      "W",
-      "L",
-      "W"
-     ],
-     "pos": 6
-    },
-    {
-     "team": "KFUM Oslo",
-     "o": 13,
-     "g": 6,
-     "b": 3,
-     "m": 4,
-     "ag": 17,
-     "yg": 16,
-     "av": 1,
-     "p": 21,
-     "form": [
-      "D",
-      "W",
-      "W",
-      "D",
-      "W"
-     ],
-     "pos": 7
-    },
-    {
-     "team": "Valerenga",
-     "o": 13,
-     "g": 6,
-     "b": 2,
-     "m": 5,
-     "ag": 27,
-     "yg": 20,
-     "av": 7,
-     "p": 20,
-     "form": [
-      "W",
-      "W",
-      "D",
-      "L",
-      "L"
-     ],
-     "pos": 8
-    },
-    {
-     "team": "Lillestrom",
-     "o": 12,
-     "g": 6,
-     "b": 1,
-     "m": 5,
-     "ag": 22,
-     "yg": 19,
-     "av": 3,
-     "p": 19,
-     "form": [
-      "W",
-      "D",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 9
-    },
-    {
-     "team": "Fredrikstad",
-     "o": 12,
-     "g": 5,
-     "b": 3,
-     "m": 4,
-     "ag": 14,
-     "yg": 15,
-     "av": -1,
-     "p": 18,
-     "form": [
-      "L",
-      "D",
-      "D",
-      "L",
-      "W"
-     ],
-     "pos": 10
-    },
-    {
-     "team": "Sarpsborg 08",
-     "o": 13,
-     "g": 5,
-     "b": 3,
-     "m": 5,
-     "ag": 16,
-     "yg": 20,
-     "av": -4,
-     "p": 18,
-     "form": [
-      "L",
-      "W",
-      "L",
-      "L",
-      "D"
-     ],
-     "pos": 11
-    },
-    {
-     "team": "HamKam",
-     "o": 12,
-     "g": 5,
-     "b": 2,
-     "m": 5,
-     "ag": 17,
-     "yg": 24,
-     "av": -7,
-     "p": 17,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "D",
-      "D"
-     ],
-     "pos": 12
-    },
-    {
-     "team": "Kristiansund",
-     "o": 12,
-     "g": 4,
-     "b": 3,
-     "m": 5,
-     "ag": 16,
-     "yg": 20,
-     "av": -4,
-     "p": 15,
-     "form": [
-      "D",
-      "L",
-      "L",
-      "W",
-      "W"
-     ],
-     "pos": 13
-    },
-    {
-     "team": "Start",
-     "o": 13,
-     "g": 4,
-     "b": 3,
-     "m": 6,
-     "ag": 15,
-     "yg": 20,
-     "av": -5,
-     "p": 15,
-     "form": [
-      "L",
-      "W",
-      "L",
-      "W",
-      "W"
-     ],
-     "pos": 14
-    },
-    {
-     "team": "Sandefjord",
-     "o": 12,
-     "g": 3,
-     "b": 5,
-     "m": 4,
-     "ag": 10,
-     "yg": 12,
-     "av": -2,
-     "p": 14,
-     "form": [
-      "L",
-      "W",
-      "D",
-      "D",
-      "L"
-     ],
-     "pos": 15
-    },
-    {
-     "team": "Aalesund",
-     "o": 13,
-     "g": 2,
-     "b": 6,
-     "m": 5,
-     "ag": 27,
-     "yg": 34,
-     "av": -7,
-     "p": 12,
-     "form": [
-      "L",
-      "L",
-      "W",
-      "D",
-      "L"
-     ],
-     "pos": 16
-    }
-   ],
-   "away": [
-    {
-     "team": "Bodo/Glimt",
-     "o": 12,
-     "g": 8,
-     "b": 2,
-     "m": 2,
-     "ag": 24,
-     "yg": 13,
-     "av": 11,
-     "p": 26,
-     "form": [
-      "W",
-      "L",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 1
-    },
-    {
-     "team": "Viking",
-     "o": 13,
-     "g": 7,
-     "b": 2,
-     "m": 4,
-     "ag": 20,
-     "yg": 13,
-     "av": 7,
-     "p": 23,
-     "form": [
-      "L",
-      "W",
-      "D",
-      "L",
-      "W"
-     ],
-     "pos": 2
-    },
-    {
-     "team": "Lillestrom",
-     "o": 13,
-     "g": 7,
-     "b": 2,
-     "m": 4,
-     "ag": 14,
-     "yg": 14,
-     "av": 0,
-     "p": 23,
-     "form": [
-      "W",
-      "W",
-      "L",
-      "W",
-      "D"
-     ],
-     "pos": 3
-    },
-    {
-     "team": "Rosenborg",
-     "o": 13,
-     "g": 6,
-     "b": 1,
-     "m": 6,
-     "ag": 21,
-     "yg": 17,
-     "av": 4,
-     "p": 19,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "W",
-      "L"
-     ],
-     "pos": 4
-    },
-    {
-     "team": "Molde",
-     "o": 12,
-     "g": 4,
-     "b": 3,
-     "m": 5,
-     "ag": 24,
-     "yg": 24,
-     "av": 0,
-     "p": 15,
-     "form": [
-      "L",
-      "D",
-      "W",
-      "W",
-      "L"
-     ],
-     "pos": 5
-    },
-    {
-     "team": "Tromso",
-     "o": 13,
-     "g": 4,
-     "b": 3,
-     "m": 6,
-     "ag": 21,
-     "yg": 28,
-     "av": -7,
-     "p": 15,
-     "form": [
-      "L",
-      "L",
-      "D",
-      "L",
-      "L"
-     ],
-     "pos": 6
-    },
-    {
-     "team": "Sarpsborg 08",
-     "o": 12,
-     "g": 3,
-     "b": 4,
-     "m": 5,
-     "ag": 16,
-     "yg": 19,
-     "av": -3,
-     "p": 13,
-     "form": [
-      "W",
-      "D",
-      "D",
-      "L",
-      "D"
-     ],
-     "pos": 7
-    },
-    {
-     "team": "Sandefjord",
-     "o": 13,
-     "g": 4,
-     "b": 1,
-     "m": 8,
-     "ag": 16,
-     "yg": 22,
-     "av": -6,
-     "p": 13,
-     "form": [
-      "W",
-      "L",
-      "D",
-      "L",
-      "W"
-     ],
-     "pos": 8
-    },
-    {
-     "team": "Aalesund",
-     "o": 12,
-     "g": 3,
-     "b": 3,
-     "m": 6,
-     "ag": 16,
-     "yg": 23,
-     "av": -7,
-     "p": 12,
-     "form": [
-      "L",
-      "W",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 9
-    },
-    {
-     "team": "Valerenga",
-     "o": 12,
-     "g": 3,
-     "b": 3,
-     "m": 6,
-     "ag": 16,
-     "yg": 26,
-     "av": -10,
-     "p": 12,
-     "form": [
-      "W",
-      "L",
-      "L",
-      "D",
-      "D"
-     ],
-     "pos": 10
-    },
-    {
-     "team": "Brann",
-     "o": 12,
-     "g": 3,
-     "b": 2,
-     "m": 7,
-     "ag": 22,
-     "yg": 22,
-     "av": 0,
-     "p": 11,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "D",
-      "W"
-     ],
-     "pos": 11
-    },
-    {
-     "team": "Fredrikstad",
-     "o": 13,
-     "g": 3,
-     "b": 2,
-     "m": 8,
-     "ag": 15,
-     "yg": 29,
-     "av": -14,
-     "p": 11,
-     "form": [
-      "L",
-      "L",
-      "D",
-      "W",
-      "W"
-     ],
-     "pos": 12
-    },
-    {
-     "team": "KFUM Oslo",
-     "o": 12,
-     "g": 2,
-     "b": 4,
-     "m": 6,
-     "ag": 15,
-     "yg": 25,
-     "av": -10,
-     "p": 10,
-     "form": [
-      "D",
-      "D",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 13
-    },
-    {
-     "team": "HamKam",
-     "o": 13,
-     "g": 2,
-     "b": 4,
-     "m": 7,
-     "ag": 18,
-     "yg": 29,
-     "av": -11,
-     "p": 10,
-     "form": [
-      "D",
-      "W",
-      "L",
-      "L",
-      "L"
-     ],
-     "pos": 14
-    },
-    {
-     "team": "Kristiansund",
-     "o": 13,
-     "g": 2,
-     "b": 2,
-     "m": 9,
-     "ag": 13,
-     "yg": 31,
-     "av": -18,
-     "p": 8,
-     "form": [
-      "W",
-      "L",
-      "L",
-      "D",
-      "L"
-     ],
-     "pos": 15
-    },
-    {
-     "team": "Start",
-     "o": 12,
-     "g": 1,
-     "b": 1,
-     "m": 10,
-     "ag": 11,
-     "yg": 35,
-     "av": -24,
-     "p": 4,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "W",
-      "L"
-     ],
-     "pos": 16
-    }
-   ]
-  }
- },
+ "standings": {},
  "iddaa_archive": {
-  "rows": 1121,
+  "rows": 1207,
   "resulted": 110,
   "filled_now": 0,
   "min_n": 30,
