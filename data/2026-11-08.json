@@ -334,8 +334,17 @@
    "away": {
     "name": "Erzurumspor FK"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -2496,8 +2505,17 @@
    "away": {
     "name": "Fenerbahçe"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     5
+    ],
+    "ht": [
+     0,
+     2
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -5057,8 +5075,17 @@
    "away": {
     "name": "Trabzonspor"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     2
+    ],
+    "ht": [
+     0,
+     2
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -7344,8 +7371,17 @@
    "away": {
     "name": "Gençlerbirliği"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     0
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -17187,8 +17223,17 @@
    "away": {
     "name": "Brentford"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     0
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -19543,8 +19588,17 @@
    "away": {
     "name": "Liverpool"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     3
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -21916,8 +21970,17 @@
    "away": {
     "name": "Bournemouth"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     2
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -24286,8 +24349,17 @@
    "away": {
     "name": "Chelsea"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     0
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -26551,8 +26623,17 @@
    "away": {
     "name": "Aston Villa"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     4,
+     4
+    ],
+    "ht": [
+     2,
+     2
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -28836,8 +28917,17 @@
    "away": {
     "name": "Real Betis"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     2
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -31167,8 +31257,17 @@
    "away": {
     "name": "Vallecano"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -33447,8 +33546,17 @@
    "away": {
     "name": "Levante"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -35572,8 +35680,17 @@
    "away": {
     "name": "Getafe"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -37602,8 +37719,17 @@
    "away": {
     "name": "Barcelona"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     2
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -39868,8 +39994,17 @@
    "away": {
     "name": "Lazio"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     1
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -41987,8 +42122,17 @@
    "away": {
     "name": "Atalanta"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -44331,8 +44475,17 @@
    "away": {
     "name": "AC Milan"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     2
+    ],
+    "ht": [
+     0,
+     2
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -48407,8 +48560,17 @@
    "away": {
     "name": "Juventus"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     2
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -50450,8 +50612,17 @@
    "away": {
     "name": "B. Leverkusen"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     2
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -52773,8 +52944,17 @@
    "away": {
     "name": "Union Berlin"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -54894,8 +55074,17 @@
    "away": {
     "name": "Schalke 04"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -56882,8 +57071,17 @@
    "away": {
     "name": "Lille"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     2
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -59136,8 +59334,17 @@
    "away": {
     "name": "Nice"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     2
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -61203,8 +61410,17 @@
    "away": {
     "name": "Lyon"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     0
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -63294,8 +63510,17 @@
    "away": {
     "name": "Lorient"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     2
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -65260,8 +65485,17 @@
    "away": {
     "name": "Monaco"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     1
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -67305,8 +67539,17 @@
    "away": {
     "name": "Marsilya"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     2
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -69457,8 +69700,17 @@
    "away": {
     "name": "Karlsruhe"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     2
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -71659,8 +71911,17 @@
    "away": {
     "name": "Hannover 96"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     2
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -73991,8 +74252,17 @@
    "away": {
     "name": "St. Pauli"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     4,
+     1
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -77916,8 +78186,17 @@
    "away": {
     "name": "Modena"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     2
+    ],
+    "ht": [
+     0,
+     2
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -80046,8 +80325,17 @@
    "away": {
     "name": "Sampdoria"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     1
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -81915,8 +82203,17 @@
    "away": {
     "name": "Cremonese"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     4
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -83904,8 +84201,17 @@
    "away": {
     "name": "Almeria"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -89727,8 +90033,17 @@
    "away": {
     "name": "Real Valladolid"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     2
+    ],
+    "ht": [
+     0,
+     2
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -91710,8 +92025,17 @@
    "away": {
     "name": "Feyenoord"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     5,
+     3
+    ],
+    "ht": [
+     1,
+     2
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -94081,8 +94405,17 @@
    "away": {
     "name": "Ajax"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     2
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -96334,8 +96667,17 @@
    "away": {
     "name": "Groningen"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     4,
+     3
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -100317,8 +100659,17 @@
    "away": {
     "name": "NEC Nijmegen"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     3
+    ],
+    "ht": [
+     0,
+     2
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -106162,8 +106513,17 @@
    "away": {
     "name": "Gil Vicente"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     2
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -108129,8 +108489,17 @@
    "away": {
     "name": "Porto"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     2
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -110086,8 +110455,17 @@
    "away": {
     "name": "Benfica"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     3
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -112245,8 +112623,17 @@
    "away": {
     "name": "Braga"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -114453,8 +114840,17 @@
    "away": {
     "name": "Anderlecht"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     1
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -124252,8 +124648,17 @@
    "away": {
     "name": "Falkirk"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     5
+    ],
+    "ht": [
+     0,
+     4
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -126579,8 +126984,17 @@
    "away": {
     "name": "Kilmarnock"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     0
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -130939,8 +131353,17 @@
    "away": {
     "name": "APO Levadeiakos"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -134968,8 +135391,17 @@
    "away": {
     "name": "Panathinaikos"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     2
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [
     "Model-piyasa farkı çok büyük (veri hatası olabilir)",
     "Maç başladı/bitti – son bülten verisi"
@@ -136986,8 +137418,17 @@
    "away": {
     "name": "Atromitos"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -139113,8 +139554,17 @@
    "away": {
     "name": "PAOK"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {

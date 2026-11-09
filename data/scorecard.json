@@ -1,28 +1,197 @@
 {
- "generated_at": "2026-11-09T09:40:13+03:00",
+ "generated_at": "2026-11-09T14:30:52+03:00",
  "overall": {
-  "n": 11,
-  "hit_rate": 0.5455,
-  "avg_p": 0.6295,
-  "brier_1x2": 0.6641,
-  "staked": 11,
-  "profit": -2.93,
-  "roi": -0.2664,
+  "n": 137,
+  "hit_rate": 0.6423,
+  "avg_p": 0.6422,
+  "brier_1x2": 0.5854,
+  "staked": 137,
+  "profit": -20.14,
+  "roi": -0.147,
   "value_n": 0,
   "value_roi": null
  },
  "last30": {
-  "n": 11,
-  "hit_rate": 0.5455,
-  "avg_p": 0.6295,
-  "brier_1x2": 0.6641,
-  "staked": 11,
-  "profit": -2.93,
-  "roi": -0.2664,
+  "n": 137,
+  "hit_rate": 0.6423,
+  "avg_p": 0.6422,
+  "brier_1x2": 0.5854,
+  "staked": 137,
+  "profit": -20.14,
+  "roi": -0.147,
   "value_n": 0,
   "value_roi": null
  },
  "by_league": [
+  {
+   "league": "ESP1",
+   "name": "La Liga",
+   "n": 10,
+   "hit_rate": 0.8,
+   "avg_p": 0.6481,
+   "brier_1x2": 0.6022,
+   "staked": 10,
+   "profit": 0.65,
+   "roi": 0.065,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "ENG2",
+   "name": "Championship",
+   "n": 10,
+   "hit_rate": 0.6,
+   "avg_p": 0.6588,
+   "brier_1x2": 0.6771,
+   "staked": 10,
+   "profit": -2.19,
+   "roi": -0.219,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "TR1",
+   "name": "Süper Lig",
+   "n": 9,
+   "hit_rate": 0.7778,
+   "avg_p": 0.6509,
+   "brier_1x2": 0.4849,
+   "staked": 9,
+   "profit": 0.29,
+   "roi": 0.0322,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "ENG1",
+   "name": "Premier Lig",
+   "n": 9,
+   "hit_rate": 0.6667,
+   "avg_p": 0.5952,
+   "brier_1x2": 0.5875,
+   "staked": 9,
+   "profit": -0.53,
+   "roi": -0.0589,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "ITA1",
+   "name": "Serie A",
+   "n": 9,
+   "hit_rate": 0.5556,
+   "avg_p": 0.6598,
+   "brier_1x2": 0.6147,
+   "staked": 9,
+   "profit": -2.66,
+   "roi": -0.2956,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "GER1",
+   "name": "Bundesliga",
+   "n": 9,
+   "hit_rate": 0.8889,
+   "avg_p": 0.6922,
+   "brier_1x2": 0.3353,
+   "staked": 9,
+   "profit": 1.15,
+   "roi": 0.1278,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "FRA1",
+   "name": "Ligue 1",
+   "n": 9,
+   "hit_rate": 0.6667,
+   "avg_p": 0.6233,
+   "brier_1x2": 0.5632,
+   "staked": 9,
+   "profit": -0.76,
+   "roi": -0.0844,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "ITA2",
+   "name": "Serie B",
+   "n": 9,
+   "hit_rate": 0.7778,
+   "avg_p": 0.6214,
+   "brier_1x2": 0.6546,
+   "staked": 9,
+   "profit": 0.94,
+   "roi": 0.1044,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "GER2",
+   "name": "2. Bundesliga",
+   "n": 8,
+   "hit_rate": 0.375,
+   "avg_p": 0.6247,
+   "brier_1x2": 0.5772,
+   "staked": 8,
+   "profit": -3.92,
+   "roi": -0.49,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "FRA2",
+   "name": "Ligue 2",
+   "n": 8,
+   "hit_rate": 0.375,
+   "avg_p": 0.6216,
+   "brier_1x2": 0.6581,
+   "staked": 8,
+   "profit": -3.71,
+   "roi": -0.4637,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "NED1",
+   "name": "Eredivisie",
+   "n": 8,
+   "hit_rate": 0.875,
+   "avg_p": 0.6632,
+   "brier_1x2": 0.686,
+   "staked": 8,
+   "profit": 1.11,
+   "roi": 0.1387,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "POR1",
+   "name": "Liga Portugal",
+   "n": 6,
+   "hit_rate": 0.8333,
+   "avg_p": 0.69,
+   "brier_1x2": 0.4356,
+   "staked": 6,
+   "profit": 0.32,
+   "roi": 0.0533,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "SCO1",
+   "name": "Premiership",
+   "n": 6,
+   "hit_rate": 0.6667,
+   "avg_p": 0.6512,
+   "brier_1x2": 0.5613,
+   "staked": 6,
+   "profit": -0.91,
+   "roi": -0.1517,
+   "value_n": 0,
+   "value_roi": null
+  },
   {
    "league": "UEL",
    "name": "Avrupa Ligi",
@@ -33,6 +202,45 @@
    "staked": 5,
    "profit": -1.28,
    "roi": -0.256,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "BEL1",
+   "name": "Pro League",
+   "n": 5,
+   "hit_rate": 0.4,
+   "avg_p": 0.6247,
+   "brier_1x2": 0.7039,
+   "staked": 5,
+   "profit": -2.34,
+   "roi": -0.468,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "ESP2",
+   "name": "La Liga 2",
+   "n": 5,
+   "hit_rate": 0.4,
+   "avg_p": 0.6143,
+   "brier_1x2": 0.6076,
+   "staked": 5,
+   "profit": -2.15,
+   "roi": -0.43,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "GRE1",
+   "name": "Super League",
+   "n": 5,
+   "hit_rate": 0.6,
+   "avg_p": 0.665,
+   "brier_1x2": 0.4674,
+   "staked": 5,
+   "profit": -1.5,
+   "roi": -0.3,
    "value_n": 0,
    "value_roi": null
   },
@@ -59,6 +267,19 @@
    "staked": 2,
    "profit": -0.63,
    "roi": -0.315,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "league": "SCO2",
+   "name": "Championship",
+   "n": 1,
+   "hit_rate": 0.0,
+   "avg_p": 0.5617,
+   "brier_1x2": 0.6899,
+   "staked": 1,
+   "profit": -1,
+   "roi": -1.0,
    "value_n": 0,
    "value_roi": null
   },
@@ -360,245 +581,395 @@
    "roi": null,
    "value_n": 0,
    "value_roi": null
+  },
+  {
+   "league": "OTHER",
+   "name": "İskoçya Championship",
+   "n": 0,
+   "hit_rate": null,
+   "avg_p": null,
+   "brier_1x2": null,
+   "staked": 0,
+   "profit": 0,
+   "roi": null,
+   "value_n": 0,
+   "value_roi": null
   }
  ],
  "by_market": [
   {
    "market": "BTTS_Y",
    "label": "KG Var",
-   "n": 5,
-   "hit_rate": 0.6,
-   "avg_p": 0.6121,
-   "brier_1x2": 0.7116,
-   "staked": 5,
-   "profit": -0.91,
-   "roi": -0.182,
+   "n": 60,
+   "hit_rate": 0.5667,
+   "avg_p": 0.6099,
+   "brier_1x2": 0.6448,
+   "staked": 60,
+   "profit": -12.93,
+   "roi": -0.2155,
    "value_n": 0,
    "value_roi": null,
-   "trust": 1.0
+   "trust": 1.063
   },
   {
-   "market": "2",
-   "label": "MS 2",
-   "n": 3,
-   "hit_rate": 0.6667,
-   "avg_p": 0.595,
-   "brier_1x2": 0.5629,
-   "staked": 3,
-   "profit": -0.14,
-   "roi": -0.0467,
+   "market": "1",
+   "label": "MS 1",
+   "n": 18,
+   "hit_rate": 0.8333,
+   "avg_p": 0.6691,
+   "brier_1x2": 0.3537,
+   "staked": 18,
+   "profit": 1.71,
+   "roi": 0.095,
    "value_n": 0,
    "value_roi": null,
-   "trust": 1.0
+   "trust": 0.993
   },
   {
    "market": "O2.5",
    "label": "2.5 Üst",
-   "n": 2,
-   "hit_rate": 0.0,
-   "avg_p": 0.6652,
-   "brier_1x2": 0.8094,
-   "staked": 2,
-   "profit": -2,
-   "roi": -1.0,
+   "n": 16,
+   "hit_rate": 0.625,
+   "avg_p": 0.6901,
+   "brier_1x2": 0.4957,
+   "staked": 16,
+   "profit": -3.5,
+   "roi": -0.2188,
    "value_n": 0,
    "value_roi": null,
-   "trust": 1.0
+   "trust": 1.026
+  },
+  {
+   "market": "U2.5",
+   "label": "2.5 Alt",
+   "n": 16,
+   "hit_rate": 0.5625,
+   "avg_p": 0.5805,
+   "brier_1x2": 0.6722,
+   "staked": 16,
+   "profit": -2.46,
+   "roi": -0.1537,
+   "value_n": 0,
+   "value_roi": null,
+   "trust": 0.974
+  },
+  {
+   "market": "2",
+   "label": "MS 2",
+   "n": 14,
+   "hit_rate": 0.7143,
+   "avg_p": 0.6541,
+   "brier_1x2": 0.4958,
+   "staked": 14,
+   "profit": -1.18,
+   "roi": -0.0843,
+   "value_n": 0,
+   "value_roi": null,
+   "trust": 1.061
+  },
+  {
+   "market": "1X",
+   "label": "ÇŞ 1X",
+   "n": 8,
+   "hit_rate": 0.875,
+   "avg_p": 0.7659,
+   "brier_1x2": 0.6981,
+   "staked": 8,
+   "profit": -0.24,
+   "roi": -0.03,
+   "value_n": 0,
+   "value_roi": null,
+   "trust": 0.846
   },
   {
    "market": "X2",
    "label": "ÇŞ X2",
-   "n": 1,
-   "hit_rate": 1.0,
-   "avg_p": 0.7479,
-   "brier_1x2": 0.4399,
-   "staked": 1,
-   "profit": 0.12,
-   "roi": 0.12,
+   "n": 5,
+   "hit_rate": 0.6,
+   "avg_p": 0.7457,
+   "brier_1x2": 0.7859,
+   "staked": 5,
+   "profit": -1.54,
+   "roi": -0.308,
    "value_n": 0,
    "value_roi": null,
-   "trust": 1.0
+   "trust": 0.98
   }
  ],
- "trust": {},
+ "trust": {
+  "1": 0.993,
+  "X": 0.945,
+  "2": 1.061,
+  "BTTS_Y": 1.063,
+  "BTTS_N": 0.937,
+  "1X": 0.846,
+  "12": 0.986,
+  "X2": 0.98,
+  "U1.5": 1.009,
+  "U2.5": 0.974,
+  "O2.5": 1.026,
+  "O3.5": 0.983,
+  "U3.5": 1.017,
+  "O1.5": 1.064,
+  "HT_O0.5": 1.01,
+  "HT_U0.5": 0.97,
+  "HT_O1.5": 0.93,
+  "HT_U1.5": 1.07,
+  "1&U2.5": 1.05,
+  "X&U2.5": 0.841,
+  "2&U2.5": 0.934,
+  "1&O2.5": 1.1,
+  "X&O2.5": 1.04,
+  "2&O2.5": 1.0,
+  "BTTS_Y&U2.5": 0.98,
+  "BTTS_Y&O2.5": 1.1,
+  "BTTS_N&U2.5": 0.814,
+  "BTTS_N&O2.5": 1.036,
+  "G0-1": 0.951,
+  "G2-3": 1.022,
+  "G4-5": 1.044,
+  "G6+": 0.984,
+  "ODD": 1.1,
+  "EVEN": 0.682,
+  "HT_BTTS_Y": 0.944,
+  "HT_BTTS_N": 1.029,
+  "HTFT_1/1": 0.983,
+  "HTFT_1/X": 1.019,
+  "HTFT_1/2": 1.038,
+  "HTFT_X/1": 1.1,
+  "HTFT_X/X": 0.938,
+  "HTFT_X/2": 0.936,
+  "HTFT_2/1": 1.065,
+  "HTFT_2/X": 0.918,
+  "HTFT_2/2": 0.971,
+  "MGH_1": 0.997,
+  "MGH_X": 0.6,
+  "MGH_2": 1.1,
+  "HT_1": 1.033,
+  "HT_X": 1.047,
+  "HT_2": 0.92,
+  "2H_1": 1.1,
+  "2H_X": 1.01,
+  "2H_2": 0.742,
+  "H_O1.5": 1.007,
+  "H_U1.5": 0.993,
+  "A_O1.5": 1.1,
+  "A_U1.5": 0.877,
+  "HCP-1_1": 1.034,
+  "HCP-1_X": 1.1,
+  "HCP-1_2": 0.862,
+  "1&BTTS_Y": 1.1,
+  "1&BTTS_N": 1.07,
+  "X&BTTS_Y": 1.029,
+  "X&BTTS_N": 0.849,
+  "2&BTTS_Y": 1.035,
+  "2&BTTS_N": 0.91,
+  "HCP+1_1": 0.915,
+  "HCP+1_X": 0.858,
+  "HCP+1_2": 1.1
+ },
  "calibration": [
   {
+   "bin": "0.1-0.2",
+   "predicted": 0.1676,
+   "observed": 0.0882,
+   "n": 34
+  },
+  {
    "bin": "0.2-0.3",
-   "predicted": 0.2496,
-   "observed": 0.3571,
-   "n": 14
+   "predicted": 0.2542,
+   "observed": 0.2514,
+   "n": 175
   },
   {
    "bin": "0.3-0.4",
-   "predicted": 0.352,
-   "observed": 0.125,
-   "n": 8
+   "predicted": 0.3481,
+   "observed": 0.3077,
+   "n": 91
+  },
+  {
+   "bin": "0.4-0.5",
+   "predicted": 0.4504,
+   "observed": 0.5172,
+   "n": 58
+  },
+  {
+   "bin": "0.5-0.6",
+   "predicted": 0.5443,
+   "observed": 0.5758,
+   "n": 33
+  },
+  {
+   "bin": "0.6-0.7",
+   "predicted": 0.6371,
+   "observed": 0.7273,
+   "n": 11
   }
  ],
  "by_category": [
   {
    "category": "ms",
    "title": "Maç sonucu",
-   "n": 66,
-   "model_brier": 0.2399,
-   "market_brier": 0.2463,
-   "model_logloss": 0.6763,
-   "market_logloss": 0.6926
+   "n": 1026,
+   "model_brier": 0.204,
+   "market_brier": 0.1986,
+   "model_logloss": 0.5958,
+   "market_logloss": 0.5824
   },
   {
    "category": "gol",
    "title": "Gol",
-   "n": 88,
-   "model_brier": 0.2483,
-   "market_brier": 0.2336,
-   "model_logloss": 0.6845,
-   "market_logloss": 0.6565
+   "n": 1488,
+   "model_brier": 0.2194,
+   "market_brier": 0.2124,
+   "model_logloss": 0.6259,
+   "market_logloss": 0.6102
   },
   {
    "category": "takim",
    "title": "Takım golü",
-   "n": 8,
-   "model_brier": 0.4175,
-   "market_brier": 0.2784,
-   "model_logloss": 1.0599,
-   "market_logloss": 0.7564
+   "n": 348,
+   "model_brier": 0.2461,
+   "market_brier": 0.2268,
+   "model_logloss": 0.6866,
+   "market_logloss": 0.6452
   },
   {
    "category": "yari",
    "title": "Yarılar",
-   "n": 19,
-   "model_brier": 0.174,
-   "market_brier": 0.1546,
-   "model_logloss": 0.5088,
-   "market_logloss": 0.4471
+   "n": 2089,
+   "model_brier": 0.1613,
+   "market_brier": 0.1596,
+   "model_logloss": 0.4894,
+   "market_logloss": 0.4852
   },
   {
    "category": "kombi",
    "title": "Kombine",
-   "n": 20,
-   "model_brier": 0.2107,
-   "market_brier": 0.1544,
-   "model_logloss": 0.6281,
-   "market_logloss": 0.4842
+   "n": 1426,
+   "model_brier": 0.1422,
+   "market_brier": 0.1379,
+   "model_logloss": 0.4494,
+   "market_logloss": 0.4361
   }
  ],
  "calibration_markets": {
   "model": [
    {
     "bin": "0.0-0.1",
-    "predicted": 0.05,
-    "observed": 0.1111,
-    "n": 18
+    "predicted": 0.0549,
+    "observed": 0.057,
+    "n": 824
    },
    {
     "bin": "0.1-0.2",
-    "predicted": 0.1608,
-    "observed": 0.2857,
-    "n": 21
+    "predicted": 0.1536,
+    "observed": 0.1552,
+    "n": 1160
    },
    {
     "bin": "0.2-0.3",
-    "predicted": 0.2543,
-    "observed": 0.4667,
-    "n": 30
+    "predicted": 0.2484,
+    "observed": 0.2545,
+    "n": 1226
    },
    {
     "bin": "0.3-0.4",
-    "predicted": 0.3602,
-    "observed": 0.3667,
-    "n": 30
+    "predicted": 0.3469,
+    "observed": 0.3429,
+    "n": 869
    },
    {
     "bin": "0.4-0.5",
-    "predicted": 0.4547,
-    "observed": 0.52,
-    "n": 25
+    "predicted": 0.4517,
+    "observed": 0.4744,
+    "n": 841
    },
    {
     "bin": "0.5-0.6",
-    "predicted": 0.55,
-    "observed": 0.381,
-    "n": 21
+    "predicted": 0.5435,
+    "observed": 0.5194,
+    "n": 566
    },
    {
     "bin": "0.6-0.7",
-    "predicted": 0.6409,
-    "observed": 0.5556,
-    "n": 27
+    "predicted": 0.6496,
+    "observed": 0.6422,
+    "n": 408
    },
    {
     "bin": "0.7-0.8",
-    "predicted": 0.7428,
-    "observed": 0.4762,
-    "n": 21
+    "predicted": 0.746,
+    "observed": 0.7035,
+    "n": 398
    },
    {
     "bin": "0.8-0.9",
-    "predicted": 0.8308,
-    "observed": 0.6667,
-    "n": 6
+    "predicted": 0.8262,
+    "observed": 0.8171,
+    "n": 82
    },
    {
     "bin": "0.9-1.0",
-    "predicted": 0.9146,
+    "predicted": 0.9117,
     "observed": 1.0,
-    "n": 2
+    "n": 3
    }
   ],
   "market": [
    {
     "bin": "0.0-0.1",
-    "predicted": 0.0581,
-    "observed": 0.0769,
-    "n": 13
+    "predicted": 0.0528,
+    "observed": 0.0461,
+    "n": 933
    },
    {
     "bin": "0.1-0.2",
-    "predicted": 0.1597,
-    "observed": 0.1429,
-    "n": 21
+    "predicted": 0.1547,
+    "observed": 0.1629,
+    "n": 1148
    },
    {
     "bin": "0.2-0.3",
-    "predicted": 0.2459,
-    "observed": 0.4242,
-    "n": 33
+    "predicted": 0.2471,
+    "observed": 0.2502,
+    "n": 1187
    },
    {
     "bin": "0.3-0.4",
-    "predicted": 0.3546,
-    "observed": 0.3636,
-    "n": 22
+    "predicted": 0.3479,
+    "observed": 0.3355,
+    "n": 772
    },
    {
     "bin": "0.4-0.5",
-    "predicted": 0.4566,
-    "observed": 0.4211,
-    "n": 38
+    "predicted": 0.4537,
+    "observed": 0.4597,
+    "n": 857
    },
    {
     "bin": "0.5-0.6",
-    "predicted": 0.5409,
-    "observed": 0.5484,
-    "n": 31
+    "predicted": 0.5421,
+    "observed": 0.5477,
+    "n": 566
    },
    {
     "bin": "0.6-0.7",
-    "predicted": 0.6431,
-    "observed": 0.5625,
-    "n": 16
+    "predicted": 0.6463,
+    "observed": 0.6554,
+    "n": 354
    },
    {
     "bin": "0.7-0.8",
-    "predicted": 0.7513,
-    "observed": 0.6087,
-    "n": 23
+    "predicted": 0.75,
+    "observed": 0.7217,
+    "n": 406
    },
    {
     "bin": "0.8-0.9",
-    "predicted": 0.8186,
-    "observed": 0.75,
-    "n": 4
+    "predicted": 0.8296,
+    "observed": 0.8247,
+    "n": 154
    }
   ]
  },
@@ -616,18 +987,478 @@
   },
   {
    "date": "2026-11-06",
-   "balance": 97.09
+   "balance": 93.93
   },
   {
    "date": "2026-11-07",
-   "balance": 96.09
+   "balance": 84.27
   },
   {
    "date": "2026-11-08",
-   "balance": 97.07
+   "balance": 79.86
   }
  ],
  "recent": [
+  {
+   "date": "2026-11-08",
+   "match": "Olympiakos - PAOK",
+   "pick": "MS 1",
+   "odds": 1.41,
+   "p": 0.5957,
+   "won": false,
+   "score": "1-1",
+   "league": "GRE1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Ofi Crete - Atromitos",
+   "pick": "KG Var",
+   "odds": 1.53,
+   "p": 0.5478,
+   "won": false,
+   "score": "0-0",
+   "league": "GRE1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "POT Iraklis - Panathinaikos",
+   "pick": "MS 2",
+   "odds": 1.11,
+   "p": 0.7306,
+   "won": true,
+   "score": "1-2",
+   "league": "GRE1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Aek - APO Levadeiakos",
+   "pick": "MS 1",
+   "odds": 1.18,
+   "p": 0.7631,
+   "won": true,
+   "score": "2-1",
+   "league": "GRE1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Celtic - Kilmarnock",
+   "pick": "MS 1",
+   "odds": 1.15,
+   "p": 0.8358,
+   "won": true,
+   "score": "1-0",
+   "league": "SCO1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Hearts - Falkirk",
+   "pick": "MS 1",
+   "odds": 1.57,
+   "p": 0.5756,
+   "won": false,
+   "score": "2-5",
+   "league": "SCO1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Club Brugge - Anderlecht",
+   "pick": "2.5 Üst",
+   "odds": 1.23,
+   "p": 0.7025,
+   "won": false,
+   "score": "1-1",
+   "league": "BEL1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Rio Ave - Braga",
+   "pick": "MS 2",
+   "odds": 1.32,
+   "p": 0.6597,
+   "won": true,
+   "score": "0-1",
+   "league": "POR1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Estrela - Benfica",
+   "pick": "MS 2",
+   "odds": 1.08,
+   "p": 0.815,
+   "won": true,
+   "score": "2-3",
+   "league": "POR1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "V. Guimaraes - Porto",
+   "pick": "MS 2",
+   "odds": 1.34,
+   "p": 0.6491,
+   "won": true,
+   "score": "1-2",
+   "league": "POR1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Santa Clara - Gil Vicente",
+   "pick": "2.5 Alt",
+   "odds": 1.34,
+   "p": 0.6663,
+   "won": false,
+   "score": "1-2",
+   "league": "POR1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Utrecht - NEC Nijmegen",
+   "pick": "KG Var",
+   "odds": 1.27,
+   "p": 0.6918,
+   "won": true,
+   "score": "2-3",
+   "league": "NED1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "AZ Alkmaar - Groningen",
+   "pick": "2.5 Üst",
+   "odds": 1.26,
+   "p": 0.6726,
+   "won": true,
+   "score": "4-3",
+   "league": "NED1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Twente - Ajax",
+   "pick": "KG Var",
+   "odds": 1.23,
+   "p": 0.6907,
+   "won": true,
+   "score": "2-2",
+   "league": "NED1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Heerenveen - Feyenoord",
+   "pick": "2.5 Üst",
+   "odds": 1.2,
+   "p": 0.7079,
+   "won": true,
+   "score": "5-3",
+   "league": "NED1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "S. Gijon - Real Valladolid",
+   "pick": "2.5 Alt",
+   "odds": 1.53,
+   "p": 0.5455,
+   "won": false,
+   "score": "1-2",
+   "league": "ESP2"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Girona - Almeria",
+   "pick": "KG Var",
+   "odds": 1.48,
+   "p": 0.5883,
+   "won": false,
+   "score": "0-1",
+   "league": "ESP2"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "LR Vicenza V. - Cremonese",
+   "pick": "KG Var",
+   "odds": 1.58,
+   "p": 0.5541,
+   "won": true,
+   "score": "1-4",
+   "league": "ITA2"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Carrarese C. 1908 - Sampdoria",
+   "pick": "2.5 Alt",
+   "odds": 1.54,
+   "p": 0.5726,
+   "won": true,
+   "score": "0-1",
+   "league": "ITA2"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "V. Entella - Modena",
+   "pick": "2.5 Alt",
+   "odds": 1.51,
+   "p": 0.5863,
+   "won": true,
+   "score": "0-2",
+   "league": "ITA2"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Magdeburg - St. Pauli",
+   "pick": "KG Var",
+   "odds": 1.39,
+   "p": 0.6112,
+   "won": true,
+   "score": "4-1",
+   "league": "GER2"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Heidenheim - Hannover 96",
+   "pick": "KG Var",
+   "odds": 1.28,
+   "p": 0.678,
+   "won": true,
+   "score": "2-2",
+   "league": "GER2"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Bochum - Karlsruhe",
+   "pick": "KG Var",
+   "odds": 1.41,
+   "p": 0.6089,
+   "won": true,
+   "score": "3-2",
+   "league": "GER2"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "RC Lens - Marsilya",
+   "pick": "KG Var",
+   "odds": 1.37,
+   "p": 0.6415,
+   "won": true,
+   "score": "1-2",
+   "league": "FRA1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Le Mans - Monaco",
+   "pick": "MS 2",
+   "odds": 1.44,
+   "p": 0.5953,
+   "won": false,
+   "score": "1-1",
+   "league": "FRA1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Le Havre - Lorient",
+   "pick": "2.5 Alt",
+   "odds": 1.52,
+   "p": 0.5726,
+   "won": true,
+   "score": "0-2",
+   "league": "FRA1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Brest - Lyon",
+   "pick": "KG Var",
+   "odds": 1.48,
+   "p": 0.5828,
+   "won": false,
+   "score": "2-0",
+   "league": "FRA1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Angers - Nice",
+   "pick": "KG Var",
+   "odds": 1.48,
+   "p": 0.5659,
+   "won": false,
+   "score": "0-2",
+   "league": "FRA1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Rennes - Lille",
+   "pick": "KG Var",
+   "odds": 1.41,
+   "p": 0.6082,
+   "won": true,
+   "score": "1-2",
+   "league": "FRA1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Hoffenheim - Schalke 04",
+   "pick": "MS 1",
+   "odds": 1.42,
+   "p": 0.6261,
+   "won": true,
+   "score": "2-1",
+   "league": "GER1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Freiburg - Union Berlin",
+   "pick": "MS 1",
+   "odds": 1.23,
+   "p": 0.685,
+   "won": true,
+   "score": "2-0",
+   "league": "GER1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Köln - B. Leverkusen",
+   "pick": "KG Var",
+   "odds": 1.41,
+   "p": 0.623,
+   "won": true,
+   "score": "1-2",
+   "league": "GER1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Fiorentina - Juventus",
+   "pick": "ÇŞ X2",
+   "odds": 1.19,
+   "p": 0.7282,
+   "won": true,
+   "score": "2-2",
+   "league": "ITA1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Genoa - AC Milan",
+   "pick": "2.5 Alt",
+   "odds": 1.48,
+   "p": 0.5754,
+   "won": false,
+   "score": "1-2",
+   "league": "ITA1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "AC Monza - Atalanta",
+   "pick": "2.5 Üst",
+   "odds": 1.29,
+   "p": 0.6758,
+   "won": false,
+   "score": "0-1",
+   "league": "ITA1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Napoli - Lazio",
+   "pick": "KG Var",
+   "odds": 1.38,
+   "p": 0.5946,
+   "won": true,
+   "score": "1-1",
+   "league": "ITA1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Atl Madrid - Barcelona",
+   "pick": "2.5 Üst",
+   "odds": 1.2,
+   "p": 0.7122,
+   "won": true,
+   "score": "1-2",
+   "league": "ESP1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Villarreal - Getafe",
+   "pick": "MS 1",
+   "odds": 1.35,
+   "p": 0.6435,
+   "won": true,
+   "score": "2-0",
+   "league": "ESP1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Celta Vigo - Levante",
+   "pick": "ÇŞ 1X",
+   "odds": 1.08,
+   "p": 0.79,
+   "won": true,
+   "score": "0-0",
+   "league": "ESP1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "R. Sociedad - Vallecano",
+   "pick": "KG Var",
+   "odds": 1.38,
+   "p": 0.6208,
+   "won": false,
+   "score": "1-0",
+   "league": "ESP1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Elche - Real Betis",
+   "pick": "KG Var",
+   "odds": 1.37,
+   "p": 0.6289,
+   "won": false,
+   "score": "0-2",
+   "league": "ESP1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Man. Utd - Aston Villa",
+   "pick": "KG Var",
+   "odds": 1.31,
+   "p": 0.6535,
+   "won": true,
+   "score": "4-4",
+   "league": "ENG1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Sunderland - Chelsea",
+   "pick": "KG Var",
+   "odds": 1.53,
+   "p": 0.5581,
+   "won": false,
+   "score": "1-0",
+   "league": "ENG1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Ipswich Town - Bournemouth",
+   "pick": "KG Var",
+   "odds": 1.47,
+   "p": 0.5998,
+   "won": true,
+   "score": "1-2",
+   "league": "ENG1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Crystal Palace - Liverpool",
+   "pick": "2.5 Üst",
+   "odds": 1.3,
+   "p": 0.6421,
+   "won": true,
+   "score": "1-3",
+   "league": "ENG1"
+  },
+  {
+   "date": "2026-11-08",
+   "match": "Brighton - Brentford",
+   "pick": "KG Var",
+   "odds": 1.39,
+   "p": 0.619,
+   "won": false,
+   "score": "2-0",
+   "league": "ENG1"
+  },
   {
    "date": "2026-11-08",
    "match": "Mardin 1969 - Batman Petrol",
@@ -649,94 +1480,24 @@
    "league": "TR2"
   },
   {
-   "date": "2026-11-07",
-   "match": "Muğlaspor - Esenler Erokspor",
-   "pick": "KG Var",
-   "odds": 1.47,
-   "p": 0.5741,
-   "won": false,
-   "score": "0-5",
-   "league": "TR2"
+   "date": "2026-11-08",
+   "match": "Beşiktaş - Gençlerbirliği",
+   "pick": "MS 1",
+   "odds": 1.21,
+   "p": 0.7685,
+   "won": true,
+   "score": "3-0",
+   "league": "TR1"
   },
   {
-   "date": "2026-11-06",
-   "match": "Antalyaspor - Bursaspor",
+   "date": "2026-11-08",
+   "match": "Alanyaspor - Trabzonspor",
    "pick": "MS 2",
-   "odds": 1.48,
-   "p": 0.5998,
-   "won": false,
-   "score": "1-1",
-   "league": "TR2"
-  },
-  {
-   "date": "2026-11-05",
-   "match": "Getafe - Brighton",
-   "pick": "MS 2",
-   "odds": 1.37,
-   "p": 0.5756,
+   "odds": 1.42,
+   "p": 0.5806,
    "won": true,
-   "score": "0-1",
-   "league": "UECL"
-  },
-  {
-   "date": "2026-11-05",
-   "match": "Trabzonspor - Freiburg",
-   "pick": "KG Var",
-   "odds": 1.33,
-   "p": 0.6317,
-   "won": false,
-   "score": "0-1",
-   "league": "UECL"
-  },
-  {
-   "date": "2026-11-05",
-   "match": "Celtic - Beşiktaş",
-   "pick": "KG Var",
-   "odds": 1.29,
-   "p": 0.6362,
-   "won": true,
-   "score": "3-2",
-   "league": "UEL"
-  },
-  {
-   "date": "2026-11-05",
-   "match": "B. Leverkusen - Marsilya",
-   "pick": "2.5 Üst",
-   "odds": 1.2,
-   "p": 0.7122,
-   "won": false,
-   "score": "0-1",
-   "league": "UEL"
-  },
-  {
-   "date": "2026-11-05",
-   "match": "AZ Alkmaar - Juventus",
-   "pick": "ÇŞ X2",
-   "odds": 1.12,
-   "p": 0.7479,
-   "won": true,
-   "score": "1-2",
-   "league": "UEL"
-  },
-  {
-   "date": "2026-11-05",
-   "match": "R. Sociedad - Lyon",
-   "pick": "2.5 Üst",
-   "odds": 1.34,
-   "p": 0.6181,
-   "won": false,
-   "score": "1-1",
-   "league": "UEL"
-  },
-  {
-   "date": "2026-11-05",
-   "match": "Crystal Palace - Hoffenheim",
-   "pick": "KG Var",
-   "odds": 1.31,
-   "p": 0.6398,
-   "won": true,
-   "score": "1-1",
-   "league": "UEL"
+   "score": "0-2",
+   "league": "TR1"
   }
  ]
 }

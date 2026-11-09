@@ -286,8 +286,17 @@
    "away": {
     "name": "Kasımpaşa"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     2
+    ],
+    "ht": [
+     0,
+     2
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -4557,8 +4566,17 @@
    "away": {
     "name": "Coventry"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -6573,8 +6591,17 @@
    "away": {
     "name": "Alaves"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -8608,8 +8635,17 @@
    "away": {
     "name": "Udinese"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -10578,8 +10614,17 @@
    "away": {
     "name": "M'gladbach"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -12686,8 +12731,17 @@
    "away": {
     "name": "Strasbourg"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -14799,8 +14853,17 @@
    "away": {
     "name": "Bolton"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -16894,8 +16957,17 @@
    "away": {
     "name": "Bolton"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [
     "Veri yetersiz",
     "Önceki çalıştırmadan (kaynak güncellenemedi)"
@@ -17018,8 +17090,17 @@
    "away": {
     "name": "E. Cottbus"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -18933,8 +19014,17 @@
    "away": {
     "name": "G. Furth"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     0
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -20843,8 +20933,17 @@
    "away": {
     "name": "G. Furth"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     0
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   },
    "flags": [
     "Veri yetersiz",
     "Maç başladı/bitti – son bülten verisi"
@@ -20972,8 +21071,17 @@
    "away": {
     "name": "Greuther Furth"
    },
-   "status": "live",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     0
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   },
    "flags": [
     "Veri yetersiz",
     "Maç başladı/bitti – son bülten verisi"
@@ -21090,8 +21198,17 @@
    "away": {
     "name": "US Palermo"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     1
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -24588,8 +24705,17 @@
    "away": {
     "name": "Sochaux"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -26471,8 +26597,17 @@
    "away": {
     "name": "Red Star"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -28691,8 +28826,17 @@
    "away": {
     "name": "Guingamp"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     0
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -30742,8 +30886,17 @@
    "away": {
     "name": "Reims"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     2
+    ],
+    "ht": [
+     2,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -32753,8 +32906,17 @@
    "away": {
     "name": "Metz"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     3
+    ],
+    "ht": [
+     0,
+     2
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -34765,8 +34927,17 @@
    "away": {
     "name": "Annecy"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     0
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -36598,8 +36769,17 @@
    "away": {
     "name": "Zwolle"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     1
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -38620,8 +38800,17 @@
    "away": {
     "name": "Arouca"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -40693,8 +40882,17 @@
    "away": {
     "name": "SK Beveren"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     0
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -72278,8 +72476,17 @@
    "away": {
     "name": "Dunfermline"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [
     "Veri yetersiz",
     "Lig dışı/düşük kapsam"
