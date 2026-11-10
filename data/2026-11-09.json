@@ -220,8 +220,17 @@
    "away": {
     "name": "R. Sociedad B"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],

@@ -1,24 +1,24 @@
 {
- "generated_at": "2026-11-10T09:38:57+03:00",
+ "generated_at": "2026-11-10T14:27:05+03:00",
  "overall": {
-  "n": 137,
-  "hit_rate": 0.6423,
-  "avg_p": 0.6422,
-  "brier_1x2": 0.5854,
-  "staked": 137,
-  "profit": -20.14,
-  "roi": -0.147,
+  "n": 138,
+  "hit_rate": 0.6377,
+  "avg_p": 0.6416,
+  "brier_1x2": 0.5872,
+  "staked": 138,
+  "profit": -21.14,
+  "roi": -0.1532,
   "value_n": 0,
   "value_roi": null
  },
  "last30": {
-  "n": 137,
-  "hit_rate": 0.6423,
-  "avg_p": 0.6422,
-  "brier_1x2": 0.5854,
-  "staked": 137,
-  "profit": -20.14,
-  "roi": -0.147,
+  "n": 138,
+  "hit_rate": 0.6377,
+  "avg_p": 0.6416,
+  "brier_1x2": 0.5872,
+  "staked": 138,
+  "profit": -21.14,
+  "roi": -0.1532,
   "value_n": 0,
   "value_roi": null
  },
@@ -180,6 +180,19 @@
    "value_roi": null
   },
   {
+   "league": "ESP2",
+   "name": "La Liga 2",
+   "n": 6,
+   "hit_rate": 0.3333,
+   "avg_p": 0.6053,
+   "brier_1x2": 0.6464,
+   "staked": 6,
+   "profit": -3.15,
+   "roi": -0.525,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
    "league": "SCO1",
    "name": "Premiership",
    "n": 6,
@@ -215,19 +228,6 @@
    "staked": 5,
    "profit": -2.34,
    "roi": -0.468,
-   "value_n": 0,
-   "value_roi": null
-  },
-  {
-   "league": "ESP2",
-   "name": "La Liga 2",
-   "n": 5,
-   "hit_rate": 0.4,
-   "avg_p": 0.6143,
-   "brier_1x2": 0.6076,
-   "staked": 5,
-   "profit": -2.15,
-   "roi": -0.43,
    "value_n": 0,
    "value_roi": null
   },
@@ -609,21 +609,21 @@
    "roi": -0.2155,
    "value_n": 0,
    "value_roi": null,
-   "trust": 1.063
+   "trust": 1.054
   },
   {
    "market": "1",
    "label": "MS 1",
-   "n": 18,
-   "hit_rate": 0.8333,
-   "avg_p": 0.6691,
-   "brier_1x2": 0.3537,
-   "staked": 18,
-   "profit": 1.71,
-   "roi": 0.095,
+   "n": 19,
+   "hit_rate": 0.7895,
+   "avg_p": 0.6634,
+   "brier_1x2": 0.3793,
+   "staked": 19,
+   "profit": 0.71,
+   "roi": 0.0374,
    "value_n": 0,
    "value_roi": null,
-   "trust": 0.993
+   "trust": 0.982
   },
   {
    "market": "O2.5",
@@ -637,7 +637,7 @@
    "roi": -0.2188,
    "value_n": 0,
    "value_roi": null,
-   "trust": 1.026
+   "trust": 1.018
   },
   {
    "market": "U2.5",
@@ -651,7 +651,7 @@
    "roi": -0.1537,
    "value_n": 0,
    "value_roi": null,
-   "trust": 0.974
+   "trust": 0.982
   },
   {
    "market": "2",
@@ -665,7 +665,7 @@
    "roi": -0.0843,
    "value_n": 0,
    "value_roi": null,
-   "trust": 1.061
+   "trust": 1.056
   },
   {
    "market": "1X",
@@ -679,7 +679,7 @@
    "roi": -0.03,
    "value_n": 0,
    "value_roi": null,
-   "trust": 0.846
+   "trust": 0.853
   },
   {
    "market": "X2",
@@ -693,57 +693,57 @@
    "roi": -0.308,
    "value_n": 0,
    "value_roi": null,
-   "trust": 0.98
+   "trust": 0.993
   }
  ],
  "trust": {
-  "1": 0.993,
-  "X": 0.945,
-  "2": 1.061,
-  "BTTS_Y": 1.063,
-  "BTTS_N": 0.937,
-  "1X": 0.846,
-  "12": 0.986,
-  "X2": 0.98,
-  "U1.5": 1.009,
-  "U2.5": 0.974,
-  "O2.5": 1.026,
-  "O3.5": 0.983,
-  "U3.5": 1.017,
-  "O1.5": 1.064,
-  "HT_O0.5": 1.01,
-  "HT_U0.5": 0.97,
-  "HT_O1.5": 0.93,
-  "HT_U1.5": 1.07,
-  "1&U2.5": 1.05,
-  "X&U2.5": 0.841,
-  "2&U2.5": 0.934,
+  "1": 0.982,
+  "X": 0.961,
+  "2": 1.056,
+  "BTTS_Y": 1.054,
+  "BTTS_N": 0.946,
+  "1X": 0.853,
+  "12": 0.967,
+  "X2": 0.993,
+  "U1.5": 1.023,
+  "U2.5": 0.982,
+  "O2.5": 1.018,
+  "O3.5": 0.978,
+  "U3.5": 1.022,
+  "O1.5": 1.044,
+  "HT_O0.5": 0.989,
+  "HT_U0.5": 0.99,
+  "HT_O1.5": 0.923,
+  "HT_U1.5": 1.077,
+  "1&U2.5": 1.041,
+  "X&U2.5": 0.868,
+  "2&U2.5": 0.931,
   "1&O2.5": 1.1,
-  "X&O2.5": 1.04,
-  "2&O2.5": 1.0,
-  "BTTS_Y&U2.5": 0.98,
+  "X&O2.5": 1.039,
+  "2&O2.5": 0.997,
+  "BTTS_Y&U2.5": 0.976,
   "BTTS_Y&O2.5": 1.1,
-  "BTTS_N&U2.5": 0.814,
-  "BTTS_N&O2.5": 1.036,
-  "G0-1": 0.951,
-  "G2-3": 1.022,
-  "G4-5": 1.044,
-  "G6+": 0.984,
+  "BTTS_N&U2.5": 0.832,
+  "BTTS_N&O2.5": 1.033,
+  "G0-1": 0.972,
+  "G2-3": 1.007,
+  "G4-5": 1.038,
+  "G6+": 0.983,
   "ODD": 1.1,
-  "EVEN": 0.682,
-  "HT_BTTS_Y": 0.944,
-  "HT_BTTS_N": 1.029,
-  "HTFT_1/1": 0.983,
-  "HTFT_1/X": 1.019,
-  "HTFT_1/2": 1.038,
+  "EVEN": 0.702,
+  "HT_BTTS_Y": 0.94,
+  "HT_BTTS_N": 1.033,
+  "HTFT_1/1": 0.973,
+  "HTFT_1/X": 1.017,
+  "HTFT_1/2": 1.037,
   "HTFT_X/1": 1.1,
-  "HTFT_X/X": 0.938,
-  "HTFT_X/2": 0.936,
-  "HTFT_2/1": 1.065,
+  "HTFT_X/X": 0.965,
+  "HTFT_X/2": 0.934,
+  "HTFT_2/1": 1.064,
   "HTFT_2/X": 0.918,
-  "HTFT_2/2": 0.971,
-  "MGH_1": 0.997,
-  "MGH_X": 0.6,
+  "HTFT_2/2": 0.968,
+  "MGH_1": 0.987,
+  "MGH_X": 0.621,
   "MGH_2": 1.1,
   "HT_1": 1.033,
   "HT_X": 1.047,
@@ -777,9 +777,9 @@
   },
   {
    "bin": "0.2-0.3",
-   "predicted": 0.2542,
-   "observed": 0.2514,
-   "n": 175
+   "predicted": 0.254,
+   "observed": 0.2542,
+   "n": 177
   },
   {
    "bin": "0.3-0.4",
@@ -795,9 +795,9 @@
   },
   {
    "bin": "0.5-0.6",
-   "predicted": 0.5443,
-   "observed": 0.5758,
-   "n": 33
+   "predicted": 0.5435,
+   "observed": 0.5588,
+   "n": 34
   },
   {
    "bin": "0.6-0.7",
@@ -810,20 +810,20 @@
   {
    "category": "ms",
    "title": "Maç sonucu",
-   "n": 1026,
-   "model_brier": 0.204,
-   "market_brier": 0.1986,
-   "model_logloss": 0.5958,
-   "market_logloss": 0.5824
+   "n": 1032,
+   "model_brier": 0.2044,
+   "market_brier": 0.1993,
+   "model_logloss": 0.5967,
+   "market_logloss": 0.5838
   },
   {
    "category": "gol",
    "title": "Gol",
-   "n": 1488,
-   "model_brier": 0.2194,
-   "market_brier": 0.2124,
-   "model_logloss": 0.6259,
-   "market_logloss": 0.6102
+   "n": 1502,
+   "model_brier": 0.219,
+   "market_brier": 0.2127,
+   "model_logloss": 0.6251,
+   "market_logloss": 0.6108
   },
   {
    "category": "takim",
@@ -837,77 +837,77 @@
   {
    "category": "yari",
    "title": "Yarılar",
-   "n": 2089,
-   "model_brier": 0.1613,
+   "n": 2107,
+   "model_brier": 0.1611,
    "market_brier": 0.1596,
-   "model_logloss": 0.4894,
-   "market_logloss": 0.4852
+   "model_logloss": 0.4887,
+   "market_logloss": 0.4851
   },
   {
    "category": "kombi",
    "title": "Kombine",
-   "n": 1426,
-   "model_brier": 0.1422,
+   "n": 1436,
+   "model_brier": 0.142,
    "market_brier": 0.1379,
-   "model_logloss": 0.4494,
-   "market_logloss": 0.4361
+   "model_logloss": 0.4487,
+   "market_logloss": 0.4358
   }
  ],
  "calibration_markets": {
   "model": [
    {
     "bin": "0.0-0.1",
-    "predicted": 0.0549,
-    "observed": 0.057,
-    "n": 824
+    "predicted": 0.0548,
+    "observed": 0.0564,
+    "n": 833
    },
    {
     "bin": "0.1-0.2",
     "predicted": 0.1536,
-    "observed": 0.1552,
-    "n": 1160
+    "observed": 0.155,
+    "n": 1168
    },
    {
     "bin": "0.2-0.3",
     "predicted": 0.2484,
-    "observed": 0.2545,
-    "n": 1226
+    "observed": 0.2551,
+    "n": 1235
    },
    {
     "bin": "0.3-0.4",
     "predicted": 0.3469,
-    "observed": 0.3429,
-    "n": 869
+    "observed": 0.3444,
+    "n": 874
    },
    {
     "bin": "0.4-0.5",
     "predicted": 0.4517,
-    "observed": 0.4744,
-    "n": 841
+    "observed": 0.4728,
+    "n": 846
    },
    {
     "bin": "0.5-0.6",
-    "predicted": 0.5435,
-    "observed": 0.5194,
-    "n": 566
+    "predicted": 0.5434,
+    "observed": 0.5211,
+    "n": 570
    },
    {
     "bin": "0.6-0.7",
-    "predicted": 0.6496,
-    "observed": 0.6422,
-    "n": 408
+    "predicted": 0.6495,
+    "observed": 0.6399,
+    "n": 411
    },
    {
     "bin": "0.7-0.8",
-    "predicted": 0.746,
-    "observed": 0.7035,
-    "n": 398
+    "predicted": 0.7461,
+    "observed": 0.7032,
+    "n": 401
    },
    {
     "bin": "0.8-0.9",
-    "predicted": 0.8262,
-    "observed": 0.8171,
-    "n": 82
+    "predicted": 0.8267,
+    "observed": 0.8214,
+    "n": 84
    },
    {
     "bin": "0.9-1.0",
@@ -919,57 +919,57 @@
   "market": [
    {
     "bin": "0.0-0.1",
-    "predicted": 0.0528,
-    "observed": 0.0461,
-    "n": 933
+    "predicted": 0.0529,
+    "observed": 0.0456,
+    "n": 944
    },
    {
     "bin": "0.1-0.2",
     "predicted": 0.1547,
-    "observed": 0.1629,
-    "n": 1148
+    "observed": 0.1631,
+    "n": 1153
    },
    {
     "bin": "0.2-0.3",
     "predicted": 0.2471,
-    "observed": 0.2502,
-    "n": 1187
+    "observed": 0.2523,
+    "n": 1197
    },
    {
     "bin": "0.3-0.4",
     "predicted": 0.3479,
-    "observed": 0.3355,
-    "n": 772
+    "observed": 0.3351,
+    "n": 776
    },
    {
     "bin": "0.4-0.5",
     "predicted": 0.4537,
-    "observed": 0.4597,
-    "n": 857
+    "observed": 0.4583,
+    "n": 864
    },
    {
     "bin": "0.5-0.6",
     "predicted": 0.5421,
-    "observed": 0.5477,
-    "n": 566
+    "observed": 0.5491,
+    "n": 570
    },
    {
     "bin": "0.6-0.7",
-    "predicted": 0.6463,
-    "observed": 0.6554,
-    "n": 354
+    "predicted": 0.6465,
+    "observed": 0.6535,
+    "n": 355
    },
    {
     "bin": "0.7-0.8",
     "predicted": 0.75,
-    "observed": 0.7217,
-    "n": 406
+    "observed": 0.7195,
+    "n": 410
    },
    {
     "bin": "0.8-0.9",
-    "predicted": 0.8296,
-    "observed": 0.8247,
-    "n": 154
+    "predicted": 0.8297,
+    "observed": 0.8269,
+    "n": 156
    }
   ]
  },
@@ -996,9 +996,23 @@
   {
    "date": "2026-11-08",
    "balance": 79.86
+  },
+  {
+   "date": "2026-11-09",
+   "balance": 78.86
   }
  ],
  "recent": [
+  {
+   "date": "2026-11-09",
+   "match": "CE Sabadell - R. Sociedad B",
+   "pick": "MS 1",
+   "odds": 1.54,
+   "p": 0.5606,
+   "won": false,
+   "score": "0-0",
+   "league": "ESP2"
+  },
   {
    "date": "2026-11-08",
    "match": "Olympiakos - PAOK",
@@ -1487,16 +1501,6 @@
    "p": 0.7685,
    "won": true,
    "score": "3-0",
-   "league": "TR1"
-  },
-  {
-   "date": "2026-11-08",
-   "match": "Alanyaspor - Trabzonspor",
-   "pick": "MS 2",
-   "odds": 1.42,
-   "p": 0.5806,
-   "won": true,
-   "score": "0-2",
    "league": "TR1"
   }
  ]
