@@ -76,4 +76,6 @@ def test_trust_works_for_new_markets():
     assert "HTFT_1/1" in t and "C_O9.5" not in t
     # eski (markets alanı olmayan) satırlar hâlâ tercih üzerinden çalışır
     old = [{"date": "2026-11-01", "pick": "O2.5", "p": 0.6, "won": False} for _ in range(20)]
-    assert scorecard.trust_from(old, date(2026, 11, 6))["O2.5"] == 0.6
+    # n=20 küçük örnek: eski formül 0.6 tabanına vururdu; büzülmeyle 1.0'a yakın kalır
+    t_old = scorecard.trust_from(old, date(2026, 11, 6))["O2.5"]
+    assert 0.75 < t_old < 0.85
