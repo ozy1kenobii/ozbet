@@ -9,6 +9,8 @@ import { Bars, Heatmap, LineChart, ProbBar } from '../components/charts';
 import { Badge, DropBadge, Empty, FormStrip, Loading, ResultBadge, Section, Stars, ValueBadge } from '../components/ui';
 import { AddToCoupon } from '../components/AddToCoupon';
 import { PROV_LABEL, pickResult } from '../components/MatchCard';
+import { FreshSquadBadge, PickMetrics, SharpNote, isPas, pasText } from '../components/PickBits';
+import { BAND_MAX, BAND_MIN, fairOdds, pickEv } from '../lib/pick';
 import { Simulation50 } from '../components/Simulation50';
 import { NewsList } from '../components/NewsList';
 import { OddsArchiveDetail } from '../components/OddsArchive';
@@ -149,7 +151,7 @@ function Detail({ m, date, cats, table }: { m: Match; date: string; cats?: Marke
             {finished && <span className="display font-bold text-lg num shrink-0">{m.result!.ft[0]}–{m.result!.ft[1]}</span>}
             {m.pick && (
               <span className="ml-auto shrink-0 flex items-center gap-1.5">
-                <span className="display text-[16px] font-bold">{m.pick.label || marketLabel(m.pick.market)}</span>
+                <span className="display text-[16px] font-bold">{m.pick.label || marketLabel(m.pick.market)}{m.pick.odds != null && <span className="ml-1.5 num">{odd(m.pick.odds)}</span>}</span>
                 {won != null ? <ResultBadge won={won} /> : <Stars n={m.pick.stars} size={11} />}
               </span>
             )}
@@ -242,23 +244,57 @@ function PickBox({ m }: { m: Match }) {
   const p = m.pick;
   const won = pickResult(m);
   const alarms = m.market?.drop_alarms ?? [];
+  const pas = isPas(m);
+  const ev = pickEv(p);
+  const fair = fairOdds(p);
+  const KIND: Record<string, [string, string]> = {
+    deger: ['Değer seçimi', 'Beklenen değeri en yüksek seçenek olduğu için seçildi'],
+    denge: ['Denge seçimi', 'Olasılık ile oran arasındaki dengeye göre seçildi'],
+  };
+  const kind = p?.kind ? KIND[p.kind] : null;
   return (
-    <div className="mt-4 rounded-lg border-2 border-accent bg-surface p-4" role="group" aria-label="OZBET Tercihi">
+    <div className={`mt-4 rounded-lg bg-surface p-4 ${p ? 'border-2 border-accent' : 'border border-line'}`} role="group" aria-label="OZBET Tercihi">
       {p ? (
-        <div className="flex flex-wrap items-end gap-x-6 gap-y-3">
-          <div>
-            <div className="t-meta">OZBET Tercihi</div>
-            <div className="display text-[34px] font-bold leading-none mt-1">{p.label || marketLabel(p.market)}</div>
+        <>
+          <div className="flex items-end gap-3">
+            <div className="min-w-0 flex-1">
+              <div className="t-meta">OZBET Tercihi</div>
+              <div className="display text-[34px] font-bold leading-none mt-1 truncate">{p.label || marketLabel(p.market)}</div>
+            </div>
+            <div className="text-right shrink-0 num">
+              <div className="t-micro">iddaa oranı</div>
+              <div className="display text-[40px] font-bold leading-none">{p.odds != null ? odd(p.odds) : '–'}</div>
+            </div>
           </div>
-          <dl className="flex gap-6 num">
-            <div><dt className="t-micro">Model</dt><dd className="text-xl font-semibold">{pct(p.p)}</dd></div>
-            <div><dt className="t-micro">Oran</dt><dd className="text-xl font-semibold">{p.odds != null ? odd(p.odds) : '–'}</dd></div>
-            <div><dt className="t-micro">Güven</dt><dd className="pt-1.5"><Stars n={p.stars} size={16} /></dd></div>
-          </dl>
-          <div className="ml-auto">
-            {won != null ? <ResultBadge won={won} /> : m.value?.length ? <ValueBadge /> : <span className="t-meta">{m.value_note || 'Değer yok'}</span>}
+          <div className="mt-3 border-t border-line pt-3"><PickMetrics pick={p} size="lg" /></div>
+          {p.odds != null && fair != null && ev != null && (
+            <p className="mt-2 t-meta num max-w-[68ch]">
+              Oran {odd(p.odds)}, modelin adil oranı {odd(fair)}: {ev > 0 ? 'oran adil oranın üstünde, beklenen değer pozitif' : ev < 0 ? 'oran adil oranın altında, beklenen değer negatif' : 'oran adil orana eşit'}.
+              {' '}Bu, benzer çok sayıda seçimin ortalamasına dair bir tahmindir; tek maç için garanti değildir.
+            </p>
+          )}
+          <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1.5">
+            <span className="inline-flex items-center gap-1.5 t-meta">Güven <Stars n={p.stars} size={15} /></span>
+            {won != null ? <ResultBadge won={won} /> : m.value?.length ? <ValueBadge /> : null}
+            {kind && <Badge title={kind[1]}>{kind[0]}</Badge>}
+            {p.blended && <Badge title="Olasılık, model ile marjsız piyasa olasılığının harmanıdır">Model + piyasa harmanı</Badge>}
+            {p.odds != null && (p.odds < BAND_MIN || p.odds > BAND_MAX) && <Badge title={`Günün seçimleri ${odd(BAND_MIN)}–${odd(BAND_MAX)} oran bandından seçilir`}>Oran bandı dışı</Badge>}
+            <FreshSquadBadge signal={m.squad?.signal} />
+            <SharpNote sharp={m.sharp} detail />
           </div>
-        </div>
+        </>
+      ) : pas ? (
+        <>
+          <div className="flex items-baseline gap-2.5">
+            <span className="display text-[30px] font-bold leading-none text-muted">Pas</span>
+            <span className="t-meta">Bu maçta tercih yok</span>
+          </div>
+          <p className="mt-2 text-[15px] max-w-[68ch]">{pasText(m.pick_note) || 'Oran bandında ölçütleri geçen bir seçenek bulunmadı.'}</p>
+          <p className="mt-1 t-meta max-w-[68ch]">Pas bir uyarı değildir: yalnızca oranın, modelin olasılığına göre yeterli bulunmadığını söyler. Olasılıklar ve oranlar aşağıda.</p>
+          {(m.sharp?.best || m.squad?.signal?.fresh) && (
+            <div className="mt-3 flex flex-wrap items-center gap-1.5"><FreshSquadBadge signal={m.squad?.signal} /><SharpNote sharp={m.sharp} detail /></div>
+          )}
+        </>
       ) : <p className="text-muted">Bu maç için tercih üretilmedi.</p>}
       {m.value?.length > 0 && (
         <div className="overflow-x-auto">
@@ -603,6 +639,17 @@ function SquadSection({ m }: { m: Match }) {
   if (!q || (!q.home && !q.away)) return null;
   return (
     <Section title="Eksik oyuncular" aside={q ? <span className="text-[12px] text-muted">{q.source} · {fmtTime(q.fetched_at)}</span> : undefined}>
+      {q.signal && q.signal.strength !== 'yok' && q.signal.text && (
+        <div className="mb-3 panel px-4 py-3 text-[14px]">
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="font-semibold">Kadro sinyali</span>
+            <Badge tone={q.signal.strength === 'güçlü' ? 'warn' : 'neutral'}>{q.signal.strength}</Badge>
+            {q.signal.side && <Badge>{q.signal.side === 'home' ? m.home.name : m.away.name}</Badge>}
+            <FreshSquadBadge signal={q.signal} />
+          </div>
+          <p className="mt-1 text-muted">{q.signal.text}</p>
+        </div>
+      )}
       {(
         <div className="grid gap-3 md:grid-cols-2">
           {([['home', m.home.name], ['away', m.away.name]] as const).map(([side, name]) => {

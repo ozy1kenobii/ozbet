@@ -1631,7 +1631,13 @@
           "adjustment": 0
         },
         "source": "flashscore",
-        "fetched_at": "2026-11-05T18:31:00+03:00"
+        "fetched_at": "2026-11-05T18:31:00+03:00",
+        "signal": {
+          "strength": "güçlü",
+          "fresh": true,
+          "side": "home",
+          "text": "ÖRNEK: Ev sahibinin golcüsü son antrenmanda sakatlandı (5 saat önce); oranlar henüz tam yansıtmamış olabilir."
+        }
       },
       "news": {
         "home": [
@@ -1743,8 +1749,40 @@
         "label": "KG Var",
         "p": 0.539,
         "odds": 2.24,
-        "stars": 3,
-        "is_value": true
+        "ev": 0.207,
+        "fair_odds": 1.86,
+        "stars": 5,
+        "is_value": true,
+        "kind": "deger",
+        "blended": true
+      },
+      "sharp": {
+        "source": "pinnacle",
+        "fair": {
+          "1": 0.485,
+          "2": 0.247,
+          "X": 0.268,
+          "O2.5": 0.501,
+          "U2.5": 0.489,
+          "BTTS_Y": 0.533,
+          "BTTS_N": 0.457
+        },
+        "edge": {
+          "1": -0.035,
+          "2": -0.056,
+          "X": 0.008,
+          "O2.5": -0.028,
+          "U2.5": -0.051,
+          "BTTS_Y": 0.194,
+          "BTTS_N": -0.059
+        },
+        "best": {
+          "market": "BTTS_Y",
+          "edge": 0.194,
+          "odds": 2.24,
+          "fair_p": 0.533
+        },
+        "fetched_at": "2026-11-05T18:20:00+03:00"
       },
       "comment": "ÖRNEK VERİ. Galatasaray iç sahada son maçlarında üretken; model ev sahibi için 1.62, Fenerbahçe için 1.08 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark BTTS_Y marketinde. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
       "comment_source": "kural",
@@ -3346,14 +3384,8 @@
       },
       "value": [],
       "value_note": "Değer yok",
-      "pick": {
-        "market": "1X",
-        "label": "ÇŞ 1X",
-        "p": 0.736,
-        "odds": 1.29,
-        "stars": 3,
-        "is_value": false
-      },
+      "pick": null,
+      "pick_note": "Pas: 1,60–3,50 oran bandında beklenen değeri pozitif seçenek yok (en iyisi KG Yok, −%0,6).",
       "comment": "ÖRNEK VERİ. Trabzonspor iç sahada son maçlarında üretken; model ev sahibi için 1.45, Başakşehir için 1.05 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
       "comment_source": "kural",
       "flags": [],
@@ -4910,14 +4942,8 @@
       },
       "value": [],
       "value_note": "Değer yok",
-      "pick": {
-        "market": "O1.5",
-        "label": "1.5 Üst",
-        "p": 0.723,
-        "odds": 1.33,
-        "stars": 3,
-        "is_value": false
-      },
+      "pick": null,
+      "pick_note": "Pas: 1,60–3,50 oran bandında beklenen değeri pozitif seçenek yok (en iyisi KG Yok, −%1,9).",
       "comment": "ÖRNEK VERİ. Samsunspor iç sahada son maçlarında üretken; model ev sahibi için 1.30, Kasımpaşa için 1.20 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
       "comment_source": "kural",
       "flags": [],
@@ -5183,14 +5209,8 @@
       },
       "value": [],
       "value_note": "Değer yok",
-      "pick": {
-        "market": "1X",
-        "label": "ÇŞ 1X",
-        "p": 0.729,
-        "odds": null,
-        "stars": 1,
-        "is_value": false
-      },
+      "pick": null,
+      "pick_note": "Pas: bu maç için iddaa oranı yok, beklenen değer hesaplanamadı.",
       "comment": "ÖRNEK VERİ. Erzurumspor iç sahada son maçlarında üretken; model ev sahibi için 1.25, Bandırmaspor için 0.95 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
       "comment_source": "kural",
       "flags": [
@@ -6891,7 +6911,13 @@
           "adjustment": 0
         },
         "source": "flashscore",
-        "fetched_at": "2026-11-05T18:31:00+03:00"
+        "fetched_at": "2026-11-05T18:31:00+03:00",
+        "signal": {
+          "strength": "zayıf",
+          "fresh": false,
+          "side": "away",
+          "text": "ÖRNEK: Deplasmanda bir savunmacı yok; haber dünden, oranlara yansımış olmalı."
+        }
       },
       "news": {
         "home": [],
@@ -6977,8 +7003,40 @@
         "label": "2.5 Üst",
         "p": 0.577,
         "odds": 2.04,
-        "stars": 3,
-        "is_value": true
+        "ev": 0.177,
+        "fair_odds": 1.73,
+        "stars": 5,
+        "is_value": true,
+        "kind": "deger",
+        "blended": true
+      },
+      "sharp": {
+        "source": "betfair",
+        "fair": {
+          "1": 0.39,
+          "2": 0.348,
+          "X": 0.263,
+          "O2.5": 0.57,
+          "U2.5": 0.42,
+          "BTTS_Y": 0.604,
+          "BTTS_N": 0.386
+        },
+        "edge": {
+          "1": -0.095,
+          "2": -0.092,
+          "X": -0.043,
+          "O2.5": 0.163,
+          "U2.5": -0.063,
+          "BTTS_Y": 0.099,
+          "BTTS_N": -0.027
+        },
+        "best": {
+          "market": "O2.5",
+          "edge": 0.163,
+          "odds": 2.04,
+          "fair_p": 0.57
+        },
+        "fetched_at": "2026-11-05T18:20:00+03:00"
       },
       "comment": "ÖRNEK VERİ. Real Madrid iç sahada son maçlarında üretken; model ev sahibi için 1.55, Liverpool için 1.45 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark O2.5 marketinde. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
       "comment_source": "kural",
@@ -8639,14 +8697,8 @@
       },
       "value": [],
       "value_note": "Değer yok",
-      "pick": {
-        "market": "O1.5",
-        "label": "1.5 Üst",
-        "p": 0.824,
-        "odds": 1.2,
-        "stars": 4,
-        "is_value": false
-      },
+      "pick": null,
+      "pick_note": "Pas: 1,60–3,50 oran bandında beklenen değeri pozitif seçenek yok (en iyisi MS 1, −%1,3).",
       "comment": "ÖRNEK VERİ. Bayern München iç sahada son maçlarında üretken; model ev sahibi için 1.75, Paris Saint-Germain için 1.35 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
       "comment_source": "kural",
       "flags": [],
@@ -10211,14 +10263,8 @@
       },
       "value": [],
       "value_note": "Değer yok",
-      "pick": {
-        "market": "1X",
-        "label": "ÇŞ 1X",
-        "p": 0.785,
-        "odds": 1.25,
-        "stars": 3,
-        "is_value": false
-      },
+      "pick": null,
+      "pick_note": "Pas: 1,60–3,50 oran bandında beklenen değeri pozitif seçenek yok (en iyisi MS 1, −%2,5).",
       "comment": "ÖRNEK VERİ. Inter iç sahada son maçlarında üretken; model ev sahibi için 1.60, Benfica için 0.95 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
       "comment_source": "kural",
       "flags": [],
@@ -11787,12 +11833,16 @@
       "value": [],
       "value_note": "Değer yok",
       "pick": {
-        "market": "O1.5",
-        "label": "1.5 Üst",
-        "p": 0.743,
-        "odds": 1.27,
-        "stars": 3,
-        "is_value": false
+        "market": "BTTS_Y",
+        "label": "KG Var",
+        "p": 0.539,
+        "odds": 1.87,
+        "ev": 0.008,
+        "fair_odds": 1.86,
+        "stars": 1,
+        "is_value": false,
+        "kind": "denge",
+        "blended": true
       },
       "comment": "ÖRNEK VERİ. Club Brugge iç sahada son maçlarında üretken; model ev sahibi için 1.35, Galatasaray için 1.25 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
       "comment_source": "kural",
@@ -13336,12 +13386,44 @@
       "value": [],
       "value_note": "Değer yok",
       "pick": {
-        "market": "O1.5",
-        "label": "1.5 Üst",
-        "p": 0.778,
-        "odds": 1.19,
+        "market": "1",
+        "label": "MS 1",
+        "p": 0.505,
+        "odds": 2.12,
+        "ev": 0.071,
+        "fair_odds": 1.98,
         "stars": 3,
-        "is_value": false
+        "is_value": false,
+        "kind": "deger",
+        "blended": true
+      },
+      "sharp": {
+        "source": "avg",
+        "fair": {
+          "1": 0.5,
+          "2": 0.24,
+          "X": 0.26,
+          "O2.5": 0.525,
+          "U2.5": 0.465,
+          "BTTS_Y": 0.547,
+          "BTTS_N": 0.443
+        },
+        "edge": {
+          "1": 0.06,
+          "2": -0.018,
+          "X": -0.103,
+          "O2.5": -0.008,
+          "U2.5": -0.061,
+          "BTTS_Y": -0.114,
+          "BTTS_N": -0.11
+        },
+        "best": {
+          "market": "1",
+          "edge": 0.06,
+          "odds": 2.12,
+          "fair_p": 0.5
+        },
+        "fetched_at": "2026-11-05T18:20:00+03:00"
       },
       "comment": "ÖRNEK VERİ. Arsenal iç sahada son maçlarında üretken; model ev sahibi için 1.70, Chelsea için 1.10 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
       "comment_source": "kural",
@@ -14918,14 +15000,8 @@
       },
       "value": [],
       "value_note": "Değer yok",
-      "pick": {
-        "market": "O1.5",
-        "label": "1.5 Üst",
-        "p": 0.733,
-        "odds": null,
-        "stars": 3,
-        "is_value": false
-      },
+      "pick": null,
+      "pick_note": "Pas: bu maç için iddaa oranı yok, beklenen değer hesaplanamadı.",
       "comment": "ÖRNEK VERİ. Brentford iç sahada son maçlarında üretken; model ev sahibi için 1.40, Everton için 1.15 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark anlamlı düzeyde değil. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
       "comment_source": "kural",
       "flags": [
@@ -16539,8 +16615,12 @@
         "label": "2.5 Alt",
         "p": 0.544,
         "odds": 2.08,
-        "stars": 3,
-        "is_value": true
+        "ev": 0.132,
+        "fair_odds": 1.84,
+        "stars": 4,
+        "is_value": true,
+        "kind": "deger",
+        "blended": true
       },
       "comment": "ÖRNEK VERİ. Real Betis iç sahada son maçlarında üretken; model ev sahibi için 1.40, Sevilla için 1.10 gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark U2.5 marketinde. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.",
       "comment_source": "kural",

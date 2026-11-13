@@ -133,6 +133,30 @@ export interface Pick {
   odds: number | null;
   stars: number;
   is_value: boolean;
+  /** Beklenen değer: p·oran − 1 (yoksa arayüz p ve orandan hesaplar) */
+  ev?: number | null;
+  /** Adil oran: 1/p */
+  fair_odds?: number | null;
+  /** "deger": beklenen değere göre seçildi · "denge": olasılık/oran dengesiyle seçildi */
+  kind?: 'deger' | 'denge' | null;
+  /** p, model + piyasa harmanı */
+  blended?: boolean;
+}
+
+/** Uluslararası keskin piyasa (Pinnacle/Betfair) kıyası — hipotez, garanti değil */
+export interface Sharp {
+  source: 'pinnacle' | 'betfair' | 'avg' | string;
+  fair: Record<string, number>;
+  edge: Record<string, number>;
+  best: { market: string; edge: number; odds: number; fair_p: number } | null;
+  fetched_at?: string | null;
+}
+
+export interface SquadSignal {
+  strength: 'yok' | 'zayıf' | 'orta' | 'güçlü' | string;
+  fresh: boolean;
+  side: 'home' | 'away' | null;
+  text: string;
 }
 
 export type Odds = Partial<Record<MarketKey, number>> & Record<string, number | undefined>;
@@ -260,11 +284,14 @@ export interface Match {
   table?: { home: TablePos; away: TablePos } | null;
   trends?: Trend[] | null;
   news?: MatchNews | null;
-  squad: { home: SquadSide | null; away: SquadSide | null; source: string | null; fetched_at: string | null } | null;
+  squad: { home: SquadSide | null; away: SquadSide | null; source: string | null; fetched_at: string | null; signal?: SquadSignal | null } | null;
   consensus: { sources: ConsensusSource[]; summary: ConsensusSummary[] } | null;
   value: ValueItem[];
   value_note?: string | null;
   pick: Pick | null;
+  /** Tercih yokken gösterilen Türkçe gerekçe ("Pas: ...") */
+  pick_note?: string | null;
+  sharp?: Sharp | null;
   comment: string | null;
   comment_source: 'kural' | 'llm' | null;
   flags: string[];
@@ -312,7 +339,19 @@ export interface ScoreBlock {
   roi: number | null;
   staked: number;
   profit: number;
+  avg_p?: number | null;
+  /** ROI güven aralığı [alt, üst] */
+  roi_ci?: [number, number] | null;
 }
+
+export interface ClvBlock {
+  n: number;
+  avg_clv: number | null;
+  avg_clv_raw?: number | null;
+  beat_close_rate: number | null;
+  by_market?: { market: string; label: string; n: number; avg_clv: number | null }[];
+}
+export interface OddsBandRow { band: string; n: number; hit_rate: number | null; avg_p: number | null; avg_odds: number | null; roi: number | null }
 
 export interface Scorecard {
   generated_at: string;
@@ -322,7 +361,9 @@ export interface Scorecard {
   by_market: { market: string; label: string; n: number; hit_rate: number | null; roi: number | null; trust: number }[];
   calibration: { bin: string; predicted: number; observed: number; n: number }[];
   bankroll: { date: string; balance: number }[];
-  recent: { date: string; match: string; pick: string; odds: number | null; won: boolean; score: string }[];
+  recent: { date: string; match: string; pick: string; odds: number | null; won: boolean; score: string; p?: number | null; clv?: number | null; ev?: number | null }[];
+  clv?: ClvBlock | null;
+  by_odds_band?: OddsBandRow[] | null;
   /** Tüm marketler kalibrasyonu: kategori bazında model ve piyasa */
   by_category?: { category: string; title: string; n: number; model_brier: number; market_brier: number; model_logloss: number; market_logloss: number }[];
   calibration_markets?: { model: CalibBin[]; market: CalibBin[] };

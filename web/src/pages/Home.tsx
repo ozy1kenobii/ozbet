@@ -7,9 +7,14 @@ import { HighlightCard, KickoffCell, MatchCard, matchHref } from '../components/
 import { Chevron, Dot, Empty, Loading } from '../components/ui';
 import { MarketScanner } from '../components/MarketScanner';
 import { readLS, writeLS } from '../lib/storage';
+import { BAND_MAX, MIN_ODDS_OPTIONS, byEv, inBand, loadMinOdds, pickEv, saveMinOdds } from '../lib/pick';
+import { isPas } from '../components/PickBits';
 
 const FILTER_KEY = 'ozbet-filtre-v2';
 const SCOPE_KEY = 'ozbet-kapsam';
+const VIEW_KEY = 'ozbet-gorunum';
+type View = 'picks' | 'all';
+const loadView = (): View => (readLS<string>(VIEW_KEY, 'picks') === 'all' ? 'all' : 'picks');
 type Scope = 'analyzed' | 'all';
 const loadScope = (): Scope => (readLS<string>(SCOPE_KEY, 'analyzed') === 'all' ? 'all' : 'analyzed');
 const isAnalyzed = (m: Match) => !!m.model && m.model.source !== 'piyasa';   // piyasa modeli "analizli" sayılmaz
@@ -98,11 +103,14 @@ function DayView({ day }: { day: DayFile }) {
   const [q, setQ] = useState('');
   const [scope, setScopeState] = useState<Scope>(loadScope);
   const setScope = (s: Scope) => { setScopeState(s); writeLS(SCOPE_KEY, s); };
+  const [view, setViewState] = useState<View>(loadView);
+  const setView = (v: View) => { setViewState(v); writeLS(VIEW_KEY, v); };
   const upd = (n: Filters) => { setF(n); writeLS(FILTER_KEY, n); };
   const now = Date.now();
 
   const allMatches = useMemo(() => (Array.isArray(day.matches) ? day.matches : []), [day]);
   const nAnalyzed = useMemo(() => allMatches.filter(isAnalyzed).length, [allMatches]);
+  const nBandPicks = useMemo(() => allMatches.filter((m) => m.pick && inBand(m.pick.odds)).length, [allMatches]);
   // Seçili sekme: lig grupları, MarketScanner, öne çıkanlar ve saat filtresi yalnız bu kümeyle çalışır
   const matches = useMemo(() => (scope === 'analyzed' ? allMatches.filter(isAnalyzed) : allMatches), [allMatches, scope]);
   const scopedDay = useMemo<DayFile>(() => ({ ...day, matches }), [day, matches]);
@@ -140,6 +148,15 @@ function DayView({ day }: { day: DayFile }) {
   return (
     <div>
       <SourceSummary day={day} />
+      <div className="mt-3 seg w-full flex" role="group" aria-label="Görünüm">
+        {([['picks', 'Günün seçimleri'], ['all', 'Tüm maçlar']] as const).map(([k, t]) => (
+          <button key={k} className="flex-1" aria-pressed={view === k} onClick={() => setView(k)}
+            title={k === 'picks' ? 'Oran bandındaki tercihler, beklenen değere göre sıralı' : 'Bültendeki bütün maçlar, lig lig'}>
+            {t} <span className="num">({k === 'picks' ? nBandPicks : allMatches.length})</span>
+          </button>
+        ))}
+      </div>
+      {view === 'picks' ? <PicksView day={day} matches={allMatches} onShowAll={() => setView('all')} /> : (<>
       <div className="mt-3 seg w-full flex" role="tablist" aria-label="Maç kapsamı">
         {([['analyzed', 'Analizli', nAnalyzed], ['all', 'Tüm bülten', allMatches.length]] as const).map(([k, t, n]) => (
           <button key={k} className="flex-1" role="tab" aria-selected={scope === k} aria-pressed={scope === k} onClick={() => setScope(k)}
@@ -239,7 +256,70 @@ function DayView({ day }: { day: DayFile }) {
           );
         })}
       </div>
+      </>)}
     </div>
+  );
+}
+
+/* ---------- Günün seçimleri: oran bandı içinde, beklenen değere göre ---------- */
+
+function PicksView({ day, matches, onShowAll }: { day: DayFile; matches: Match[]; onShowAll: () => void }) {
+  const [minOdds, setMinState] = useState<number>(loadMinOdds);
+  const setMin = (v: number) => { setMinState(v); saveMinOdds(v); };
+  const { shown, low, high, noOdds, pas } = useMemo(() => {
+    const withPick = matches.filter((m) => m.pick);
+    const priced = withPick.filter((m) => m.pick!.odds != null);
+    return {
+      shown: priced.filter((m) => inBand(m.pick!.odds, minOdds)).sort(byEv),
+      low: priced.filter((m) => m.pick!.odds! < minOdds - 1e-9).length,
+      high: priced.filter((m) => m.pick!.odds! > BAND_MAX + 1e-9).length,
+      noOdds: withPick.length - priced.length,
+      pas: matches.filter(isPas).length,
+    };
+  }, [matches, minOdds]);
+  const hidden = [
+    low > 0 ? `${low} tercih ${odd(minOdds)} oranın altında` : '',
+    high > 0 ? `${high} tercih ${odd(BAND_MAX)} oranın üstünde` : '',
+    noOdds > 0 ? `${noOdds} tercihte oran yok` : '',
+  ].filter(Boolean);
+
+  return (
+    <section className="mt-4" aria-labelledby="gunun-secimleri">
+      <div className="flex items-baseline gap-2">
+        <h2 id="gunun-secimleri" className="h-section">Günün seçimleri</h2>
+        <span className="t-meta num">{shown.length} seçim · beklenen değere göre</span>
+      </div>
+      <div className="mt-2 flex items-center gap-2.5">
+        <span id="min-oran" className="t-meta shrink-0">En düşük oran</span>
+        <div className="seg flex-1 flex" role="group" aria-labelledby="min-oran">
+          {MIN_ODDS_OPTIONS.map((v) => (
+            <button key={v} className="flex-1 !px-1 num" aria-pressed={minOdds === v} onClick={() => setMin(v)}>{odd(v)}</button>
+          ))}
+        </div>
+      </div>
+
+      {shown.length > 0 ? (
+        <div className="mt-3 grid gap-2.5 md:grid-cols-2">
+          {shown.map((m) => <MatchCard key={m.id} m={m} date={day.date} showLeague />)}
+        </div>
+      ) : (
+        <div className="mt-3 panel px-5 py-7 text-center">
+          <p className="display text-2xl font-semibold">Bu aralıkta seçim yok</p>
+          <p className="mt-2 text-sm text-muted max-w-sm mx-auto">
+            {matches.length ? `${odd(minOdds)}–${odd(BAND_MAX)} oran aralığında ölçütleri geçen tercih çıkmadı. Pas geçmek yaklaşımın parçasıdır; her gün seçim olmak zorunda değil.` : 'Bu gün için maç yok.'}
+          </p>
+        </div>
+      )}
+
+      <p className="mt-3 t-meta num" aria-live="polite">
+        {pas > 0 && <>{pas} maçta Pas. </>}
+        {hidden.length > 0 && <>{hidden.join(', ')} (gizli). </>}
+        Oran bandı {odd(minOdds)}–{odd(BAND_MAX)}. Beklenen değer model tahminidir; kâr garantisi değildir.{' '}
+        <Link to="/rehber" className="text-accent underline underline-offset-2">Yaklaşım</Link>
+      </p>
+      <button className="mt-3 btn btn-ghost w-full" onClick={onShowAll}>Tüm maçları göster ({matches.length})</button>
+      <p className="mt-2 t-micro num">{day.run_label} çalıştırması, güncelleme {fmtTime(day.generated_at)}</p>
+    </section>
   );
 }
 
@@ -287,8 +367,9 @@ function Highlights({ day, now }: { day: DayFile; now: number }) {
     const seen = new Set<string>();
     const out: { m: Match; reason: 'pick' | 'drop' | 'value' }[] = [];
     const push = (m: Match, reason: 'pick' | 'drop' | 'value') => { if (!seen.has(m.id)) { seen.add(m.id); out.push({ m, reason }); } };
-    ms.filter((m) => m.pick)
-      .sort((a, b) => (b.pick!.stars - a.pick!.stars) || (b.pick!.p - a.pick!.p))
+    // Düşük oranlı favoriler öne çıkmasın: yalnız oran bandındaki tercihler, beklenen değere göre
+    ms.filter((m) => m.pick && inBand(m.pick.odds))
+      .sort((a, b) => ((pickEv(b.pick) ?? -9) - (pickEv(a.pick) ?? -9)) || (b.pick!.stars - a.pick!.stars))
       .slice(0, 5).forEach((m) => push(m, 'pick'));
     ms.filter((m) => (m.value?.length ?? 0) > 0)
       .sort((a, b) => Math.max(...b.value.map((v) => v.edge)) - Math.max(...a.value.map((v) => v.edge)))

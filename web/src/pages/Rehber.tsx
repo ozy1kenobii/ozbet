@@ -50,10 +50,33 @@ export default function Rehber() {
       <h1 className="display text-[32px] font-bold leading-tight">Rehber</h1>
       <p className="t-meta">Marketler, sayıların anlamı, yöntem ve sorumlu oyun. Sorularınızın çoğu burada.</p>
       <nav className="mt-3 flex flex-wrap gap-2 text-[14px]" aria-label="Rehber bölümleri">
-        {[['sayilar', 'Sayılar nasıl okunur'], ['yontem', 'Yöntem'], ['sozluk', 'Market sözlüğü'], ['sorumlu', 'Sorumlu oyun']].map(([id, t]) => (
+        {[['yaklasim', 'Seçim yaklaşımı'], ['sayilar', 'Sayılar nasıl okunur'], ['yontem', 'Yöntem'], ['sozluk', 'Market sözlüğü'], ['sorumlu', 'Sorumlu oyun']].map(([id, t]) => (
           <a key={id} href={`#${id}`} className="tap inline-flex items-center rounded-full border border-line px-3 text-muted hover:text-ink">{t}</a>
         ))}
       </nav>
+
+      <Section title="Seçim yaklaşımı" id="yaklasim">
+        <div className="panel p-4 space-y-2.5 text-[15px]">
+          <p><b>Neden “en olası” sonucu seçmiyoruz?</b> En yüksek olasılıklı seçenek çoğu zaman en düşük oranlı olandır. iddaa oranlarında yaklaşık %20 büro payı (marj) vardır; yani olasılıklar tam doğru olsa bile her 1 liralık bahis ortalamada yaklaşık 83 kuruş geri döner.</p>
+          <p className="rounded-md bg-sunken p-3 num">
+            <b>Örnek:</b> 1,25 oranlı bir seçimde zarar etmemek için %80 isabet gerekir (1 / 1,25). Gerçek ihtimal %72 ise 100 maçta 72 × 1,25 = 90 birim döner: <b>%72 isabetle −%10</b>. Yüksek isabet, kâr demek değildir.
+          </p>
+          <p><b>Yeni ölçüt: beklenen değer, oran bandı içinde.</b> Tercih, {`1,60–3,50`} oran aralığındaki seçenekler arasından beklenen değeri en yüksek olandır. Ölçütü geçen seçenek yoksa o maç <b>Pas</b> olarak işaretlenir; pas geçmek bir hata değil, yaklaşımın parçasıdır.</p>
+          <dl className="divide-y divide-line border-y border-line">
+            {[
+              ['Adil oran', 'Modelin olasılığına karşılık gelen marjsız oran: 1 / olasılık. Model %45 diyorsa adil oran 2,22’dir. iddaa oranı adil oranın üstündeyse fiyat modele göre iyidir.'],
+              ['Beklenen değer', 'Olasılık × oran − 1. %45 olasılık ve 2,40 oran için 0,45 × 2,40 − 1 = +%8. Aynı türden çok sayıda seçimin ortalamasına dair bir tahmindir; tek maç hakkında bir şey söylemez ve modelin olasılığı yanlışsa o da yanlıştır.'],
+              ['Keskin piyasa farkı', 'Pinnacle ve Betfair gibi düşük marjlı uluslararası piyasalar genelde en isabetli fiyatı verir. iddaa oranı bu piyasanın marjsız fiyatından yüksekse rozetle gösterilir. Bir hipotezdir: fark gerçek olabilir, geç gelen bir haberden ya da veri gecikmesinden de kaynaklanabilir.'],
+              ['Kapanış oranı değeri (CLV)', 'Tercihi yayımladığımız oranın, maç başlamadan önceki son orana göre ne kadar iyi olduğu. Oran sonradan düştüyse piyasa bizim yönümüze gelmiş demektir. Sonuçlardan daha az şansa bağlı olduğu için yöntemin işe yarayıp yaramadığını daha erken gösterir.'],
+              ['Taze kadro haberi', 'Son saatlerde gelen sakatlık, ceza ya da kadro haberi. Oranlar bu haberi henüz yansıtmamış olabilir; yansıtmış da olabilir.'],
+            ].map(([t, d]) => (
+              <div key={t} className="py-2.5"><dt className="font-semibold">{t}</dt><dd className="mt-0.5 text-muted">{d}</dd></div>
+            ))}
+          </dl>
+          <p className="rounded-md border-2 border-warn/70 p-3 font-semibold">Hiçbir yöntem kâr garanti etmez. Yüksek oranlı seçimler daha seyrek tutar, kayıp serileri uzar ve küçük örneklemde sonuçlar büyük ölçüde şanstır. Karnedeki güven aralıklarına ve örneklem sayısına bakın.</p>
+          <p className="t-meta">Oran bandı, CLV ve ROI aralığı sonuçları: <Link to="/karne" className="text-accent underline underline-offset-2">Karne</Link>.</p>
+        </div>
+      </Section>
 
       <Section title="Sayılar nasıl okunur" id="sayilar">
         <dl className="panel divide-y divide-line text-[15px]">

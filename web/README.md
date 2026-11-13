@@ -60,9 +60,14 @@ src/
   lib/markets.ts    Market anahtarları → Türkçe etiketler, skor→market kuralları
   lib/data.ts       JSON yükleme (404 → boş durum), çevrimiçi durumu
   lib/coupon.tsx    Kupon durumu (localStorage) + birleşik olasılık / EV / korelasyon
+  lib/pick.ts       Seçim yardımcıları: oran bandı (1,60–3,50), beklenen değer, adil oran, EV sıralaması, en düşük oran ayarı
   lib/format.ts     Europe/Istanbul saatleri, % ve oran biçimleri (tr-TR)
-  components/       MatchCard, AddToCoupon, SVG grafikler (çubuk, ısı haritası, çizgi, kalibrasyon)
+  components/       MatchCard, PickBits (Model/adil oran/beklenen değer üçlüsü, Keskin piyasa rozeti, Pas), AddToCoupon, SVG grafikler (çubuk, ısı haritası, çizgi, kalibrasyon)
   pages/            Home, MatchDetail, Coupon, Scorecard, Sources (her biri lazy chunk)
 ```
 
 Kupon notu: aynı maçtan birden fazla seçim varsa birleşik olasılık, maçın `score_matrix` verisinden tam hesaplanır (0–5 gol; 5+ kuyruğu dahil değildir, arayüzde not olarak gösterilir). Matris yoksa çarpım kullanılır ve uyarı verilir.
+
+## Seçim görünümü
+
+Ana sayfa varsayılanı **Günün seçimleri**: oranı seçili alt sınır (varsayılan 1,60; `localStorage: ozbet-min-oran`) ile 3,50 arasında olan tercihler, beklenen değere (`pick.ev`, yoksa `p·oran − 1`) göre sıralanır. Düşük oranlı tercihler gizlenir ve sayısı altta yazılır; “Tüm maçlar” eski lig lig görünümdür (`ozbet-gorunum`). Yeni alanların hepsi (`pick.ev/fair_odds/kind/blended`, `pick_note`, `sharp`, `squad.signal`, `scorecard.clv/by_odds_band/overall.roi_ci`, `recent[].clv/ev`) opsiyoneldir; eski gün dosyaları bozulmaz.
