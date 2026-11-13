@@ -257,3 +257,74 @@ def test_title_only_matching_and_nicknames():
     ix = nr.TeamIndex.from_fixtures(fx)
     assert ix.match("Kartal, Celtic ile ilk kez karşılaşıyor!") == {nr.team_key("Celtic"), nr.team_key("Beşiktaş")}
     assert ix.match("Avrupa Ligi'nde bu akşam") == set()
+
+
+# ---------- takıma özel etiket (özne tespiti): isabet > kapsama ----------
+@pytest.fixture
+def ix2():
+    return N.TeamIndex.from_fixtures([
+        fx("Çorum FK", "Fenerbahçe"), fx("Celtic", "Hearts", "SCO1"), fx("Galatasaray", "Amed Sportif Faaliyetler"),
+        fx("Beşiktaş", "Gençlerbirliği"), fx("Trabzonspor", "Freiburg", "UECL"), fx("Roma", "Inter", "ITA1"),
+        fx("Stuttgart", "Liverpool", "UCL"),
+    ])
+
+
+@pytest.mark.parametrize("title,expected", [
+    # canlı veriden: rakip yalnız "… maçı öncesi" bağlamında geçiyor → etiket yalnız özne takıma
+    ("Arca Çorum FK'dan Fenerbahçe maçı öncesi sakatlık açıklaması!", {"corum": ["sakat"], "fenerbahce": []}),
+    ("Fenerbahçe maçına saatler kala Çorum FK'da sakatlık depremi! 6-8 hafta yok",
+     {"corum": ["sakat"], "fenerbahce": []}),
+    ("Podcast: Celtic under pressure & injury-hit Hearts head for Europe", {"celtic": [], "hearts": ["sakat"]}),
+    ("Galatasaray'da Stuttgart zaferi sonrası sakatlık krizi", {"galatasaray": ["sakat"], "stuttgart": []}),
+    ("Roma, Inter karşısında kırmızı kart gördü", {"roma": ["ceza"], "inter": []}),
+    # fikstür çifti: kimin kart gördüğü belli değil → hiçbirine yazılmaz
+    ("Beşiktaş - Gençlerbirliği maçında kırmızı kart! İşte o pozisyon", {"besiktas": [], "genclerbirligi": []}),
+    # tek takım geçiyor ama o da yalnız bağlam (başka takımın hocası konuşuyor) → etiket yok
+    ("Thomas Reis'tan Freiburg maçı öncesi sakatlık açıklaması!", {"freiburg": []}),
+    # tek özne
+    ("Beşiktaş'ta sarı kart gören Orkun Kökçü cezalı duruma düştü!", {"besiktas": ["ceza"]}),
+    # kadro dışı etiketler (transfer) eskisi gibi iki takıma da yazılır
+    ("Fenerbahçe ve Galatasaray transfer yarışında", {"fenerbahce": ["transfer"], "galatasaray": ["transfer"]}),
+])
+def test_team_tags_subject_only(ix2, title, expected):
+    assert N.team_tags(title, ix2) == expected
+
+
+def test_team_feed_hint_gets_tag_only_without_other_subject(ix2):
+    t = "Thomas Reis'tan Freiburg maçı öncesi sakatlık açıklaması!"
+    assert N.team_tags(t, ix2, "trabzonspor") == {"trabzonspor": ["sakat"], "freiburg": []}
+    # kulüp akışından gelse de başlığın öznesi başka takımsa etiket o takıma gider
+    t2 = "Galatasaray'da sakatlık depremi"
+    assert N.team_tags(t2, ix2, "fenerbahce") == {"galatasaray": ["sakat"], "fenerbahce": []}
+
+
+@pytest.mark.parametrize("text,tags", [
+    ("Galatasaray'ın yıldızı Victor Osimhen, ameliyat edildi", ["sakat"]),
+    ("Yıldız oyuncu 6-8 hafta yok", ["sakat"]),
+    ("Osimhen maç kadrosunda yok", ["kadro"]),
+    ("Kaptan derbide forma giyemeyecek", ["kadro"]),
+    ("Ameliyathane değil saha: takım antrenmanda", ["sakat"]),   # bilinen sınır: kök eşleşmesi (belgelendi)
+    ("Hafta sonu maç yok", []),
+])
+def test_absence_tags(text, tags):
+    assert N.tag(text) == tags
+
+
+def test_same_story_and_cross_source_dedupe(ix2):
+    a = "Beşiktaş'ta sarı kart gören Orkun Kökçü cezalı duruma düştü!"
+    b = "Beşiktaş'ta Orkun Kökçü cezalı duruma düştü!"
+    assert N.same_story(a, b)
+    assert not N.same_story(a, "Beşiktaş milli araya 3 puanla girdi")
+    assert not N.same_story("Galatasaray haber 1", "Galatasaray haber 2")     # kısa başlık: yalnız birebir
+    items = [N.Item(a, "https://example.com/1", "A Spor", NOW - timedelta(hours=2)),
+             N.Item(b, "https://example.com/2", "Fotomaç", NOW - timedelta(hours=3))]
+    rows = N.assign(items, ix2, NOW)["besiktas"]["items"]
+    assert len(rows) == 1 and rows[0]["source"] == "A Spor"
+
+
+def test_coach_change_only_for_subject_team(ix2):
+    it = N.Item("Fenerbahçe maçı öncesi Çorum FK'da teknik direktör istifa etti", "https://example.com/t", "x",
+                NOW - timedelta(days=2))
+    out = N.assign([it], ix2, NOW)
+    assert out["corum"]["coach_change"] is True
+    assert out["fenerbahce"]["coach_change"] is False

@@ -5,6 +5,9 @@ Akış:
   2. Her haberin başlık + özetinde günün maçlarındaki takım adlarını ara (kelime sınırı + belirsiz ad kuralları).
   3. Başlık + özetten açıklanabilir anahtar kelime kurallarıyla etiket çıkar (sakat, ceza, td, kadro, transfer).
   4. Takım başına son 72 saatten en fazla 6 haber; son 7 günde başlığında takım geçen "td" haberi → coach_change.
+  5. Kadro etiketleri (sakat, ceza, td, kadro) TAKIMA ÖZEL yazılır: başlıkta iki takım geçiyorsa etiket yalnız
+     haberin öznesi olan takıma gider ("Çorum FK'da sakatlık ... Fenerbahçe maçı öncesi" → yalnız Çorum FK).
+     Özne belirsizse etiket hiçbir takıma yazılmaz (isabet > kapsama). Bkz. docs/research/kadro-etkisi.md
 
 JSON'a yalnızca başlık, bağlantı, kaynak adı, yayın zamanı ve etiketler yazılır; özet sadece etiketleme ve
 eşleme için bellekte kullanılır. Kaynak listesi ve gerekçeler: docs/NEWS_SOURCES.md
@@ -281,10 +284,12 @@ class TeamIndex:
                     ix.terms.setdefault(t, k)
         return ix
 
-    def match(self, text: str) -> set[str]:
-        """Metinde geçen takım anahtarları. Uzun ifadeler önce eşleşir ve maskelenir."""
+    def mentions(self, text: str) -> dict[str, list[tuple[int, int]]]:
+        """Metinde geçen takımlar ve normalize metindeki (başlangıç, bitiş) konumları.
+        Uzun ifadeler önce eşleşir ve maskelenir."""
         s = text_norm(text)
-        hits: dict[str, list[str]] = {}       # team_key → eşleşen terimler
+        ctx = s
+        hits: dict[str, list[tuple[str, int, int]]] = {}       # team_key → (terim, başlangıç, bitiş)
         phrases = sorted(set(self.terms) | set(BLOCK_PHRASES), key=lambda t: (-len(t), t))
         for ph in phrases:
             pat = f" {ph} "
@@ -293,20 +298,24 @@ class TeamIndex:
             for mt in re.finditer(re.escape(pat), s):
                 pre = s[:mt.start()].split()[-1:] or [""]
                 if ph in self.terms:
-                    hits.setdefault(self.terms[ph], []).append(ph if pre[0] not in CLUB_PREFIX else f"{pre[0]} {ph}")
+                    hits.setdefault(self.terms[ph], []).append(
+                        (ph if pre[0] not in CLUB_PREFIX else f"{pre[0]} {ph}", mt.start() + 1, mt.end() - 1))
             s = s.replace(pat, " " + "#" * len(ph) + " ")   # maske (kelime sınırları korunur)
-        out = set()
+        ok = set()
         for k, ts in hits.items():
-            if any(" " in t or t not in AMBIGUOUS for t in ts):
-                out.add(k)
+            if any(" " in t or t not in AMBIGUOUS for t, _, _ in ts):
+                ok.add(k)
         # belirsiz tek kelimeler: rakip veya lig bağlamı varsa kabul
-        for k, ts in hits.items():
-            if k in out:
+        for k in hits:
+            if k in ok:
                 continue
-            ctx = text_norm(text)
             if self.opponent.get(k) in hits or any(f" {w} " in ctx for w in LEAGUE_CONTEXT.get(self.league.get(k) or "", [])):
-                out.add(k)
-        return out
+                ok.add(k)
+        return {k: sorted((a, b) for _, a, b in hits[k]) for k in ok}
+
+    def match(self, text: str) -> set[str]:
+        """Metinde geçen takım anahtarları."""
+        return set(self.mentions(text))
 
 
 # Futbol dışı / altyapı / kadın takımı haberleri: aynı kulüp adı geçse de A takımına yazılmaz.
@@ -326,11 +335,14 @@ def _rx(*pats):
 
 # Kurallar ASCII'ye çevrilmiş küçük harfli metne uygulanır (ı→i, ş→s, ğ→g ...). \b kelime başı; Türkçe ekler için kök.
 TAG_RULES: dict[str, re.Pattern] = {
-    "sakat": _rx(r"\bsakat(?!at)\w*", r"\binjur\w*", r"\bruled out\b", r"\bsidelined\b", r"\bhamstring\b"),
+    "sakat": _rx(r"\bsakat(?!at)\w*", r"\binjur\w*", r"\bruled out\b", r"\bsidelined\b", r"\bhamstring\b",
+                 r"\bameliyat\w*", r"\bbicak altina\b", r"\b(?:hafta|ay) (?:yok|sahalardan uzak)\b",
+                 r"\bsezonu kapat\w*", r"\bout for (?:the season|\w+ (?:weeks?|months?))\b"),
     "ceza": _rx(r"\bcezal\w*", r"\bkirmizi kart\w*", r"\bmen cezas\w*", r"\bsuspen(?:ded|sion)\b",
                 r"\bban(?:ned)?\b", r"\bpfdk\b"),
     "kadro": _rx(r"\bkadroya alinmad\w*", r"\bkadro disi\w*", r"\bkadrodan cikar\w*", r"\brotasyon\w*",
-                 r"\bkamp kadro\w*", r"\brotation\b", r"\brested\b"),
+                 r"\bkamp kadro\w*", r"\brotation\b", r"\brested\b",
+                 r"\bkadro(?:sun)?da yok\b", r"\bforma giyemeyecek\b", r"\boynayamayacak\b"),
     "transfer": _rx(r"\btransfer\w*", r"\bbonservis\w*", r"\bkiralik\b", r"\bsign(?:s|ed|ing)\b", r"\bloan\b"),
 }
 _TD_ROLE = _rx(r"\bteknik direktor\w*", r"\bteknik adam\w*", r"\bhoca\w*", r"\bmanager\b", r"\bhead coach\b",
@@ -351,9 +363,98 @@ def tag(text: str) -> list[str]:
     return sorted(tags, key=order.index)
 
 
+# ---------------- takıma özel etiket (özne tespiti) ----------------
+SQUAD_TAGS = ("sakat", "ceza", "td", "kadro")   # λ/sinyal açısından anlamlı etiketler; yanlış takıma yazılmamalı
+# Takım adından SONRA gelen kelime bunlardan biriyle başlıyorsa takım haberin öznesi değil, rakip/bağlamdır:
+# "Fenerbahçe maçı öncesi", "Stuttgart zaferi sonrası", "Inter karşısında", "Celtic deplasmanında"
+_CTX_NEXT = re.compile(r"^(?:mac|karsi|deplasman|zafer|galibiyet|maglubiyet|derbi|oncesi|sonrasi|engel|sinav|hazirlik)")
+# Takım adından ÖNCE gelen kelime: "ex-Charlton captain", "Leeds vs Tottenham", "eski Galatasaraylı"
+_CTX_PREV = {"ex", "eski", "former", "v", "vs", "against"}
+_LOCATIVE = {"da", "de", "ta", "te", "dan", "den", "tan", "ten"}   # "Çorum FK'da", "Galatasaray'dan" → özne
+NEAR_TOKENS = 4          # iki özne varsa etiket, anahtar kelimeye en çok bu kadar kelime uzaktaki TEK takıma gider
+
+
+def _tag_span(tagname: str, s: str) -> tuple[int, int] | None:
+    rx = TAG_RULES.get(tagname)
+    m = rx.search(s) if rx is not None else (_TD_STRONG.search(s) or _TD_ROLE.search(s))
+    return (m.start(), m.end()) if m else None
+
+
+def _token_gap(s: str, a: tuple[int, int], b: tuple[int, int]) -> int:
+    lo, hi = (a, b) if a[0] <= b[0] else (b, a)
+    return len(s[lo[1]:hi[0]].split())
+
+
+def team_tags(title: str, ix: "TeamIndex", hint: str | None = None) -> dict[str, list[str]]:
+    """Başlıkta geçen her takım için etiket listesi. Kadro etiketleri (SQUAD_TAGS) yalnız haberin öznesi olan
+    takıma yazılır; özne belirlenemezse hiçbirine yazılmaz. Diğer etiketler (transfer) eskisi gibi hepsine."""
+    tags = tag(title)
+    men = ix.mentions(title)
+    teams = set(men) | ({hint} if hint else set())
+    if not teams:
+        return {}
+    crit = [t for t in tags if t in SQUAD_TAGS]
+    rest = [t for t in tags if t not in SQUAD_TAGS]
+    if not crit:
+        return {k: list(tags) for k in teams}
+    s = text_norm(title)
+    spans = sorted((a, b, k) for k, ps in men.items() for a, b in ps)
+    ctx: dict[tuple[int, int], bool] = {}
+    for a, b, _ in spans:
+        nxt = (s[b:].split() or [""])[0]
+        prv = (s[:a].split() or [""])[-1]
+        ctx[(a, b)] = bool(_CTX_NEXT.match(nxt)) or prv in _CTX_PREV
+    # fikstür çifti: "A - B maçında ...", "A v B" → A da bağlam sayılır (ikisi de özne değil)
+    for (a1, b1, _), (a2, b2, _) in zip(reversed(spans[:-1]), reversed(spans[1:])):
+        gap, nxt = s[b1:a2].strip(), (s[b2:].split() or [""])[0]
+        if gap in ("v", "vs") or (gap == "" and nxt.startswith("mac") and ctx[(a2, b2)]):
+            ctx[(a1, b1)] = True
+    subj = {k for a, b, k in spans if not ctx[(a, b)]}
+    if hint and not (subj - {hint}):
+        subj.add(hint)       # kulüp akışı: başlıkta başka özne takım yoksa haber o kulübündür
+    owner: dict[str, str | None] = {}
+    if len(subj) == 1:
+        owner = {t: next(iter(subj)) for t in crit}
+    elif len(subj) >= 2:
+        loc = {k for a, b, k in spans if k in subj and not ctx[(a, b)] and (s[b:].split() or [""])[0] in _LOCATIVE}
+        for t in crit:
+            if len(loc) == 1:
+                owner[t] = next(iter(loc))
+                continue
+            sp = _tag_span(t, s)
+            d = sorted((_token_gap(s, (a, b), sp), k) for a, b, k in spans if k in subj and not ctx[(a, b)]) if sp else []
+            best: dict[str, int] = {}
+            for dist, k in d:
+                best.setdefault(k, dist)
+            ranked = sorted(best.items(), key=lambda kv: kv[1])
+            owner[t] = ranked[0][0] if ranked and ranked[0][1] <= NEAR_TOKENS and (
+                len(ranked) == 1 or ranked[1][1] > ranked[0][1]) else None
+    order = ["sakat", "ceza", "td", "kadro", "transfer"]
+    return {k: sorted([t for t in crit if owner.get(t) == k] + rest, key=order.index) for k in teams}
+
+
 # ---------------- toplama ----------------
 def _dedupe_key(it: Item) -> str:
     return re.sub(r"[^a-z0-9]", "", _ascii(it.title))[:80]
+
+
+def _tokens(title: str) -> frozenset[str]:
+    return frozenset(t for t in text_norm(title).split() if len(t) >= 3 or t.isdigit())
+
+
+def same_story(a: str, b: str, thr: float = 0.7) -> bool:
+    """İki başlık aynı haberi mi anlatıyor? (kelime kümesi benzerliği; 4 kelimeden kısa başlıklarda yalnız birebir)."""
+    ta, tb = _tokens(a), _tokens(b)
+    if ta == tb:
+        return True
+    if min(len(ta), len(tb)) < 4:
+        return False
+    common = len(ta & tb)
+    # Jaccard ya da kapsama: kısa başlık uzun olanın neredeyse tamamen içindeyse aynı haberdir
+    return common / len(ta | tb) >= thr or common / min(len(ta), len(tb)) >= 0.85
+
+
+LAST: dict | None = None   # son collect() sonucu: Kadro Ajanı sinyal üretirken okur (run.py imzası değişmeden)
 
 
 def assign(items: list[Item], ix: TeamIndex, now: datetime) -> dict[str, dict]:
@@ -369,25 +470,22 @@ def assign(items: list[Item], ix: TeamIndex, now: datetime) -> dict[str, dict]:
             continue
         # Takım yalnızca BAŞLIKTA geçiyorsa haber o takıma yazılır: özetlerde günün diğer maçları sık listelenir
         # (canlı veride "Kartal, Celtic ile..." başlığı özet yüzünden Crystal Palace'a yapışmıştı).
-        teams = ix.match(it.title)
-        if it.team_hint:
-            teams.add(it.team_hint)
-        if not teams:
+        # Etiket de yalnız başlıktan ve takıma özel: iki takımlı başlıkta sakat/ceza/td/kadro yalnız özneye gider.
+        tt = team_tags(it.title, ix, it.team_hint)
+        if not tt:
             continue
-        tags = tag(it.title)   # etiket de yalnız başlıktan: özetteki başka oyuncu/takım haberleri karışmasın
-        if "td" in tags:
-            in_title = ix.match(it.title) | ({it.team_hint} if it.team_hint else set())
-            coach |= in_title
+        coach |= {k for k, tags in tt.items() if "td" in tags}
         if it.published < cutoff:
             continue
-        for k in teams:
+        for k, tags in tt.items():
             per.setdefault(k, []).append((it, tags))
     out = {}
     for k in set(per) | coach:
         seen_u, seen_t, rows = set(), set(), []
         for it, tags in sorted(per.get(k, []), key=lambda p: p[0].published, reverse=True):
             dk = _dedupe_key(it)
-            if it.url in seen_u or dk in seen_t:
+            # aynı haberin başka kaynaktaki hafif farklı başlığı da tekrar sayılır (A Spor / Fotomaç kopyaları)
+            if it.url in seen_u or dk in seen_t or any(same_story(it.title, r["title"]) for r in rows):
                 continue
             seen_u.add(it.url); seen_t.add(dk)
             rows.append({"title": it.title, "url": it.url, "source": it.source,
@@ -445,7 +543,9 @@ def collect(client, fixtures, now: datetime | None = None) -> dict:
             failed.append(f"{fid}({type(e).__name__})")
     if ok == 0:
         raise RuntimeError("Hiçbir haber akışı okunamadı: " + ", ".join(failed[:8]))
-    return {"teams": assign(items, ix, now), "fetched_at": now_iso(), "feeds_ok": ok, "feeds_failed": failed}
+    global LAST
+    LAST = {"teams": assign(items, ix, now), "fetched_at": now_iso(), "feeds_ok": ok, "feeds_failed": failed}
+    return LAST
 
 
 def for_match(home: str, away: str, rss: dict | None) -> dict | None:
