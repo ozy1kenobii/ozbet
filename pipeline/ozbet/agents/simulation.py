@@ -8,11 +8,15 @@ from datetime import date
 import numpy as np
 
 from .. import config
+from ..model import dixon_coles as dc
 from ..model.dixon_coles import Ratings, fit, score_matrix
 from ..model.simulate import seed_for, simulate
 from ..teams import TeamMatcher
 
 log = logging.getLogger("ozbet.sim")
+
+# Not metni research/goals_bias.py tarafından da okunur (büzülmüş λ ikinci kez büzülmesin diye).
+TOTAL_SHRINK_NOTE = "Toplam gol beklentisi lig ortalamasına büzüldü"
 
 # Elo yoksa kullanılan YEDEK: Avrupa kupaları için kaba lig gücü (log ölçek, Premier Lig = 0). UEFA katsayılarından esinlenen yaklaşık değerler.
 LEAGUE_STRENGTH = {
@@ -156,6 +160,10 @@ def predict(home_name: str, away_name: str, league_id: str | None, models: dict[
             w = config.SHOT_BLEND
             lh, la = (1 - w) * lh + w * sh_h * M.shot_conv, (1 - w) * la + w * sh_a * M.shot_conv
             notes.append(f"Şut tabanlı güç harmanı (%{round(w * 100)})")
+        # Toplam gol seviyesini lig tabanına büz (harmanlardan sonra, kadro düzeltmesinden önce); oran korunur.
+        if dc.TOTAL_SHRINK < 1.0:
+            lh, la = dc.shrink_total(lh, la, R.base_level(neutral))
+            notes.append(TOTAL_SHRINK_NOTE)
         nh, na = R.n_matches.get(h, 0), R.n_matches.get(a, 0)
         rho, hts = R.rho, R.ht_share
         quality = "high" if min(nh, na) >= 15 else ("medium" if min(nh, na) >= config.MIN_TEAM_MATCHES else "low")

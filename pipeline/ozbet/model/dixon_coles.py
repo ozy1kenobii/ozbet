@@ -10,10 +10,31 @@ Bu, tam ortak tahminle pratikte aynı sonucu verir ve çok daha hızlıdır.
 """
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass, field
 
 import numpy as np
 from scipy.optimize import minimize, minimize_scalar
+
+
+# Toplam gol büzmesi (docs/research/gol-yanliligi.md): takımların "gollü/golsüz maç" eğilimi (a+d bileşeni) güç farkına
+# (a−d) göre çok daha gürültülüdür. Canlı örnekte modelin maçlar arası toplam gol farkları sonucu neredeyse hiç
+# ayırt etmedi (Ü2.5 kalibrasyon eğimi ≈ 0,1), 1X2 eğimi ise ≥ 1. Bu yüzden √(λ_ev·λ_dep) lig taban seviyesine
+# doğru büzülür, λ_ev/λ_dep oranı (maç sonucu bilgisi) korunur. k=1 → büzme yok, k=0 → tamamen lig seviyesi.
+TOTAL_SHRINK = float(os.environ.get("OZBET_TOTAL_SHRINK", "0.5"))
+
+
+def shrink_total(lh: float, la: float, base: float, k: float | None = None) -> tuple[float, float]:
+    """√(λ_ev·λ_dep) geometrik ortalamasını `base`e doğru log ölçekte büzer; λ_ev/λ_dep oranı değişmez.
+
+    base: ligin ortalama eşleşmesindeki geometrik ortalama (Ratings.base_level). Geçersiz girdide dokunmaz.
+    """
+    k = TOTAL_SHRINK if k is None else k
+    if k >= 1.0 or lh <= 0 or la <= 0 or not base or base <= 0:
+        return lh, la
+    k = max(k, 0.0)
+    f = (base / float(np.sqrt(lh * la))) ** (1.0 - k)
+    return lh * f, la * f
 
 
 def tau(x, y, lam, mu, rho):
@@ -47,6 +68,10 @@ class Ratings:
         da = self.defense.get(away, 0.0) + def_adj[1]
         h = 0.0 if neutral else self.home
         return float(np.exp(self.mu + h + ah + da)), float(np.exp(self.mu + aa + dh))
+
+    def base_level(self, neutral: bool = False) -> float:
+        """Ligin ortalama eşleşmesinde √(λ_ev·λ_dep): hücum/savunma ortalaması 0 olduğundan e^(μ + h/2)."""
+        return float(np.exp(self.mu + (0.0 if neutral else self.home) / 2.0))
 
 
 def fit_poisson(home_idx, away_idx, hg, ag, w, n_teams, l2=0.5):
