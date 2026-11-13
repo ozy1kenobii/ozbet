@@ -1,24 +1,40 @@
 {
- "generated_at": "2026-11-13T21:06:17+03:00",
+ "generated_at": "2026-11-14T00:11:44+03:00",
  "overall": {
   "n": 138,
   "hit_rate": 0.6377,
+  "hit_ci": [
+   0.5548,
+   0.7131
+  ],
   "avg_p": 0.6416,
   "brier_1x2": 0.5872,
   "staked": 138,
   "profit": -21.14,
   "roi": -0.1532,
+  "roi_ci": [
+   -0.2641,
+   -0.0446
+  ],
   "value_n": 0,
   "value_roi": null
  },
  "last30": {
   "n": 138,
   "hit_rate": 0.6377,
+  "hit_ci": [
+   0.5548,
+   0.7131
+  ],
   "avg_p": 0.6416,
   "brier_1x2": 0.5872,
   "staked": 138,
   "profit": -21.14,
   "roi": -0.1532,
+  "roi_ci": [
+   -0.2641,
+   -0.0446
+  ],
   "value_n": 0,
   "value_roi": null
  },
@@ -28,11 +44,19 @@
    "name": "La Liga",
    "n": 10,
    "hit_rate": 0.8,
+   "hit_ci": [
+    0.4902,
+    0.9433
+   ],
    "avg_p": 0.6481,
    "brier_1x2": 0.6022,
    "staked": 10,
    "profit": 0.65,
    "roi": 0.065,
+   "roi_ci": [
+    -0.288,
+    0.372
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -41,11 +65,19 @@
    "name": "Championship",
    "n": 10,
    "hit_rate": 0.6,
+   "hit_ci": [
+    0.3127,
+    0.8318
+   ],
    "avg_p": 0.6588,
    "brier_1x2": 0.6771,
    "staked": 10,
    "profit": -2.19,
    "roi": -0.219,
+   "roi_ci": [
+    -0.631,
+    0.172
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -54,11 +86,19 @@
    "name": "Süper Lig",
    "n": 9,
    "hit_rate": 0.7778,
+   "hit_ci": [
+    0.4526,
+    0.9368
+   ],
    "avg_p": 0.6509,
    "brier_1x2": 0.4849,
    "staked": 9,
    "profit": 0.29,
    "roi": 0.0322,
+   "roi_ci": [
+    -0.3789,
+    0.3511
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -67,11 +107,19 @@
    "name": "Premier Lig",
    "n": 9,
    "hit_rate": 0.6667,
+   "hit_ci": [
+    0.3542,
+    0.8794
+   ],
    "avg_p": 0.5952,
    "brier_1x2": 0.5875,
    "staked": 9,
    "profit": -0.53,
    "roi": -0.0589,
+   "roi_ci": [
+    -0.5278,
+    0.3122
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -80,11 +128,19 @@
    "name": "Serie A",
    "n": 9,
    "hit_rate": 0.5556,
+   "hit_ci": [
+    0.2666,
+    0.8112
+   ],
    "avg_p": 0.6598,
    "brier_1x2": 0.6147,
    "staked": 9,
    "profit": -2.66,
    "roi": -0.2956,
+   "roi_ci": [
+    -0.7156,
+    0.1156
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -93,11 +149,19 @@
    "name": "Bundesliga",
    "n": 9,
    "hit_rate": 0.8889,
+   "hit_ci": [
+    0.565,
+    0.9801
+   ],
    "avg_p": 0.6922,
    "brier_1x2": 0.3353,
    "staked": 9,
    "profit": 1.15,
    "roi": 0.1278,
+   "roi_ci": [
+    -0.1833,
+    0.3333
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -106,11 +170,19 @@
    "name": "Ligue 1",
    "n": 9,
    "hit_rate": 0.6667,
+   "hit_ci": [
+    0.3542,
+    0.8794
+   ],
    "avg_p": 0.6233,
    "brier_1x2": 0.5632,
    "staked": 9,
    "profit": -0.76,
    "roi": -0.0844,
+   "roi_ci": [
+    -0.5311,
+    0.3211
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -119,11 +191,19 @@
    "name": "Serie B",
    "n": 9,
    "hit_rate": 0.7778,
+   "hit_ci": [
+    0.4526,
+    0.9368
+   ],
    "avg_p": 0.6214,
    "brier_1x2": 0.6546,
    "staked": 9,
    "profit": 0.94,
    "roi": 0.1044,
+   "roi_ci": [
+    -0.3189,
+    0.47
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -132,11 +212,19 @@
    "name": "2. Bundesliga",
    "n": 8,
    "hit_rate": 0.375,
+   "hit_ci": [
+    0.1368,
+    0.6943
+   ],
    "avg_p": 0.6247,
    "brier_1x2": 0.5772,
    "staked": 8,
    "profit": -3.92,
    "roi": -0.49,
+   "roi_ci": [
+    -0.84,
+    0.0225
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -145,11 +233,19 @@
    "name": "Ligue 2",
    "n": 8,
    "hit_rate": 0.375,
+   "hit_ci": [
+    0.1368,
+    0.6943
+   ],
    "avg_p": 0.6216,
    "brier_1x2": 0.6581,
    "staked": 8,
    "profit": -3.71,
    "roi": -0.4637,
+   "roi_ci": [
+    -0.8237,
+    0.07
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -158,11 +254,19 @@
    "name": "Eredivisie",
    "n": 8,
    "hit_rate": 0.875,
+   "hit_ci": [
+    0.5291,
+    0.9776
+   ],
    "avg_p": 0.6632,
    "brier_1x2": 0.686,
    "staked": 8,
    "profit": 1.11,
    "roi": 0.1387,
+   "roi_ci": [
+    -0.2013,
+    0.3425
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -171,11 +275,19 @@
    "name": "Liga Portugal",
    "n": 6,
    "hit_rate": 0.8333,
+   "hit_ci": [
+    0.4365,
+    0.9699
+   ],
    "avg_p": 0.69,
    "brier_1x2": 0.4356,
    "staked": 6,
    "profit": 0.32,
    "roi": 0.0533,
+   "roi_ci": [
+    -0.3917,
+    0.3583
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -184,11 +296,19 @@
    "name": "La Liga 2",
    "n": 6,
    "hit_rate": 0.3333,
+   "hit_ci": [
+    0.0968,
+    0.7
+   ],
    "avg_p": 0.6053,
    "brier_1x2": 0.6464,
    "staked": 6,
    "profit": -3.15,
    "roi": -0.525,
+   "roi_ci": [
+    -1.0,
+    -0.0017
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -197,11 +317,19 @@
    "name": "Premiership",
    "n": 6,
    "hit_rate": 0.6667,
+   "hit_ci": [
+    0.3,
+    0.9032
+   ],
    "avg_p": 0.6512,
    "brier_1x2": 0.5613,
    "staked": 6,
    "profit": -0.91,
    "roi": -0.1517,
+   "roi_ci": [
+    -0.6167,
+    0.31
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -210,11 +338,19 @@
    "name": "Avrupa Ligi",
    "n": 5,
    "hit_rate": 0.6,
+   "hit_ci": [
+    0.2307,
+    0.8824
+   ],
    "avg_p": 0.6708,
    "brier_1x2": 0.6505,
    "staked": 5,
    "profit": -1.28,
    "roi": -0.256,
+   "roi_ci": [
+    -0.776,
+    0.26
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -223,11 +359,19 @@
    "name": "Pro League",
    "n": 5,
    "hit_rate": 0.4,
+   "hit_ci": [
+    0.1176,
+    0.7693
+   ],
    "avg_p": 0.6247,
    "brier_1x2": 0.7039,
    "staked": 5,
    "profit": -2.34,
    "roi": -0.468,
+   "roi_ci": [
+    -1.0,
+    0.076
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -236,11 +380,19 @@
    "name": "Super League",
    "n": 5,
    "hit_rate": 0.6,
+   "hit_ci": [
+    0.2307,
+    0.8824
+   ],
    "avg_p": 0.665,
    "brier_1x2": 0.4674,
    "staked": 5,
    "profit": -1.5,
    "roi": -0.3,
+   "roi_ci": [
+    -0.778,
+    0.178
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -249,11 +401,19 @@
    "name": "1. Lig",
    "n": 4,
    "hit_rate": 0.5,
+   "hit_ci": [
+    0.15,
+    0.85
+   ],
    "avg_p": 0.5906,
    "brier_1x2": 0.7027,
    "staked": 4,
    "profit": -1.02,
    "roi": -0.255,
+   "roi_ci": [
+    -1.0,
+    0.49
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -262,11 +422,19 @@
    "name": "Konferans Ligi",
    "n": 2,
    "hit_rate": 0.5,
+   "hit_ci": [
+    0.0945,
+    0.9055
+   ],
    "avg_p": 0.6037,
    "brier_1x2": 0.621,
    "staked": 2,
    "profit": -0.63,
    "roi": -0.315,
+   "roi_ci": [
+    -1.0,
+    0.37
+   ],
    "value_n": 0,
    "value_roi": null
   },
@@ -275,11 +443,16 @@
    "name": "Championship",
    "n": 1,
    "hit_rate": 0.0,
+   "hit_ci": [
+    0.0,
+    0.7935
+   ],
    "avg_p": 0.5617,
    "brier_1x2": 0.6899,
    "staked": 1,
-   "profit": -1,
+   "profit": -1.0,
    "roi": -1.0,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -288,11 +461,13 @@
    "name": "SAFF Şampiyonası, B Grubu",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -301,11 +476,13 @@
    "name": "AFC Kupası",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -314,11 +491,13 @@
    "name": "Irak Ligi",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -327,11 +506,13 @@
    "name": "Zambiya Süper Lig, Grup B",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -340,11 +521,13 @@
    "name": "Ruanda Ulusal Lig",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -353,11 +536,13 @@
    "name": "Zambiya Süper Lig, Grup A",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -366,11 +551,13 @@
    "name": "Özbekistan Süper Ligi",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -379,11 +566,13 @@
    "name": "SAFF Şampiyonası, A Grubu",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -392,11 +581,13 @@
    "name": "Hindistan Süper Ligi",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -405,11 +596,13 @@
    "name": "Katar 2. Lig",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -418,11 +611,13 @@
    "name": "Uganda Premier Ligi",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -431,11 +626,13 @@
    "name": "Senegal Premier Lig",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -444,11 +641,13 @@
    "name": "Botsvana Premier Ligi",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -457,11 +656,13 @@
    "name": "Arjantin Primera LPF, Kapanış",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -470,11 +671,13 @@
    "name": "Fransa Ulusal Lig",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -483,11 +686,13 @@
    "name": "Honduras Ulusal Lig, Açılış",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -496,11 +701,13 @@
    "name": "Uruguay Kupası",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -509,11 +716,13 @@
    "name": "Şili Kupası",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -522,11 +731,13 @@
    "name": "Brezilya Serie B",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -535,11 +746,13 @@
    "name": "Bolivya Profesyonel Lig Kupası, Playoff",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -548,11 +761,13 @@
    "name": "Kosta Rika Prmr Ligi, Açılış",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -561,11 +776,13 @@
    "name": "Jamaika Premier Lig",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -574,11 +791,13 @@
    "name": "Brezilya Serie A",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   },
@@ -587,11 +806,13 @@
    "name": "İskoçya Championship",
    "n": 0,
    "hit_rate": null,
+   "hit_ci": null,
    "avg_p": null,
    "brier_1x2": null,
    "staked": 0,
    "profit": 0,
    "roi": null,
+   "roi_ci": null,
    "value_n": 0,
    "value_roi": null
   }
@@ -602,171 +823,394 @@
    "label": "KG Var",
    "n": 60,
    "hit_rate": 0.5667,
+   "hit_ci": [
+    0.441,
+    0.6843
+   ],
    "avg_p": 0.6099,
    "brier_1x2": 0.6448,
    "staked": 60,
    "profit": -12.93,
    "roi": -0.2155,
+   "roi_ci": [
+    -0.3932,
+    -0.0467
+   ],
    "value_n": 0,
    "value_roi": null,
-   "trust": 1.054
+   "trust": 1.026
   },
   {
    "market": "1",
    "label": "MS 1",
    "n": 19,
    "hit_rate": 0.7895,
+   "hit_ci": [
+    0.5667,
+    0.9149
+   ],
    "avg_p": 0.6634,
    "brier_1x2": 0.3793,
    "staked": 19,
    "profit": 0.71,
    "roi": 0.0374,
+   "roi_ci": [
+    -0.23,
+    0.2716
+   ],
    "value_n": 0,
    "value_roi": null,
-   "trust": 0.982
+   "trust": 0.991
   },
   {
    "market": "O2.5",
    "label": "2.5 Üst",
    "n": 16,
    "hit_rate": 0.625,
+   "hit_ci": [
+    0.3864,
+    0.8152
+   ],
    "avg_p": 0.6901,
    "brier_1x2": 0.4957,
    "staked": 16,
    "profit": -3.5,
    "roi": -0.2188,
+   "roi_ci": [
+    -0.5344,
+    0.0844
+   ],
    "value_n": 0,
    "value_roi": null,
-   "trust": 1.018
+   "trust": 1.009
   },
   {
    "market": "U2.5",
    "label": "2.5 Alt",
    "n": 16,
    "hit_rate": 0.5625,
+   "hit_ci": [
+    0.3318,
+    0.769
+   ],
    "avg_p": 0.5805,
    "brier_1x2": 0.6722,
    "staked": 16,
    "profit": -2.46,
    "roi": -0.1537,
+   "roi_ci": [
+    -0.5319,
+    0.2169
+   ],
    "value_n": 0,
    "value_roi": null,
-   "trust": 0.982
+   "trust": 0.991
   },
   {
    "market": "2",
    "label": "MS 2",
    "n": 14,
    "hit_rate": 0.7143,
+   "hit_ci": [
+    0.4535,
+    0.8828
+   ],
    "avg_p": 0.6541,
    "brier_1x2": 0.4958,
    "staked": 14,
    "profit": -1.18,
    "roi": -0.0843,
+   "roi_ci": [
+    -0.3971,
+    0.2036
+   ],
    "value_n": 0,
    "value_roi": null,
-   "trust": 1.056
+   "trust": 1.029
   },
   {
    "market": "1X",
    "label": "ÇŞ 1X",
    "n": 8,
    "hit_rate": 0.875,
+   "hit_ci": [
+    0.5291,
+    0.9776
+   ],
    "avg_p": 0.7659,
    "brier_1x2": 0.6981,
    "staked": 8,
    "profit": -0.24,
    "roi": -0.03,
+   "roi_ci": [
+    -0.315,
+    0.1262
+   ],
    "value_n": 0,
    "value_roi": null,
-   "trust": 0.853
+   "trust": 0.933
   },
   {
    "market": "X2",
    "label": "ÇŞ X2",
    "n": 5,
    "hit_rate": 0.6,
+   "hit_ci": [
+    0.2307,
+    0.8824
+   ],
    "avg_p": 0.7457,
    "brier_1x2": 0.7859,
    "staked": 5,
    "profit": -1.54,
    "roi": -0.308,
+   "roi_ci": [
+    -0.776,
+    0.16
+   ],
    "value_n": 0,
    "value_roi": null,
-   "trust": 0.993
+   "trust": 0.997
   }
  ],
+ "by_odds_band": [
+  {
+   "band": "<1.60",
+   "n": 137,
+   "hit_rate": 0.635,
+   "hit_ci": [
+    0.5518,
+    0.7109
+   ],
+   "avg_p": 0.6423,
+   "avg_odds": 1.354,
+   "roi": -0.1588,
+   "roi_ci": [
+    -0.2708,
+    -0.0505
+   ]
+  },
+  {
+   "band": "1.60-2.00",
+   "n": 1,
+   "hit_rate": 1.0,
+   "hit_ci": [
+    0.2065,
+    1.0
+   ],
+   "avg_p": 0.5528,
+   "avg_odds": 1.61,
+   "roi": 0.61,
+   "roi_ci": null
+  },
+  {
+   "band": "2.00-2.75",
+   "n": 0,
+   "hit_rate": null,
+   "hit_ci": null,
+   "avg_p": null,
+   "avg_odds": null,
+   "roi": null,
+   "roi_ci": null
+  },
+  {
+   "band": "2.75-3.50",
+   "n": 0,
+   "hit_rate": null,
+   "hit_ci": null,
+   "avg_p": null,
+   "avg_odds": null,
+   "roi": null,
+   "roi_ci": null
+  },
+  {
+   "band": ">3.50",
+   "n": 0,
+   "hit_rate": null,
+   "hit_ci": null,
+   "avg_p": null,
+   "avg_odds": null,
+   "roi": null,
+   "roi_ci": null
+  }
+ ],
+ "by_basis": [
+  {
+   "basis": "keskin",
+   "n": 0,
+   "hit_rate": null,
+   "hit_ci": null,
+   "avg_p": null,
+   "brier_1x2": null,
+   "staked": 0,
+   "profit": 0,
+   "roi": null,
+   "roi_ci": null,
+   "value_n": 0,
+   "value_roi": null
+  },
+  {
+   "basis": "eski",
+   "n": 138,
+   "hit_rate": 0.6377,
+   "hit_ci": [
+    0.5548,
+    0.7131
+   ],
+   "avg_p": 0.6416,
+   "brier_1x2": 0.5872,
+   "staked": 138,
+   "profit": -21.14,
+   "roi": -0.1532,
+   "roi_ci": [
+    -0.2641,
+    -0.0446
+   ],
+   "value_n": 0,
+   "value_roi": null
+  }
+ ],
+ "clv": {
+  "n": 111,
+  "avg_clv": 0.0,
+  "avg_clv_ci": [
+   -0.0019,
+   0.0019
+  ],
+  "avg_clv_raw": 0.0005,
+  "beat_close_rate": 0.0721,
+  "by_market": [
+   {
+    "market": "BTTS_Y",
+    "label": "KG Var",
+    "n": 44,
+    "avg_clv": 0.0
+   },
+   {
+    "market": "1",
+    "label": "MS 1",
+    "n": 17,
+    "avg_clv": 0.0035
+   },
+   {
+    "market": "O2.5",
+    "label": "2.5 Üst",
+    "n": 14,
+    "avg_clv": 0.0005
+   },
+   {
+    "market": "U2.5",
+    "label": "2.5 Alt",
+    "n": 13,
+    "avg_clv": 0.0
+   },
+   {
+    "market": "2",
+    "label": "MS 2",
+    "n": 12,
+    "avg_clv": -0.0067
+   },
+   {
+    "market": "1X",
+    "label": "ÇŞ 1X",
+    "n": 8,
+    "avg_clv": 0.0019
+   },
+   {
+    "market": "X2",
+    "label": "ÇŞ X2",
+    "n": 3,
+    "avg_clv": -0.0009
+   }
+  ],
+  "n_fair": 111,
+  "n_raw_only": 0,
+  "n_unchanged": 100,
+  "missing": {
+   "no_archive": 27
+  },
+  "open": {
+   "n": 111,
+   "avg_clv": 0.0066,
+   "avg_clv_ci": [
+    -0.0009,
+    0.014
+   ],
+   "avg_clv_raw": 0.0053,
+   "beat_close_rate": 0.5586
+  }
+ },
  "trust": {
-  "1": 0.982,
-  "X": 0.961,
-  "2": 1.056,
-  "BTTS_Y": 1.054,
-  "BTTS_N": 0.946,
-  "1X": 0.853,
-  "12": 0.967,
-  "X2": 0.993,
-  "U1.5": 1.023,
-  "U2.5": 0.982,
-  "O2.5": 1.018,
-  "O3.5": 0.978,
-  "U3.5": 1.022,
-  "O1.5": 1.044,
-  "HT_O0.5": 0.989,
-  "HT_U0.5": 0.99,
-  "HT_O1.5": 0.923,
-  "HT_U1.5": 1.077,
-  "1&U2.5": 1.041,
-  "X&U2.5": 0.868,
-  "2&U2.5": 0.931,
-  "1&O2.5": 1.1,
-  "X&O2.5": 1.039,
-  "2&O2.5": 0.997,
-  "BTTS_Y&U2.5": 0.976,
-  "BTTS_Y&O2.5": 1.1,
-  "BTTS_N&U2.5": 0.832,
-  "BTTS_N&O2.5": 1.033,
-  "G0-1": 0.972,
-  "G2-3": 1.007,
-  "G4-5": 1.038,
-  "G6+": 0.983,
+  "1": 0.991,
+  "X": 0.979,
+  "2": 1.029,
+  "BTTS_Y": 1.026,
+  "BTTS_N": 0.974,
+  "1X": 0.933,
+  "12": 0.984,
+  "X2": 0.997,
+  "U1.5": 1.013,
+  "U2.5": 0.991,
+  "O2.5": 1.009,
+  "O3.5": 0.99,
+  "U3.5": 1.01,
+  "O1.5": 1.02,
+  "HT_O0.5": 0.995,
+  "HT_U0.5": 0.996,
+  "HT_O1.5": 0.97,
+  "HT_U1.5": 1.03,
+  "1&U2.5": 1.022,
+  "X&U2.5": 0.936,
+  "2&U2.5": 0.961,
+  "1&O2.5": 1.056,
+  "X&O2.5": 1.027,
+  "2&O2.5": 0.998,
+  "BTTS_Y&U2.5": 0.986,
+  "BTTS_Y&O2.5": 1.061,
+  "BTTS_N&U2.5": 0.933,
+  "BTTS_N&O2.5": 1.021,
+  "G0-1": 0.987,
+  "G2-3": 1.002,
+  "G4-5": 1.017,
+  "G6+": 0.988,
   "ODD": 1.1,
-  "EVEN": 0.702,
-  "HT_BTTS_Y": 0.94,
-  "HT_BTTS_N": 1.033,
-  "HTFT_1/1": 0.973,
-  "HTFT_1/X": 1.017,
-  "HTFT_1/2": 1.037,
-  "HTFT_X/1": 1.1,
-  "HTFT_X/X": 0.965,
-  "HTFT_X/2": 0.934,
-  "HTFT_2/1": 1.064,
-  "HTFT_2/X": 0.918,
-  "HTFT_2/2": 0.968,
-  "MGH_1": 0.987,
-  "MGH_X": 0.621,
+  "EVEN": 0.889,
+  "HT_BTTS_Y": 0.972,
+  "HT_BTTS_N": 1.015,
+  "HTFT_1/1": 0.988,
+  "HTFT_1/X": 1.013,
+  "HTFT_1/2": 1.032,
+  "HTFT_X/1": 1.07,
+  "HTFT_X/X": 0.982,
+  "HTFT_X/2": 0.961,
+  "HTFT_2/1": 1.055,
+  "HTFT_2/X": 0.938,
+  "HTFT_2/2": 0.985,
+  "MGH_1": 0.995,
+  "MGH_X": 0.837,
   "MGH_2": 1.1,
-  "HT_1": 1.033,
-  "HT_X": 1.047,
-  "HT_2": 0.92,
-  "2H_1": 1.1,
-  "2H_X": 1.01,
-  "2H_2": 0.742,
-  "H_O1.5": 1.007,
-  "H_U1.5": 0.993,
-  "A_O1.5": 1.1,
-  "A_U1.5": 0.877,
-  "HCP-1_1": 1.034,
-  "HCP-1_X": 1.1,
-  "HCP-1_2": 0.862,
-  "1&BTTS_Y": 1.1,
-  "1&BTTS_N": 1.07,
-  "X&BTTS_Y": 1.029,
-  "X&BTTS_N": 0.849,
-  "2&BTTS_Y": 1.035,
-  "2&BTTS_N": 0.91,
-  "HCP+1_1": 0.915,
-  "HCP+1_X": 0.858,
-  "HCP+1_2": 1.1
+  "HT_1": 1.013,
+  "HT_X": 1.016,
+  "HT_2": 0.968,
+  "2H_1": 1.094,
+  "2H_X": 1.004,
+  "2H_2": 0.899,
+  "H_O1.5": 1.003,
+  "H_U1.5": 0.997,
+  "A_O1.5": 1.046,
+  "A_U1.5": 0.954,
+  "HCP-1_1": 1.01,
+  "HCP-1_X": 1.032,
+  "HCP-1_2": 0.967,
+  "1&BTTS_Y": 1.052,
+  "1&BTTS_N": 1.033,
+  "X&BTTS_Y": 1.014,
+  "X&BTTS_N": 0.898,
+  "2&BTTS_Y": 1.018,
+  "2&BTTS_N": 0.955,
+  "HCP+1_1": 0.983,
+  "HCP+1_X": 0.962,
+  "HCP+1_2": 1.06
  },
  "calibration": [
   {
@@ -1011,7 +1455,8 @@
    "p": 0.5606,
    "won": false,
    "score": "0-0",
-   "league": "ESP2"
+   "league": "ESP2",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1021,7 +1466,8 @@
    "p": 0.5957,
    "won": false,
    "score": "1-1",
-   "league": "GRE1"
+   "league": "GRE1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1031,7 +1477,8 @@
    "p": 0.5478,
    "won": false,
    "score": "0-0",
-   "league": "GRE1"
+   "league": "GRE1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1041,7 +1488,8 @@
    "p": 0.7306,
    "won": true,
    "score": "1-2",
-   "league": "GRE1"
+   "league": "GRE1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1051,7 +1499,8 @@
    "p": 0.7631,
    "won": true,
    "score": "2-1",
-   "league": "GRE1"
+   "league": "GRE1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1061,7 +1510,8 @@
    "p": 0.8358,
    "won": true,
    "score": "1-0",
-   "league": "SCO1"
+   "league": "SCO1",
+   "clv": 0.0105
   },
   {
    "date": "2026-11-08",
@@ -1071,7 +1521,8 @@
    "p": 0.5756,
    "won": false,
    "score": "2-5",
-   "league": "SCO1"
+   "league": "SCO1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1081,7 +1532,8 @@
    "p": 0.7025,
    "won": false,
    "score": "1-1",
-   "league": "BEL1"
+   "league": "BEL1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1091,7 +1543,8 @@
    "p": 0.6597,
    "won": true,
    "score": "0-1",
-   "league": "POR1"
+   "league": "POR1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1101,7 +1554,8 @@
    "p": 0.815,
    "won": true,
    "score": "2-3",
-   "league": "POR1"
+   "league": "POR1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1111,7 +1565,8 @@
    "p": 0.6491,
    "won": true,
    "score": "1-2",
-   "league": "POR1"
+   "league": "POR1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1121,7 +1576,8 @@
    "p": 0.6663,
    "won": false,
    "score": "1-2",
-   "league": "POR1"
+   "league": "POR1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1131,7 +1587,8 @@
    "p": 0.6918,
    "won": true,
    "score": "2-3",
-   "league": "NED1"
+   "league": "NED1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1141,7 +1598,8 @@
    "p": 0.6726,
    "won": true,
    "score": "4-3",
-   "league": "NED1"
+   "league": "NED1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1151,7 +1609,8 @@
    "p": 0.6907,
    "won": true,
    "score": "2-2",
-   "league": "NED1"
+   "league": "NED1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1161,7 +1620,8 @@
    "p": 0.7079,
    "won": true,
    "score": "5-3",
-   "league": "NED1"
+   "league": "NED1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1171,7 +1631,8 @@
    "p": 0.5455,
    "won": false,
    "score": "1-2",
-   "league": "ESP2"
+   "league": "ESP2",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1181,7 +1642,8 @@
    "p": 0.5883,
    "won": false,
    "score": "0-1",
-   "league": "ESP2"
+   "league": "ESP2",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1191,7 +1653,8 @@
    "p": 0.5541,
    "won": true,
    "score": "1-4",
-   "league": "ITA2"
+   "league": "ITA2",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1201,7 +1664,8 @@
    "p": 0.5726,
    "won": true,
    "score": "0-1",
-   "league": "ITA2"
+   "league": "ITA2",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1211,7 +1675,8 @@
    "p": 0.5863,
    "won": true,
    "score": "0-2",
-   "league": "ITA2"
+   "league": "ITA2",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1221,7 +1686,8 @@
    "p": 0.6112,
    "won": true,
    "score": "4-1",
-   "league": "GER2"
+   "league": "GER2",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1231,7 +1697,8 @@
    "p": 0.678,
    "won": true,
    "score": "2-2",
-   "league": "GER2"
+   "league": "GER2",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1241,7 +1708,8 @@
    "p": 0.6089,
    "won": true,
    "score": "3-2",
-   "league": "GER2"
+   "league": "GER2",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1251,7 +1719,8 @@
    "p": 0.6415,
    "won": true,
    "score": "1-2",
-   "league": "FRA1"
+   "league": "FRA1",
+   "clv": -0.0075
   },
   {
    "date": "2026-11-08",
@@ -1261,7 +1730,8 @@
    "p": 0.5953,
    "won": false,
    "score": "1-1",
-   "league": "FRA1"
+   "league": "FRA1",
+   "clv": 0.0069
   },
   {
    "date": "2026-11-08",
@@ -1271,7 +1741,8 @@
    "p": 0.5726,
    "won": true,
    "score": "0-2",
-   "league": "FRA1"
+   "league": "FRA1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1281,7 +1752,8 @@
    "p": 0.5828,
    "won": false,
    "score": "2-0",
-   "league": "FRA1"
+   "league": "FRA1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1291,7 +1763,8 @@
    "p": 0.5659,
    "won": false,
    "score": "0-2",
-   "league": "FRA1"
+   "league": "FRA1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1301,7 +1774,8 @@
    "p": 0.6082,
    "won": true,
    "score": "1-2",
-   "league": "FRA1"
+   "league": "FRA1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1311,7 +1785,8 @@
    "p": 0.6261,
    "won": true,
    "score": "2-1",
-   "league": "GER1"
+   "league": "GER1",
+   "clv": 0.0177
   },
   {
    "date": "2026-11-08",
@@ -1321,7 +1796,8 @@
    "p": 0.685,
    "won": true,
    "score": "2-0",
-   "league": "GER1"
+   "league": "GER1",
+   "clv": -0.0403
   },
   {
    "date": "2026-11-08",
@@ -1331,7 +1807,8 @@
    "p": 0.623,
    "won": true,
    "score": "1-2",
-   "league": "GER1"
+   "league": "GER1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1341,7 +1818,8 @@
    "p": 0.7282,
    "won": true,
    "score": "2-2",
-   "league": "ITA1"
+   "league": "ITA1",
+   "clv": -0.0028
   },
   {
    "date": "2026-11-08",
@@ -1351,7 +1829,8 @@
    "p": 0.5754,
    "won": false,
    "score": "1-2",
-   "league": "ITA1"
+   "league": "ITA1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1361,7 +1840,8 @@
    "p": 0.6758,
    "won": false,
    "score": "0-1",
-   "league": "ITA1"
+   "league": "ITA1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1371,7 +1851,8 @@
    "p": 0.5946,
    "won": true,
    "score": "1-1",
-   "league": "ITA1"
+   "league": "ITA1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1381,7 +1862,8 @@
    "p": 0.7122,
    "won": true,
    "score": "1-2",
-   "league": "ESP1"
+   "league": "ESP1",
+   "clv": 0.0064
   },
   {
    "date": "2026-11-08",
@@ -1391,7 +1873,8 @@
    "p": 0.6435,
    "won": true,
    "score": "2-0",
-   "league": "ESP1"
+   "league": "ESP1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1401,7 +1884,8 @@
    "p": 0.79,
    "won": true,
    "score": "0-0",
-   "league": "ESP1"
+   "league": "ESP1",
+   "clv": -0.0039
   },
   {
    "date": "2026-11-08",
@@ -1411,7 +1895,8 @@
    "p": 0.6208,
    "won": false,
    "score": "1-0",
-   "league": "ESP1"
+   "league": "ESP1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1421,7 +1906,8 @@
    "p": 0.6289,
    "won": false,
    "score": "0-2",
-   "league": "ESP1"
+   "league": "ESP1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1431,7 +1917,8 @@
    "p": 0.6535,
    "won": true,
    "score": "4-4",
-   "league": "ENG1"
+   "league": "ENG1",
+   "clv": 0.007
   },
   {
    "date": "2026-11-08",
@@ -1441,7 +1928,8 @@
    "p": 0.5581,
    "won": false,
    "score": "1-0",
-   "league": "ENG1"
+   "league": "ENG1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1451,7 +1939,8 @@
    "p": 0.5998,
    "won": true,
    "score": "1-2",
-   "league": "ENG1"
+   "league": "ENG1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1461,7 +1950,8 @@
    "p": 0.6421,
    "won": true,
    "score": "1-3",
-   "league": "ENG1"
+   "league": "ENG1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1471,7 +1961,8 @@
    "p": 0.619,
    "won": false,
    "score": "2-0",
-   "league": "ENG1"
+   "league": "ENG1",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1481,7 +1972,8 @@
    "p": 0.5789,
    "won": true,
    "score": "1-1",
-   "league": "TR2"
+   "league": "TR2",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1491,7 +1983,8 @@
    "p": 0.6097,
    "won": true,
    "score": "1-2",
-   "league": "TR2"
+   "league": "TR2",
+   "clv": 0.0
   },
   {
    "date": "2026-11-08",
@@ -1501,7 +1994,8 @@
    "p": 0.7685,
    "won": true,
    "score": "3-0",
-   "league": "TR1"
+   "league": "TR1",
+   "clv": 0.0721
   }
  ]
 }
