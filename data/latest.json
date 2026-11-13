@@ -1,14 +1,14 @@
 {
  "schema_version": 1,
  "date": "2026-11-14",
- "generated_at": "2026-11-14T00:12:13+03:00",
+ "generated_at": "2026-11-14T00:20:50+03:00",
  "run_label": "08:30",
  "sources": [
   {
    "id": "nesine_results",
    "name": "Nesine (sonuçlar)",
    "status": "skipped",
-   "fetched_at": "2026-11-14T00:04:34+03:00",
+   "fetched_at": "2026-11-14T00:15:49+03:00",
    "note": "Devre dışı: robots.txt sonuç sayfalarına otomatik erişimi yasaklıyor.",
    "items": 0
   },
@@ -16,7 +16,7 @@
    "id": "flashscore",
    "name": "Flashscore (fikstür, sonuç, eksik oyuncu)",
    "status": "skipped",
-   "fetched_at": "2026-11-14T00:04:34+03:00",
+   "fetched_at": "2026-11-14T00:15:49+03:00",
    "note": "Devre dışı: kullanım şartları otomatik istek ve veri çıkarmayı yasaklıyor (md. 2.9-2.10).",
    "items": 0
   },
@@ -24,7 +24,7 @@
    "id": "forebet",
    "name": "Forebet (matematiksel tahmin)",
    "status": "skipped",
-   "fetched_at": "2026-11-14T00:04:34+03:00",
+   "fetched_at": "2026-11-14T00:15:49+03:00",
    "note": "Devre dışı: site Cloudflare bot doğrulamasıyla korunuyor (her istekte HTTP 403) ve veri çekilmeyecek kaynaklar listesinde; koruma aşılmaz.",
    "items": 0
   },
@@ -32,7 +32,7 @@
    "id": "soccerstats",
    "name": "SoccerStats (lig istatistik eğilimi)",
    "status": "skipped",
-   "fetched_at": "2026-11-14T00:04:34+03:00",
+   "fetched_at": "2026-11-14T00:15:49+03:00",
    "note": "Devre dışı: sitenin Cloudflare güvenlik duvarı GitHub Actions isteklerini HTTP 403 ile engelliyor; engel aşılmaz. Engellenmeyen ağda OZBET_ENABLE_SOURCES=soccerstats ile açılır.",
    "items": 0
   },
@@ -40,7 +40,7 @@
    "id": "soccerstats_tr2",
    "name": "SoccerStats sonuçlar (1. Lig geçmişi)",
    "status": "skipped",
-   "fetched_at": "2026-11-14T00:04:34+03:00",
+   "fetched_at": "2026-11-14T00:15:49+03:00",
    "note": "Devre dışı: sitenin Cloudflare güvenlik duvarı GitHub Actions isteklerini HTTP 403 ile engelliyor; engel aşılmaz. Engellenmeyen ağda OZBET_ENABLE_SOURCES=soccerstats ile açılır. 1. Lig geçmişi TFF'den geliyor.",
    "items": 0
   },
@@ -48,7 +48,7 @@
    "id": "api_football",
    "name": "API-Football (yedek, anahtar gerekir)",
    "status": "skipped",
-   "fetched_at": "2026-11-14T00:04:34+03:00",
+   "fetched_at": "2026-11-14T00:15:49+03:00",
    "note": "Kapalı: API_FOOTBALL_KEY tanımlı değil (opsiyonel yedek). GitHub → Settings → Secrets and variables → Actions altında bu adla secret eklenirse açılır.",
    "items": 0
   },
@@ -56,7 +56,7 @@
    "id": "nesine",
    "name": "Nesine iddaa bülteni (kod, MBS, oran)",
    "status": "ok",
-   "fetched_at": "2026-11-14T00:04:36+03:00",
+   "fetched_at": "2026-11-14T00:15:50+03:00",
    "note": null,
    "items": 633
   },
@@ -64,7 +64,7 @@
    "id": "iddaa",
    "name": "iddaa.com resmi bülten (oran, MBS)",
    "status": "ok",
-   "fetched_at": "2026-11-14T00:04:41+03:00",
+   "fetched_at": "2026-11-14T00:15:51+03:00",
    "note": null,
    "items": 625
   },
@@ -72,7 +72,7 @@
    "id": "football_data_fixtures",
    "name": "football-data.co.uk fixtures.csv (oran yedeği)",
    "status": "ok",
-   "fetched_at": "2026-11-14T00:04:42+03:00",
+   "fetched_at": "2026-11-14T00:15:51+03:00",
    "note": null,
    "items": 45
   },
@@ -80,7 +80,7 @@
    "id": "football_data_history",
    "name": "football-data.co.uk (geçmiş sonuçlar + oranlar)",
    "status": "ok",
-   "fetched_at": "2026-11-14T00:05:32+03:00",
+   "fetched_at": "2026-11-14T00:15:57+03:00",
    "note": null,
    "items": 15579
   },
@@ -88,7 +88,7 @@
    "id": "understat",
    "name": "Understat (xG, 5 büyük lig)",
    "status": "missing",
-   "fetched_at": "2026-11-14T00:05:33+03:00",
+   "fetched_at": "2026-11-14T00:15:58+03:00",
    "note": "Maintenance: understat bakımda (site 'We will come back soon' sayfası döndürüyor)",
    "items": 0
   },
@@ -96,7 +96,7 @@
    "id": "tff_tr2",
    "name": "TFF sonuçlar (1. Lig güncel sezon; Kaynak: TFF (tff.org))",
    "status": "ok",
-   "fetched_at": "2026-11-14T00:05:51+03:00",
+   "fetched_at": "2026-11-14T00:16:08+03:00",
    "note": null,
    "items": 139
   },
@@ -104,7 +104,7 @@
    "id": "archive_history",
    "name": "Birikimli sonuç arşivi (modele giren ligler)",
    "status": "ok",
-   "fetched_at": "2026-11-14T00:05:51+03:00",
+   "fetched_at": "2026-11-14T00:16:08+03:00",
    "note": "Henüz eşik altında: BEL1 10/60, ESP1 10/60, GER1 9/60, GER2 9/60, GRE1 7/60, ITA1 12/60, ITA2 10/60, NED1 9/60, POR1 9/60, SCO1 3/60, TR1 9/60",
    "items": 0
   },
@@ -112,7 +112,7 @@
    "id": "api_football_history",
    "name": "API-Football geçmiş (1. Lig vb., anahtar gerekir)",
    "status": "skipped",
-   "fetched_at": "2026-11-14T00:05:51+03:00",
+   "fetched_at": "2026-11-14T00:16:08+03:00",
    "note": "Kapalı: API_FOOTBALL_KEY tanımlı değil (opsiyonel; GitHub Actions secret'ı eklenirse açılır).",
    "items": 0
   },
@@ -120,15 +120,15 @@
    "id": "tff_referees",
    "name": "TFF hakem atamaları (Süper Lig; Kaynak: TFF (tff.org))",
    "status": "ok",
-   "fetched_at": "2026-11-14T00:09:18+03:00",
-   "note": "49 maç hakemi okundu; 44 geçmiş satıra, 0 bugünkü maça eklendi. Kaynak: TFF (tff.org)",
-   "items": 49
+   "fetched_at": "2026-11-14T00:19:29+03:00",
+   "note": "89 maç hakemi okundu; 79 geçmiş satıra, 0 bugünkü maça eklendi. Kaynak: TFF (tff.org)",
+   "items": 89
   },
   {
    "id": "clubelo",
    "name": "ClubElo (kulüp Elo puanları, lig-arası düzeltme)",
    "status": "missing",
-   "fetched_at": "2026-11-14T00:09:55+03:00",
+   "fetched_at": "2026-11-14T00:20:06+03:00",
    "note": "HTTPError: 502 Server Error: Bad Gateway for url: http://api.clubelo.com/2026-11-14",
    "items": 0
   },
@@ -136,7 +136,7 @@
    "id": "transfermarkt",
    "name": "Transfermarkt (sakatlık listesi)",
    "status": "partial",
-   "fetched_at": "2026-11-14T00:09:58+03:00",
+   "fetched_at": "2026-11-14T00:20:09+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
@@ -144,7 +144,7 @@
    "id": "news_rss",
    "name": "Haber akışları (RSS/Atom: A Spor, NTV Spor, Fotomaç, TRT, AA, ESPN, Sky...)",
    "status": "partial",
-   "fetched_at": "2026-11-14T00:10:10+03:00",
+   "fetched_at": "2026-11-14T00:20:10+03:00",
    "note": "11 akış okundu; okunamayan: espn_soccer(Blocked)",
    "items": 0
   },
@@ -152,7 +152,7 @@
    "id": "sportytrader",
    "name": "SportyTrader (uzman tahmini)",
    "status": "ok",
-   "fetched_at": "2026-11-14T00:10:36+03:00",
+   "fetched_at": "2026-11-14T00:20:11+03:00",
    "note": null,
    "items": 13
   },
@@ -160,7 +160,7 @@
    "id": "freesupertips",
    "name": "FreeSuperTips (ipucu)",
    "status": "ok",
-   "fetched_at": "2026-11-14T00:11:26+03:00",
+   "fetched_at": "2026-11-14T00:20:12+03:00",
    "note": null,
    "items": 20
   },
@@ -168,7 +168,7 @@
    "id": "sharp_edge",
    "name": "Keskin piyasa farkı (iddaa × Pinnacle/Betfair adil olasılık; hipotez, kanıtlanmış kazanç değil)",
    "status": "ok",
-   "fetched_at": "2026-11-14T00:11:50+03:00",
+   "fetched_at": "2026-11-14T00:20:31+03:00",
    "note": "6 maç kıyaslandı (betfair 6); 0 maçta fark eşiği aşıldı. Referans oranlar fixtures.csv'nin son güncellemesine aittir (anlık değil).",
    "items": 6
   },
@@ -176,7 +176,7 @@
    "id": "pipeline",
    "name": "OZBET işleme",
    "status": "ok",
-   "fetched_at": "2026-11-14T00:12:13+03:00",
+   "fetched_at": "2026-11-14T00:20:50+03:00",
    "note": "Eşlenemeyen lig adları (ilk 15): Afrika Uluslar Kupası, Almanya Böl. Lig, Bavyera, Almanya Böl. Lig, Güney Batı, Almanya Böl. Lig, Kuzey , Almanya Kadınlar Bundesliga, Almanya U19 Gençlik Ligi, Arjantin Primera B, Yükselme Playofflar, Arjantin Prmr Nacional, Yük. PO, Avustralya A-Ligi Kadınlar, Avustralya Şampiyonası, BAE Kupası, Bahreyn 2. Lig, Belçika Süper Lig, Kadınlar, Brezilya Serie B, Bulgaristan 2. Lig",
    "items": 247
   }
@@ -222,27 +222,27 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "sharp": {
      "source": "football-data.co.uk fixtures.csv (betfair) × iddaa oranı",
-     "t": "2026-11-14T00:04:42+03:00"
+     "t": "2026-11-14T00:15:51+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-14T00:05:32+03:00"
+     "t": "2026-11-14T00:15:57+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:44+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     },
     "predictions": {
      "source": "sportytrader",
-     "t": "2026-11-14T00:10:11+03:00"
+     "t": "2026-11-14T00:20:10+03:00"
     }
    },
    "odds": {
@@ -423,7 +423,7 @@
      "U2.5": -0.1887
     },
     "best": null,
-    "fetched_at": "2026-11-14T00:04:42+03:00",
+    "fetched_at": "2026-11-14T00:15:51+03:00",
     "source_ou25": "avg",
     "allowance": 0.02
    },
@@ -2322,7 +2322,7 @@
        "OU25": "O2.5"
       },
       "probs": {},
-      "fetched_at": "2026-11-14T00:10:11+03:00",
+      "fetched_at": "2026-11-14T00:20:10+03:00",
       "note": "Over 2.5 goals"
      },
      {
@@ -2450,23 +2450,23 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "sharp": {
      "source": "football-data.co.uk fixtures.csv (betfair) × iddaa oranı",
-     "t": "2026-11-14T00:04:42+03:00"
+     "t": "2026-11-14T00:15:51+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-14T00:05:32+03:00"
+     "t": "2026-11-14T00:15:57+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:44+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -2627,7 +2627,7 @@
      "U2.5": -0.1669
     },
     "best": null,
-    "fetched_at": "2026-11-14T00:04:42+03:00",
+    "fetched_at": "2026-11-14T00:15:51+03:00",
     "allowance": 0.02
    },
    "odds_analysis": {
@@ -4526,23 +4526,23 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "sharp": {
      "source": "football-data.co.uk fixtures.csv (betfair) × iddaa oranı",
-     "t": "2026-11-14T00:04:42+03:00"
+     "t": "2026-11-14T00:15:51+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-14T00:05:32+03:00"
+     "t": "2026-11-14T00:15:57+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:44+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -4715,7 +4715,7 @@
      "U2.5": -0.2148
     },
     "best": null,
-    "fetched_at": "2026-11-14T00:04:42+03:00",
+    "fetched_at": "2026-11-14T00:15:51+03:00",
     "source_ou25": "avg",
     "allowance": 0.02
    },
@@ -6736,23 +6736,23 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "sharp": {
      "source": "football-data.co.uk fixtures.csv (betfair) × iddaa oranı",
-     "t": "2026-11-14T00:04:42+03:00"
+     "t": "2026-11-14T00:15:51+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-14T00:05:32+03:00"
+     "t": "2026-11-14T00:15:57+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:44+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -6924,7 +6924,7 @@
      "U2.5": -0.1684
     },
     "best": null,
-    "fetched_at": "2026-11-14T00:04:42+03:00",
+    "fetched_at": "2026-11-14T00:15:51+03:00",
     "allowance": 0.02
    },
    "odds_analysis": {
@@ -8855,15 +8855,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:44+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -10594,15 +10594,15 @@
    "provenance": {
     "fixture": {
      "source": "iddaa.com",
-     "t": "2026-11-14T00:04:36+03:00"
+     "t": "2026-11-14T00:15:50+03:00"
     },
     "odds": {
      "source": "iddaa.com",
-     "t": "2026-11-14T00:04:36+03:00"
+     "t": "2026-11-14T00:15:50+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:44+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -12368,15 +12368,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:44+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -14065,23 +14065,23 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "sharp": {
      "source": "football-data.co.uk fixtures.csv (betfair) × iddaa oranı",
-     "t": "2026-11-14T00:04:42+03:00"
+     "t": "2026-11-14T00:15:51+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-14T00:05:32+03:00"
+     "t": "2026-11-14T00:15:57+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:44+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -14226,7 +14226,7 @@
      "U2.5": -0.2077
     },
     "best": null,
-    "fetched_at": "2026-11-14T00:04:42+03:00",
+    "fetched_at": "2026-11-14T00:15:51+03:00",
     "allowance": 0.02
    },
    "odds_analysis": {
@@ -16193,15 +16193,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:44+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -18029,23 +18029,23 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "sharp": {
      "source": "football-data.co.uk fixtures.csv (betfair) × iddaa oranı",
-     "t": "2026-11-14T00:04:42+03:00"
+     "t": "2026-11-14T00:15:51+03:00"
     },
     "stats": {
      "source": "football-data.co.uk",
-     "t": "2026-11-14T00:05:32+03:00"
+     "t": "2026-11-14T00:15:57+03:00"
     },
     "model": {
      "source": "OZBET Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:44+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -18203,7 +18203,7 @@
      "U2.5": -0.2134
     },
     "best": null,
-    "fetched_at": "2026-11-14T00:04:42+03:00",
+    "fetched_at": "2026-11-14T00:15:51+03:00",
     "allowance": 0.02
    },
    "odds_analysis": {
@@ -20124,15 +20124,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:44+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -21967,15 +21967,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:44+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -23870,15 +23870,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -25699,15 +25699,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -27496,15 +27496,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:44+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -29198,15 +29198,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -30821,11 +30821,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     }
    },
    "odds": {
@@ -30917,15 +30917,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:26+03:00"
     }
    },
    "odds": {
@@ -32655,15 +32655,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -34487,15 +34487,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -36185,15 +36185,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -37914,15 +37914,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -39807,15 +39807,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -41484,15 +41484,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -43241,15 +43241,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -45254,15 +45254,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -47012,15 +47012,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -48677,15 +48677,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -50474,15 +50474,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -52334,15 +52334,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -54141,15 +54141,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -55960,15 +55960,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -57681,15 +57681,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -59464,15 +59464,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -61177,15 +61177,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -62959,15 +62959,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -64717,15 +64717,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:45+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -66375,15 +66375,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -68176,15 +68176,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -69710,15 +69710,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -71382,15 +71382,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -73161,15 +73161,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -74978,15 +74978,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -76678,15 +76678,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -78627,15 +78627,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -80323,15 +80323,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -82195,15 +82195,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -84082,15 +84082,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:27+03:00"
     }
    },
    "odds": {
@@ -86096,15 +86096,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -87952,15 +87952,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -89816,15 +89816,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -91329,15 +91329,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -93109,15 +93109,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -94919,15 +94919,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -96699,15 +96699,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -98414,15 +98414,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -100255,15 +100255,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -102032,15 +102032,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -103828,15 +103828,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -105439,15 +105439,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -107165,15 +107165,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -108825,15 +108825,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -110708,15 +110708,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -112313,15 +112313,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:46+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -114096,15 +114096,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -115820,15 +115820,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -117567,15 +117567,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -119432,15 +119432,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -121218,15 +121218,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -122713,15 +122713,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -124565,15 +124565,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -126328,15 +126328,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -128156,15 +128156,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -129982,15 +129982,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -131788,15 +131788,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -133746,15 +133746,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -135653,15 +135653,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -137494,15 +137494,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -139349,15 +139349,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -139479,32 +139479,32 @@
      },
      {
       "market": "O2.5",
-      "observed": 0.5725,
+      "observed": 0.57,
       "ci": [
-       0.5236,
-       0.6201
+       0.521,
+       0.6176
       ],
       "market_p": 0.5211,
-      "note": "fark GA dışında (çoklu karşılaştırmada rastlantı olabilir)"
+      "note": "piyasayla uyumlu"
      },
      {
       "market": "U2.5",
-      "observed": 0.4275,
+      "observed": 0.43,
       "ci": [
-       0.3799,
-       0.4764
+       0.3824,
+       0.479
       ],
       "market_p": 0.4789,
-      "note": "fark GA dışında (çoklu karşılaştırmada rastlantı olabilir)"
+      "note": "piyasayla uyumlu"
      }
     ],
     "disclaimer": "Geçmişte benzer oranla fiyatlanan maçların sonuç dağılımı. Yeni bir tahmin değildir; testte bu dağılım piyasanın marjsız olasılığından daha iyi tahmin etmedi.",
     "goals": [
      0.07,
-     0.135,
+     0.1375,
      0.2225,
      0.235,
-     0.2,
+     0.1975,
      0.1375
     ],
     "scores": [
@@ -139516,7 +139516,7 @@
       0.005
      ],
      [
-      0.0775,
+      0.08,
       0.1125,
       0.11,
       0.055,
@@ -139531,7 +139531,7 @@
      ],
      [
       0.02,
-      0.055,
+      0.0525,
       0.0225,
       0.005,
       0.0075
@@ -141012,15 +141012,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -142799,15 +142799,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -144542,15 +144542,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -146370,15 +146370,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:28+03:00"
     }
    },
    "odds": {
@@ -148293,15 +148293,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -150051,15 +150051,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -151697,15 +151697,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -153473,15 +153473,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -155275,15 +155275,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -157061,19 +157061,19 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     },
     "predictions": {
      "source": "sportytrader, freesupertips",
-     "t": "2026-11-14T00:10:11+03:00"
+     "t": "2026-11-14T00:20:10+03:00"
     }
    },
    "odds": {
@@ -158763,7 +158763,7 @@
        "BTTS": "BTTS_Y"
       },
       "probs": {},
-      "fetched_at": "2026-11-14T00:10:11+03:00",
+      "fetched_at": "2026-11-14T00:20:10+03:00",
       "note": "BTTS"
      },
      {
@@ -158772,7 +158772,7 @@
        "1X2": "1"
       },
       "probs": {},
-      "fetched_at": "2026-11-14T00:10:36+03:00",
+      "fetched_at": "2026-11-14T00:20:11+03:00",
       "note": "Exeter City to Win; Exeter City 2-1"
      },
      {
@@ -158836,15 +158836,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -160485,11 +160485,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     }
    },
    "odds": {
@@ -160577,15 +160577,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:47+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -162411,15 +162411,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -164088,7 +164088,7 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     }
    },
    "odds": null,
@@ -164132,15 +164132,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -165951,11 +165951,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     }
    },
    "odds": {
@@ -166035,15 +166035,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -167875,15 +167875,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -169660,11 +169660,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     }
    },
    "odds": {
@@ -169739,15 +169739,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -171568,15 +171568,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -173265,15 +173265,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -174946,15 +174946,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -176700,15 +176700,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -178571,11 +178571,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     }
    },
    "odds": {
@@ -178667,15 +178667,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -180554,15 +180554,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -182365,15 +182365,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -184232,15 +184232,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -186221,15 +186221,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -188132,15 +188132,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -190223,15 +190223,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -192197,15 +192197,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -194013,15 +194013,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -195717,15 +195717,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -197399,15 +197399,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -199191,15 +199191,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -200985,15 +200985,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -202860,15 +202860,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -204852,15 +204852,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -206600,15 +206600,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:48+03:00"
+     "t": "2026-11-14T00:20:29+03:00"
     }
    },
    "odds": {
@@ -208466,15 +208466,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -210246,11 +210246,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     }
    },
    "odds": {
@@ -210445,11 +210445,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     }
    },
    "odds": {
@@ -210654,15 +210654,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -212370,15 +212370,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -214120,15 +214120,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -215983,11 +215983,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     }
    },
    "odds": {
@@ -216182,11 +216182,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     }
    },
    "odds": {
@@ -216381,15 +216381,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -218171,15 +218171,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -219967,15 +219967,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -221786,15 +221786,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -223672,15 +223672,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -225552,11 +225552,11 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     }
    },
    "odds": {
@@ -225751,15 +225751,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -227556,15 +227556,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -229236,15 +229236,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -230942,15 +230942,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -232675,15 +232675,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:31+03:00"
     }
    },
    "odds": {
@@ -234473,15 +234473,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:31+03:00"
     }
    },
    "odds": {
@@ -236218,15 +236218,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:31+03:00"
     }
    },
    "odds": {
@@ -238042,15 +238042,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:31+03:00"
     }
    },
    "odds": {
@@ -239863,15 +239863,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:31+03:00"
     }
    },
    "odds": {
@@ -241552,15 +241552,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -243303,15 +243303,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:31+03:00"
     }
    },
    "odds": {
@@ -245101,15 +245101,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:49+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -246946,15 +246946,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -248810,15 +248810,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -250526,15 +250526,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -252390,15 +252390,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:31+03:00"
     }
    },
    "odds": {
@@ -254295,15 +254295,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:31+03:00"
     }
    },
    "odds": {
@@ -256197,15 +256197,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:31+03:00"
     }
    },
    "odds": {
@@ -257750,15 +257750,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:31+03:00"
     }
    },
    "odds": {
@@ -259631,15 +259631,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:31+03:00"
     }
    },
    "odds": {
@@ -261188,15 +261188,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:30+03:00"
     }
    },
    "odds": {
@@ -262945,15 +262945,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:31+03:00"
     }
    },
    "odds": {
@@ -264803,15 +264803,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:31+03:00"
     }
    },
    "odds": {
@@ -266316,15 +266316,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:31+03:00"
     }
    },
    "odds": {
@@ -268204,15 +268204,15 @@
    "provenance": {
     "fixture": {
      "source": "nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "odds": {
      "source": "iddaa.com, nesine",
-     "t": "2026-11-14T00:04:35+03:00"
+     "t": "2026-11-14T00:15:49+03:00"
     },
     "model": {
      "source": "iddaa oranları (Shin) → Dixon-Coles + 10.000 MC",
-     "t": "2026-11-14T00:11:50+03:00"
+     "t": "2026-11-14T00:20:31+03:00"
     }
    },
    "odds": {
@@ -271690,8 +271690,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %22, beraberliğe %22, deplasmana %56 olasılık veriyor; beklenen gol 1.3 - 2.1. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %22, beraberliğe %22, deplasmana %56 olasılık veriyor; beklenen gol 1.3 - 2.1. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-rayo-cantabria-gimnastica-torrelavega",
@@ -273402,8 +273403,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %54, beraberliğe %24, deplasmana %22 olasılık veriyor; beklenen gol 1.9 - 1.1. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %54, beraberliğe %24, deplasmana %22 olasılık veriyor; beklenen gol 1.9 - 1.1. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-italya--u19-ukrayna--u19",
@@ -275211,8 +275213,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %58, beraberliğe %21, deplasmana %20 olasılık veriyor; beklenen gol 2.0 - 1.1. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %58, beraberliğe %21, deplasmana %20 olasılık veriyor; beklenen gol 2.0 - 1.1. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-whyteleafe-chatham-town",
@@ -277047,8 +277050,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %32, beraberliğe %23, deplasmana %45 olasılık veriyor; beklenen gol 1.5 - 1.8. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %32, beraberliğe %23, deplasmana %45 olasılık veriyor; beklenen gol 1.5 - 1.8. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-airdrieonian-queen-of-south",
@@ -278918,8 +278922,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %59, beraberliğe %22, deplasmana %18 olasılık veriyor; beklenen gol 2.1 - 1.1. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %59, beraberliğe %22, deplasmana %18 olasılık veriyor; beklenen gol 2.1 - 1.1. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-al-tadhmon-isa-town",
@@ -280613,8 +280618,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %39, beraberliğe %25, deplasmana %35 olasılık veriyor; beklenen gol 1.4 - 1.4. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %39, beraberliğe %25, deplasmana %35 olasılık veriyor; beklenen gol 1.4 - 1.4. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-alfreton-southport",
@@ -282419,8 +282425,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %37, beraberliğe %24, deplasmana %39 olasılık veriyor; beklenen gol 1.6 - 1.6. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %37, beraberliğe %24, deplasmana %39 olasılık veriyor; beklenen gol 1.6 - 1.6. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-alvechurch-hitchin-town",
@@ -284214,8 +284221,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %68, beraberliğe %18, deplasmana %13 olasılık veriyor; beklenen gol 2.3 - 0.9. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %68, beraberliğe %18, deplasmana %13 olasılık veriyor; beklenen gol 2.3 - 0.9. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-amorebieta-sd-eibar--b",
@@ -285853,8 +285861,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %38, beraberliğe %29, deplasmana %33 olasılık veriyor; beklenen gol 1.3 - 1.2. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %38, beraberliğe %29, deplasmana %33 olasılık veriyor; beklenen gol 1.3 - 1.2. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-anstey-nomads-worcester-city",
@@ -287718,8 +287727,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %59, beraberliğe %22, deplasmana %19 olasılık veriyor; beklenen gol 2.1 - 1.1. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %59, beraberliğe %22, deplasmana %19 olasılık veriyor; beklenen gol 2.1 - 1.1. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-basingstoke-chippenham",
@@ -289472,8 +289482,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %42, beraberliğe %24, deplasmana %35 olasılık veriyor; beklenen gol 1.6 - 1.5. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %42, beraberliğe %24, deplasmana %35 olasılık veriyor; beklenen gol 1.6 - 1.5. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-bedford-town-chesham-utd",
@@ -291154,8 +291165,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %46, beraberliğe %24, deplasmana %30 olasılık veriyor; beklenen gol 1.7 - 1.3. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %46, beraberliğe %24, deplasmana %30 olasılık veriyor; beklenen gol 1.7 - 1.3. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-bouri-qalali",
@@ -292944,8 +292956,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %83, beraberliğe %12, deplasmana %5 olasılık veriyor; beklenen gol 2.7 - 0.5. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %83, beraberliğe %12, deplasmana %5 olasılık veriyor; beklenen gol 2.7 - 0.5. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-brentwood-town-ramsgate",
@@ -294675,8 +294688,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %43, beraberliğe %24, deplasmana %34 olasılık veriyor; beklenen gol 1.7 - 1.5. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %43, beraberliğe %24, deplasmana %34 olasılık veriyor; beklenen gol 1.7 - 1.5. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-bristol-rovers-chesterfield",
@@ -296679,18 +296693,11 @@
     ]
    },
    "value": [],
-   "pick": {
-    "market": "BTTS_Y",
-    "label": "KG Var",
-    "p": 0.5824,
-    "odds": 1.41,
-    "is_value": false,
-    "blended": true,
-    "stars": 2
-   },
+   "pick": null,
    "value_note": "Kupa maçı – değer etiketi verilmez",
-   "comment": "Model ev sahibine %21, beraberliğe %23, deplasmana %56 olasılık veriyor; beklenen gol 1.1 - 1.8. 2 kaynağın tümü 2.5 Üst diyor. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %21, beraberliğe %23, deplasmana %56 olasılık veriyor; beklenen gol 1.1 - 1.8. 2 kaynağın tümü 2.5 Üst diyor. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-bury-town-rushall-olym",
@@ -298421,8 +298428,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %45, beraberliğe %23, deplasmana %32 olasılık veriyor; beklenen gol 1.7 - 1.5. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %45, beraberliğe %23, deplasmana %32 olasılık veriyor; beklenen gol 1.7 - 1.5. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-cd-ebro-utebo",
@@ -300070,8 +300078,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %52, beraberliğe %27, deplasmana %21 olasılık veriyor; beklenen gol 1.6 - 0.9. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %52, beraberliğe %27, deplasmana %21 olasılık veriyor; beklenen gol 1.6 - 0.9. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-carlisle-boston-utd",
@@ -302073,8 +302082,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %68, beraberliğe %18, deplasmana %15 olasılık veriyor; beklenen gol 2.5 - 1.1. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %68, beraberliğe %18, deplasmana %15 olasılık veriyor; beklenen gol 2.5 - 1.1. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-chojniczanka-zawisza-bydgoszcz",
@@ -303884,8 +303894,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %46, beraberliğe %24, deplasmana %30 olasılık veriyor; beklenen gol 1.9 - 1.5. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %46, beraberliğe %24, deplasmana %30 olasılık veriyor; beklenen gol 1.9 - 1.5. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-chorley-buxton",
@@ -305536,8 +305547,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %35, beraberliğe %24, deplasmana %41 olasılık veriyor; beklenen gol 1.5 - 1.6. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %35, beraberliğe %24, deplasmana %41 olasılık veriyor; beklenen gol 1.5 - 1.6. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-cleethorpes-stockton-town",
@@ -307215,8 +307227,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %59, beraberliğe %22, deplasmana %19 olasılık veriyor; beklenen gol 2.0 - 1.0. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %59, beraberliğe %22, deplasmana %19 olasılık veriyor; beklenen gol 2.0 - 1.0. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-colchester-gillingham",
@@ -309118,18 +309131,11 @@
     ]
    },
    "value": [],
-   "pick": {
-    "market": "1X",
-    "label": "ÇŞ 1X",
-    "p": 0.7423,
-    "odds": 1.13,
-    "is_value": false,
-    "blended": true,
-    "stars": 2
-   },
+   "pick": null,
    "value_note": "Kupa maçı – değer etiketi verilmez",
-   "comment": "Model ev sahibine %49, beraberliğe %27, deplasmana %24 olasılık veriyor; beklenen gol 1.4 - 0.9. 3 kaynağın tümü MS 1 diyor. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %49, beraberliğe %27, deplasmana %24 olasılık veriyor; beklenen gol 1.4 - 0.9. 3 kaynağın tümü MS 1 diyor. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-cove-rangers-montrose",
@@ -310887,8 +310893,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %41, beraberliğe %28, deplasmana %31 olasılık veriyor; beklenen gol 1.5 - 1.3. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %41, beraberliğe %28, deplasmana %31 olasılık veriyor; beklenen gol 1.5 - 1.3. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-crewe-alexandra-newport",
@@ -312666,8 +312673,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %46, beraberliğe %28, deplasmana %27 olasılık veriyor; beklenen gol 1.5 - 1.1. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %46, beraberliğe %28, deplasmana %27 olasılık veriyor; beklenen gol 1.5 - 1.1. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-curzon-ashton-quorn",
@@ -314418,8 +314426,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %59, beraberliğe %22, deplasmana %19 olasılık veriyor; beklenen gol 2.1 - 1.1. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %59, beraberliğe %22, deplasmana %19 olasılık veriyor; beklenen gol 2.1 - 1.1. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-doncaster-leyton-orient",
@@ -316321,18 +316330,11 @@
     ]
    },
    "value": [],
-   "pick": {
-    "market": "BTTS_Y",
-    "label": "KG Var",
-    "p": 0.5775,
-    "odds": 1.41,
-    "is_value": false,
-    "blended": true,
-    "stars": 2
-   },
+   "pick": null,
    "value_note": "Kupa maçı – değer etiketi verilmez",
-   "comment": "Model ev sahibine %31, beraberliğe %27, deplasmana %42 olasılık veriyor; beklenen gol 1.2 - 1.4. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %31, beraberliğe %27, deplasmana %42 olasılık veriyor; beklenen gol 1.2 - 1.4. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-dumbarton-annan-ath",
@@ -318136,8 +318138,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %52, beraberliğe %23, deplasmana %25 olasılık veriyor; beklenen gol 1.9 - 1.2. MS 1 oranı ilk görüldüğünden bu yana %8 düştü. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %52, beraberliğe %23, deplasmana %25 olasılık veriyor; beklenen gol 1.9 - 1.2. MS 1 oranı ilk görüldüğünden bu yana %8 düştü. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-east-fife-peterhead",
@@ -319790,8 +319793,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %36, beraberliğe %29, deplasmana %35 olasılık veriyor; beklenen gol 1.4 - 1.3. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %36, beraberliğe %29, deplasmana %35 olasılık veriyor; beklenen gol 1.4 - 1.3. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-east-kilbri-alloa",
@@ -321648,8 +321652,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %62, beraberliğe %20, deplasmana %17 olasılık veriyor; beklenen gol 2.2 - 1.1. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %62, beraberliğe %20, deplasmana %17 olasılık veriyor; beklenen gol 2.2 - 1.1. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-eastleigh-fylde",
@@ -323549,8 +323554,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %27, beraberliğe %23, deplasmana %50 olasılık veriyor; beklenen gol 1.4 - 2.0. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %27, beraberliğe %23, deplasmana %50 olasılık veriyor; beklenen gol 1.4 - 2.0. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-edinburgh-clyde-bank",
@@ -325377,8 +325383,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %28, beraberliğe %24, deplasmana %49 olasılık veriyor; beklenen gol 1.3 - 1.7. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %28, beraberliğe %24, deplasmana %49 olasılık veriyor; beklenen gol 1.3 - 1.7. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-evesham-utd-gosport",
@@ -327143,8 +327150,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %36, beraberliğe %24, deplasmana %40 olasılık veriyor; beklenen gol 1.5 - 1.6. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %36, beraberliğe %24, deplasmana %40 olasılık veriyor; beklenen gol 1.5 - 1.6. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-forfar-spartans-edinburgh",
@@ -328962,8 +328970,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %24, beraberliğe %26, deplasmana %50 olasılık veriyor; beklenen gol 1.2 - 1.7. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %24, beraberliğe %26, deplasmana %50 olasılık veriyor; beklenen gol 1.2 - 1.7. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-frome-hanworth-villa",
@@ -330732,8 +330741,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %36, beraberliğe %24, deplasmana %40 olasılık veriyor; beklenen gol 1.5 - 1.6. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %36, beraberliğe %24, deplasmana %40 olasılık veriyor; beklenen gol 1.5 - 1.6. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-gborough-tr-lancaster",
@@ -332485,8 +332495,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %57, beraberliğe %23, deplasmana %21 olasılık veriyor; beklenen gol 1.9 - 1.1. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %57, beraberliğe %23, deplasmana %21 olasılık veriyor; beklenen gol 1.9 - 1.1. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-gateshead-barrow",
@@ -334239,8 +334250,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %14, beraberliğe %22, deplasmana %64 olasılık veriyor; beklenen gol 0.9 - 2.1. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %14, beraberliğe %22, deplasmana %64 olasılık veriyor; beklenen gol 0.9 - 2.1. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-gloucester-sholing",
@@ -335962,8 +335974,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %51, beraberliğe %24, deplasmana %25 olasılık veriyor; beklenen gol 1.9 - 1.3. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %51, beraberliğe %24, deplasmana %25 olasılık veriyor; beklenen gol 1.9 - 1.3. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-hanwell-town-plymouth-parkway",
@@ -337679,8 +337692,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %38, beraberliğe %24, deplasmana %38 olasılık veriyor; beklenen gol 1.6 - 1.6. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %38, beraberliğe %24, deplasmana %38 olasılık veriyor; beklenen gol 1.6 - 1.6. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-harrogate-altrincham",
@@ -339552,8 +339566,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %55, beraberliğe %22, deplasmana %23 olasılık veriyor; beklenen gol 2.0 - 1.2. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %55, beraberliğe %22, deplasmana %23 olasılık veriyor; beklenen gol 2.0 - 1.2. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-hartlepool-wealdstone",
@@ -341419,8 +341434,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %46, beraberliğe %26, deplasmana %28 olasılık veriyor; beklenen gol 1.7 - 1.3. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %46, beraberliğe %26, deplasmana %28 olasılık veriyor; beklenen gol 1.7 - 1.3. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-hav-waterloo-yate-town",
@@ -343176,8 +343192,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %47, beraberliğe %24, deplasmana %29 olasılık veriyor; beklenen gol 1.7 - 1.3. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %47, beraberliğe %24, deplasmana %29 olasılık veriyor; beklenen gol 1.7 - 1.3. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-hornchurch-tamworth",
@@ -345136,8 +345153,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %41, beraberliğe %26, deplasmana %33 olasılık veriyor; beklenen gol 1.6 - 1.4. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %41, beraberliğe %26, deplasmana %33 olasılık veriyor; beklenen gol 1.6 - 1.4. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-ilkeston-town-utd-of-manch",
@@ -346783,8 +346801,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %28, beraberliğe %24, deplasmana %48 olasılık veriyor; beklenen gol 1.3 - 1.7. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %28, beraberliğe %24, deplasmana %48 olasılık veriyor; beklenen gol 1.3 - 1.7. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-kelty-hearts-stranraer",
@@ -348526,8 +348545,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %32, beraberliğe %26, deplasmana %41 olasılık veriyor; beklenen gol 1.4 - 1.6. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %32, beraberliğe %26, deplasmana %41 olasılık veriyor; beklenen gol 1.4 - 1.6. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-kidderminster-harriers-halifax-town",
@@ -350330,8 +350350,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %36, beraberliğe %28, deplasmana %36 olasılık veriyor; beklenen gol 1.4 - 1.4. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %36, beraberliğe %28, deplasmana %36 olasılık veriyor; beklenen gol 1.4 - 1.4. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-leamington-leiston",
@@ -352081,8 +352102,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %43, beraberliğe %24, deplasmana %34 olasılık veriyor; beklenen gol 1.7 - 1.5. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %43, beraberliğe %24, deplasmana %34 olasılık veriyor; beklenen gol 1.7 - 1.5. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-leatherhead-albans-city",
@@ -353897,8 +353919,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %36, beraberliğe %25, deplasmana %40 olasılık veriyor; beklenen gol 1.5 - 1.7. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %36, beraberliğe %25, deplasmana %40 olasılık veriyor; beklenen gol 1.5 - 1.7. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-leek-town-morecambe",
@@ -355702,8 +355725,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %16, beraberliğe %19, deplasmana %65 olasılık veriyor; beklenen gol 1.1 - 2.3. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %16, beraberliğe %19, deplasmana %65 olasılık veriyor; beklenen gol 1.1 - 2.3. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-leighton-town-stratford",
@@ -357534,8 +357558,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %30, beraberliğe %24, deplasmana %46 olasılık veriyor; beklenen gol 1.3 - 1.7. MS 2 oranı ilk görüldüğünden bu yana %12 düştü. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %30, beraberliğe %24, deplasmana %46 olasılık veriyor; beklenen gol 1.3 - 1.7. MS 2 oranı ilk görüldüğünden bu yana %12 düştü. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-lewes-stanway-rovers",
@@ -359358,8 +359383,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %68, beraberliğe %18, deplasmana %14 olasılık veriyor; beklenen gol 2.3 - 0.9. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %68, beraberliğe %18, deplasmana %14 olasılık veriyor; beklenen gol 2.3 - 0.9. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-mk-dons-burton-albion",
@@ -361224,8 +361250,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %59, beraberliğe %23, deplasmana %18 olasılık veriyor; beklenen gol 2.0 - 1.0. 2 kaynağın tümü MS 1 diyor. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %59, beraberliğe %23, deplasmana %18 olasılık veriyor; beklenen gol 2.0 - 1.0. 2 kaynağın tümü MS 1 diyor. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-needham-banbury-utd",
@@ -362925,8 +362952,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %64, beraberliğe %21, deplasmana %15 olasılık veriyor; beklenen gol 2.1 - 0.9. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %64, beraberliğe %21, deplasmana %15 olasılık veriyor; beklenen gol 2.1 - 0.9. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-poole-town-taunton-town",
@@ -364640,8 +364668,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %51, beraberliğe %24, deplasmana %26 olasılık veriyor; beklenen gol 1.9 - 1.3. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %51, beraberliğe %24, deplasmana %26 olasılık veriyor; beklenen gol 1.9 - 1.3. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-port-vale-accrington",
@@ -366421,18 +366450,11 @@
     ]
    },
    "value": [],
-   "pick": {
-    "market": "U2.5",
-    "label": "2.5 Alt",
-    "p": 0.5839,
-    "odds": 1.5,
-    "is_value": false,
-    "blended": true,
-    "stars": 2
-   },
+   "pick": null,
    "value_note": "Kupa maçı – değer etiketi verilmez",
-   "comment": "Model ev sahibine %29, beraberliğe %32, deplasmana %39 olasılık veriyor; beklenen gol 0.9 - 1.1. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %29, beraberliğe %32, deplasmana %39 olasılık veriyor; beklenen gol 0.9 - 1.1. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-raal-la-louviere--w-standard-liege--w",
@@ -368202,8 +368224,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %47, beraberliğe %25, deplasmana %27 olasılık veriyor; beklenen gol 1.7 - 1.3. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %47, beraberliğe %25, deplasmana %27 olasılık veriyor; beklenen gol 1.7 - 1.3. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-radcliffe-marine",
@@ -369842,8 +369865,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %44, beraberliğe %26, deplasmana %30 olasılık veriyor; beklenen gol 1.6 - 1.3. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %44, beraberliğe %26, deplasmana %30 olasılık veriyor; beklenen gol 1.6 - 1.3. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-redcar-athletic-warrington-t",
@@ -371632,8 +371656,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %60, beraberliğe %21, deplasmana %19 olasılık veriyor; beklenen gol 2.2 - 1.1. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %60, beraberliğe %21, deplasmana %19 olasılık veriyor; beklenen gol 2.2 - 1.1. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-rochdale-york-city",
@@ -373459,8 +373484,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %20, beraberliğe %23, deplasmana %57 olasılık veriyor; beklenen gol 1.1 - 2.0. 2 kaynağın tümü KG Var diyor. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %20, beraberliğe %23, deplasmana %57 olasılık veriyor; beklenen gol 1.1 - 2.0. 2 kaynağın tümü KG Var diyor. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-rudar-jadran-dekani",
@@ -375151,8 +375177,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %49, beraberliğe %26, deplasmana %25 olasılık veriyor; beklenen gol 1.6 - 1.1. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %49, beraberliğe %26, deplasmana %25 olasılık veriyor; beklenen gol 1.6 - 1.1. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-s-wednesday-plymouth",
@@ -377003,8 +377030,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %42, beraberliğe %24, deplasmana %33 olasılık veriyor; beklenen gol 1.7 - 1.5. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %42, beraberliğe %24, deplasmana %33 olasılık veriyor; beklenen gol 1.7 - 1.5. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-salford-city-northampton",
@@ -378905,18 +378933,11 @@
     ]
    },
    "value": [],
-   "pick": {
-    "market": "1",
-    "label": "MS 1",
-    "p": 0.6226,
-    "odds": 1.43,
-    "is_value": false,
-    "blended": true,
-    "stars": 2
-   },
+   "pick": null,
    "value_note": "Kupa maçı – değer etiketi verilmez",
-   "comment": "Model ev sahibine %67, beraberliğe %21, deplasmana %12 olasılık veriyor; beklenen gol 2.0 - 0.7. 3 kaynağın tümü MS 1 diyor. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %67, beraberliğe %21, deplasmana %12 olasılık veriyor; beklenen gol 2.0 - 0.7. 3 kaynağın tümü MS 1 diyor. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-scunthorpe-worthing",
@@ -380847,8 +380868,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %44, beraberliğe %23, deplasmana %33 olasılık veriyor; beklenen gol 1.9 - 1.6. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %44, beraberliğe %23, deplasmana %33 olasılık veriyor; beklenen gol 1.9 - 1.6. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-shrewsbury-oldham",
@@ -382713,18 +382735,11 @@
     ]
    },
    "value": [],
-   "pick": {
-    "market": "U2.5",
-    "label": "2.5 Alt",
-    "p": 0.5307,
-    "odds": 1.6,
-    "is_value": false,
-    "blended": true,
-    "stars": 2
-   },
+   "pick": null,
    "value_note": "Kupa maçı – değer etiketi verilmez",
-   "comment": "Model ev sahibine %22, beraberliğe %28, deplasmana %51 olasılık veriyor; beklenen gol 0.9 - 1.4. 2 kaynağın tümü 2.5 Alt diyor. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %22, beraberliğe %28, deplasmana %51 olasılık veriyor; beklenen gol 0.9 - 1.4. 2 kaynağın tümü 2.5 Alt diyor. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-southend-aldershot",
@@ -384735,8 +384750,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %71, beraberliğe %17, deplasmana %12 olasılık veriyor; beklenen gol 2.6 - 1.0. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %71, beraberliğe %17, deplasmana %12 olasılık veriyor; beklenen gol 2.6 - 1.0. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-stevenage-mansfield",
@@ -386538,18 +386554,11 @@
     ]
    },
    "value": [],
-   "pick": {
-    "market": "U2.5",
-    "label": "2.5 Alt",
-    "p": 0.566,
-    "odds": 1.52,
-    "is_value": false,
-    "blended": true,
-    "stars": 2
-   },
+   "pick": null,
    "value_note": "Kupa maçı – değer etiketi verilmez",
-   "comment": "Model ev sahibine %39, beraberliğe %31, deplasmana %30 olasılık veriyor; beklenen gol 1.2 - 1.0. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %39, beraberliğe %31, deplasmana %30 olasılık veriyor; beklenen gol 1.2 - 1.0. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-stirling-alb-elgin-city",
@@ -388328,8 +388337,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %28, beraberliğe %24, deplasmana %48 olasılık veriyor; beklenen gol 1.3 - 1.8. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %28, beraberliğe %24, deplasmana %48 olasılık veriyor; beklenen gol 1.3 - 1.8. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-stockport-reading",
@@ -390323,18 +390333,11 @@
     ]
    },
    "value": [],
-   "pick": {
-    "market": "BTTS_Y",
-    "label": "KG Var",
-    "p": 0.5983,
-    "odds": 1.37,
-    "is_value": false,
-    "blended": true,
-    "stars": 2
-   },
+   "pick": null,
    "value_note": "Kupa maçı – değer etiketi verilmez",
-   "comment": "Model ev sahibine %47, beraberliğe %26, deplasmana %27 olasılık veriyor; beklenen gol 1.6 - 1.1. 3 kaynağın tümü MS 1 diyor. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %47, beraberliğe %26, deplasmana %27 olasılık veriyor; beklenen gol 1.6 - 1.1. 3 kaynağın tümü MS 1 diyor. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-sutton-utd-solihull-moors",
@@ -392261,8 +392264,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %49, beraberliğe %25, deplasmana %26 olasılık veriyor; beklenen gol 1.8 - 1.2. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %49, beraberliğe %25, deplasmana %26 olasılık veriyor; beklenen gol 1.8 - 1.2. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-swindon-town-grimsby-town",
@@ -394101,18 +394105,11 @@
     ]
    },
    "value": [],
-   "pick": {
-    "market": "BTTS_Y",
-    "label": "KG Var",
-    "p": 0.618,
-    "odds": 1.34,
-    "is_value": false,
-    "blended": true,
-    "stars": 2
-   },
+   "pick": null,
    "value_note": "Kupa maçı – değer etiketi verilmez",
-   "comment": "Model ev sahibine %40, beraberliğe %25, deplasmana %35 olasılık veriyor; beklenen gol 1.5 - 1.4. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %40, beraberliğe %25, deplasmana %35 olasılık veriyor; beklenen gol 1.5 - 1.4. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-tottenham--w-everton--w",
@@ -395941,8 +395938,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %69, beraberliğe %18, deplasmana %13 olasılık veriyor; beklenen gol 2.3 - 0.9. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %69, beraberliğe %18, deplasmana %13 olasılık veriyor; beklenen gol 2.3 - 0.9. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-uni-salamanca--b-arandina",
@@ -397483,8 +397481,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %40, beraberliğe %29, deplasmana %31 olasılık veriyor; beklenen gol 1.2 - 1.1. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %40, beraberliğe %29, deplasmana %31 olasılık veriyor; beklenen gol 1.2 - 1.1. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-walsall-barnet",
@@ -399403,18 +399402,11 @@
     ]
    },
    "value": [],
-   "pick": {
-    "market": "BTTS_Y",
-    "label": "KG Var",
-    "p": 0.6204,
-    "odds": 1.34,
-    "is_value": false,
-    "blended": true,
-    "stars": 2
-   },
+   "pick": null,
    "value_note": "Kupa maçı – değer etiketi verilmez",
-   "comment": "Model ev sahibine %40, beraberliğe %25, deplasmana %35 olasılık veriyor; beklenen gol 1.5 - 1.4. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %40, beraberliğe %25, deplasmana %35 olasılık veriyor; beklenen gol 1.5 - 1.4. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-warrington-rylands-1906-whitby-town",
@@ -401153,8 +401145,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %68, beraberliğe %19, deplasmana %13 olasılık veriyor; beklenen gol 2.3 - 0.9. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %68, beraberliğe %19, deplasmana %13 olasılık veriyor; beklenen gol 2.3 - 0.9. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-welling-utd-three-bridges",
@@ -402962,8 +402955,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %74, beraberliğe %17, deplasmana %9 olasılık veriyor; beklenen gol 2.5 - 0.8. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %74, beraberliğe %17, deplasmana %9 olasılık veriyor; beklenen gol 2.5 - 0.8. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-wigan-ath-barnsley",
@@ -404770,8 +404764,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %43, beraberliğe %25, deplasmana %33 olasılık veriyor; beklenen gol 1.7 - 1.5. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %43, beraberliğe %25, deplasmana %33 olasılık veriyor; beklenen gol 1.7 - 1.5. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-wimbledon-blackpool",
@@ -406689,18 +406684,11 @@
     ]
    },
    "value": [],
-   "pick": {
-    "market": "BTTS_Y",
-    "label": "KG Var",
-    "p": 0.5766,
-    "odds": 1.4,
-    "is_value": false,
-    "blended": true,
-    "stars": 2
-   },
+   "pick": null,
    "value_note": "Kupa maçı – değer etiketi verilmez",
-   "comment": "Model ev sahibine %30, beraberliğe %27, deplasmana %43 olasılık veriyor; beklenen gol 1.1 - 1.4. 3 kaynağın tümü MS 2 diyor. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %30, beraberliğe %27, deplasmana %43 olasılık veriyor; beklenen gol 1.1 - 1.4. 3 kaynağın tümü MS 2 diyor. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-wycombe-huddersfield",
@@ -408674,18 +408662,11 @@
     ]
    },
    "value": [],
-   "pick": {
-    "market": "BTTS_Y",
-    "label": "KG Var",
-    "p": 0.6091,
-    "odds": 1.38,
-    "is_value": false,
-    "blended": true,
-    "stars": 2
-   },
+   "pick": null,
    "value_note": "Kupa maçı – değer etiketi verilmez",
-   "comment": "Model ev sahibine %41, beraberliğe %25, deplasmana %34 olasılık veriyor; beklenen gol 1.6 - 1.4. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %41, beraberliğe %25, deplasmana %34 olasılık veriyor; beklenen gol 1.6 - 1.4. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-yeovil-town-boreham-wood",
@@ -410661,8 +410642,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %20, beraberliğe %20, deplasmana %60 olasılık veriyor; beklenen gol 1.2 - 2.2. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %20, beraberliğe %20, deplasmana %60 olasılık veriyor; beklenen gol 1.2 - 2.2. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-gurcistan-macaristan",
@@ -412308,8 +412290,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %29, beraberliğe %32, deplasmana %39 olasılık veriyor; beklenen gol 1.0 - 1.2. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %29, beraberliğe %32, deplasmana %39 olasılık veriyor; beklenen gol 1.0 - 1.2. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-norvec-galler",
@@ -414235,8 +414218,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %83, beraberliğe %11, deplasmana %6 olasılık veriyor; beklenen gol 2.9 - 0.7. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %83, beraberliğe %11, deplasmana %6 olasılık veriyor; beklenen gol 2.9 - 0.7. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-avusturya-irlanda",
@@ -416144,8 +416128,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %63, beraberliğe %23, deplasmana %13 olasılık veriyor; beklenen gol 2.0 - 0.8. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %63, beraberliğe %23, deplasmana %13 olasılık veriyor; beklenen gol 2.0 - 0.8. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-kuzey-irlanda-ukrayna",
@@ -417821,8 +417806,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %41, beraberliğe %31, deplasmana %28 olasılık veriyor; beklenen gol 1.2 - 0.9. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %41, beraberliğe %31, deplasmana %28 olasılık veriyor; beklenen gol 1.2 - 0.9. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-portekiz-danimarka",
@@ -419905,8 +419891,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %66, beraberliğe %20, deplasmana %14 olasılık veriyor; beklenen gol 2.3 - 1.0. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %66, beraberliğe %20, deplasmana %14 olasılık veriyor; beklenen gol 2.3 - 1.0. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-romanya-polonya",
@@ -421663,8 +421650,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %23, beraberliğe %25, deplasmana %53 olasılık veriyor; beklenen gol 1.1 - 1.8. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %23, beraberliğe %25, deplasmana %53 olasılık veriyor; beklenen gol 1.1 - 1.8. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-isvec-bosna-hersek",
@@ -423566,8 +423554,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %65, beraberliğe %21, deplasmana %14 olasılık veriyor; beklenen gol 2.2 - 0.9. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %65, beraberliğe %21, deplasmana %14 olasılık veriyor; beklenen gol 2.2 - 0.9. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-millonarios-alianza-valledupar",
@@ -425279,8 +425268,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %77, beraberliğe %16, deplasmana %7 olasılık veriyor; beklenen gol 2.3 - 0.6. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %77, beraberliğe %16, deplasmana %7 olasılık veriyor; beklenen gol 2.3 - 0.6. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   },
   {
    "id": "20261114-r-aguilas-i-medellin",
@@ -426873,8 +426863,9 @@
    "value": [],
    "pick": null,
    "value_note": "Değer yok",
-   "comment": "Model ev sahibine %38, beraberliğe %29, deplasmana %33 olasılık veriyor; beklenen gol 1.4 - 1.3. Oranlarla karşılaştırıldığında belirgin bir değer görünmüyor.",
-   "comment_source": "kural"
+   "comment": "Model ev sahibine %38, beraberliğe %29, deplasmana %33 olasılık veriyor; beklenen gol 1.4 - 1.3. OZBET tercihi yok (keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)).",
+   "comment_source": "kural",
+   "pick_note": "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
   }
  ],
  "standings": {
