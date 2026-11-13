@@ -42,6 +42,10 @@ MODEL_WEIGHT = float(os.environ.get("OZBET_MODEL_WEIGHT", "0.25"))
 # Tercih artık "en yüksek olasılık" değil, oran bandı içinde en yüksek beklenen değer (EV = p·oran − 1).
 # Bant: 1.60 altı oran asla tercih olmaz (düşük oran kovalamayı keser); 3.50 üstü iddaa'da en pahalı bölge
 # (favori–sürpriz yanlılığı, docs/research/roi-piyasa.md S3). Kâr vaadi değildir: iddaa marjı ~%19.
+# Tercih kipi: "sinyal" (varsayılan) = yalnız gerçek iddaa oranı keskin uluslararası piyasanın adil değerinin üzerindeyse
+# tercih verilir, yoksa "Pas"; "ev" = oran bandında beklenen değeri en yüksek market (pick_replay'de 138 maçta
+# isabet %42,8 / ROI −%20,4 çıktığı için varsayılan değil).
+PICK_MODE = os.environ.get("OZBET_PICK_MODE", "sinyal")
 PICK_MIN_ODDS = float(os.environ.get("OZBET_PICK_MIN_ODDS", "1.60"))
 PICK_MAX_ODDS = float(os.environ.get("OZBET_PICK_MAX_ODDS", "3.50"))
 # En iyi adayın EV'si bunun altındaysa "Pas". −0.06: ortalama marj kaybından (≈ −0.15) belirgin iyi olan seçimler.

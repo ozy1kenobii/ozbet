@@ -96,7 +96,10 @@ def test_card_model_referee_effect():
     assert counts.fit(rows[:50], ref, 0.0, "cards") is None   # az veri → model yok
 
 
-def test_implied_and_value_cover_extra_markets(sim):
+def test_implied_and_value_cover_extra_markets(sim, monkeypatch):
+    # değer mantığı ham harmanla sınanır; kalibrasyon modülü ayrı test edilir
+    from ozbet.agents import value as _v
+    monkeypatch.setattr(_v, "_cal", None)
     model = {**sim, "corners": {"probs": {"C_O9.5": 0.6, "C_U9.5": 0.4}}}
     odds = {"1": 1.9, "X": 3.4, "2": 4.0, "HT_1": 2.6, "HT_X": 2.1, "HT_2": 4.6, "ODD": 1.85, "EVEN": 1.85,
             "C_O9.5": 1.85, "C_U9.5": 1.85}

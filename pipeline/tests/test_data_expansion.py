@@ -297,7 +297,7 @@ def test_run_with_elo_and_archive(tmp_path, monkeypatch):
     assert cup["elo"] == {"home": 1796, "away": 1990, "source": "clubelo", "date": "2026-11-05"}
     assert cup["model"]["method"] == "elo" and cup["model"]["data_quality"] == "medium"
     assert run.CUP_FLAG_ELO in cup["flags"] and cup["value"] == []
-    assert cup["value_note"] == "Kupa maçı – değer etiketi verilmez" and cup["pick"]["stars"] <= 2
+    assert cup["value_note"] == "Kupa maçı – değer etiketi verilmez" and (cup["pick"] is None or cup["pick"]["stars"] <= 2)
     lg = ms["501"]
     assert lg["elo"]["home"] == 1760 and lg["model"]["method"] == "league"
     assert not any(f.startswith("Kupa") for f in lg["flags"])

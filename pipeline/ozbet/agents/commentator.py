@@ -26,6 +26,8 @@ PICK_MARKETS = PICK_SINGLES + PICK_COMBOS
 BANNED = ("kesin", "banko", "garanti")
 NOTE_NO_MODEL = "Pas: model olasılığı yok"
 NOTE_NO_ODDS = "Pas: iddaa oranı yok, beklenen değer hesaplanamadı"
+NOTE_NO_SHARP = "Pas: keskin piyasa karşılaştırması yok (lig kapsam dışı ya da oran eşleşmedi)"
+NOTE_NO_SIGNAL = "Pas: iddaa oranı keskin piyasanın adil değerinin üzerinde değil"
 NOTE_NO_EV = "Pas: oran bandında beklenen değeri yeterli seçim yok"
 
 try:   # lig güven katmanı (A = güvenilir veri, C = zayıf); modül yoksa "B"
@@ -83,6 +85,8 @@ def choose_pick(m: dict, trust: dict[str, float] | None = None) -> dict | None:
     EV farkı PICK_EV_TIE'dan küçük adaylarda olasılığı yüksek olan seçilir. En iyi EV < PICK_MIN_EV ise tercih
     yoktur (None) ve m["pick_note"] nedenini söyler — "pas" geçerli ve dürüst bir çıktıdır."""
     m.pop("pick_note", None)
+    if config.PICK_MODE == "sinyal":
+        return signal_pick(m)
     model = m.get("model")
     if not model or model.get("source") == "piyasa":
         m["pick_note"] = NOTE_NO_MODEL
@@ -104,9 +108,37 @@ def choose_pick(m: dict, trust: dict[str, float] | None = None) -> dict | None:
             "kind": "deger" if ev > 0 else "denge", "blended": True}
 
 
+def signal_pick(m: dict) -> dict | None:
+    """Sinyal kipi: tercih yalnız Keskin Fark ajanı (sharp_edge) pozitif fark bulduysa verilir — gerçek iddaa oranı ×
+    keskin piyasanın marjsız olasılığı > 1. Olasılık keskin piyasanın adil olasılığıdır, model harmanı değil.
+    Bu bir hipotezdir (docs/research/keskin-fark.md); karne n ≥ 300 olana dek yorumlanmaz."""
+    sharp = m.get("sharp")
+    if not sharp:
+        m["pick_note"] = NOTE_NO_ODDS if not m.get("odds") else NOTE_NO_SHARP
+        return None
+    best = sharp.get("best")
+    if not best or not (config.PICK_MIN_ODDS <= best["odds"] <= config.PICK_MAX_ODDS) or best["fair_p"] <= 0:
+        m["pick_note"] = NOTE_NO_SIGNAL
+        return None
+    k = best["market"]
+    return {"market": k, "label": ALL_LABELS[k], "p": round(best["fair_p"], 4), "odds": best["odds"],
+            "ev": round(best["edge"], 4), "fair_odds": round(1 / best["fair_p"], 2), "is_value": True,
+            "kind": "deger", "blended": False, "basis": "keskin", "sharp_source": sharp.get("source")}
+
+
+def signal_stars(pick: dict) -> int:
+    """Sinyal tercihinde yıldız: fark büyüklüğü ve referansın keskinliği (Pinnacle > Betfair > ortalama)."""
+    e = pick.get("ev") or 0.0
+    s = 4 if e >= 0.05 else 3 if e >= 0.03 else 2
+    s += {"pinnacle": 1, "avg": -1}.get(pick.get("sharp_source"), 0)
+    return max(1, min(5, s))
+
+
 def stars(m: dict, pick: dict, trust: dict[str, float]) -> int:
     """Güven yıldızı: ham olasılığa değil, beklenen değere ve piyasaya karşı olasılık payına dayanır;
     düşük oranlı favori sırf olasılığı yüksek diye yıldız toplamaz."""
+    if pick.get("basis") == "keskin":
+        return signal_stars(pick)
     score = 0.0
     ev = pick.get("ev")
     if ev is None:   # eski şema (ev alanı yok): orandan hesapla
@@ -144,6 +176,10 @@ def pick_sentence(m: dict) -> str | None:
         return f"OZBET tercihi yok ({note[5:] if note.startswith('Pas: ') else note})." if note else None
     s = (f"OZBET tercihi {pk['label']} ({pk['odds']:.2f} oran): hesaplanan olasılık {pct(pk['p'])}, "
          f"adil oran {pk['fair_odds']:.2f}, beklenen değer {pk['ev'] * 100:+.0f}%")
+    if pk.get("basis") == "keskin":
+        return (f"OZBET tercihi {pk['label']} ({pk['odds']:.2f} oran): uluslararası keskin piyasaya göre adil oran "
+                f"{pk['fair_odds']:.2f} (olasılık {pct(pk['p'])}), fark {pk['ev'] * 100:+.1f}% – iddaa oranı adil değerin "
+                f"üzerinde görünüyor; bu bir hipotezdir, sonuç olasılıksaldır.")
     if pk.get("kind") == "deger":
         return s + " – oran adil değerin üzerinde görünüyor, yine de sonuç olasılıksaldır."
     return s + " – oran adil değerin altında; bantta marj kaybı en düşük seçenek, kâr beklentisi değil."

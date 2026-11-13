@@ -8,6 +8,12 @@ SCHEMA = {"market", "label", "p", "odds", "ev", "fair_odds", "stars", "is_value"
 
 
 @pytest.fixture(autouse=True)
+def _ev_mode(monkeypatch):
+    # bu dosyadaki EV-seçici testleri "ev" kipini sınar; sinyal kipi testleri kendi içinde değiştirir
+    monkeypatch.setattr(config, "PICK_MODE", "ev")
+
+
+@pytest.fixture(autouse=True)
 def plain_blend(monkeypatch):
     """Kalibrasyon/lig profili modülleri olsa da olmasa da testler MODEL_WEIGHT harmanıyla (α=1) koşar."""
     monkeypatch.setattr(value, "_cal", None)
@@ -167,3 +173,36 @@ def test_replay_script_runs_on_tmp_data(tmp_path):
     out = pick_replay.replay(tmp_path)
     assert out["matches"] == 1 and out["old"]["all"]["n"] == 1 and out["new"]["all"]["n"] == 1
     assert out["old"]["by_market"]["1"]["hit"] == 1.0 and out["new"]["by_market"]["O2.5"]["roi"] == pytest.approx(0.8)
+
+
+# --- sinyal kipi (varsayılan): tercih yalnız keskin piyasa farkı pozitifse ---
+def _sig_match(best=None, sharp=True):
+    m = {"odds": {"1": 2.10, "X": 3.3, "2": 3.4}, "league": "TR1", "league_name": "Süper Lig", "flags": [],
+         "home": {"name": "A"}, "away": {"name": "B"}}
+    if sharp:
+        m["sharp"] = {"source": "betfair", "fair": {"1": 0.49}, "edge": {"1": 0.03}, "best": best}
+    return m
+
+
+def test_signal_mode_picks_only_on_sharp_edge(monkeypatch):
+    from ozbet import config
+    from ozbet.agents import commentator
+    monkeypatch.setattr(config, "PICK_MODE", "sinyal")
+    m = _sig_match({"market": "1", "edge": 0.03, "odds": 2.10, "fair_p": 0.49})
+    pk = commentator.choose_pick(m, {})
+    assert pk["market"] == "1" and pk["basis"] == "keskin" and pk["kind"] == "deger" and pk["ev"] == 0.03
+    assert commentator.stars(m, pk, {}) == 3
+    m2 = _sig_match(None)
+    assert commentator.choose_pick(m2, {}) is None and m2["pick_note"] == commentator.NOTE_NO_SIGNAL
+    m3 = _sig_match(sharp=False)
+    assert commentator.choose_pick(m3, {}) is None and m3["pick_note"] == commentator.NOTE_NO_SHARP
+
+
+def test_signal_mode_respects_odds_floor(monkeypatch):
+    from ozbet import config
+    from ozbet.agents import commentator
+    monkeypatch.setattr(config, "PICK_MODE", "sinyal")
+    m = _sig_match({"market": "1", "edge": 0.03, "odds": 1.45, "fair_p": 0.71})
+    assert commentator.choose_pick(m, {}) is None
+    commentator.annotate(m, {}, use_llm=False)
+    assert m["pick"] is None and "kesin" not in m["comment"].lower()

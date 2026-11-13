@@ -70,7 +70,11 @@ def new_pick(m: dict) -> dict | None:
     cup = any(f.startswith(("Kupa/çapraz lig", "Kupa:")) for f in m.get("flags", []))
     m["value"] = [] if cup else value.find_value(all_probs(m["model"]), m.get("odds"),
                                                  (m.get("market") or {}).get("implied"), None, m.get("league"))
-    pk = commentator.choose_pick(m)
+    mode, config.PICK_MODE = config.PICK_MODE, "ev"   # replay "ev" (bant) kuralını ölçer; sinyal kipi geçmişte veri taşımaz
+    try:
+        pk = commentator.choose_pick(m)
+    finally:
+        config.PICK_MODE = mode
     if pk:
         pk["stars"] = commentator.stars(m, pk, {})
     return pk

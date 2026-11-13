@@ -101,7 +101,10 @@ def test_movement_drop_alarm():
     assert mv["1"] == pytest.approx(-0.0909, abs=1e-3) and al == ["1"]
 
 
-def test_value_threshold_and_trust():
+def test_value_threshold_and_trust(monkeypatch):
+    # değer mantığı ham harmanla sınanır; kalibrasyon modülü ayrı test edilir
+    from ozbet.agents import value as _v
+    monkeypatch.setattr(_v, "_cal", None)
     probs = {"1": 0.53, "X": 0.26, "2": 0.21}
     odds = {"1": 2.2, "X": 3.4, "2": 4.0}
     imp = market.implied(odds)["implied"]
@@ -218,6 +221,9 @@ def test_rho_bounds_keep_tau_positive():
 
 
 def test_value_blend_weight(monkeypatch):
+    # değer mantığı ham harmanla sınanır; kalibrasyon modülü ayrı test edilir
+    from ozbet.agents import value as _v
+    monkeypatch.setattr(_v, "_cal", None)
     monkeypatch.setattr(config, "MODEL_WEIGHT", 0.4)
     odds = {"1": 2.2, "X": 3.4, "2": 4.0}
     imp = market.implied(odds)["implied"]

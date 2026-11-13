@@ -169,3 +169,13 @@ diye lig başına **en çok satırı olan tek kaynağı** seçer. Ana ligler (fo
   Satır: `team,pos,o,g,b,m,ag,yg,av,p,form` (form en yeni başta). Sıralama puan > averaj > atılan gol. `updated` = tablodaki son maç tarihi (football-data gecikmesi).
 - Maç: `table = {home:{team,pos,pts,played}, away:{...}}`; `trends = [{team:"home|away|both", text, market, hits, n, p, odds}]`
   (≥5 maçta ≥%80 / ≤%20 ya da ≥4 maçlık seri; maç başına en fazla 6). Trend kartları geçmişi özetler, tahmin değildir.
+
+## v2 (13 Kasım 2026) – tercih kuralı ve yeni alanlar
+- **Tercih kipi** `config.PICK_MODE` (`OZBET_PICK_MODE`): varsayılan `sinyal` — tercih yalnız `m.sharp.best` varsa verilir
+  (gerçek iddaa oranı × keskin piyasanın marjsız olasılığı > 1, oran 1,60–3,50). Yoksa `pick = null` ve `pick_note` ("Pas: …").
+  `ev` kipi: oran bandında beklenen değeri en yüksek market (replay: 138 maç, isabet %42,8, ROI −%20,4 → varsayılan değil).
+- `pick`: `{market,label,p,odds,ev,fair_odds,stars,is_value,kind,blended,basis?,sharp_source?}`.
+- `m.sharp` (agents/sharp_edge.py, docs/research/keskin-fark.md), kalibre olasılık (model/calibration.py, docs/research/kalibrasyon.md),
+  lig kademesi (league_profile.py), toplam gol büzmesi (dixon_coles.shrink_total, docs/research/gol-yanliligi.md).
+- `scorecard.json`: `clv`, `by_odds_band`, `hit_ci`, `roi_ci`; güven katsayısı örneklem büyüklüğüne göre büzülür (agents/clv.py, scorecard.py).
+- Bilinen eksik: tercih oranı ilk yayınlandığı anda dondurulmuyor; CLV (tercih→kapanış) bu yüzden ≈0 çıkar, açılış→kapanış vekil olarak gösterilir.

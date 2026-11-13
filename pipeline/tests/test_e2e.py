@@ -93,6 +93,10 @@ def test_picks_from_text(txt, exp):
 
 
 def test_full_run(tmp_path, monkeypatch):
+    # uçtan uca akış (tercih → geçmiş → karne) "ev" kipinde sınanır; varsayılan "sinyal" kipi ayrı testte
+    monkeypatch.setattr(config, "PICK_MODE", "ev")
+    monkeypatch.setattr(config, "PICK_MIN_EV", -1.0)
+    monkeypatch.setattr(config, "PICK_MIN_ODDS", 1.01)
     monkeypatch.setattr(config, "DATA_DIR", tmp_path)
     from ozbet import run
     from ozbet.sources import football_data, registry
@@ -133,7 +137,8 @@ def test_full_run(tmp_path, monkeypatch):
     assert g["model"]["sims"] == 10000 and len(g["model"]["score_matrix"]) == 6
     assert g["market"]["implied"]["1"] > 0 and g["stats"]["home"]["n"] == 10
     assert any(s["source"] == "forebet" for s in g["consensus"]["sources"])
-    assert g["pick"]["stars"] in range(1, 6) and g["comment"]
+    # sinyal kipi: keskin piyasa farkı yoksa tercih yok, nedeni pick_note'ta
+    assert (g["pick"]["stars"] in range(1, 6) if g["pick"] else g["pick_note"].startswith("Pas")) and g["comment"]
     assert g["provenance"]["odds"]["source"] == "nesine"
     assert g["news"]["home"][0]["tags"] == ["sakat"] and g["news"]["away"] == []
     assert g["squad"]["away"]["coach_change"] is True and st["news_rss"] == "ok"

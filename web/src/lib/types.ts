@@ -139,6 +139,8 @@ export interface Pick {
   fair_odds?: number | null;
   /** "deger": beklenen değere göre seçildi · "denge": olasılık/oran dengesiyle seçildi */
   kind?: 'deger' | 'denge' | null;
+  basis?: 'keskin' | null;          // sinyal kipi: tercih keskin piyasa farkına dayanır
+  sharp_source?: 'pinnacle' | 'betfair' | 'avg' | null;
   /** p, model + piyasa harmanı */
   blended?: boolean;
 }
