@@ -130,7 +130,7 @@ function teamStats(base) {
 }
 
 function match(date, spec) {
-  const { lg, h, a, time, lh, la, code = null, mbs = 1, noOdds, noModel, noSquad, finished, quality = 'high', alarm, flags = [], lowStats, boost, noSim, news } = spec;
+  const { lg, h, a, time, lh, la, code = null, mbs = 1, noOdds, noModel, noSquad, finished, quality = 'high', alarm, flags = [], lowStats, boost, noSim, news, pas, sharp, signal } = spec;
   const kickoff = `${date}T${time}:00+03:00`;
   const md = noModel ? null : model(lh, la, quality);
   if (md && !noSim) md.sample_runs = sampleRuns(`${lg}-${date.replace(/-/g, '')}-${slug(h)}-${slug(a)}`, lh, la);
@@ -152,13 +152,31 @@ function match(date, spec) {
     }
     value.sort((x, y) => y.edge - x.edge); value = value.slice(0, 2);
   }
-  let pick = null;
-  if (md) {
-    const cand = value[0]?.market ?? ['1X', 'O1.5', 'X2', 'BTTS_Y', 'O2.5', 'U2.5'].sort((x, y) => md.probs[y] - md.probs[x])[0];
-    const pp = md.probs[cand];
-    const stars = Math.max(1, Math.min(5, Math.round((pp - 0.45) * 10 + (value.length ? 2 : 0) - (quality === 'low' ? 2 : 0))));
-    const LBL = { '1': 'MS 1', X: 'MS X', '2': 'MS 2', '1X': 'ÇŞ 1X', X2: 'ÇŞ X2', '12': 'ÇŞ 12', 'O1.5': '1.5 Üst', 'U1.5': '1.5 Alt', 'O2.5': '2.5 Üst', 'U2.5': '2.5 Alt', 'O3.5': '3.5 Üst', 'U3.5': '3.5 Alt', BTTS_Y: 'KG Var', BTTS_N: 'KG Yok' };
-    pick = { market: cand, label: LBL[cand], p: pp, odds: odds?.[cand] ?? null, stars, is_value: value.some((v) => v.market === cand) };
+  // Tercih: oran bandı (1,60–3,50) içinde beklenen değeri en yüksek seçenek; yoksa Pas.
+  const LBL = { '1': 'MS 1', X: 'MS X', '2': 'MS 2', '1X': 'ÇŞ 1X', X2: 'ÇŞ X2', '12': 'ÇŞ 12', 'O1.5': '1.5 Üst', 'U1.5': '1.5 Alt', 'O2.5': '2.5 Üst', 'U2.5': '2.5 Alt', 'O3.5': '3.5 Üst', 'U3.5': '3.5 Alt', BTTS_Y: 'KG Var', BTTS_N: 'KG Yok' };
+  const SHOWN = ['1', 'X', '2', 'O2.5', 'U2.5', 'BTTS_Y', 'BTTS_N', 'O1.5', 'U1.5', 'O3.5', 'U3.5'];
+  let pick = null, pickNote = null;
+  if (md && !odds) pickNote = 'Pas: bu maç için iddaa oranı yok, beklenen değer hesaplanamadı.';
+  else if (md) {
+    const cands = SHOWN.filter((k) => odds[k] >= 1.6 && odds[k] <= 3.5)
+      .map((k) => ({ k, ev: md.probs[k] * odds[k] - 1 })).sort((x, y) => y.ev - x.ev);
+    const best = cands[0];
+    if (pas || !best || best.ev < 0.005) {
+      pickNote = `Pas: 1,60–3,50 oran bandında beklenen değeri pozitif seçenek yok${best ? ` (en iyisi ${LBL[best.k]}, ${best.ev < 0 ? '−' : '+'}%${Math.abs(best.ev * 100).toFixed(1).replace('.', ',')})` : ''}.`;
+    } else {
+      const pp = md.probs[best.k];
+      const stars = Math.max(1, Math.min(5, Math.round(1 + best.ev * 25 - (quality === 'low' ? 1 : 0))));
+      pick = { market: best.k, label: LBL[best.k], p: pp, odds: odds[best.k], ev: r2(best.ev, 3), fair_odds: r2(1 / pp), stars,
+        is_value: value.some((v) => v.market === best.k), kind: best.ev >= 0.05 ? 'deger' : 'denge', blended: true };
+    }
+  }
+  // Keskin piyasa kıyası (örnek): model olasılıklarına yakın uydurma "adil" olasılıklar
+  let sharpObj = null;
+  if (sharp && odds && md) {
+    const fair = {}, edge = {};
+    for (const k of ['1', 'X', '2', 'O2.5', 'U2.5', 'BTTS_Y', 'BTTS_N']) { fair[k] = r2(md.probs[k] * 0.97 + 0.01, 3); edge[k] = r2(fair[k] * odds[k] - 1, 3); }
+    const bk = Object.keys(edge).sort((x, y) => edge[y] - edge[x])[0];
+    sharpObj = { source: sharp, fair, edge, best: edge[bk] > 0.02 ? { market: bk, edge: edge[bk], odds: odds[bk], fair_p: fair[bk] } : null, fetched_at: `${date}T18:20:00+03:00` };
   }
   const f = [...flags];
   if (!odds) f.push('Oran yok');
@@ -187,11 +205,14 @@ function match(date, spec) {
       home: { missing: [{ name: 'Örnek Oyuncu A', reason: 'sakat', key: true }, { name: 'Örnek Oyuncu B', reason: 'şüpheli', key: false }], rotation_risk: lg === 'UCL', coach_change: false, adjustment: -0.04 },
       away: { missing: [{ name: 'Örnek Oyuncu C', reason: 'cezalı', key: false }], rotation_risk: false, coach_change: false, adjustment: 0.0 },
       source: 'flashscore', fetched_at: t,
+      ...(signal ? { signal } : {}),
     },
     ...(news ? { news: sampleNews(date, news) } : {}),
     consensus: md ? { sources: cs, summary: [{ market: 'BTTS_Y', agree: agreeB, total: 5, text: `5 kaynaktan ${agreeB}${SUF[agreeB]} KG Var diyor` }] } : null,
     value, ...(value.length ? {} : { value_note: 'Değer yok' }),
     pick,
+    ...(pickNote ? { pick_note: pickNote } : {}),
+    ...(sharpObj ? { sharp: sharpObj } : {}),
     comment: md ? `ÖRNEK VERİ. ${h} iç sahada son maçlarında üretken; model ev sahibi için ${(md.lambda_home).toFixed(2)}, ${a} için ${(md.lambda_away).toFixed(2)} gol beklentisi hesaplıyor. Piyasa ile model arasındaki en büyük fark ${value[0] ? value[0].market + ' marketinde' : 'anlamlı düzeyde değil'}. Kadro eksikleri λ değerine küçük bir düzeltme olarak yansıtıldı. Bu bir olasılık tahminidir; sürpriz her zaman mümkündür.` : null,
     comment_source: md ? 'kural' : null,
     flags: f,
@@ -227,21 +248,23 @@ const sources = (date) => [
 ];
 
 const today = [
-  { lg: 'TR1', h: 'Galatasaray', a: 'Fenerbahçe', time: '20:00', lh: 1.62, la: 1.08, code: '1234', mbs: 1, alarm: true, boost: 'BTTS_Y',
+  { lg: 'TR1', h: 'Galatasaray', a: 'Fenerbahçe', time: '20:00', lh: 1.62, la: 1.08, code: '1234', mbs: 1, alarm: true, boost: 'BTTS_Y', sharp: 'pinnacle',
+    signal: { strength: 'güçlü', fresh: true, side: 'home', text: 'ÖRNEK: Ev sahibinin golcüsü son antrenmanda sakatlandı (5 saat önce); oranlar henüz tam yansıtmamış olabilir.' },
     news: {
       home: [['Ev sahibinde golcü antrenmanda sakatlandı', 'A Spor', 5, ['sakat']], ['Derbi öncesi son çalışma tamamlandı', 'NTV Spor', 9, []], ['Orta saha oyuncusu kırmızı kart cezası nedeniyle yok', 'Fotomaç', 30, ['ceza']]],
       away: [['Teknik direktör görevine yeni isim getirildi', 'AA', 40, ['td']], ['Kadroya alınmayan iki oyuncu derbide yok', 'TRT Haber', 20, ['kadro']]],
     } },
-  { lg: 'TR1', h: 'Trabzonspor', a: 'Başakşehir', time: '17:00', lh: 1.45, la: 1.05, code: '1235', mbs: 1 },
+  { lg: 'TR1', h: 'Trabzonspor', a: 'Başakşehir', time: '17:00', lh: 1.45, la: 1.05, code: '1235', mbs: 1, pas: true },
   { lg: 'TR1', h: 'Samsunspor', a: 'Kasımpaşa', time: '14:30', lh: 1.3, la: 1.2, code: '1236', mbs: 2, finished: { ft: [2, 1], ht: [1, 0] } },
   { lg: 'TR2', h: 'Erzurumspor', a: 'Bandırmaspor', time: '13:30', lh: 1.25, la: 0.95, code: '1240', mbs: 3, noOdds: true, noSquad: true, quality: 'low', lowStats: true, noSim: true },
   { lg: 'TR2', h: 'Iğdır FK', a: 'Ankara Keçiörengücü', time: '16:00', lh: 1.1, la: 1.0, code: null, mbs: null, noModel: true, noOdds: true, noSquad: true, lowStats: true, flags: ['Düşük veri'] },
-  { lg: 'UCL', h: 'Real Madrid', a: 'Liverpool', time: '23:00', lh: 1.55, la: 1.45, code: '1301', mbs: 1, boost: ['O2.5', 'BTTS_Y'],
+  { lg: 'UCL', h: 'Real Madrid', a: 'Liverpool', time: '23:00', lh: 1.55, la: 1.45, code: '1301', mbs: 1, boost: ['O2.5', 'BTTS_Y'], sharp: 'betfair',
+    signal: { strength: 'zayıf', fresh: false, side: 'away', text: 'ÖRNEK: Deplasmanda bir savunmacı yok; haber dünden, oranlara yansımış olmalı.' },
     news: { away: [['Defender ruled out with hamstring injury', 'Sky Sports', 12, ['sakat']], ['Rotation expected before weekend fixture', 'ESPN', 26, ['kadro']]] } },
   { lg: 'UCL', h: 'Bayern München', a: 'Paris Saint-Germain', time: '23:00', lh: 1.75, la: 1.35, code: '1302', mbs: 1 },
   { lg: 'UCL', h: 'Inter', a: 'Benfica', time: '23:00', lh: 1.6, la: 0.95, code: '1303', mbs: 1, noSquad: true },
   { lg: 'UCL', h: 'Club Brugge', a: 'Galatasaray', time: '20:45', lh: 1.35, la: 1.25, code: '1300', mbs: 1 },
-  { lg: 'ENG1', h: 'Arsenal', a: 'Chelsea', time: '22:00', lh: 1.7, la: 1.1, code: '1401', mbs: 1, boost: '1',
+  { lg: 'ENG1', h: 'Arsenal', a: 'Chelsea', time: '22:00', lh: 1.7, la: 1.1, code: '1401', mbs: 1, boost: '1', sharp: 'avg',
     news: { home: [['Club confirms new loan signing', 'ESPN', 15, ['transfer']]] } },
   { lg: 'ENG1', h: 'Brentford', a: 'Everton', time: '22:00', lh: 1.4, la: 1.15, code: '1402', mbs: 2, noOdds: true },
   { lg: 'ESP1', h: 'Real Betis', a: 'Sevilla', time: '22:00', lh: 1.4, la: 1.1, code: '1501', mbs: 1, boost: 'U2.5' },
@@ -272,7 +295,7 @@ for (let i = 0; i < 30; i++) {
 }
 write('scorecard.json', {
   generated_at: `${D}T18:33:05+03:00`,
-  overall: { n: 120, hit_rate: 0.54, brier_1x2: 0.198, roi: 0.031, staked: 120, profit: 3.7 },
+  overall: { n: 120, hit_rate: 0.54, brier_1x2: 0.198, roi: 0.031, staked: 120, profit: 3.7, roi_ci: [-0.142, 0.204] },
   last30: { n: 41, hit_rate: 0.56, brier_1x2: 0.193, roi: r2((bal - 100) / 41, 3), staked: 41, profit: r2(bal - 100, 1) },
   by_league: [
     { league: 'TR1', name: 'Süper Lig', n: 40, hit_rate: 0.55, roi: 0.02 },
@@ -293,12 +316,26 @@ write('scorecard.json', {
     { bin: '0.5-0.6', predicted: 0.55, observed: 0.53, n: 44 }, { bin: '0.6-0.7', predicted: 0.65, observed: 0.68, n: 26 },
     { bin: '0.7-0.8', predicted: 0.74, observed: 0.70, n: 10 },
   ],
+  by_odds_band: [
+    { band: '1,01–1,59', n: 46, hit_rate: 0.72, avg_p: 0.74, avg_odds: 1.31, roi: -0.057 },
+    { band: '1,60–1,99', n: 38, hit_rate: 0.5, avg_p: 0.55, avg_odds: 1.78, roi: -0.11 },
+    { band: '2,00–2,49', n: 24, hit_rate: 0.458, avg_p: 0.46, avg_odds: 2.21, roi: 0.012 },
+    { band: '2,50–3,50', n: 12, hit_rate: 0.417, avg_p: 0.38, avg_odds: 2.86, roi: 0.193 },
+  ],
+  clv: {
+    n: 36, avg_clv: 0.012, avg_clv_raw: -0.021, beat_close_rate: 0.56,
+    by_market: [
+      { market: 'O2.5', label: '2.5 Üst', n: 14, avg_clv: 0.021 },
+      { market: 'BTTS_Y', label: 'KG Var', n: 12, avg_clv: 0.008 },
+      { market: '1', label: 'MS 1', n: 10, avg_clv: 0.003 },
+    ],
+  },
   bankroll,
   recent: [
-    { date: D0, match: 'Beşiktaş - Göztepe', pick: '2.5 Üst', odds: 1.72, won: true, score: '3-1' },
-    { date: D0, match: 'Manchester City - Tottenham', pick: 'MS 1', odds: 1.55, won: false, score: '1-1' },
+    { date: D0, match: 'Beşiktaş - Göztepe', pick: '2.5 Üst', odds: 1.72, won: true, score: '3-1', ev: 0.046, clv: 0.031 },
+    { date: D0, match: 'Manchester City - Tottenham', pick: 'MS 1', odds: 1.55, won: false, score: '1-1', ev: 0.012, clv: -0.018 },
     { date: D0, match: 'Barcelona - Villarreal', pick: 'ÇŞ 1X', odds: 1.18, won: true, score: '2-0' },
-    { date: '2026-11-03', match: 'Konyaspor - Alanyaspor', pick: 'KG Var', odds: 1.80, won: true, score: '1-2' },
+    { date: '2026-11-03', match: 'Konyaspor - Alanyaspor', pick: 'KG Var', odds: 1.80, won: true, score: '1-2', ev: 0.038, clv: null },
     { date: '2026-11-03', match: 'Getafe - Valencia', pick: '2.5 Alt', odds: 1.62, won: false, score: '2-2' },
   ],
 });

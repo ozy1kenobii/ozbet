@@ -4,6 +4,9 @@ import { fmtTime, odd, pct } from '../lib/format';
 import { marketLabel, marketWins, isMarketKey } from '../lib/markets';
 import { Badge, DropBadge, Icon, ResultBadge, Stars, ValueBadge } from './ui';
 import { AddToCoupon } from './AddToCoupon';
+import { FreshSquadBadge, PickMetrics, SharpNote, isPas, pasText } from './PickBits';
+import { pickEv } from '../lib/pick';
+import { signedPct } from '../lib/format';
 
 /** Kartta gösterilen sakin oran satırı */
 const ODDS_COLS: { k: MarketKey; t: string }[] = [
@@ -45,6 +48,9 @@ export function MatchCard({ m, date, showLeague = false }: { m: Match; date: str
   const alarms = m.market?.drop_alarms ?? [];
   const nSrc = sourceCount(m);
   const isValue = (m.value?.length ?? 0) > 0;
+  const ev = pickEv(pick);
+  const hasSharp = !!m.sharp?.best;
+  const fresh = !!m.squad?.signal?.fresh;
   const hasNews = [...(m.news?.home ?? []), ...(m.news?.away ?? [])].some((n) => n.tags?.some((t) => t === 'sakat' || t === 'ceza' || t === 'td'));
 
   return (
@@ -72,12 +78,19 @@ export function MatchCard({ m, date, showLeague = false }: { m: Match; date: str
       </div>
 
       {pick ? (
-        <Link to={href} tabIndex={-1} aria-hidden="true"
-          className="mx-3.5 mt-1.5 flex items-center gap-2.5 rounded-md bg-accent/[.07] px-2.5 py-1.5">
-          <span className="t-micro shrink-0">Tercih</span>
-          <span className="display text-[19px] font-bold leading-none truncate">{pick.label || marketLabel(pick.market)}</span>
-          <span className="text-[13px] num text-muted shrink-0">{pct(pick.p)}{pick.odds != null && <> · <span className="text-ink">{odd(pick.odds)}</span></>}</span>
-          <span className="ml-auto shrink-0">{won != null ? <ResultBadge won={won} /> : <Stars n={pick.stars} size={13} />}</span>
+        <Link to={href} tabIndex={-1} aria-hidden="true" className="mx-3.5 mt-1.5 block rounded-md bg-accent/[.07] px-2.5 pt-2 pb-1.5">
+          <span className="flex items-center gap-2">
+            <span className="t-micro shrink-0">Tercih</span>
+            <span className="display text-[20px] font-bold leading-none truncate">{pick.label || marketLabel(pick.market)}</span>
+            <span className="ml-auto shrink-0">{won != null ? <ResultBadge won={won} /> : <Stars n={pick.stars} size={12} />}</span>
+            <span className="shrink-0 display text-[26px] font-bold leading-none num" title="iddaa oranı">{pick.odds != null ? odd(pick.odds) : '–'}</span>
+          </span>
+          <span className="mt-1.5 block"><PickMetrics pick={pick} /></span>
+        </Link>
+      ) : isPas(m) ? (
+        <Link to={href} tabIndex={-1} className="mx-3.5 mt-1.5 flex items-baseline gap-2 rounded-md border border-dashed border-line px-2.5 py-1.5">
+          <span className="display text-[17px] font-semibold leading-none text-muted shrink-0">Pas</span>
+          <span className="t-meta min-w-0">{pasText(m.pick_note) || 'Ölçütlere uyan seçim yok.'}</span>
         </Link>
       ) : m.model?.source === 'piyasa' ? (
         <p className="mx-3.5 mt-1.5"><Badge tone="neutral" title="Olasılıklar iddaa oranlarından türetildi; bağımsız tahmin değildir">Piyasa modeli</Badge></p>
@@ -85,11 +98,13 @@ export function MatchCard({ m, date, showLeague = false }: { m: Match; date: str
         <p className="mx-3.5 mt-1 t-micro">Model yok – yalnız oranlar</p>
       )}
       {/* Erişilebilir tercih özeti (görsel satır aria-hidden) */}
-      {pick && <span className="sr-only">OZBET Tercihi {pick.label || marketLabel(pick.market)}, model {pct(pick.p)}, güven {pick.stars} yıldız{won != null ? (won ? ', tuttu' : ', tutmadı') : ''}</span>}
+      {pick && <span className="sr-only">OZBET Tercihi {pick.label || marketLabel(pick.market)}{pick.odds != null ? `, oran ${odd(pick.odds)}` : ''}, model {pct(pick.p)}{ev != null ? `, beklenen değer ${signedPct(ev)}` : ''}, güven {pick.stars} yıldız{won != null ? (won ? ', tuttu' : ', tutmadı') : ''}</span>}
 
-      {(isValue || alarms.length > 0 || hasNews) && (
-        <div className="mx-3.5 mt-2 flex flex-wrap gap-1.5">
+      {(isValue || alarms.length > 0 || hasNews || hasSharp || fresh) && (
+        <div className="mx-3.5 mt-2 flex flex-wrap items-center gap-1.5">
           {isValue && <ValueBadge />}
+          <SharpNote sharp={m.sharp} />
+          <FreshSquadBadge signal={m.squad?.signal} />
           {hasNews && <Badge tone="warn" title="Sakatlık, ceza veya teknik direktör haberi var">Haber</Badge>}
           {alarms.length > 0 && <DropBadge>Düşen oran: {alarms.map(marketLabel).join(', ')}</DropBadge>}
         </div>
@@ -142,8 +157,8 @@ export function HighlightCard({ m, date, reason }: { m: Match; date: string; rea
         {pick && reason !== 'drop' ? (
           <>
             <span className="display text-[18px] font-bold leading-none truncate">{pick.label || marketLabel(pick.market)}</span>
-            <span className="text-[13px] text-muted num">{pick.odds != null ? odd(pick.odds) : pct(pick.p)}</span>
-            <span className="ml-auto"><Stars n={pick.stars} size={12} /></span>
+            <span className="text-[15px] font-semibold num">{pick.odds != null ? odd(pick.odds) : pct(pick.p)}</span>
+            {pickEv(pick) != null && <span className="ml-auto text-[12px] text-muted num whitespace-nowrap" title="Beklenen değer">BD {signedPct(pickEv(pick))}</span>}
           </>
         ) : reason === 'drop' ? (
           <DropBadge>{alarms.map((k) => `${marketLabel(k)} ${m.odds?.[k] != null ? odd(m.odds[k]) : ''}`.trim()).join(', ')}</DropBadge>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useBacktest, useScorecard } from '../lib/data';
-import type { Backtest, BacktestGridRow, BacktestSummary, CalibBin, Scorecard as ScorecardT, ScoreBlock, ShotBlendRow } from '../lib/types';
+import type { ClvBlock, OddsBandRow, Backtest, BacktestGridRow, BacktestSummary, CalibBin, Scorecard as ScorecardT, ScoreBlock, ShotBlendRow } from '../lib/types';
 import { fmtDateTime, fmtShortDate, num, odd, pct, signedNum, signedPct } from '../lib/format';
 import { Calibration, LineChart } from '../components/charts';
 import { Empty, Loading, ResultBadge, Section } from '../components/ui';
@@ -32,6 +32,14 @@ export default function Scorecard() {
               <Block title="Tüm zamanlar" b={d.overall} />
               <Block title="Son 30 gün" b={d.last30} />
             </div>
+
+            {d.overall?.n > 0 && d.overall.n < SMALL_N * 3 && (
+              <p className="mt-2 t-meta max-w-[68ch]">
+                <b className="text-ink">Örneklem küçük ({d.overall.n} tahmin).</b> Bu sayıda sonuçta isabet ve ROI şansla kolayca yön değiştirir; sayıları bir eğilim olarak değil, ara durum olarak okuyun.
+              </p>
+            )}
+            <OddsBands rows={d.by_odds_band} />
+            <ClvBox c={d.clv} />
 
             <AllMarkets d={d} />
 
@@ -91,6 +99,11 @@ export default function Scorecard() {
                       <span className="flex-1 min-w-0">
                         <span className="block truncate font-medium">{r.match}</span>
                         <span className="text-muted num">{r.pick}{r.odds != null && ` · ${odd(r.odds)}`} · {r.score}</span>
+                        {(r.ev != null || r.clv != null) && (
+                          <span className="block t-micro num">
+                            {r.ev != null && <>Beklenen değer {signedPct(r.ev)}</>}{r.ev != null && r.clv != null && ' · '}{r.clv != null && <>CLV {signedPct(r.clv)}</>}
+                          </span>
+                        )}
                       </span>
                       <ResultBadge won={r.won} />
                     </li>
@@ -111,18 +124,107 @@ export default function Scorecard() {
 
 const roiCls = (r: number | null | undefined) => (r == null ? '' : r > 0 ? 'text-win font-semibold' : r < 0 ? 'text-loss' : '');
 
+/** Bu sayının altındaki örneklemler "az örnek" olarak işaretlenir. */
+const SMALL_N = 50;
+const SmallN = ({ n }: { n: number }) => (n < SMALL_N ? <span className="ml-1 rounded border border-warn/50 px-1 text-[11px] font-semibold text-warn whitespace-nowrap" title={`n < ${SMALL_N}: sonuç şansa çok açık`}>az örnek</span> : null);
+
 function Block({ title, b }: { title: string; b: ScoreBlock | undefined }) {
   if (!b) return null;
+  const ci = b.roi_ci;
+  const ciSpansZero = ci ? ci[0] <= 0 && ci[1] >= 0 : false;
   return (
     <section className="panel p-4" aria-label={title}>
-      <h2 className="display text-lg font-semibold">{title} <span className="text-sm font-medium text-muted num">· {b.n} tahmin</span></h2>
+      <h2 className="display text-lg font-semibold">{title} <span className="text-sm font-medium text-muted num">· {b.n} tahmin</span><SmallN n={b.n} /></h2>
       <dl className="mt-2 grid grid-cols-2 gap-x-4 gap-y-2 num">
         <div><dt className="text-[13px] text-muted">İsabet</dt><dd className="display text-[28px] font-bold leading-none">{pct(b.hit_rate, 1)}</dd></div>
-        <div><dt className="text-[13px] text-muted">ROI</dt><dd className={`display text-[28px] font-bold leading-none ${roiCls(b.roi)}`}>{signedPct(b.roi)}</dd></div>
+        <div>
+          <dt className="text-[13px] text-muted">ROI</dt>
+          <dd className={`display text-[28px] font-bold leading-none ${roiCls(b.roi)}`}>{signedPct(b.roi)}</dd>
+          {ci && <dd className="mt-1 text-[12px] text-muted whitespace-nowrap">aralık {signedPct(ci[0], 0)} … {signedPct(ci[1], 0)}</dd>}
+        </div>
         <div><dt className="text-[13px] text-muted">Brier (1X2)</dt><dd className="text-lg font-semibold">{b.brier_1x2 != null ? num(b.brier_1x2, 3) : '–'}</dd></div>
         <div><dt className="text-[13px] text-muted">Sanal kasa kâr</dt><dd className={`text-lg font-semibold ${roiCls(b.profit)}`}>{signedNum(b.profit, 1)} <span className="text-sm text-muted font-normal">/ {b.staked} birim</span></dd></div>
       </dl>
+      {ci && (
+        <p className="mt-2 t-micro max-w-[60ch]">
+          ROI güven aralığı: gerçek uzun dönem getirinin büyük olasılıkla bulunduğu aralık.
+          {ciSpansZero ? ' Aralık sıfırı içeriyor; bu örneklemle kâr ya da zarar yönü söylenemez.' : ''}
+        </p>
+      )}
     </section>
+  );
+}
+
+/** Oran bandına göre sonuçlar: yüksek isabet, başabaş isabetin altındaysa yine zarar eder. */
+function OddsBands({ rows }: { rows: OddsBandRow[] | null | undefined }) {
+  if (!rows?.length) return null;
+  return (
+    <Section title="Oran bandına göre" aside={<span className="text-[12px] text-muted">1 birim / tahmin</span>}>
+      <div className="panel px-2 py-1 overflow-x-auto">
+        <table className="tbl">
+          <thead><tr>
+            <th>Oran bandı</th><th className="text-right">n</th><th className="text-right">İsabet</th>
+            <th className="text-right" title="Bu ortalama oranla zarar etmemek için gereken isabet: 1 / ortalama oran">Başabaş</th>
+            <th className="text-right">ROI</th>
+          </tr></thead>
+          <tbody>{rows.map((r) => {
+            const be = r.avg_odds ? 1 / r.avg_odds : null;
+            const small = r.n < SMALL_N;
+            return (
+              <tr key={r.band} className={small ? 'text-muted' : ''}>
+                <td>
+                  <span className="block font-medium whitespace-nowrap">{r.band}</span>
+                  <span className="block t-micro whitespace-nowrap">ort. oran {odd(r.avg_odds)}</span>
+                </td>
+                <td className="text-right whitespace-nowrap">{r.n}{small && <span className="block text-[11px] font-semibold text-warn">az örnek</span>}</td>
+                <td className="text-right whitespace-nowrap">{pct(r.hit_rate)}{r.avg_p != null && <span className="block t-micro" title="Modelin ortalama olasılığı">model {pct(r.avg_p)}</span>}</td>
+                <td className="text-right">{pct(be)}</td>
+                <td className={`text-right ${small ? '' : roiCls(r.roi)}`}>{signedPct(r.roi)}</td>
+              </tr>
+            );
+          })}</tbody>
+        </table>
+      </div>
+      <p className="mt-2 t-meta max-w-[68ch]">
+        Başabaş = 1 / ortalama oran. İsabet bunun altındaysa, yüzde ne kadar yüksek görünürse görünsün o bant zarar eder. “Az örnek” satırlarında (n &lt; {SMALL_N}) ROI renklendirilmez; birkaç maç sonucu tersine çevirebilir.
+      </p>
+    </Section>
+  );
+}
+
+/** Kapanış oranı değeri (CLV) */
+function ClvBox({ c }: { c: ClvBlock | null | undefined }) {
+  if (!c || !c.n) return null;
+  const mk = (c.by_market ?? []).filter((x) => x.n > 0);
+  return (
+    <Section title="Kapanış oranı değeri (CLV)" aside={<span className="text-[12px] text-muted num">{c.n} tahmin</span>}>
+      <div className="panel p-4">
+        <p className="text-[14px] max-w-[68ch]">
+          CLV, tercihi yayımladığımız andaki oranın maç başlamadan önceki son (kapanış) orana göre ne kadar iyi olduğunu ölçer; artı değer, piyasanın sonradan bizim yönümüze geldiğini gösterir.
+        </p>
+        <dl className="mt-3 grid grid-cols-3 gap-x-3 num">
+          <div><dt className="text-[13px] text-muted">Ortalama CLV</dt><dd className="display text-[26px] font-bold leading-none">{signedPct(c.avg_clv)}</dd></div>
+          <div><dt className="text-[13px] text-muted">Kapanışı geçen</dt><dd className="display text-[26px] font-bold leading-none">{pct(c.beat_close_rate)}</dd></div>
+          {c.avg_clv_raw != null && <div><dt className="text-[13px] text-muted">Ham CLV</dt><dd className="display text-[26px] font-bold leading-none text-muted">{signedPct(c.avg_clv_raw)}</dd></div>}
+        </dl>
+        {c.avg_clv_raw != null && <p className="mt-1 t-micro">Ham: oranların doğrudan karşılaştırması. Ortalama CLV: büro marjı ayıklandıktan sonra.</p>}
+        {mk.length > 0 && (
+          <div className="mt-3 overflow-x-auto">
+            <table className="tbl">
+              <thead><tr><th>Market</th><th className="text-right">n</th><th className="text-right">Ort. CLV</th></tr></thead>
+              <tbody>{mk.map((x) => (
+                <tr key={x.market} className={x.n < SMALL_N ? 'text-muted' : ''}>
+                  <td className="font-medium">{x.label || marketLabel(x.market)}<SmallN n={x.n} /></td><td className="text-right">{x.n}</td><td className="text-right">{signedPct(x.avg_clv)}</td>
+                </tr>
+              ))}</tbody>
+            </table>
+          </div>
+        )}
+        <p className="mt-3 t-meta max-w-[68ch]">
+          Sonuçlar şansa çok açıktır; CLV daha az örnekle anlam kazanır ama o da bir gösterge, kâr garantisi değil.{c.n < SMALL_N * 2 ? ` ${c.n} tahmin henüz az; ortalama birkaç maçla değişebilir.` : ''}
+        </p>
+      </div>
+    </Section>
   );
 }
 
