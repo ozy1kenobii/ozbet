@@ -58,6 +58,8 @@ def grade_day(day_doc: dict, results: dict[str, dict]) -> list[dict]:
                         "stars": pk.get("stars"), "is_value": pk.get("is_value", False), "won": won})
             if pk.get("ev") is not None:   # tercih beklenen değer taşıyorsa karneye de geçer
                 row["ev"] = pk["ev"]
+            if pk.get("basis"):   # tercihi üreten kural ("keskin" = sinyal kipi); eski kural satırlarında alan yok
+                row["basis"] = pk["basis"]
         graded.append(row)
     return graded
 
@@ -275,6 +277,9 @@ def build_scorecard(rows: list[dict], today: date, archive_rows: list[dict] | No
         "by_market": sorted(({"market": k, "label": all_labels().get(k, k), **_agg(v), "trust": trust.get(k, 1.0)}
                              for k, v in by_market.items()), key=lambda x: -x["n"]),
         "by_odds_band": odds_bands(rows),
+        # Tercihi üreten kurala göre ayrım: "keskin" = sinyal kipi (13 Kasım 2026 sonrası), "eski" = önceki kurallar.
+        # Karışık toplamlar (overall) iki kuralı birlikte sayar; S1 hipotezi yalnız "keskin" satırından okunur.
+        "by_basis": [dict(basis=b, **_agg([r for r in rows if (r.get("basis") or "eski") == b])) for b in ("keskin", "eski")],
         "clv": clv_mod.summarize(rows),
         "trust": trust,
         "calibration": calib,

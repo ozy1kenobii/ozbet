@@ -66,33 +66,9 @@ def build(league_id: str, rows: list[dict], ref: date) -> LeagueModel | None:
 
 
 def _squad_mult(sq: dict | None) -> tuple[float, float, list[str]]:
-    """(kendi λ çarpanı, rakip λ çarpanı, notlar)"""
-    if not sq:
-        return 1.0, 1.0, []
-    notes = []
-    keys = [m for m in sq.get("missing", []) if m.get("key")]
-    others = [m for m in sq.get("missing", []) if not m.get("key")]
-    own = 0.94 ** min(len(keys), 3) * 0.985 ** min(len(others), 4)
-    opp = 1.02 ** min(len(keys), 3)
-    if sq.get("rotation_risk"):
-        own *= 0.97; opp *= 1.01; notes.append("rotasyon riski")
-    if sq.get("coach_change"):
-        notes.append("teknik direktör değişikliği")
-    return own, opp, notes
-
-
-# ---------------- Elo tabanlı lig-arası düzeltme ----------------
-# Yaklaşım (basit ve belgeli):
-#  1) Elo kazanma beklentisi  We = 1 / (1 + 10^(-(Elo_ev + HFA - Elo_dep)/400)),  HFA ≈ 63 (tarafsız sahada 0).
-#     Elo'da We bir "beklenen puan"dır: P(ev kazanır) + ½·P(beraberlik).
-#  2) Toplam gol beklentisi T iki takımın KENDİ lig modellerinden gelir: her takım için ortalama bir rakibe karşı
-#     maç başı atılan + yenen gol, T_takım = e^(μ_L + a) + e^(μ_L + d); T = iki takımın ortalaması.
-#     Böylece lig-arası güç farkı toplam gol seviyesini bozmaz (güç yalnızca Elo'dan gelir), ama "gollü takım"
-#     bilgisi korunur.
-#  3) λ_ev + λ_dep = T kısıtıyla, Dixon-Coles skor matrisinden hesaplanan P(1) + ½·P(X) = We olacak şekilde
-#     beklenen gol farkı D = λ_ev − λ_dep ikiye bölme (bisection) ile çözülür. P(1)+½P(X), D'ye göre monoton artar.
-#  Neden: Elo'yu doğrudan gol farkına çeviren ampirik katsayılar ligden lige değişir; bu yöntem Elo'nun kendi
-#  tanımını (beklenen puan) birebir korur ve tek serbest parametre olarak HFA'yı bırakır.
+    """(kendi λ çarpanı, rakip λ çarpanı, notlar) — büyüklükler ve tavanlar agents/squad.py'de (docs/research/kadro-etkisi.md)."""
+    from . import squad
+    return squad.multipliers(sq)
 
 
 def elo_expectation(elo_home: float, elo_away: float, neutral: bool = False) -> float:

@@ -21,6 +21,7 @@ from __future__ import annotations
 
 from datetime import datetime, timedelta
 
+from .. import config
 from ..sources.base import Fixture, SourceStatus, now_iso
 from ..teams import similar, team_key
 from .market import shin
@@ -106,7 +107,8 @@ def compute(iddaa_odds: dict[str, float] | None, books: dict | None, fetched_at:
         # Tek bir market bile inandırıcı değilse eşleşmenin tamamına güvenilmez: hiçbir seçim öne çıkarılmaz
         out["notes"] = [IMPLAUSIBLE.format(MAX_EDGE * 100)]
         return out
-    cands = [k for k, e in edge.items() if e >= MIN_EDGE and iddaa_odds[k] >= MIN_ODDS]
+    # Bant üst sınırı burada da uygulanır: bant dışı (çok yüksek oranlı) bir fark, bant içindeki farkı gölgelemesin
+    cands = [k for k, e in edge.items() if e >= MIN_EDGE and MIN_ODDS <= iddaa_odds[k] <= config.PICK_MAX_ODDS]
     if cands:
         k = max(cands, key=lambda x: edge[x])
         out["best"] = {"market": k, "edge": edge[k], "odds": round(iddaa_odds[k], 2), "fair_p": fair[k]}

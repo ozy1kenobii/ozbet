@@ -177,17 +177,6 @@ def multipliers(side: dict | None) -> tuple[float, float, list[str]]:
     return 1.0 + own, 1.0 + opp, notes
 
 
-def _install() -> None:
-    """Simülasyon bu modülün çarpanlarını kullansın. simulation.py eski çarpanları (kilit başına −%6, toplam −%24'e
-    kadar) kendi içinde hesaplıyor ve `adjustment` alanını OKUMUYORDU; o dosya bu ajanın kapsamı dışında olduğundan
-    bağ burada kurulur. Kalıcı çözüm: simulation.predict içinde doğrudan squad.multipliers çağırmak (tek satır)."""
-    from . import simulation
-    simulation._squad_mult = multipliers
-
-
-_install()
-
-
 # ---------------- sinyal ----------------
 def _rank(s: str) -> int:
     return STRENGTHS.index(s)

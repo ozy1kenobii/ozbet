@@ -122,8 +122,10 @@ def signal_pick(m: dict) -> dict | None:
         return None
     k = best["market"]
     return {"market": k, "label": ALL_LABELS[k], "p": round(best["fair_p"], 4), "odds": best["odds"],
-            "ev": round(best["edge"], 4), "fair_odds": round(1 / best["fair_p"], 2), "is_value": True,
-            "kind": "deger", "blended": False, "basis": "keskin", "sharp_source": sharp.get("source")}
+            "ev": round(best["edge"], 4), "fair_odds": round(1 / best["fair_p"], 2), "is_value": False,
+            "kind": "deger", "blended": False, "basis": "keskin",
+            # Alt/Üst farklı referanstan fiyatlandıysa yıldız o referansa göre verilir
+            "sharp_source": sharp.get("source_ou25", sharp.get("source")) if k in ("O2.5", "U2.5") else sharp.get("source")}
 
 
 def signal_stars(pick: dict) -> int:

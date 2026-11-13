@@ -251,7 +251,9 @@ function PickBox({ m }: { m: Match }) {
     deger: ['Değer seçimi', 'Beklenen değeri en yüksek seçenek olduğu için seçildi'],
     denge: ['Denge seçimi', 'Olasılık ile oran arasındaki dengeye göre seçildi'],
   };
-  const kind = p?.kind ? KIND[p.kind] : null;
+  const kind: [string, string] | null = p?.basis === 'keskin'
+    ? ['Keskin piyasa sinyali', 'İddaa oranı keskin piyasanın adil oranının üzerinde olduğu için seçildi; hipotezdir']
+    : p?.kind ? KIND[p.kind] : null;
   return (
     <div className={`mt-4 rounded-lg bg-surface p-4 ${p ? 'border-2 border-accent' : 'border border-line'}`} role="group" aria-label="OZBET Tercihi">
       {p ? (
@@ -269,7 +271,7 @@ function PickBox({ m }: { m: Match }) {
           <div className="mt-3 border-t border-line pt-3"><PickMetrics pick={p} size="lg" /></div>
           {p.odds != null && fair != null && ev != null && (
             <p className="mt-2 t-meta num max-w-[68ch]">
-              Oran {odd(p.odds)}, modelin adil oranı {odd(fair)}: {ev > 0 ? 'oran adil oranın üstünde, beklenen değer pozitif' : ev < 0 ? 'oran adil oranın altında, beklenen değer negatif' : 'oran adil orana eşit'}.
+              Oran {odd(p.odds)}, {p.basis === 'keskin' ? 'keskin piyasanın adil oranı' : 'modelin adil oranı'} {odd(fair)}: {ev > 0 ? 'oran adil oranın üstünde, beklenen değer pozitif' : ev < 0 ? 'oran adil oranın altında, beklenen değer negatif' : 'oran adil orana eşit'}.
               {' '}Bu, benzer çok sayıda seçimin ortalamasına dair bir tahmindir; tek maç için garanti değildir.
             </p>
           )}
@@ -290,7 +292,7 @@ function PickBox({ m }: { m: Match }) {
             <span className="t-meta">Bu maçta tercih yok</span>
           </div>
           <p className="mt-2 text-[15px] max-w-[68ch]">{pasText(m.pick_note) || 'Oran bandında ölçütleri geçen bir seçenek bulunmadı.'}</p>
-          <p className="mt-1 t-meta max-w-[68ch]">Pas bir uyarı değildir: yalnızca oranın, modelin olasılığına göre yeterli bulunmadığını söyler. Olasılıklar ve oranlar aşağıda.</p>
+          <p className="mt-1 t-meta max-w-[68ch]">Pas bir uyarı değildir: yalnızca iddaa oranının adil değerin üzerinde görünmediğini ya da karşılaştırma yapılamadığını söyler. Olasılıklar ve oranlar aşağıda.</p>
           {(m.sharp?.best || m.squad?.signal?.fresh) && (
             <div className="mt-3 flex flex-wrap items-center gap-1.5"><FreshSquadBadge signal={m.squad?.signal} /><SharpNote sharp={m.sharp} detail /></div>
           )}

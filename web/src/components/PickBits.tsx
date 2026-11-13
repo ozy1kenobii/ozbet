@@ -21,8 +21,8 @@ export function PickMetrics({ pick, size = 'sm' }: { pick: Pick; size?: 'sm' | '
   const dd = size === 'lg' ? 'text-xl font-semibold text-ink' : 'text-[14px] font-semibold text-ink';
   return (
     <dl className={`grid grid-cols-3 num ${size === 'lg' ? 'gap-x-5' : 'gap-x-2'}`}>
-      <div><dt className="t-micro">Model</dt><dd className={dd}>{pct(pick.p)}</dd></div>
-      <div title="Adil oran = 1 / model olasılığı. İddaa oranı bundan yüksekse beklenen değer pozitiftir.">
+      <div><dt className="t-micro">{pick.basis === 'keskin' ? 'Keskin piyasa' : 'Model'}</dt><dd className={dd}>{pct(pick.p)}</dd></div>
+      <div title="Adil oran = 1 / olasılık (sinyal seçiminde keskin piyasanın marjsız olasılığı). İddaa oranı bundan yüksekse beklenen değer pozitiftir.">
         <dt className="t-micro">Adil oran</dt><dd className={dd}>{odd(fair)}</dd>
       </div>
       <div title="Beklenen değer = olasılık × oran − 1. Uzun dönem ortalamasıdır; tek maç için bir şey söylemez.">

@@ -314,7 +314,7 @@ function PicksView({ day, matches, onShowAll }: { day: DayFile; matches: Match[]
       <p className="mt-3 t-meta num" aria-live="polite">
         {pas > 0 && <>{pas} maçta Pas. </>}
         {hidden.length > 0 && <>{hidden.join(', ')} (gizli). </>}
-        Oran bandı {odd(minOdds)}–{odd(BAND_MAX)}. Beklenen değer model tahminidir; kâr garantisi değildir.{' '}
+        Oran bandı {odd(minOdds)}–{odd(BAND_MAX)}. Beklenen değer bir tahmindir (keskin piyasa karşılaştırması); kâr garantisi değildir.{' '}
         <Link to="/rehber" className="text-accent underline underline-offset-2">Yaklaşım</Link>
       </p>
       <button className="mt-3 btn btn-ghost w-full" onClick={onShowAll}>Tüm maçları göster ({matches.length})</button>

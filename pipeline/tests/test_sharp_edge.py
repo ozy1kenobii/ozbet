@@ -75,7 +75,9 @@ def test_books_tolerates_missing_and_blank_columns():
 
 
 # ---------------- kaynak önceliği ----------------
-def test_all_columns_uses_pinnacle():
+def test_all_columns_uses_pinnacle(monkeypatch):
+    from ozbet import config as _c
+    monkeypatch.setattr(_c, "PICK_MAX_ODDS", 5.0)   # bu test 4.00 oranlı örnekle formülü sınar; bant üst sınırı ayrı testte
     fx = _fx()
     odds = {**DULL, "2": 4.00}           # deplasman iddaa'da keskin piyasadan yüksek
     m = _match()
@@ -91,7 +93,9 @@ def test_all_columns_uses_pinnacle():
     assert sum(blk["fair"][k] for k in ("1", "X", "2")) == pytest.approx(1, abs=1e-3)
 
 
-def test_ps_missing_falls_back_to_betfair_with_allowance():
+def test_ps_missing_falls_back_to_betfair_with_allowance(monkeypatch):
+    from ozbet import config as _c
+    monkeypatch.setattr(_c, "PICK_MAX_ODDS", 5.0)   # bu test 4.00 oranlı örnekle formülü sınar; bant üst sınırı ayrı testte
     fx = _fx(drop=("PS", "P>", "P<", "PAH"))
     m = _match()
     blk = se.attach(m, _iddaa(fx, {**DULL, "2": 4.10}), [fx])
