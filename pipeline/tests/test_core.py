@@ -107,7 +107,8 @@ def test_value_threshold_and_trust():
     imp = market.implied(odds)["implied"]
     v = value.find_value(probs, odds, imp)
     assert v and v[0]["market"] == "1"
-    assert not value.find_value(probs, odds, imp, trust={"1": 0.6})  # kötü karne → büzülür
+    assert v[0]["edge"] >= config.VALUE_EDGE_CAL and v[0]["ev"] > 0
+    assert not value.find_value(probs, odds, imp, trust={"1": 0.2})  # kötü karne → büzülür, eşik altına iner
 
 
 # ---------- konsensüs / yorum ----------
@@ -126,7 +127,8 @@ def test_comment_has_no_banned_words_and_pick():
                             "o25_pct": 0.6, "btts_pct": 0.4}},
          "consensus": consensus.build([], s["probs"], None)}
     commentator.annotate(m, {}, use_llm=False)
-    assert m["pick"] and 1 <= m["pick"]["stars"] <= 5
+    # oran yok → beklenen değer hesaplanamaz → tercih yok, nedeni pick_note'ta
+    assert m["pick"] is None and m["pick_note"].startswith("Pas:") and "OZBET tercihi yok" in m["comment"]
     low = m["comment"].lower()
     assert not any(b in low for b in ("kesin", "banko", "garanti"))
     assert 3 <= m["comment"].count(".") <= 8
@@ -219,8 +221,8 @@ def test_value_blend_weight(monkeypatch):
     monkeypatch.setattr(config, "MODEL_WEIGHT", 0.4)
     odds = {"1": 2.2, "X": 3.4, "2": 4.0}
     imp = market.implied(odds)["implied"]
-    # ham fark 0.10 → harmanla 0.04 < %5 eşik → değer yok
-    assert value.find_value({"1": imp["1"] + 0.10, "X": 0.2, "2": 0.2}, odds, imp) == []
+    # ham fark 0.04 → harmanla 0.016 < kalibre eşik (0.02) → değer yok
+    assert value.find_value({"1": imp["1"] + 0.04, "X": 0.2, "2": 0.2}, odds, imp) == []
     v = value.find_value({"1": imp["1"] + 0.15, "X": 0.2, "2": 0.2}, odds, imp)
     assert v and abs(v[0]["edge"] - 0.06) < 1e-3
 
