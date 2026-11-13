@@ -38,6 +38,24 @@ MODEL_WEIGHT = float(os.environ.get("OZBET_MODEL_WEIGHT", "0.25"))
 # 5 Kasım 2026 backtest'i (6 lig, 2 sezon, 3985 maç): Brier model 0.5895, α=0.25 harman 0.5767, kapanış piyasası 0.5732.
 # Hiçbir α/eşik kombinasyonu kârlı çıkmadı → en tutucu ayar seçildi.            # xG varsa λ = (1-w)*λ_gol + w*λ_xG
 
+# --- OZBET Tercihi (beklenen değer seçicisi) ---
+# Tercih artık "en yüksek olasılık" değil, oran bandı içinde en yüksek beklenen değer (EV = p·oran − 1).
+# Bant: 1.60 altı oran asla tercih olmaz (düşük oran kovalamayı keser); 3.50 üstü iddaa'da en pahalı bölge
+# (favori–sürpriz yanlılığı, docs/research/roi-piyasa.md S3). Kâr vaadi değildir: iddaa marjı ~%19.
+PICK_MIN_ODDS = float(os.environ.get("OZBET_PICK_MIN_ODDS", "1.60"))
+PICK_MAX_ODDS = float(os.environ.get("OZBET_PICK_MAX_ODDS", "3.50"))
+# En iyi adayın EV'si bunun altındaysa "Pas". −0.06: ortalama marj kaybından (≈ −0.15) belirgin iyi olan seçimler.
+PICK_MIN_EV = float(os.environ.get("OZBET_PICK_MIN_EV", "-0.06"))
+PICK_MIN_PROB = float(os.environ.get("OZBET_PICK_MIN_PROB", "0.33"))   # bundan düşük olasılıklı market tercih olmaz
+# Kombine marketler (MS&A/Ü, MS&KG, KG&A/Ü) aday olsun mu? Harman ağırlığı yalnız 1X2 ve 2.5 A/Ü'de backtest edildi;
+# kombinelerde kalibrasyon kanıtı yok (pick_replay'de zayıf göründü) → gerekirse OZBET_PICK_COMBOS=0 ile kapatılır.
+PICK_INCLUDE_COMBOS = os.environ.get("OZBET_PICK_COMBOS", "1") == "1"
+PICK_EV_TIE = 0.01         # EV farkı bundan küçükse "eşit" sayılır, yüksek olasılıklı aday seçilir
+# Değer etiketi eşiği KALİBRE (harmanlanmış) olasılık üzerinden: p_kalibre − ima_p. Eski VALUE_EDGE (0.05) harmanlı
+# farka uygulanınca α=0.25'te ham fark ≥ 0.20 gerektiriyor ve MAX_EDGE (0.20) ile çelişiyordu (roi-secim.md §1).
+# 0.02 → α=0.25'te ham fark ≥ 0.08; asıl sıkı şart yine gerçek orandan EV > 0.
+VALUE_EDGE_CAL = float(os.environ.get("OZBET_VALUE_EDGE_CAL", "0.02"))
+
 
 @dataclass(frozen=True)
 class League:
