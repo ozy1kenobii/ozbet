@@ -521,6 +521,14 @@ def main(argv=None):
                     fl.remove(old)
             if tag not in fl:
                 fl.append(tag)
+            # Başlamamış maçta eski kuralla üretilmiş tercih yeni kurala göre yeniden değerlendirilir (sinyal kipinde
+            # keskin fark yoksa "Pas"); başlamış maçın yayınlanmış tercihi karne bütünlüğü için dokunulmadan kalır.
+            if not started and config.PICK_MODE == "sinyal" and (pm.get("pick") or {}).get("basis") != "keskin":
+                try:
+                    commentator.annotate(pm, trust, use_llm=False)
+                except Exception as e:  # noqa: BLE001
+                    log.info("Taşınan maç yeniden değerlendirilemedi %s: %s", mid, e)
+                    pm["pick"] = None
             matches.append(pm)
     matches = validate.dedupe_matches(matches, vrep)
     matches.sort(key=lambda m: (m["league_priority"], m["kickoff"], m["home"]["name"]))
