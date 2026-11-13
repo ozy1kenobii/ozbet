@@ -1,5 +1,9 @@
 """Flashscore — fikstür, sonuç (dün) ve mümkünse eksik oyuncular.
 
+DEVRE DIŞI (registry.DISABLED): kullanım şartları otomatik istek ve veri çıkarmayı yasaklıyor (md. 2.9-2.10).
+Durum sayfasındaki "skipped" bir arıza değil, bilinçli karardır; adapter hiçbir rolde çağrılmaz. Kod yalnızca
+mevcut arşiv dosyalarının biçimini (parse_feed) belgelemek ve testler için duruyor.
+
 Düz metin feed: https://d.flashscore.com.tr/x/feed/f_1_{gün_ofseti}_3_tr_1  (x-fsign başlığı gerekli)
 Kayıt ayırıcı '~', alan '¬', anahtar/değer '÷'. ZA = lig başlığı, AA = maç id, AD = epoch,
 AE/AF = ev/dep, AG/AH = skor, AB = durum (1 başlamadı, 2 canlı, 3 bitti), BA/BB = İY skoru.

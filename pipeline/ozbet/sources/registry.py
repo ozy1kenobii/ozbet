@@ -13,6 +13,7 @@ Roller:
 """
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta
 from typing import Callable
@@ -35,37 +36,65 @@ class Src:
     elo: Callable | None = None
 
 
+# Varsayılan olarak kapalı ama engellenmeyen bir ağdan çalıştırılırken açılabilen kaynaklar:
+#   OZBET_ENABLE_SOURCES=soccerstats   (virgülle ayrılmış). Forebet bu yolla AÇILAMAZ (veri çekilmeyecekler listesinde).
+ENABLED_EXTRA = {x.strip().lower() for x in os.environ.get("OZBET_ENABLE_SOURCES", "").split(",") if x.strip()}
+SOCCERSTATS_ON = "soccerstats" in ENABLED_EXTRA
+_SOCCERSTATS_OFF = ("Devre dışı: sitenin Cloudflare güvenlik duvarı GitHub Actions isteklerini HTTP 403 ile engelliyor; "
+                    "engel aşılmaz. Engellenmeyen ağda OZBET_ENABLE_SOURCES=soccerstats ile açılır.")
+
 FIXTURE_SOURCES = [
     Src("nesine", "Nesine iddaa bülteni (kod, MBS, oran)", fixtures=nesine.fixtures),
     Src("iddaa", "iddaa.com resmi bülten (oran, MBS)", fixtures=iddaa.fixtures),
-    Src("api_football", "API-Football (yedek, anahtar gerekir)", fixtures=api_football.fixtures),
 ]
+if config.API_FOOTBALL_KEY:     # anahtar yoksa "kısmi/veri dönmedi" gürültüsü yerine gerekçeli "kapalı"
+    FIXTURE_SOURCES.append(Src("api_football", "API-Football (yedek, anahtar gerekir)", fixtures=api_football.fixtures))
 XG_SOURCES = [Src("understat", "Understat (xG, 5 büyük lig)", league_xg=understat.league_xg)]
 NEWS_SOURCES = [
     Src("transfermarkt", "Transfermarkt (sakatlık listesi)", team_news=transfermarkt.team_news),
 ]
 PREDICTION_SOURCES = [
-    Src("forebet", "Forebet (matematiksel tahmin)", predictions=forebet.predictions),
     Src("sportytrader", "SportyTrader (uzman tahmini)", predictions=sportytrader.predictions),
     Src("freesupertips", "FreeSuperTips (ipucu)", predictions=freesupertips.predictions),
-    Src("soccerstats", "SoccerStats (lig istatistik eğilimi)", predictions=soccerstats.predictions),
 ]
+if SOCCERSTATS_ON:
+    PREDICTION_SOURCES.append(Src("soccerstats", "SoccerStats (lig istatistik eğilimi)",
+                                  predictions=soccerstats.predictions))
 RESULT_SOURCES: list[Src] = [
     # Not: Nesine sonuç sayfası robots.txt ile yasak; kaldırıldı. Sonuçlar football-data/TFF/arşivden gelir.
     # Not: Flashscore sonuçları birikimli arşivi (data/archive) besliyordu; kullanım şartları nedeniyle kapatıldı.
     # Mevcut arşiv dosyaları okunmaya devam eder.
 ]
-# Kullanım şartları veya robots.txt otomatik erişimi yasakladığı için devre dışı bırakılan kaynaklar.
-# Kod silinmez; durum sayfasında "Atlandı" olarak gerekçesiyle görünür.
+# Kullanım şartları, robots.txt veya bot koruması otomatik erişimi yasakladığı/engellediği için devre dışı bırakılan
+# kaynaklar. Kod silinmez; durum sayfasında "Atlandı" olarak gerekçesiyle görünür, sağlık özetinde "kapalı" sayılır
+# (alarm üretmez) ve konsensüse girmez. Bu kaynakların korumasını aşmaya yönelik kod EKLENMEZ.
 DISABLED = [
     ("nesine_results", "Nesine (sonuçlar)",
      "Devre dışı: robots.txt sonuç sayfalarına otomatik erişimi yasaklıyor."),
     ("flashscore", "Flashscore (fikstür, sonuç, eksik oyuncu)",
      "Devre dışı: kullanım şartları otomatik istek ve veri çıkarmayı yasaklıyor (md. 2.9-2.10)."),
+    ("forebet", "Forebet (matematiksel tahmin)",
+     "Devre dışı: site Cloudflare bot doğrulamasıyla korunuyor (her istekte HTTP 403) ve veri çekilmeyecek "
+     "kaynaklar listesinde; koruma aşılmaz."),
 ]
+if not SOCCERSTATS_ON:
+    DISABLED += [("soccerstats", "SoccerStats (lig istatistik eğilimi)", _SOCCERSTATS_OFF),
+                 ("soccerstats_tr2", "SoccerStats sonuçlar (1. Lig geçmişi)",
+                  _SOCCERSTATS_OFF + " 1. Lig geçmişi TFF'den geliyor.")]
+if not config.API_FOOTBALL_KEY:
+    DISABLED.append(("api_football", "API-Football (yedek, anahtar gerekir)",
+                     "Kapalı: API_FOOTBALL_KEY tanımlı değil (opsiyonel yedek). GitHub → Settings → Secrets and "
+                     "variables → Actions altında bu adla secret eklenirse açılır."))
 ELO_SOURCES = [Src("clubelo", "ClubElo (kulüp Elo puanları, lig-arası düzeltme)", elo=clubelo.ratings)]
-# football-data.co.uk'ta geçmişi olmayan ve soccerstats sonuç sayfasından okunan ligler
-SOCCERSTATS_HISTORY = {"TR2": "turkey2"}
+# football-data.co.uk'ta geçmişi olmayan ve soccerstats sonuç sayfasından okunan ligler (yalnız kaynak açıksa)
+SOCCERSTATS_HISTORY = {"TR2": "turkey2"} if SOCCERSTATS_ON else {}
+
+
+def input_roles() -> dict[str, list[str]]:
+    """Model girdisi → o girdiyi besleyen kaynak kimlikleri (health.py 'inputs' özeti için; çağrı anında okunur)."""
+    return {"xg": [s.id for s in XG_SOURCES], "elo": [s.id for s in ELO_SOURCES],
+            "consensus": [s.id for s in PREDICTION_SOURCES], "squad": [s.id for s in NEWS_SOURCES],
+            "news": ["news_rss"]}
 
 
 def extra_history(client, board, today, data_dir=None) -> dict:
@@ -98,9 +127,14 @@ def extra_history(client, board, today, data_dir=None) -> dict:
         if small:
             board.note("archive_history", "Henüz eşik altında: " + ", ".join(
                 f"{k} {v}/{config.ARCHIVE_MIN_MATCHES}" for k, v in sorted(small.items())))
-    got = board.run("api_football_history", "API-Football geçmiş (1. Lig vb., anahtar gerekir)",
-                    lambda: api_football.history(client, today),
-                    count=lambda d: sum(len(v) for v in d.values()))
+    if config.API_FOOTBALL_KEY:
+        got = board.run("api_football_history", "API-Football geçmiş (1. Lig vb., anahtar gerekir)",
+                        lambda: api_football.history(client, today),
+                        count=lambda d: sum(len(v) for v in d.values()))
+    else:
+        got = None
+        board.skip("api_football_history", "API-Football geçmiş (1. Lig vb., anahtar gerekir)",
+                   "Kapalı: API_FOOTBALL_KEY tanımlı değil (opsiyonel; GitHub Actions secret'ı eklenirse açılır).")
     for lid, rows in (got or {}).items():
         cands.setdefault(lid, []).append(("api-football", rows))
     return {lid: max(lst, key=lambda x: len(x[1]))[1] for lid, lst in cands.items()}

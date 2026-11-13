@@ -7,6 +7,12 @@ Format, soccerdata (ClubElo.read_by_date) ve penaltyblog belgelerinden doğrulan
 Kullanım kuralları: günde 1 istek (24 saat disk önbelleği), PoliteClient robots.txt'yi kontrol eder;
 robots izin vermezse Blocked → StatusBoard 'missing' işaretler ve simülasyon eski lig-gücü yoluna düşer.
 
+Kasım 2026 teşhisi: sunucu bir haftadır her isteğe "502 Bad Gateway" (boş gövde) veriyor — sorun karşı tarafta.
+Adres doğru (API yalnız düz http sunar). Yapılanlar: geçici hatada üstel geri çekilmeli yeniden deneme (http.py),
+ileri tarihli çalıştırmalarda bugünün tablosu istenir (gelecek tarih + ayrı önbellek anahtarı yerine tek istek),
+sunucu yanıt vermezse son STALE_DAYS günün önbellekteki tablosu kullanılır; tablo tarihi (`date`) gerçek tarihtir,
+`stale_days` kaç gün eski olduğunu söyler. Elo günden güne çok az değişir; birkaç günlük tablo kabul edilebilir.
+
 Takım adları ASCII ve Almanca usulü harf çevirili: "Bueyueksehir", "Ankaraguecue", "Koebenhavn", "St Gillis".
 Eşleme: TeamMatcher + (ue→u, oe→o, ae→a) alternatif yazımlar + aşağıdaki Türkçe ad ipuçları.
 Lig maçlarında aday kümesi ülkeye göre daraltılır (yanlış eşleşme riskini azaltır).
@@ -17,13 +23,15 @@ import csv
 import io
 import logging
 import re
-from datetime import date
+from datetime import date, datetime, timedelta
 
+from .. import config
 from ..http import PoliteClient
 from ..teams import TeamMatcher, _ascii, normalize
 
 log = logging.getLogger("ozbet.clubelo")
 BASE = "http://api.clubelo.com"
+STALE_DAYS = 7            # sunucu kapalıyken kabul edilen en eski tablo
 
 # OZBET lig kimliği → ClubElo ülke kodu (lig maçlarında aday kümesini daraltmak için)
 LEAGUE_COUNTRY = {
@@ -91,6 +99,7 @@ class EloTable:
             self.rows.setdefault(r["club"], r)
         self.date = day
         self.source = source
+        self.stale_days = 0                 # 0 = istenen günün tablosu; >0 = önbellekten, bu kadar gün eski
         self._matchers: dict[str | None, tuple[TeamMatcher, dict[str, str]]] = {}
 
     def __len__(self):
@@ -129,11 +138,31 @@ class EloTable:
                 "home_club": h["club"], "away_club": a["club"]}
 
 
+def _has_rows(text: str) -> bool:
+    return bool(parse_csv(text))
+
+
 def ratings(client: PoliteClient, day: date) -> EloTable:
-    """Günde 1 istek; 24 saat önbellek. Boş/başlık-yalnız yanıt hata sayılır."""
+    """Günde 1 istek; 24 saat önbellek. Boş/başlık-yalnız yanıt hata sayılır.
+    Sunucu yanıt vermezse önbellekteki en yeni (≤ STALE_DAYS gün) tablo `stale_days` işaretiyle döner."""
+    day = min(day, datetime.now(config.TZ).date())      # gelecek tarihin Elo'su yok: bugünün tablosu
     ds = day.isoformat()
-    text = client.get(f"{BASE}/{ds}", ttl=24 * 3600)
-    rows = parse_csv(text)
-    if not rows:
-        raise RuntimeError("ClubElo yanıtı boş veya beklenmeyen biçimde")
-    return EloTable(rows, ds)
+    try:
+        rows = parse_csv(client.get(f"{BASE}/{ds}", ttl=24 * 3600))
+        if not rows:
+            raise RuntimeError("ClubElo yanıtı boş veya beklenmeyen biçimde")
+        return EloTable(rows, ds)
+    except Exception as e:  # noqa: BLE001 — önbellekte iyi kopya varsa onunla devam
+        cached = getattr(client, "cached", None)
+        for back in range(0, STALE_DAYS + 1) if cached else ():
+            d = (day - timedelta(days=back)).isoformat()
+            got = cached(f"{BASE}/{d}", max_age=(STALE_DAYS + 1) * 86400, validate=_has_rows)
+            if got:
+                log.warning("ClubElo alınamadı (%s); %s tarihli önbellek tablosu kullanılıyor", e, d)
+                from .. import http as _http
+                _http.STALE["api.clubelo.com"] = max(_http.STALE.get("api.clubelo.com", 0.0),
+                                                     round(max(got[1] / 3600, back * 24.0), 1))
+                t = EloTable(parse_csv(got[0]), d)
+                t.stale_days = back
+                return t
+        raise
