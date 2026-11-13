@@ -19,7 +19,7 @@ from .markets import all_labels, all_probs
 from .markets import categories as market_categories
 from .model import market_lambda
 from .model.simulate import seed_for
-from .agents import iddaa_archive, market_map, odds_analysis, bulletin, commentator, consensus, market, scorecard, simulation, squad, standings, stats, trends, value
+from .agents import sharp_edge, iddaa_archive, market_map, odds_analysis, bulletin, commentator, consensus, market, scorecard, simulation, squad, standings, stats, trends, value
 from .http import PoliteClient
 from .sources import football_data as fd
 from .sources import archive, news_rss, registry, tff
@@ -381,6 +381,10 @@ def main(argv=None):
                 mv, alarms = market.movement(m["odds_history"])
                 mk["movement"], mk["drop_alarms"] = mv, alarms
             m["market"] = mk
+            try:   # keskin piyasa farkı (S1 hipotezi): gerçek iddaa oranı × fixtures.csv keskin adil olasılık
+                sharp_edge.attach(m, f, fixture_lists.get("football_data_fixtures"))
+            except Exception as e:  # noqa: BLE001
+                log.info("Keskin fark %s: %s", mid, e)
             if odds_pool is not None and mk:
                 try:
                     m["odds_analysis"] = odds_pool.analyze(mk.get("implied"), f.league_id)
@@ -495,6 +499,10 @@ def main(argv=None):
             log.warning("Maç %s - %s işlenemedi: %s", f.home, f.away, e)
             bad_matches.append(f"{f.home} - {f.away}: {type(e).__name__}")
 
+    try:
+        board.items["sharp_edge"] = sharp_edge.status(matches)
+    except Exception as e:  # noqa: BLE001
+        log.info("Keskin fark durumu yazılamadı: %s", e)
     # iddaa oran arşivi: yalnız bu çalıştırmada kaynaktan gelen maçlar (açılış bir kez, kapanış ko öncesi)
     arch_info = None
     try:
