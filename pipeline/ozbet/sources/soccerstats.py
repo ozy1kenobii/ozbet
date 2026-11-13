@@ -3,6 +3,11 @@
 Bu bir tahmin sitesi değil; konsensüse "istatistik eğilimi" oyu olarak girer:
 iki takımın ortalama 2.5+ yüzdesi ≥ %55 → 2.5 Üst, ≤ %40 → 2.5 Alt; BTS ≥ %55 → KG Var, ≤ %40 → KG Yok.
 Tablolar başlık metnine göre (pandas.read_html) seçilir; sınıf adlarına bağımlı değildir.
+
+VARSAYILAN OLARAK DEVRE DIŞI (registry): Kasım 2026'da sitenin Cloudflare güvenlik duvarı GitHub Actions'tan gelen
+her isteğe HTTP 403 "Sorry, you have been blocked" döndürüyor (trends.asp ve results.asp, 40/40 çalıştırma).
+Engel aşılmaz. 1. Lig geçmişi TFF'den (tff_tr2) geliyor. Engellenmeyen bir ağdan çalıştırılıyorsa
+OZBET_ENABLE_SOURCES=soccerstats ile yeniden açılabilir.
 """
 from __future__ import annotations
 
@@ -12,7 +17,7 @@ from datetime import date
 import pandas as pd
 
 from .. import config
-from ..http import PoliteClient
+from ..http import Blocked, PoliteClient
 from ..teams import TeamMatcher
 from .base import Prediction, now_iso
 
@@ -57,10 +62,13 @@ def predictions(client: PoliteClient, day: date, fixtures=()) -> list[Prediction
             by_league.setdefault(lg.soccerstats, []).append(f)
     if not by_league:
         return []
-    errors = 0
+    errors, blocked = 0, None
     for code, fx in by_league.items():
         try:
             tr = league_trends(client, code)
+        except Blocked as e:
+            blocked = e
+            break       # site engelliyor: diğer ligleri de boşuna isteme
         except Exception:  # noqa: BLE001
             errors += 1
             continue
@@ -80,8 +88,11 @@ def predictions(client: PoliteClient, day: date, fixtures=()) -> list[Prediction
                 out.append(Prediction("soccerstats", f.home, f.away, day.isoformat(), t, picks,
                                       probs={"O2.5": round(o, 3), "BTTS_Y": round(b, 3)},
                                       note=f"Ü2.5 ort. %{round(o*100)}, KG ort. %{round(b*100)}"))
+    if blocked and not out:
+        raise Blocked(f"SoccerStats erişimi engelliyor (aşılmaz): {blocked}") from blocked
     if errors == len(by_league):
-        raise RuntimeError("soccerstats: hiçbir lig tablosu okunamadı")
+        raise RuntimeError("soccerstats: hiçbir lig tablosu okunamadı (trends.asp tablo başlıkları '2.5+'/'BTS' "
+                           "değişmiş olabilir)")
     return out
 
 
@@ -166,6 +177,11 @@ def results_history(client: PoliteClient, code: str, today: _date, seasons: int 
         try:
             html = client.get(f"{BASE}/results.asp", params={"league": league, "pmtype": "bydate"},
                               ttl=12 * 3600 if k == 0 else 30 * 86400)
+        except Blocked as e:
+            if not out:
+                raise Blocked(f"SoccerStats erişimi engelliyor (aşılmaz): {e}") from e
+            errors.append(f"{league}: Blocked")
+            break
         except Exception as e:  # noqa: BLE001 — eski sezon sayfası yoksa diğerleriyle devam
             errors.append(f"{league}: {type(e).__name__}")
             continue

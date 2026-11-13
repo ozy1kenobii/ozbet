@@ -3,7 +3,10 @@
 https://www.forebet.com/en/football-tips-and-predictions-for-today
 Doğrulanmış seçiciler: div.rcnt (satır), span.forepr (1/X/2 tahmini), span.homeTeam / span.awayTeam.
 Olasılık yüzdeleri (div.fprc span) doğrulanamadı → varsa okunur, yoksa yalnızca tahmin kullanılır.
-Not: Kasım 2026 itibarıyla site GitHub Actions isteklerini Cloudflare ile engelliyor; engel aşılmaya çalışılmaz.
+
+DEVRE DIŞI (registry.DISABLED): site Cloudflare "managed challenge" ile korunuyor (40/40 çalıştırmada HTTP 403) ve
+docs/research/00-OZET.md "veri çekilmeyecek kaynaklar" listesinde. Koruma aşılmaz; adapter çağrılmaz, konsensüs ve
+sağlık özeti bu kaynağı hata saymaz. Ayrıştırıcı, site sahibinden izin/resmî veri akışı alınırsa diye duruyor.
 """
 from __future__ import annotations
 

@@ -11,7 +11,7 @@ from datetime import date
 
 from bs4 import BeautifulSoup
 
-from ..http import PoliteClient
+from ..http import Blocked, PoliteClient
 from .base import Prediction, now_iso
 from .predictions_common import picks_from_text
 
@@ -28,13 +28,16 @@ def predictions(client: PoliteClient, day: date, fixtures=()) -> list[Prediction
         if LINK.search(href) and href not in links:
             links.append(href)
     if not links:
-        raise RuntimeError("freesupertips: maç linki bulunamadı")
+        raise RuntimeError("freesupertips: hub sayfası okundu ama maç linki bulunamadı (sayfa yapısı değişmiş; "
+                           "LINK deseni güncellenmeli)")
     out, t = [], now_iso()
     for href in links[:MAX_PAGES]:
         m = LINK.search(href)
         home, away = (x.replace("-", " ").title() for x in m.groups())
         try:
             page = BeautifulSoup(client.get(BASE + href, ttl=6 * 3600), "lxml")
+        except Blocked:
+            break       # site engelliyor: kalan istekleri boşuna yapma
         except Exception:  # noqa: BLE001
             continue
         picks: dict[str, str] = {}

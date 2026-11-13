@@ -3,6 +3,10 @@
 Liste: https://www.sportytrader.com/en/betting-tips/football/  → maç linkleri /en/betting-tips/{ev}-{dep}-{id}/
 Maç sayfası: "Prediction :" etiketinin yanındaki tek satırlık tahmin metni.
 İstek sayısını düşük tutmak için yalnızca öncelikli liglere benzeyen ilk 20 maç sayfası okunur.
+
+13 Kasım 2026 teşhisi: liste sayfaları HTTP 403 + Cloudflare "Just a moment..." doğrulama sayfası döndürmeye başladı
+(önceki 39 çalıştırma sorunsuzdu). Doğrulama aşılmaz; engel artık "maç linki bulunamadı" diye yanlış raporlanmaz,
+Blocked olarak gerekçesiyle görünür. http.py engel hafızası tekrarlayan engelde alan adını dinlendirir.
 """
 from __future__ import annotations
 
@@ -11,7 +15,7 @@ from datetime import date
 
 from bs4 import BeautifulSoup
 
-from ..http import PoliteClient
+from ..http import Blocked, PoliteClient
 from .base import Prediction, now_iso
 from .predictions_common import picks_from_text
 
@@ -49,25 +53,44 @@ def parse_match(html: str) -> tuple[str, str, str] | None:
     return None
 
 
-def predictions(client: PoliteClient, day: date, fixtures=()) -> list[Prediction]:
+def parse_links(html: str) -> list[str]:
     links = []
+    for a in BeautifulSoup(html, "lxml").find_all("a", href=True):
+        href = a["href"].replace(BASE, "").split("?")[0].split("#")[0]
+        if LINK.match(href) and href not in links:
+            links.append(href)
+    return links
+
+
+def predictions(client: PoliteClient, day: date, fixtures=()) -> list[Prediction]:
+    links, blocked, failed, read = [], None, [], 0
     for u in LISTS:
         try:
-            soup = BeautifulSoup(client.get(u, ttl=3 * 3600), "lxml")
-        except Exception:  # noqa: BLE001
+            html = client.get(u, ttl=3 * 3600)
+        except Blocked as e:
+            blocked = e
             continue
-        for a in soup.find_all("a", href=True):
-            href = a["href"].replace(BASE, "")
-            if LINK.match(href) and href not in links:
-                links.append(href)
+        except Exception as e:  # noqa: BLE001
+            failed.append(f"{type(e).__name__}: {str(e)[:80]}")
+            continue
+        read += 1
+        links = parse_links(html)
         if links:
             break
     if not links:
-        raise RuntimeError("sportytrader: maç linki bulunamadı (liste sayfası yapısı değişmiş olabilir)")
+        if blocked and not read:
+            # Site bot doğrulamasıyla erişimi reddediyor; doğrulamayı aşmaya çalışmıyoruz.
+            raise Blocked(f"SportyTrader liste sayfası engelli (bot doğrulaması aşılmaz): {blocked}") from blocked
+        if failed and not read:
+            raise RuntimeError("sportytrader: liste sayfası alınamadı — " + "; ".join(failed[:2]))
+        raise RuntimeError("sportytrader: liste sayfası okundu ama maç linki bulunamadı (sayfa yapısı değişmiş; "
+                           "LINK deseni güncellenmeli)")
     out, t = [], now_iso()
     for href in links[:MAX_PAGES]:
         try:
             got = parse_match(client.get(BASE + href, ttl=6 * 3600))
+        except Blocked:
+            break       # maç sayfaları da engelli: kalan istekleri boşuna yapma
         except Exception:  # noqa: BLE001
             continue
         if got:
