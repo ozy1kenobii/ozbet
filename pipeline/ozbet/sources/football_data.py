@@ -55,6 +55,38 @@ def _odds_from_row(r, closing: bool = False) -> dict[str, float]:
     return out
 
 
+# fixtures.csv bahisçi önekleri: 1X2 kolonları {önek}H/D/A; 2.5 Alt/Üst ve Asya handikapı için Pinnacle öneki
+# "PS" değil "P"dir (P>2.5, PAHH). Dosyadan dosyaya kolonlar değişir (2026-27'de PS* yok) → hepsi opsiyonel.
+BOOKS = {"PS": "P", "BFE": "BFE", "Avg": "Avg", "Max": "Max", "B365": "B365"}
+
+
+def _odd(r, col) -> float | None:
+    """Geçerli ondalık oran (> 1.0) ya da None."""
+    v = _num(r.get(col))
+    return round(v, 3) if v is not None and v > 1.0 else None
+
+
+def books_from_row(r) -> dict:
+    """Satırda bulunan tüm bahisçi oranları: {"PS": {"1":..,"X":..,"2":..,"O2.5":..,"U2.5":..,"AHH":..,"AHA":..},
+    "BFE": {...}, "Avg": {...}, "Max": {...}, "B365": {...}, "ah_line": -0.5}. Bir grup (1X2 / AÜ / AH) ancak
+    tüm bacakları geçerliyse yazılır; kolonu olmayan ya da boş bahisçi sözlüğe hiç girmez."""
+    out: dict = {}
+    for book, p2 in BOOKS.items():
+        d: dict[str, float] = {}
+        for keys, cols in ((("1", "X", "2"), (f"{book}H", f"{book}D", f"{book}A")),
+                           (("O2.5", "U2.5"), (f"{p2}>2.5", f"{p2}<2.5")),
+                           (("AHH", "AHA"), (f"{p2}AHH", f"{p2}AHA"))):
+            vals = [_odd(r, c) for c in cols]
+            if all(vals):
+                d.update(zip(keys, vals))
+        if d:
+            out[book] = d
+    line = _num(r.get("AHh"))
+    if line is not None and any("AHH" in d for d in out.values()):
+        out["ah_line"] = line
+    return out
+
+
 def _read_csv(text: str) -> pd.DataFrame:
     # Bazı dosyalarda BOM ve sondaki boş kolonlar var
     df = pd.read_csv(io.StringIO(text.lstrip("﻿")), encoding_errors="replace", on_bad_lines="skip")
@@ -97,7 +129,8 @@ def history(client: PoliteClient, fd_code: str, seasons: list[str]) -> list[dict
 
 
 def fixtures(client: PoliteClient, day: date) -> list[Fixture]:
-    """fixtures.csv: önümüzdeki günlerin ana lig maçları + ortalama oranlar."""
+    """fixtures.csv: önümüzdeki günlerin ana lig maçları + ortalama oranlar.
+    `extra["books"]`: satırdaki tüm bahisçi oranları (books_from_row) — Keskin Fark ajanı (agents/sharp_edge) okur."""
     text = client.get(f"{BASE}/fixtures.csv", ttl=2 * 3600)
     df = _read_csv(text)
     out, t = [], now_iso()
@@ -106,10 +139,11 @@ def fixtures(client: PoliteClient, day: date) -> list[Fixture]:
         if d is None:
             continue
         tm = str(r.get("Time") or "12:00").strip()
+        time_known = True
         try:
             hh, mm = (int(x) for x in tm.split(":")[:2])
         except ValueError:
-            hh, mm = 12, 0
+            hh, mm, time_known = 12, 0, False   # saat yok/bozuk: 12:00 varsayımı (keskin fark eşlemesi bunu bilir)
         ko = datetime(d.year, d.month, d.day, hh, mm, tzinfo=UK).astimezone(config.TZ)
         if ko.date() != day:
             continue
@@ -118,7 +152,8 @@ def fixtures(client: PoliteClient, day: date) -> list[Fixture]:
             league_id=CODE_TO_LEAGUE.get(code), league_name_raw=code, kickoff=ko,
             home=str(r["HomeTeam"]).strip(), away=str(r["AwayTeam"]).strip(),
             source="football-data.co.uk", fetched_at=t, odds=_odds_from_row(r),
-            extra={"referee": r["Referee"].strip()} if isinstance(r.get("Referee"), str) else {},
+            extra={**({"referee": r["Referee"].strip()} if isinstance(r.get("Referee"), str) else {}),
+                   "books": books_from_row(r), "time_known": time_known},
         ))
     return out
 
