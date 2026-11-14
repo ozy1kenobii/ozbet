@@ -9,12 +9,13 @@ import { MarketScanner } from '../components/MarketScanner';
 import { readLS, writeLS } from '../lib/storage';
 import { BAND_MAX, MIN_ODDS_OPTIONS, byEv, inBand, loadMinOdds, pickEv, saveMinOdds } from '../lib/pick';
 import { isPas } from '../components/PickBits';
+import { CONF_EXPLAIN, forecastHit } from '../components/Forecast';
 
 const FILTER_KEY = 'ozbet-filtre-v2';
 const SCOPE_KEY = 'ozbet-kapsam';
-const VIEW_KEY = 'ozbet-gorunum';
-type View = 'picks' | 'all';
-const loadView = (): View => (readLS<string>(VIEW_KEY, 'picks') === 'all' ? 'all' : 'picks');
+const VIEW_KEY = 'ozbet-gorunum-v3';
+type View = 'forecast' | 'picks' | 'all';
+const loadView = (): View => { const v = readLS<string>(VIEW_KEY, 'forecast'); return v === 'all' || v === 'picks' ? v : 'forecast'; };
 type Scope = 'analyzed' | 'all';
 const loadScope = (): Scope => (readLS<string>(SCOPE_KEY, 'analyzed') === 'all' ? 'all' : 'analyzed');
 const isAnalyzed = (m: Match) => !!m.model && m.model.source !== 'piyasa';   // piyasa modeli "analizli" sayılmaz
@@ -110,6 +111,7 @@ function DayView({ day }: { day: DayFile }) {
 
   const allMatches = useMemo(() => (Array.isArray(day.matches) ? day.matches : []), [day]);
   const nAnalyzed = useMemo(() => allMatches.filter(isAnalyzed).length, [allMatches]);
+  const nForecast = useMemo(() => allMatches.filter((m) => m.forecast).length, [allMatches]);
   const nBandPicks = useMemo(() => allMatches.filter((m) => m.pick && inBand(m.pick.odds)).length, [allMatches]);
   // Seçili sekme: lig grupları, MarketScanner, öne çıkanlar ve saat filtresi yalnız bu kümeyle çalışır
   const matches = useMemo(() => (scope === 'analyzed' ? allMatches.filter(isAnalyzed) : allMatches), [allMatches, scope]);
@@ -149,14 +151,14 @@ function DayView({ day }: { day: DayFile }) {
     <div>
       <SourceSummary day={day} />
       <div className="mt-3 seg w-full flex" role="group" aria-label="Görünüm">
-        {([['picks', 'Günün seçimleri'], ['all', 'Tüm maçlar']] as const).map(([k, t]) => (
+        {([['forecast', 'Tahminler'], ['picks', 'Seçimler'], ['all', 'Tüm maçlar']] as const).map(([k, t]) => (
           <button key={k} className="flex-1" aria-pressed={view === k} onClick={() => setView(k)}
-            title={k === 'picks' ? 'Oran bandındaki tercihler, beklenen değere göre sıralı' : 'Bültendeki bütün maçlar, lig lig'}>
-            {t} <span className="num">({k === 'picks' ? nBandPicks : allMatches.length})</span>
+            title={k === 'forecast' ? 'Her maç için maç sonu tahmini' : k === 'picks' ? 'Oran bandındaki tercihler, beklenen değere göre sıralı' : 'Bültendeki bütün maçlar, lig lig'}>
+            {t} <span className="num">({k === 'forecast' ? nForecast : k === 'picks' ? nBandPicks : allMatches.length})</span>
           </button>
         ))}
       </div>
-      {view === 'picks' ? <PicksView day={day} matches={allMatches} onShowAll={() => setView('all')} /> : (<>
+      {view === 'forecast' ? <ForecastView day={day} matches={allMatches} /> : view === 'picks' ? <PicksView day={day} matches={allMatches} onShowAll={() => setView('all')} /> : (<>
       <div className="mt-3 seg w-full flex" role="tablist" aria-label="Maç kapsamı">
         {([['analyzed', 'Analizli', nAnalyzed], ['all', 'Tüm bülten', allMatches.length]] as const).map(([k, t, n]) => (
           <button key={k} className="flex-1" role="tab" aria-selected={scope === k} aria-pressed={scope === k} onClick={() => setScope(k)}
@@ -258,6 +260,74 @@ function DayView({ day }: { day: DayFile }) {
       </div>
       </>)}
     </div>
+  );
+}
+
+/* ---------- Tahminler: her maç için maç sonu tahmini ---------- */
+
+const CONF_KEY = 'ozbet-tahmin-guven';
+const SORT_KEY = 'ozbet-tahmin-sira';
+type ConfFilter = 'all' | 'mid' | 'high';
+type FcSort = 'time' | 'p';
+
+function ForecastView({ day, matches }: { day: DayFile; matches: Match[] }) {
+  const [conf, setConfState] = useState<ConfFilter>(() => { const v = readLS<string>(CONF_KEY, 'all'); return v === 'mid' || v === 'high' ? v : 'all'; });
+  const [sort, setSortState] = useState<FcSort>(() => (readLS<string>(SORT_KEY, 'time') === 'p' ? 'p' : 'time'));
+  const [q, setQ] = useState('');
+  const setConf = (v: ConfFilter) => { setConfState(v); writeLS(CONF_KEY, v); };
+  const setSort = (v: FcSort) => { setSortState(v); writeLS(SORT_KEY, v); };
+  const withFc = useMemo(() => matches.filter((m) => m.forecast), [matches]);
+  const counts = useMemo(() => ({
+    all: withFc.length,
+    mid: withFc.filter((m) => m.forecast!.confidence !== 'düşük').length,
+    high: withFc.filter((m) => m.forecast!.confidence === 'yüksek').length,
+  }), [withFc]);
+  const shown = useMemo(() => {
+    const qf = q.trim().toLocaleLowerCase('tr');
+    const fin = (m: Match) => (m.status === 'finished' ? 1 : 0);
+    return withFc
+      .filter((m) => conf === 'all' || (conf === 'mid' ? m.forecast!.confidence !== 'düşük' : m.forecast!.confidence === 'yüksek'))
+      .filter((m) => !qf || `${m.home.name} ${m.away.name} ${m.league_name}`.toLocaleLowerCase('tr').includes(qf))
+      .sort((a, b) => fin(a) - fin(b) || (sort === 'p' ? b.forecast!.p - a.forecast!.p : 0) || a.kickoff.localeCompare(b.kickoff));
+  }, [withFc, conf, sort, q]);
+  const done = withFc.filter((m) => forecastHit(m) != null);
+  const hits = done.filter((m) => forecastHit(m)).length;
+
+  return (
+    <section className="mt-4" aria-labelledby="tahminler">
+      <div className="flex items-baseline gap-2">
+        <h2 id="tahminler" className="h-section">Maç sonu tahminleri</h2>
+        <span className="t-meta num">{shown.length} maç{done.length > 0 && <> · bugün {hits}/{done.length} tuttu</>}</span>
+      </div>
+      <div className="mt-2 seg w-full flex" role="group" aria-label="Güven süzgeci">
+        {([['all', 'Tümü'], ['mid', 'Orta ve üzeri'], ['high', 'Yüksek güven']] as const).map(([k, t]) => (
+          <button key={k} className="flex-1 !px-1" aria-pressed={conf === k} onClick={() => setConf(k)}>{t} <span className="num">({counts[k]})</span></button>
+        ))}
+      </div>
+      <div className="mt-2 flex items-center gap-2">
+        <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Takım ya da lig ara" aria-label="Takım ya da lig ara"
+          className="min-w-0 flex-1 rounded-md border border-line bg-transparent px-3 py-2 text-[15px]" />
+        <div className="seg flex shrink-0" role="group" aria-label="Sıralama">
+          <button className="!px-2.5" aria-pressed={sort === 'time'} onClick={() => setSort('time')}>Saat</button>
+          <button className="!px-2.5" aria-pressed={sort === 'p'} onClick={() => setSort('p')}>Olasılık</button>
+        </div>
+      </div>
+      {shown.length > 0 ? (
+        <div className="mt-3 grid gap-2.5 md:grid-cols-2">
+          {shown.map((m) => <MatchCard key={m.id} m={m} date={day.date} showLeague />)}
+        </div>
+      ) : (
+        <div className="mt-3 panel px-5 py-7 text-center">
+          <p className="display text-2xl font-semibold">{withFc.length ? 'Bu süzgeçte maç yok' : 'Tahmin yok'}</p>
+          <p className="mt-2 text-sm text-muted max-w-sm mx-auto">{withFc.length ? 'Güven süzgecini genişletin ya da aramayı temizleyin.' : 'Bu gün için tahmin üretilmedi; veri hattı sonraki çalıştırmada dolduracak.'}</p>
+        </div>
+      )}
+      <p className="mt-3 t-meta">
+        Tahminler iddaa oranlarının çözülmesiyle üretilir; dış tahmin sitelerine bağlı değildir. {CONF_EXPLAIN}{' '}
+        <Link to="/karne" className="text-accent underline underline-offset-2">Tahmin isabeti</Link>
+      </p>
+      <p className="mt-2 t-micro num">{day.run_label} çalıştırması, güncelleme {fmtTime(day.generated_at)}</p>
+    </section>
   );
 }
 

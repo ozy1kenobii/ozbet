@@ -19,7 +19,7 @@ from .markets import all_labels, all_probs
 from .markets import categories as market_categories
 from .model import market_lambda
 from .model.simulate import seed_for
-from .agents import sharp_edge, iddaa_archive, market_map, odds_analysis, bulletin, commentator, consensus, market, scorecard, simulation, squad, standings, stats, trends, value
+from .agents import forecast, sharp_edge, iddaa_archive, market_map, odds_analysis, bulletin, commentator, consensus, market, scorecard, simulation, squad, standings, stats, trends, value
 from .http import PoliteClient
 from .sources import football_data as fd
 from .sources import archive, news_rss, registry, tff
@@ -491,6 +491,10 @@ def main(argv=None):
             if cup and m["model"] and m["model"].get("source") != "piyasa":
                 m["flags"].append(CUP_FLAG_ELO if m["model"].get("method") == "elo" else CUP_FLAG)
             m["value"] = [] if (cup or (m["model"] or {}).get("source") == "piyasa") else value.find_value(all_probs(m["model"]), m["odds"], (mk or {}).get("implied"), trust)
+            try:   # Tahmin Motoru: her maç için doğrudan maç sonu tahmini (oranlardan; dış siteye bağlı değil)
+                m["forecast"] = forecast.build(m)
+            except Exception as e:  # noqa: BLE001
+                log.info("Tahmin %s: %s", mid, e); m["forecast"] = None
             commentator.annotate(m, trust, use_llm=not args.no_llm and lg is not None)
             if f.result:
                 m["status"] = "finished"
@@ -529,6 +533,11 @@ def main(argv=None):
                 except Exception as e:  # noqa: BLE001
                     log.info("Taşınan maç yeniden değerlendirilemedi %s: %s", mid, e)
                     pm["pick"] = None
+            if not pm.get("forecast"):
+                try:
+                    pm["forecast"] = forecast.build(pm)
+                except Exception as e:  # noqa: BLE001
+                    log.info("Taşınan maç tahmini %s: %s", mid, e)
             matches.append(pm)
     matches = validate.dedupe_matches(matches, vrep)
     matches.sort(key=lambda m: (m["league_priority"], m["kickoff"], m["home"]["name"]))

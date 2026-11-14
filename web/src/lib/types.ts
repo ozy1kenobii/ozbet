@@ -261,6 +261,30 @@ export interface MatchNews {
   fetched_at: string | null;
 }
 
+export type ForecastConf = 'yüksek' | 'orta' | 'düşük';
+/** Tahmin Motoru: her maç için oranlardan çözülen maç sonu tahmini (pipeline/ozbet/agents/forecast.py) */
+export interface Forecast {
+  outcome: '1' | 'X' | '2';
+  label: string;
+  p: number;
+  probs: { '1': number; X: number; '2': number };
+  margin: number;
+  confidence: ForecastConf;
+  basis: 'piyasa' | 'piyasa+model' | 'model' | 'kısmi' | string;
+  dc?: { market: string; p: number };
+  scores?: { score: string; p: number }[];
+  xg?: [number, number];
+  goals?: { market: 'O2.5' | 'U2.5'; p: number };
+  btts?: { market: 'BTTS_Y' | 'BTTS_N'; p: number };
+  move?: { delta: number; dir: string; since?: string };
+  text?: string;
+}
+export interface ForecastAgg { n: number; hit_rate: number | null; hit_ci?: [number, number] | null; avg_p: number | null }
+export interface ForecastCard extends ForecastAgg {
+  by_conf: (ForecastAgg & { conf: ForecastConf })[];
+  score: ForecastAgg; goals: ForecastAgg; btts: ForecastAgg; n_retro?: number;
+}
+
 export interface Match {
   id: string;
   code: string | null;
@@ -291,6 +315,7 @@ export interface Match {
   value: ValueItem[];
   value_note?: string | null;
   pick: Pick | null;
+  forecast?: Forecast | null;
   /** Tercih yokken gösterilen Türkçe gerekçe ("Pas: ...") */
   pick_note?: string | null;
   sharp?: Sharp | null;
@@ -366,6 +391,7 @@ export interface Scorecard {
   recent: { date: string; match: string; pick: string; odds: number | null; won: boolean; score: string; p?: number | null; clv?: number | null; ev?: number | null }[];
   clv?: ClvBlock | null;
   by_odds_band?: OddsBandRow[] | null;
+  forecast?: ForecastCard | null;
   /** Tüm marketler kalibrasyonu: kategori bazında model ve piyasa */
   by_category?: { category: string; title: string; n: number; model_brier: number; market_brier: number; model_logloss: number; market_logloss: number }[];
   calibration_markets?: { model: CalibBin[]; market: CalibBin[] };

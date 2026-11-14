@@ -6,6 +6,7 @@ import { Badge, DropBadge, Icon, ResultBadge, Stars, ValueBadge } from './ui';
 import { AddToCoupon } from './AddToCoupon';
 import { FreshSquadBadge, PickMetrics, SharpNote, isPas, pasText } from './PickBits';
 import { pickEv } from '../lib/pick';
+import { ForecastStrip } from './Forecast';
 import { signedPct } from '../lib/format';
 
 /** Kartta gösterilen sakin oran satırı */
@@ -77,6 +78,7 @@ export function MatchCard({ m, date, showLeague = false }: { m: Match; date: str
         <div className="shrink-0"><AddToCoupon match={m} date={date} compact /></div>
       </div>
 
+      {m.forecast && <Link to={href} tabIndex={-1} className="mx-3.5 mt-1.5 block"><ForecastStrip m={m} /></Link>}
       {pick ? (
         <Link to={href} tabIndex={-1} aria-hidden="true" className="mx-3.5 mt-1.5 block rounded-md bg-accent/[.07] px-2.5 pt-2 pb-1.5">
           <span className="flex items-center gap-2">
@@ -87,7 +89,7 @@ export function MatchCard({ m, date, showLeague = false }: { m: Match; date: str
           </span>
           <span className="mt-1.5 block"><PickMetrics pick={pick} /></span>
         </Link>
-      ) : isPas(m) ? (
+      ) : m.forecast ? null : isPas(m) ? (
         <Link to={href} tabIndex={-1} className="mx-3.5 mt-1.5 flex items-baseline gap-2 rounded-md border border-dashed border-line px-2.5 py-1.5">
           <span className="display text-[17px] font-semibold leading-none text-muted shrink-0">Pas</span>
           <span className="t-meta min-w-0">{pasText(m.pick_note) || 'Ölçütlere uyan seçim yok.'}</span>

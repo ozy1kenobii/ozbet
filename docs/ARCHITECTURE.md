@@ -179,3 +179,13 @@ diye lig başına **en çok satırı olan tek kaynağı** seçer. Ana ligler (fo
   lig kademesi (league_profile.py), toplam gol büzmesi (dixon_coles.shrink_total, docs/research/gol-yanliligi.md).
 - `scorecard.json`: `clv`, `by_odds_band`, `hit_ci`, `roi_ci`; güven katsayısı örneklem büyüklüğüne göre büzülür (agents/clv.py, scorecard.py).
 - Bilinen eksik: tercih oranı ilk yayınlandığı anda dondurulmuyor; CLV (tercih→kapanış) bu yüzden ≈0 çıkar, açılış→kapanış vekil olarak gösterilir.
+
+## Tahmin Motoru (14 Kasım 2026) – `m.forecast`
+Her maç için doğrudan maç sonu tahmini; tek zorunlu girdi bülten oranlarıdır (dış tahmin sitelerine bağlı değil).
+`agents/forecast.py`: 1X2 → Shin adil olasılık (lig modeli varsa kalibre harman), piyasa λ'larından skor dağılımı,
+1X2 grubu yoksa eldeki marketlerden kısmi uydurma, kendi anlık görüntülerimizden oran hareketi.
+`forecast = {outcome, label, p, probs, margin, confidence: yüksek|orta|düşük, basis: piyasa|piyasa+model|model|kısmi,
+dc, scores[3], xg, goals, btts, move?, text}`. Güven eşikleri: p ≥ 0,60 yüksek, ≥ 0,45 orta.
+Karne: geçmiş satırında `fc = {o,p,c,hit,score_hit,ou_hit,btts_hit}`; `scorecard.forecast` = genel / güven kademesi /
+skor / Alt-Üst / KG isabeti (eski satırlar saklı ima olasılıklarından geriye dönük puanlanır, `n_retro`).
+Tahmin isabeti kazanç ölçüsü değildir; tercih kuralı (`PICK_MODE=sinyal`) bundan bağımsızdır.

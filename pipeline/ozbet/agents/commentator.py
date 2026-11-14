@@ -229,7 +229,10 @@ def rule_comment(m: dict) -> str:
     H, A = m["home"]["name"], m["away"]["name"]
     model, stats, squad = m.get("model"), m.get("stats") or {}, m.get("squad") or {}
     out: list[str] = []
-    if model:
+    fc = m.get("forecast")
+    if fc and fc.get("text"):   # Tahmin Motoru varsa yorum onunla açılır (detaydaki tahmin paneliyle aynı sayılar)
+        out.append(fc["text"])
+    elif model:
         p = model["probs"]
         out.append(f"Model ev sahibine {pct(p['1'])}, beraberliğe {pct(p['X'])}, deplasmana {pct(p['2'])} "
                    f"olasılık veriyor; beklenen gol {model['lambda_home']:.1f} - {model['lambda_away']:.1f}.")

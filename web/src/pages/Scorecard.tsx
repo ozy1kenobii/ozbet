@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useBacktest, useScorecard } from '../lib/data';
-import type { ClvBlock, OddsBandRow, Backtest, BacktestGridRow, BacktestSummary, CalibBin, Scorecard as ScorecardT, ScoreBlock, ShotBlendRow } from '../lib/types';
+import type { ForecastAgg, ForecastCard, ClvBlock, OddsBandRow, Backtest, BacktestGridRow, BacktestSummary, CalibBin, Scorecard as ScorecardT, ScoreBlock, ShotBlendRow } from '../lib/types';
 import { fmtDateTime, fmtShortDate, num, odd, pct, signedNum, signedPct } from '../lib/format';
 import { Calibration, LineChart } from '../components/charts';
 import { Empty, Loading, ResultBadge, Section } from '../components/ui';
@@ -38,6 +38,7 @@ export default function Scorecard() {
                 <b className="text-ink">Örneklem küçük ({d.overall.n} tahmin).</b> Bu sayıda sonuçta isabet ve ROI şansla kolayca yön değiştirir; sayıları bir eğilim olarak değil, ara durum olarak okuyun.
               </p>
             )}
+            <ForecastBox f={d.forecast} />
             <OddsBands rows={d.by_odds_band} />
             <ClvBox c={d.clv} />
 
@@ -156,6 +157,39 @@ function Block({ title, b }: { title: string; b: ScoreBlock | undefined }) {
 }
 
 /** Oran bandına göre sonuçlar: yüksek isabet, başabaş isabetin altındaysa yine zarar eder. */
+function ForecastBox({ f }: { f: ForecastCard | null | undefined }) {
+  if (!f || !f.n) return null;
+  const rows: [string, ForecastAgg][] = [
+    ...f.by_conf.map((r) => [`Maç sonu · güven ${r.conf}`, r] as [string, ForecastAgg]),
+    ['Maç sonu · tümü', f], ['2,5 Alt/Üst', f.goals], ['Karşılıklı gol', f.btts], ['Tam skor', f.score],
+  ];
+  return (
+    <Section title="Tahmin isabeti" aside={<span className="text-[12px] text-muted num">{f.n} maç</span>}>
+      <div className="panel px-2 py-1 overflow-x-auto">
+        <table className="tbl">
+          <thead><tr>
+            <th>Tahmin</th><th className="text-right">n</th><th className="text-right">İsabet</th>
+            <th className="text-right" title="Tahminlerin ortalama olasılığı; isabet buna yakınsa tahmin dürüst demektir">Beklenen</th>
+          </tr></thead>
+          <tbody>{rows.filter(([, r]) => r && r.n > 0).map(([t, r]) => (
+            <tr key={t}>
+              <td>{t}</td><td className="text-right num">{r.n}</td>
+              <td className="text-right num font-semibold">{r.hit_rate != null ? pct(r.hit_rate) : '–'}
+                {r.hit_ci && <span className="block text-[11px] font-normal text-muted">{pct(r.hit_ci[0])}–{pct(r.hit_ci[1])}</span>}</td>
+              <td className="text-right num text-muted">{r.avg_p != null ? pct(r.avg_p) : '–'}</td>
+            </tr>
+          ))}</tbody>
+        </table>
+      </div>
+      <p className="mt-2 t-meta max-w-[68ch]">
+        Her maç için verilen maç sonu tahmininin tutma oranı; altındaki aralık %95 güven aralığıdır. Tahmin isabeti kazanç demek değildir:
+        yüksek olasılıklı sonuçların oranı düşüktür ve iddaa marjı (~%20) isabetten bağımsız işler.
+        {f.n_retro ? ` ${f.n_retro} maç, tahmin bloğu eklenmeden önceki oranlardan geriye dönük puanlandı.` : ''}
+      </p>
+    </Section>
+  );
+}
+
 function OddsBands({ rows }: { rows: OddsBandRow[] | null | undefined }) {
   if (!rows?.length) return null;
   return (

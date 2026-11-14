@@ -9,6 +9,7 @@ import { Bars, Heatmap, LineChart, ProbBar } from '../components/charts';
 import { Badge, DropBadge, Empty, FormStrip, Loading, ResultBadge, Section, Stars, ValueBadge } from '../components/ui';
 import { AddToCoupon } from '../components/AddToCoupon';
 import { PROV_LABEL, pickResult } from '../components/MatchCard';
+import { ForecastPanel } from '../components/Forecast';
 import { FreshSquadBadge, PickMetrics, SharpNote, isPas, pasText } from '../components/PickBits';
 import { BAND_MAX, BAND_MIN, fairOdds, pickEv } from '../lib/pick';
 import { Simulation50 } from '../components/Simulation50';
@@ -173,6 +174,7 @@ function Detail({ m, date, cats, table }: { m: Match; date: string; cats?: Marke
 
       {/* ÖZET */}
       <section id="ozet" className="scroll-mt-32" aria-label="Özet">
+        <ForecastPanel m={m} />
         <PickBox m={m} />
         {finished && <div className="mt-3"><AddToCoupon match={m} date={date} /></div>}
         {m.comment && (

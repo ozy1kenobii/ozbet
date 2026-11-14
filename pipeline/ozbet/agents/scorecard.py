@@ -14,6 +14,7 @@ import random
 
 from ..markets import LABELS, all_labels, all_probs, categories, settle
 from . import clv as clv_mod
+from . import forecast
 
 START_BANK = 100.0
 # Oran bantları: [alt, üst) — son bant üstten açık. 3.50 tam değeri "2.75-3.50" bandındadır.
@@ -51,6 +52,9 @@ def grade_day(day_doc: dict, results: dict[str, dict]) -> list[dict]:
         mk = market_rows(m, [hg, ag], res.get("ht"))
         if mk:
             row["markets"] = mk
+        fc = forecast.grade(m.get("forecast"), [hg, ag])   # Tahmin Motoru: maç sonu tahmininin puanı
+        if fc:
+            row["fc"] = fc
         pk = m.get("pick")
         won = settle(pk["market"], [hg, ag], res.get("ht")) if pk else None
         if pk and won is not None:   # sonucu belirlenemeyen market (ör. İY skoru yok) puanlanmaz
@@ -235,6 +239,19 @@ def trust_from(rows: list[dict], today: date, window_days: int = 90, min_n: int 
     return out
 
 
+def _with_retro_forecast(rows: list[dict]) -> list[dict]:
+    """Tahmin bloğu eklenmeden önceki satırlara, saklı piyasa ima olasılıklarından geriye dönük tahmin puanı ekler
+    (satır kopyalanır, geçmiş dosyaları değişmez)."""
+    out = []
+    for r in rows:
+        if not r.get("fc"):
+            fc = forecast.grade_from_markets(r.get("markets"), r.get("score"))
+            if fc:
+                r = {**r, "fc": fc}
+        out.append(r)
+    return out
+
+
 def build_scorecard(rows: list[dict], today: date, archive_rows: list[dict] | None = None) -> dict:
     """archive_rows verilirse CLV burada hesaplanır; verilmezse satırlardaki hazır r["clv"] kullanılır
     (load_history iddaa arşivinden doldurur)."""
@@ -277,6 +294,7 @@ def build_scorecard(rows: list[dict], today: date, archive_rows: list[dict] | No
         "by_market": sorted(({"market": k, "label": all_labels().get(k, k), **_agg(v), "trust": trust.get(k, 1.0)}
                              for k, v in by_market.items()), key=lambda x: -x["n"]),
         "by_odds_band": odds_bands(rows),
+        "forecast": forecast.summarize(_with_retro_forecast(rows), wilson_ci),
         # Tercihi üreten kurala göre ayrım: "keskin" = sinyal kipi (13 Kasım 2026 sonrası), "eski" = önceki kurallar.
         # Karışık toplamlar (overall) iki kuralı birlikte sayar; S1 hipotezi yalnız "keskin" satırından okunur.
         "by_basis": [dict(basis=b, **_agg([r for r in rows if (r.get("basis") or "eski") == b])) for b in ("keskin", "eski")],
