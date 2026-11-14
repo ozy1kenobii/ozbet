@@ -1,0 +1,26 @@
+URL: https://football-data.co.uk/new/BRA.csv
+HTTP: 200
+Uzunluk: 150000
+
+Baş (2500 karakter):
+ï»¿Country,League,Season,Date,Time,Home,Away,HG,AG,Res,PSCH,PSCD,PSCA,MaxCH,MaxCD,MaxCA,AvgCH,AvgCD,AvgCA,BFECH,BFECD,BFECA,B365CH,B365CD,B365CA,,,,,,,
+Brazil,Serie A,2012,19/05/2012,22:30,Palmeiras,Portuguesa,1,1,D,1.75,3.86,5.25,1.76,3.87,5.31,1.69,3.5,4.9,,,,,,,,,,,,,
+Brazil,Serie A,2012,19/05/2012,22:30,Sport Recife,Flamengo RJ,1,1,D,2.83,3.39,2.68,2.83,3.42,2.7,2.59,3.23,2.58,,,,,,,,,,,,,
+Brazil,Serie A,2012,20/05/2012,01:00,Figueirense,Nautico,2,1,H,1.6,4.04,6.72,1.67,4.05,7.22,1.59,3.67,5.64,,,,,,,,,,,,,
+Brazil,Serie A,2012,20/05/2012,20:00,Botafogo RJ,Sao Paulo,4,2,H,2.49,3.35,3.15,2.49,3.39,3.15,2.35,3.26,2.84,,,,,,,,,,,,,
+Brazil,Serie A,2012,20/05/2012,20:00,Corinthians,Fluminense,0,1,A,1.96,3.53,4.41,1.96,3.53,4.41,1.89,3.33,3.89,,,,,,,,,,,,,
+Brazil,Serie A,2012,20/05/2012,20:00,Internacional,Coritiba,2,0,H,1.76,3.63,5.66,1.77,3.9,6,1.66,3.55,5.1,,,,,,,,,,,,,
+Brazil,Serie A,2012,20/05/2012,20:00,Ponte Preta,Atletico-MG,0,1,A,3.12,3.45,2.44,3.12,3.45,2.62,2.74,3.23,2.45,,,,,,,,,,,,,
+Brazil,Serie A,2012,20/05/2012,22:30,Bahia,Santos,0,0,D,2.33,3.44,3.32,2.45,3.52,3.32,2.3,3.22,2.97,,,,,,,,,,,,,
+Brazil,Serie A,2012,20/05/2012,22:30,Cruzeiro,Atletico GO,0,0,D,1.83,3.74,4.82,1.85,3.79,4.82,1.78,3.47,4.3,,,,,,,,,,,,,
+Brazil,Serie A,2012,20/05/2012,22:30,Vasco,Gremio,2,1,H,2.25,3.4,3.53,2.25,3.46,3.64,2.08,3.25,3.41,,,,,,,,,,,,,
+Brazil,Serie A,2012,26/05/2012,22:30,Atletico GO,Ponte Preta,1,1,D,1.66,4.09,5.79,1.7,4.09,5.79,1.66,3.59,5.04,,,,,,,,,,,,,
+Brazil,Serie A,2012,26/05/2012,22:30,Flamengo RJ,Internacional,3,3,D,2.13,3.35,3.95,2.15,3.6,4.2,1.99,3.23,3.74,,,,,,,,,,,,,
+Brazil,Serie A,2012,26/05/2012,22:30,Portuguesa,Vasco,0,1,A,2.5,3.5,2.67,2.8,3.54,2.7,2.62,3.22,2.54,,,,,,,,,,,,,
+Brazil,Serie A,2012,27/05/2012,01:00,Nautico,Cruzeiro,0,0,D,3.15,3.31,2.49,3.15,3.31,2.8,2.67,3.18,2.55,,,,,,,,,,,,,
+Brazil,Serie A,2012,27/05/2012,20:00,Atletico-MG,Corinthians,1,0,H,2.04,3.43,4.09,2.25,3.7,4.09,2.08,3.28,3.43,,,,,,,,,,,,,
+Brazil,Serie A,2012,27/05/2012,20:00,Coritiba,Botafogo RJ,2,3,A,1.79,3.88,4.84,1.96,4.2,4.84,1.77,3.6,4.15,,,,,,,,,,,,,
+Brazil,Serie A,2012,27/05/2012,20:00,Santos,Sport Recife,0,0,D,1.42,4.76,9.52,1.5,4.88,9.52,1.41,4.17,7.46,,,,,,,,,,,,,
+Brazil,Serie A,2012,27/05/2012,20:00,Sao Paulo,Bahia,1,0,H,1.47,4.74,7.68,1.47,4.74,7.91,1.44,4.12,6.93,,,,,,,,,,,,,
+Brazil,Serie A,2012,27/05/2012,22:30,Fluminense,Figueirense,2,2,D,1.65,4.01,6,1.7,4.33,6.02,1.65,3.61,5.08,,,,,,,,,,,,,
+Brazil,Serie A,2012,27/05/2012,22:30,Gremio,

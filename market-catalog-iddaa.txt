@@ -1,0 +1,53 @@
+iddaa market kataloğu — 9636 market, 26 tür
+st=101 ad='?' n=977 sov={'2.5': 487, '3.5': 303, '1.5': 187}
+   seçenekler: {'Alt | Üst': 977}
+st=1 ad='Takım Kazanılan Hava Topu Mücadelesi' n=657 sov={'None': 657}
+   seçenekler: {'1 | 0 | 2': 657}
+st=89 ad='?' n=634 sov={'None': 634}
+   seçenekler: {'Var | Yok': 634}
+st=92 ad='?' n=631 sov={'None': 631}
+   seçenekler: {'1 ve 0 | 1 ve 2 | 0 ve 2': 631}
+st=100 ad='?' n=628 sov={'-1': 391, '1': 185, '-2': 29, '2': 13, '-3': 5, '3': 3, '-4': 2}
+   seçenekler: {'1 | 0 | 2': 628}
+st=91 ad='?' n=628 sov={'None': 628}
+   seçenekler: {'Tek | Çift': 628}
+st=603 ad='?' n=623 sov={'1.5': 476, '0.5': 79, '2.5': 64, '3.5': 4}
+   seçenekler: {'Alt | Üst': 623}
+st=604 ad='?' n=622 sov={'1.5': 362, '0.5': 235, '2.5': 23, '3.5': 2}
+   seçenekler: {'Alt | Üst': 622}
+st=60 ad='?' n=518 sov={'1.5': 343, '0.5': 175}
+   seçenekler: {'Alt | Üst': 518}
+st=88 ad='?' n=421 sov={'None': 421}
+   seçenekler: {'1 | 0 | 2': 421}
+st=36 ad='?' n=410 sov={'None': 410}
+   seçenekler: {'1 | 0 | 2': 410}
+st=77 ad='?' n=406 sov={'None': 406}
+   seçenekler: {'1 ve 0 | 1 ve 2 | 0 ve 2': 406}
+st=720 ad='?' n=406 sov={'None': 406}
+   seçenekler: {'Var | Yok': 406}
+st=722 ad='?' n=406 sov={'0.5': 387, '1.5': 19}
+   seçenekler: {'Alt | Üst': 406}
+st=723 ad='?' n=406 sov={'0.5': 397, '1.5': 9}
+   seçenekler: {'Alt | Üst': 406}
+st=4 ad='Karşılaşma Özel Bahisleri' n=177 sov={'None': 177}
+   seçenekler: {'0-1 gol | 2-3 gol | 4-5 gol | 6+ gol': 177}
+st=6 ad='Karşılaşma Özel Bahisleri' n=177 sov={'None': 177}
+   seçenekler: {'1. | Eşit | 2.': 177}
+st=700 ad='?' n=176 sov={'2.5': 176}
+   seçenekler: {'Alt ve Var | Üst ve Var | Alt ve Yok | Üst ve Yok': 176}
+st=698 ad='?' n=176 sov={'None': 176}
+   seçenekler: {'1 ve Var | 1 ve Yok | 0 ve Var | 0 ve Yok | 2 ve Var | 2 ve Yok': 176}
+st=699 ad='?' n=176 sov={'None': 176}
+   seçenekler: {'1 ve Var | 1 ve Yok | 0 ve Var | 0 ve Yok | 2 ve Var | 2 ve Yok': 176}
+st=7 ad='?' n=119 sov={'2.5': 119}
+   seçenekler: {'1 ve Alt | 0 ve Alt | 2 ve Alt | 1 ve Üst | 0 ve Üst | 2 ve Üst': 119}
+st=90 ad='?' n=74 sov={'None': 74}
+   seçenekler: {'1/1 | 1/0 | 1/2 | 0/1 | 0/0 | 0/2 | 2/1 | 2/0 | 2/2': 74}
+st=69 ad='?' n=74 sov={'None': 74}
+   seçenekler: {'Evet | Hayır': 74}
+st=72 ad='?' n=72 sov={'None': 72}
+   seçenekler: {'Evet | Hayır': 72}
+st=48 ad='?' n=21 sov={'9.5': 10, '8.5': 8, '10.5': 3}
+   seçenekler: {'Alt | Üst': 21}
+st=49 ad='?' n=21 sov={'4.5': 17, '3.5': 4}
+   seçenekler: {'Alt | Üst': 21}
