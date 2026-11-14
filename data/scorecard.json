@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T03:33:19+03:00",
+ "generated_at": "2026-11-14T13:14:33+03:00",
  "overall": {
   "n": 138,
   "hit_rate": 0.6377,
@@ -1034,6 +1034,72 @@
    "roi_ci": null
   }
  ],
+ "forecast": {
+  "n": 138,
+  "hit_rate": 0.5,
+  "hit_ci": [
+   0.4177,
+   0.5823
+  ],
+  "avg_p": 0.533,
+  "by_conf": [
+   {
+    "conf": "yüksek",
+    "n": 37,
+    "hit_rate": 0.7838,
+    "hit_ci": [
+     0.628,
+     0.8861
+    ],
+    "avg_p": 0.7025
+   },
+   {
+    "conf": "orta",
+    "n": 58,
+    "hit_rate": 0.431,
+    "hit_ci": [
+     0.3118,
+     0.5588
+    ],
+    "avg_p": 0.5206
+   },
+   {
+    "conf": "düşük",
+    "n": 43,
+    "hit_rate": 0.3488,
+    "hit_ci": [
+     0.2242,
+     0.4983
+    ],
+    "avg_p": 0.4037
+   }
+  ],
+  "score": {
+   "n": 0,
+   "hit_rate": null,
+   "hit_ci": null,
+   "avg_p": null
+  },
+  "goals": {
+   "n": 138,
+   "hit_rate": 0.5797,
+   "hit_ci": [
+    0.4963,
+    0.6588
+   ],
+   "avg_p": 0.5947
+  },
+  "btts": {
+   "n": 138,
+   "hit_rate": 0.6014,
+   "hit_ci": [
+    0.5181,
+    0.6793
+   ],
+   "avg_p": 0.5839
+  },
+  "n_retro": 138
+ },
  "by_basis": [
   {
    "basis": "keskin",
