@@ -216,8 +216,17 @@
    "away": {
     "name": "AD Ceuta"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     0
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -2387,8 +2396,17 @@
    "away": {
     "name": "Las Palmas"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -7997,8 +8015,17 @@
    "away": {
     "name": "Cadiz"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],

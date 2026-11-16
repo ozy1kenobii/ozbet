@@ -216,8 +216,17 @@
    "away": {
     "name": "Castellon"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -2503,8 +2512,17 @@
    "away": {
     "name": "S. Gijon"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     2
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -4655,8 +4673,17 @@
    "away": {
     "name": "Andorra"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -6946,8 +6973,17 @@
    "away": {
     "name": "Cordoba"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     3
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -14330,8 +14366,17 @@
    "away": {
     "name": "G. Morton"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     0
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -18399,8 +18444,17 @@
    "away": {
     "name": "Queen's Park"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     0
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -322243,8 +322297,17 @@
    "away": {
     "name": "Chesterfield"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     2
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [
     "Lig dışı/düşük kapsam",
     "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
@@ -338700,8 +338763,17 @@
    "away": {
     "name": "Gillingham"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [
     "Lig dışı/düşük kapsam",
     "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
@@ -400039,8 +400111,17 @@
    "away": {
     "name": "Accrington"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     4,
+     2
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   },
    "flags": [
     "Lig dışı/düşük kapsam",
     "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
@@ -412678,8 +412759,17 @@
    "away": {
     "name": "Northampton"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     1
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [
     "Lig dışı/düşük kapsam",
     "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
@@ -416732,8 +416822,17 @@
    "away": {
     "name": "Oldham"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [
     "Lig dışı/düşük kapsam",
     "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
@@ -424468,8 +424567,17 @@
    "away": {
     "name": "Reading"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     2,
+     1
+    ]
+   },
    "flags": [
     "Lig dışı/düşük kapsam",
     "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
@@ -428492,8 +428600,17 @@
    "away": {
     "name": "Grimsby Town"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     4
+    ],
+    "ht": [
+     0,
+     2
+    ]
+   },
    "flags": [
     "Lig dışı/düşük kapsam",
     "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
@@ -441554,8 +441671,17 @@
    "away": {
     "name": "Blackpool"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     0
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [
     "Lig dışı/düşük kapsam",
     "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
@@ -500000,8 +500126,17 @@
    "away": {
     "name": "Tranmere"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [
     "Lig dışı/düşük kapsam",
     "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
