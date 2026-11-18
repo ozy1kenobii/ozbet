@@ -1,102 +1,6 @@
 {
 "runs": [
 {
-"t": "2026-11-09T23:31:07+03:00",
-"label": "18:30",
-"sources": {
-"nesine_results": [
-"skipped",
-0
-],
-"flashscore": [
-"skipped",
-0
-],
-"nesine": [
-"ok",
-123
-],
-"iddaa": [
-"ok",
-121
-],
-"api_football": [
-"partial",
-0
-],
-"football_data_fixtures": [
-"ok",
-1
-],
-"football_data_history": [
-"ok",
-15577
-],
-"understat": [
-"missing",
-0
-],
-"soccerstats_tr2": [
-"missing",
-0
-],
-"tff_tr2": [
-"ok",
-139
-],
-"archive_history": [
-"ok",
-0
-],
-"api_football_history": [
-"partial",
-0
-],
-"tff_referees": [
-"ok",
-99
-],
-"clubelo": [
-"missing",
-0
-],
-"transfermarkt": [
-"partial",
-0
-],
-"news_rss": [
-"partial",
-0
-],
-"forebet": [
-"missing",
-0
-],
-"sportytrader": [
-"ok",
-2
-],
-"freesupertips": [
-"ok",
-12
-],
-"soccerstats": [
-"partial",
-0
-],
-"pipeline": [
-"ok",
-66
-]
-},
-"quality": {
-"league_mapped_pct": 0.106,
-"team_match_pct": null,
-"odds_coverage_pct": 1.0,
-"cross_source_match_pct": 0.5
-}
-},
-{
 "t": "2026-11-10T09:39:21+03:00",
 "label": "08:30",
 "sources": {
@@ -4294,6 +4198,113 @@
 "team_match_pct": null,
 "odds_coverage_pct": null,
 "cross_source_match_pct": 0.783
+}
+},
+{
+"t": "2026-11-18T03:01:12+03:00",
+"label": "08:30",
+"inputs": {
+"xg": false,
+"elo": false,
+"consensus_sources": 2,
+"squad": false,
+"news": false
+},
+"sources": {
+"nesine_results": [
+"skipped",
+0
+],
+"flashscore": [
+"skipped",
+0
+],
+"forebet": [
+"skipped",
+0
+],
+"soccerstats": [
+"skipped",
+0
+],
+"soccerstats_tr2": [
+"skipped",
+0
+],
+"api_football": [
+"skipped",
+0
+],
+"nesine": [
+"ok",
+112
+],
+"iddaa": [
+"ok",
+109
+],
+"football_data_fixtures": [
+"partial",
+0
+],
+"football_data_history": [
+"ok",
+15609
+],
+"understat": [
+"missing",
+0
+],
+"tff_tr2": [
+"ok",
+139
+],
+"archive_history": [
+"ok",
+0
+],
+"api_football_history": [
+"skipped",
+0
+],
+"tff_referees": [
+"ok",
+89
+],
+"clubelo": [
+"missing",
+0
+],
+"transfermarkt": [
+"partial",
+0
+],
+"news_rss": [
+"partial",
+0
+],
+"sportytrader": [
+"ok",
+6
+],
+"freesupertips": [
+"ok",
+19
+],
+"sharp_edge": [
+"skipped",
+0
+],
+"pipeline": [
+"ok",
+71
+]
+},
+"quality": {
+"league_mapped_pct": 0.0,
+"team_match_pct": null,
+"odds_coverage_pct": null,
+"cross_source_match_pct": 0.803
 }
 }
 ]
