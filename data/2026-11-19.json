@@ -210,8 +210,14 @@
    "away": {
     "name": "Santos SP"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     1
+    ],
+    "ht": null
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -4336,8 +4342,14 @@
    "away": {
     "name": "Palmeiras SP"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": null
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -6581,8 +6593,14 @@
    "away": {
     "name": "Botafogo RJ"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     4,
+     0
+    ],
+    "ht": null
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -8685,8 +8703,14 @@
    "away": {
     "name": "Bahia BA"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     0
+    ],
+    "ht": null
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],

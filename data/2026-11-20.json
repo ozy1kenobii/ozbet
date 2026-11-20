@@ -51890,8 +51890,14 @@
    "away": {
     "name": "Bragantino"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": null
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -53804,8 +53810,14 @@
    "away": {
     "name": "Fluminense"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     1
+    ],
+    "ht": null
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
