@@ -9756,8 +9756,14 @@
    "away": {
     "name": "Muğlaspor"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     0
+    ],
+    "ht": null
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -11920,8 +11926,14 @@
    "away": {
     "name": "Antalyaspor"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": null
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],

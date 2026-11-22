@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-22T21:06:51+03:00",
+ "generated_at": "2026-11-23T00:19:09+03:00",
  "overall": {
   "n": 139,
   "hit_rate": 0.6331,
@@ -8,7 +8,7 @@
    0.7086
   ],
   "avg_p": 0.6415,
-  "brier_1x2": 0.5926,
+  "brier_1x2": 0.5897,
   "staked": 139,
   "profit": -22.14,
   "roi": -0.1593,
@@ -27,7 +27,7 @@
    0.7086
   ],
   "avg_p": 0.6415,
-  "brier_1x2": 0.5926,
+  "brier_1x2": 0.5897,
   "staked": 139,
   "profit": -22.14,
   "roi": -0.1593,
@@ -406,7 +406,7 @@
     0.85
    ],
    "avg_p": 0.5906,
-   "brier_1x2": 0.7681,
+   "brier_1x2": 0.6489,
    "staked": 4,
    "profit": -1.02,
    "roi": -0.255,
@@ -883,7 +883,7 @@
    ],
    "value_n": 0,
    "value_roi": null,
-   "trust": 1.021
+   "trust": 1.019
   },
   {
    "market": "1",
@@ -905,7 +905,7 @@
    ],
    "value_n": 0,
    "value_roi": null,
-   "trust": 1.036
+   "trust": 1.045
   },
   {
    "market": "U2.5",
@@ -927,7 +927,7 @@
    ],
    "value_n": 0,
    "value_roi": null,
-   "trust": 0.995
+   "trust": 0.997
   },
   {
    "market": "O2.5",
@@ -949,7 +949,7 @@
    ],
    "value_n": 0,
    "value_roi": null,
-   "trust": 1.005
+   "trust": 1.003
   },
   {
    "market": "2",
@@ -971,7 +971,7 @@
    ],
    "value_n": 0,
    "value_roi": null,
-   "trust": 1.003
+   "trust": 0.999
   },
   {
    "market": "1X",
@@ -993,7 +993,7 @@
    ],
    "value_n": 0,
    "value_roi": null,
-   "trust": 0.96
+   "trust": 0.963
   },
   {
    "market": "X2",
@@ -1015,7 +1015,7 @@
    ],
    "value_n": 0,
    "value_roi": null,
-   "trust": 0.951
+   "trust": 0.942
   }
  ],
  "by_odds_band": [
@@ -1080,13 +1080,13 @@
   }
  ],
  "forecast": {
-  "n": 165,
-  "hit_rate": 0.5273,
+  "n": 167,
+  "hit_rate": 0.5329,
   "hit_ci": [
-   0.4513,
-   0.602
+   0.4574,
+   0.607
   ],
-  "avg_p": 0.5275,
+  "avg_p": 0.528,
   "by_conf": [
    {
     "conf": "yüksek",
@@ -1100,13 +1100,13 @@
    },
    {
     "conf": "orta",
-    "n": 73,
-    "hit_rate": 0.5068,
+    "n": 75,
+    "hit_rate": 0.52,
     "hit_ci": [
-     0.3947,
-     0.6183
+     0.4087,
+     0.6293
     ],
-    "avg_p": 0.5183
+    "avg_p": 0.5197
    },
    {
     "conf": "düşük",
@@ -1120,31 +1120,31 @@
    }
   ],
   "score": {
-   "n": 26,
-   "hit_rate": 0.0385,
+   "n": 28,
+   "hit_rate": 0.0357,
    "hit_ci": [
-    0.0068,
-    0.1889
+    0.0063,
+    0.1771
    ],
    "avg_p": null
   },
   "goals": {
-   "n": 165,
-   "hit_rate": 0.5576,
+   "n": 167,
+   "hit_rate": 0.5569,
    "hit_ci": [
-    0.4813,
-    0.6312
+    0.4811,
+    0.6301
    ],
-   "avg_p": 0.5891
+   "avg_p": 0.589
   },
   "btts": {
-   "n": 165,
-   "hit_rate": 0.5758,
+   "n": 167,
+   "hit_rate": 0.5749,
    "hit_ci": [
-    0.4995,
-    0.6486
+    0.499,
+    0.6473
    ],
-   "avg_p": 0.5799
+   "avg_p": 0.5798
   },
   "n_retro": 139
  },
@@ -1172,7 +1172,7 @@
     0.7086
    ],
    "avg_p": 0.6415,
-   "brier_1x2": 0.5926,
+   "brier_1x2": 0.5897,
    "staked": 139,
    "profit": -22.14,
    "roi": -0.1593,
@@ -1255,38 +1255,38 @@
   }
  },
  "trust": {
-  "1": 1.036,
-  "X": 0.958,
-  "2": 1.003,
-  "BTTS_Y": 1.021,
-  "BTTS_N": 0.979,
-  "1X": 0.96,
-  "12": 1.016,
-  "X2": 0.951,
-  "U1.5": 1.015,
-  "U2.5": 0.995,
-  "O2.5": 1.005,
-  "O3.5": 1.001,
-  "U3.5": 0.999,
-  "O1.5": 1.006,
+  "1": 1.045,
+  "X": 0.953,
+  "2": 0.999,
+  "BTTS_Y": 1.019,
+  "BTTS_N": 0.981,
+  "1X": 0.963,
+  "12": 1.022,
+  "X2": 0.942,
+  "U1.5": 1.011,
+  "U2.5": 0.997,
+  "O2.5": 1.003,
+  "O3.5": 0.992,
+  "U3.5": 1.008,
+  "O1.5": 1.01,
   "HT_O0.5": 1.003,
   "HT_U0.5": 0.989,
   "HT_O1.5": 0.969,
   "HT_U1.5": 1.031,
-  "1&U2.5": 1.068,
-  "X&U2.5": 0.912,
-  "2&U2.5": 0.975,
-  "1&O2.5": 1.048,
-  "X&O2.5": 1.036,
-  "2&O2.5": 0.97,
-  "BTTS_Y&U2.5": 0.97,
+  "1&U2.5": 1.065,
+  "X&U2.5": 0.909,
+  "2&U2.5": 0.973,
+  "1&O2.5": 1.057,
+  "X&O2.5": 1.034,
+  "2&O2.5": 0.968,
+  "BTTS_Y&U2.5": 0.966,
   "BTTS_Y&O2.5": 1.053,
-  "BTTS_N&U2.5": 0.97,
-  "BTTS_N&O2.5": 0.995,
-  "G0-1": 1.001,
-  "G2-3": 0.983,
-  "G4-5": 1.015,
-  "G6+": 1.007,
+  "BTTS_N&U2.5": 0.975,
+  "BTTS_N&O2.5": 0.991,
+  "G0-1": 0.996,
+  "G2-3": 0.995,
+  "G4-5": 1.007,
+  "G6+": 1.003,
   "ODD": 1.087,
   "EVEN": 0.913,
   "HT_BTTS_Y": 0.938,
@@ -1309,19 +1309,19 @@
   "2H_1": 1.094,
   "2H_X": 1.004,
   "2H_2": 0.899,
-  "H_O1.5": 0.992,
-  "H_U1.5": 1.008,
+  "H_O1.5": 1.003,
+  "H_U1.5": 0.997,
   "A_O1.5": 1.041,
   "A_U1.5": 0.959,
-  "HCP-1_1": 1.002,
-  "HCP-1_X": 1.023,
-  "HCP-1_2": 0.981,
-  "1&BTTS_Y": 1.045,
-  "1&BTTS_N": 1.024,
-  "X&BTTS_Y": 1.008,
-  "X&BTTS_N": 0.895,
-  "2&BTTS_Y": 1.031,
-  "2&BTTS_N": 0.967,
+  "HCP-1_1": 1.009,
+  "HCP-1_X": 1.033,
+  "HCP-1_2": 0.967,
+  "1&BTTS_Y": 1.052,
+  "1&BTTS_N": 1.032,
+  "X&BTTS_Y": 1.001,
+  "X&BTTS_N": 0.893,
+  "2&BTTS_Y": 1.026,
+  "2&BTTS_N": 0.965,
   "HCP+1_1": 0.983,
   "HCP+1_X": 0.962,
   "HCP+1_2": 1.06
@@ -1335,9 +1335,9 @@
   },
   {
    "bin": "0.2-0.3",
-   "predicted": 0.255,
-   "observed": 0.2523,
-   "n": 214
+   "predicted": 0.2547,
+   "observed": 0.2477,
+   "n": 218
   },
   {
    "bin": "0.3-0.4",
@@ -1347,15 +1347,15 @@
   },
   {
    "bin": "0.4-0.5",
-   "predicted": 0.4487,
-   "observed": 0.5362,
-   "n": 69
+   "predicted": 0.4491,
+   "observed": 0.5429,
+   "n": 70
   },
   {
    "bin": "0.5-0.6",
-   "predicted": 0.5422,
-   "observed": 0.5476,
-   "n": 42
+   "predicted": 0.5425,
+   "observed": 0.5581,
+   "n": 43
   },
   {
    "bin": "0.6-0.7",
@@ -1368,29 +1368,29 @@
   {
    "category": "ms",
    "title": "Maç sonucu",
-   "n": 1192,
-   "model_brier": 0.2043,
-   "market_brier": 0.1961,
-   "model_logloss": 0.5963,
-   "market_logloss": 0.577
+   "n": 1209,
+   "model_brier": 0.2038,
+   "market_brier": 0.1955,
+   "model_logloss": 0.5955,
+   "market_logloss": 0.5757
   },
   {
    "category": "gol",
    "title": "Gol",
-   "n": 1858,
-   "model_brier": 0.2205,
-   "market_brier": 0.215,
-   "model_logloss": 0.6295,
-   "market_logloss": 0.6172
+   "n": 1886,
+   "model_brier": 0.2199,
+   "market_brier": 0.2143,
+   "model_logloss": 0.6281,
+   "market_logloss": 0.6153
   },
   {
    "category": "takim",
    "title": "Takım golü",
-   "n": 356,
-   "model_brier": 0.244,
-   "market_brier": 0.2249,
-   "model_logloss": 0.6822,
-   "market_logloss": 0.6413
+   "n": 364,
+   "model_brier": 0.2442,
+   "market_brier": 0.2252,
+   "model_logloss": 0.6827,
+   "market_logloss": 0.6419
   },
   {
    "category": "yari",
@@ -1404,68 +1404,68 @@
   {
    "category": "kombi",
    "title": "Kombine",
-   "n": 1698,
-   "model_brier": 0.1428,
-   "market_brier": 0.1391,
-   "model_logloss": 0.4512,
-   "market_logloss": 0.4384
+   "n": 1724,
+   "model_brier": 0.1427,
+   "market_brier": 0.1387,
+   "model_logloss": 0.4505,
+   "market_logloss": 0.4371
   }
  ],
  "calibration_markets": {
   "model": [
    {
     "bin": "0.0-0.1",
-    "predicted": 0.054,
-    "observed": 0.0595,
-    "n": 1008
+    "predicted": 0.0541,
+    "observed": 0.0591,
+    "n": 1015
    },
    {
     "bin": "0.1-0.2",
-    "predicted": 0.1531,
-    "observed": 0.1519,
-    "n": 1363
+    "predicted": 0.153,
+    "observed": 0.1505,
+    "n": 1375
    },
    {
     "bin": "0.2-0.3",
-    "predicted": 0.2492,
-    "observed": 0.2536,
-    "n": 1459
+    "predicted": 0.249,
+    "observed": 0.2541,
+    "n": 1476
    },
    {
     "bin": "0.3-0.4",
-    "predicted": 0.3463,
-    "observed": 0.3451,
-    "n": 988
+    "predicted": 0.3462,
+    "observed": 0.3457,
+    "n": 998
    },
    {
     "bin": "0.4-0.5",
-    "predicted": 0.4525,
-    "observed": 0.4723,
-    "n": 1012
+    "predicted": 0.4526,
+    "observed": 0.4727,
+    "n": 1024
    },
    {
     "bin": "0.5-0.6",
-    "predicted": 0.5426,
-    "observed": 0.5215,
-    "n": 673
+    "predicted": 0.5425,
+    "observed": 0.5212,
+    "n": 683
    },
    {
     "bin": "0.6-0.7",
-    "predicted": 0.6509,
-    "observed": 0.6383,
-    "n": 470
+    "predicted": 0.651,
+    "observed": 0.6379,
+    "n": 475
    },
    {
     "bin": "0.7-0.8",
-    "predicted": 0.745,
-    "observed": 0.7125,
-    "n": 487
+    "predicted": 0.7451,
+    "observed": 0.7134,
+    "n": 492
    },
    {
     "bin": "0.8-0.9",
-    "predicted": 0.8274,
-    "observed": 0.8235,
-    "n": 102
+    "predicted": 0.8278,
+    "observed": 0.8252,
+    "n": 103
    },
    {
     "bin": "0.9-1.0",
@@ -1477,57 +1477,57 @@
   "market": [
    {
     "bin": "0.0-0.1",
-    "predicted": 0.0526,
-    "observed": 0.0466,
-    "n": 1137
+    "predicted": 0.0528,
+    "observed": 0.0462,
+    "n": 1147
    },
    {
     "bin": "0.1-0.2",
     "predicted": 0.1541,
-    "observed": 0.1648,
-    "n": 1347
+    "observed": 0.1632,
+    "n": 1360
    },
    {
     "bin": "0.2-0.3",
-    "predicted": 0.2471,
-    "observed": 0.2429,
-    "n": 1408
+    "predicted": 0.2472,
+    "observed": 0.243,
+    "n": 1420
    },
    {
     "bin": "0.3-0.4",
     "predicted": 0.3474,
-    "observed": 0.3435,
-    "n": 882
+    "observed": 0.3445,
+    "n": 894
    },
    {
     "bin": "0.4-0.5",
-    "predicted": 0.4543,
-    "observed": 0.4606,
-    "n": 1029
+    "predicted": 0.4544,
+    "observed": 0.4597,
+    "n": 1042
    },
    {
     "bin": "0.5-0.6",
-    "predicted": 0.5413,
-    "observed": 0.5367,
-    "n": 667
+    "predicted": 0.5414,
+    "observed": 0.5386,
+    "n": 674
    },
    {
     "bin": "0.6-0.7",
-    "predicted": 0.6467,
-    "observed": 0.6586,
-    "n": 413
+    "predicted": 0.6466,
+    "observed": 0.6595,
+    "n": 420
    },
    {
     "bin": "0.7-0.8",
-    "predicted": 0.7502,
-    "observed": 0.7395,
-    "n": 499
+    "predicted": 0.7504,
+    "observed": 0.741,
+    "n": 502
    },
    {
     "bin": "0.8-0.9",
     "predicted": 0.8302,
-    "observed": 0.8087,
-    "n": 183
+    "observed": 0.8108,
+    "n": 185
    }
   ]
  },
