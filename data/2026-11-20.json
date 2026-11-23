@@ -2103,8 +2103,17 @@
    "away": {
     "name": "Espanyol"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -4399,8 +4408,17 @@
    "away": {
     "name": "Köln"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     1
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -6816,8 +6834,17 @@
    "away": {
     "name": "Le Havre"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -8969,8 +8996,17 @@
    "away": {
     "name": "Magdeburg"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     2
+    ],
+    "ht": [
+     0,
+     2
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -11377,8 +11413,17 @@
    "away": {
     "name": "Heidenheim"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     1
+    ],
+    "ht": [
+     2,
+     1
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -15681,8 +15726,17 @@
    "away": {
     "name": "Leganes"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     3
+    ],
+    "ht": [
+     1,
+     2
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -18077,8 +18131,17 @@
    "away": {
     "name": "Dijon"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -20376,8 +20439,17 @@
    "away": {
     "name": "Clermont"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     4,
+     2
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -22587,8 +22659,17 @@
    "away": {
     "name": "Rodez AF"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     3
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -24841,8 +24922,17 @@
    "away": {
     "name": "US Boulogne"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -27117,8 +27207,17 @@
    "away": {
     "name": "Pau"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -29305,8 +29404,17 @@
    "away": {
     "name": "Westerlo"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
