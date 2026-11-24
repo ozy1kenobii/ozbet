@@ -282,8 +282,17 @@
    "away": {
     "name": "Çorum FK"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     4,
+     2
+    ],
+    "ht": [
+     0,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -4445,8 +4454,17 @@
    "away": {
     "name": "Everton"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     4,
+     0
+    ],
+    "ht": [
+     2,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -6722,8 +6740,17 @@
    "away": {
     "name": "Elche"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -8993,8 +9020,17 @@
    "away": {
     "name": "Fiorentina"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     0
+    ],
+    "ht": [
+     1,
+     0
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -11438,8 +11474,17 @@
    "away": {
     "name": "Almeria"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     3
+    ],
+    "ht": [
+     2,
+     2
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -13738,8 +13783,17 @@
    "away": {
     "name": "Grenoble"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     1,
+     0
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [
     "Model-piyasa farkı çok büyük (veri hatası olabilir)"
    ],
@@ -15913,8 +15967,17 @@
    "away": {
     "name": "Dunkerque"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     3
+    ],
+    "ht": [
+     1,
+     1
+    ]
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -18069,8 +18132,17 @@
    "away": {
     "name": "Aris"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     1
+    ],
+    "ht": [
+     0,
+     0
+    ]
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
