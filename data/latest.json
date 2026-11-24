@@ -1,14 +1,14 @@
 {
  "schema_version": 1,
  "date": "2026-11-24",
- "generated_at": "2026-11-24T19:25:51+03:00",
+ "generated_at": "2026-11-24T23:53:30+03:00",
  "run_label": "18:30",
  "sources": [
   {
    "id": "nesine_results",
    "name": "Nesine (sonuçlar)",
    "status": "skipped",
-   "fetched_at": "2026-11-24T19:14:55+03:00",
+   "fetched_at": "2026-11-24T23:47:23+03:00",
    "note": "Devre dışı: robots.txt sonuç sayfalarına otomatik erişimi yasaklıyor.",
    "items": 0
   },
@@ -16,7 +16,7 @@
    "id": "flashscore",
    "name": "Flashscore (fikstür, sonuç, eksik oyuncu)",
    "status": "skipped",
-   "fetched_at": "2026-11-24T19:14:55+03:00",
+   "fetched_at": "2026-11-24T23:47:23+03:00",
    "note": "Devre dışı: kullanım şartları otomatik istek ve veri çıkarmayı yasaklıyor (md. 2.9-2.10).",
    "items": 0
   },
@@ -24,7 +24,7 @@
    "id": "forebet",
    "name": "Forebet (matematiksel tahmin)",
    "status": "skipped",
-   "fetched_at": "2026-11-24T19:14:55+03:00",
+   "fetched_at": "2026-11-24T23:47:23+03:00",
    "note": "Devre dışı: site Cloudflare bot doğrulamasıyla korunuyor (her istekte HTTP 403) ve veri çekilmeyecek kaynaklar listesinde; koruma aşılmaz.",
    "items": 0
   },
@@ -32,7 +32,7 @@
    "id": "soccerstats",
    "name": "SoccerStats (lig istatistik eğilimi)",
    "status": "skipped",
-   "fetched_at": "2026-11-24T19:14:55+03:00",
+   "fetched_at": "2026-11-24T23:47:23+03:00",
    "note": "Devre dışı: sitenin Cloudflare güvenlik duvarı GitHub Actions isteklerini HTTP 403 ile engelliyor; engel aşılmaz. Engellenmeyen ağda OZBET_ENABLE_SOURCES=soccerstats ile açılır.",
    "items": 0
   },
@@ -40,7 +40,7 @@
    "id": "soccerstats_tr2",
    "name": "SoccerStats sonuçlar (1. Lig geçmişi)",
    "status": "skipped",
-   "fetched_at": "2026-11-24T19:14:55+03:00",
+   "fetched_at": "2026-11-24T23:47:23+03:00",
    "note": "Devre dışı: sitenin Cloudflare güvenlik duvarı GitHub Actions isteklerini HTTP 403 ile engelliyor; engel aşılmaz. Engellenmeyen ağda OZBET_ENABLE_SOURCES=soccerstats ile açılır. 1. Lig geçmişi TFF'den geliyor.",
    "items": 0
   },
@@ -48,7 +48,7 @@
    "id": "api_football",
    "name": "API-Football (yedek, anahtar gerekir)",
    "status": "skipped",
-   "fetched_at": "2026-11-24T19:14:55+03:00",
+   "fetched_at": "2026-11-24T23:47:23+03:00",
    "note": "Kapalı: API_FOOTBALL_KEY tanımlı değil (opsiyonel yedek). GitHub → Settings → Secrets and variables → Actions altında bu adla secret eklenirse açılır.",
    "items": 0
   },
@@ -56,23 +56,23 @@
    "id": "nesine",
    "name": "Nesine iddaa bülteni (kod, MBS, oran)",
    "status": "ok",
-   "fetched_at": "2026-11-24T19:14:57+03:00",
+   "fetched_at": "2026-11-24T23:47:24+03:00",
    "note": null,
-   "items": 291
+   "items": 192
   },
   {
    "id": "iddaa",
    "name": "iddaa.com resmi bülten (oran, MBS)",
    "status": "ok",
-   "fetched_at": "2026-11-24T19:14:59+03:00",
+   "fetched_at": "2026-11-24T23:47:27+03:00",
    "note": null,
-   "items": 287
+   "items": 192
   },
   {
    "id": "football_data_fixtures",
    "name": "football-data.co.uk fixtures.csv (oran yedeği)",
    "status": "ok",
-   "fetched_at": "2026-11-24T19:15:01+03:00",
+   "fetched_at": "2026-11-24T23:47:28+03:00",
    "note": null,
    "items": 31
   },
@@ -80,7 +80,7 @@
    "id": "football_data_history",
    "name": "football-data.co.uk (geçmiş sonuçlar + oranlar)",
    "status": "ok",
-   "fetched_at": "2026-11-24T19:15:48+03:00",
+   "fetched_at": "2026-11-24T23:48:15+03:00",
    "note": null,
    "items": 15776
   },
@@ -88,7 +88,7 @@
    "id": "understat",
    "name": "Understat (xG, 5 büyük lig)",
    "status": "missing",
-   "fetched_at": "2026-11-24T19:15:49+03:00",
+   "fetched_at": "2026-11-24T23:48:16+03:00",
    "note": "Maintenance: understat bakımda (site 'We will come back soon' sayfası döndürüyor)",
    "items": 0
   },
@@ -96,7 +96,7 @@
    "id": "tff_tr2",
    "name": "TFF sonuçlar (1. Lig güncel sezon; Kaynak: TFF (tff.org))",
    "status": "ok",
-   "fetched_at": "2026-11-24T19:16:08+03:00",
+   "fetched_at": "2026-11-24T23:48:26+03:00",
    "note": null,
    "items": 149
   },
@@ -104,7 +104,7 @@
    "id": "archive_history",
    "name": "Birikimli sonuç arşivi (modele giren ligler)",
    "status": "ok",
-   "fetched_at": "2026-11-24T19:16:08+03:00",
+   "fetched_at": "2026-11-24T23:48:26+03:00",
    "note": "Henüz eşik altında: BEL1 10/60, ESP1 10/60, GER1 9/60, GER2 9/60, GRE1 7/60, ITA1 12/60, ITA2 10/60, NED1 9/60, POR1 9/60, SCO1 3/60, TR1 9/60",
    "items": 0
   },
@@ -112,23 +112,23 @@
    "id": "api_football_history",
    "name": "API-Football geçmiş (1. Lig vb., anahtar gerekir)",
    "status": "skipped",
-   "fetched_at": "2026-11-24T19:16:08+03:00",
+   "fetched_at": "2026-11-24T23:48:26+03:00",
    "note": "Kapalı: API_FOOTBALL_KEY tanımlı değil (opsiyonel; GitHub Actions secret'ı eklenirse açılır).",
    "items": 0
   },
   {
    "id": "tff_referees",
    "name": "TFF hakem atamaları (Süper Lig; Kaynak: TFF (tff.org))",
-   "status": "ok",
-   "fetched_at": "2026-11-24T19:19:33+03:00",
-   "note": "49 maç hakemi okundu; 44 geçmiş satıra, 0 bugünkü maça eklendi. Kaynak: TFF (tff.org)",
-   "items": 49
+   "status": "missing",
+   "fetched_at": "2026-11-24T23:48:32+03:00",
+   "note": "Blocked: HTTP 403: https://www.tff.org/Default.aspx?pageId=29&macId=317839",
+   "items": 0
   },
   {
    "id": "clubelo",
    "name": "ClubElo (kulüp Elo puanları, lig-arası düzeltme)",
    "status": "missing",
-   "fetched_at": "2026-11-24T19:23:03+03:00",
+   "fetched_at": "2026-11-24T23:52:02+03:00",
    "note": "ConnectTimeout: HTTPConnectionPool(host='api.clubelo.com', port=80): Max retries exceeded with url: /2026-11-24 (Caused by ConnectTimeoutError(<HTTPConnection(host='api.clubelo.com', port=80) at 0",
    "items": 0
   },
@@ -136,23 +136,23 @@
    "id": "transfermarkt",
    "name": "Transfermarkt (sakatlık listesi)",
    "status": "partial",
-   "fetched_at": "2026-11-24T19:23:07+03:00",
+   "fetched_at": "2026-11-24T23:52:05+03:00",
    "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
    "items": 0
   },
   {
    "id": "news_rss",
    "name": "Haber akışları (RSS/Atom: A Spor, NTV Spor, Fotomaç, TRT, AA, ESPN, Sky...)",
-   "status": "ok",
-   "fetched_at": "2026-11-24T19:23:20+03:00",
-   "note": "11 akış okundu; okunamayan: espn_soccer(Blocked), guardian_football(Blocked)",
-   "items": 30
+   "status": "partial",
+   "fetched_at": "2026-11-24T23:52:05+03:00",
+   "note": "Veri dönmedi (sayfa yapısı değişmiş veya bugün maç yok olabilir)",
+   "items": 0
   },
   {
    "id": "sportytrader",
    "name": "SportyTrader (uzman tahmini)",
    "status": "ok",
-   "fetched_at": "2026-11-24T19:24:11+03:00",
+   "fetched_at": "2026-11-24T23:52:35+03:00",
    "note": null,
    "items": 12
   },
@@ -160,24 +160,24 @@
    "id": "freesupertips",
    "name": "FreeSuperTips (ipucu)",
    "status": "ok",
-   "fetched_at": "2026-11-24T19:25:01+03:00",
+   "fetched_at": "2026-11-24T23:52:46+03:00",
    "note": null,
    "items": 20
   },
   {
    "id": "sharp_edge",
    "name": "Keskin piyasa farkı (iddaa × Pinnacle/Betfair adil olasılık; hipotez, kanıtlanmış kazanç değil)",
-   "status": "ok",
-   "fetched_at": "2026-11-24T19:25:27+03:00",
-   "note": "28 maç kıyaslandı (betfair 28); 0 maçta fark eşiği aşıldı. Referans oranlar fixtures.csv'nin son güncellemesine aittir (anlık değil).",
-   "items": 28
+   "status": "skipped",
+   "fetched_at": "2026-11-24T23:53:05+03:00",
+   "note": "Bugün fixtures.csv ile güvenle eşleşen gerçek iddaa oranlı maç yok.",
+   "items": 0
   },
   {
    "id": "pipeline",
    "name": "OZBET işleme",
    "status": "ok",
-   "fetched_at": "2026-11-24T19:25:51+03:00",
-   "note": "Eşlenemeyen lig adları (ilk 15): AFC Asya Şampiyonlar Ligi Batı, AFC Kupası, Botsvana Premier Ligi, Bulgaristan 2. Lig, Galler Premier Lig, Güney Afrika Premier Lig, Kuzey İrlanda Lig Kupası, Mısır Premier Lig, Portekiz U23 Next Gen Ligi, Ruanda Ulusal Lig, Rusya Kupası, Slovakya Kupası, UEFA Şamp. Ligi Günlük Bahisler, UEFA Şamp. Ligi Haftalık Bahisler, İngiltere 1. Lig",
+   "fetched_at": "2026-11-24T23:53:30+03:00",
+   "note": null,
    "items": 167
   }
  ],
@@ -237,7 +237,8 @@
    "status": "scheduled",
    "result": null,
    "flags": [
-    "Piyasa modeli"
+    "Piyasa modeli",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -2511,7 +2512,8 @@
    "result": null,
    "flags": [
     "Model-piyasa farkı çok büyük (veri hatası olabilir)",
-    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez"
+    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -4863,7 +4865,8 @@
    "result": null,
    "flags": [
     "Model-piyasa farkı çok büyük (veri hatası olabilir)",
-    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez"
+    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -6915,7 +6918,8 @@
    "status": "scheduled",
    "result": null,
    "flags": [
-    "Piyasa modeli"
+    "Piyasa modeli",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -8930,7 +8934,8 @@
    "status": "live",
    "result": null,
    "flags": [
-    "Piyasa modeli"
+    "Piyasa modeli",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -11124,7 +11129,8 @@
    "status": "scheduled",
    "result": null,
    "flags": [
-    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez"
+    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -13228,7 +13234,8 @@
    "result": null,
    "flags": [
     "Model-piyasa farkı çok büyük (veri hatası olabilir)",
-    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez"
+    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -15433,7 +15440,8 @@
    "result": null,
    "flags": [
     "Model-piyasa farkı çok büyük (veri hatası olabilir)",
-    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez"
+    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -17534,7 +17542,8 @@
    "status": "scheduled",
    "result": null,
    "flags": [
-    "Veri yetersiz"
+    "Veri yetersiz",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -17838,7 +17847,8 @@
    "status": "scheduled",
    "result": null,
    "flags": [
-    "Piyasa modeli"
+    "Piyasa modeli",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -19882,7 +19892,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -22221,7 +22233,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -24549,7 +24563,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -26692,7 +26708,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -28967,7 +28985,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -31037,7 +31057,8 @@
    "status": "live",
    "result": null,
    "flags": [
-    "Piyasa modeli"
+    "Piyasa modeli",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -33053,7 +33074,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -35426,7 +35449,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -37728,7 +37753,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -40005,7 +40032,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -42114,7 +42143,8 @@
    "status": "live",
    "result": null,
    "flags": [
-    "Piyasa modeli"
+    "Piyasa modeli",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -44043,7 +44073,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -46229,7 +46261,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -48430,7 +48464,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -50603,7 +50639,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -52909,7 +52947,8 @@
    "status": "scheduled",
    "result": null,
    "flags": [
-    "Piyasa modeli"
+    "Piyasa modeli",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -54736,7 +54775,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -57046,7 +57087,9 @@
    },
    "status": "scheduled",
    "result": null,
-   "flags": [],
+   "flags": [
+    "Maç başladı/bitti – son bülten verisi"
+   ],
    "provenance": {
     "fixture": {
      "source": "nesine",
@@ -144070,7 +144113,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -145881,7 +145925,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -147654,7 +147699,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -149383,7 +149429,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -151246,7 +151293,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -152858,7 +152906,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -154737,7 +154786,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -156473,7 +156523,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -158331,7 +158382,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -160078,7 +160130,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -161730,7 +161783,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -163656,7 +163710,8 @@
    "flags": [
     "Oran yok",
     "Veri yetersiz",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -163702,7 +163757,8 @@
    "flags": [
     "Oran yok",
     "Veri yetersiz",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -163747,7 +163803,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -165536,7 +165593,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -167287,7 +167345,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -169460,7 +169519,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -171334,7 +171394,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -173301,7 +173362,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -175247,7 +175309,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -177380,7 +177443,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -179207,7 +179271,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -181330,7 +181395,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -183140,7 +183206,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -185296,7 +185363,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -187429,7 +187497,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -189485,7 +189554,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -191375,7 +191445,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -193239,7 +193310,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -194958,7 +195030,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -196796,7 +196869,8 @@
    "flags": [
     "Lig dışı/düşük kapsam",
     "Model-piyasa farkı çok büyük (veri hatası olabilir)",
-    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez"
+    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -198809,7 +198883,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -200761,7 +200836,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -202694,7 +202770,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -204574,7 +204651,8 @@
    "result": null,
    "flags": [
     "Lig dışı/düşük kapsam",
-    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez"
+    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -206607,7 +206685,8 @@
    "flags": [
     "Düşük veri",
     "Lig dışı/düşük kapsam",
-    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez"
+    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -208784,7 +208863,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -210889,7 +210969,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -212775,7 +212856,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -214581,7 +214663,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -216462,7 +216545,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -218492,7 +218576,8 @@
    "result": null,
    "flags": [
     "Lig dışı/düşük kapsam",
-    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez"
+    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -220653,7 +220738,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -222646,7 +222732,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -224530,7 +224617,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -226450,7 +226538,8 @@
    "result": null,
    "flags": [
     "Veri yetersiz",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -226684,7 +226773,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -228606,7 +228696,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -230587,7 +230678,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -232443,7 +232535,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -234289,7 +234382,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -236282,7 +236376,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -238194,7 +238289,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -240306,7 +240402,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -242146,7 +242243,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -244056,7 +244154,8 @@
    "flags": [
     "Lig dışı/düşük kapsam",
     "Model-piyasa farkı çok büyük (veri hatası olabilir)",
-    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez"
+    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -246222,7 +246321,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -248116,7 +248216,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -250039,7 +250140,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -251826,7 +251928,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -253675,7 +253778,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -255548,7 +255652,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -257558,7 +257663,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -259361,7 +259467,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -261241,7 +261348,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -263215,7 +263323,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -265010,7 +265119,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -266865,7 +266975,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -268864,7 +268975,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -270846,7 +270958,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -272649,7 +272762,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -274495,7 +274609,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -276317,7 +276432,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -278248,7 +278364,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -280306,7 +280423,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -282212,7 +282330,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -284137,7 +284256,8 @@
    "result": null,
    "flags": [
     "Lig dışı/düşük kapsam",
-    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez"
+    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -286065,7 +286185,8 @@
    "result": null,
    "flags": [
     "Lig dışı/düşük kapsam",
-    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez"
+    "Kupa/çapraz lig: model düşük güvenli, değer etiketi verilmez",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -287966,7 +288087,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -289881,7 +290003,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -291704,7 +291827,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -293760,7 +293884,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -295759,7 +295884,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -297787,7 +297913,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -299702,7 +299829,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -301687,7 +301815,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -303827,7 +303956,8 @@
    "result": null,
    "flags": [
     "Veri yetersiz",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -304044,7 +304174,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -305972,7 +306103,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -307917,7 +308049,8 @@
    "result": null,
    "flags": [
     "Piyasa modeli",
-    "Lig dışı/düşük kapsam"
+    "Lig dışı/düşük kapsam",
+    "Maç başladı/bitti – son bülten verisi"
    ],
    "provenance": {
     "fixture": {
@@ -309745,3233 +309878,10 @@
    "comment_source": "kural"
   }
  ],
- "standings": {
-  "ENG2": {
-   "season": "2627",
-   "updated": "2026-11-22",
-   "rows": [
-    {
-     "team": "Middlesbrough",
-     "o": 16,
-     "g": 9,
-     "b": 5,
-     "m": 2,
-     "ag": 32,
-     "yg": 19,
-     "av": 13,
-     "p": 32,
-     "form": [
-      "W",
-      "D",
-      "L",
-      "W",
-      "W"
-     ],
-     "pos": 1
-    },
-    {
-     "team": "Stoke",
-     "o": 16,
-     "g": 10,
-     "b": 2,
-     "m": 4,
-     "ag": 25,
-     "yg": 18,
-     "av": 7,
-     "p": 32,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "W",
-      "D"
-     ],
-     "pos": 2
-    },
-    {
-     "team": "Southampton",
-     "o": 16,
-     "g": 9,
-     "b": 4,
-     "m": 3,
-     "ag": 31,
-     "yg": 15,
-     "av": 16,
-     "p": 31,
-     "form": [
-      "W",
-      "L",
-      "D",
-      "W",
-      "W"
-     ],
-     "pos": 3
-    },
-    {
-     "team": "Wolves",
-     "o": 16,
-     "g": 9,
-     "b": 4,
-     "m": 3,
-     "ag": 28,
-     "yg": 19,
-     "av": 9,
-     "p": 31,
-     "form": [
-      "W",
-      "D",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 4
-    },
-    {
-     "team": "Birmingham",
-     "o": 16,
-     "g": 8,
-     "b": 5,
-     "m": 3,
-     "ag": 28,
-     "yg": 15,
-     "av": 13,
-     "p": 29,
-     "form": [
-      "L",
-      "W",
-      "W",
-      "W",
-      "L"
-     ],
-     "pos": 5
-    },
-    {
-     "team": "West Brom",
-     "o": 16,
-     "g": 8,
-     "b": 5,
-     "m": 3,
-     "ag": 25,
-     "yg": 17,
-     "av": 8,
-     "p": 29,
-     "form": [
-      "D",
-      "W",
-      "D",
-      "W",
-      "D"
-     ],
-     "pos": 6
-    },
-    {
-     "team": "QPR",
-     "o": 16,
-     "g": 7,
-     "b": 6,
-     "m": 3,
-     "ag": 25,
-     "yg": 18,
-     "av": 7,
-     "p": 27,
-     "form": [
-      "W",
-      "W",
-      "D",
-      "L",
-      "W"
-     ],
-     "pos": 7
-    },
-    {
-     "team": "Swansea",
-     "o": 16,
-     "g": 8,
-     "b": 3,
-     "m": 5,
-     "ag": 24,
-     "yg": 20,
-     "av": 4,
-     "p": 27,
-     "form": [
-      "D",
-      "L",
-      "L",
-      "W",
-      "L"
-     ],
-     "pos": 8
-    },
-    {
-     "team": "Sheffield United",
-     "o": 16,
-     "g": 7,
-     "b": 4,
-     "m": 5,
-     "ag": 25,
-     "yg": 19,
-     "av": 6,
-     "p": 25,
-     "form": [
-      "W",
-      "L",
-      "W",
-      "W",
-      "D"
-     ],
-     "pos": 9
-    },
-    {
-     "team": "West Ham",
-     "o": 16,
-     "g": 6,
-     "b": 6,
-     "m": 4,
-     "ag": 38,
-     "yg": 24,
-     "av": 14,
-     "p": 24,
-     "form": [
-      "D",
-      "L",
-      "D",
-      "L",
-      "L"
-     ],
-     "pos": 10
-    },
-    {
-     "team": "Norwich",
-     "o": 16,
-     "g": 8,
-     "b": 0,
-     "m": 8,
-     "ag": 34,
-     "yg": 25,
-     "av": 9,
-     "p": 24,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 11
-    },
-    {
-     "team": "Portsmouth",
-     "o": 16,
-     "g": 6,
-     "b": 5,
-     "m": 5,
-     "ag": 21,
-     "yg": 19,
-     "av": 2,
-     "p": 23,
-     "form": [
-      "D",
-      "L",
-      "W",
-      "D",
-      "W"
-     ],
-     "pos": 12
-    },
-    {
-     "team": "Blackburn",
-     "o": 16,
-     "g": 6,
-     "b": 4,
-     "m": 6,
-     "ag": 24,
-     "yg": 25,
-     "av": -1,
-     "p": 22,
-     "form": [
-      "D",
-      "W",
-      "L",
-      "L",
-      "W"
-     ],
-     "pos": 13
-    },
-    {
-     "team": "Wrexham",
-     "o": 16,
-     "g": 5,
-     "b": 6,
-     "m": 5,
-     "ag": 19,
-     "yg": 20,
-     "av": -1,
-     "p": 21,
-     "form": [
-      "W",
-      "D",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 14
-    },
-    {
-     "team": "Cardiff",
-     "o": 16,
-     "g": 4,
-     "b": 6,
-     "m": 6,
-     "ag": 28,
-     "yg": 29,
-     "av": -1,
-     "p": 18,
-     "form": [
-      "L",
-      "W",
-      "D",
-      "L",
-      "W"
-     ],
-     "pos": 15
-    },
-    {
-     "team": "Millwall",
-     "o": 16,
-     "g": 5,
-     "b": 3,
-     "m": 8,
-     "ag": 23,
-     "yg": 28,
-     "av": -5,
-     "p": 18,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "W",
-      "L"
-     ],
-     "pos": 16
-    },
-    {
-     "team": "Bolton",
-     "o": 16,
-     "g": 5,
-     "b": 3,
-     "m": 8,
-     "ag": 21,
-     "yg": 30,
-     "av": -9,
-     "p": 18,
-     "form": [
-      "D",
-      "L",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 17
-    },
-    {
-     "team": "Bristol City",
-     "o": 16,
-     "g": 5,
-     "b": 3,
-     "m": 8,
-     "ag": 16,
-     "yg": 26,
-     "av": -10,
-     "p": 18,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "W",
-      "D"
-     ],
-     "pos": 18
-    },
-    {
-     "team": "Charlton",
-     "o": 16,
-     "g": 4,
-     "b": 5,
-     "m": 7,
-     "ag": 14,
-     "yg": 25,
-     "av": -11,
-     "p": 17,
-     "form": [
-      "L",
-      "W",
-      "L",
-      "L",
-      "L"
-     ],
-     "pos": 19
-    },
-    {
-     "team": "Lincoln",
-     "o": 16,
-     "g": 4,
-     "b": 3,
-     "m": 9,
-     "ag": 15,
-     "yg": 27,
-     "av": -12,
-     "p": 15,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "L",
-      "W"
-     ],
-     "pos": 20
-    },
-    {
-     "team": "Watford",
-     "o": 16,
-     "g": 4,
-     "b": 3,
-     "m": 9,
-     "ag": 13,
-     "yg": 27,
-     "av": -14,
-     "p": 15,
-     "form": [
-      "L",
-      "D",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 21
-    },
-    {
-     "team": "Burnley",
-     "o": 16,
-     "g": 1,
-     "b": 8,
-     "m": 7,
-     "ag": 24,
-     "yg": 33,
-     "av": -9,
-     "p": 11,
-     "form": [
-      "D",
-      "L",
-      "D",
-      "D",
-      "L"
-     ],
-     "pos": 22
-    },
-    {
-     "team": "Derby",
-     "o": 16,
-     "g": 2,
-     "b": 4,
-     "m": 10,
-     "ag": 14,
-     "yg": 32,
-     "av": -18,
-     "p": 10,
-     "form": [
-      "L",
-      "W",
-      "L",
-      "L",
-      "D"
-     ],
-     "pos": 23
-    },
-    {
-     "team": "Preston",
-     "o": 16,
-     "g": 2,
-     "b": 3,
-     "m": 11,
-     "ag": 14,
-     "yg": 31,
-     "av": -17,
-     "p": 9,
-     "form": [
-      "D",
-      "W",
-      "L",
-      "L",
-      "D"
-     ],
-     "pos": 24
-    }
-   ],
-   "home": [
-    {
-     "team": "Southampton",
-     "o": 8,
-     "g": 7,
-     "b": 1,
-     "m": 0,
-     "ag": 22,
-     "yg": 5,
-     "av": 17,
-     "p": 22,
-     "form": [
-      "W",
-      "W",
-      "D",
-      "W",
-      "W"
-     ],
-     "pos": 1
-    },
-    {
-     "team": "Middlesbrough",
-     "o": 8,
-     "g": 6,
-     "b": 2,
-     "m": 0,
-     "ag": 19,
-     "yg": 9,
-     "av": 10,
-     "p": 20,
-     "form": [
-      "W",
-      "W",
-      "D",
-      "W",
-      "D"
-     ],
-     "pos": 2
-    },
-    {
-     "team": "Wolves",
-     "o": 8,
-     "g": 5,
-     "b": 2,
-     "m": 1,
-     "ag": 15,
-     "yg": 8,
-     "av": 7,
-     "p": 17,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "D",
-      "L"
-     ],
-     "pos": 3
-    },
-    {
-     "team": "Birmingham",
-     "o": 8,
-     "g": 4,
-     "b": 4,
-     "m": 0,
-     "ag": 19,
-     "yg": 8,
-     "av": 11,
-     "p": 16,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "W",
-      "D"
-     ],
-     "pos": 4
-    },
-    {
-     "team": "Cardiff",
-     "o": 8,
-     "g": 4,
-     "b": 4,
-     "m": 0,
-     "ag": 21,
-     "yg": 13,
-     "av": 8,
-     "p": 16,
-     "form": [
-      "W",
-      "D",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 5
-    },
-    {
-     "team": "Stoke",
-     "o": 8,
-     "g": 5,
-     "b": 1,
-     "m": 2,
-     "ag": 13,
-     "yg": 6,
-     "av": 7,
-     "p": 16,
-     "form": [
-      "W",
-      "W",
-      "D",
-      "L",
-      "W"
-     ],
-     "pos": 6
-    },
-    {
-     "team": "QPR",
-     "o": 8,
-     "g": 4,
-     "b": 3,
-     "m": 1,
-     "ag": 16,
-     "yg": 7,
-     "av": 9,
-     "p": 15,
-     "form": [
-      "W",
-      "D",
-      "W",
-      "W",
-      "D"
-     ],
-     "pos": 7
-    },
-    {
-     "team": "Swansea",
-     "o": 8,
-     "g": 4,
-     "b": 3,
-     "m": 1,
-     "ag": 13,
-     "yg": 5,
-     "av": 8,
-     "p": 15,
-     "form": [
-      "D",
-      "W",
-      "L",
-      "W",
-      "W"
-     ],
-     "pos": 8
-    },
-    {
-     "team": "West Brom",
-     "o": 8,
-     "g": 4,
-     "b": 3,
-     "m": 1,
-     "ag": 13,
-     "yg": 7,
-     "av": 6,
-     "p": 15,
-     "form": [
-      "W",
-      "D",
-      "W",
-      "L",
-      "D"
-     ],
-     "pos": 9
-    },
-    {
-     "team": "Blackburn",
-     "o": 8,
-     "g": 5,
-     "b": 0,
-     "m": 3,
-     "ag": 14,
-     "yg": 10,
-     "av": 4,
-     "p": 15,
-     "form": [
-      "W",
-      "L",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 10
-    },
-    {
-     "team": "Sheffield United",
-     "o": 8,
-     "g": 4,
-     "b": 2,
-     "m": 2,
-     "ag": 13,
-     "yg": 7,
-     "av": 6,
-     "p": 14,
-     "form": [
-      "W",
-      "W",
-      "D",
-      "W",
-      "L"
-     ],
-     "pos": 11
-    },
-    {
-     "team": "Watford",
-     "o": 8,
-     "g": 4,
-     "b": 2,
-     "m": 2,
-     "ag": 9,
-     "yg": 9,
-     "av": 0,
-     "p": 14,
-     "form": [
-      "D",
-      "W",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 12
-    },
-    {
-     "team": "Portsmouth",
-     "o": 8,
-     "g": 4,
-     "b": 1,
-     "m": 3,
-     "ag": 14,
-     "yg": 13,
-     "av": 1,
-     "p": 13,
-     "form": [
-      "L",
-      "W",
-      "W",
-      "W",
-      "D"
-     ],
-     "pos": 13
-    },
-    {
-     "team": "Wrexham",
-     "o": 8,
-     "g": 3,
-     "b": 3,
-     "m": 2,
-     "ag": 13,
-     "yg": 9,
-     "av": 4,
-     "p": 12,
-     "form": [
-      "D",
-      "W",
-      "W",
-      "L",
-      "W"
-     ],
-     "pos": 14
-    },
-    {
-     "team": "Norwich",
-     "o": 8,
-     "g": 4,
-     "b": 0,
-     "m": 4,
-     "ag": 15,
-     "yg": 13,
-     "av": 2,
-     "p": 12,
-     "form": [
-      "W",
-      "W",
-      "L",
-      "L",
-      "L"
-     ],
-     "pos": 15
-    },
-    {
-     "team": "Charlton",
-     "o": 8,
-     "g": 3,
-     "b": 3,
-     "m": 2,
-     "ag": 7,
-     "yg": 7,
-     "av": 0,
-     "p": 12,
-     "form": [
-      "W",
-      "L",
-      "L",
-      "D",
-      "D"
-     ],
-     "pos": 16
-    },
-    {
-     "team": "West Ham",
-     "o": 8,
-     "g": 3,
-     "b": 2,
-     "m": 3,
-     "ag": 19,
-     "yg": 12,
-     "av": 7,
-     "p": 11,
-     "form": [
-      "D",
-      "L",
-      "L",
-      "D",
-      "W"
-     ],
-     "pos": 17
-    },
-    {
-     "team": "Millwall",
-     "o": 8,
-     "g": 3,
-     "b": 2,
-     "m": 3,
-     "ag": 15,
-     "yg": 10,
-     "av": 5,
-     "p": 11,
-     "form": [
-      "L",
-      "W",
-      "D",
-      "L",
-      "D"
-     ],
-     "pos": 18
-    },
-    {
-     "team": "Preston",
-     "o": 8,
-     "g": 2,
-     "b": 1,
-     "m": 5,
-     "ag": 8,
-     "yg": 13,
-     "av": -5,
-     "p": 7,
-     "form": [
-      "W",
-      "L",
-      "D",
-      "L",
-      "L"
-     ],
-     "pos": 19
-    },
-    {
-     "team": "Bolton",
-     "o": 8,
-     "g": 2,
-     "b": 1,
-     "m": 5,
-     "ag": 10,
-     "yg": 16,
-     "av": -6,
-     "p": 7,
-     "form": [
-      "D",
-      "L",
-      "L",
-      "L",
-      "W"
-     ],
-     "pos": 20
-    },
-    {
-     "team": "Burnley",
-     "o": 8,
-     "g": 0,
-     "b": 6,
-     "m": 2,
-     "ag": 10,
-     "yg": 12,
-     "av": -2,
-     "p": 6,
-     "form": [
-      "D",
-      "D",
-      "L",
-      "D",
-      "D"
-     ],
-     "pos": 21
-    },
-    {
-     "team": "Bristol City",
-     "o": 8,
-     "g": 2,
-     "b": 0,
-     "m": 6,
-     "ag": 4,
-     "yg": 13,
-     "av": -9,
-     "p": 6,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "L",
-      "W"
-     ],
-     "pos": 22
-    },
-    {
-     "team": "Derby",
-     "o": 8,
-     "g": 1,
-     "b": 2,
-     "m": 5,
-     "ag": 7,
-     "yg": 15,
-     "av": -8,
-     "p": 5,
-     "form": [
-      "W",
-      "L",
-      "L",
-      "D",
-      "L"
-     ],
-     "pos": 23
-    },
-    {
-     "team": "Lincoln",
-     "o": 8,
-     "g": 1,
-     "b": 2,
-     "m": 5,
-     "ag": 8,
-     "yg": 17,
-     "av": -9,
-     "p": 5,
-     "form": [
-      "L",
-      "L",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 24
-    }
-   ],
-   "away": [
-    {
-     "team": "Stoke",
-     "o": 8,
-     "g": 5,
-     "b": 1,
-     "m": 2,
-     "ag": 12,
-     "yg": 12,
-     "av": 0,
-     "p": 16,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 1
-    },
-    {
-     "team": "Wolves",
-     "o": 8,
-     "g": 4,
-     "b": 2,
-     "m": 2,
-     "ag": 13,
-     "yg": 11,
-     "av": 2,
-     "p": 14,
-     "form": [
-      "D",
-      "W",
-      "W",
-      "L",
-      "W"
-     ],
-     "pos": 2
-    },
-    {
-     "team": "West Brom",
-     "o": 8,
-     "g": 4,
-     "b": 2,
-     "m": 2,
-     "ag": 12,
-     "yg": 10,
-     "av": 2,
-     "p": 14,
-     "form": [
-      "D",
-      "W",
-      "D",
-      "W",
-      "L"
-     ],
-     "pos": 3
-    },
-    {
-     "team": "West Ham",
-     "o": 8,
-     "g": 3,
-     "b": 4,
-     "m": 1,
-     "ag": 19,
-     "yg": 12,
-     "av": 7,
-     "p": 13,
-     "form": [
-      "L",
-      "D",
-      "W",
-      "W",
-      "D"
-     ],
-     "pos": 4
-    },
-    {
-     "team": "Birmingham",
-     "o": 8,
-     "g": 4,
-     "b": 1,
-     "m": 3,
-     "ag": 9,
-     "yg": 7,
-     "av": 2,
-     "p": 13,
-     "form": [
-      "L",
-      "W",
-      "L",
-      "W",
-      "W"
-     ],
-     "pos": 5
-    },
-    {
-     "team": "Norwich",
-     "o": 8,
-     "g": 4,
-     "b": 0,
-     "m": 4,
-     "ag": 19,
-     "yg": 12,
-     "av": 7,
-     "p": 12,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 6
-    },
-    {
-     "team": "Middlesbrough",
-     "o": 8,
-     "g": 3,
-     "b": 3,
-     "m": 2,
-     "ag": 13,
-     "yg": 10,
-     "av": 3,
-     "p": 12,
-     "form": [
-      "D",
-      "L",
-      "W",
-      "W",
-      "D"
-     ],
-     "pos": 7
-    },
-    {
-     "team": "Bristol City",
-     "o": 8,
-     "g": 3,
-     "b": 3,
-     "m": 2,
-     "ag": 12,
-     "yg": 13,
-     "av": -1,
-     "p": 12,
-     "form": [
-      "L",
-      "W",
-      "D",
-      "D",
-      "L"
-     ],
-     "pos": 8
-    },
-    {
-     "team": "QPR",
-     "o": 8,
-     "g": 3,
-     "b": 3,
-     "m": 2,
-     "ag": 9,
-     "yg": 11,
-     "av": -2,
-     "p": 12,
-     "form": [
-      "W",
-      "L",
-      "L",
-      "D",
-      "D"
-     ],
-     "pos": 9
-    },
-    {
-     "team": "Swansea",
-     "o": 8,
-     "g": 4,
-     "b": 0,
-     "m": 4,
-     "ag": 11,
-     "yg": 15,
-     "av": -4,
-     "p": 12,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "W",
-      "W"
-     ],
-     "pos": 10
-    },
-    {
-     "team": "Sheffield United",
-     "o": 8,
-     "g": 3,
-     "b": 2,
-     "m": 3,
-     "ag": 12,
-     "yg": 12,
-     "av": 0,
-     "p": 11,
-     "form": [
-      "L",
-      "W",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 11
-    },
-    {
-     "team": "Bolton",
-     "o": 8,
-     "g": 3,
-     "b": 2,
-     "m": 3,
-     "ag": 11,
-     "yg": 14,
-     "av": -3,
-     "p": 11,
-     "form": [
-      "L",
-      "W",
-      "D",
-      "W",
-      "W"
-     ],
-     "pos": 12
-    },
-    {
-     "team": "Portsmouth",
-     "o": 8,
-     "g": 2,
-     "b": 4,
-     "m": 2,
-     "ag": 7,
-     "yg": 6,
-     "av": 1,
-     "p": 10,
-     "form": [
-      "D",
-      "D",
-      "D",
-      "W",
-      "L"
-     ],
-     "pos": 13
-    },
-    {
-     "team": "Lincoln",
-     "o": 8,
-     "g": 3,
-     "b": 1,
-     "m": 4,
-     "ag": 7,
-     "yg": 10,
-     "av": -3,
-     "p": 10,
-     "form": [
-      "L",
-      "L",
-      "D",
-      "L",
-      "W"
-     ],
-     "pos": 14
-    },
-    {
-     "team": "Southampton",
-     "o": 8,
-     "g": 2,
-     "b": 3,
-     "m": 3,
-     "ag": 9,
-     "yg": 10,
-     "av": -1,
-     "p": 9,
-     "form": [
-      "L",
-      "D",
-      "W",
-      "W",
-      "L"
-     ],
-     "pos": 15
-    },
-    {
-     "team": "Wrexham",
-     "o": 8,
-     "g": 2,
-     "b": 3,
-     "m": 3,
-     "ag": 6,
-     "yg": 11,
-     "av": -5,
-     "p": 9,
-     "form": [
-      "W",
-      "L",
-      "L",
-      "D",
-      "L"
-     ],
-     "pos": 16
-    },
-    {
-     "team": "Blackburn",
-     "o": 8,
-     "g": 1,
-     "b": 4,
-     "m": 3,
-     "ag": 10,
-     "yg": 15,
-     "av": -5,
-     "p": 7,
-     "form": [
-      "D",
-      "L",
-      "L",
-      "W",
-      "D"
-     ],
-     "pos": 17
-    },
-    {
-     "team": "Millwall",
-     "o": 8,
-     "g": 2,
-     "b": 1,
-     "m": 5,
-     "ag": 8,
-     "yg": 18,
-     "av": -10,
-     "p": 7,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "W",
-      "D"
-     ],
-     "pos": 18
-    },
-    {
-     "team": "Burnley",
-     "o": 8,
-     "g": 1,
-     "b": 2,
-     "m": 5,
-     "ag": 14,
-     "yg": 21,
-     "av": -7,
-     "p": 5,
-     "form": [
-      "L",
-      "D",
-      "L",
-      "W",
-      "L"
-     ],
-     "pos": 19
-    },
-    {
-     "team": "Derby",
-     "o": 8,
-     "g": 1,
-     "b": 2,
-     "m": 5,
-     "ag": 7,
-     "yg": 17,
-     "av": -10,
-     "p": 5,
-     "form": [
-      "L",
-      "L",
-      "D",
-      "L",
-      "D"
-     ],
-     "pos": 20
-    },
-    {
-     "team": "Charlton",
-     "o": 8,
-     "g": 1,
-     "b": 2,
-     "m": 5,
-     "ag": 7,
-     "yg": 18,
-     "av": -11,
-     "p": 5,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "D",
-      "L"
-     ],
-     "pos": 21
-    },
-    {
-     "team": "Cardiff",
-     "o": 8,
-     "g": 0,
-     "b": 2,
-     "m": 6,
-     "ag": 7,
-     "yg": 16,
-     "av": -9,
-     "p": 2,
-     "form": [
-      "L",
-      "L",
-      "D",
-      "L",
-      "L"
-     ],
-     "pos": 22
-    },
-    {
-     "team": "Preston",
-     "o": 8,
-     "g": 0,
-     "b": 2,
-     "m": 6,
-     "ag": 6,
-     "yg": 18,
-     "av": -12,
-     "p": 2,
-     "form": [
-      "D",
-      "L",
-      "L",
-      "L",
-      "D"
-     ],
-     "pos": 23
-    },
-    {
-     "team": "Watford",
-     "o": 8,
-     "g": 0,
-     "b": 1,
-     "m": 7,
-     "ag": 4,
-     "yg": 18,
-     "av": -14,
-     "p": 1,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "L",
-      "L"
-     ],
-     "pos": 24
-    }
-   ]
-  },
-  "ITA2": {
-   "season": "2627",
-   "updated": "2026-11-22",
-   "rows": [
-    {
-     "team": "Palermo",
-     "o": 12,
-     "g": 8,
-     "b": 3,
-     "m": 1,
-     "ag": 26,
-     "yg": 16,
-     "av": 10,
-     "p": 27,
-     "form": [
-      "L",
-      "D",
-      "W",
-      "D",
-      "W"
-     ],
-     "pos": 1
-    },
-    {
-     "team": "Modena",
-     "o": 12,
-     "g": 8,
-     "b": 2,
-     "m": 2,
-     "ag": 22,
-     "yg": 10,
-     "av": 12,
-     "p": 26,
-     "form": [
-      "W",
-      "W",
-      "D",
-      "W",
-      "W"
-     ],
-     "pos": 2
-    },
-    {
-     "team": "Ascoli",
-     "o": 12,
-     "g": 5,
-     "b": 6,
-     "m": 1,
-     "ag": 19,
-     "yg": 9,
-     "av": 10,
-     "p": 21,
-     "form": [
-      "D",
-      "D",
-      "D",
-      "W",
-      "W"
-     ],
-     "pos": 3
-    },
-    {
-     "team": "Avellino",
-     "o": 12,
-     "g": 5,
-     "b": 4,
-     "m": 3,
-     "ag": 20,
-     "yg": 12,
-     "av": 8,
-     "p": 19,
-     "form": [
-      "W",
-      "D",
-      "W",
-      "D",
-      "L"
-     ],
-     "pos": 4
-    },
-    {
-     "team": "Pisa",
-     "o": 12,
-     "g": 5,
-     "b": 4,
-     "m": 3,
-     "ag": 21,
-     "yg": 17,
-     "av": 4,
-     "p": 19,
-     "form": [
-      "W",
-      "D",
-      "L",
-      "D",
-      "D"
-     ],
-     "pos": 5
-    },
-    {
-     "team": "Mantova",
-     "o": 12,
-     "g": 5,
-     "b": 4,
-     "m": 3,
-     "ag": 16,
-     "yg": 15,
-     "av": 1,
-     "p": 19,
-     "form": [
-      "L",
-      "D",
-      "D",
-      "L",
-      "W"
-     ],
-     "pos": 6
-    },
-    {
-     "team": "Sudtirol",
-     "o": 12,
-     "g": 4,
-     "b": 6,
-     "m": 2,
-     "ag": 14,
-     "yg": 12,
-     "av": 2,
-     "p": 18,
-     "form": [
-      "W",
-      "D",
-      "D",
-      "L",
-      "D"
-     ],
-     "pos": 7
-    },
-    {
-     "team": "Cesena",
-     "o": 12,
-     "g": 4,
-     "b": 6,
-     "m": 2,
-     "ag": 14,
-     "yg": 14,
-     "av": 0,
-     "p": 18,
-     "form": [
-      "W",
-      "W",
-      "D",
-      "W",
-      "L"
-     ],
-     "pos": 8
-    },
-    {
-     "team": "Verona",
-     "o": 12,
-     "g": 4,
-     "b": 4,
-     "m": 4,
-     "ag": 19,
-     "yg": 15,
-     "av": 4,
-     "p": 16,
-     "form": [
-      "L",
-      "D",
-      "W",
-      "W",
-      "D"
-     ],
-     "pos": 9
-    },
-    {
-     "team": "Benevento",
-     "o": 12,
-     "g": 4,
-     "b": 4,
-     "m": 4,
-     "ag": 16,
-     "yg": 14,
-     "av": 2,
-     "p": 16,
-     "form": [
-      "L",
-      "D",
-      "L",
-      "D",
-      "W"
-     ],
-     "pos": 10
-    },
-    {
-     "team": "Padova",
-     "o": 12,
-     "g": 4,
-     "b": 4,
-     "m": 4,
-     "ag": 13,
-     "yg": 14,
-     "av": -1,
-     "p": 16,
-     "form": [
-      "D",
-      "D",
-      "D",
-      "W",
-      "W"
-     ],
-     "pos": 11
-    },
-    {
-     "team": "Juve Stabia",
-     "o": 12,
-     "g": 4,
-     "b": 4,
-     "m": 4,
-     "ag": 12,
-     "yg": 13,
-     "av": -1,
-     "p": 16,
-     "form": [
-      "L",
-      "W",
-      "D",
-      "L",
-      "W"
-     ],
-     "pos": 12
-    },
-    {
-     "team": "Cremonese",
-     "o": 12,
-     "g": 4,
-     "b": 3,
-     "m": 5,
-     "ag": 14,
-     "yg": 13,
-     "av": 1,
-     "p": 15,
-     "form": [
-      "L",
-      "W",
-      "W",
-      "W",
-      "L"
-     ],
-     "pos": 13
-    },
-    {
-     "team": "Sampdoria",
-     "o": 12,
-     "g": 4,
-     "b": 2,
-     "m": 6,
-     "ag": 14,
-     "yg": 19,
-     "av": -5,
-     "p": 14,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "L",
-      "D"
-     ],
-     "pos": 14
-    },
-    {
-     "team": "Carrarese",
-     "o": 12,
-     "g": 4,
-     "b": 1,
-     "m": 7,
-     "ag": 10,
-     "yg": 14,
-     "av": -4,
-     "p": 13,
-     "form": [
-      "W",
-      "L",
-      "L",
-      "W",
-      "L"
-     ],
-     "pos": 15
-    },
-    {
-     "team": "Arezzo",
-     "o": 12,
-     "g": 3,
-     "b": 3,
-     "m": 6,
-     "ag": 10,
-     "yg": 21,
-     "av": -11,
-     "p": 12,
-     "form": [
-      "D",
-      "L",
-      "D",
-      "L",
-      "L"
-     ],
-     "pos": 16
-    },
-    {
-     "team": "Virtus Entella",
-     "o": 12,
-     "g": 2,
-     "b": 4,
-     "m": 6,
-     "ag": 11,
-     "yg": 15,
-     "av": -4,
-     "p": 10,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "D",
-      "L"
-     ],
-     "pos": 17
-    },
-    {
-     "team": "Vicenza",
-     "o": 12,
-     "g": 2,
-     "b": 4,
-     "m": 6,
-     "ag": 16,
-     "yg": 26,
-     "av": -10,
-     "p": 10,
-     "form": [
-      "D",
-      "L",
-      "L",
-      "L",
-      "W"
-     ],
-     "pos": 18
-    },
-    {
-     "team": "Empoli",
-     "o": 12,
-     "g": 2,
-     "b": 3,
-     "m": 7,
-     "ag": 12,
-     "yg": 20,
-     "av": -8,
-     "p": 9,
-     "form": [
-      "L",
-      "D",
-      "D",
-      "L",
-      "L"
-     ],
-     "pos": 19
-    },
-    {
-     "team": "Catanzaro",
-     "o": 12,
-     "g": 2,
-     "b": 3,
-     "m": 7,
-     "ag": 14,
-     "yg": 24,
-     "av": -10,
-     "p": 9,
-     "form": [
-      "W",
-      "L",
-      "D",
-      "D",
-      "L"
-     ],
-     "pos": 20
-    }
-   ],
-   "home": [
-    {
-     "team": "Palermo",
-     "o": 5,
-     "g": 5,
-     "b": 0,
-     "m": 0,
-     "ag": 11,
-     "yg": 4,
-     "av": 7,
-     "p": 15,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 1
-    },
-    {
-     "team": "Avellino",
-     "o": 7,
-     "g": 4,
-     "b": 1,
-     "m": 2,
-     "ag": 15,
-     "yg": 6,
-     "av": 9,
-     "p": 13,
-     "form": [
-      "W",
-      "W",
-      "L",
-      "W",
-      "D"
-     ],
-     "pos": 2
-    },
-    {
-     "team": "Modena",
-     "o": 6,
-     "g": 4,
-     "b": 1,
-     "m": 1,
-     "ag": 11,
-     "yg": 5,
-     "av": 6,
-     "p": 13,
-     "form": [
-      "W",
-      "D",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 3
-    },
-    {
-     "team": "Ascoli",
-     "o": 7,
-     "g": 3,
-     "b": 4,
-     "m": 0,
-     "ag": 11,
-     "yg": 6,
-     "av": 5,
-     "p": 13,
-     "form": [
-      "D",
-      "D",
-      "W",
-      "D",
-      "W"
-     ],
-     "pos": 4
-    },
-    {
-     "team": "Sudtirol",
-     "o": 7,
-     "g": 3,
-     "b": 4,
-     "m": 0,
-     "ag": 7,
-     "yg": 3,
-     "av": 4,
-     "p": 13,
-     "form": [
-      "W",
-      "D",
-      "D",
-      "D",
-      "D"
-     ],
-     "pos": 5
-    },
-    {
-     "team": "Verona",
-     "o": 7,
-     "g": 3,
-     "b": 2,
-     "m": 2,
-     "ag": 14,
-     "yg": 8,
-     "av": 6,
-     "p": 11,
-     "form": [
-      "L",
-      "W",
-      "D",
-      "D",
-      "W"
-     ],
-     "pos": 6
-    },
-    {
-     "team": "Benevento",
-     "o": 7,
-     "g": 2,
-     "b": 4,
-     "m": 1,
-     "ag": 11,
-     "yg": 8,
-     "av": 3,
-     "p": 10,
-     "form": [
-      "D",
-      "D",
-      "D",
-      "W",
-      "W"
-     ],
-     "pos": 7
-    },
-    {
-     "team": "Cesena",
-     "o": 6,
-     "g": 2,
-     "b": 4,
-     "m": 0,
-     "ag": 8,
-     "yg": 6,
-     "av": 2,
-     "p": 10,
-     "form": [
-      "W",
-      "W",
-      "D",
-      "D",
-      "D"
-     ],
-     "pos": 8
-    },
-    {
-     "team": "Sampdoria",
-     "o": 5,
-     "g": 3,
-     "b": 0,
-     "m": 2,
-     "ag": 9,
-     "yg": 6,
-     "av": 3,
-     "p": 9,
-     "form": [
-      "W",
-      "W",
-      "L",
-      "W",
-      "L"
-     ],
-     "pos": 9
-    },
-    {
-     "team": "Carrarese",
-     "o": 7,
-     "g": 3,
-     "b": 0,
-     "m": 4,
-     "ag": 6,
-     "yg": 7,
-     "av": -1,
-     "p": 9,
-     "form": [
-      "W",
-      "L",
-      "W",
-      "W",
-      "L"
-     ],
-     "pos": 10
-    },
-    {
-     "team": "Mantova",
-     "o": 6,
-     "g": 2,
-     "b": 2,
-     "m": 2,
-     "ag": 7,
-     "yg": 7,
-     "av": 0,
-     "p": 8,
-     "form": [
-      "D",
-      "L",
-      "L",
-      "D",
-      "W"
-     ],
-     "pos": 11
-    },
-    {
-     "team": "Padova",
-     "o": 6,
-     "g": 2,
-     "b": 2,
-     "m": 2,
-     "ag": 7,
-     "yg": 7,
-     "av": 0,
-     "p": 8,
-     "form": [
-      "D",
-      "W",
-      "L",
-      "L",
-      "W"
-     ],
-     "pos": 12
-    },
-    {
-     "team": "Pisa",
-     "o": 6,
-     "g": 2,
-     "b": 2,
-     "m": 2,
-     "ag": 11,
-     "yg": 12,
-     "av": -1,
-     "p": 8,
-     "form": [
-      "D",
-      "D",
-      "W",
-      "L",
-      "W"
-     ],
-     "pos": 13
-    },
-    {
-     "team": "Cremonese",
-     "o": 5,
-     "g": 2,
-     "b": 1,
-     "m": 2,
-     "ag": 5,
-     "yg": 5,
-     "av": 0,
-     "p": 7,
-     "form": [
-      "W",
-      "L",
-      "D",
-      "W",
-      "L"
-     ],
-     "pos": 14
-    },
-    {
-     "team": "Juve Stabia",
-     "o": 5,
-     "g": 2,
-     "b": 1,
-     "m": 2,
-     "ag": 5,
-     "yg": 5,
-     "av": 0,
-     "p": 7,
-     "form": [
-      "W",
-      "L",
-      "W",
-      "D",
-      "L"
-     ],
-     "pos": 15
-    },
-    {
-     "team": "Catanzaro",
-     "o": 5,
-     "g": 2,
-     "b": 1,
-     "m": 2,
-     "ag": 7,
-     "yg": 11,
-     "av": -4,
-     "p": 7,
-     "form": [
-      "W",
-      "D",
-      "L",
-      "L",
-      "W"
-     ],
-     "pos": 16
-    },
-    {
-     "team": "Empoli",
-     "o": 6,
-     "g": 1,
-     "b": 1,
-     "m": 4,
-     "ag": 5,
-     "yg": 10,
-     "av": -5,
-     "p": 4,
-     "form": [
-      "L",
-      "D",
-      "L",
-      "L",
-      "L"
-     ],
-     "pos": 17
-    },
-    {
-     "team": "Vicenza",
-     "o": 5,
-     "g": 1,
-     "b": 1,
-     "m": 3,
-     "ag": 6,
-     "yg": 12,
-     "av": -6,
-     "p": 4,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "D",
-      "W"
-     ],
-     "pos": 18
-    },
-    {
-     "team": "Virtus Entella",
-     "o": 6,
-     "g": 0,
-     "b": 3,
-     "m": 3,
-     "ag": 5,
-     "yg": 9,
-     "av": -4,
-     "p": 3,
-     "form": [
-      "L",
-      "D",
-      "L",
-      "D",
-      "D"
-     ],
-     "pos": 19
-    },
-    {
-     "team": "Arezzo",
-     "o": 6,
-     "g": 0,
-     "b": 3,
-     "m": 3,
-     "ag": 4,
-     "yg": 11,
-     "av": -7,
-     "p": 3,
-     "form": [
-      "D",
-      "D",
-      "L",
-      "D",
-      "L"
-     ],
-     "pos": 20
-    }
-   ],
-   "away": [
-    {
-     "team": "Modena",
-     "o": 6,
-     "g": 4,
-     "b": 1,
-     "m": 1,
-     "ag": 11,
-     "yg": 5,
-     "av": 6,
-     "p": 13,
-     "form": [
-      "W",
-      "W",
-      "L",
-      "D",
-      "W"
-     ],
-     "pos": 1
-    },
-    {
-     "team": "Palermo",
-     "o": 7,
-     "g": 3,
-     "b": 3,
-     "m": 1,
-     "ag": 15,
-     "yg": 12,
-     "av": 3,
-     "p": 12,
-     "form": [
-      "L",
-      "D",
-      "D",
-      "W",
-      "W"
-     ],
-     "pos": 2
-    },
-    {
-     "team": "Pisa",
-     "o": 6,
-     "g": 3,
-     "b": 2,
-     "m": 1,
-     "ag": 10,
-     "yg": 5,
-     "av": 5,
-     "p": 11,
-     "form": [
-      "W",
-      "L",
-      "D",
-      "W",
-      "D"
-     ],
-     "pos": 3
-    },
-    {
-     "team": "Mantova",
-     "o": 6,
-     "g": 3,
-     "b": 2,
-     "m": 1,
-     "ag": 9,
-     "yg": 8,
-     "av": 1,
-     "p": 11,
-     "form": [
-      "L",
-      "D",
-      "W",
-      "W",
-      "D"
-     ],
-     "pos": 4
-    },
-    {
-     "team": "Juve Stabia",
-     "o": 7,
-     "g": 2,
-     "b": 3,
-     "m": 2,
-     "ag": 7,
-     "yg": 8,
-     "av": -1,
-     "p": 9,
-     "form": [
-      "L",
-      "D",
-      "W",
-      "D",
-      "D"
-     ],
-     "pos": 5
-    },
-    {
-     "team": "Arezzo",
-     "o": 6,
-     "g": 3,
-     "b": 0,
-     "m": 3,
-     "ag": 6,
-     "yg": 10,
-     "av": -4,
-     "p": 9,
-     "form": [
-      "L",
-      "L",
-      "W",
-      "W",
-      "L"
-     ],
-     "pos": 6
-    },
-    {
-     "team": "Ascoli",
-     "o": 5,
-     "g": 2,
-     "b": 2,
-     "m": 1,
-     "ag": 8,
-     "yg": 3,
-     "av": 5,
-     "p": 8,
-     "form": [
-      "D",
-      "W",
-      "D",
-      "L",
-      "W"
-     ],
-     "pos": 7
-    },
-    {
-     "team": "Cremonese",
-     "o": 7,
-     "g": 2,
-     "b": 2,
-     "m": 3,
-     "ag": 9,
-     "yg": 8,
-     "av": 1,
-     "p": 8,
-     "form": [
-      "L",
-      "W",
-      "W",
-      "L",
-      "D"
-     ],
-     "pos": 8
-    },
-    {
-     "team": "Padova",
-     "o": 6,
-     "g": 2,
-     "b": 2,
-     "m": 2,
-     "ag": 6,
-     "yg": 7,
-     "av": -1,
-     "p": 8,
-     "form": [
-      "D",
-      "D",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 9
-    },
-    {
-     "team": "Cesena",
-     "o": 6,
-     "g": 2,
-     "b": 2,
-     "m": 2,
-     "ag": 6,
-     "yg": 8,
-     "av": -2,
-     "p": 8,
-     "form": [
-      "W",
-      "D",
-      "L",
-      "L",
-      "D"
-     ],
-     "pos": 10
-    },
-    {
-     "team": "Virtus Entella",
-     "o": 6,
-     "g": 2,
-     "b": 1,
-     "m": 3,
-     "ag": 6,
-     "yg": 6,
-     "av": 0,
-     "p": 7,
-     "form": [
-      "L",
-      "L",
-      "W",
-      "D",
-      "W"
-     ],
-     "pos": 11
-    },
-    {
-     "team": "Avellino",
-     "o": 5,
-     "g": 1,
-     "b": 3,
-     "m": 1,
-     "ag": 5,
-     "yg": 6,
-     "av": -1,
-     "p": 6,
-     "form": [
-      "D",
-      "D",
-      "D",
-      "L",
-      "W"
-     ],
-     "pos": 12
-    },
-    {
-     "team": "Benevento",
-     "o": 5,
-     "g": 2,
-     "b": 0,
-     "m": 3,
-     "ag": 5,
-     "yg": 6,
-     "av": -1,
-     "p": 6,
-     "form": [
-      "L",
-      "L",
-      "W",
-      "W",
-      "L"
-     ],
-     "pos": 13
-    },
-    {
-     "team": "Vicenza",
-     "o": 7,
-     "g": 1,
-     "b": 3,
-     "m": 3,
-     "ag": 10,
-     "yg": 14,
-     "av": -4,
-     "p": 6,
-     "form": [
-      "D",
-      "L",
-      "W",
-      "D",
-      "L"
-     ],
-     "pos": 14
-    },
-    {
-     "team": "Sudtirol",
-     "o": 5,
-     "g": 1,
-     "b": 2,
-     "m": 2,
-     "ag": 7,
-     "yg": 9,
-     "av": -2,
-     "p": 5,
-     "form": [
-      "D",
-      "L",
-      "L",
-      "W",
-      "D"
-     ],
-     "pos": 15
-    },
-    {
-     "team": "Verona",
-     "o": 5,
-     "g": 1,
-     "b": 2,
-     "m": 2,
-     "ag": 5,
-     "yg": 7,
-     "av": -2,
-     "p": 5,
-     "form": [
-      "D",
-      "W",
-      "L",
-      "L",
-      "D"
-     ],
-     "pos": 16
-    },
-    {
-     "team": "Empoli",
-     "o": 6,
-     "g": 1,
-     "b": 2,
-     "m": 3,
-     "ag": 7,
-     "yg": 10,
-     "av": -3,
-     "p": 5,
-     "form": [
-      "D",
-      "L",
-      "D",
-      "L",
-      "W"
-     ],
-     "pos": 17
-    },
-    {
-     "team": "Sampdoria",
-     "o": 7,
-     "g": 1,
-     "b": 2,
-     "m": 4,
-     "ag": 5,
-     "yg": 13,
-     "av": -8,
-     "p": 5,
-     "form": [
-      "W",
-      "L",
-      "D",
-      "L",
-      "L"
-     ],
-     "pos": 18
-    },
-    {
-     "team": "Carrarese",
-     "o": 5,
-     "g": 1,
-     "b": 1,
-     "m": 3,
-     "ag": 4,
-     "yg": 7,
-     "av": -3,
-     "p": 4,
-     "form": [
-      "L",
-      "L",
-      "W",
-      "L",
-      "D"
-     ],
-     "pos": 19
-    },
-    {
-     "team": "Catanzaro",
-     "o": 7,
-     "g": 0,
-     "b": 2,
-     "m": 5,
-     "ag": 7,
-     "yg": 13,
-     "av": -6,
-     "p": 2,
-     "form": [
-      "L",
-      "D",
-      "D",
-      "L",
-      "L"
-     ],
-     "pos": 20
-    }
-   ]
-  },
-  "SCO1": {
-   "season": "2627",
-   "updated": "2026-11-21",
-   "rows": [
-    {
-     "team": "Celtic",
-     "o": 14,
-     "g": 11,
-     "b": 1,
-     "m": 2,
-     "ag": 32,
-     "yg": 11,
-     "av": 21,
-     "p": 34,
-     "form": [
-      "W",
-      "W",
-      "L",
-      "D",
-      "W"
-     ],
-     "pos": 1
-    },
-    {
-     "team": "Rangers",
-     "o": 13,
-     "g": 9,
-     "b": 3,
-     "m": 1,
-     "ag": 23,
-     "yg": 10,
-     "av": 13,
-     "p": 30,
-     "form": [
-      "W",
-      "W",
-      "D",
-      "W",
-      "D"
-     ],
-     "pos": 2
-    },
-    {
-     "team": "Falkirk",
-     "o": 14,
-     "g": 7,
-     "b": 3,
-     "m": 4,
-     "ag": 22,
-     "yg": 15,
-     "av": 7,
-     "p": 24,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 3
-    },
-    {
-     "team": "Hearts",
-     "o": 13,
-     "g": 7,
-     "b": 2,
-     "m": 4,
-     "ag": 34,
-     "yg": 22,
-     "av": 12,
-     "p": 23,
-     "form": [
-      "W",
-      "L",
-      "D",
-      "W",
-      "L"
-     ],
-     "pos": 4
-    },
-    {
-     "team": "Dundee United",
-     "o": 13,
-     "g": 5,
-     "b": 5,
-     "m": 3,
-     "ag": 21,
-     "yg": 17,
-     "av": 4,
-     "p": 20,
-     "form": [
-      "W",
-      "D",
-      "D",
-      "W",
-      "D"
-     ],
-     "pos": 5
-    },
-    {
-     "team": "St Johnstone",
-     "o": 14,
-     "g": 4,
-     "b": 5,
-     "m": 5,
-     "ag": 18,
-     "yg": 22,
-     "av": -4,
-     "p": 17,
-     "form": [
-      "L",
-      "W",
-      "D",
-      "D",
-      "L"
-     ],
-     "pos": 6
-    },
-    {
-     "team": "Dundee",
-     "o": 13,
-     "g": 5,
-     "b": 2,
-     "m": 6,
-     "ag": 18,
-     "yg": 23,
-     "av": -5,
-     "p": 17,
-     "form": [
-      "L",
-      "L",
-      "W",
-      "L",
-      "D"
-     ],
-     "pos": 7
-    },
-    {
-     "team": "Aberdeen",
-     "o": 13,
-     "g": 4,
-     "b": 2,
-     "m": 7,
-     "ag": 16,
-     "yg": 20,
-     "av": -4,
-     "p": 14,
-     "form": [
-      "W",
-      "L",
-      "L",
-      "L",
-      "W"
-     ],
-     "pos": 8
-    },
-    {
-     "team": "St Mirren",
-     "o": 14,
-     "g": 4,
-     "b": 2,
-     "m": 8,
-     "ag": 13,
-     "yg": 26,
-     "av": -13,
-     "p": 14,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "D",
-      "W"
-     ],
-     "pos": 9
-    },
-    {
-     "team": "Motherwell",
-     "o": 14,
-     "g": 3,
-     "b": 4,
-     "m": 7,
-     "ag": 16,
-     "yg": 23,
-     "av": -7,
-     "p": 13,
-     "form": [
-      "L",
-      "D",
-      "W",
-      "D",
-      "L"
-     ],
-     "pos": 10
-    },
-    {
-     "team": "Hibernian",
-     "o": 13,
-     "g": 3,
-     "b": 2,
-     "m": 8,
-     "ag": 15,
-     "yg": 21,
-     "av": -6,
-     "p": 11,
-     "form": [
-      "L",
-      "W",
-      "D",
-      "L",
-      "L"
-     ],
-     "pos": 11
-    },
-    {
-     "team": "Kilmarnock",
-     "o": 14,
-     "g": 2,
-     "b": 3,
-     "m": 9,
-     "ag": 15,
-     "yg": 33,
-     "av": -18,
-     "p": 9,
-     "form": [
-      "L",
-      "L",
-      "D",
-      "L",
-      "L"
-     ],
-     "pos": 12
-    }
-   ],
-   "home": [
-    {
-     "team": "Celtic",
-     "o": 8,
-     "g": 6,
-     "b": 1,
-     "m": 1,
-     "ag": 20,
-     "yg": 6,
-     "av": 14,
-     "p": 19,
-     "form": [
-      "W",
-      "W",
-      "D",
-      "W",
-      "L"
-     ],
-     "pos": 1
-    },
-    {
-     "team": "Hearts",
-     "o": 6,
-     "g": 4,
-     "b": 1,
-     "m": 1,
-     "ag": 17,
-     "yg": 9,
-     "av": 8,
-     "p": 13,
-     "form": [
-      "L",
-      "D",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 2
-    },
-    {
-     "team": "Rangers",
-     "o": 5,
-     "g": 4,
-     "b": 0,
-     "m": 1,
-     "ag": 10,
-     "yg": 3,
-     "av": 7,
-     "p": 12,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "W",
-      "L"
-     ],
-     "pos": 3
-    },
-    {
-     "team": "Falkirk",
-     "o": 7,
-     "g": 4,
-     "b": 0,
-     "m": 3,
-     "ag": 11,
-     "yg": 8,
-     "av": 3,
-     "p": 12,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "L",
-      "W"
-     ],
-     "pos": 4
-    },
-    {
-     "team": "St Johnstone",
-     "o": 7,
-     "g": 3,
-     "b": 3,
-     "m": 1,
-     "ag": 12,
-     "yg": 10,
-     "av": 2,
-     "p": 12,
-     "form": [
-      "W",
-      "D",
-      "D",
-      "D",
-      "L"
-     ],
-     "pos": 5
-    },
-    {
-     "team": "Dundee",
-     "o": 7,
-     "g": 3,
-     "b": 2,
-     "m": 2,
-     "ag": 11,
-     "yg": 15,
-     "av": -4,
-     "p": 11,
-     "form": [
-      "L",
-      "W",
-      "D",
-      "W",
-      "D"
-     ],
-     "pos": 6
-    },
-    {
-     "team": "Dundee United",
-     "o": 6,
-     "g": 2,
-     "b": 3,
-     "m": 1,
-     "ag": 7,
-     "yg": 7,
-     "av": 0,
-     "p": 9,
-     "form": [
-      "D",
-      "W",
-      "W",
-      "D",
-      "L"
-     ],
-     "pos": 7
-    },
-    {
-     "team": "St Mirren",
-     "o": 7,
-     "g": 2,
-     "b": 2,
-     "m": 3,
-     "ag": 8,
-     "yg": 12,
-     "av": -4,
-     "p": 8,
-     "form": [
-      "L",
-      "D",
-      "W",
-      "L",
-      "L"
-     ],
-     "pos": 8
-    },
-    {
-     "team": "Aberdeen",
-     "o": 7,
-     "g": 2,
-     "b": 1,
-     "m": 4,
-     "ag": 5,
-     "yg": 9,
-     "av": -4,
-     "p": 7,
-     "form": [
-      "L",
-      "L",
-      "W",
-      "L",
-      "D"
-     ],
-     "pos": 9
-    },
-    {
-     "team": "Motherwell",
-     "o": 7,
-     "g": 2,
-     "b": 1,
-     "m": 4,
-     "ag": 5,
-     "yg": 10,
-     "av": -5,
-     "p": 7,
-     "form": [
-      "L",
-      "W",
-      "L",
-      "L",
-      "L"
-     ],
-     "pos": 10
-    },
-    {
-     "team": "Kilmarnock",
-     "o": 7,
-     "g": 1,
-     "b": 2,
-     "m": 4,
-     "ag": 9,
-     "yg": 19,
-     "av": -10,
-     "p": 5,
-     "form": [
-      "L",
-      "D",
-      "W",
-      "D",
-      "L"
-     ],
-     "pos": 11
-    },
-    {
-     "team": "Hibernian",
-     "o": 7,
-     "g": 0,
-     "b": 1,
-     "m": 6,
-     "ag": 5,
-     "yg": 15,
-     "av": -10,
-     "p": 1,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "D",
-      "L"
-     ],
-     "pos": 12
-    }
-   ],
-   "away": [
-    {
-     "team": "Rangers",
-     "o": 8,
-     "g": 5,
-     "b": 3,
-     "m": 0,
-     "ag": 13,
-     "yg": 7,
-     "av": 6,
-     "p": 18,
-     "form": [
-      "W",
-      "W",
-      "D",
-      "D",
-      "W"
-     ],
-     "pos": 1
-    },
-    {
-     "team": "Celtic",
-     "o": 6,
-     "g": 5,
-     "b": 0,
-     "m": 1,
-     "ag": 12,
-     "yg": 5,
-     "av": 7,
-     "p": 15,
-     "form": [
-      "L",
-      "W",
-      "W",
-      "W",
-      "W"
-     ],
-     "pos": 2
-    },
-    {
-     "team": "Falkirk",
-     "o": 7,
-     "g": 3,
-     "b": 3,
-     "m": 1,
-     "ag": 11,
-     "yg": 7,
-     "av": 4,
-     "p": 12,
-     "form": [
-      "W",
-      "W",
-      "W",
-      "D",
-      "D"
-     ],
-     "pos": 3
-    },
-    {
-     "team": "Dundee United",
-     "o": 7,
-     "g": 3,
-     "b": 2,
-     "m": 2,
-     "ag": 14,
-     "yg": 10,
-     "av": 4,
-     "p": 11,
-     "form": [
-      "W",
-      "D",
-      "D",
-      "W",
-      "L"
-     ],
-     "pos": 4
-    },
-    {
-     "team": "Hearts",
-     "o": 7,
-     "g": 3,
-     "b": 1,
-     "m": 3,
-     "ag": 17,
-     "yg": 13,
-     "av": 4,
-     "p": 10,
-     "form": [
-      "W",
-      "W",
-      "L",
-      "D",
-      "L"
-     ],
-     "pos": 5
-    },
-    {
-     "team": "Hibernian",
-     "o": 6,
-     "g": 3,
-     "b": 1,
-     "m": 2,
-     "ag": 10,
-     "yg": 6,
-     "av": 4,
-     "p": 10,
-     "form": [
-      "W",
-      "D",
-      "L",
-      "L",
-      "W"
-     ],
-     "pos": 6
-    },
-    {
-     "team": "Aberdeen",
-     "o": 6,
-     "g": 2,
-     "b": 1,
-     "m": 3,
-     "ag": 11,
-     "yg": 11,
-     "av": 0,
-     "p": 7,
-     "form": [
-      "W",
-      "L",
-      "D",
-      "W",
-      "L"
-     ],
-     "pos": 7
-    },
-    {
-     "team": "Dundee",
-     "o": 6,
-     "g": 2,
-     "b": 0,
-     "m": 4,
-     "ag": 7,
-     "yg": 8,
-     "av": -1,
-     "p": 6,
-     "form": [
-      "L",
-      "L",
-      "W",
-      "L",
-      "W"
-     ],
-     "pos": 8
-    },
-    {
-     "team": "Motherwell",
-     "o": 7,
-     "g": 1,
-     "b": 3,
-     "m": 3,
-     "ag": 11,
-     "yg": 13,
-     "av": -2,
-     "p": 6,
-     "form": [
-      "D",
-      "D",
-      "L",
-      "L",
-      "L"
-     ],
-     "pos": 9
-    },
-    {
-     "team": "St Mirren",
-     "o": 7,
-     "g": 2,
-     "b": 0,
-     "m": 5,
-     "ag": 5,
-     "yg": 14,
-     "av": -9,
-     "p": 6,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "L",
-      "L"
-     ],
-     "pos": 10
-    },
-    {
-     "team": "St Johnstone",
-     "o": 7,
-     "g": 1,
-     "b": 2,
-     "m": 4,
-     "ag": 6,
-     "yg": 12,
-     "av": -6,
-     "p": 5,
-     "form": [
-      "L",
-      "D",
-      "L",
-      "W",
-      "D"
-     ],
-     "pos": 11
-    },
-    {
-     "team": "Kilmarnock",
-     "o": 7,
-     "g": 1,
-     "b": 1,
-     "m": 5,
-     "ag": 6,
-     "yg": 14,
-     "av": -8,
-     "p": 4,
-     "form": [
-      "L",
-      "L",
-      "L",
-      "L",
-      "W"
-     ],
-     "pos": 12
-    }
-   ]
-  }
- },
+ "standings": {},
  "iddaa_archive": {
-  "rows": 4005,
-  "resulted": 274,
+  "rows": 4056,
+  "resulted": 281,
   "filled_now": 0,
   "min_n": 30,
   "months": [
