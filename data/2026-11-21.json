@@ -201865,8 +201865,14 @@
    "away": {
     "name": "Hartberg"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": null
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -211900,8 +211906,14 @@
    "away": {
     "name": "Gornik Zabrze"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     0
+    ],
+    "ht": null
+   },
    "flags": [
     "Model-piyasa farkı çok büyük (veri hatası olabilir)",
     "Maç başladı/bitti – son bülten verisi"

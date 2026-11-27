@@ -20362,8 +20362,14 @@
    "away": {
     "name": "Midtjylland"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     2
+    ],
+    "ht": null
+   },
    "flags": [],
    "provenance": {
     "fixture": {
@@ -22575,8 +22581,14 @@
    "away": {
     "name": "Motor Lublin"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     1
+    ],
+    "ht": null
+   },
    "flags": [],
    "provenance": {
     "fixture": {
