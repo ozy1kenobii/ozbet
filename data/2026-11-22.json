@@ -144520,8 +144520,14 @@
    "away": {
     "name": "Rosenborg"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     2
+    ],
+    "ht": null
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -146821,8 +146827,14 @@
    "away": {
     "name": "Brann"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     3,
+     4
+    ],
+    "ht": null
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -149049,8 +149061,14 @@
    "away": {
     "name": "Sandefjord"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     2,
+     2
+    ],
+    "ht": null
+   },
    "flags": [
     "Maç başladı/bitti – son bülten verisi"
    ],
@@ -151250,8 +151268,14 @@
    "away": {
     "name": "Lillestrom"
    },
-   "status": "scheduled",
-   "result": null,
+   "status": "finished",
+   "result": {
+    "ft": [
+     0,
+     2
+    ],
+    "ht": null
+   },
    "flags": [],
    "provenance": {
     "fixture": {
