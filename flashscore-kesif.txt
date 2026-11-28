@@ -1,0 +1,7 @@
+ana sayfa HTTP 200; başlık: İddaa Sonuçları, Spor Toto Süper Lig, Canli iddaa Maç Sonuçları | Flashscore.com
+https://www.flashscore.com.tr/res/_fs/build/transformNewsfeedArticlesToWidgetArticles.BragJei.js fsign=-
+https://global.flashscore.ninja/10/x/feed/r_1_1 fsign=SW9D1eZo
+https://global.flashscore.ninja/10/x/feed/f_1_0_0_tr_1 fsign=SW9D1eZo
+https://global.flashscore.ninja/10/x/feed/mc_0 fsign=SW9D1eZo
+https://global.flashscore.ninja/10/x/feed/f_ fsign=SW9D1eZo
+https://global.flashscore.ninja/10/x/feed/cmc_0 fsign=SW9D1eZo

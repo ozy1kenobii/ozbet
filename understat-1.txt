@@ -1,0 +1,40 @@
+URL: https://understat.com/league/EPL/2026 [önbellek]
+HTTP: 200
+Uzunluk: 26719
+En sık CSS sınıfları: theme-dark(1), player-container(1), player(1), ball1(1), ball2(1), ball3(1), ball4(1), ball5(1), hand-left1(1), hand-left2(1), hand-right1(1), hand-right2(1), shorts1(1), shorts2(1), boots-right1(1), boots-right2(1), leg-right1(1), leg-right2(1), leg-left1(1), leg-left2(1), boots-left1(1), boots-left2(1), face1(1), face2(1), face3(1), face4(1), shirt1(1), shirt2(1), shirt3(1), shirt4(1), shirt5(1), logo1(1), logo2(1)
+id'ler: image-container, master-artboard, gradient-0, gradient-1, gradient-2, gradient-3, gradient-4, gradient-5, gradient-6, gradient-7, gradient-8, gradient-9, gradient-10, gradient-11, gradient-12, gradient-13, gradient-14, gradient-15, gradient-16, gradient-17, gradient-18, gradient-19, gradient-20, gradient-21, gradient-22, gradient-23, gradient-24
+
+Baş (2500 karakter):
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Understat.com</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,maximum-scale=1.0,initial-scale=1.0">
+        <link href="/css/errors.css" rel="stylesheet" media="screen">
+    </head>
+    <body class="theme-dark">
+      <div id="image-container" class="player-container">
+          <div class="player">
+          <?xml version="1.0" encoding="UTF-8"?>
+            <svg style="background-color: #343436;" id="master-artboard" viewBox="0 0 1400 1400" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="gradient-0" gradientUnits="objectBoundingBox" cx="0.5" cy="0.5" r="0.5">
+                            <stop offset="0" style="stop-color: #ffee99"/>
+                            <stop offset="1" style="stop-color: #ffdd33"/>
+                          </radialGradient><radialGradient id="gradient-1" gradientUnits="objectBoundingBox" cx="0.5" cy="0.5" r="0.5">
+                            <stop offset="0" style="stop-color: #ffee99"/>
+                            <stop offset="1" style="stop-color: #ffdd33"/>
+                          </radialGradient><radialGradient id="gradient-2" gradientUnits="objectBoundingBox" cx="0.5" cy="0.5" r="0.5">
+                            <stop offset="0" style="stop-color: #ffee99"/>
+                            <stop offset="1" style="stop-color: #ffdd33"/>
+                          </radialGradient><radialGradient id="gradient-3" gradientUnits="objectBoundingBox" cx="0.5" cy="0.5" r="0.5">
+                            <stop offset="0" style="stop-color: #ffee99"/>
+                            <stop offset="1" style="stop-color: #ffdd33"/>
+                          </radialGradient><radialGradient id="gradient-4" gradientUnits="objectBoundingBox" cx="0.5" cy="0.5" r="0.5">
+                            <stop offset="0" style="stop-color: #ffee99"/>
+                            <stop offset="1" style="stop-color: #ffdd33"/>
+                          </radialGradient><radialGradient id="gradient-5" gradientUnits="objectBoundingBox" cx="0.5" cy="0.5" r="0.5">
+                            <stop offset="0" style="stop-color: #ffee99"/>
+                            <stop offset="1" style="stop-color: #ffdd33"/>
+                          </radialGradient><radialGradient id="gradient-6" gradientUnits="objectBoundingBox" cx="0.5" cy="0.5" r="0.5">
+                            <stop offset="0" style="stop-color: #ffee99"/>
+                    

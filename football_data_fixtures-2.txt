@@ -1,0 +1,26 @@
+URL: https://football-data.co.uk/new/RUS.csv
+HTTP: 200
+Uzunluk: 150000
+
+Baş (2500 karakter):
+ï»¿Country,League,Season,Date,Time,Home,Away,HG,AG,Res,PSCH,PSCD,PSCA,MaxCH,MaxCD,MaxCA,AvgCH,AvgCD,AvgCA
+Russia,Premier League,2012/2013,20/07/2012,16:00,M. Saransk,Lokomotiv Moscow,2,3,A,5.12,3.73,1.8,5.25,3.73,1.85,4.54,3.44,1.75
+Russia,Premier League,2012/2013,21/07/2012,10:30,CSKA Moscow,FK Rostov,1,0,H,1.4,4.84,9.84,1.4,4.84,11.09,1.34,4.44,8.88
+Russia,Premier League,2012/2013,21/07/2012,13:30,Volga N. Novgorod,Dynamo Moscow,1,0,H,4.55,3.58,1.9,4.62,3.6,2,3.96,3.35,1.88
+Russia,Premier League,2012/2013,21/07/2012,17:00,Vladikavkaz,Spartak Moscow,1,2,A,4.12,3.54,2.02,4.12,3.54,2.04,3.78,3.28,1.95
+Russia,Premier League,2012/2013,22/07/2012,12:00,Zenit,Amkar,2,0,H,1.28,5.65,15.42,1.29,5.73,16.04,1.26,5.11,11.62
+Russia,Premier League,2012/2013,22/07/2012,14:30,Krylya Sovetov,Akhmat Grozny,1,1,D,2.45,3.16,3.32,2.49,3.16,3.4,2.36,3.04,3.04
+Russia,Premier League,2012/2013,22/07/2012,17:00,FK Anzi Makhackala,Kuban,2,1,H,1.65,3.75,6.01,1.65,3.85,7.95,1.54,3.63,6.43
+Russia,Premier League,2012/2013,23/07/2012,16:30,Krasnodar,Rubin Kazan,2,1,H,4.15,3.47,2.04,4.17,3.47,2.06,3.75,3.25,1.96
+Russia,Premier League,2012/2013,27/07/2012,17:00,Kuban,M. Saransk,1,0,H,1.76,3.67,5.54,1.77,3.67,5.8,1.66,3.47,5.15
+Russia,Premier League,2012/2013,28/07/2012,10:30,Zenit,Dynamo Moscow,2,0,H,1.68,3.84,5.85,1.68,3.84,6,1.61,3.58,5.44
+Russia,Premier League,2012/2013,28/07/2012,13:30,Amkar,CSKA Moscow,3,1,H,5.09,3.23,1.93,5.5,3.45,1.95,4.53,3.24,1.81
+Russia,Premier League,2012/2013,28/07/2012,16:00,Lokomotiv Moscow,Krylya Sovetov,2,0,H,1.47,4.33,9.33,1.5,4.33,9.33,1.43,3.93,7.33
+Russia,Premier League,2012/2013,29/07/2012,12:00,Rubin Kazan,Vladikavkaz,3,1,H,1.39,4.75,10.64,1.4,4.76,10.9,1.36,4.33,8.67
+Russia,Premier League,2012/2013,29/07/2012,14:30,Spartak Moscow,Volga N. Novgorod,2,1,H,1.33,5.18,12.08,1.38,5.18,12.08,1.33,4.6,9.02
+Russia,Premier League,2012/2013,29/07/2012,17:00,FK Rostov,FK Anzi Makhackala,2,2,D,4.11,3.43,2.04,4.11,3.45,2.06,3.67,3.24,1.98
+Russia,Premier League,2012/2013,30/07/2012,16:00,Akhmat Grozny,Krasnodar,1,0,H,2.42,3.32,3.25,2.5,3.33,3.26,2.34,3.09,3
+Russia,Premier League,2012/2013,03/08/2012,16:00,M. Saransk,FK Rostov,3,0,H,2.62,3.32,2.95,2.7,3.32,2.95,2.52,3.07,2.77
+Russia,Premier League,2012/2013,04/08/2012,10:30,CSKA Moscow,Zenit,1,3,A,3.22,3.34,2.44,3.33,3.41,2.44,3.11,3.15,2.24
+Russia,Premier League,2012/2013,04/08/2012,14:30,Vladikavkaz,Akhmat Grozny,5,0,H,2.52,3.14,3.25,2.52,3.25,3.35,2.35,3.07,3.02
+Russia,Premier League,2012/201

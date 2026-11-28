@@ -1,0 +1,13 @@
+URL: https://www.tff.org/Default.aspx?pageID=142
+HTTP: 403
+Uzunluk: 150
+--- '<h1' @67: <html> <head><title>403 Forbidden</title></head> <body> <center><h1>403 Forbidden</h1></center> <hr><center>MerlinCDN</center> </body> </html> 
+
+Baş (2500 karakter):
+<html>
+<head><title>403 Forbidden</title></head>
+<body>
+<center><h1>403 Forbidden</h1></center>
+<hr><center>MerlinCDN</center>
+</body>
+</html>
